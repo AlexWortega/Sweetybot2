@@ -60,7 +60,7 @@ A C++17 compiler is required for the native simulator extension. On Linux, an of
 
 ## Editable CAD and reproduction
 
-The repository includes the parametric model factories, STEP, printable STL, link-local meshes, MuJoCo MJCF and URDF. The large assembled GLB and a complete CAD ZIP are attached to the [preview release](https://github.com/AlexWortega/Sweetybot2/releases/tag/v0.2.0-preview).
+The repository includes the parametric model factories, STEP, printable STL, link-local meshes, MuJoCo MJCF and URDF. A complete CAD ZIP, including the large assembled GLB, is attached to the [preview release](https://github.com/AlexWortega/Sweetybot2/releases/tag/v0.2.0-preview).
 
 ```sh
 make setup       # Python 3.13 CAD environment from uv.lock
