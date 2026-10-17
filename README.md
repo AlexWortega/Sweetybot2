@@ -2,15 +2,17 @@
 
 **Inspired by [Sweetie Bot](https://github.com/sweetie-bot-project/sweetie_bot) and [Microduck](https://github.com/pollen-robotics/microduck).** An independent pony quadruped prototype with editable CAD, MuJoCo simulation and joystick-controlled PPO experiments.
 
+![Sweetybot2 midnight studio render](renders/studio/01-midnight-hero.jpg)
+
 ![MuJoCo: walking, running attempt, self-righting attempt](renders/sweetybot2-training.gif)
 
 *Training preview, 17 October 2026: walking / running attempt / self-righting attempt. Eight simulated seconds at 1× speed, fixed development seed, no mid-episode resets. [MP4](renders/training_preview_20261017/sweetybot2-preview.mp4) · [Checkpoint manifest](renders/training_preview_20261017/manifest.json).*
 
-| Revision 02 assembly | Internal layout |
+| Head detail | Side profile |
 |---|---|
-| ![Assembly CAD render](renders/assembly.png) | ![Internal CAD render](renders/internal.png) |
-| Front view | Exploded assembly |
-| ![Front CAD render](renders/assembly_front.png) | ![Exploded CAD render](renders/exploded.png) |
+| ![Head close-up](renders/studio/02-portrait.jpg) | ![Side profile](renders/studio/03-violet-profile.jpg) |
+
+[Full-resolution studio PNGs and reproduction](docs/studio-renders.md) · [Engineering views](docs/cad-gallery.md)
 
 ![Animated eye display preview](renders/eyes_demo.gif)
 

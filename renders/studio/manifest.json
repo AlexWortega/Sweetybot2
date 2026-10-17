@@ -1,0 +1,80 @@
+{
+  "renderer": "5.1.1",
+  "source": "cad/GLB/assembly.glb",
+  "source_sha256": "cddd7139815c46b5157c541d93f47d46506d1f6ee98427cc92fe9026612abb34",
+  "robot_mesh_objects": 12,
+  "robot_vertices": 3499341,
+  "original_bounds_m": {
+    "min": [
+      -0.14533071219921112,
+      -0.08699999749660492,
+      0.0
+    ],
+    "max": [
+      0.18188819289207458,
+      0.08699999749660492,
+      0.3919999897480011
+    ]
+  },
+  "robot_geometry_unchanged": true,
+  "changes": "camera, stage, lighting, surface finishes; vendor CAD blue face markers styled as graphite servo casings; subtle emission on existing green eye material",
+  "shots": [
+    {
+      "file": "01-midnight-hero.png",
+      "camera_location_m": [
+        0.8939285278320312,
+        -1.0682927370071411,
+        0.6688508987426758
+      ],
+      "camera_target_m": [
+        0.018278740346431732,
+        0.0,
+        0.19599999487400055
+      ],
+      "lens_mm": 70,
+      "resolution": [
+        1920,
+        1440
+      ],
+      "samples": 96
+    },
+    {
+      "file": "02-portrait.png",
+      "camera_location_m": [
+        0.766855776309967,
+        -0.5945078134536743,
+        0.42211541533470154
+      ],
+      "camera_target_m": [
+        0.09127873927354813,
+        0.0,
+        0.28700000047683716
+      ],
+      "lens_mm": 82,
+      "resolution": [
+        1920,
+        1440
+      ],
+      "samples": 96
+    },
+    {
+      "file": "03-violet-profile.png",
+      "camera_location_m": [
+        0.17571458220481873,
+        -1.416922688484192,
+        0.5108717083930969
+      ],
+      "camera_target_m": [
+        0.018278740346431732,
+        0.0,
+        0.19599999487400055
+      ],
+      "lens_mm": 70,
+      "resolution": [
+        1920,
+        1440
+      ],
+      "samples": 96
+    }
+  ]
+}
