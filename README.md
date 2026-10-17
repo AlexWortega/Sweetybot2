@@ -18,6 +18,8 @@
 
 [CAD gallery](docs/cad-gallery.md) · [Complete CAD + preview weights](https://github.com/AlexWortega/Sweetybot2/releases/tag/v0.2.0-preview) · [Design](docs/redesign-v2.md) · [BOM](docs/bom.md) · [Training](learning/README.md)
 
+[Design candidate: a narrower, shorter lower muzzle — before/after and editable CAD](designs/compact-muzzle/README.md).
+
 ## The robot
 
 Revision 02 has four 3-DOF legs, head yaw/pitch and two moving ears: **16 Feetech STS3250 servos**, with twelve leg joints controlled by learned policies. The body has a 140 mm foot-centre track and a short centred neck. The estimated assembled mass is **2.71 kg**; engineering screens include a 20% mass margin. Mass and strength are estimates, not physical measurements.

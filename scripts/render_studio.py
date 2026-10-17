@@ -42,6 +42,8 @@ def main():
     parser.add_argument('--glb',type=Path,default=ROOT/'cad/GLB/assembly.glb')
     parser.add_argument('--out',type=Path,default=ROOT/'renders/studio')
     parser.add_argument('--preview',action='store_true')
+    parser.add_argument('--camera-manifest',type=Path,help='Lock framing and lighting placement to an earlier studio manifest')
+    parser.add_argument('--shots',nargs='+',choices=['01-midnight-hero','02-portrait','03-violet-profile'])
     parser.add_argument('--samples',type=int,default=96)
     argv=sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else []
     args=parser.parse_args(argv)
@@ -54,7 +56,10 @@ def main():
     corners=[o.matrix_world@Vector(c) for o in robot for c in o.bound_box]
     lower=Vector([min(p[i] for p in corners) for i in range(3)])
     upper=Vector([max(p[i] for p in corners) for i in range(3)])
-    center=(upper+lower)/2
+    reference=json.loads(args.camera_manifest.read_text()) if args.camera_manifest else None
+    frame_lower=Vector(reference['original_bounds_m']['min']) if reference else lower
+    frame_upper=Vector(reference['original_bounds_m']['max']) if reference else upper
+    center=(frame_upper+frame_lower)/2
     print('STUDIO_BOUNDS',list(lower),list(upper),'VERTICES',vertices,flush=True)
     # Preserve imported mesh coordinates, normals, component placement and colors.
     for m in {m for o in robot for m in o.data.materials if m is not None}:
@@ -116,7 +121,7 @@ def main():
     plinth=bpy.context.object;plinth.name='Display plinth';plinth.data.materials.append(material('Satin charcoal plinth',(.021,.025,.040),.26,.38))
     bevel=plinth.modifiers.new('Soft studio edge','BEVEL');bevel.width=.004;bevel.segments=4
     for p in plinth.data.polygons:p.use_smooth=True
-    target=Vector((center.x,center.y,lower.z+(upper.z-lower.z)*.5))
+    target=Vector((center.x,center.y,frame_lower.z+(frame_upper.z-frame_lower.z)*.5))
     camera_data=bpy.data.cameras.new('Product camera');camera=bpy.data.objects.new('Product camera',camera_data)
     bpy.context.collection.objects.link(camera);scene.camera=camera
     camera_data.lens=70;camera_data.clip_start=.01;camera_data.clip_end=250
@@ -126,12 +131,16 @@ def main():
     top=area('Top strip',(center.x-.1,center.y,.98),target,10,(1.,.92,.85),.28,.85)
     front=area('Eye catchlight',(center.x+.7,center.y-.2,.45),target,3,(1.,1.,1.),.15,.5)
     shots=[('01-midnight-hero',Vector((1.,-1.22,.54)),1.46,target.copy(),70),
-           ('02-portrait',Vector((1.,-.88,.20)),.91,Vector((center.x+.073,center.y,upper.z-.105)),82),
+           ('02-portrait',Vector((1.,-.88,.20)),.91,Vector((center.x+.073,center.y,frame_upper.z-.105)),82),
            ('03-violet-profile',Vector((.15,-1.35,.30)),1.46,target.copy(),70)]
+    if args.shots:shots=[shot for shot in shots if shot[0] in args.shots]
     if args.preview:shots=shots[:1]
     manifest={'renderer':bpy.app.version_string,'source':'cad/GLB/assembly.glb','source_sha256':hashlib.sha256(args.glb.read_bytes()).hexdigest(),'robot_mesh_objects':len(robot),'robot_vertices':vertices,'original_bounds_m':{'min':list(lower),'max':list(upper)},'robot_geometry_unchanged':True,'changes':'camera, stage, lighting, surface finishes; vendor CAD blue face markers styled as graphite servo casings; subtle emission on existing green eye material','shots':[]}
     for name,direction,distance,look,lens in shots:
         camera.location=look+direction.normalized()*distance;camera_data.lens=lens
+        if reference:
+            saved=next(row for row in reference['shots'] if Path(row['file']).stem==name)
+            camera.location=Vector(saved['camera_location_m']);look=Vector(saved['camera_target_m']);lens=saved['lens_mm'];camera_data.lens=lens
         point_at(camera,look)
         scene.render.filepath=str(args.out/(('preview' if args.preview else name)+'.png'))
         print('STUDIO_RENDER',name,scene.render.filepath,flush=True)

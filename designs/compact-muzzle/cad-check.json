@@ -1,0 +1,58 @@
+{
+  "status": "editable CAD candidate; not the model used by the ongoing v02 training",
+  "parameters_before": {
+    "muzzle_center": [
+      73,
+      0,
+      14
+    ],
+    "muzzle_radii": [
+      27,
+      34,
+      22
+    ]
+  },
+  "parameters_after": {
+    "muzzle_center": [
+      68,
+      0,
+      14
+    ],
+    "muzzle_radii": [
+      23,
+      27,
+      20
+    ]
+  },
+  "changed_parts": [
+    {
+      "part": "head_shell",
+      "valid": true,
+      "solids": 1,
+      "bounds_mm": [
+        120.0000002,
+        100.00000019999786,
+        85.00000020000029
+      ],
+      "old_volume_mm3": 76565.79945026661,
+      "new_volume_mm3": 75662.40303396147,
+      "estimated_mass_delta_kg": -0.0011473134487075306
+    },
+    {
+      "part": "head_hatch",
+      "valid": true,
+      "solids": 1,
+      "bounds_mm": [
+        101.30737322463206,
+        89.76652681222504,
+        3.000000207864895
+      ],
+      "old_volume_mm3": 19170.91488946261,
+      "new_volume_mm3": 16813.935181544606,
+      "estimated_mass_delta_kg": -0.002993364229055863
+    }
+  ],
+  "head_mass_without_servos_before_kg": 0.191158,
+  "head_mass_without_servos_after_kg": 0.187017,
+  "method": "changed saved STEP volumes x conservative solid PETG density 1270 kg/m3; unchanged head allocations inherited from v02"
+}
