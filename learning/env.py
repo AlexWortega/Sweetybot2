@@ -1,0 +1,373 @@
+"""Batched, unassisted v02 MuJoCo environments with deployable proprioception.
+
+All root state used below is reward/reset/evaluation-only. The actor sees only
+IMU-like signals, encoders, commands, previous actions and an internal gait clock.
+"""
+from __future__ import annotations
+import hashlib
+import json
+from collections import deque
+from pathlib import Path
+import xml.etree.ElementTree as ET
+import numpy as np
+from scripts.common import ROOT, load
+from simulation.model import home
+
+
+def quaternion_matrix(q):
+    w,x,y,z = np.asarray(q).T
+    return np.stack((1-2*(y*y+z*z), 2*(x*y-z*w), 2*(x*z+y*w),
+                     2*(x*y+z*w), 1-2*(x*x+z*z), 2*(y*z-x*w),
+                     2*(x*z-y*w), 2*(y*z+x*w), 1-2*(x*x+y*y)), -1).reshape(-1,3,3)
+
+
+def running_flight_bonus(velocity, commands, up, height, contacts, bad_contacts):
+    """Small forward-flight incentive, never a reward for jumping in place.
+
+    Flight is a training hypothesis, not evidence that a checkpoint can run.
+    All inputs here are privileged reward measurements, absent from the actor.
+    """
+    error=np.square(velocity[:,:2]-commands[:,:2]).sum(1)
+    tracking=np.exp(-error/.025)
+    valid=((velocity[:,0]>=.35)&(commands[:,0]>=.30)&(up>.8)&
+           (height>.15)&(height<.28)&(np.abs(velocity[:,2])<.6)&
+           (error<.04)&~np.asarray(contacts,dtype=bool).any(1)&(bad_contacts==0))
+    return .2*tracking*valid
+
+
+def make_model(terrain='flat', difficulty=0., seed=1):
+    """Same inertials/joints as v02, primitive visuals and conservative horn contact."""
+    difficulty=float(np.clip(difficulty,0,1))
+    if terrain=='mixed': terrain='rough'
+    if terrain not in ('flat','rough','slope','steps'): raise ValueError(terrain)
+    source=ROOT/'simulation/generated/sweetie_mini.xml'
+    extent=10.;n_samples=321
+    fingerprint=hashlib.sha256(source.read_bytes()+f'{terrain}/{difficulty}/{seed}/rl-v4-extent10'.encode()).hexdigest()[:16]
+    directory=ROOT/'learning/models'; directory.mkdir(parents=True,exist_ok=True)
+    path=directory/f'{terrain}_{fingerprint}.xml'
+    metadata={'terrain':terrain,'difficulty':difficulty,'seed':int(seed),'slope_radians':0.,'height_range_m':0.,
+              'extent_m':extent,'n_samples':n_samples}
+    tree=ET.parse(source); root=tree.getroot()
+    for parent in root.iter():
+        for item in list(parent):
+            if item.tag=='mesh' or (item.tag=='geom' and item.get('type')=='mesh'):
+                parent.remove(item)
+    for geom in root.iter('geom'):
+        if geom.get('group')=='3':
+            geom.set('group','0'); geom.set('rgba','.90 .90 .96 1')
+        if geom.get('name')=='head_g7':
+            geom.set('contype','1');geom.set('conaffinity','1')
+    # The horn is a visual-only capsule in v02. Explicit collision is necessary
+    # for honest inversion recovery; do not change its mass or other CAD geometry.
+    head=root.find(".//body[@name='head']")
+    horn=head.find("geom[@fromto='0.048 0 0.088 0.048 0 0.121']")
+    if horn is not None:
+        horn.set('contype','1');horn.set('conaffinity','1');horn.set('name','horn_collision')
+    root.find('option').set('iterations','40')
+    world=root.find('worldbody'); floor=world.find("geom[@name='floor']")
+    floor.set('size','12 12 .1')
+    if terrain=='slope':
+        angle=np.deg2rad(8*difficulty); floor.set('quat',f'{np.cos(angle/2)} 0 {-np.sin(angle/2)} 0')
+        metadata['slope_radians']=float(angle)
+    elif terrain=='rough':
+        rng=np.random.default_rng(seed); n=n_samples
+        axis=np.linspace(-extent,extent,n); x,y=np.meshgrid(axis,axis)
+        h=np.zeros((n,n))
+        for period,weight in ((.35,.5),(.17,.3),(.09,.2)):
+            h+=weight*np.sin(x*2*np.pi/period+rng.uniform(0,6.28))*np.cos(y*2*np.pi/period+rng.uniform(0,6.28))
+        h=(h-h.min())/(h.max()-h.min())
+        binary=directory/f'{path.stem}.bin'
+        with binary.open('wb') as f:
+            np.array([n,n],dtype=np.int32).tofile(f);h.astype(np.float32).tofile(f)
+        amplitude=max(.00001,.025*difficulty)
+        ET.SubElement(root.find('asset'),'hfield',name='terrain',file=binary.name,size=f'{extent} {extent} {amplitude} .1')
+        ET.SubElement(world,'geom',name='terrain',type='hfield',hfield='terrain',rgba='.53 .62 .46 1',friction='.9 .015 .001')
+        floor.set('pos','0 0 -.101')
+        metadata.update(height_range_m=amplitude,height_samples=h.tolist())
+    elif terrain=='steps':
+        height=.025*difficulty; metadata['height_range_m']=height
+        metadata['n_steps']=int(2*extent/.1)
+        for i in range(metadata['n_steps']):
+            x=-extent+(i+.5)*.1; top=height*(i%6)/5
+            ET.SubElement(world,'geom',name=f'step_{i}',type='box',size=f'.05 {extent} {(.1+top)/2}',pos=f'{x} 0 {(top-.1)/2}',rgba='.62 .65 .67 1')
+    ET.indent(root,space='  '); tree.write(path,encoding='unicode')
+    public={k:v for k,v in metadata.items() if k!='height_samples'}
+    path.with_suffix('.json').write_text(json.dumps(public,indent=2)+'\n')
+    return path,metadata
+
+
+class SweetieVecEnv:
+    action_dim=12
+    frame_dim=55
+    obs_dim=165
+    dt=.02
+    reset_kind_names=('stand','folded_crouch','left','right','supine')
+    def __init__(self,task='locomotion',nenvs=None,num_envs=128,threads=16,seed=1,terrain='flat',difficulty=0.,randomize=True,auto_reset=True):
+        if task not in ('locomotion','running','recovery'):raise ValueError(task)
+        self.task=task; self.num_envs=int(nenvs if nenvs is not None else num_envs)
+        self.seed=int(seed); self.rng=np.random.default_rng(seed);self.randomize=randomize;self.auto_reset=auto_reset
+        self.difficulty=float(difficulty);self.progress=0.;self.noise_enabled=bool(randomize)
+        self.model_path,self.terrain=make_model(terrain,difficulty,seed)
+        # Reset poses must clear the actual terrain under every link, including
+        # folded legs and the horn. A center-point terrain height alone permits
+        # deep initial penetrations and artificial get-up impulses.
+        import mujoco
+        self._reset_model=mujoco.MjModel.from_xml_path(str(self.model_path))
+        self._reset_data=mujoco.MjData(self._reset_model)
+        from learning.build_native import build
+        build()  # A changed servo source must never silently reuse an old binary.
+        from learning._sweetie_native import Batch
+        self.native=Batch(str(self.model_path),self.num_envs,threads)
+        self.home=np.array(list(home().values()))
+        c=load();from simulation.model import joint_spec
+        self.names=list(home())
+        limits=np.array([joint_spec(n,c)['limits'] for n in self.names]);self.low,self.high=limits.T
+        n=self.num_envs
+        self.commands=np.zeros((n,3));self.steps=np.zeros(n,dtype=int);self.phase=np.zeros(n)
+        self.last_action=np.zeros((n,12));self.targets=np.tile(self.home,(n,1))
+        self.history=np.zeros((n,3,self.frame_dim),dtype=np.float32)
+        self.encoder_bias=np.zeros((n,16));self.returns=np.zeros(n);self.stable=np.zeros(n,int);self.success=np.zeros(n,bool)
+        self.reset_kind=np.zeros(n,int);self.params=np.zeros((n,8));self.velocity_error=np.zeros(n)
+        self.previous_up=np.ones(n); self.previous_height=np.full(n,.199)
+        self.max_episode_steps=500 if task=='recovery' else 600
+        # Keep a bounded diagnostic tail during day-long runs; lifetime and
+        # episode disturbance counts remain available in every step's info.
+        self.manual_command=False;self.events=deque(maxlen=4096);self.state={}
+        self.next_push_step=np.full(n,10**9,dtype=int)
+        self.disturbance_count=np.zeros(n,dtype=int);self.total_disturbances=0
+        self.reset()
+
+    def set_progress(self,progress):self.progress=float(np.clip(progress,0,1))
+
+    def ground_height(self,x,y):
+        x,y=np.broadcast_arrays(x,y); kind=self.terrain['terrain']
+        if kind=='slope':return np.tan(self.terrain['slope_radians'])*x
+        extent=self.terrain['extent_m']
+        if kind=='steps':
+            index=np.clip(np.floor((x+extent)/.1).astype(int),0,self.terrain['n_steps']-1)
+            return self.terrain['height_range_m']*(index%6)/5
+        if kind=='rough':
+            h=np.asarray(self.terrain['height_samples']);last=self.terrain['n_samples']-1
+            a=np.clip((x+extent)/(2*extent)*last,0,last);b=np.clip((y+extent)/(2*extent)*last,0,last)
+            i=np.minimum(a.astype(int),last-1);j=np.minimum(b.astype(int),last-1);u=a-i;v=b-j
+            return ((1-u)*(1-v)*h[j,i]+u*(1-v)*h[j,i+1]+(1-u)*v*h[j+1,i]+u*v*h[j+1,i+1])*self.terrain['height_range_m']
+        return np.zeros_like(x,dtype=float)
+
+    def _sample_commands(self,ids):
+        if self.manual_command:return
+        k=len(ids);r=self.rng
+        if self.task=='running':
+            # Start from a forward gait and expand speed, lateral and turn
+            # demands together; this is a command target, not a speed claim.
+            self.commands[ids,0]=r.uniform(.30,.30+.35*self.progress,k)
+            self.commands[ids,1]=r.uniform(-.08,.08,k)*min(1,self.progress*3)
+            self.commands[ids,2]=r.uniform(-.6,.6,k)*min(1,self.progress*3)
+            self.commands[ids[r.random(k)<.1]]=0
+            return
+        self.commands[ids,0]=r.uniform(.12,.25+.35*self.progress,k)
+        self.commands[ids,1]=r.uniform(-.08,.08,k)*min(1,self.progress*3)
+        self.commands[ids,2]=r.uniform(-1.,1.,k)*min(1,self.progress*3)
+        modes=r.random(k)
+        self.commands[ids[modes<.1]]=0
+        self.commands[ids[(modes>=.1)&(modes<.2)],0]*=-1
+        if self.task=='recovery':self.commands[ids]=0
+
+    def _clear_reset_penetration(self,qpos):
+        """Lift only episode initializations; never correct an active episode."""
+        import mujoco
+        model,data=self._reset_model,self._reset_data
+        for row in qpos:
+            data.qpos[:]=row;data.qvel[:]=0
+            for _ in range(32):
+                mujoco.mj_forward(model,data)
+                lift=0.
+                for contact in data.contact:
+                    a,b=contact.geom1,contact.geom2
+                    if (model.geom_bodyid[a]==0)==(model.geom_bodyid[b]==0):continue
+                    if contact.dist < -.000001:
+                        # Plane slopes and heightfield facets require a larger
+                        # vertical lift than their signed normal penetration.
+                        lift=max(lift,-contact.dist/max(abs(contact.frame[2]),.2)+.001)
+                if lift==0:break
+                # Near-vertical step faces can produce horizontal contact
+                # normals; short lifts avoid launching a reset high above them.
+                data.qpos[2]+=min(lift,.01)
+            else:
+                raise RuntimeError('Could not initialize robot clear of terrain')
+            row[2]=data.qpos[2]
+
+    def _reset_indices(self,ids,pose=None):
+        ids=np.asarray(ids,dtype=np.int64);k=len(ids)
+        if not k:return
+        r=self.rng;q=np.zeros((k,23));v=np.zeros((k,22));q[:,3]=1;q[:,7:]=self.home
+        q[:,:2]=r.uniform(-1.2,1.2,(k,2)) if self.auto_reset else 0
+        yaw=r.uniform(-np.pi,np.pi,k) if self.auto_reset else np.zeros(k)
+        q[:,3]=np.cos(yaw/2);q[:,6]=np.sin(yaw/2)
+        kinds=np.zeros(k,int)
+        if self.task=='recovery':
+            # Keep near-goal resets throughout, progressively introduce real falls.
+            fallen_fraction=.35+.45*min(1,self.progress*3)
+            fallen=r.random(k)<fallen_fraction
+            kinds[fallen]=r.choice([1,2,3,4],fallen.sum(),p=[.35,.25,.20,.20])
+        if pose is not None:kinds[:]=dict(stand=0,prone=1,left=2,right=3,supine=4)[pose]
+        for i,kind in enumerate(kinds):
+            z=.199
+            if kind==1:
+                # Legacy pose name "prone" means this folded upright crouch.
+                # It is easier than lying on the torso and must be reported as
+                # folded_crouch, separately from side/inverted recovery.
+                q[i,7:19]=np.tile([0,-1.2,2.05],4);z=.10
+            elif kind in (2,3,4):
+                angle={2:np.pi/2,3:-np.pi/2,4:np.pi}[kind]
+                if self.randomize:
+                    # Rz(yaw) Ry(pitch) Rx(roll): diversify falls rather than
+                    # overwriting the heading with one exact side orientation.
+                    roll=angle+r.uniform(-.3,.3);pitch=r.uniform(-.4,.4);heading=r.uniform(-np.pi,np.pi)
+                    cr,sr=np.cos(roll/2),np.sin(roll/2);cp,sp=np.cos(pitch/2),np.sin(pitch/2)
+                    cy,sy=np.cos(heading/2),np.sin(heading/2)
+                    q[i,3:7]=[cy*cp*cr+sy*sp*sr,cy*cp*sr-sy*sp*cr,
+                              cy*sp*cr+sy*cp*sr,sy*cp*cr-cy*sp*sr]
+                else:q[i,3:7]=[np.cos(angle/2),np.sin(angle/2),0,0]
+                z=.32
+            elif self.task=='recovery' and r.random()<.5 and pose is None:
+                q[i,7:19]=np.tile([0,-.9,1.75],4);z=.15
+            q[i,2]=z+self.ground_height(q[i,0],q[i,1])
+        if self.randomize:
+            jitter=.12 if self.task=='recovery' else .03
+            q[:,7:19]+=r.normal(0,jitter,(k,12));q[:,7:]=np.clip(q[:,7:],self.low,self.high)
+        self._clear_reset_penetration(q)
+        # Conservative dynamics randomization; specific STS parameters remain unmeasured.
+        p=np.tile([1.,.9,9.9,1.,1.,.0174533,1.,1.],(k,1))
+        if self.randomize:
+            spread=.3+.7*min(1,self.progress*3)
+            p[:,0]=r.uniform(1-.15*spread,1+.2*spread,k)
+            p[:,1]=r.uniform(.55,1.15,k);p[:,2]=r.uniform(8.7,10.8,k)
+            p[:,3]=r.uniform(.85,1.05,k);p[:,4]=r.uniform(.9,1.1,k)
+            p[:,5]=r.uniform(.005,.035,k);p[:,6]=r.integers(0,4,k);p[:,7]=r.uniform(.85,1.15,k)
+            self.encoder_bias[ids]=r.uniform(-.015,.015,(k,16))
+        self.native.reset(ids,q,v,p);self.params[ids]=p;self.reset_kind[ids]=kinds
+        self.steps[ids]=0;self.phase[ids]=r.uniform(0,2*np.pi,k);self.last_action[ids]=0;self.targets[ids]=q[:,7:]
+        self.returns[ids]=0;self.stable[ids]=0;self.success[ids]=False;self.velocity_error[ids]=0
+        self.disturbance_count[ids]=0
+        self.next_push_step[ids]=r.integers(200,501,k) if self.randomize and self.auto_reset else 10**9
+        self._sample_commands(ids);self._read_state()
+        self.previous_up[ids]=self.rot[ids,2,2];self.previous_height[ids]=self.height[ids]
+        frames=self._frame()[ids];self.history[ids]=frames[:,None,:]
+
+    def _read_state(self):
+        self.state=self.native.state();q=self.state['qpos'];self.rot=quaternion_matrix(q[:,3:7])
+        self.height=q[:,2]-self.ground_height(q[:,0],q[:,1]);self.state['height_above_ground']=self.height.copy()
+        self.local_velocity=np.einsum('nji,nj->ni',self.rot,self.state['qvel'][:,:3])
+        # Free-joint rotational velocity is already local in MuJoCo.
+        self.local_angular=self.state['qvel'][:,3:6]
+
+    def _frame(self):
+        q=self.state['qpos'][:,7:]-self.home+self.encoder_bias
+        dq=self.state['qvel'][:,6:]*.1
+        gravity=-self.rot[:,2,:]
+        gyro=self.local_angular*.25
+        if self.noise_enabled:
+            q=q+self.rng.normal(0,.003,q.shape);dq=dq+self.rng.normal(0,.015,dq.shape)
+            gravity=gravity+self.rng.normal(0,.01,gravity.shape);gyro=gyro+self.rng.normal(0,.01,gyro.shape)
+        return np.concatenate((gravity,gyro,q,dq,self.last_action,self.commands,
+                               np.sin(self.phase)[:,None],np.cos(self.phase)[:,None]),axis=1).astype(np.float32)
+
+    def observe(self):return self.history.reshape(self.num_envs,-1).copy()
+
+    def reset(self):
+        self._reset_indices(np.arange(self.num_envs));return self.observe()
+
+    def reset_pose(self,pose='stand'):
+        """Initialize a pose; 'prone' is the legacy folded-crouch name."""
+        self._reset_indices(np.arange(self.num_envs),pose);return self.observe()
+
+    def set_command(self,vx,vy,yaw):
+        self.manual_command=True
+        low,high=([0.,-.08,-.6],[.65,.08,.6]) if self.task=='running' else ([-.45,-.2,-1.5],[.6,.2,1.5])
+        self.commands[:]=np.clip([vx,vy,yaw],low,high)
+        self.history[:,-1,:]=self._frame()
+
+    def apply_impulse(self,dv):
+        dv=np.broadcast_to(np.asarray(dv,float),(self.num_envs,6)).copy()
+        self.native.push(dv);self.events.append({'event':'velocity_impulse','delta_velocity':dv.tolist(),'step':self.steps.tolist()});self._read_state()
+
+    def fall(self,direction='left'):
+        self.apply_impulse([0,0,0,9. if direction=='left' else -9.,0,0])
+
+    def _training_disturbances(self):
+        """Zero-mean physical velocity kicks; no vertical lift or base support."""
+        if not (self.auto_reset and self.randomize and self.progress>.2):return
+        ids=np.flatnonzero(self.steps>=self.next_push_step)
+        if not len(ids):return
+        dv=np.zeros((self.num_envs,6))
+        dv[ids,:2]=self.rng.uniform(-.15,.15,(len(ids),2))*self.progress
+        dv[ids,3:5]=self.rng.uniform(-.4,.4,(len(ids),2))*self.progress
+        self.native.push(dv)
+        self.disturbance_count[ids]+=1;self.total_disturbances+=len(ids)
+        self.next_push_step[ids]=self.steps[ids]+self.rng.integers(200,501,len(ids))
+        self.events.append({'event':'training_velocity_impulse','count':int(len(ids)),
+                            'mean_abs_delta_velocity':np.abs(dv[ids]).mean(0).tolist(),
+                            'total_count':int(self.total_disturbances)})
+
+    def step(self,actions):
+        actions=np.asarray(actions,dtype=float)
+        if actions.shape!=(self.num_envs,12) or not np.isfinite(actions).all():raise ValueError('Expected finite [N,12] actions')
+        actions=np.clip(actions,-1,1)
+        desired=np.tile(self.home,(self.num_envs,1))
+        if self.task=='recovery':desired[:,:12]=self.state['qpos'][:,7:19]+.35*actions
+        else:desired[:,:12]+=.65*actions
+        self.targets+=np.clip(desired-self.targets,-.11,.11)
+        self.targets=np.clip(self.targets,self.low,self.high)
+        self._training_disturbances()
+        self.native.step(self.targets);self.steps+=1;self._read_state()
+        up=self.rot[:,2,2];vel=self.local_velocity;omega=self.local_angular
+        error=np.square(vel[:,:2]-self.commands[:,:2]).sum(1)
+        torque2=np.square(self.state['torque_rms']).sum(1)
+        speed2=np.square(self.state['qvel'][:,6:18]).sum(1)
+        action_rate=np.square(actions-self.last_action).mean(1)
+        pose=np.square(self.state['qpos'][:,7:19]-self.home[:12]).mean(1)
+        self.stable=np.where((up>.90)&(self.height>.165)&(np.linalg.norm(vel[:,:2],axis=1)<.25),self.stable+1,0)
+        just_success=(self.stable>=35)&~self.success;self.success|=just_success
+        flight_bonus=np.zeros(self.num_envs)
+        if self.task in ('locomotion','running'):
+            tracking=3*np.exp(-error/.025)+np.exp(-np.square(omega[:,2]-self.commands[:,2])/.35)
+            reward=tracking+.5*up+.3*np.exp(-np.square(self.height-.19)/.001)-.1*pose-.025*action_rate-.001*torque2-.0002*speed2-.02*np.square(omega[:,:2]).sum(1)
+            reward-=.05*self.state['bad_contacts']
+            if self.task=='running':
+                flight_bonus=running_flight_bonus(vel,self.commands,up,self.height,
+                                                  self.state['contacts'],self.state['bad_contacts'])
+                reward+=flight_bonus
+            failure=(up<.45)|(self.height<.085)
+            reward[failure]-=3
+        else:
+            upright=np.clip((up+1)/2,0,1)
+            height_reward=np.exp(-np.square(self.height-.19)/.002)*(up>.6)
+            reward=1.2*upright+1.5*height_reward+.6*np.exp(-pose/.3)*(up>.8)+3*(self.stable>0)
+            reward+=3*(up-self.previous_up)+8*(self.height-self.previous_height)*(up>.4)+4*just_success
+            reward-=.002*action_rate+.0003*speed2+.001*torque2
+            failure=np.zeros(self.num_envs,bool)
+        failure|=~np.isfinite(self.state['qpos']).all(1)|(np.abs(self.state['qpos'][:,:2])>self.terrain['extent_m']-.5).any(1)
+        self.previous_up=up.copy();self.previous_height=self.height.copy();self.returns+=reward;self.velocity_error+=np.sqrt(error)
+        clock_base=1.8 if self.task=='running' else 1.2
+        self.phase+=self.dt*2*np.pi*(clock_base+1.5*np.linalg.norm(self.commands[:,:2],axis=1))
+        if self.auto_reset and self.task in ('locomotion','running'):
+            # Reward the action against the old command, then expose the new
+            # command immediately in the observation for the following action.
+            ids=np.flatnonzero((self.steps%200==0)&(self.steps>0)&~failure&(self.steps<self.max_episode_steps))
+            self._sample_commands(ids)
+        self.last_action[:]=actions
+        self.history[:,:-1]=self.history[:,1:];self.history[:,-1]=self._frame()
+        terminal_obs=self.observe();truncated=(self.steps>=self.max_episode_steps)&~failure;done=failure|truncated
+        episode={}
+        if done.any():
+            episode={'return':self.returns[done].copy(),'length_s':self.steps[done]*self.dt,
+                     'recovery_success':self.success[done].astype(float),'command_rmse':self.velocity_error[done]/self.steps[done],
+                     'reset_kind':self.reset_kind[done].copy(),'fall':failure[done].astype(float),
+                     'disturbance_count':self.disturbance_count[done].copy()}
+        info={'truncated':truncated,'terminal_observation':terminal_obs,'episode':episode,'success':self.success.copy(),
+              'total_disturbances':int(self.total_disturbances)}
+        if self.task=='running':info['reward_terms']={'forward_flight_bonus':flight_bonus.copy()}
+        if self.auto_reset and done.any():self._reset_indices(np.flatnonzero(done))
+        return self.observe(),reward.astype(np.float32),done,info
+
+    def close(self):pass

@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "pytest",
+      "exit_code": 0,
+      "stdout": "..........                                                               [100%]\n10 passed in 9.66s\n",
+      "stderr": ""
+    },
+    {
+      "name": "urdf",
+      "exit_code": 0,
+      "stdout": "{\"ok\":true,\"path\":\"simulation/generated/sweetie_mini.urdf\",\"issues\":[],\"summary\":\"OK simulation/generated/sweetie_mini.urdf: robot 'sweetie_mini', root 'torso_link', 17 links, 16 joints (16 movable), 17 resolved mesh references, total mass 2.711 kg\"}\n",
+      "stderr": ""
+    }
+  ],
+  "assertions": {
+    "simulation_config_matches": true,
+    "nominal_scenarios": 4,
+    "sensitivity_scenarios": 5,
+    "print_types": 23,
+    "physical_validation": "not run",
+    "external_ROS_check_urdf": "unavailable"
+  }
+}

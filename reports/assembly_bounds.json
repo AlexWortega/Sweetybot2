@@ -1,0 +1,136 @@
+{
+  "units": "mm",
+  "min": [
+    -145.38894849678135,
+    -87.0000001,
+    -8.327144080929299e-17
+  ],
+  "max": [
+    182.0000001,
+    87.0000001,
+    392.0000001
+  ],
+  "dimensions": [
+    327.38894859678135,
+    174.0000002,
+    392.0000001
+  ],
+  "valid": true,
+  "step_roundtrips": [
+    {
+      "part": "deck",
+      "relative_volume_change": 3.786237140120345e-15,
+      "saved_solids": 1
+    },
+    {
+      "part": "rail",
+      "relative_volume_change": 1.2748164270563647e-15,
+      "saved_solids": 1
+    },
+    {
+      "part": "body_shell",
+      "relative_volume_change": 0.0013724502726962346,
+      "saved_solids": 1
+    },
+    {
+      "part": "servo_cradle",
+      "relative_volume_change": 1.1689015193734095e-08,
+      "saved_solids": 1
+    },
+    {
+      "part": "roll_yoke",
+      "relative_volume_change": 1.0464133888365082e-15,
+      "saved_solids": 1
+    },
+    {
+      "part": "thigh_plate",
+      "relative_volume_change": 3.090909858606589e-14,
+      "saved_solids": 1
+    },
+    {
+      "part": "shin_plate",
+      "relative_volume_change": 3.213301377453115e-14,
+      "saved_solids": 1
+    },
+    {
+      "part": "hoof",
+      "relative_volume_change": 1.6731718218916645e-11,
+      "saved_solids": 1
+    },
+    {
+      "part": "head_shell",
+      "relative_volume_change": 1.6463874977595909e-06,
+      "saved_solids": 1
+    },
+    {
+      "part": "head_hatch",
+      "relative_volume_change": 0.0004049361758281798,
+      "saved_solids": 1
+    },
+    {
+      "part": "ear",
+      "relative_volume_change": 1.629888994189986e-12,
+      "saved_solids": 1
+    },
+    {
+      "part": "mane",
+      "relative_volume_change": 6.270550960984519e-08,
+      "saved_solids": 1
+    },
+    {
+      "part": "fit_coupon",
+      "relative_volume_change": 1.0368279148910468e-15,
+      "saved_solids": 1
+    },
+    {
+      "part": "axle_adapter",
+      "relative_volume_change": 2.1875297688711516e-14,
+      "saved_solids": 1
+    },
+    {
+      "part": "knee_fork",
+      "relative_volume_change": 8.321496563042038e-16,
+      "saved_solids": 1
+    },
+    {
+      "part": "head_yoke",
+      "relative_volume_change": 9.729129628146496e-15,
+      "saved_solids": 1
+    },
+    {
+      "part": "tail",
+      "relative_volume_change": 5.782237399211989e-12,
+      "saved_solids": 1
+    },
+    {
+      "part": "servo_strap",
+      "relative_volume_change": 1.8212418676694318e-14,
+      "saved_solids": 1
+    },
+    {
+      "part": "horn",
+      "relative_volume_change": 1.2049173046844019e-12,
+      "saved_solids": 1
+    },
+    {
+      "part": "mane_stripe",
+      "relative_volume_change": 4.72537914887671e-14,
+      "saved_solids": 1
+    },
+    {
+      "part": "neck_collar",
+      "relative_volume_change": 6.94348125890174e-14,
+      "saved_solids": 1
+    },
+    {
+      "part": "thigh_fairing",
+      "relative_volume_change": 2.0906646566327043e-12,
+      "saved_solids": 1
+    },
+    {
+      "part": "shin_fairing",
+      "relative_volume_change": 6.1031990201992064e-12,
+      "saved_solids": 1
+    }
+  ]
+}

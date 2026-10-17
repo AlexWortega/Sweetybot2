@@ -1,0 +1,557 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="sweetie_mini">
+  <!-- DESIGN LEDGER: Generated from config/robot.yaml and simulation/model.py by explicit user instruction.
+ Frames: metres, radians, +X forward/muzzle, +Y left, +Z up. Torso is floating base.
+ Joint origins are expressed in parent frames; axes in joint frames; zero has straight downward legs.
+ Knee positive bends feet toward -X. Same axes on all four legs. Left/right roll offsets change sign.
+ Masses are engineering allocations, not measured. Diagonal inertias use box-envelope formulas at assigned COM.
+ URDF visual meshes are CAD-generated link-local millimetres, scaled 0.001; collision primitives are SI.
+ Ear and head collision envelopes are simplified; electronics and servo internals are not collision-resolved.
+ Parametric regeneration is authoritative; hand edits to this generated file are overwritten. -->
+  <material name="body">
+    <color rgba="0.93 0.94 0.98 1" />
+  </material>
+  <material name="mane">
+    <color rgba="0.6 0.36 0.76 1" />
+  </material>
+  <material name="hoof">
+    <color rgba="0.25 0.2 0.36 1" />
+  </material>
+  <material name="frame">
+    <color rgba="0.25 0.32 0.4 1" />
+  </material>
+  <material name="servo">
+    <color rgba="0.14 0.17 0.2 1" />
+  </material>
+  <material name="eye">
+    <color rgba="0.1 0.08 0.19 1" />
+  </material>
+  <material name="iris">
+    <color rgba="0.22 0.88 0.32 1" />
+  </material>
+  <material name="pink">
+    <color rgba="0.91 0.57 0.74 1" />
+  </material>
+  <link name="torso_link">
+    <inertial>
+      <origin xyz="-0.014 0 0" rpy="0 0 0" />
+      <mass value="1.10084" />
+      <inertia ixx="0.0015044813333333334" iyy="0.004632701666666667" izz="0.004962953666666666" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../../cad/STL/links/torso.stl" scale=".001 .001 .001" />
+      </geometry>
+      <material name="body" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.21 0.1 0.08" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="fl_roll_link">
+    <inertial>
+      <origin xyz="0 0 -0.048" rpy="0 0 0" />
+      <mass value="0.11516" />
+      <inertia ixx="0.00012177210333333333" iyy="0.00010521785333333332" izz="6.453758333333335e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../../cad/STL/links/fl_roll.stl" scale=".001 .001 .001" />
+      </geometry>
+      <material name="body" />
+    </visual>
+    <collision>
+      <origin xyz="0 0.006 -0.043" rpy="0 0 0" />
+      <geometry>
+        <box size="0.025 0.037 0.045" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fl_hip_roll" type="revolute">
+    <parent link="torso_link" />
+    <child link="fl_roll_link" />
+    <origin xyz="0.086 0.052 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-0.55" upper="0.55" effort="1.955190875" velocity="5.69415" />
+    <dynamics damping="0.015" friction="0.018" />
+  </joint>
+  <link name="fl_thigh_link">
+    <inertial>
+      <origin xyz="0 -0.019 -0.0525" rpy="0 0 0" />
+      <mass value="0.111202" />
+      <inertia ixx="0.0001178463195" iyy="0.00010031347083333334" izz="3.651132333333333e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../../cad/STL/links/fl_thigh.stl" scale=".001 .001 .001" />
+      </geometry>
+      <material name="body" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.0375" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.012" length="0.075" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0 -0.075" rpy="0 0 0" />
+      <geometry>
+        <box size="0.035 0.025 0.031" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fl_hip_pitch" type="revolute">
+    <parent link="fl_roll_link" />
+    <child link="fl_thigh_link" />
+    <origin xyz="0 0.018 -0.042" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.5" upper="1.1" effort="1.955190875" velocity="5.69415" />
+    <dynamics damping="0.015" friction="0.018" />
+  </joint>
+  <link name="fl_shin_link">
+    <inertial>
+      <origin xyz="0 -0.004 -0.048" rpy="0 0 0" />
+      <mass value="0.054254" />
+      <inertia ixx="6.991532133333334e-05" iyy="6.056554866666666e-05" izz="2.1068636666666665e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../../cad/STL/links/fl_shin.stl" scale=".001 .001 .001" />
+      </geometry>
+      <material name="body" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.04" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.01" length="0.08" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0 -0.08" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.016" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fl_knee" type="revolute">
+    <parent link="fl_thigh_link" />
+    <child link="fl_shin_link" />
+    <origin xyz="0 0 -0.075" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="0.1" upper="2.1" effort="1.955190875" velocity="5.69415" />
+    <dynamics damping="0.015" friction="0.018" />
+  </joint>
+  <link name="fr_roll_link">
+    <inertial>
+      <origin xyz="0 0 -0.048" rpy="0 0 0" />
+      <mass value="0.11516" />
+      <inertia ixx="0.00012177210333333333" iyy="0.00010521785333333332" izz="6.453758333333335e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../../cad/STL/links/fr_roll.stl" scale=".001 .001 .001" />
+      </geometry>
+      <material name="body" />
+    </visual>
+    <collision>
+      <origin xyz="0 -0.006 -0.043" rpy="0 0 0" />
+      <geometry>
+        <box size="0.025 0.037 0.045" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fr_hip_roll" type="revolute">
+    <parent link="torso_link" />
+    <child link="fr_roll_link" />
+    <origin xyz="0.086 -0.052 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-0.55" upper="0.55" effort="1.955190875" velocity="5.69415" />
+    <dynamics damping="0.015" friction="0.018" />
+  </joint>
+  <link name="fr_thigh_link">
+    <inertial>
+      <origin xyz="0 0.019 -0.0525" rpy="0 0 0" />
+      <mass value="0.111202" />
+      <inertia ixx="0.0001178463195" iyy="0.00010031347083333334" izz="3.651132333333333e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../../cad/STL/links/fr_thigh.stl" scale=".001 .001 .001" />
+      </geometry>
+      <material name="body" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.0375" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.012" length="0.075" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0 -0.075" rpy="0 0 0" />
+      <geometry>
+        <box size="0.035 0.025 0.031" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fr_hip_pitch" type="revolute">
+    <parent link="fr_roll_link" />
+    <child link="fr_thigh_link" />
+    <origin xyz="0 -0.018 -0.042" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.5" upper="1.1" effort="1.955190875" velocity="5.69415" />
+    <dynamics damping="0.015" friction="0.018" />
+  </joint>
+  <link name="fr_shin_link">
+    <inertial>
+      <origin xyz="0 0.004 -0.048" rpy="0 0 0" />
+      <mass value="0.054254" />
+      <inertia ixx="6.991532133333334e-05" iyy="6.056554866666666e-05" izz="2.1068636666666665e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../../cad/STL/links/fr_shin.stl" scale=".001 .001 .001" />
+      </geometry>
+      <material name="body" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.04" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.01" length="0.08" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0 -0.08" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.016" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="fr_knee" type="revolute">
+    <parent link="fr_thigh_link" />
+    <child link="fr_shin_link" />
+    <origin xyz="0 0 -0.075" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="0.1" upper="2.1" effort="1.955190875" velocity="5.69415" />
+    <dynamics damping="0.015" friction="0.018" />
+  </joint>
+  <link name="rl_roll_link">
+    <inertial>
+      <origin xyz="0 0 -0.048" rpy="0 0 0" />
+      <mass value="0.11516" />
+      <inertia ixx="0.00012177210333333333" iyy="0.00010521785333333332" izz="6.453758333333335e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../../cad/STL/links/rl_roll.stl" scale=".001 .001 .001" />
+      </geometry>
+      <material name="body" />
+    </visual>
+    <collision>
+      <origin xyz="0 0.006 -0.043" rpy="0 0 0" />
+      <geometry>
+        <box size="0.025 0.037 0.045" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rl_hip_roll" type="revolute">
+    <parent link="torso_link" />
+    <child link="rl_roll_link" />
+    <origin xyz="-0.086 0.052 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-0.55" upper="0.55" effort="1.955190875" velocity="5.69415" />
+    <dynamics damping="0.015" friction="0.018" />
+  </joint>
+  <link name="rl_thigh_link">
+    <inertial>
+      <origin xyz="0 -0.019 -0.0525" rpy="0 0 0" />
+      <mass value="0.111202" />
+      <inertia ixx="0.0001178463195" iyy="0.00010031347083333334" izz="3.651132333333333e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../../cad/STL/links/rl_thigh.stl" scale=".001 .001 .001" />
+      </geometry>
+      <material name="body" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.0375" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.012" length="0.075" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0 -0.075" rpy="0 0 0" />
+      <geometry>
+        <box size="0.035 0.025 0.031" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rl_hip_pitch" type="revolute">
+    <parent link="rl_roll_link" />
+    <child link="rl_thigh_link" />
+    <origin xyz="0 0.018 -0.042" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.5" upper="1.1" effort="1.955190875" velocity="5.69415" />
+    <dynamics damping="0.015" friction="0.018" />
+  </joint>
+  <link name="rl_shin_link">
+    <inertial>
+      <origin xyz="0 -0.004 -0.048" rpy="0 0 0" />
+      <mass value="0.054254" />
+      <inertia ixx="6.991532133333334e-05" iyy="6.056554866666666e-05" izz="2.1068636666666665e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../../cad/STL/links/rl_shin.stl" scale=".001 .001 .001" />
+      </geometry>
+      <material name="body" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.04" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.01" length="0.08" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0 -0.08" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.016" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rl_knee" type="revolute">
+    <parent link="rl_thigh_link" />
+    <child link="rl_shin_link" />
+    <origin xyz="0 0 -0.075" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="0.1" upper="2.1" effort="1.955190875" velocity="5.69415" />
+    <dynamics damping="0.015" friction="0.018" />
+  </joint>
+  <link name="rr_roll_link">
+    <inertial>
+      <origin xyz="0 0 -0.048" rpy="0 0 0" />
+      <mass value="0.11516" />
+      <inertia ixx="0.00012177210333333333" iyy="0.00010521785333333332" izz="6.453758333333335e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../../cad/STL/links/rr_roll.stl" scale=".001 .001 .001" />
+      </geometry>
+      <material name="body" />
+    </visual>
+    <collision>
+      <origin xyz="0 -0.006 -0.043" rpy="0 0 0" />
+      <geometry>
+        <box size="0.025 0.037 0.045" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rr_hip_roll" type="revolute">
+    <parent link="torso_link" />
+    <child link="rr_roll_link" />
+    <origin xyz="-0.086 -0.052 0" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-0.55" upper="0.55" effort="1.955190875" velocity="5.69415" />
+    <dynamics damping="0.015" friction="0.018" />
+  </joint>
+  <link name="rr_thigh_link">
+    <inertial>
+      <origin xyz="0 0.019 -0.0525" rpy="0 0 0" />
+      <mass value="0.111202" />
+      <inertia ixx="0.0001178463195" iyy="0.00010031347083333334" izz="3.651132333333333e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../../cad/STL/links/rr_thigh.stl" scale=".001 .001 .001" />
+      </geometry>
+      <material name="body" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.0375" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.012" length="0.075" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0 -0.075" rpy="0 0 0" />
+      <geometry>
+        <box size="0.035 0.025 0.031" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rr_hip_pitch" type="revolute">
+    <parent link="rr_roll_link" />
+    <child link="rr_thigh_link" />
+    <origin xyz="0 -0.018 -0.042" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-1.5" upper="1.1" effort="1.955190875" velocity="5.69415" />
+    <dynamics damping="0.015" friction="0.018" />
+  </joint>
+  <link name="rr_shin_link">
+    <inertial>
+      <origin xyz="0 0.004 -0.048" rpy="0 0 0" />
+      <mass value="0.054254" />
+      <inertia ixx="6.991532133333334e-05" iyy="6.056554866666666e-05" izz="2.1068636666666665e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../../cad/STL/links/rr_shin.stl" scale=".001 .001 .001" />
+      </geometry>
+      <material name="body" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.04" rpy="0 0 0" />
+      <geometry>
+        <cylinder radius="0.01" length="0.08" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0 0 -0.08" rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.016" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="rr_knee" type="revolute">
+    <parent link="rr_thigh_link" />
+    <child link="rr_shin_link" />
+    <origin xyz="0 0 -0.075" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="0.1" upper="2.1" effort="1.955190875" velocity="5.69415" />
+    <dynamics damping="0.015" friction="0.018" />
+  </joint>
+  <link name="neck_yaw_link">
+    <inertial>
+      <origin xyz="0 0 0.026" rpy="0 0 0" />
+      <mass value="0.116128" />
+      <inertia ixx="7.447675733333333e-05" iyy="6.96768e-05" izz="7.447675733333333e-05" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../../cad/STL/links/neck_yaw.stl" scale=".001 .001 .001" />
+      </geometry>
+      <material name="body" />
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.027" rpy="0 0 0" />
+      <geometry>
+        <box size="0.05 0.056 0.054" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="head_yaw" type="revolute">
+    <parent link="torso_link" />
+    <child link="neck_yaw_link" />
+    <origin xyz="0.082 0 0.014" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-0.8" upper="0.8" effort="1.955190875" velocity="5.69415" />
+    <dynamics damping="0.015" friction="0.018" />
+  </joint>
+  <link name="head_link">
+    <inertial>
+      <origin xyz="0.03 0 0.035" rpy="0 0 0" />
+      <mass value="0.34015799999999996" />
+      <inertia ixx="0.00051307165" iyy="0.00062645765" izz="0.0005725992999999999" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../../cad/STL/links/head.stl" scale=".001 .001 .001" />
+      </geometry>
+      <material name="body" />
+    </visual>
+    <collision>
+      <origin xyz="0.03 0 0.038" rpy="0 0 0" />
+      <geometry>
+        <box size="0.118 0.1 0.118" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.073 0 0.014" rpy="0 0 0" />
+      <geometry>
+        <box size="0.054 0.068 0.044" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="head_pitch" type="revolute">
+    <parent link="neck_yaw_link" />
+    <child link="head_link" />
+    <origin xyz="0 0 0.044" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit lower="-0.35" upper="0.35" effort="1.955190875" velocity="5.69415" />
+    <dynamics damping="0.015" friction="0.018" />
+  </joint>
+  <link name="ear_left_link">
+    <inertial>
+      <origin xyz="0 0.004 0.04" rpy="0 0 0" />
+      <mass value="0.015885" />
+      <inertia ixx="8.948550000000001e-06" iyy="8.392575e-06" izz="1.2337349999999998e-06" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../../cad/STL/links/ear_left.stl" scale=".001 .001 .001" />
+      </geometry>
+      <material name="body" />
+    </visual>
+    <collision>
+      <origin xyz="0 0.006 0.051" rpy="0 0 0" />
+      <geometry>
+        <box size="0.016 0.026 0.048" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ear_left" type="revolute">
+    <parent link="head_link" />
+    <child link="ear_left_link" />
+    <origin xyz="0.045 0.022 0.06" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-0.25" upper="0.25" effort="1.955190875" velocity="5.69415" />
+    <dynamics damping="0.015" friction="0.018" />
+  </joint>
+  <link name="ear_right_link">
+    <inertial>
+      <origin xyz="0 -0.004 0.04" rpy="0 0 0" />
+      <mass value="0.015885" />
+      <inertia ixx="8.948550000000001e-06" iyy="8.392575e-06" izz="1.2337349999999998e-06" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="../../cad/STL/links/ear_right.stl" scale=".001 .001 .001" />
+      </geometry>
+      <material name="body" />
+    </visual>
+    <collision>
+      <origin xyz="0 -0.006 0.051" rpy="0 0 0" />
+      <geometry>
+        <box size="0.016 0.026 0.048" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="ear_right" type="revolute">
+    <parent link="head_link" />
+    <child link="ear_right_link" />
+    <origin xyz="0.045 -0.022 0.06" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+    <limit lower="-0.25" upper="0.25" effort="1.955190875" velocity="5.69415" />
+    <dynamics damping="0.015" friction="0.018" />
+  </joint>
+</robot>

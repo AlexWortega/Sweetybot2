@@ -1,0 +1,11 @@
+# Separate learning environment: Python 3.11/3.12, leaving the CAD environment intact.
+# On CUDA hosts install a Torch wheel compatible with the GPU and driver first.
+torch==2.5.1
+mujoco==3.3.7
+numpy==2.2.6
+PyYAML==6.0.3
+pybind11==2.13.6
+imageio==2.37.0
+imageio-ffmpeg==0.6.0
+# Optional for live gamepad input; keyboard and headless replay do not require pygame.
+# pygame==2.6.1

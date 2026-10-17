@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+/tmp/
+.DS_Store
+dist/
+.venv-learning/
+learning/*.so
+learning/models/
+learning/runs/
+learning/artifacts/
+learning/results/
+.run-cache/
+
+# Release-only or local preview artifacts
+cad/GLB/
+learning/checkpoints/
+*.zip
+*.zip.sha256

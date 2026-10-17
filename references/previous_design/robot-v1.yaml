@@ -1,0 +1,256 @@
+name: sweetie_mini
+revision: digital-prototype-01
+units:
+  cad: mm
+  dynamics: SI
+  angles: rad
+geometry:
+  body:
+  - 210
+  - 112
+  - 56
+  hip_x: 82
+  hip_y: 65
+  abduction_offset: 25
+  hip_drop: 25
+  thigh: 75
+  shin: 80
+  foot_radius: 16
+  stance_height: 166
+  head_origin:
+  - 85
+  - 0
+  - 45
+  neck_pitch_rise: 42
+  head_center:
+  - 37
+  - 0
+  - 38
+  head_radii:
+  - 53
+  - 43
+  - 51
+  muzzle_center:
+  - 72
+  - 0
+  - 12
+  muzzle_radii:
+  - 27
+  - 33
+  - 23
+  ear_origin:
+  - 27
+  - 34
+  - 77
+  ear_size:
+  - 25
+  - 15
+  - 45
+  shell_wall: 1.8
+  structural_wall: 3.2
+  fastener_clearance: 3.3
+  bearing_od: 10
+  bearing_bore: 3
+  bearing_width: 4
+  fit_allowance: 0.2
+mass:
+  torso_without_servos: 0.780222
+  roll_link_without_servo: 0.041854
+  thigh_without_servo: 0.033564
+  shin_and_foot: 0.053005
+  head_yaw_without_servo: 0.027994
+  head_without_servos: 0.154163
+  ear_without_servo: 0.010122
+  uncertainty_fraction: 0.2
+actuator_candidates:
+  XL330-M288:
+    voltage: 5.0
+    mass: 0.018
+    stall_torque: 0.52
+    no_load_speed: 10.786
+    stall_current: 1.47
+    envelope:
+    - 20
+    - 34
+    - 26
+    unit_usd: 27.49
+    price_status: manufacturer_snapshot
+    source: https://emanual.robotis.com/docs/en/dxl/x/xl330-m288/
+  XC330-M288:
+    voltage: 5.0
+    mass: 0.023
+    stall_torque: 0.93
+    no_load_speed: 8.482
+    stall_current: 1.8
+    envelope:
+    - 20
+    - 34
+    - 26
+    unit_usd: 103.39
+    price_status: manufacturer_snapshot
+    source: https://emanual.robotis.com/docs/en/dxl/x/xc330-m288/
+  ST3215-12V:
+    voltage: 12.0
+    voltage_range:
+    - 6.0
+    - 12.6
+    mass: 0.055
+    stall_torque: 2.942
+    no_load_speed: 4.77
+    stall_current: 2.7
+    envelope:
+    - 45.22
+    - 24.72
+    - 35
+    unit_usd: 19.99
+    price_status: planning_allowance_not_quote
+    source: https://www.waveshare.com/wiki/ST3215_Servo
+  STS3250-12V:
+    voltage: 12.0
+    voltage_range:
+    - 6.0
+    - 12.0
+    mass: 0.0745
+    stall_torque: 4.9033
+    rated_torque: 1.5691
+    no_load_speed: 7.854
+    stall_current: 4.2
+    envelope:
+    - 45.22
+    - 24.72
+    - 35.0
+    unit_usd: 44.99
+    price_status: planning_allowance_not_quote
+    source: https://www.feetechrc.com/sts_ttl_series%20servo.html
+    specification: references/STS3250-manufacturer.pdf
+selection:
+  sustained_fraction_of_stall: 0.25
+  transient_fraction_of_stall: 0.55
+  torque_margin: 1.5
+  required_joint_speed: 0.8
+  max_head_pitch: 0.35
+  load_share_worst: 0.5
+  selected: STS3250-12V
+joints:
+  hip_roll:
+    axis:
+    - 1
+    - 0
+    - 0
+    limits:
+    - -0.55
+    - 0.55
+    home: 0.0
+  hip_pitch:
+    axis:
+    - 0
+    - 1
+    - 0
+    limits:
+    - -1.5
+    - 1.1
+    home: -0.55
+  knee:
+    axis:
+    - 0
+    - 1
+    - 0
+    limits:
+    - 0.1
+    - 2.1
+    home: 1.05
+  head_yaw:
+    axis:
+    - 0
+    - 0
+    - 1
+    limits:
+    - -0.8
+    - 0.8
+    home: 0.0
+  head_pitch:
+    axis:
+    - 0
+    - 1
+    - 0
+    limits:
+    - -0.35
+    - 0.35
+    home: 0.0
+  ear:
+    axis:
+    - 1
+    - 0
+    - 0
+    limits:
+    - -0.6
+    - 0.6
+    home: 0.0
+legs:
+  fl:
+    x_sign: 1
+    y_sign: 1
+    ids:
+    - 1
+    - 2
+    - 3
+  fr:
+    x_sign: 1
+    y_sign: -1
+    ids:
+    - 4
+    - 5
+    - 6
+  rl:
+    x_sign: -1
+    y_sign: 1
+    ids:
+    - 7
+    - 8
+    - 9
+  rr:
+    x_sign: -1
+    y_sign: -1
+    ids:
+    - 10
+    - 11
+    - 12
+expression_ids:
+  head_yaw: 13
+  head_pitch: 14
+  ear_left: 15
+  ear_right: 16
+power:
+  battery:
+    chemistry: LiFePO4
+    cells: 3
+    nominal_voltage: 9.9
+    max_voltage: 10.8
+    cutoff_voltage: 8.7
+    capacity_ah: 2.5
+    c_rating: 20
+    pack_mass_kg: 0.28
+    envelope_mm:
+    - 82
+    - 70
+    - 30
+    source: https://lithiumwerks.com/products/lithium-ion-26650-cells/
+  main_fuse_a: 25
+  leg_branch_fuse_a: 7.5
+  head_branch_fuse_a: 5
+  logic_voltage: 5.0
+  logic_regulator_a: 3.0
+  usable_energy_fraction: 0.75
+  assumed_average_servo_current_a: 0.25
+  electronics_w: 5.0
+control:
+  policy_hz: 50
+  physics_hz: 500
+  kp: 12.0
+  kd: 0.45
+  command_timeout_s: 0.25
+  initial_delay_ticks: 1
+  friction_coefficient: 0.9
+  backlash_rad: 0.0174533
+  joint_viscous_friction: 0.015
+  joint_coulomb_friction: 0.018

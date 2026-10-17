@@ -1,0 +1,34 @@
+[submodule "config/sweetie_bot_proto2_description"]
+	path = config/sweetie_bot_proto2_description
+	url = ../sweetie_bot_proto2_description.git
+	branch = master
+[submodule "config/sweetie_bot_proto3_description"]
+	path = config/sweetie_bot_proto3_description
+	url = ../sweetie_bot_proto3_description.git
+	branch = devel
+[submodule "rt_control"]
+	path = rt_control
+	url = ../sweetie_bot_rt_control.git
+	branch = master
+[submodule "inc/towr"]
+	path = inc/towr
+	url = https://github.com/sweetie-bot-project/towr
+[submodule "inc/ifopt"]
+	path = inc/ifopt
+	url = https://github.com/sweetie-bot-project/ifopt
+[submodule "inc/rtimulib2"]
+	path = inc/rtimulib2
+	url = https://github.com/sweetie-bot-project/RTIMULib2
+	branch = master
+[submodule "config/sweetie_bot_proto3_movements"]
+	path = config/sweetie_bot_proto3_movements
+	url = ../sweetie_bot_proto3_movements.git
+[submodule "config/sweetie_bot_proto2_movements"]
+	path = config/sweetie_bot_proto2_movements
+	url = ../sweetie_bot_proto2_movements.git
+[submodule "behavior/sweetie_bot_vision"]
+	path = behavior/sweetie_bot_vision
+	url = ../sweetie_bot_vision.git
+[submodule "hmi/sweetie_bot_motor_state_viewer"]
+	path = hmi/sweetie_bot_motor_state_viewer
+	url = ../sweetie_bot_motor_state_viewer.git

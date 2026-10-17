@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="900" viewBox="0 0 1300 900">
+<style>text{font-family:Arial,sans-serif;fill:#1e293b} .title{font-size:28px;font-weight:bold}.h{font-size:18px;font-weight:bold}.s{font-size:15px}.box{fill:#f1f5f9;stroke:#94a3b8;stroke-width:2}.power{stroke:#e07040;stroke-width:4;fill:none}.data{stroke:#6378b6;stroke-width:3;fill:none;stroke-dasharray:8 4}</style>
+<rect width="1300" height="900" fill="#fff"/><text x="40" y="50" class="title">Sweetie Mini · power and control architecture</text>
+<text x="40" y="80" class="s">Design specification · common ground · STS3250 + 3S LiFePO4 only · physical pinout must be verified</text>
+<g class="box"><rect x="40" y="130" width="240" height="90" rx="12"/><rect x="360" y="130" width="240" height="90" rx="12"/><rect x="680" y="130" width="250" height="90" rx="12"/><rect x="1010" y="130" width="240" height="90" rx="12"/>
+<rect x="680" y="300" width="250" height="75" rx="12"/><rect x="1010" y="300" width="240" height="75" rx="12"/>
+<rect x="40" y="480" width="240" height="90" rx="12"/><rect x="360" y="480" width="240" height="90" rx="12"/><rect x="680" y="480" width="250" height="90" rx="12"/><rect x="1010" y="480" width="240" height="90" rx="12"/>
+<rect x="360" y="660" width="240" height="75" rx="12"/><rect x="680" y="660" width="250" height="75" rx="12"/></g>
+<g class="h"><text x="60" y="165">3S LiFePO4 · 2500mAh</text><text x="380" y="165">25A fuse + master</text><text x="700" y="165">Motor disconnect</text><text x="1030" y="165">Fused distribution</text><text x="700" y="330">5V buck · 3A budget</text><text x="1030" y="330">12 leg + 4 head servos</text><text x="60" y="515">Robot control process</text><text x="380" y="515">Pi Zero 2 W</text><text x="700" y="515">USB / TTL adapter</text><text x="1030" y="515">ST data bus · 1Mbps</text><text x="380" y="690">ICM-20948 · I²C</text><text x="700" y="690">2 × ST7789 · SPI</text></g>
+<g class="s"><text x="60" y="194">8.7V stop / 10.8V full</text><text x="380" y="194">main cable: 16AWG budget</text><text x="700" y="194">latching, DC-current-rated</text><text x="1030" y="194">legs 7.5A / head 5A</text><text x="700" y="355">own 2A input fuse</text><text x="1030" y="355">parallel power injections</text><text x="60" y="545">single writer + deadman</text><text x="380" y="545">logic survives motor stop</text><text x="700" y="545">USB data / logic power</text><text x="1030" y="545">daisy data, short branches</text></g>
+<path class="power" d="M280 175H360 M600 175H680 M930 175H1010 M1130 220V300 M630 175V337H680 M805 375V420H480V480"/>
+<path class="data" d="M280 525H360 M600 525H680 M930 525H1010 M1130 480V375 M480 570V660 M600 550H640V697H680"/>
+<text x="40" y="795" class="h">Power is parallel. Motor current must not pass through the Pi or a long chain of servo headers.</text>
+<text x="40" y="830" class="s">USB 5V, SPI 3.3V and I²C 3.3V are logic rails. Never connect battery voltage to a GPIO or logic power input.</text>
+<text x="40" y="860" class="s">67.2A total stall exceeds the fuse rating. A simultaneous stall is a fault; fuses are not an active torque limiter.</text></svg>

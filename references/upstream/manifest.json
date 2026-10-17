@@ -1,0 +1,95 @@
+{
+  "sweetie_bot": {
+    "repository": "sweetie-bot-project/sweetie_bot",
+    "requested_branch": "master",
+    "commit": "ab50ddc9e9c5717204c3db32469aea76752945de",
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://raw.githubusercontent.com/sweetie-bot-project/sweetie_bot/ab50ddc9e9c5717204c3db32469aea76752945de/README.md",
+        "sha256": "f071274f0cdd0b2773cf161e4311350bf3c5ae506531b7ba8511e94f97e16852"
+      },
+      {
+        "path": ".gitmodules",
+        "url": "https://raw.githubusercontent.com/sweetie-bot-project/sweetie_bot/ab50ddc9e9c5717204c3db32469aea76752945de/.gitmodules",
+        "sha256": "0939d517d424e4435691120c0e9aa43ae8ba0565cd00a7e987ffc9cff3c58b4c"
+      },
+      {
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/sweetie-bot-project/sweetie_bot/ab50ddc9e9c5717204c3db32469aea76752945de/LICENSE",
+        "sha256": "c20a662c7d2a7a2da33a04aa22514a1041ef8fbd97297d28b01f61cf65ad502c"
+      },
+      {
+        "path": "config/sweetie_bot_proto2_deploy/README.md",
+        "url": "https://raw.githubusercontent.com/sweetie-bot-project/sweetie_bot/ab50ddc9e9c5717204c3db32469aea76752945de/config/sweetie_bot_proto2_deploy/README.md",
+        "sha256": "f67005702fe61880dd72c6476be90fc2bad2fce98221c9b59f5b3cbc64cf5c39"
+      }
+    ]
+  },
+  "sweetie_proto2": {
+    "repository": "sweetie-bot-project/sweetie_bot_proto2_description",
+    "requested_branch": "master",
+    "commit": "789aaff15b9871baf46214750b3491824709a322",
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://raw.githubusercontent.com/sweetie-bot-project/sweetie_bot_proto2_description/789aaff15b9871baf46214750b3491824709a322/README.md",
+        "sha256": "1d345366dd5e3d7472ee50c48228e02a6406a550c1e74cd5e2c2ae04baefd285"
+      },
+      {
+        "path": "urdf/sweetie_bot_proto2_description_dynamics.urdf",
+        "url": "https://raw.githubusercontent.com/sweetie-bot-project/sweetie_bot_proto2_description/789aaff15b9871baf46214750b3491824709a322/urdf/sweetie_bot_proto2_description_dynamics.urdf",
+        "sha256": "bbb9f7b2bda5654a24223ae16d0f12be39ed507b49427583fca28db7d5891c58"
+      }
+    ]
+  },
+  "microduck": {
+    "repository": "pollen-robotics/microduck",
+    "requested_branch": "main",
+    "commit": "53230463927095ea890f231d29089bb0a538c06f",
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://raw.githubusercontent.com/pollen-robotics/microduck/53230463927095ea890f231d29089bb0a538c06f/README.md",
+        "sha256": "28b4c4c092b1a6cf09796290cdd0398210a14e17ea88a23ef262704c4e0d3678"
+      },
+      {
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/pollen-robotics/microduck/53230463927095ea890f231d29089bb0a538c06f/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "path": "docs/design/architecture.md",
+        "url": "https://raw.githubusercontent.com/pollen-robotics/microduck/53230463927095ea890f231d29089bb0a538c06f/docs/design/architecture.md",
+        "sha256": "91831909e910085eaf44fe1ad0b438a4091de66998a28b145ddbcdc2708b0505"
+      },
+      {
+        "path": "docs/design/robotd-design.md",
+        "url": "https://raw.githubusercontent.com/pollen-robotics/microduck/53230463927095ea890f231d29089bb0a538c06f/docs/design/robotd-design.md",
+        "sha256": "37c1ee8a7c80b492d190f34d5de27b736ad237aede0a5c06916013566192af04"
+      }
+    ]
+  },
+  "microduck_rl": {
+    "repository": "pollen-robotics/microduck_rl",
+    "requested_branch": "main",
+    "commit": "1e79c29c97d8b38aee9eefde77a545860ba7658e",
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://raw.githubusercontent.com/pollen-robotics/microduck_rl/1e79c29c97d8b38aee9eefde77a545860ba7658e/README.md",
+        "sha256": "cac2fb08c302f3b282d0f6acc4ca56f2a151be60becc20f08b84dc7913658259"
+      },
+      {
+        "path": "LICENSE",
+        "url": "https://raw.githubusercontent.com/pollen-robotics/microduck_rl/1e79c29c97d8b38aee9eefde77a545860ba7658e/LICENSE",
+        "sha256": "2d3fd9ffffa70a4307498ec630b14a6b4731e010f8ddda92686eaf65733c2dfe"
+      },
+      {
+        "path": "src/mjlab_microduck/robot/microduck/config_mjcf_walk.json",
+        "url": "https://raw.githubusercontent.com/pollen-robotics/microduck_rl/1e79c29c97d8b38aee9eefde77a545860ba7658e/src/mjlab_microduck/robot/microduck/config_mjcf_walk.json",
+        "sha256": "31fdf5bd061170fb41729b3a82a7780e772121ec566625c5a6bf849b890b31f9"
+      }
+    ]
+  }
+}

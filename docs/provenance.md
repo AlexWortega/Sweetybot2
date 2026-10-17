@@ -1,0 +1,13 @@
+# Sources, assumptions and reuse
+
+The requested repositories are retained as small, read-only reference snapshots in `references/upstream/`, identified by commit and SHA-256 in its manifest. The fetch script never executes upstream code. Sweetie Bot's repository is a software/control repository; its Proto2 URDF is a separate repository. The redesign is newly authored parametric geometry, not a scaled vendor robot mesh.
+
+Microduck informed the compact smart-servo approach, shared command authority, hardware-aware simulation and maintainability. Its trained networks, custom IMU board, full controller and CAD were not copied into this design. Microduck hardware/model licensing differs from its software license; upstream references retain their respective notices. A product license for the newly authored project has not been selected automatically.
+
+Manufacturer specifications: [STS3250 manufacturer specification](../references/STS3250-manufacturer.pdf), [ST3215 comparison](https://www.waveshare.com/wiki/ST3215_Servo), [XL330](https://emanual.robotis.com/docs/en/dxl/x/xl330-m288/), [XC330](https://emanual.robotis.com/docs/en/dxl/x/xc330-m288/). Manufacturer product-page snapshots are saved for the two Dynamixel price comparisons. STS3250 and most BOM costs are explicitly planning allowances; supplier prices and regional availability are not confirmed.
+
+The STS3250 catalog STEP, 623ZZ bearing and M3 screw were downloaded from step.parts and SHA-256 checked. Records and source URLs are in `references/catalog_parts.json`. The servo model is used in the assembly. Bearings/screws remain reference inputs for fit work; simplified support geometry is used instead of pretending complete fastener assembly has been validated. Searches for the exact electronics and battery produced no matching catalog records; `references/catalog_searches.json` records those misses and their layout envelopes remain provisional.
+
+All engineering assumptions live beside their results: config masses, COM/inertia approximations, provisional stall fractions, low-battery scaling, uncalibrated actuator dynamics, approximate collision bodies and build tolerances. Simulation is a demonstrator with a restricted indoor operating envelope, not independent evidence of manufacturing or hardware performance.
+
+Revision 02 additionally uses official Sweetie Bot photos as appearance references (short neck, rounded torso, horn, green eyes and pastel forelock). Source URLs and hashes are recorded in `references/appearance/manifest.json`. These images are reference material from the original project; the new geometry is authored here. The selected revision-01 comparison files are archived under `references/previous_design/`.

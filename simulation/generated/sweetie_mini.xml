@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="sweetie_mini">
+  <compiler angle="radian" inertiafromgeom="false" autolimits="true" />
+  <option timestep="0.002" gravity="0 0 -9.81" integrator="implicitfast" iterations="70" />
+  <visual>
+    <global offwidth="1200" offheight="900" />
+  </visual>
+  <default>
+    <joint damping="0.015" armature=".00006" frictionloss="0.018" />
+    <geom friction="0.9 .015 .001" solref=".008 1" solimp=".95 .99 .001" condim="4" />
+  </default>
+  <worldbody>
+    <light pos="0 -1 2" dir="0 0 -1" />
+    <light pos="1 1 1.8" diffuse=".5 .5 .5" />
+    <geom name="floor" type="plane" size="5 5 .1" rgba=".87 .88 .91 1" />
+    <body name="torso" pos="0 0 0.199">
+      <freejoint name="root" />
+      <inertial mass="1.10084" pos="-0.014 0 0" diaginertia="0.001504481333 0.004632701667 0.004962953667" />
+      <geom name="torso_cad" type="mesh" mesh="torso_visual" contype="0" conaffinity="0" group="1" rgba="0.93 0.94 0.98 1" />
+      <geom name="torso_g0" type="ellipsoid" rgba="0 0 0 0" pos="0 0 0" size="0.105 0.05 0.04" group="3" />
+      <geom name="torso_g1" type="ellipsoid" rgba="0 0 0 0" pos="-0.108 0 0.015" size="0.017 0.018 0.045" group="1" contype="0" conaffinity="0" />
+      <geom name="torso_g2" type="ellipsoid" rgba="0 0 0 0" pos="-0.108 0 -0.018" size="0.013 0.019 0.02" group="1" contype="0" conaffinity="0" />
+      <body name="fl_roll" pos="0.086 0.052 0">
+        <joint name="fl_hip_roll" type="hinge" axis="1 0 0" range="-0.55 0.55" />
+        <inertial mass="0.11516" pos="0 0 -0.048" diaginertia="0.0001217721033 0.0001052178533 6.453758333e-05" />
+        <geom name="fl_roll_cad" type="mesh" mesh="fl_roll_visual" contype="0" conaffinity="0" group="1" rgba="0.93 0.94 0.98 1" />
+        <geom name="fl_roll_g0" type="box" rgba="0 0 0 0" pos="0 0.006 -0.043" size="0.0125 0.0185 0.0225" group="3" />
+        <body name="fl_thigh" pos="0 0.018 -0.042">
+          <joint name="fl_hip_pitch" type="hinge" axis="0 1 0" range="-1.5 1.1" />
+          <inertial mass="0.111202" pos="0 -0.019 -0.0525" diaginertia="0.0001178463195 0.0001003134708 3.651132333e-05" />
+          <geom name="fl_thigh_cad" type="mesh" mesh="fl_thigh_visual" contype="0" conaffinity="0" group="1" rgba="0.93 0.94 0.98 1" />
+          <geom name="fl_thigh_g0" type="capsule" rgba="0 0 0 0" fromto="0 0 0 0 0 -0.075" size="0.012" group="3" />
+          <geom name="fl_thigh_g1" type="box" rgba="0 0 0 0" pos="0 0 -0.075" size="0.0175 0.0125 0.0155" group="3" />
+          <body name="fl_shin" pos="0 0 -0.075">
+            <joint name="fl_knee" type="hinge" axis="0 1 0" range="0.1 2.1" />
+            <inertial mass="0.054254" pos="0 -0.004 -0.048" diaginertia="6.991532133e-05 6.056554867e-05 2.106863667e-05" />
+            <geom name="fl_shin_cad" type="mesh" mesh="fl_shin_visual" contype="0" conaffinity="0" group="1" rgba="0.93 0.94 0.98 1" />
+            <geom name="fl_shin_g0" type="capsule" rgba="0 0 0 0" fromto="0 0 0 0 0 -0.08" size="0.01" group="3" />
+            <geom name="fl_shin_g1" type="sphere" rgba="0 0 0 0" pos="0 0 -0.08" size="0.016" group="3" />
+            <site name="fl_foot" pos="0 0 -0.08" size=".003" />
+          </body>
+        </body>
+      </body>
+      <body name="fr_roll" pos="0.086 -0.052 0">
+        <joint name="fr_hip_roll" type="hinge" axis="1 0 0" range="-0.55 0.55" />
+        <inertial mass="0.11516" pos="0 0 -0.048" diaginertia="0.0001217721033 0.0001052178533 6.453758333e-05" />
+        <geom name="fr_roll_cad" type="mesh" mesh="fr_roll_visual" contype="0" conaffinity="0" group="1" rgba="0.93 0.94 0.98 1" />
+        <geom name="fr_roll_g0" type="box" rgba="0 0 0 0" pos="0 -0.006 -0.043" size="0.0125 0.0185 0.0225" group="3" />
+        <body name="fr_thigh" pos="0 -0.018 -0.042">
+          <joint name="fr_hip_pitch" type="hinge" axis="0 1 0" range="-1.5 1.1" />
+          <inertial mass="0.111202" pos="0 0.019 -0.0525" diaginertia="0.0001178463195 0.0001003134708 3.651132333e-05" />
+          <geom name="fr_thigh_cad" type="mesh" mesh="fr_thigh_visual" contype="0" conaffinity="0" group="1" rgba="0.93 0.94 0.98 1" />
+          <geom name="fr_thigh_g0" type="capsule" rgba="0 0 0 0" fromto="0 0 0 0 0 -0.075" size="0.012" group="3" />
+          <geom name="fr_thigh_g1" type="box" rgba="0 0 0 0" pos="0 0 -0.075" size="0.0175 0.0125 0.0155" group="3" />
+          <body name="fr_shin" pos="0 0 -0.075">
+            <joint name="fr_knee" type="hinge" axis="0 1 0" range="0.1 2.1" />
+            <inertial mass="0.054254" pos="0 0.004 -0.048" diaginertia="6.991532133e-05 6.056554867e-05 2.106863667e-05" />
+            <geom name="fr_shin_cad" type="mesh" mesh="fr_shin_visual" contype="0" conaffinity="0" group="1" rgba="0.93 0.94 0.98 1" />
+            <geom name="fr_shin_g0" type="capsule" rgba="0 0 0 0" fromto="0 0 0 0 0 -0.08" size="0.01" group="3" />
+            <geom name="fr_shin_g1" type="sphere" rgba="0 0 0 0" pos="0 0 -0.08" size="0.016" group="3" />
+            <site name="fr_foot" pos="0 0 -0.08" size=".003" />
+          </body>
+        </body>
+      </body>
+      <body name="rl_roll" pos="-0.086 0.052 0">
+        <joint name="rl_hip_roll" type="hinge" axis="1 0 0" range="-0.55 0.55" />
+        <inertial mass="0.11516" pos="0 0 -0.048" diaginertia="0.0001217721033 0.0001052178533 6.453758333e-05" />
+        <geom name="rl_roll_cad" type="mesh" mesh="rl_roll_visual" contype="0" conaffinity="0" group="1" rgba="0.93 0.94 0.98 1" />
+        <geom name="rl_roll_g0" type="box" rgba="0 0 0 0" pos="0 0.006 -0.043" size="0.0125 0.0185 0.0225" group="3" />
+        <body name="rl_thigh" pos="0 0.018 -0.042">
+          <joint name="rl_hip_pitch" type="hinge" axis="0 1 0" range="-1.5 1.1" />
+          <inertial mass="0.111202" pos="0 -0.019 -0.0525" diaginertia="0.0001178463195 0.0001003134708 3.651132333e-05" />
+          <geom name="rl_thigh_cad" type="mesh" mesh="rl_thigh_visual" contype="0" conaffinity="0" group="1" rgba="0.93 0.94 0.98 1" />
+          <geom name="rl_thigh_g0" type="capsule" rgba="0 0 0 0" fromto="0 0 0 0 0 -0.075" size="0.012" group="3" />
+          <geom name="rl_thigh_g1" type="box" rgba="0 0 0 0" pos="0 0 -0.075" size="0.0175 0.0125 0.0155" group="3" />
+          <body name="rl_shin" pos="0 0 -0.075">
+            <joint name="rl_knee" type="hinge" axis="0 1 0" range="0.1 2.1" />
+            <inertial mass="0.054254" pos="0 -0.004 -0.048" diaginertia="6.991532133e-05 6.056554867e-05 2.106863667e-05" />
+            <geom name="rl_shin_cad" type="mesh" mesh="rl_shin_visual" contype="0" conaffinity="0" group="1" rgba="0.93 0.94 0.98 1" />
+            <geom name="rl_shin_g0" type="capsule" rgba="0 0 0 0" fromto="0 0 0 0 0 -0.08" size="0.01" group="3" />
+            <geom name="rl_shin_g1" type="sphere" rgba="0 0 0 0" pos="0 0 -0.08" size="0.016" group="3" />
+            <site name="rl_foot" pos="0 0 -0.08" size=".003" />
+          </body>
+        </body>
+      </body>
+      <body name="rr_roll" pos="-0.086 -0.052 0">
+        <joint name="rr_hip_roll" type="hinge" axis="1 0 0" range="-0.55 0.55" />
+        <inertial mass="0.11516" pos="0 0 -0.048" diaginertia="0.0001217721033 0.0001052178533 6.453758333e-05" />
+        <geom name="rr_roll_cad" type="mesh" mesh="rr_roll_visual" contype="0" conaffinity="0" group="1" rgba="0.93 0.94 0.98 1" />
+        <geom name="rr_roll_g0" type="box" rgba="0 0 0 0" pos="0 -0.006 -0.043" size="0.0125 0.0185 0.0225" group="3" />
+        <body name="rr_thigh" pos="0 -0.018 -0.042">
+          <joint name="rr_hip_pitch" type="hinge" axis="0 1 0" range="-1.5 1.1" />
+          <inertial mass="0.111202" pos="0 0.019 -0.0525" diaginertia="0.0001178463195 0.0001003134708 3.651132333e-05" />
+          <geom name="rr_thigh_cad" type="mesh" mesh="rr_thigh_visual" contype="0" conaffinity="0" group="1" rgba="0.93 0.94 0.98 1" />
+          <geom name="rr_thigh_g0" type="capsule" rgba="0 0 0 0" fromto="0 0 0 0 0 -0.075" size="0.012" group="3" />
+          <geom name="rr_thigh_g1" type="box" rgba="0 0 0 0" pos="0 0 -0.075" size="0.0175 0.0125 0.0155" group="3" />
+          <body name="rr_shin" pos="0 0 -0.075">
+            <joint name="rr_knee" type="hinge" axis="0 1 0" range="0.1 2.1" />
+            <inertial mass="0.054254" pos="0 0.004 -0.048" diaginertia="6.991532133e-05 6.056554867e-05 2.106863667e-05" />
+            <geom name="rr_shin_cad" type="mesh" mesh="rr_shin_visual" contype="0" conaffinity="0" group="1" rgba="0.93 0.94 0.98 1" />
+            <geom name="rr_shin_g0" type="capsule" rgba="0 0 0 0" fromto="0 0 0 0 0 -0.08" size="0.01" group="3" />
+            <geom name="rr_shin_g1" type="sphere" rgba="0 0 0 0" pos="0 0 -0.08" size="0.016" group="3" />
+            <site name="rr_foot" pos="0 0 -0.08" size=".003" />
+          </body>
+        </body>
+      </body>
+      <body name="neck_yaw" pos="0.082 0 0.014">
+        <joint name="head_yaw" type="hinge" axis="0 0 1" range="-0.8 0.8" />
+        <inertial mass="0.116128" pos="0 0 0.026" diaginertia="7.447675733e-05 6.96768e-05 7.447675733e-05" />
+        <geom name="neck_yaw_cad" type="mesh" mesh="neck_yaw_visual" contype="0" conaffinity="0" group="1" rgba="0.93 0.94 0.98 1" />
+        <geom name="neck_yaw_g0" type="box" rgba="0 0 0 0" pos="0 0 0.027" size="0.025 0.028 0.027" group="3" />
+        <body name="head" pos="0 0 0.044">
+          <joint name="head_pitch" type="hinge" axis="0 1 0" range="-0.35 0.35" />
+          <inertial mass="0.34015799999999996" pos="0.03 0 0.035" diaginertia="0.00051307165 0.00062645765 0.0005725993" />
+          <geom name="head_cad" type="mesh" mesh="head_visual" contype="0" conaffinity="0" group="1" rgba="0.93 0.94 0.98 1" />
+          <geom name="head_g0" type="ellipsoid" rgba="0 0 0 0" pos="0.03 0 0.038" size="0.059 0.05 0.059" group="3" />
+          <geom name="head_g1" type="ellipsoid" rgba="0 0 0 0" pos="0.073 0 0.014" size="0.027 0.034 0.022" group="3" />
+          <geom name="head_g2" type="ellipsoid" rgba="0 0 0 0" pos="0.053 0.037 0.041" size="0.025 0.017 0.028" group="1" contype="0" conaffinity="0" />
+          <geom name="head_g3" type="ellipsoid" rgba="0 0 0 0" pos="0.053 -0.037 0.041" size="0.025 0.017 0.028" group="1" contype="0" conaffinity="0" />
+          <geom name="head_g4" type="ellipsoid" rgba="0 0 0 0" pos="0.058 0.051 0.041" size="0.014 0.006 0.02" group="1" contype="0" conaffinity="0" />
+          <geom name="head_g5" type="ellipsoid" rgba="0 0 0 0" pos="0.058 -0.051 0.041" size="0.014 0.006 0.02" group="1" contype="0" conaffinity="0" />
+          <geom name="head_g6" type="ellipsoid" rgba="0 0 0 0" pos="-0.004 0 0.055" size="0.02 0.036 0.041" group="1" contype="0" conaffinity="0" />
+          <geom name="head_g7" type="capsule" rgba="0 0 0 0" fromto="0.048 0 0.088 0.048 0 0.121" size="0.008" group="1" contype="0" conaffinity="0" />
+          <body name="ear_left" pos="0.045 0.022 0.06">
+            <joint name="ear_left" type="hinge" axis="1 0 0" range="-0.25 0.25" />
+            <inertial mass="0.015885" pos="0 0.004 0.04" diaginertia="8.94855e-06 8.392575e-06 1.233735e-06" />
+            <geom name="ear_left_cad" type="mesh" mesh="ear_left_visual" contype="0" conaffinity="0" group="1" rgba="0.93 0.94 0.98 1" />
+            <geom name="ear_left_g0" type="ellipsoid" rgba="0 0 0 0" pos="0 0.006 0.051" size="0.008 0.013 0.024" group="3" />
+            <geom name="ear_left_g1" type="ellipsoid" rgba="0 0 0 0" pos="0.007 0 0.021" size="0.008 0.003 0.016" group="1" contype="0" conaffinity="0" />
+          </body>
+          <body name="ear_right" pos="0.045 -0.022 0.06">
+            <joint name="ear_right" type="hinge" axis="1 0 0" range="-0.25 0.25" />
+            <inertial mass="0.015885" pos="0 -0.004 0.04" diaginertia="8.94855e-06 8.392575e-06 1.233735e-06" />
+            <geom name="ear_right_cad" type="mesh" mesh="ear_right_visual" contype="0" conaffinity="0" group="1" rgba="0.93 0.94 0.98 1" />
+            <geom name="ear_right_g0" type="ellipsoid" rgba="0 0 0 0" pos="0 -0.006 0.051" size="0.008 0.013 0.024" group="3" />
+            <geom name="ear_right_g1" type="ellipsoid" rgba="0 0 0 0" pos="0.007 0 0.021" size="0.008 0.003 0.016" group="1" contype="0" conaffinity="0" />
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <asset>
+    <mesh name="torso_visual" file="../../cad/STL/links/torso.msh" scale=".001 .001 .001" />
+    <mesh name="fl_roll_visual" file="../../cad/STL/links/fl_roll.msh" scale=".001 .001 .001" />
+    <mesh name="fl_thigh_visual" file="../../cad/STL/links/fl_thigh.msh" scale=".001 .001 .001" />
+    <mesh name="fl_shin_visual" file="../../cad/STL/links/fl_shin.msh" scale=".001 .001 .001" />
+    <mesh name="fr_roll_visual" file="../../cad/STL/links/fr_roll.msh" scale=".001 .001 .001" />
+    <mesh name="fr_thigh_visual" file="../../cad/STL/links/fr_thigh.msh" scale=".001 .001 .001" />
+    <mesh name="fr_shin_visual" file="../../cad/STL/links/fr_shin.msh" scale=".001 .001 .001" />
+    <mesh name="rl_roll_visual" file="../../cad/STL/links/rl_roll.msh" scale=".001 .001 .001" />
+    <mesh name="rl_thigh_visual" file="../../cad/STL/links/rl_thigh.msh" scale=".001 .001 .001" />
+    <mesh name="rl_shin_visual" file="../../cad/STL/links/rl_shin.msh" scale=".001 .001 .001" />
+    <mesh name="rr_roll_visual" file="../../cad/STL/links/rr_roll.msh" scale=".001 .001 .001" />
+    <mesh name="rr_thigh_visual" file="../../cad/STL/links/rr_thigh.msh" scale=".001 .001 .001" />
+    <mesh name="rr_shin_visual" file="../../cad/STL/links/rr_shin.msh" scale=".001 .001 .001" />
+    <mesh name="neck_yaw_visual" file="../../cad/STL/links/neck_yaw.msh" scale=".001 .001 .001" />
+    <mesh name="head_visual" file="../../cad/STL/links/head.msh" scale=".001 .001 .001" />
+    <mesh name="ear_left_visual" file="../../cad/STL/links/ear_left.msh" scale=".001 .001 .001" />
+    <mesh name="ear_right_visual" file="../../cad/STL/links/ear_right.msh" scale=".001 .001 .001" />
+  </asset>
+  <actuator>
+    <motor name="fl_hip_roll" joint="fl_hip_roll" gear="1" ctrllimited="true" ctrlrange="-4.9033 4.9033" />
+    <motor name="fl_hip_pitch" joint="fl_hip_pitch" gear="1" ctrllimited="true" ctrlrange="-4.9033 4.9033" />
+    <motor name="fl_knee" joint="fl_knee" gear="1" ctrllimited="true" ctrlrange="-4.9033 4.9033" />
+    <motor name="fr_hip_roll" joint="fr_hip_roll" gear="1" ctrllimited="true" ctrlrange="-4.9033 4.9033" />
+    <motor name="fr_hip_pitch" joint="fr_hip_pitch" gear="1" ctrllimited="true" ctrlrange="-4.9033 4.9033" />
+    <motor name="fr_knee" joint="fr_knee" gear="1" ctrllimited="true" ctrlrange="-4.9033 4.9033" />
+    <motor name="rl_hip_roll" joint="rl_hip_roll" gear="1" ctrllimited="true" ctrlrange="-4.9033 4.9033" />
+    <motor name="rl_hip_pitch" joint="rl_hip_pitch" gear="1" ctrllimited="true" ctrlrange="-4.9033 4.9033" />
+    <motor name="rl_knee" joint="rl_knee" gear="1" ctrllimited="true" ctrlrange="-4.9033 4.9033" />
+    <motor name="rr_hip_roll" joint="rr_hip_roll" gear="1" ctrllimited="true" ctrlrange="-4.9033 4.9033" />
+    <motor name="rr_hip_pitch" joint="rr_hip_pitch" gear="1" ctrllimited="true" ctrlrange="-4.9033 4.9033" />
+    <motor name="rr_knee" joint="rr_knee" gear="1" ctrllimited="true" ctrlrange="-4.9033 4.9033" />
+    <motor name="head_yaw" joint="head_yaw" gear="1" ctrllimited="true" ctrlrange="-4.9033 4.9033" />
+    <motor name="head_pitch" joint="head_pitch" gear="1" ctrllimited="true" ctrlrange="-4.9033 4.9033" />
+    <motor name="ear_left" joint="ear_left" gear="1" ctrllimited="true" ctrlrange="-4.9033 4.9033" />
+    <motor name="ear_right" joint="ear_right" gear="1" ctrllimited="true" ctrlrange="-4.9033 4.9033" />
+  </actuator>
+  <keyframe>
+    <key name="stand" qpos="0 0 0.199 1 0 0 0 0 -0.4432630809 0.8570547557 0 -0.4432630809 0.8570547557 0 -0.4432630809 0.8570547557 0 -0.4432630809 0.8570547557 0 0 0 0" />
+  </keyframe>
+</mujoco>

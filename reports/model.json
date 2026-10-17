@@ -1,0 +1,1001 @@
+{
+  "links": [
+    {
+      "name": "torso",
+      "parent": null,
+      "origin": [
+        0,
+        0,
+        0
+      ],
+      "joint": null,
+      "mass": 1.10084,
+      "com": [
+        -0.014,
+        0,
+        0
+      ],
+      "inertia": [
+        0.0015044813333333334,
+        0.004632701666666667,
+        0.004962953666666666
+      ],
+      "geoms": [
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.105,
+            0.05,
+            0.04
+          ],
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "color": "body",
+          "collision": true
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.017,
+            0.018,
+            0.045
+          ],
+          "pos": [
+            -0.108,
+            0,
+            0.015
+          ],
+          "color": "mane",
+          "collision": false
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.013,
+            0.019,
+            0.02
+          ],
+          "pos": [
+            -0.108,
+            0,
+            -0.018
+          ],
+          "color": "mane",
+          "collision": false
+        }
+      ]
+    },
+    {
+      "name": "fl_roll",
+      "parent": "torso",
+      "origin": [
+        0.086,
+        0.052,
+        0
+      ],
+      "joint": "fl_hip_roll",
+      "mass": 0.11516,
+      "com": [
+        0,
+        0,
+        -0.048
+      ],
+      "inertia": [
+        0.00012177210333333333,
+        0.00010521785333333332,
+        6.453758333333335e-05
+      ],
+      "geoms": [
+        {
+          "kind": "box",
+          "size": [
+            0.025,
+            0.037,
+            0.045
+          ],
+          "pos": [
+            0,
+            0.006,
+            -0.043
+          ],
+          "color": "servo",
+          "collision": true
+        }
+      ]
+    },
+    {
+      "name": "fl_thigh",
+      "parent": "fl_roll",
+      "origin": [
+        0,
+        0.018,
+        -0.042
+      ],
+      "joint": "fl_hip_pitch",
+      "mass": 0.111202,
+      "com": [
+        0,
+        -0.019,
+        -0.0525
+      ],
+      "inertia": [
+        0.0001178463195,
+        0.00010031347083333334,
+        3.651132333333333e-05
+      ],
+      "geoms": [
+        {
+          "kind": "capsule",
+          "size": [
+            0.012,
+            0.075
+          ],
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "color": "frame",
+          "collision": true,
+          "end": [
+            0,
+            0,
+            -0.075
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.035,
+            0.025,
+            0.031
+          ],
+          "pos": [
+            0,
+            0,
+            -0.075
+          ],
+          "color": "servo",
+          "collision": true
+        }
+      ]
+    },
+    {
+      "name": "fl_shin",
+      "parent": "fl_thigh",
+      "origin": [
+        0,
+        0,
+        -0.075
+      ],
+      "joint": "fl_knee",
+      "mass": 0.054254,
+      "com": [
+        0,
+        -0.004,
+        -0.048
+      ],
+      "inertia": [
+        6.991532133333334e-05,
+        6.056554866666666e-05,
+        2.1068636666666665e-05
+      ],
+      "geoms": [
+        {
+          "kind": "capsule",
+          "size": [
+            0.01,
+            0.08
+          ],
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "color": "body",
+          "collision": true,
+          "end": [
+            0,
+            0,
+            -0.08
+          ]
+        },
+        {
+          "kind": "sphere",
+          "size": [
+            0.016
+          ],
+          "pos": [
+            0,
+            0,
+            -0.08
+          ],
+          "color": "hoof",
+          "collision": true
+        }
+      ]
+    },
+    {
+      "name": "fr_roll",
+      "parent": "torso",
+      "origin": [
+        0.086,
+        -0.052,
+        0
+      ],
+      "joint": "fr_hip_roll",
+      "mass": 0.11516,
+      "com": [
+        0,
+        0,
+        -0.048
+      ],
+      "inertia": [
+        0.00012177210333333333,
+        0.00010521785333333332,
+        6.453758333333335e-05
+      ],
+      "geoms": [
+        {
+          "kind": "box",
+          "size": [
+            0.025,
+            0.037,
+            0.045
+          ],
+          "pos": [
+            0,
+            -0.006,
+            -0.043
+          ],
+          "color": "servo",
+          "collision": true
+        }
+      ]
+    },
+    {
+      "name": "fr_thigh",
+      "parent": "fr_roll",
+      "origin": [
+        0,
+        -0.018,
+        -0.042
+      ],
+      "joint": "fr_hip_pitch",
+      "mass": 0.111202,
+      "com": [
+        0,
+        0.019,
+        -0.0525
+      ],
+      "inertia": [
+        0.0001178463195,
+        0.00010031347083333334,
+        3.651132333333333e-05
+      ],
+      "geoms": [
+        {
+          "kind": "capsule",
+          "size": [
+            0.012,
+            0.075
+          ],
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "color": "frame",
+          "collision": true,
+          "end": [
+            0,
+            0,
+            -0.075
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.035,
+            0.025,
+            0.031
+          ],
+          "pos": [
+            0,
+            0,
+            -0.075
+          ],
+          "color": "servo",
+          "collision": true
+        }
+      ]
+    },
+    {
+      "name": "fr_shin",
+      "parent": "fr_thigh",
+      "origin": [
+        0,
+        0,
+        -0.075
+      ],
+      "joint": "fr_knee",
+      "mass": 0.054254,
+      "com": [
+        0,
+        0.004,
+        -0.048
+      ],
+      "inertia": [
+        6.991532133333334e-05,
+        6.056554866666666e-05,
+        2.1068636666666665e-05
+      ],
+      "geoms": [
+        {
+          "kind": "capsule",
+          "size": [
+            0.01,
+            0.08
+          ],
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "color": "body",
+          "collision": true,
+          "end": [
+            0,
+            0,
+            -0.08
+          ]
+        },
+        {
+          "kind": "sphere",
+          "size": [
+            0.016
+          ],
+          "pos": [
+            0,
+            0,
+            -0.08
+          ],
+          "color": "hoof",
+          "collision": true
+        }
+      ]
+    },
+    {
+      "name": "rl_roll",
+      "parent": "torso",
+      "origin": [
+        -0.086,
+        0.052,
+        0
+      ],
+      "joint": "rl_hip_roll",
+      "mass": 0.11516,
+      "com": [
+        0,
+        0,
+        -0.048
+      ],
+      "inertia": [
+        0.00012177210333333333,
+        0.00010521785333333332,
+        6.453758333333335e-05
+      ],
+      "geoms": [
+        {
+          "kind": "box",
+          "size": [
+            0.025,
+            0.037,
+            0.045
+          ],
+          "pos": [
+            0,
+            0.006,
+            -0.043
+          ],
+          "color": "servo",
+          "collision": true
+        }
+      ]
+    },
+    {
+      "name": "rl_thigh",
+      "parent": "rl_roll",
+      "origin": [
+        0,
+        0.018,
+        -0.042
+      ],
+      "joint": "rl_hip_pitch",
+      "mass": 0.111202,
+      "com": [
+        0,
+        -0.019,
+        -0.0525
+      ],
+      "inertia": [
+        0.0001178463195,
+        0.00010031347083333334,
+        3.651132333333333e-05
+      ],
+      "geoms": [
+        {
+          "kind": "capsule",
+          "size": [
+            0.012,
+            0.075
+          ],
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "color": "frame",
+          "collision": true,
+          "end": [
+            0,
+            0,
+            -0.075
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.035,
+            0.025,
+            0.031
+          ],
+          "pos": [
+            0,
+            0,
+            -0.075
+          ],
+          "color": "servo",
+          "collision": true
+        }
+      ]
+    },
+    {
+      "name": "rl_shin",
+      "parent": "rl_thigh",
+      "origin": [
+        0,
+        0,
+        -0.075
+      ],
+      "joint": "rl_knee",
+      "mass": 0.054254,
+      "com": [
+        0,
+        -0.004,
+        -0.048
+      ],
+      "inertia": [
+        6.991532133333334e-05,
+        6.056554866666666e-05,
+        2.1068636666666665e-05
+      ],
+      "geoms": [
+        {
+          "kind": "capsule",
+          "size": [
+            0.01,
+            0.08
+          ],
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "color": "body",
+          "collision": true,
+          "end": [
+            0,
+            0,
+            -0.08
+          ]
+        },
+        {
+          "kind": "sphere",
+          "size": [
+            0.016
+          ],
+          "pos": [
+            0,
+            0,
+            -0.08
+          ],
+          "color": "hoof",
+          "collision": true
+        }
+      ]
+    },
+    {
+      "name": "rr_roll",
+      "parent": "torso",
+      "origin": [
+        -0.086,
+        -0.052,
+        0
+      ],
+      "joint": "rr_hip_roll",
+      "mass": 0.11516,
+      "com": [
+        0,
+        0,
+        -0.048
+      ],
+      "inertia": [
+        0.00012177210333333333,
+        0.00010521785333333332,
+        6.453758333333335e-05
+      ],
+      "geoms": [
+        {
+          "kind": "box",
+          "size": [
+            0.025,
+            0.037,
+            0.045
+          ],
+          "pos": [
+            0,
+            -0.006,
+            -0.043
+          ],
+          "color": "servo",
+          "collision": true
+        }
+      ]
+    },
+    {
+      "name": "rr_thigh",
+      "parent": "rr_roll",
+      "origin": [
+        0,
+        -0.018,
+        -0.042
+      ],
+      "joint": "rr_hip_pitch",
+      "mass": 0.111202,
+      "com": [
+        0,
+        0.019,
+        -0.0525
+      ],
+      "inertia": [
+        0.0001178463195,
+        0.00010031347083333334,
+        3.651132333333333e-05
+      ],
+      "geoms": [
+        {
+          "kind": "capsule",
+          "size": [
+            0.012,
+            0.075
+          ],
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "color": "frame",
+          "collision": true,
+          "end": [
+            0,
+            0,
+            -0.075
+          ]
+        },
+        {
+          "kind": "box",
+          "size": [
+            0.035,
+            0.025,
+            0.031
+          ],
+          "pos": [
+            0,
+            0,
+            -0.075
+          ],
+          "color": "servo",
+          "collision": true
+        }
+      ]
+    },
+    {
+      "name": "rr_shin",
+      "parent": "rr_thigh",
+      "origin": [
+        0,
+        0,
+        -0.075
+      ],
+      "joint": "rr_knee",
+      "mass": 0.054254,
+      "com": [
+        0,
+        0.004,
+        -0.048
+      ],
+      "inertia": [
+        6.991532133333334e-05,
+        6.056554866666666e-05,
+        2.1068636666666665e-05
+      ],
+      "geoms": [
+        {
+          "kind": "capsule",
+          "size": [
+            0.01,
+            0.08
+          ],
+          "pos": [
+            0,
+            0,
+            0
+          ],
+          "color": "body",
+          "collision": true,
+          "end": [
+            0,
+            0,
+            -0.08
+          ]
+        },
+        {
+          "kind": "sphere",
+          "size": [
+            0.016
+          ],
+          "pos": [
+            0,
+            0,
+            -0.08
+          ],
+          "color": "hoof",
+          "collision": true
+        }
+      ]
+    },
+    {
+      "name": "neck_yaw",
+      "parent": "torso",
+      "origin": [
+        0.082,
+        0.0,
+        0.014
+      ],
+      "joint": "head_yaw",
+      "mass": 0.116128,
+      "com": [
+        0,
+        0,
+        0.026
+      ],
+      "inertia": [
+        7.447675733333333e-05,
+        6.96768e-05,
+        7.447675733333333e-05
+      ],
+      "geoms": [
+        {
+          "kind": "box",
+          "size": [
+            0.05,
+            0.056,
+            0.054
+          ],
+          "pos": [
+            0,
+            0,
+            0.027
+          ],
+          "color": "body",
+          "collision": true
+        }
+      ]
+    },
+    {
+      "name": "head",
+      "parent": "neck_yaw",
+      "origin": [
+        0,
+        0,
+        0.044
+      ],
+      "joint": "head_pitch",
+      "mass": 0.34015799999999996,
+      "com": [
+        0.03,
+        0,
+        0.035
+      ],
+      "inertia": [
+        0.00051307165,
+        0.00062645765,
+        0.0005725992999999999
+      ],
+      "geoms": [
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.059,
+            0.05,
+            0.059
+          ],
+          "pos": [
+            0.03,
+            0.0,
+            0.038
+          ],
+          "color": "body",
+          "collision": true
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.027,
+            0.034,
+            0.022
+          ],
+          "pos": [
+            0.073,
+            0.0,
+            0.014
+          ],
+          "color": "body",
+          "collision": true
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.025,
+            0.017,
+            0.028
+          ],
+          "pos": [
+            0.053,
+            0.037,
+            0.041
+          ],
+          "color": "eye",
+          "collision": false
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.025,
+            0.017,
+            0.028
+          ],
+          "pos": [
+            0.053,
+            -0.037,
+            0.041
+          ],
+          "color": "eye",
+          "collision": false
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.014,
+            0.006,
+            0.02
+          ],
+          "pos": [
+            0.058,
+            0.051,
+            0.041
+          ],
+          "color": "iris",
+          "collision": false
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.014,
+            0.006,
+            0.02
+          ],
+          "pos": [
+            0.058,
+            -0.051,
+            0.041
+          ],
+          "color": "iris",
+          "collision": false
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.02,
+            0.036,
+            0.041
+          ],
+          "pos": [
+            -0.004,
+            0,
+            0.055
+          ],
+          "color": "mane",
+          "collision": false
+        },
+        {
+          "kind": "capsule",
+          "size": [
+            0.008,
+            0.033
+          ],
+          "pos": [
+            0.048,
+            0,
+            0.088
+          ],
+          "color": "body",
+          "collision": false,
+          "end": [
+            0.048,
+            0,
+            0.121
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ear_left",
+      "parent": "head",
+      "origin": [
+        0.045,
+        0.022,
+        0.06
+      ],
+      "joint": "ear_left",
+      "mass": 0.015885,
+      "com": [
+        0,
+        0.004,
+        0.04
+      ],
+      "inertia": [
+        8.948550000000001e-06,
+        8.392575e-06,
+        1.2337349999999998e-06
+      ],
+      "geoms": [
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.008,
+            0.013,
+            0.024
+          ],
+          "pos": [
+            0,
+            0.006,
+            0.051
+          ],
+          "color": "body",
+          "collision": true
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.008,
+            0.003,
+            0.016
+          ],
+          "pos": [
+            0.007,
+            0,
+            0.021
+          ],
+          "color": "mane",
+          "collision": false
+        }
+      ]
+    },
+    {
+      "name": "ear_right",
+      "parent": "head",
+      "origin": [
+        0.045,
+        -0.022,
+        0.06
+      ],
+      "joint": "ear_right",
+      "mass": 0.015885,
+      "com": [
+        0,
+        -0.004,
+        0.04
+      ],
+      "inertia": [
+        8.948550000000001e-06,
+        8.392575e-06,
+        1.2337349999999998e-06
+      ],
+      "geoms": [
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.008,
+            0.013,
+            0.024
+          ],
+          "pos": [
+            0,
+            -0.006,
+            0.051
+          ],
+          "color": "body",
+          "collision": true
+        },
+        {
+          "kind": "ellipsoid",
+          "size": [
+            0.008,
+            0.003,
+            0.016
+          ],
+          "pos": [
+            0.007,
+            0,
+            0.021
+          ],
+          "color": "mane",
+          "collision": false
+        }
+      ]
+    }
+  ],
+  "joint_names": [
+    "fl_hip_roll",
+    "fl_hip_pitch",
+    "fl_knee",
+    "fr_hip_roll",
+    "fr_hip_pitch",
+    "fr_knee",
+    "rl_hip_roll",
+    "rl_hip_pitch",
+    "rl_knee",
+    "rr_hip_roll",
+    "rr_hip_pitch",
+    "rr_knee",
+    "head_yaw",
+    "head_pitch",
+    "ear_left",
+    "ear_right"
+  ],
+  "home": {
+    "fl_hip_roll": 0.0,
+    "fl_hip_pitch": -0.44326308090391414,
+    "fl_knee": 0.8570547556847742,
+    "fr_hip_roll": 0.0,
+    "fr_hip_pitch": -0.44326308090391414,
+    "fr_knee": 0.8570547556847742,
+    "rl_hip_roll": 0.0,
+    "rl_hip_pitch": -0.44326308090391414,
+    "rl_knee": 0.8570547556847742,
+    "rr_hip_roll": 0.0,
+    "rr_hip_pitch": -0.44326308090391414,
+    "rr_knee": 0.8570547556847742,
+    "head_yaw": 0.0,
+    "head_pitch": 0.0,
+    "ear_left": 0.0,
+    "ear_right": 0.0
+  },
+  "mass_kg": 2.71136,
+  "inertia_method": "assigned COM + box-envelope diagonal; unmeasured"
+}

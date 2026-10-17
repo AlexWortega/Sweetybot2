@@ -1,0 +1,26 @@
+{
+  "purpose": "Visual references for v2 proportions; no upstream CAD geometry copied",
+  "sources": [
+    {
+      "file": "sweetie-official.jpg",
+      "url": "https://sweetiebot.net/img/3-pre.jpg",
+      "page": "https://sweetiebot.net/about/",
+      "sha256": "e2da527590464464628c24132e4a7f3b6270c8639a7379b4c82ed16289507711"
+    },
+    {
+      "file": "sweetie-proto3-body.jpg",
+      "url": "https://sweetiebot.net/wp-content/uploads/cache/2018/05/photo_2018-05-17_09-22-19/926696789.jpg",
+      "page": "https://sweetiebot.net/new-proto3-body/",
+      "sha256": "8ee020eba20475232d9e4d6334740b5440d66ad94e2bac1034dbbeaa1ea5864a"
+    }
+  ],
+  "features": [
+    "short neck emerging from chest",
+    "rounded chest and rump",
+    "upright closer-set legs",
+    "unicorn horn",
+    "green eyes",
+    "pink and purple forelock",
+    "hoof boots"
+  ]
+}

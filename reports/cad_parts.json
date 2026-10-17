@@ -1,0 +1,328 @@
+{
+  "parts": [
+    {
+      "part": "deck",
+      "count": 1,
+      "volume_mm3": 65337.312409959755,
+      "solid_petg_mass_kg": 0.08297838676064888,
+      "bounds_mm": [
+        210.0,
+        100.0,
+        3.2
+      ],
+      "valid": true,
+      "solids": 1,
+      "fits_220_bed": true
+    },
+    {
+      "part": "rail",
+      "count": 2,
+      "volume_mm3": 19976.093113613457,
+      "solid_petg_mass_kg": 0.02536963825428909,
+      "bounds_mm": [
+        200.0,
+        14.0,
+        30.0
+      ],
+      "valid": true,
+      "solids": 1,
+      "fits_220_bed": true
+    },
+    {
+      "part": "body_shell",
+      "count": 1,
+      "volume_mm3": 47252.84526116646,
+      "solid_petg_mass_kg": 0.0600111134816814,
+      "bounds_mm": [
+        182.34065067884387,
+        104.00000019999929,
+        66.80000026181808
+      ],
+      "valid": true,
+      "solids": 1,
+      "fits_220_bed": true
+    },
+    {
+      "part": "servo_cradle",
+      "count": 10,
+      "volume_mm3": 11934.92233613373,
+      "solid_petg_mass_kg": 0.015157351366889836,
+      "bounds_mm": [
+        62.0000002,
+        41.0,
+        33.1000001
+      ],
+      "valid": true,
+      "solids": 1,
+      "fits_220_bed": true
+    },
+    {
+      "part": "servo_strap",
+      "count": 20,
+      "volume_mm3": 1273.423113476259,
+      "solid_petg_mass_kg": 0.0016172473541148488,
+      "bounds_mm": [
+        62.0,
+        7.0,
+        3.2
+      ],
+      "valid": true,
+      "solids": 1,
+      "fits_220_bed": true
+    },
+    {
+      "part": "roll_yoke",
+      "count": 4,
+      "volume_mm3": 7822.388745481966,
+      "solid_petg_mass_kg": 0.009934433706762096,
+      "bounds_mm": [
+        4.0,
+        34.0,
+        60.0
+      ],
+      "valid": true,
+      "solids": 1,
+      "fits_220_bed": true
+    },
+    {
+      "part": "thigh_plate",
+      "count": 8,
+      "volume_mm3": 6914.833000435567,
+      "solid_petg_mass_kg": 0.008781837910553168,
+      "bounds_mm": [
+        25.0,
+        4.0,
+        99.0
+      ],
+      "valid": true,
+      "solids": 1,
+      "fits_220_bed": true
+    },
+    {
+      "part": "shin_plate",
+      "count": 8,
+      "volume_mm3": 7160.926801423737,
+      "solid_petg_mass_kg": 0.009094377037808144,
+      "bounds_mm": [
+        25.0,
+        4.0,
+        104.0
+      ],
+      "valid": true,
+      "solids": 1,
+      "fits_220_bed": true
+    },
+    {
+      "part": "hoof",
+      "count": 4,
+      "volume_mm3": 9993.521271456015,
+      "solid_petg_mass_kg": 0.012691772014749138,
+      "bounds_mm": [
+        34.0000002,
+        34.0000002,
+        23.67441842617777
+      ],
+      "valid": true,
+      "solids": 1,
+      "fits_220_bed": true
+    },
+    {
+      "part": "head_shell",
+      "count": 1,
+      "volume_mm3": 76565.79945026661,
+      "solid_petg_mass_kg": 0.0972385653018386,
+      "bounds_mm": [
+        129.00000020000002,
+        100.00000019999786,
+        85.00000020000049
+      ],
+      "valid": true,
+      "solids": 1,
+      "fits_220_bed": true
+    },
+    {
+      "part": "head_hatch",
+      "count": 1,
+      "volume_mm3": 19170.91488946261,
+      "solid_petg_mass_kg": 0.024347061909617513,
+      "bounds_mm": [
+        110.310860448706,
+        89.76652681222504,
+        3.0000002078651864
+      ],
+      "valid": true,
+      "solids": 1,
+      "fits_220_bed": true
+    },
+    {
+      "part": "ear",
+      "count": 2,
+      "volume_mm3": 10539.69686791607,
+      "solid_petg_mass_kg": 0.013385415022253407,
+      "bounds_mm": [
+        14.116857677853925,
+        26.000000199998986,
+        81.00000020000002
+      ],
+      "valid": true,
+      "solids": 1,
+      "fits_220_bed": true
+    },
+    {
+      "part": "mane",
+      "count": 1,
+      "volume_mm3": 16874.992059876295,
+      "solid_petg_mass_kg": 0.021431239916042892,
+      "bounds_mm": [
+        58.0000002,
+        58.00000019999247,
+        50.00000015000104
+      ],
+      "valid": true,
+      "solids": 1,
+      "fits_220_bed": true
+    },
+    {
+      "part": "axle_adapter",
+      "count": 4,
+      "volume_mm3": 1049.8024551052222,
+      "solid_petg_mass_kg": 0.001333249117983632,
+      "bounds_mm": [
+        15.000000000000002,
+        10.0,
+        10.000000000000002
+      ],
+      "valid": true,
+      "solids": 1,
+      "fits_220_bed": true
+    },
+    {
+      "part": "knee_fork",
+      "count": 4,
+      "volume_mm3": 8743.568610600501,
+      "solid_petg_mass_kg": 0.011104332135462636,
+      "bounds_mm": [
+        31.5,
+        58.0,
+        30.0
+      ],
+      "valid": true,
+      "solids": 1,
+      "fits_220_bed": true
+    },
+    {
+      "part": "head_yoke",
+      "count": 1,
+      "volume_mm3": 5234.9701613532225,
+      "solid_petg_mass_kg": 0.006648412104918592,
+      "bounds_mm": [
+        34.0,
+        54.0,
+        16.00000000000013
+      ],
+      "valid": true,
+      "solids": 1,
+      "fits_220_bed": true
+    },
+    {
+      "part": "tail",
+      "count": 1,
+      "volume_mm3": 12324.389841208476,
+      "solid_petg_mass_kg": 0.015651975098334762,
+      "bounds_mm": [
+        47.38894858489705,
+        36.122063072405325,
+        82.00000020000036
+      ],
+      "valid": true,
+      "solids": 1,
+      "fits_220_bed": true
+    },
+    {
+      "part": "fit_coupon",
+      "count": 0,
+      "volume_mm3": 10526.275637960614,
+      "solid_petg_mass_kg": 0.013368370060209979,
+      "bounds_mm": [
+        80.0,
+        35.0,
+        4.0
+      ],
+      "valid": true,
+      "solids": 1,
+      "fits_220_bed": true
+    },
+    {
+      "part": "horn",
+      "count": 1,
+      "volume_mm3": 2351.639180847473,
+      "solid_petg_mass_kg": 0.002986581759676291,
+      "bounds_mm": [
+        16.0,
+        16.0,
+        33.0
+      ],
+      "valid": true,
+      "solids": 1,
+      "fits_220_bed": true
+    },
+    {
+      "part": "mane_stripe",
+      "count": 1,
+      "volume_mm3": 398.17274022130005,
+      "solid_petg_mass_kg": 0.000505679380081051,
+      "bounds_mm": [
+        28.800000000000004,
+        2.800000200000003,
+        28.800000199999985
+      ],
+      "valid": true,
+      "solids": 1,
+      "fits_220_bed": true
+    },
+    {
+      "part": "neck_collar",
+      "count": 1,
+      "volume_mm3": 12784.17548534897,
+      "solid_petg_mass_kg": 0.01623590286639319,
+      "bounds_mm": [
+        60.000000200263514,
+        62.00000020027244,
+        40.00000020000013
+      ],
+      "valid": true,
+      "solids": 1,
+      "fits_220_bed": true
+    },
+    {
+      "part": "thigh_fairing",
+      "count": 4,
+      "volume_mm3": 2470.950991442815,
+      "solid_petg_mass_kg": 0.003138107759132375,
+      "bounds_mm": [
+        36.0000002,
+        4.000000200000286,
+        99.00000019999999
+      ],
+      "valid": true,
+      "solids": 1,
+      "fits_220_bed": true
+    },
+    {
+      "part": "shin_fairing",
+      "count": 4,
+      "volume_mm3": 2574.2346225110537,
+      "solid_petg_mass_kg": 0.003269277970589038,
+      "bounds_mm": [
+        36.0000002,
+        4.000000200000286,
+        104.00000019999999
+      ],
+      "valid": true,
+      "solids": 1,
+      "fits_220_bed": true
+    }
+  ],
+  "printed_solid_mass_kg": 0.8983578962891197,
+  "note": "Solid CAD density upper bound; purchased hardware excluded. Does not certify FDM strength."
+}

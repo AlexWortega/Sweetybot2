@@ -1,0 +1,62 @@
+{
+  "nominal_mass_kg": 2.71136,
+  "design_mass_kg": 3.253632,
+  "printed_solid_petg_kg": 0.8983578962891197,
+  "servo_mass_kg": 1.192,
+  "per_link_allowances": {
+    "torso_without_servos": {
+      "deck": 0.08297838676064888,
+      "rails": 0.05073927650857818,
+      "cowl": 0.0600111134816814,
+      "five_cradles": 0.07578675683444917,
+      "ten_straps": 0.016172473541148487,
+      "tail": 0.015651975098334762,
+      "battery_pack": 0.28,
+      "compute_storage_imu": 0.016,
+      "adapter_regulator": 0.02,
+      "switch_fuses_wiring": 0.075,
+      "fasteners": 0.035
+    },
+    "roll_link_without_servo": {
+      "cradle": 0.015157351366889836,
+      "two_straps": 0.0032344947082296976,
+      "yoke": 0.009934433706762096,
+      "adapter": 0.001333249117983632,
+      "bearings_fasteners": 0.01
+    },
+    "thigh_without_servo": {
+      "two_cheeks": 0.017563675821106337,
+      "outer_fairing": 0.003138107759132375,
+      "spacers": 0.005,
+      "bearings_fasteners": 0.01
+    },
+    "shin_and_foot": {
+      "two_cheeks": 0.01818875407561629,
+      "outer_fairing": 0.003269277970589038,
+      "support_fork": 0.011104332135462636,
+      "hoof": 0.012691772014749138,
+      "fasteners": 0.008
+    },
+    "head_yaw_without_servo": {
+      "cradle": 0.015157351366889836,
+      "two_straps": 0.0032344947082296976,
+      "bearings_fasteners": 0.006,
+      "collar": 0.01623590286639319
+    },
+    "head_without_servos": {
+      "shell": 0.0972385653018386,
+      "hatch": 0.024347061909617513,
+      "mane": 0.021431239916042892,
+      "horn": 0.002986581759676291,
+      "pink_stripe": 0.000505679380081051,
+      "support_yoke": 0.006648412104918592,
+      "displays_wire": 0.021,
+      "bearings_fasteners": 0.016
+    },
+    "ear_without_servo": {
+      "shell": 0.013385415022253407,
+      "fasteners": 0.0015
+    }
+  },
+  "method": "saved STEP volume x 1270 kg/m3, explicit purchased hardware allowances, rounded up 1g per link group"
+}

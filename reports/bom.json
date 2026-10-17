@@ -1,0 +1,180 @@
+{
+  "currency": "USD",
+  "price_date": "2026-10-17",
+  "robot_parts_allowance": 1060.39,
+  "charger_allowance": 30,
+  "tax_shipping_tools_excluded": true,
+  "items": [
+    {
+      "category": "actuator",
+      "item": "Feetech STS3250 12V TTL smart servo, 50kg.cm peak",
+      "quantity": 16,
+      "unit_usd": 44.99,
+      "total_usd": 719.84,
+      "url": "https://www.feetechrc.com/sts_ttl_series%20servo.html",
+      "status": "planning allowance; use exact 12V version"
+    },
+    {
+      "category": "compute",
+      "item": "Raspberry Pi Zero 2 W",
+      "quantity": 1,
+      "unit_usd": 18,
+      "total_usd": 18,
+      "url": "https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/",
+      "status": "planning allowance"
+    },
+    {
+      "category": "storage",
+      "item": "32GB high-endurance microSD",
+      "quantity": 1,
+      "unit_usd": 12,
+      "total_usd": 12,
+      "url": "",
+      "status": "planning allowance"
+    },
+    {
+      "category": "interface",
+      "item": "Waveshare Bus Servo Adapter (A), USB to ST/SC TTL",
+      "quantity": 1,
+      "unit_usd": 14,
+      "total_usd": 14,
+      "url": "https://www.waveshare.com/bus-servo-adapter-a.htm",
+      "status": "planning allowance; verify ST protocol and pinout"
+    },
+    {
+      "category": "imu",
+      "item": "Adafruit ICM-20948 breakout, 3.3V logic",
+      "quantity": 1,
+      "unit_usd": 25,
+      "total_usd": 25,
+      "url": "https://www.adafruit.com/product/4554",
+      "status": "planning allowance; provisional envelope"
+    },
+    {
+      "category": "eyes",
+      "item": "Waveshare 1.3inch LCD Module, ST7789 SPI",
+      "quantity": 2,
+      "unit_usd": 13,
+      "total_usd": 26,
+      "url": "https://www.waveshare.com/1.3inch-lcd-module.htm",
+      "status": "planning allowance; display mounting needs actual board"
+    },
+    {
+      "category": "battery",
+      "item": "Assembled 3S LiFePO4 26650 pack, >=2.5Ah, >=25A BMS, balance connector",
+      "quantity": 1,
+      "unit_usd": 65,
+      "total_usd": 65,
+      "url": "https://lithiumwerks.com/products/lithium-ion-26650-cells/",
+      "status": "planning allowance; <=82x70x30mm; 10.8V maximum; verify assembled pack"
+    },
+    {
+      "category": "power",
+      "item": "5V 3A buck converter, input >=16V, e.g. Pololu D24V50F5",
+      "quantity": 1,
+      "unit_usd": 32.95,
+      "total_usd": 32.95,
+      "url": "https://www.pololu.com/product/2851",
+      "status": "planning allowance; confirm exact SKU before ordering"
+    },
+    {
+      "category": "power",
+      "item": "Battery master disconnect + motor-only latching disconnect, >=30A DC",
+      "quantity": 1,
+      "unit_usd": 18,
+      "total_usd": 18,
+      "url": "",
+      "status": "planning allowance; no small signal pushbutton in motor path"
+    },
+    {
+      "category": "power",
+      "item": "25A main fuse + 4x7.5A leg + 5A head fuses + holders",
+      "quantity": 1,
+      "unit_usd": 12,
+      "total_usd": 12,
+      "url": "",
+      "status": "planning allowance; coordination requires load test"
+    },
+    {
+      "category": "power",
+      "item": "16AWG main, 20AWG branches, 22AWG short servo feeds, connectors",
+      "quantity": 1,
+      "unit_usd": 24,
+      "total_usd": 24,
+      "url": "",
+      "status": "planning allowance; confirm connector ampacity"
+    },
+    {
+      "category": "power",
+      "item": "2200uF 25V low-ESR bus capacitor, secure enclosure",
+      "quantity": 1,
+      "unit_usd": 3,
+      "total_usd": 3,
+      "url": "",
+      "status": "planning allowance; not an overvoltage clamp"
+    },
+    {
+      "category": "hardware",
+      "item": "623ZZ 3x10x4 bearing",
+      "quantity": 14,
+      "unit_usd": 1,
+      "total_usd": 14,
+      "url": "https://www.step.parts/parts/bearing_623zz",
+      "status": "planning allowance; external support interfaces provisional"
+    },
+    {
+      "category": "hardware",
+      "item": "M3 heat-set inserts for cowl, 4mm length; verify 4.2mm pilot by coupon",
+      "quantity": 4,
+      "unit_usd": 0.4,
+      "total_usd": 1.6,
+      "url": "",
+      "status": "planning allowance; four matched deck/cowl points"
+    },
+    {
+      "category": "hardware",
+      "item": "M3 screws/nuts/washers/spacers/axles assorted",
+      "quantity": 1,
+      "unit_usd": 28,
+      "total_usd": 28,
+      "url": "",
+      "status": "planning allowance; select lengths after coupon fit"
+    },
+    {
+      "category": "hardware",
+      "item": "Nylon straps, heatshrink, cable sleeves, rubber soles",
+      "quantity": 1,
+      "unit_usd": 12,
+      "total_usd": 12,
+      "url": "",
+      "status": "planning allowance"
+    },
+    {
+      "category": "printing",
+      "item": "PETG filament, 1 kg spool",
+      "quantity": 1,
+      "unit_usd": 25,
+      "total_usd": 25,
+      "url": "",
+      "status": "planning allowance; solid-volume mass check in cad_parts.json"
+    },
+    {
+      "category": "printing",
+      "item": "TPU hoof pads, small spool/allocation",
+      "quantity": 1,
+      "unit_usd": 10,
+      "total_usd": 10,
+      "url": "",
+      "status": "planning allowance"
+    },
+    {
+      "category": "tools",
+      "item": "External LiFe-compatible 3S balance charger",
+      "quantity": 1,
+      "unit_usd": 30,
+      "total_usd": 30,
+      "url": "",
+      "status": "planning allowance; listed separately from robot parts"
+    }
+  ]
+}

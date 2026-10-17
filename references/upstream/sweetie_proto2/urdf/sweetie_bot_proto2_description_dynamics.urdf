@@ -1,0 +1,735 @@
+<?xml version="1.0"?>
+<robot name="sweetie_bot_proto2">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="-0.0138905253241 -0.00180707327366 8.18940362861e-05" rpy="0.0 0.0 0.0"/>
+      <mass value="0.971931208405"/>
+      <inertia ixx="0.00107358081614" ixy="0.00039355236889" ixz="8.3645206281e-06" iyy="0.00359809561149" iyz="-2.30307474917e-06" izz="0.00335012984396"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/base_link.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/base_link.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="bone11">
+    <inertial>
+      <origin xyz="-0.0131503498523 -0.000726513653317 -0.0123397056768" rpy="0.0 0.0 0.0"/>
+      <mass value="0.105587079651"/>
+      <inertia ixx="2.35646435059e-05" ixy="1.00872737015e-06" ixz="-8.73535975042e-07" iyy="4.54760318745e-05" iyz="3.82961621381e-08" izz="3.46439811584e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/bone11.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/bone11.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint11" type="revolute">
+    <origin xyz="0.080425 0.037 -0.0275" rpy="3.7797374822e-14 -3.4914813431e-15 -4.81230658754e-15"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <parent link="base_link"/>
+    <child link="bone11"/>
+    <limit effort="2.4" lower="-1.5708" upper="1.5708" velocity="1.5708"/>
+  </joint>
+  <link name="bone12">
+    <inertial>
+      <origin xyz="-3.00388784402e-07 -0.00227925246986 -0.0462490701207" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0185022042823"/>
+      <inertia ixx="1.3783037807e-05" ixy="-3.30013250382e-10" ixz="-6.20565499694e-10" iyy="9.89722431632e-06" iyz="3.69591882948e-08" izz="5.66311332365e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/bone12.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/bone12.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint12" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -3.54776255454e-31 0.0"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="bone11"/>
+    <child link="bone12"/>
+    <limit effort="0.24" lower="-1.5708" upper="1.5708" velocity="1.5708"/>
+  </joint>
+  <link name="bone13">
+    <inertial>
+      <origin xyz="8.02423274771e-08 -0.00132693444789 -0.0222795353563" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0651096345569"/>
+      <inertia ixx="4.28023192969e-05" ixy="3.22165726907e-10" ixz="-4.62109403824e-10" iyy="3.8488306844e-05" iyz="3.52704403401e-07" izz="1.03869118902e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/bone13.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/bone13.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint13" type="revolute">
+    <origin xyz="0.0 0.0 -0.08" rpy="-3.16413562018e-15 3.4914813431e-15 4.81230658754e-15"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="bone12"/>
+    <child link="bone13"/>
+    <limit effort="0.24" lower="-1.9" upper="1.9" velocity="1.5708"/>
+  </joint>
+  <link name="bone14">
+    <inertial>
+      <origin xyz="-0.0131503499542 -0.000726571124869 0.0123397056981" rpy="0.0 0.0 0.0"/>
+      <mass value="0.105587079787"/>
+      <inertia ixx="2.35646347426e-05" ixy="1.00889107706e-06" ixz="8.73536154319e-07" iyy="4.54760316078e-05" iyz="-3.84172291161e-08" izz="3.46439720497e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/bone14.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/bone14.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint14" type="revolute">
+    <origin xyz="0.0 0.0016 -0.09605" rpy="-3.88578058619e-16 6.93889390398e-18 2.17881268583e-15"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="bone13"/>
+    <child link="bone14"/>
+    <limit effort="0.24" lower="-1.7" upper="1.7" velocity="1.5708"/>
+  </joint>
+  <link name="bone15">
+    <inertial>
+      <origin xyz="-0.00654545442537 1.78611357569e-06 -0.0251989397617" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0234095309231"/>
+      <inertia ixx="4.87157620445e-06" ixy="-4.51832383148e-10" ixz="5.25179469847e-07" iyy="1.68339968626e-05" iyz="-4.43541974088e-11" izz="1.93251783586e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/bone15.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/bone15.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint15" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -1.12103877146e-44 0.0"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <parent link="bone14"/>
+    <child link="bone15"/>
+    <limit effort="0.24" lower="-1.5708" upper="1.5708" velocity="1.5708"/>
+  </joint>
+  <link name="bone21">
+    <inertial>
+      <origin xyz="-0.0131492758508 0.000726571123886 -0.0123397056768" rpy="0.0 0.0 0.0"/>
+      <mass value="0.105587079651"/>
+      <inertia ixx="2.35646347031e-05" ixy="-1.00880882812e-06" ixz="-8.74687030149e-07" iyy="4.54825143369e-05" iyz="-3.84172310525e-08" izz="3.46504548181e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/bone21.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/bone21.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint21" type="revolute">
+    <origin xyz="0.080425 -0.037 -0.0275" rpy="3.54699451234e-15 4.38428390321e-16 -1.54361546163e-14"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <parent link="base_link"/>
+    <child link="bone21"/>
+    <limit effort="0.24" lower="-1.5708" upper="1.5708" velocity="1.5708"/>
+  </joint>
+  <link name="bone22">
+    <inertial>
+      <origin xyz="3.00388784236e-07 0.00227925246986 -0.0462490701207" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0185022042823"/>
+      <inertia ixx="1.3783037807e-05" ixy="-3.30013250328e-10" ixz="6.20565499657e-10" iyy="9.89722431632e-06" iyz="-3.69591882948e-08" izz="5.66311332365e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/bone22.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/bone22.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint22" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 1.6185064457e-32 0.0"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="bone21"/>
+    <child link="bone22"/>
+    <limit effort="0.24" lower="-1.5708" upper="1.5708" velocity="1.5708"/>
+  </joint>
+  <link name="bone23">
+    <inertial>
+      <origin xyz="-8.0238840558e-08 0.00132693442083 -0.0222795353719" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0651096347113"/>
+      <inertia ixx="4.28023193276e-05" ixy="3.22168480627e-10" ixz="4.62111154546e-10" iyy="3.84883068536e-05" iyz="-3.52704417056e-07" izz="1.0386911912e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/bone23.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/bone23.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint23" type="revolute">
+    <origin xyz="0.0 0.0 -0.08" rpy="-7.77156117238e-15 -4.38428390321e-16 1.54361546163e-14"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="bone22"/>
+    <child link="bone23"/>
+    <limit effort="0.24" lower="-1.9" upper="1.9" velocity="1.5708"/>
+  </joint>
+  <link name="bone24">
+    <inertial>
+      <origin xyz="-0.013149275738 0.000726513639348 0.0123397056981" rpy="0.0 0.0 0.0"/>
+      <mass value="0.105587079787"/>
+      <inertia ixx="2.35646435624e-05" ixy="-1.00864480641e-06" ixz="8.74686830252e-07" iyy="4.54825147033e-05" iyz="3.82961882936e-08" izz="3.4650463965e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/bone24.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/bone24.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint24" type="revolute">
+    <origin xyz="0.0 -0.0016 -0.09605" rpy="-6.38378239159e-15 4.4408920985e-16 -7.77156117238e-16"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="bone23"/>
+    <child link="bone24"/>
+    <limit effort="0.24" lower="-1.7" upper="1.7" velocity="1.5708"/>
+  </joint>
+  <link name="bone25">
+    <inertial>
+      <origin xyz="-0.00655201597392 1.78621347767e-06 -0.0251989396311" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0234095313367"/>
+      <inertia ixx="4.87157625631e-06" ixy="-4.52066602059e-10" ixz="5.29049923335e-07" iyy="1.68265249268e-05" iyz="-4.43638185685e-11" izz="1.93177064246e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/bone25.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/bone25.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint25" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 1.23259516441e-32 0.0"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <parent link="bone24"/>
+    <child link="bone25"/>
+    <limit effort="0.24" lower="-1.5708" upper="1.5708" velocity="1.5708"/>
+  </joint>
+  <link name="bone31">
+    <inertial>
+      <origin xyz="0.0131492758696 -0.000726571137855 -0.0123397056556" rpy="0.0 0.0 0.0"/>
+      <mass value="0.105587079515"/>
+      <inertia ixx="2.35646346466e-05" ixy="-1.00880884987e-06" ixz="8.74687063234e-07" iyy="4.54825142684e-05" iyz="3.84172048974e-08" izz="3.46504547718e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/bone31.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/bone31.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint31" type="revolute">
+    <origin xyz="-0.080425 0.037 -0.0275" rpy="-3.54455505745e-15 -9.51716093093e-30 -6.52476541856e-14"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <parent link="base_link"/>
+    <child link="bone31"/>
+    <limit effort="0.24" lower="-1.5708" upper="1.5708" velocity="1.5708"/>
+  </joint>
+  <link name="bone32">
+    <inertial>
+      <origin xyz="-3.00388783764e-07 -0.00227925246986 -0.0462490701207" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0185022042823"/>
+      <inertia ixx="1.3783037807e-05" ixy="-3.30013250142e-10" ixz="-6.20565499675e-10" iyy="9.89722431632e-06" iyz="3.69591882948e-08" izz="5.66311332365e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/bone32.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/bone32.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint32" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="bone31"/>
+    <child link="bone32"/>
+    <limit effort="0.24" lower="-1.5708" upper="1.5708" velocity="1.5708"/>
+  </joint>
+  <link name="bone33">
+    <inertial>
+      <origin xyz="8.02423283791e-08 -0.0013269344479 -0.0222795353563" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0651096345569"/>
+      <inertia ixx="4.28023192969e-05" ixy="3.22165726877e-10" ixz="-4.62109403858e-10" iyy="3.8488306844e-05" iyz="3.52704403401e-07" izz="1.03869118902e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/bone33.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/bone33.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint33" type="revolute">
+    <origin xyz="0.0 0.0 -0.08" rpy="-6.80011602583e-16 -2.217567417e-28 6.52476541856e-14"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="bone32"/>
+    <child link="bone33"/>
+    <limit effort="0.24" lower="-1.9" upper="1.9" velocity="1.5708"/>
+  </joint>
+  <link name="bone34">
+    <inertial>
+      <origin xyz="0.013149275738 -0.000726513639348 0.0123397056981" rpy="0.0 0.0 0.0"/>
+      <mass value="0.105587079787"/>
+      <inertia ixx="2.35646435624e-05" ixy="-1.00864480641e-06" ixz="-8.74686830253e-07" iyy="4.54825147033e-05" iyz="-3.82961882936e-08" izz="3.4650463965e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/bone34.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/bone34.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint34" type="revolute">
+    <origin xyz="0.0 0.0016 -0.09605" rpy="7.88258347484e-15 -9.15933995316e-15 2.39154391688e-17"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="bone33"/>
+    <child link="bone34"/>
+    <limit effort="0.24" lower="-1.7" upper="1.7" velocity="1.5708"/>
+  </joint>
+  <link name="bone35">
+    <inertial>
+      <origin xyz="0.00655201574471 -1.78612912996e-06 -0.0251989396957" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0234095310833"/>
+      <inertia ixx="4.87157622862e-06" ixy="-4.52100673042e-10" ixz="-5.29049893178e-07" iyy="1.68265247952e-05" iyz="4.43548246901e-11" izz="1.93177062886e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/bone35.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/bone35.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint35" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 8.89474285511e-32 0.0"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <parent link="bone34"/>
+    <child link="bone35"/>
+    <limit effort="0.24" lower="-1.5708" upper="1.5708" velocity="1.5708"/>
+  </joint>
+  <link name="bone41">
+    <inertial>
+      <origin xyz="0.0131503498359 0.00072651364028 -0.012339705691" rpy="0.0 0.0 0.0"/>
+      <mass value="0.105587079742"/>
+      <inertia ixx="2.3564643549e-05" ixy="1.00872735284e-06" ixz="8.73535947214e-07" iyy="4.54760319183e-05" iyz="-3.82961865959e-08" izz="3.4643981193e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/bone41.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/bone41.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint41" type="revolute">
+    <origin xyz="-0.080425 -0.037 -0.0275" rpy="-3.64169957211e-15 -5.31264912662e-17 -3.51471262493e-14"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <parent link="base_link"/>
+    <child link="bone41"/>
+    <limit effort="0.24" lower="-1.5708" upper="1.5708" velocity="1.5708"/>
+  </joint>
+  <link name="bone42">
+    <inertial>
+      <origin xyz="3.00388784416e-07 0.00227925246986 -0.0462490701207" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0185022042823"/>
+      <inertia ixx="1.3783037807e-05" ixy="-3.30013250401e-10" ixz="6.20565499655e-10" iyy="9.89722431632e-06" iyz="-3.69591882947e-08" izz="5.66311332365e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/bone42.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/bone42.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint42" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 1.40160664338e-33 0.0"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="bone41"/>
+    <child link="bone42"/>
+    <limit effort="0.24" lower="-1.5708" upper="1.5708" velocity="1.5708"/>
+  </joint>
+  <link name="bone43">
+    <inertial>
+      <origin xyz="-8.02392172566e-08 0.00132693442399 -0.02227953537" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0651096346928"/>
+      <inertia ixx="4.2802319324e-05" ixy="3.22168200204e-10" ixz="4.62110957161e-10" iyy="3.84883068525e-05" iyz="-3.52704415432e-07" izz="1.03869119095e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/bone43.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/bone43.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint43" type="revolute">
+    <origin xyz="0.0 0.0 -0.08" rpy="7.74380559676e-15 5.31264912661e-17 3.51471262493e-14"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="bone42"/>
+    <child link="bone43"/>
+    <limit effort="0.24" lower="-1.9" upper="1.9" velocity="1.5708"/>
+  </joint>
+  <link name="bone44">
+    <inertial>
+      <origin xyz="0.0131503499548 0.000726571124975 0.012339705701" rpy="0.0 0.0 0.0"/>
+      <mass value="0.105587079805"/>
+      <inertia ixx="2.3564634748e-05" ixy="1.00889107702e-06" ixz="-8.7353615516e-07" iyy="4.54760316137e-05" iyz="3.84172288987e-08" izz="3.46439720501e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/bone44.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/bone44.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint44" type="revolute">
+    <origin xyz="0.0 -0.0016 -0.09605" rpy="-1.42386102908e-14 -8.88910258347e-17 -2.32357620616e-14"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="bone43"/>
+    <child link="bone44"/>
+    <limit effort="0.24" lower="-1.7" upper="1.7" velocity="1.5708"/>
+  </joint>
+  <link name="bone45">
+    <inertial>
+      <origin xyz="0.00655201557828 -1.78626172384e-06 -0.0251989397497" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0234095308805"/>
+      <inertia ixx="4.87157620514e-06" ixy="-4.52030532477e-10" ixz="-5.29049870292e-07" iyy="1.68265247099e-05" iyz="4.43734897267e-11" izz="1.93177061977e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/bone45.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/bone45.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint45" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 -1.31403502749e-34 0.0"/>
+    <axis xyz="-1.0 0.0 0.0"/>
+    <parent link="bone44"/>
+    <child link="bone45"/>
+    <limit effort="0.24" lower="-1.5708" upper="1.5708" velocity="1.5708"/>
+  </joint>
+  <link name="bone51">
+    <inertial>
+      <origin xyz="-0.0126632708335 -0.00240212881372 0.0139613179896" rpy="0.0 0.0 0.0"/>
+      <mass value="0.102575796082"/>
+      <inertia ixx="3.20486890845e-05" ixy="-6.31785425217e-08" ixz="-6.33404743184e-08" iyy="4.257965923e-05" iyz="1.07102148364e-06" izz="2.28360140185e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/bone51.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/bone51.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint51" type="revolute">
+    <origin xyz="0.088 0.0 0.0235" rpy="-4.57151135523e-15 0.0 0.0"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="base_link"/>
+    <child link="bone51"/>
+    <limit effort="0.24" lower="-1.5708" upper="0.26" velocity="1.5708"/>
+  </joint>
+  <link name="bone52">
+    <inertial>
+      <origin xyz="6.28356812971e-08 -0.000533673413828 -0.0124089525843" rpy="0.0 0.0 0.0"/>
+      <mass value="0.00540581700891"/>
+      <inertia ixx="1.72999480803e-06" ixy="4.85872622402e-12" ixz="-7.55234636482e-12" iyy="6.96780720156e-07" iyz="8.31596189482e-08" izz="1.51783289906e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/bone52.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/bone52.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint52" type="revolute">
+    <origin xyz="0.0 -0.00314999999999 0.06705" rpy="-3.30198557404e-15 -6.86083134749e-15 3.72722466096e-14"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <parent link="bone51"/>
+    <child link="bone52"/>
+    <limit effort="0.24" lower="-1.5708" upper="1.5708" velocity="1.5708"/>
+  </joint>
+  <link name="bone53">
+    <inertial>
+      <origin xyz="0.00130801561074 0.000349582362335 0.0131913887068" rpy="0.0 0.0 0.0"/>
+      <mass value="0.0556640423453"/>
+      <inertia ixx="1.3269775023e-05" ixy="-2.08006622387e-07" ixz="-4.16949624092e-07" iyy="1.23844512719e-05" iyz="-1.46540737427e-07" izz="7.58579651683e-06"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/bone53.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/bone53.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint53" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="-5.14406073106e-16 6.86083134749e-15 -3.72722466096e-14"/>
+    <axis xyz="0.0 -1.0 0.0"/>
+    <parent link="bone52"/>
+    <child link="bone53"/>
+    <limit effort="0.24" lower="-0.55" upper="1.0" velocity="1.5708"/>
+  </joint>
+  <link name="bone54">
+    <inertial>
+      <origin xyz="0.0428001431483 8.85586725973e-06 0.0237799254315" rpy="0.0 0.0 0.0"/>
+      <mass value="0.230098004362"/>
+      <inertia ixx="0.00053853140335" ixy="-1.69462600354e-07" ixz="-5.92153223065e-07" iyy="0.000608352544635" iyz="4.55806107537e-07" izz="0.000553896203156"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/bone54.DAE"/>
+      </geometry>
+      <material name="">
+        <color rgba="0.752941176471 0.752941176471 0.752941176471 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <mesh filename="package://sweetie_bot_proto2_description/meshes/collision/bone54.STL"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint54" type="revolute">
+    <origin xyz="0.0 0.00314999999999 0.0246" rpy="2.77555756156e-14 0.0 0.0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="bone53"/>
+    <child link="bone54"/>
+    <limit effort="0.24" lower="-0.4" upper="0.4" velocity="1.5708"/>
+  </joint>
+  <link name="eye_left"/>
+  <joint name="eye_left" type="fixed">
+    <origin xyz="0.0700895479365 0.0337909018151 0.00614838727403" rpy="-3.44033294541e-16 3.15829803493e-14 2.50910403565e-14"/>
+    <axis xyz="0.0 0.0 0.0"/>
+    <parent link="bone54"/>
+    <child link="eye_left"/>
+  </joint>
+  <link name="eye_right"/>
+  <joint name="eye_right" type="fixed">
+    <origin xyz="0.0700889457663 -0.0337914070959 0.00614523448994" rpy="-3.69982123334e-16 3.16973967665e-14 2.50355292053e-14"/>
+    <axis xyz="0.0 0.0 0.0"/>
+    <parent link="bone54"/>
+    <child link="eye_right"/>
+  </joint>
+</robot>

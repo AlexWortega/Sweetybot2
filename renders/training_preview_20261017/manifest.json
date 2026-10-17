@@ -1,0 +1,58 @@
+{
+  "captured_local": "2026-10-17T18:19:15.199260",
+  "seed": 1000090,
+  "seconds": 8,
+  "speed": "1x",
+  "auto_reset": false,
+  "cad_visuals": true,
+  "terrain": "flat",
+  "difficulty": 0.2,
+  "checkpoints": {
+    "locomotion": {
+      "sha256": "82bc79b59e46f20ff5e3fcd2bb10c73d52e571d12f84b9d23186903bc3893de2",
+      "quality_gate_passed": false,
+      "metrics": {
+        "survival_fraction": 0.984375,
+        "linear_command_rmse": 0.1127577354192407,
+        "yaw_command_rmse": 0.6577559254135594,
+        "nontrivial_motion": true,
+        "command_coverage_complete": true,
+        "worst_command_survival_fraction": 0.875,
+        "max_observed_rms_joint_torque_nm": 2.0984903773279684,
+        "rated_torque_screen_limit_nm": 1.5691,
+        "torque_gate_passed": false,
+        "torque_screen_physical_thermal_validation": false
+      }
+    },
+    "running": {
+      "sha256": "22f30543f7475298faab8663d268b615f5ac204db376a7e8e2835335b880ab20",
+      "quality_gate_passed": false,
+      "metrics": {
+        "running_success_rate": 0.0,
+        "worst_command_running_success_rate": 0.0,
+        "survival_fraction": 0.5625,
+        "linear_command_rmse": 0.10834693418285718,
+        "yaw_command_rmse": 0.7386796166053211,
+        "worst_command_mean_forward_velocity_mps": 0.4168661330362453,
+        "command_coverage_complete": false,
+        "running_evidence_requires_repeated_flight": true,
+        "max_observed_rms_joint_torque_nm": 1.864959478807446,
+        "rated_torque_screen_limit_nm": 1.5691,
+        "torque_gate_passed": false,
+        "torque_screen_physical_thermal_validation": false
+      }
+    },
+    "recovery": {
+      "sha256": "efdde0ece9fc5ce9c6f157c20bff0d712dd1ec5e282f1b385cdee7c5cdf0d137",
+      "quality_gate_passed": false,
+      "metrics": {
+        "recovery_success_rate": 0.0,
+        "worst_orientation_success_rate": 0.0,
+        "max_observed_rms_joint_torque_nm": 1.031501198928551,
+        "rated_torque_screen_limit_nm": 1.5691,
+        "torque_gate_passed": true,
+        "torque_screen_physical_thermal_validation": false
+      }
+    }
+  }
+}

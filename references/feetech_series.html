@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>              
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<title>STS(TTL) Series Servo-工业标准舵机-迷你微型舵机-机器人专用舵机-小型舵机-飞特模型</title>
+<meta name="description" content="深圳飞特模型有限公司主要生产销售标准舵机，工业舵机，迷你微型舵机，24V舵机，小型舵机，串口总线舵机，机器人专用舵机，大扭力舵机，无刷舵机，micro:bit舵机，arduino舵机，金属舵机等产品。是一家集研发、定制、生产、销售为一体的综合性公司，飞特已通过IS09001:2015质量管理体系认证，以及CE、RoHs的产品检测认证，产品有保障，欢迎联系我们！">
+<meta name="keywords" content="标准舵机,工业舵机,迷你微型舵机,24V舵机,小型舵机,串口总线舵机,机器人专用舵机,大扭力舵机,无刷舵机,micro:bit舵机,arduino舵机,金属舵机">  
+<link rel="stylesheet" href="https://www.feetechrc.com/Data/feetechrc/template/en/fonts/iconfont.css">
+<link rel="stylesheet" href="https://www.feetechrc.com/Data/feetechrc/template/en/css/swiper.min.css">
+<link rel="stylesheet" href="https://www.feetechrc.com/Data/feetechrc/template/en/css/animate.min.css">
+<link rel="stylesheet" href="https://www.feetechrc.com/Data/feetechrc/template/en/css/lib.css" type="text/css" />
+<link rel="stylesheet" href="https://www.feetechrc.com/Data/feetechrc/template/en/css/global.css">
+<link rel="stylesheet" href="https://www.feetechrc.com/Data/feetechrc/template/en/css/style.css">
+<link rel="stylesheet" href="https://www.feetechrc.com/Data/feetechrc/template/en/css/css.css">
+<script src="https://www.feetechrc.com/Data/feetechrc/template/en/js/jquery-1.11.3.js"></script>
+<script src="https://www.feetechrc.com/Data/feetechrc/template/en/js/swiper.min.js"></script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?94748b51e936746611274ee066e58095";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body style="background: #FFF;">
+<header>
+	<div class="header-main">
+	 	<div class="w1520 f-cb">
+			<div class="top">
+				<h1><a href="https://www.feetechrc.com/" title="飞特模型"><img src="https://www.feetechrc.com/Data/feetechrc/template/en/images/logo.png" alt="飞特模型"></a></h1>
+				<div class="yuyan"><a href="http://www.feetech.cn" target="_blank">中文</a>|<a href="http://www.feetechrc.com" class="current">EN</a></div>
+				<div class="search_an"><i class="iconfont icon-sousuo"></i>
+					<div class="search" style="display: none;">
+					<form action="https://www.feetechrc.com/products">
+						<input type="text" class="input_txt" name="keyword" placeholder="输入关键词">
+						<input type="submit" value=" " class="input_btn">
+					</form>
+					</div>
+				</div>
+				<script>
+					$(".icon-sousuo").click(function(){
+						$(".search").toggle();
+					});
+				</script>
+				<div class="nav">
+					<ul>
+    <li>
+    <p><a  class="" href="https://www.feetechrc.com/"   title="Home">Home</a></p>
+    </li>
+    <li>
+    <p><a  class="" href="https://www.feetechrc.com/about"   title="About us">About us</a></p>
+        <dl>
+			<dd><a href="https://www.feetechrc.com/company-introduction"   title="Company profile">Company profile</a></dd>
+			<dd><a href="https://www.feetechrc.com/enterprise-promotion-film"   title="Corporate video">Corporate video</a></dd>
+			<dd><a href="https://www.feetechrc.com/honor"   title="Certification and patent">Certification and patent</a></dd>
+			<dd><a href="https://www.feetechrc.com/jobs"   title="Recruitment">Recruitment</a></dd>
+			<dd><a href="https://www.feetechrc.com/contact"   title="Contact us">Contact us</a></dd>
+        </dl>
+    </li>
+    <li>
+    <p><a  class="current" href="https://www.feetechrc.com/products"   title="Products">Products</a></p>
+        <dl>
+			<dd><a href="https://www.feetechrc.com/new-arrivals"   title="All Products">All Products</a></dd>
+			<dd><a href="https://www.feetechrc.com/2024上新款产品"   title="New products launched in 2024">New products launched in 2024</a></dd>
+			<dd><a href="https://www.feetechrc.com/serial-port-series-steering-gear"   title="Smart Serial Bus Servo">Smart Serial Bus Servo</a></dd>
+			<dd><a href="https://www.feetechrc.com/smart-serial-servo"   title="Smart serial servo">Smart serial servo</a></dd>
+			<dd><a href="https://www.feetechrc.com/pwm series servo"   title="PWM系列舵机">PWM系列舵机</a></dd>
+			<dd><a href="https://www.feetechrc.com/canzongxianjilie"   title="CAN Series Servo">CAN Series Servo</a></dd>
+			<dd><a href="https://www.feetechrc.com/serial-port-series-steering-gear_82653"   title="Industrial Servo">Industrial Servo</a></dd>
+			<dd><a href="https://www.feetechrc.com/wuliuchuansuocheduoji-50732"   title="物流穿梭车舵机">物流穿梭车舵机</a></dd>
+			<dd><a href="https://www.feetechrc.com/serial-port-series-steering-gear_50681"   title="Debugging Board">Debugging Board</a></dd>
+			<dd><a href="https://www.feetechrc.com/serial-port-series-steering-gear_77577"   title="Car series">Car series</a></dd>
+			<dd><a href="https://www.feetechrc.com/serial-port-series-steering-gear_96112"   title="Wheel Series">Wheel Series</a></dd>
+        </dl>
+    </li>
+    <li>
+    <p><a  class="" href="https://www.feetechrc.com/technology"   title="Technology">Technology</a></p>
+        <dl>
+			<dd><a href="https://www.feetechrc.com/advantages"   title="PWM servo technology">PWM servo technology</a></dd>
+			<dd><a href="https://www.feetechrc.com/solution"   title="Bus Servo technology">Bus Servo technology</a></dd>
+			<dd><a href="https://www.feetechrc.com/advantages-of-fete-pwm-actuator"   title="Solution">Solution</a></dd>
+			<dd><a href="http://doc.feetech.cn/#/prodinfodownload?srcType=FTServo-emanual-ab4947a479784a71a8cb7928"   title="资料下载">资料下载</a></dd>
+			<dd><a href="https://ftservo.github.io/ftservo-wiki/"   title="FEETECH SERVO WiKi">FEETECH SERVO WiKi</a></dd>
+        </dl>
+    </li>
+    <li>
+    <p><a  class="" href="https://www.feetechrc.com/service"   title="Service">Service</a></p>
+        <dl>
+			<dd><a href="https://www.feetechrc.com/support"   title="技术支持">技术支持</a></dd>
+			<dd><a href="https://www.feetechrc.com/product-customization-and-oem-service"   title="Customization and OEM service">Customization and OEM service</a></dd>
+			<dd><a href="https://www.feetechrc.com/contact-service"   title="Business Connection">Business Connection</a></dd>
+			<dd><a href="https://www.feetechrc.com/after-sales-service-and-policy"   title="After-sale service">After-sale service</a></dd>
+			<dd><a href="https://www.feetechrc.com/faq"   title="FAQ">FAQ</a></dd>
+        </dl>
+    </li>
+    <li>
+    <p><a  class="" href="https://www.feetechrc.com/news"   title="News">News</a></p>
+    </li>
+					</ul>
+				</div>
+				<div class="m-btn"><span class="box iconfont icon-daohang"></span></div>
+			</div>
+		</div>
+	</div>
+</header>
+<div class="m-sub-menu">
+	<div class="box">
+        <div class="top-box f-cb clearfix">
+        	<div class="yuyan_er">
+				<ul>
+					<li><a href="http://www.feetech.cn/" target="_blank">中文</a></li>
+					<li><a href="/" class="current">EN</a></li>
+				</ul>
+			</div>
+            <span class="close"><i class="iconfont icon-guanbi"></i></span>
+        </div>
+        <div class="list-wrap">
+            <ul class="clearfix">
+            <li class="clearfix">
+				<a href="https://www.feetechrc.com/" ><span class="tit">Home</span></a>
+			</li>
+            <li class="clearfix">
+				<span class="col-box f-cb">
+					<span class="tit">About us</span>
+					<span class="point iconfont icon-jiantou-copy"></span>
+				</span>
+			</li>
+            <li class="clearfix">
+				<span class="col-box f-cb">
+					<span class="tit">Products</span>
+					<span class="point iconfont icon-jiantou-copy"></span>
+				</span>
+			</li>
+            <li class="clearfix">
+				<span class="col-box f-cb">
+					<span class="tit">Technology</span>
+					<span class="point iconfont icon-jiantou-copy"></span>
+				</span>
+			</li>
+            <li class="clearfix">
+				<span class="col-box f-cb">
+					<span class="tit">Service</span>
+					<span class="point iconfont icon-jiantou-copy"></span>
+				</span>
+			</li>
+            <li class="clearfix">
+				<a href="https://www.feetechrc.com/news" ><span class="tit">News</span></a>
+			</li>
+            </ul>
+        </div>
+        <div class="sec-sub-list">
+		<div class="boxs">
+		</div>
+		<div class="boxs">
+			<span class="return-fir"><p><i class="iconfont icon-jiantou-copy-copy"></i>About us</p></span>
+			<ul>
+				<li><a href="https://www.feetechrc.com/company-introduction" title="Company profile">Company profile</a></li>
+				<li><a href="https://www.feetechrc.com/enterprise-promotion-film" title="Corporate video">Corporate video</a></li>
+				<li><a href="https://www.feetechrc.com/honor" title="Certification and patent">Certification and patent</a></li>
+				<li><a href="https://www.feetechrc.com/jobs" title="Recruitment">Recruitment</a></li>
+				<li><a href="https://www.feetechrc.com/contact" title="Contact us">Contact us</a></li>
+			</ul>
+		</div>
+		<div class="boxs">
+			<span class="return-fir"><p><i class="iconfont icon-jiantou-copy-copy"></i>Products</p></span>
+			<ul>
+				<li><a href="https://www.feetechrc.com/new-arrivals" title="All Products">All Products</a></li>
+				<li><a href="https://www.feetechrc.com/2024上新款产品" title="New products launched in 2024">New products launched in 2024</a></li>
+				<li><a href="https://www.feetechrc.com/serial-port-series-steering-gear" title="Smart Serial Bus Servo">Smart Serial Bus Servo</a></li>
+				<li><a href="https://www.feetechrc.com/smart-serial-servo" title="Smart serial servo">Smart serial servo</a></li>
+				<li><a href="https://www.feetechrc.com/pwm series servo" title="PWM系列舵机">PWM系列舵机</a></li>
+				<li><a href="https://www.feetechrc.com/canzongxianjilie" title="CAN Series Servo">CAN Series Servo</a></li>
+				<li><a href="https://www.feetechrc.com/serial-port-series-steering-gear_82653" title="Industrial Servo">Industrial Servo</a></li>
+				<li><a href="https://www.feetechrc.com/wuliuchuansuocheduoji-50732" title="物流穿梭车舵机">物流穿梭车舵机</a></li>
+				<li><a href="https://www.feetechrc.com/serial-port-series-steering-gear_50681" title="Debugging Board">Debugging Board</a></li>
+				<li><a href="https://www.feetechrc.com/serial-port-series-steering-gear_77577" title="Car series">Car series</a></li>
+				<li><a href="https://www.feetechrc.com/serial-port-series-steering-gear_96112" title="Wheel Series">Wheel Series</a></li>
+			</ul>
+		</div>
+		<div class="boxs">
+			<span class="return-fir"><p><i class="iconfont icon-jiantou-copy-copy"></i>Technology</p></span>
+			<ul>
+				<li><a href="https://www.feetechrc.com/advantages" title="PWM servo technology">PWM servo technology</a></li>
+				<li><a href="https://www.feetechrc.com/solution" title="Bus Servo technology">Bus Servo technology</a></li>
+				<li><a href="https://www.feetechrc.com/advantages-of-fete-pwm-actuator" title="Solution">Solution</a></li>
+				<li><a href="https://www.feetechrc.com/data-download-51979" title="资料下载">资料下载</a></li>
+				<li><a href="https://www.feetechrc.com/feetech-servo-wiki" title="FEETECH SERVO WiKi">FEETECH SERVO WiKi</a></li>
+			</ul>
+		</div>
+		<div class="boxs">
+			<span class="return-fir"><p><i class="iconfont icon-jiantou-copy-copy"></i>Service</p></span>
+			<ul>
+				<li><a href="https://www.feetechrc.com/support" title="技术支持">技术支持</a></li>
+				<li><a href="https://www.feetechrc.com/product-customization-and-oem-service" title="Customization and OEM service">Customization and OEM service</a></li>
+				<li><a href="https://www.feetechrc.com/contact-service" title="Business Connection">Business Connection</a></li>
+				<li><a href="https://www.feetechrc.com/after-sales-service-and-policy" title="After-sale service">After-sale service</a></li>
+				<li><a href="https://www.feetechrc.com/faq" title="FAQ">FAQ</a></li>
+			</ul>
+		</div>
+		<div class="boxs">
+		</div>
+        </div>
+	</div>
+</div>
+<script src="https://www.feetechrc.com/Data/feetechrc/template/en/js/main.js" type="text/javascript"></script>
+<div class="body-wrap">
+
+<div class="ny_banner" style="background: url('/Data/feetechrc/upload/image/20251119/机器人-1.jpg') no-repeat center;background-size: cover;"></div>
+<div class="subnav_er">
+<ul class="index_box clearfix">
+    <li><a class="current">Smart Serial Bus Servo</a></li>
+</ul>
+</div>
+<div class="subnav_san">
+<div class="fh"><i class="iconfont icon-jiantou1-copy-copy"></i></div>
+<div class="dh">
+	<h2>Products</h2>
+	<p><i class="iconfont icon-daohang1"></i></p>
+	<ul class="clearfix" style="display: none;">
+		<li><a href="https://www.feetechrc.com/new-arrivals.html"><i class="iconfont icon-jiantou1-copy"></i>All Products</a></li>
+		<li><a href="https://www.feetechrc.com/2024上新款产品.html"><i class="iconfont icon-jiantou1-copy"></i>New products launched in 2024</a></li>
+		<li><a href="https://www.feetechrc.com/serial-port-series-steering-gear.html"><i class="iconfont icon-jiantou1-copy"></i>Smart Serial Bus Servo</a></li>
+		<li><a href="https://www.feetechrc.com/smart-serial-servo.html"><i class="iconfont icon-jiantou1-copy"></i>Smart serial servo</a></li>
+		<li><a href="https://www.feetechrc.com/pwm series servo.html"><i class="iconfont icon-jiantou1-copy"></i>PWM系列舵机</a></li>
+		<li><a href="https://www.feetechrc.com/canzongxianjilie.html"><i class="iconfont icon-jiantou1-copy"></i>CAN Series Servo</a></li>
+		<li><a href="https://www.feetechrc.com/serial-port-series-steering-gear_82653.html"><i class="iconfont icon-jiantou1-copy"></i>Industrial Servo</a></li>
+		<li><a href="https://www.feetechrc.com/wuliuchuansuocheduoji-50732.html"><i class="iconfont icon-jiantou1-copy"></i>物流穿梭车舵机</a></li>
+		<li><a href="https://www.feetechrc.com/serial-port-series-steering-gear_50681.html"><i class="iconfont icon-jiantou1-copy"></i>Debugging Board</a></li>
+		<li><a href="https://www.feetechrc.com/serial-port-series-steering-gear_77577.html"><i class="iconfont icon-jiantou1-copy"></i>Car series</a></li>
+		<li><a href="https://www.feetechrc.com/serial-port-series-steering-gear_96112.html"><i class="iconfont icon-jiantou1-copy"></i>Wheel Series</a></li>
+	</ul>
+</div>
+<script>
+	$(".dh").click(function(){
+		$(".dh ul").toggle();
+	})
+</script>
+</div>
+<div class="main-about">
+<div class="index_box profile">
+<div class="pro_left">
+ <div class="option-box">
+	 <div class="form-group">
+		 <div class="form-group-name"><a href="https://www.feetechrc.com/new-arrivals">All Products</a></div>
+	 </div>
+	 <div class="form-group">
+		 <div class="form-group-name"><a href="https://www.feetechrc.com/2024上新款产品">New products launched in 2024</a></div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/串口系列">Serial port series</a></label>
+		 </div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/pwm系列">PWM series</a></label>
+		 </div>
+	 </div>
+	 <div class="form-group">
+		 <div class="form-group-name"><a href="https://www.feetechrc.com/serial-port-series-steering-gear">Smart Serial Bus Servo</a></div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/scs_ttl_Servo">SCS(TTL)  Series Servo</a></label>
+		 </div>
+		 <div class="p-form-option">
+			 <label><a  class=hover href="https://www.feetechrc.com/sts_ttl_series servo">STS(TTL) Series Servo</a></label>
+		 </div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/hl恒力系列舵机">HLS（TTL）Series Servo</a></label>
+		 </div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/sms_rs485_series servo">SMS(RS485) series servo</a></label>
+		 </div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/modbus-rtu series servo">Modbus-RTU Series Servo</a></label>
+		 </div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/modbus-rtu 51867">12V series servo</a></label>
+		 </div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/24-v-steering-gear">Modbus-RTU Series Servo</a></label>
+		 </div>
+	 </div>
+	 <div class="form-group">
+		 <div class="form-group-name"><a href="https://www.feetechrc.com/smart-serial-servo">Smart serial servo</a></div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/ft53 series servo">FT53  Series Servo</a></label>
+		 </div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/ft53 series servo_70837">FT58 Series Servo</a></label>
+		 </div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/ft83 series servo_52892">FT83 Series Servo</a></label>
+		 </div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/ft54 series servo_91969">FT54 Series Servo</a></label>
+		 </div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/ft63系列">FT63  Series Servo</a></label>
+		 </div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/ft71系列">FT71  Series Servo</a></label>
+		 </div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/ft59系列">FT59 Series Servo</a></label>
+		 </div>
+	 </div>
+	 <div class="form-group">
+		 <div class="form-group-name"><a href="https://www.feetechrc.com/pwm series servo">PWM系列舵机</a></div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/small-steering-gear">Small servo</a></label>
+		 </div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/standard-steering-gear">Standard servo</a></label>
+		 </div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/analog-servo">Analog Servo</a></label>
+		 </div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/digital-steering-gear">Digital Servo</a></label>
+		 </div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/continuous-rudder-machine">Continuous Rotation Servo</a></label>
+		 </div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/steering-gear-with-feedback">Feedback Servo</a></label>
+		 </div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/360-degree-steering-gear">Feedback Servo</a></label>
+		 </div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/low-shell-steering-gear">矮壳舵机</a></label>
+		 </div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/high-torque-servo">大扭矩舵机</a></label>
+		 </div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/aichongwuwanjujingyinduojijilie-51708">Silent Servo Series for AI Pet Toys</a></label>
+		 </div>
+	 </div>
+	 <div class="form-group">
+		 <div class="form-group-name"><a href="https://www.feetechrc.com/canzongxianjilie">CAN Series Servo</a></div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/fu88-servo">FU  Series Servo</a></label>
+		 </div>
+	 </div>
+	 <div class="form-group">
+		 <div class="form-group-name"><a href="https://www.feetechrc.com/serial-port-series-steering-gear_82653">Industrial Servo</a></div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/brushless-actuator-series">Brushless Motor Series Servo</a></label>
+		 </div>
+		 <div class="p-form-option">
+			 <label><a   href="https://www.feetechrc.com/brushless-actuator-series_52651">Coreless Motor Series Servo</a></label>
+		 </div>
+	 </div>
+	 <div class="form-group">
+		 <div class="form-group-name"><a href="https://www.feetechrc.com/wuliuchuansuocheduoji-50732">物流穿梭车舵机</a></div>
+	 </div>
+	 <div class="form-group">
+		 <div class="form-group-name"><a href="https://www.feetechrc.com/serial-port-series-steering-gear_50681">Debugging Board</a></div>
+	 </div>
+	 <div class="form-group">
+		 <div class="form-group-name"><a href="https://www.feetechrc.com/serial-port-series-steering-gear_77577">Car series</a></div>
+	 </div>
+	 <div class="form-group">
+		 <div class="form-group-name"><a href="https://www.feetechrc.com/serial-port-series-steering-gear_96112">Wheel Series</a></div>
+	 </div>
+</div>
+</div>
+<div class="pro_right">
+<div class="product">
+	<ul>
+		<li>
+			<div class="pics">
+				<a href="https://www.feetechrc.com/519352"><img src="/cut_298_198/Data/feetechrc/upload/image/20260513/1-1.jpg" alt="12V 200KG Metal Shell Metal Gear Brushless Motor Dual-axis TTL Serial Bus Servo"/></a>
+				<div class="product-info">
+				  <div class="p-small">12V 200KG Metal Shell Metal Gear Brushless Motor Dual-axis TTL Serial Bus Servo</div>
+					<div class="goods_nr"><pre style="white-space: pre-wrap;word-wrap: break-word;font-family:'Microsoft Yahei',Arial,Helvetica,sans-serif,'宋体';">Product Model No：ST-3200-C001
+Structure Size：30*65*48mm
+The Maximum Speed：0.263sec/60 °(38RPM)@12V
+The Stall Torque：200kg.cm@12V
+Motor：Brushless Motor
+Product  Weight：210± 5g</pre></div>
+					<div class="p-view"><a href="https://www.feetechrc.com/519352">Details</a></div> 
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="pics">
+				<a href="https://www.feetechrc.com/570220"><img src="/cut_298_198/Data/feetechrc/upload/image/20260513/1.jpg" alt="12V 120KG Metal Shell Metal Gear Coreless Motor Dual-axis TTL Serial Bus Servo"/></a>
+				<div class="product-info">
+				  <div class="p-small">12V 120KG Metal Shell Metal Gear Coreless Motor Dual-axis TTL Serial Bus Servo</div>
+					<div class="goods_nr"><pre style="white-space: pre-wrap;word-wrap: break-word;font-family:'Microsoft Yahei',Arial,Helvetica,sans-serif,'宋体';">Product Model No：ST-3120-C001
+Structure Size：30*65*48mm
+Product  Weight：210± 5g
+The Maximum Speed：0.454sec/60 °(22RPM)@12V
+The Stall Torque：120kg.cm@12V
+The Rotation Degree：(360°/4096)</pre></div>
+					<div class="p-view"><a href="https://www.feetechrc.com/570220">Details</a></div> 
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="pics">
+				<a href="https://www.feetechrc.com/555959"><img src="/cut_298_198/Data/feetechrc/upload/image/ST-3095-C001/1.jpg" alt="7.4V 95KG Full Metal Double Shaft TTL  Servo"/></a>
+				<div class="product-info">
+				  <div class="p-small">7.4V 95KG Full Metal Double Shaft TTL  Servo</div>
+					<div class="goods_nr"><pre style="white-space: pre-wrap;word-wrap: break-word;font-family:'Microsoft Yahei',Arial,Helvetica,sans-serif,'宋体';">Product Model No：ST-3095-C001
+Structure Size：30*65*48mm
+Product  Weight：194.5± 1g
+The Maximum Speed：0.25sec/60°@8.4V
+The Stall Torque：105kg.cm@8.4V
+The Rotation Degree：(360°/4096)</pre></div>
+					<div class="p-view"><a href="https://www.feetechrc.com/555959">Details</a></div> 
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="pics">
+				<a href="https://www.feetechrc.com/6v-9kg-cm-brushless-360-&#176;-magnetic-coding-serial-port-actuator"><img src="/cut_298_198/Data/feetechrc/upload/image/ST-3009-C001/1.jpg" alt="6V 9kg.cm Brushless 360 Degree Magnetic Coding Serial Bus Servo"/></a>
+				<div class="product-info">
+				  <div class="p-small">6V 9kg.cm Brushless 360 Degree Magnetic Coding Serial Bus Servo</div>
+					<div class="goods_nr"><pre style="white-space: pre-wrap;word-wrap: break-word;font-family:'Microsoft Yahei',Arial,Helvetica,sans-serif,'宋体';">Product Model No：ST-3009-C001
+Structure Size：20*30*36.5mm
+Product  Weight：45± 1g
+The Maximum Speed：0.1sec/60°（100RPM）@7.4V
+The Stall Torque：11.5kg.cm@7.4V
+The Rotation Degree：(360°/4096)</pre></div>
+					<div class="p-view"><a href="https://www.feetechrc.com/6v-9kg-cm-brushless-360-&#176;-magnetic-coding-serial-port-actuator">Details</a></div> 
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="pics">
+				<a href="https://www.feetechrc.com/562636"><img src="/cut_298_198/Data/feetechrc/upload/image/ST-3250-C001/1.jpg" alt="12V 50KG Magnetic Encoder Double Shaft TTL  Servo STS3250"/></a>
+				<div class="product-info">
+				  <div class="p-small">12V 50KG Magnetic Encoder Double Shaft TTL  Servo STS3250</div>
+					<div class="goods_nr"><pre style="white-space: pre-wrap;word-wrap: break-word;font-family:'Microsoft Yahei',Arial,Helvetica,sans-serif,'宋体';">Product Model No：ST-3250-C001
+Structure Size：45.22*24.72*35mm
+Product  Weight：74.5± 1g
+The Maximum Speed：0.133sec/60°@12V
+The Stall Torque：50kg.cm@12V
+The Rotation Degree：(360°/4096)</pre></div>
+					<div class="p-view"><a href="https://www.feetechrc.com/562636">Details</a></div> 
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="pics">
+				<a href="https://www.feetechrc.com/12v-30kg-metal-shell-metal-tooth-iron-core-motor-magnetic-coding-double-shaft-ttl-series-steering-gear"><img src="/cut_298_198/Data/feetechrc/upload/image/STS3235/1.jpg" alt="12V 30KG Magnetic Encoder Double Shaft TTL  Servo STS3235"/></a>
+				<div class="product-info">
+				  <div class="p-small">12V 30KG Magnetic Encoder Double Shaft TTL  Servo STS3235</div>
+					<div class="goods_nr"><pre style="white-space: pre-wrap;word-wrap: break-word;font-family:'Microsoft Yahei',Arial,Helvetica,sans-serif,'宋体';">Product Model No：ST-3235-C001
+Structure Size：45.22*24.72*35mm
+Product  Weight：70.5± 1g
+The Maximum Speed：0.222sec/60°@12V
+The Stall Torque：30kg.cm@12V
+The Rotation Degree：(360°/4096)</pre></div>
+					<div class="p-view"><a href="https://www.feetechrc.com/12v-30kg-metal-shell-metal-tooth-iron-core-motor-magnetic-coding-double-shaft-ttl-series-steering-gear">Details</a></div> 
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="pics">
+				<a href="https://www.feetechrc.com/74v-25kg-metal-hollow-cup-steel-tooth-360-degree-magnetic-coding-single-shaft-ttl-serial-port-steering-gear"><img src="/cut_298_198/Data/feetechrc/upload/image/ST-5420-C001/1.jpg" alt="7.4V 25KG Coreless Steel Gear 360 degree Magnetic Encoder Single Shaft Servo"/></a>
+				<div class="product-info">
+				  <div class="p-small">7.4V 25KG Coreless Steel Gear 360 degree Magnetic Encoder Single Shaft Servo</div>
+					<div class="goods_nr"><pre style="white-space: pre-wrap;word-wrap: break-word;font-family:'Microsoft Yahei',Arial,Helvetica,sans-serif,'宋体';">Product Model No：ST-5420-C001
+Structure Size：40.6*20*30mm
+Product  Weight：65.5± 1g
+The Maximum Speed：0.111sec/60°(90RPM)@7.4V
+The Stall Torque：25kg.cm@7.4V
+The Rotation Degree：(360°/4096)</pre></div>
+					<div class="p-view"><a href="https://www.feetechrc.com/74v-25kg-metal-hollow-cup-steel-tooth-360-degree-magnetic-coding-single-shaft-ttl-serial-port-steering-gear">Details</a></div> 
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="pics">
+				<a href="https://www.feetechrc.com/74v-40-kgcm-metal-shell-steel-teeth-360-degree-magnetic-code-single-shaft-ttl-serial-port-steering-gear"><img src="/cut_298_198/Data/feetechrc/upload/image/STS3046/未标题-1-(1).jpg" alt="7.4V 40 KG.CM 360 degree magnetic coded single axis TTL serial port steering servo STS3046"/></a>
+				<div class="product-info">
+				  <div class="p-small">7.4V 40 KG.CM 360 degree magnetic coded single axis TTL serial port steering servo STS3046</div>
+					<div class="goods_nr"><pre style="white-space: pre-wrap;word-wrap: break-word;font-family:'Microsoft Yahei',Arial,Helvetica,sans-serif,'宋体';">Product Model No：ST-3046-C001
+Structure Size：40*20*43.05mm
+Product  Weight：89± 1g
+The Maximum Speed：0.22sec/60°@7.4V
+The Stall Torque：40kg.cm@6V
+The Rotation Degree：(360°/4096)</pre></div>
+					<div class="p-view"><a href="https://www.feetechrc.com/74v-40-kgcm-metal-shell-steel-teeth-360-degree-magnetic-code-single-shaft-ttl-serial-port-steering-gear">Details</a></div> 
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="pics">
+				<a href="https://www.feetechrc.com/12v-40kg-metal-tooth-large-torque-brushless-motor-magnetic-coding-double-shaft-ttl-series-steering-gear"><img src="/cut_298_198/Data/feetechrc/upload/image/20220222/22.jpg" alt="12V 40KG 85RPM Brushless Motor 360 degrees Double Shaft TTL  Servo"/></a>
+				<div class="product-info">
+				  <div class="p-small">12V 40KG 85RPM Brushless Motor 360 degrees Double Shaft TTL  Servo</div>
+					<div class="goods_nr"><pre style="white-space: pre-wrap;word-wrap: break-word;font-family:'Microsoft Yahei',Arial,Helvetica,sans-serif,'宋体';">Product Model No：ST-3025-C002
+Structure Size：40*20*40mm
+Product  Weight：89± 1g 
+The Maximum Speed：0.117sec/60°（85RPM）@12V
+The Stall Torque：40kg.cm@12V
+The Rotation Degree：(360°/4096)</pre></div>
+					<div class="p-view"><a href="https://www.feetechrc.com/12v-40kg-metal-tooth-large-torque-brushless-motor-magnetic-coding-double-shaft-ttl-series-steering-gear">Details</a></div> 
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="pics">
+				<a href="https://www.feetechrc.com/12v-30kg-metal-tooth-core-motor-magnetic-coding-double-shaft-ttl-series-steering-gear"><img src="/cut_298_198/Data/feetechrc/upload/image/20220222/22.jpg" alt="12V 20KG high speed 170RPM Magnetic Encoder Double Shaft TTL  Servo STS3025BL"/></a>
+				<div class="product-info">
+				  <div class="p-small">12V 20KG high speed 170RPM Magnetic Encoder Double Shaft TTL  Servo STS3025BL</div>
+					<div class="goods_nr"><pre style="white-space: pre-wrap;word-wrap: break-word;font-family:'Microsoft Yahei',Arial,Helvetica,sans-serif,'宋体';">Product Model No：ST-3025-C001
+Structure Size：40*20*40mm
+Product  Weight：89± 1g 
+The Maximum Speed：0.059sec/60°（170RPM）@12V
+The Stall Torque：20kg.cm@12V
+The Rotation Degree：(360°/4096)</pre></div>
+					<div class="p-view"><a href="https://www.feetechrc.com/12v-30kg-metal-tooth-core-motor-magnetic-coding-double-shaft-ttl-series-steering-gear">Details</a></div> 
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="pics">
+				<a href="https://www.feetechrc.com/6v-6-kgcm-aluminum-shell-hollow-cup-metal-tooth-360-degree-magnetic-coding-single-axis-ttl-serial-port-actuator"><img src="/cut_298_198/Data/feetechrc/upload/image/STS3045M/1.jpg" alt="6V 6KG metal tooth 360 degree magnetic encoding single axis serial servo STS3045M"/></a>
+				<div class="product-info">
+				  <div class="p-small">6V 6KG metal tooth 360 degree magnetic encoding single axis serial servo STS3045M</div>
+					<div class="goods_nr"><pre style="white-space: pre-wrap;word-wrap: break-word;font-family:'Microsoft Yahei',Arial,Helvetica,sans-serif,'宋体';">Product Model No：ST-S3045-C001
+Structure Size：36*15*29.2mm
+Product  Weight：34.8± 1g
+The Maximum Speed：0.133sec/60°@6V
+The Stall Torque：6kg.cm@6V
+The Rotation Degree：(360°/4096)</pre></div>
+					<div class="p-view"><a href="https://www.feetechrc.com/6v-6-kgcm-aluminum-shell-hollow-cup-metal-tooth-360-degree-magnetic-coding-single-axis-ttl-serial-port-actuator">Details</a></div> 
+				</div>
+			</div>
+		</li>
+		<li>
+			<div class="pics">
+				<a href="https://www.feetechrc.com/611721"><img src="/cut_298_198/Data/feetechrc/upload/image/20251107/1-3.jpg" alt="12V 35kg&#183;cm 360&#176; Magnetic Encoder Dual-Axis TTL Serial Bus Servo"/></a>
+				<div class="product-info">
+				  <div class="p-small">12V 35kg·cm 360° Magnetic Encoder Dual-Axis TTL Serial Bus Servo</div>
+					<div class="goods_nr"><pre style="white-space: pre-wrap;word-wrap: break-word;font-family:'Microsoft Yahei',Arial,Helvetica,sans-serif,'宋体';">Product Model No：ST-3035-C001
+Structure Size：40.2mm *20.2mm *40mm
+Product  Weight：62.5±2g
+The Maximum Speed：0.22sec/60°(45RPM)@12V
+The Stall Torque：35kg.cm@12V
+The Rotation Degree：360°(when 0～4095)</pre></div>
+					<div class="p-view"><a href="https://www.feetechrc.com/611721">Details</a></div> 
+				</div>
+			</div>
+		</li>
+	</ul>
+<style>
+.pagebox{ font-family:Arial; text-align:center;clear:both;}
+.page{ display:inline-block; margin-top:30px; margin-bottom:20px; margin-left:1px; font-size:0px;}
+.page a,.page span{ margin-left:-1px; display:inline-block; font-size:14px; line-height:30px; width:30px; border:1px  solid #e0e0e0;}
+.page span.on{  border:1px  solid #d9261c; background:#d9261c; color:#fff;}
+.page a:first-child,.page span:first-child{ border-radius:4px 0px 0px 4px;}
+.page a:last-child,.page span:last-child{ border-radius:0px 4px 4px 0px;}
+.page2 { margin-top:20px;}
+.page2 span{ color:#999;}
+</style>
+<div class="pagebox">
+	<div class="page">
+<span>&laquo;</span>
+        <span class="on">1</span>
+        <a href="https://www.feetechrc.com/products/sts_ttl_series servo-page-2">2</a>
+
+<a href="https://www.feetechrc.com/products/sts_ttl_series servo-page-2">&raquo;</a>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+	<div class="foot">
+		<div class="foot_t">
+			<div class="box clearfix">
+				<div class="t_l">
+		<dl>
+			<dt>About us</dt>
+			<dd><a href="https://www.feetechrc.com/company-introduction"   title="Company profile">Company profile</a></dd>
+			<dd><a href="https://www.feetechrc.com/enterprise-promotion-film"   title="Corporate video">Corporate video</a></dd>
+			<dd><a href="https://www.feetechrc.com/honor"   title="Certification and patent">Certification and patent</a></dd>
+			<dd><a href="https://www.feetechrc.com/jobs"   title="Recruitment">Recruitment</a></dd>
+			<dd><a href="https://www.feetechrc.com/contact"   title="Contact us">Contact us</a></dd>
+		</dl>
+		<dl>
+			<dt>Products</dt>
+			<dd><a href="https://www.feetechrc.com/new-arrivals"   title="All Products">All Products</a></dd>
+			<dd><a href="https://www.feetechrc.com/2024上新款产品"   title="New products launched in 2024">New products launched in 2024</a></dd>
+			<dd><a href="https://www.feetechrc.com/serial-port-series-steering-gear"   title="Smart Serial Bus Servo">Smart Serial Bus Servo</a></dd>
+			<dd><a href="https://www.feetechrc.com/smart-serial-servo"   title="Smart serial servo">Smart serial servo</a></dd>
+			<dd><a href="https://www.feetechrc.com/pwm series servo"   title="PWM系列舵机">PWM系列舵机</a></dd>
+			<dd><a href="https://www.feetechrc.com/canzongxianjilie"   title="CAN Series Servo">CAN Series Servo</a></dd>
+			<dd><a href="https://www.feetechrc.com/serial-port-series-steering-gear_82653"   title="Industrial Servo">Industrial Servo</a></dd>
+			<dd><a href="https://www.feetechrc.com/wuliuchuansuocheduoji-50732"   title="物流穿梭车舵机">物流穿梭车舵机</a></dd>
+			<dd><a href="https://www.feetechrc.com/serial-port-series-steering-gear_50681"   title="Debugging Board">Debugging Board</a></dd>
+			<dd><a href="https://www.feetechrc.com/serial-port-series-steering-gear_77577"   title="Car series">Car series</a></dd>
+			<dd><a href="https://www.feetechrc.com/serial-port-series-steering-gear_96112"   title="Wheel Series">Wheel Series</a></dd>
+		</dl>
+		<dl>
+			<dt>Technology</dt>
+			<dd><a href="https://www.feetechrc.com/advantages"   title="PWM servo technology">PWM servo technology</a></dd>
+			<dd><a href="https://www.feetechrc.com/solution"   title="Bus Servo technology">Bus Servo technology</a></dd>
+			<dd><a href="https://www.feetechrc.com/advantages-of-fete-pwm-actuator"   title="Solution">Solution</a></dd>
+			<dd><a href="http://doc.feetech.cn/#/prodinfodownload?srcType=FTServo-emanual-ab4947a479784a71a8cb7928"   title="资料下载">资料下载</a></dd>
+			<dd><a href="https://ftservo.github.io/ftservo-wiki/"   title="FEETECH SERVO WiKi">FEETECH SERVO WiKi</a></dd>
+		</dl>
+		<dl>
+			<dt>Service</dt>
+			<dd><a href="https://www.feetechrc.com/support"   title="技术支持">技术支持</a></dd>
+			<dd><a href="https://www.feetechrc.com/product-customization-and-oem-service"   title="Customization and OEM service">Customization and OEM service</a></dd>
+			<dd><a href="https://www.feetechrc.com/contact-service"   title="Business Connection">Business Connection</a></dd>
+			<dd><a href="https://www.feetechrc.com/after-sales-service-and-policy"   title="After-sale service">After-sale service</a></dd>
+			<dd><a href="https://www.feetechrc.com/faq"   title="FAQ">FAQ</a></dd>
+		</dl>
+				</div>
+				<div class="t_c">
+					<h2>Service hotline</h2>
+					<div class="txt">
+						<div class="dh">0755-89335266</div>
+						<p>Work time：9:00-20:00</p>
+						<p>E-mail：aaron@feetechrc.com.cn</p>
+					</div>
+				</div>
+				<div class="t_r"><img src="https://www.feetechrc.com/Data/feetechrc/template/en/images/code.jpg" alt=""><p>Focus on us</p></div>
+			</div>
+		</div>
+		<div class="foot_b" data-wow-delay=".2s">Copyright © 2020 All&nbsp;rights&nbsp;reserved:Shenzhen&nbsp;FEETECH&nbsp;RC&nbsp;Model&nbsp;CO.,Ltd. Address:2&nbsp;Floor,&nbsp;No.&nbsp;60,&nbsp;Puxia&nbsp;Road,&nbsp;Liu&nbsp;yue,&nbsp;Henggang&nbsp;Town,&nbsp;Longgang,&nbsp;Shenzhen,&nbsp;China Tel:86&nbsp;755&nbsp;89335266</div>
+	</div>
+</div>
+
+<script src="https://www.feetechrc.com/Data/feetechrc/template/en/js/wow.min.js"></script>
+<script>
+   new WOW().init();
+</script>
+<script src="https://www.feetechrc.com/Data/feetechrc/template/en/js/public.js"></script>
+
+<div class="client-2">
+  <ul id="client-2">
+    <li class="my-kefu-qq">
+      <div class="my-kefu-main">
+        <div class="my-kefu-left"> <a class="online-contact-btn" href="http://wpa.qq.com/msgrd?v=3&amp;uin=3459954868&amp;site=飞特模型&amp;menu=yes" title="飞特模型" target="_blank"> <i></i>
+          </a> </div>
+        <div class="my-kefu-right"></div>
+      </div>
+    </li>
+    <li class="my-kefu-liuyan"> 
+        <div class="my-kefu-main"> 
+            <div class="my-kefu-left"> 
+                <a href="mailto:aaron@feetechrc.com.cn" target="_blank"> <i></i> 
+                </a> 
+            </div> 
+            <div class="my-kefu-right"></div> 
+        </div> 
+    </li> 
+    <li class="my-kefu-weixin"> 
+        <div class="my-kefu-main"> 
+            <div class="my-kefu-left"> 
+                <i></i> 
+            </div> 
+            <div class="my-kefu-right"> 
+            </div> 
+            <div class="my-kefu-weixin-pic"> 
+                <img src="https://www.feetechrc.com/Data/feetechrc/template/en/images/ewm.jpg"> 
+            </div> 
+        </div> 
+    </li>
+
+    <li class="my-kefu-ftop">
+      <div class="my-kefu-main">
+        <div class="my-kefu-left"> <a href="javascript:;"> <i></i>
+          </a> </div>
+        <div class="my-kefu-right"> </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+    
+
+    
+
+</body>
+</html>

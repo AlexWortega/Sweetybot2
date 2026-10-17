@@ -1,0 +1,123 @@
+{
+  "waveshare_feetech_st3215_servo": {
+    "id": "waveshare_feetech_st3215_servo",
+    "name": "Waveshare Feetech ST3215 Servo",
+    "description": "Waveshare Feetech ST3215 Servo actuator.",
+    "category": "actuator",
+    "family": "feetech",
+    "tags": [
+      "motor",
+      "robotic-actuator",
+      "servo"
+    ],
+    "aliases": [
+      "ST3215 Servo",
+      "ST3215 ServoModule"
+    ],
+    "productPage": "https://www.waveshare.com/wiki/ST3215_Servo",
+    "attributes": {
+      "manufacturer": "Waveshare Feetech",
+      "model": "ST3215 Servo"
+    },
+    "stepUrl": "https://media.githubusercontent.com/media/earthtojake/step.parts/c6113328a5695b976a010a203a90fe86191769bf/catalog/step/waveshare_feetech_st3215_servo.step",
+    "glbUrl": "https://8ljrorjug0ps5al0.public.blob.vercel-storage.com/preview/glb/waveshare_feetech_st3215_servo-29954eb73bd22b3f9536de2c1d8f96843b5c5b32288a8f4cb09709b8b892e39b.glb",
+    "pngUrl": "https://8ljrorjug0ps5al0.public.blob.vercel-storage.com/preview/png/waveshare_feetech_st3215_servo-29954eb73bd22b3f9536de2c1d8f96843b5c5b32288a8f4cb09709b8b892e39b.png",
+    "byteSize": 3025292,
+    "sha256": "29954eb73bd22b3f9536de2c1d8f96843b5c5b32288a8f4cb09709b8b892e39b",
+    "pageUrl": "https://www.step.parts/parts/waveshare_feetech_st3215_servo",
+    "apiUrl": "https://api.step.parts/v1/parts/waveshare_feetech_st3215_servo"
+  },
+  "bearing_623zz": {
+    "id": "bearing_623zz",
+    "name": "623ZZ ball bearing",
+    "description": "Deep groove ball bearing, 623ZZ.",
+    "category": "bearing",
+    "family": "deep-groove-ball-bearing",
+    "tags": [
+      "ball-bearing",
+      "shielded",
+      "metric"
+    ],
+    "aliases": [
+      "623ZZ",
+      "623ZZ bearing"
+    ],
+    "attributes": {
+      "bearingCode": "623ZZ",
+      "sealType": "ZZ",
+      "shielded": true,
+      "nominalSize": "623ZZ"
+    },
+    "stepUrl": "https://media.githubusercontent.com/media/earthtojake/step.parts/c6113328a5695b976a010a203a90fe86191769bf/catalog/step/bearing_623zz.step",
+    "glbUrl": "https://8ljrorjug0ps5al0.public.blob.vercel-storage.com/preview/glb/bearing_623zz-2d5722b56a3e31d0582df451457028009af1c7e1beedd8874006c72e5f38ff78.glb",
+    "pngUrl": "https://8ljrorjug0ps5al0.public.blob.vercel-storage.com/preview/png/bearing_623zz-2d5722b56a3e31d0582df451457028009af1c7e1beedd8874006c72e5f38ff78.png",
+    "byteSize": 42531,
+    "sha256": "2d5722b56a3e31d0582df451457028009af1c7e1beedd8874006c72e5f38ff78",
+    "pageUrl": "https://www.step.parts/parts/bearing_623zz",
+    "apiUrl": "https://api.step.parts/v1/parts/bearing_623zz"
+  },
+  "iso4762_socket_head_cap_screw_m3x12": {
+    "id": "iso4762_socket_head_cap_screw_m3x12",
+    "name": "ISO 4762 socket head cap screw, M3 x 12",
+    "description": "ISO 4762, socket head cap screw, M3 x 12.",
+    "category": "fastener",
+    "family": "socket-head-cap-screw",
+    "tags": [
+      "screw",
+      "socket-head",
+      "metric"
+    ],
+    "aliases": [
+      "SHCS M3x12",
+      "M3 socket head cap screw",
+      "ISO 4762 M3x12",
+      "ISO4762 M3x12"
+    ],
+    "standard": {
+      "body": "ISO",
+      "number": "4762",
+      "designation": "ISO 4762"
+    },
+    "attributes": {
+      "thread": "M3",
+      "lengthMm": 12,
+      "nominalSize": "M3 x 12",
+      "headStyle": "socket-head",
+      "driveStyle": "hex-socket"
+    },
+    "stepUrl": "https://media.githubusercontent.com/media/earthtojake/step.parts/c6113328a5695b976a010a203a90fe86191769bf/catalog/step/iso4762_socket_head_cap_screw_m3x12.step",
+    "glbUrl": "https://8ljrorjug0ps5al0.public.blob.vercel-storage.com/preview/glb/iso4762_socket_head_cap_screw_m3x12-7720179ea94ed5c4e2b32f6e4c2583a77423240599c602690c5b2b2f5471cc47.glb",
+    "pngUrl": "https://8ljrorjug0ps5al0.public.blob.vercel-storage.com/preview/png/iso4762_socket_head_cap_screw_m3x12-7720179ea94ed5c4e2b32f6e4c2583a77423240599c602690c5b2b2f5471cc47.png",
+    "byteSize": 58826,
+    "sha256": "7720179ea94ed5c4e2b32f6e4c2583a77423240599c602690c5b2b2f5471cc47",
+    "pageUrl": "https://www.step.parts/parts/iso4762_socket_head_cap_screw_m3x12",
+    "apiUrl": "https://api.step.parts/v1/parts/iso4762_socket_head_cap_screw_m3x12"
+  },
+  "feetech_sts3250": {
+    "id": "feetech_sts3250",
+    "name": "Feetech STS3250",
+    "description": "Feetech STS3250 servo motor.",
+    "category": "actuator",
+    "family": "feetech",
+    "tags": [
+      "servo"
+    ],
+    "aliases": [
+      "FEETECH STS3250 Servo Motor",
+      "STS3250",
+      "st-3250m-20211119-B"
+    ],
+    "productPage": "https://aifitlab.com/products/feetech-sts3250-servo-motor",
+    "attributes": {
+      "manufacturer": "Feetech",
+      "model": "STS3250"
+    },
+    "stepUrl": "https://media.githubusercontent.com/media/earthtojake/step.parts/c6113328a5695b976a010a203a90fe86191769bf/catalog/step/feetech_sts3250.step",
+    "glbUrl": "https://8ljrorjug0ps5al0.public.blob.vercel-storage.com/preview/glb/feetech_sts3250-cf46f17da455e1f158114791bb31404c24d925e8a758bbd6189f8ee815a571bf.glb",
+    "pngUrl": "https://8ljrorjug0ps5al0.public.blob.vercel-storage.com/preview/png/feetech_sts3250-cf46f17da455e1f158114791bb31404c24d925e8a758bbd6189f8ee815a571bf.png",
+    "byteSize": 10390008,
+    "sha256": "cf46f17da455e1f158114791bb31404c24d925e8a758bbd6189f8ee815a571bf",
+    "pageUrl": "https://www.step.parts/parts/feetech_sts3250",
+    "apiUrl": "https://api.step.parts/v1/parts/feetech_sts3250"
+  }
+}
