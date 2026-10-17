@@ -1,0 +1,31 @@
+{
+  "status": "offline electrical model and reference decoder only; no hardware drivers or firmware verified",
+  "checks": [
+    {
+      "check": "pi_gpio_bcm unique ownership",
+      "pass": true
+    },
+    {
+      "check": "xiao_gpio unique ownership",
+      "pass": true
+    },
+    {
+      "check": "1% resistor corners plus 1% Vref ADC error",
+      "pass": true,
+      "voltage_ratio_ranges": {
+        "air": [
+          0.485,
+          0.515
+        ],
+        "contact": [
+          0.07181818181818182,
+          0.09487394957983192
+        ]
+      }
+    },
+    {
+      "check": "fault immediate; 10ms debounce; >20ms stale invalid",
+      "pass": true
+    }
+  ]
+}

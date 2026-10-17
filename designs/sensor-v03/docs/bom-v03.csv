@@ -1,0 +1,28 @@
+item,quantity,status,notes
+Feetech STS3250-12V,14,retained,12 leg joints plus neck yaw and pitch
+Feetech STS3032-C001 6V,2,candidate,ear animation only; shaft datum and bus fit pending
+Pololu D30V30F6 6V regulator,1,candidate,validate current and temperature at 3S LiFePO4 input
+Dedicated 3V3 >=0.5A regulator,1,selection allowance,depth module supply; 13x10x5mm envelope provisional
+Raspberry Pi Camera Module 3 Wide visible-light,1,candidate,25x24 PCB and 12.4mm optical keepout
+Pi Zero 22-pin to camera 15-pin CSI FPC,1,candidate,300mm allowance; check motion loop and bending
+SparkFun SEN-18642 VL53L5CX,1,candidate,chest 8x8 depth 15Hz target
+SparkFun SEN-21325 LSM6DSV16X,1,candidate,rigid torso IMU
+Seeed XIAO RP2040,1,candidate,ADC contacts and IMU collector; firmware pending
+Waveshare 1.28inch GC9A01 LCD Module,2,candidate,240x240 round active area; exact module depth pending
+Omron B3SE-1002P,4,candidate,contact switch only; no force measurement
+Contact cassette PCB 12x12mm,4,proposed custom,layout not fabricated; include 10k EOL and series 1k
+10k 1% pull-up resistor at collector,4,candidate,one per ADC contact signal
+10k 1% EOL resistor at hoof,4,candidate,must sit beyond foot connector
+1k 1% series contact resistor at hoof,4,candidate,switch branch parallel to EOL
+M2 guide/shoulder hardware sets,16,fit selection pending,verify stroke and captive retention in single hoof prototype
+Return spring OD3.5mm ID>=2.2mm free4mm,16,selection pending,low preload target <=0.1N per spring at installed length
+Adjustable M2 actuator screw/shims,4,fit selection pending,compliant TPU tip and hard stop calibrated on bench
+Strain relief and foot connectors,4 sets,selection pending,seal exposed PCB and wire exits
+Sensor tray,1,printed PETG,rigid IMU mounting
+Chest depth pod,1,printed PETG,open optics aperture; protective window not specified
+Camera carrier,1,printed PETG,edge clip fit coupon required
+LCD bezel,2,printed PETG,cosmetic rim; positive PCB retention requires exact module revision
+Contact hoof carrier,4,printed PETG,replace v02 hoof
+Floating sole plate,4,printed PETG,hard stop carries load
+Hoof tread,4,printed TPU,verify friction and fatigue
+Actuator tip,4,printed TPU,verify switch actuation and overtravel

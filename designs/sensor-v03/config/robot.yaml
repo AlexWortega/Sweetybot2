@@ -1,0 +1,457 @@
+name: sweetie_mini
+revision: digital-prototype-03-sensors
+units:
+  cad: mm
+  dynamics: SI
+  angles: rad
+geometry:
+  body:
+  - 210
+  - 100
+  - 80
+  hip_x: 86
+  hip_y: 52
+  abduction_offset: 18
+  hip_drop: 42
+  thigh: 75
+  shin: 80
+  foot_radius: 21
+  stance_height: 183
+  head_origin:
+  - 82
+  - 0
+  - 14
+  neck_pitch_rise: 44
+  head_center:
+  - 30
+  - 0
+  - 38
+  head_radii:
+  - 59
+  - 50
+  - 59
+  muzzle_center:
+  - 68
+  - 0
+  - 14
+  muzzle_radii:
+  - 23
+  - 27
+  - 20
+  ear_origin:
+  - 45
+  - 22
+  - 60
+  ear_size:
+  - 16
+  - 26
+  - 78
+  shell_wall: 1.8
+  structural_wall: 3.2
+  fastener_clearance: 3.3
+  bearing_od: 10
+  bearing_bore: 3
+  bearing_width: 4
+  fit_allowance: 0.2
+mass:
+  torso_without_servos: 0.803472
+  roll_link_without_servo: 0.04066
+  thigh_without_servo: 0.036702
+  shin_and_foot: 0.066076
+  head_yaw_without_servo: 0.041628
+  head_without_servos: 0.179976
+  ear_without_servo: 0.015254
+  uncertainty_fraction: 0.2
+actuator_candidates:
+  XL330-M288:
+    voltage: 5.0
+    mass: 0.018
+    stall_torque: 0.52
+    no_load_speed: 10.786
+    stall_current: 1.47
+    envelope:
+    - 20
+    - 34
+    - 26
+    unit_usd: 27.49
+    price_status: manufacturer_snapshot
+    source: https://emanual.robotis.com/docs/en/dxl/x/xl330-m288/
+  XC330-M288:
+    voltage: 5.0
+    mass: 0.023
+    stall_torque: 0.93
+    no_load_speed: 8.482
+    stall_current: 1.8
+    envelope:
+    - 20
+    - 34
+    - 26
+    unit_usd: 103.39
+    price_status: manufacturer_snapshot
+    source: https://emanual.robotis.com/docs/en/dxl/x/xc330-m288/
+  ST3215-12V:
+    voltage: 12.0
+    voltage_range:
+    - 6.0
+    - 12.6
+    mass: 0.055
+    stall_torque: 2.942
+    no_load_speed: 4.77
+    stall_current: 2.7
+    envelope:
+    - 45.22
+    - 24.72
+    - 35
+    unit_usd: 19.99
+    price_status: planning_allowance_not_quote
+    source: https://www.waveshare.com/wiki/ST3215_Servo
+  STS3250-12V:
+    voltage: 12.0
+    voltage_range:
+    - 6.0
+    - 12.0
+    mass: 0.0745
+    stall_torque: 4.9033
+    rated_torque: 1.5691
+    no_load_speed: 7.854
+    stall_current: 4.2
+    envelope:
+    - 45.22
+    - 24.72
+    - 35.0
+    unit_usd: 44.99
+    price_status: planning_allowance_not_quote
+    source: https://www.feetechrc.com/sts_ttl_series%20servo.html
+    specification: references/STS3250-manufacturer.pdf
+selection:
+  sustained_fraction_of_stall: 0.25
+  transient_fraction_of_stall: 0.55
+  torque_margin: 1.5
+  required_joint_speed: 0.8
+  max_head_pitch: 0.35
+  load_share_worst: 0.5
+  selected: STS3250-12V
+joints:
+  hip_roll:
+    axis:
+    - 1
+    - 0
+    - 0
+    limits:
+    - -0.55
+    - 0.55
+    home: 0.0
+  hip_pitch:
+    axis:
+    - 0
+    - 1
+    - 0
+    limits:
+    - -1.5
+    - 1.1
+    home: -0.55
+  knee:
+    axis:
+    - 0
+    - 1
+    - 0
+    limits:
+    - 0.1
+    - 2.1
+    home: 1.05
+  head_yaw:
+    axis:
+    - 0
+    - 0
+    - 1
+    limits:
+    - -0.8
+    - 0.8
+    home: 0.0
+  head_pitch:
+    axis:
+    - 0
+    - 1
+    - 0
+    limits:
+    - -0.35
+    - 0.35
+    home: 0.0
+  ear:
+    axis:
+    - 1
+    - 0
+    - 0
+    limits:
+    - -0.25
+    - 0.25
+    home: 0.0
+legs:
+  fl:
+    x_sign: 1
+    y_sign: 1
+    ids:
+    - 1
+    - 2
+    - 3
+  fr:
+    x_sign: 1
+    y_sign: -1
+    ids:
+    - 4
+    - 5
+    - 6
+  rl:
+    x_sign: -1
+    y_sign: 1
+    ids:
+    - 7
+    - 8
+    - 9
+  rr:
+    x_sign: -1
+    y_sign: -1
+    ids:
+    - 10
+    - 11
+    - 12
+expression_ids:
+  head_yaw: 13
+  head_pitch: 14
+  ear_left: 15
+  ear_right: 16
+power:
+  battery:
+    chemistry: LiFePO4
+    cells: 3
+    nominal_voltage: 9.9
+    max_voltage: 10.8
+    cutoff_voltage: 8.7
+    capacity_ah: 2.5
+    c_rating: 20
+    pack_mass_kg: 0.28
+    envelope_mm:
+    - 82
+    - 70
+    - 30
+    source: https://lithiumwerks.com/products/lithium-ion-26650-cells/
+  main_fuse_a: 25
+  leg_branch_fuse_a: 7.5
+  head_branch_fuse_a: 5
+  logic_voltage: 5.0
+  logic_regulator_a: 3.0
+  usable_energy_fraction: 0.75
+  assumed_average_servo_current_a: 0.25
+  electronics_w: 7.5
+control:
+  policy_hz: 50
+  physics_hz: 500
+  kp: 12.0
+  kd: 0.45
+  command_timeout_s: 0.25
+  initial_delay_ticks: 1
+  friction_coefficient: 0.9
+  backlash_rad: 0.0174533
+  joint_viscous_friction: 0.015
+  joint_coulomb_friction: 0.018
+sensing:
+  revision: 1
+  status: hardware design candidate; physical integration unverified
+  leg_imus: false
+  torso_imu:
+    model: SparkFun SEN-21325 LSM6DSV16X Qwiic
+    i2c_7bit: 107
+    board_mm:
+    - 25.4
+    - 25.4
+    - 1.6
+    keepout_mm:
+    - 25.4
+    - 25.4
+    - 6
+    center_torso_mm:
+    - 10
+    - 0
+    - 29
+    mount_quaternion_wxyz:
+    - 1
+    - 0
+    - 0
+    - 0
+    target_output_hz: 120
+    source: https://docs.sparkfun.com/SparkFun_6DoF_LSM6DSV16X/single_page/
+  collector:
+    model: Seeed XIAO RP2040
+    board_mm:
+    - 21
+    - 17.8
+    - 1.6
+    keepout_mm:
+    - 21
+    - 17.8
+    - 7
+    center_torso_mm:
+    - -30
+    - 0
+    - 29
+    contact_scan_hz: 200
+    uart_baud: 460800
+    source: https://wiki.seeedstudio.com/XIAO-RP2040/
+  camera:
+    model: Raspberry Pi Camera Module 3 Wide, visible-light IMX708
+    board_mm:
+    - 25
+    - 24
+    - 1.6
+    keepout_mm:
+    - 25
+    - 24
+    - 12.4
+    pcb_center_head_mm:
+    - 65.6
+    - 0
+    - 64.5
+    lens_axis_head_mm:
+    - 78
+    - 0
+    - 67
+    fov_horizontal_deg: 102
+    fov_vertical_deg: 67
+    opening_diameter_mm: 20
+    csi_cable: 22-pin 0.5mm Pi Zero to 15-pin 1mm camera; 300mm service-loop allowance,
+      verify bend radius
+    source: https://datasheets.raspberrypi.com/camera/camera-module-3-product-brief.pdf
+  depth:
+    model: SparkFun SEN-18642 VL53L5CX
+    board_mm:
+    - 25.4
+    - 25.4
+    - 1.6
+    keepout_mm:
+    - 25.4
+    - 25.4
+    - 5
+    downward_pitch_deg: 20
+    i2c_7bit: 41
+    resolution:
+    - 8
+    - 8
+    target_hz: 15
+    diagonal_fov_deg: 65
+    opening_yz_mm:
+    - 22
+    - 16
+    source: https://www.sparkfun.com/sparkfun-qwiic-tof-imager-vl53l5cx.html
+    pcb_center_torso_mm:
+    - 111
+    - 0
+    - -7
+    opening_torso_mm:
+    - 118
+    - 0
+    - -10
+    mount_status: external chest pod; tilted board mount requires shims/coupon
+    power: dedicated 3.3V >=0.5A buck from logic 5V; never parallel its output with
+      Pi 3V3
+  feet:
+    model: Omron B3SE-1002P on 12x12mm replaceable PCB
+    order:
+    - fl
+    - fr
+    - rl
+    - rr
+    count: 4
+    switch_body_mm:
+    - 6.2
+    - 6.2
+    - 2
+    nominal_operating_force_n: 1.96
+    nominal_pretravel_mm: 0.3
+    carrier_hard_stop_stroke_mm: 0.8
+    adjustable_actuator: true
+    return_springs_per_foot: 4
+    spring_spec: OD 3.5mm; ID >=2.2mm; free length 4mm; select <=0.1N preload each
+      on bench
+    contact_only_not_force_sensor: true
+    eol_ohm: 10000
+    closed_branch_ohm: 1000
+    pullup_ohm: 10000
+    source: https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3se.pdf
+  power_allowance_w: 2.5
+  mass_allowances_kg:
+    camera_with_fpc: 0.01
+    depth_with_harness: 0.008
+    imu_breakout: 0.004
+    collector_with_connector: 0.005
+    foot_pcb_switch_wire_each: 0.004
+    foot_guides_springs_each: 0.003
+    extra_torso_wiring_fasteners: 0.012
+    depth_3v3_buck: 0.004
+  pi_gpio_bcm:
+    uart_tx: 14
+    uart_rx: 15
+    tof_sda: 2
+    tof_scl: 3
+    tof_lpn: 17
+    tof_interrupt: 27
+    lcd_spi_mosi: 10
+    lcd_spi_sclk: 11
+    lcd_left_cs: 8
+    lcd_right_cs: 7
+    lcd_dc: 22
+    lcd_reset: 23
+  xiao_gpio:
+    foot_adc_fl: 26
+    foot_adc_fr: 27
+    foot_adc_rl: 28
+    foot_adc_rr: 29
+    imu_sda: 6
+    imu_scl: 7
+    uart_tx: 0
+    uart_rx: 1
+    imu_interrupt: 2
+  gait_policy: Existing v02 actor remains unchanged. Contact and vision are telemetry/planning
+    inputs for a future evaluated policy; no claimed terrain-aware control.
+ear_actuator:
+  model: STS3032-C001-6V
+  mass: 0.02
+  voltage: 6
+  voltage_range:
+  - 4.8
+  - 6.0
+  stall_torque: 0.4413
+  no_load_speed: 11.635
+  stall_current: 1.2
+  envelope_mm:
+  - 23.2
+  - 12.1
+  - 28.5
+  source: https://www.feetechrc.com/Data/feetechrc/upload/file/20200611/6372749220559698399729459.pdf
+  mount_status: envelope-only; horn datum requires manufacturer drawing or physical
+    fit coupon
+  power: separate regulated 6V >=3A rail; never 12V
+  regulator:
+    model: Pololu D30V30F6
+    source: https://www.pololu.com/product/4893/specs
+    nominal_output_v: 6
+    typical_max_current_a: 3.3
+    note: 3.3A is typical at 30V input; verify available current and heating at 3S
+      LiFePO4 input
+    keepout_mm:
+    - 22
+    - 18.5
+    - 9.5
+displays:
+  model: Waveshare 1.28inch LCD Module GC9A01
+  count: 2
+  board_mm:
+  - 40.4
+  - 37.5
+  active_diameter_mm: 32.4
+  resolution:
+  - 240
+  - 240
+  interface: SPI with separate CS; shared DC/reset
+  source: https://www.waveshare.com/wiki/1.28inch_LCD_Module
+  fit_status: 6mm depth budget provisional; board revision must be checked before
+    fabrication

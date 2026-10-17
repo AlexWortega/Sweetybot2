@@ -1,0 +1,80 @@
+{
+  "renderer": "5.1.1",
+  "source": "cad/GLB/assembly.glb",
+  "source_sha256": "e4e6a22f767c980490dc7c93de6cc22cdf165ab9436530019ee524af20285807",
+  "robot_mesh_objects": 12,
+  "robot_vertices": 3426729,
+  "original_bounds_m": {
+    "min": [
+      -0.14533071219921112,
+      -0.08699999749660492,
+      0.0
+    ],
+    "max": [
+      0.1714143007993698,
+      0.08699999749660492,
+      0.3889999985694885
+    ]
+  },
+  "robot_geometry_unchanged": true,
+  "changes": "camera, stage, lighting and surface finishes; vendor CAD blue markers styled graphite, v03 pupils/optics styled deep black; native robot geometry preserved",
+  "shots": [
+    {
+      "file": "01-midnight-hero.png",
+      "camera_location_m": [
+        0.8886916041374207,
+        -1.0682927370071411,
+        0.6673508882522583
+      ],
+      "camera_target_m": [
+        0.013041794300079346,
+        0.0,
+        0.19449999928474426
+      ],
+      "lens_mm": 70,
+      "resolution": [
+        1920,
+        1440
+      ],
+      "samples": 96
+    },
+    {
+      "file": "02-portrait.png",
+      "camera_location_m": [
+        0.7616188526153564,
+        -0.5945078134536743,
+        0.41911542415618896
+      ],
+      "camera_target_m": [
+        0.08604179322719574,
+        0.0,
+        0.2840000092983246
+      ],
+      "lens_mm": 82,
+      "resolution": [
+        1920,
+        1440
+      ],
+      "samples": 96
+    },
+    {
+      "file": "03-violet-profile.png",
+      "camera_location_m": [
+        0.17047764360904694,
+        -1.416922688484192,
+        0.5093716979026794
+      ],
+      "camera_target_m": [
+        0.013041794300079346,
+        0.0,
+        0.19449999928474426
+      ],
+      "lens_mm": 70,
+      "resolution": [
+        1920,
+        1440
+      ],
+      "samples": 96
+    }
+  ]
+}

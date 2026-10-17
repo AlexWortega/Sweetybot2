@@ -2,7 +2,9 @@
 
 **Inspired by [Sweetie Bot](https://github.com/sweetie-bot-project/sweetie_bot) and [Microduck](https://github.com/pollen-robotics/microduck).** An independent pony quadruped prototype with editable CAD, MuJoCo simulation and joystick-controlled PPO experiments.
 
-![Sweetybot2 midnight studio render](renders/studio/01-midnight-hero.jpg)
+![Sweetybot2 v03 hardware candidate](designs/sensor-v03/renders/studio/01-midnight-hero.jpg)
+
+*New [v03 hardware candidate](designs/sensor-v03/README.md): smoother face, round LCD eyes, forehead RGB camera, chest depth imager, rigid torso IMU mount, contact hooves and compact ear servos. CAD preview; no physical build or v03 policy evaluation. The training GIF below remains the separate v02 model.*
 
 ![MuJoCo: walking, running attempt, self-righting attempt](renders/sweetybot2-training.gif)
 
@@ -10,9 +12,11 @@
 
 | Head detail | Side profile |
 |---|---|
-| ![Head close-up](renders/studio/02-portrait.jpg) | ![Side profile](renders/studio/03-violet-profile.jpg) |
+| ![v03 head close-up](designs/sensor-v03/renders/studio/02-portrait.jpg) | ![v03 side profile](designs/sensor-v03/renders/studio/03-violet-profile.jpg) |
 
-[Full-resolution studio PNGs and reproduction](docs/studio-renders.md) · [Engineering views](docs/cad-gallery.md)
+[v03 editable CAD, checks and wiring](designs/sensor-v03/README.md) · [v03 full package](https://github.com/AlexWortega/Sweetybot2/releases/tag/v0.3.0-hardware-preview) · [Earlier v02 studio views](docs/studio-renders.md)
+
+![v02 and v03 head comparison](designs/sensor-v03/renders/face-comparison.jpg)
 
 ![Animated eye display preview](renders/eyes_demo.gif)
 

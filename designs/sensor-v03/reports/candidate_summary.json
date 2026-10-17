@@ -1,0 +1,42 @@
+{
+  "status": "digital candidate; no hardware validated",
+  "baseline_hashes": {
+    "config/robot.yaml": {
+      "expected": "a6ca4f0c284625ad3258c8200d278afb02d487220a7d7f443dd19b00e9801ba5",
+      "actual": "a6ca4f0c284625ad3258c8200d278afb02d487220a7d7f443dd19b00e9801ba5"
+    },
+    "simulation/generated/sweetie_mini.xml": {
+      "expected": "79cad4bfba0c862103191666dca8b85cc5ee0dee14f3dbb8baa7f185220b753f",
+      "actual": "79cad4bfba0c862103191666dca8b85cc5ee0dee14f3dbb8baa7f185220b753f"
+    },
+    "cad/GLB/assembly.glb": {
+      "expected": "cddd7139815c46b5157c541d93f47d46506d1f6ee98427cc92fe9026612abb34",
+      "actual": "cddd7139815c46b5157c541d93f47d46506d1f6ee98427cc92fe9026612abb34"
+    }
+  },
+  "mass_kg": 2.7123359999999996,
+  "design_mass_kg": 3.2548031999999996,
+  "main_joints_screen": {
+    "candidate": "STS3250-12V",
+    "mass_kg": 2.7123359999999996,
+    "design_mass_kg": 3.2548031999999996,
+    "knee_arm_m": 0.03216671025500348,
+    "stance_knee_rad": 0.8570547556847742,
+    "stance_hip_rad": -0.44326308090391414,
+    "sustained_requirement_nm": 0.7859410919769049,
+    "transient_requirement_nm": 1.61656894536,
+    "conditional_sustained_allowance_nm": 0.9777706601731603,
+    "conditional_transient_allowance_nm": 1.6804961971288517,
+    "actuator_cost_usd": 673.86,
+    "passes_screen": true,
+    "price_status": "planning_allowance_not_quote"
+  },
+  "ear_screen": {
+    "required_nm": 0.0404032698,
+    "conditional_allowance_nm": 0.10273926729694888,
+    "assumptions": "60mm lever, 3g acceleration, 1.5 torque margin; 25% stall fraction, 0.8rad/s; no manufacturer continuous rating",
+    "conditional_pass": true
+  },
+  "gross_ear_motor_saving_g": 108.99999999999999,
+  "unchanged_v02_training": true
+}

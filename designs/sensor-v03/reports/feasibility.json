@@ -1,0 +1,78 @@
+{
+  "status": "conditional analytical screening; thermal validation outstanding",
+  "selected": "STS3250-12V",
+  "candidates": [
+    {
+      "candidate": "XL330-M288",
+      "mass_kg": 1.921336,
+      "design_mass_kg": 2.3056031999999997,
+      "knee_arm_m": 0.03216671025500348,
+      "stance_knee_rad": 0.8570547556847742,
+      "stance_hip_rad": -0.44326308090391414,
+      "sustained_requirement_nm": 0.5612971830673371,
+      "transient_requirement_nm": 1.1626259103599998,
+      "conditional_sustained_allowance_nm": 0.12035787131466717,
+      "conditional_transient_allowance_nm": 0.2647873168922678,
+      "actuator_cost_usd": 428.85999999999996,
+      "passes_screen": false,
+      "price_status": "manufacturer_snapshot"
+    },
+    {
+      "candidate": "XC330-M288",
+      "mass_kg": 1.991336,
+      "design_mass_kg": 2.3896032,
+      "knee_arm_m": 0.03216671025500348,
+      "stance_knee_rad": 0.8570547556847742,
+      "stance_hip_rad": -0.44326308090391414,
+      "sustained_requirement_nm": 0.581177175006237,
+      "transient_requirement_nm": 1.20279786036,
+      "conditional_sustained_allowance_nm": 0.21057120962037257,
+      "conditional_transient_allowance_nm": 0.46325666116481967,
+      "actuator_cost_usd": 1491.46,
+      "passes_screen": false,
+      "price_status": "manufacturer_snapshot"
+    },
+    {
+      "candidate": "ST3215-12V",
+      "mass_kg": 2.439336,
+      "design_mass_kg": 2.9272031999999997,
+      "knee_arm_m": 0.03216671025500348,
+      "stance_knee_rad": 0.8570547556847742,
+      "stance_hip_rad": -0.44326308090391414,
+      "sustained_requirement_nm": 0.7084091234151957,
+      "transient_requirement_nm": 1.45989834036,
+      "conditional_sustained_allowance_nm": 0.40988320230607966,
+      "conditional_transient_allowance_nm": 0.9017430450733753,
+      "actuator_cost_usd": 323.85999999999996,
+      "passes_screen": false,
+      "price_status": "planning_allowance_not_quote"
+    },
+    {
+      "candidate": "STS3250-12V",
+      "mass_kg": 2.7123359999999996,
+      "design_mass_kg": 3.2548031999999996,
+      "knee_arm_m": 0.03216671025500348,
+      "stance_knee_rad": 0.8570547556847742,
+      "stance_hip_rad": -0.44326308090391414,
+      "sustained_requirement_nm": 0.7859410919769049,
+      "transient_requirement_nm": 1.61656894536,
+      "conditional_sustained_allowance_nm": 0.9777706601731603,
+      "conditional_transient_allowance_nm": 1.6804961971288517,
+      "actuator_cost_usd": 673.86,
+      "passes_screen": true,
+      "price_status": "planning_allowance_not_quote"
+    }
+  ],
+  "assumptions": {
+    "continuous_duty": "STS3250 uses manufacturer rated torque point with low-voltage/speed derating; thermal bench test still required",
+    "torque_speed": "linear screening envelope, uncalibrated",
+    "prices": "USD, taxes/shipping excluded; ST3215 is an allowance"
+  },
+  "power": {
+    "ear_6v_stall_a": 2.4,
+    "main_servo_rail_stall_a": 58.800000000000004,
+    "nominal_energy_wh": 24.75,
+    "assumed_average_w": 44.15,
+    "estimated_runtime_min": 25.226500566251417
+  }
+}
