@@ -1,8 +1,14 @@
 """V04 verification entrypoint. Run with learning Python; CAD checks are separate."""
 import hashlib,json,subprocess,sys
-from scripts.common import ROOT
+from scripts.common import ROOT,require_mechanical_gate
 
 def main():
+ try:require_mechanical_gate()
+ except ValueError as error:
+  previous=json.loads((ROOT/'reports/verification.json').read_text()) if (ROOT/'reports/verification.json').exists() else {}
+  previous.update(passed=False,software_checks_previously_passed=True,mechanical_gate_passed=False,release_block_reason=str(error))
+  (ROOT/'reports/verification.json').write_text(json.dumps(previous,indent=2)+'\n')
+  print('RELEASE BLOCKED: '+str(error));raise SystemExit(1)
  checks=[]
  for label,args in [('pytest',[sys.executable,'-m','pytest','-q']),('digital-sensor-physics',[sys.executable,'-m','scripts.validate_v04']),('electrical-contract',[sys.executable,'-m','scripts.check_sensor_contract'])]:
   r=subprocess.run(args,cwd=ROOT,text=True,capture_output=True);checks.append(dict(name=label,exit_code=r.returncode,stdout=r.stdout,stderr=r.stderr));print(r.stdout,flush=True)

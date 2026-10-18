@@ -1,0 +1,5541 @@
+{
+  "scope": "One front-left leg: actual CAD parts across rigid bodies versus each other and adjacent torso; sampled configurations, not continuous CCD; same-link overlaps not checked",
+  "poses": [
+    {
+      "pose": "home",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.5265399287796663,
+        "fl_knee": 1.0242534346551755
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 113.45414468353414
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3121.14893428267
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2731.7393297479953
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 29.109397708950183
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 217.6998330419779
+        }
+      ]
+    },
+    {
+      "pose": "hip_pitch=-1.500",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -1.5,
+        "fl_knee": 1.0242534346551755
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 113.45414468353515
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3121.148934282035
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2731.739329748012
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 217.69983299569836
+        }
+      ]
+    },
+    {
+      "pose": "hip_pitch=-1.240",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -1.24,
+        "fl_knee": 1.0242534346551755
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 113.45414468355851
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3121.148934281411
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2731.7393297479884
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 12.886361768540342
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 217.69983301459516
+        }
+      ]
+    },
+    {
+      "pose": "hip_pitch=-0.980",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.98,
+        "fl_knee": 1.0242534346551755
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 113.45414468352001
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3121.148934281405
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2731.7393297479903
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 41.64003373582622
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 217.69983036462483
+        }
+      ]
+    },
+    {
+      "pose": "hip_pitch=-0.720",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.72,
+        "fl_knee": 1.0242534346551755
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 113.45414468353907
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3121.1489342819277
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2731.7393297479853
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 43.74403970202026
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 217.69983037448392
+        }
+      ]
+    },
+    {
+      "pose": "hip_pitch=-0.460",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.45999999999999996,
+        "fl_knee": 1.0242534346551755
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 113.45414468353022
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3121.148934282026
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2731.739329747998
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 21.01343572546641
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 217.6998304185032
+        }
+      ]
+    },
+    {
+      "pose": "hip_pitch=-0.200",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.19999999999999996,
+        "fl_knee": 1.0242534346551755
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_servo",
+            "fl_thigh_spacer_-35.15"
+          ],
+          "links": [
+            "fl_roll",
+            "fl_thigh"
+          ],
+          "overlap_mm3": 15.32553806414581
+        },
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "fl_thigh_spacer_-35.15"
+          ],
+          "links": [
+            "fl_roll",
+            "fl_thigh"
+          ],
+          "overlap_mm3": 68.37313282158043
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-7.550000000000001",
+            "fl_thigh_spacer_-35.15"
+          ],
+          "links": [
+            "fl_roll",
+            "fl_thigh"
+          ],
+          "overlap_mm3": 68.37313282156583
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 113.45414468353457
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3121.1489342825853
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2731.739329748014
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 217.69983303186905
+        }
+      ]
+    },
+    {
+      "pose": "hip_pitch=0.060",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": 0.06000000000000005,
+        "fl_knee": 1.0242534346551755
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_servo",
+            "fl_thigh_spacer_-35.15"
+          ],
+          "links": [
+            "fl_roll",
+            "fl_thigh"
+          ],
+          "overlap_mm3": 1011.6384676341175
+        },
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 113.45414468353044
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3121.148934281688
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2731.739329748016
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 217.6998330163936
+        }
+      ]
+    },
+    {
+      "pose": "hip_pitch=0.320",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": 0.32000000000000006,
+        "fl_knee": 1.0242534346551755
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_servo",
+            "fl_thigh_spacer_-35.15"
+          ],
+          "links": [
+            "fl_roll",
+            "fl_thigh"
+          ],
+          "overlap_mm3": 706.1409734908929
+        },
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "fl_thigh_spacer_-35.15"
+          ],
+          "links": [
+            "fl_roll",
+            "fl_thigh"
+          ],
+          "overlap_mm3": 165.33717969333213
+        },
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 113.45414468350974
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3121.1489342816226
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2731.739329747983
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 3.757445246015924
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 217.6998330154368
+        }
+      ]
+    },
+    {
+      "pose": "hip_pitch=0.580",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": 0.5800000000000001,
+        "fl_knee": 1.0242534346551755
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_servo",
+            "fl_thigh_spacer_-35.15"
+          ],
+          "links": [
+            "fl_roll",
+            "fl_thigh"
+          ],
+          "overlap_mm3": 900.6750538215022
+        },
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "fl_thigh_spacer_-35.15"
+          ],
+          "links": [
+            "fl_roll",
+            "fl_thigh"
+          ],
+          "overlap_mm3": 11.500654435736577
+        },
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 113.45414468353853
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3121.148934281999
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2731.7393297479884
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 34.77662816846644
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 217.69983036438802
+        }
+      ]
+    },
+    {
+      "pose": "hip_pitch=0.840",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": 0.8399999999999999,
+        "fl_knee": 1.0242534346551755
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_servo",
+            "fl_thigh_spacer_-35.15"
+          ],
+          "links": [
+            "fl_roll",
+            "fl_thigh"
+          ],
+          "overlap_mm3": 414.2641160288059
+        },
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "fl_thigh_spacer_-35.15"
+          ],
+          "links": [
+            "fl_roll",
+            "fl_thigh"
+          ],
+          "overlap_mm3": 569.3412855312906
+        },
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 113.45414468352598
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3121.1489342818213
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2731.739329747988
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 45.59342034204458
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 217.69983037301932
+        }
+      ]
+    },
+    {
+      "pose": "hip_pitch=1.100",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": 1.1,
+        "fl_knee": 1.0242534346551755
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 113.45414468351238
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3121.1489342819837
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2731.7393297479803
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 31.11044111391805
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 217.69983308995447
+        }
+      ]
+    },
+    {
+      "pose": "knee=0.100",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.5265399287796663,
+        "fl_knee": 0.1
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_servo",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 171.33521056211322
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 338.5628053192697
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3526.9427194530363
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2999.6399983769415
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 29.109397708950183
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 190.3113253490042
+        }
+      ]
+    },
+    {
+      "pose": "knee=0.300",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.5265399287796663,
+        "fl_knee": 0.30000000000000004
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 384.0280897151352
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3291.466265691466
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2796.496129586964
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 29.109397708950183
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 191.50747077404446
+        }
+      ]
+    },
+    {
+      "pose": "knee=0.500",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.5265399287796663,
+        "fl_knee": 0.5
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_shin_cheek_rear"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2.3968654449365747
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 133.45491677022358
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3151.604809651875
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2720.5468251347047
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 29.109397708950183
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 194.25294780766998
+        }
+      ]
+    },
+    {
+      "pose": "knee=0.700",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.5265399287796663,
+        "fl_knee": 0.7000000000000001
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_shin_cheek_rear"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 4.1939364783842965
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 31.107888506264356
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3179.9049821228627
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2797.1338345771896
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 29.109397708950183
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 199.54001464480785
+        }
+      ]
+    },
+    {
+      "pose": "knee=0.900",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.5265399287796663,
+        "fl_knee": 0.9
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_shin_cheek_rear"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 1.2868202935288802
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 42.69810529106823
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3161.5581526425635
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2782.2715018201093
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 29.109397708950183
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 209.32605491074534
+        }
+      ]
+    },
+    {
+      "pose": "knee=1.100",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.5265399287796663,
+        "fl_knee": 1.1
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 219.481685864913
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3171.191150253026
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2756.8904913764336
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 29.109397708950183
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 222.7364590737815
+        }
+      ]
+    },
+    {
+      "pose": "knee=1.300",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.5265399287796663,
+        "fl_knee": 1.3000000000000003
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 599.227802680407
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3354.827301409179
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2859.8638414846205
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 29.109397708950183
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 230.52013105769245
+        }
+      ]
+    },
+    {
+      "pose": "knee=1.500",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.5265399287796663,
+        "fl_knee": 1.5000000000000002
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_servo",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 160.9335139601498
+        },
+        {
+          "parts": [
+            "fl_knee_strap_-41.55",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 47.116568588320085
+        },
+        {
+          "parts": [
+            "fl_knee_strap_-7.550000000000001",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 47.11656858832311
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3637.7222915009493
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 6.136017145914139
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3091.324658669992
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 29.109397708950183
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 233.808457989281
+        }
+      ]
+    },
+    {
+      "pose": "knee=1.700",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.5265399287796663,
+        "fl_knee": 1.7000000000000002
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_strap_-41.55",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 37.88121161910781
+        },
+        {
+          "parts": [
+            "fl_knee_strap_-7.550000000000001",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 37.881211619107816
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3583.0414335692203
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2.458277991403347
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3099.7888023562964
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 29.109397708950183
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 237.96020565858686
+        }
+      ]
+    },
+    {
+      "pose": "knee=1.900",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.5265399287796663,
+        "fl_knee": 1.9000000000000001
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3463.2728184566176
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2957.4570645693843
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 29.109397708950183
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 246.27714579904253
+        }
+      ]
+    },
+    {
+      "pose": "knee=2.100",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.5265399287796663,
+        "fl_knee": 2.1
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_strap_-41.55",
+            "fl_shin_cheek_rear"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 5.973245414177596
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3489.644856223839
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2848.273363187353
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 29.109397708950183
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 260.8643495374658
+        }
+      ]
+    },
+    {
+      "pose": "hip_roll=-0.400",
+      "angles": {
+        "fl_hip_roll": -0.4,
+        "fl_hip_pitch": -0.5265399287796663,
+        "fl_knee": 1.0242534346551755
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_servo",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2349.1579889001423
+        },
+        {
+          "parts": [
+            "fl_pitch_servo",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 180.68276637143262
+        },
+        {
+          "parts": [
+            "fl_pitch_servo",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 32.10015383432477
+        },
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1273.083705310354
+        },
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 367.1914681171428
+        },
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 49.884896694776046
+        },
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 334.73622988079563
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 62.35525516563065
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 885.5130072799748
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 239.49594314040036
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_servo"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 424.54956188778647
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 822.0714971072582
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 113.45414468352351
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3121.148934281551
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2731.739329747987
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 414.3772738934434
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 217.69983288579022
+        }
+      ]
+    },
+    {
+      "pose": "hip_roll=-0.267",
+      "angles": {
+        "fl_hip_roll": -0.2666666666666667,
+        "fl_hip_pitch": -0.5265399287796663,
+        "fl_knee": 1.0242534346551755
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_servo",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1340.6403196527037
+        },
+        {
+          "parts": [
+            "fl_pitch_servo",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 17.10846025496345
+        },
+        {
+          "parts": [
+            "fl_pitch_servo",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 3.424502449764714
+        },
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1567.2137286740706
+        },
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 375.79727854952847
+        },
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 62.278171495760574
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 59.53736171700097
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 761.9440994796755
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 286.86783430375124
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 18.348065860529758
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_servo"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 271.3349520918429
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 636.8584789288324
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 113.45414468352331
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3121.1489342816767
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2731.73932974799
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 239.45279500512325
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 217.6998302161599
+        }
+      ]
+    },
+    {
+      "pose": "hip_roll=-0.133",
+      "angles": {
+        "fl_hip_roll": -0.13333333333333336,
+        "fl_hip_pitch": -0.5265399287796663,
+        "fl_knee": 1.0242534346551755
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_servo",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 118.91524246673977
+        },
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2207.923001934427
+        },
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 163.3540629701058
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 40.03683869866378
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 855.9127648266856
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 549.1346630148385
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 80.48393550841772
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_servo"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.5417723174289
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 221.94586002416045
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 113.4541446835494
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3121.1489342820305
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2731.739329747992
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 142.52578446179132
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 217.69983021532784
+        }
+      ]
+    },
+    {
+      "pose": "hip_roll=0.000",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.5265399287796663,
+        "fl_knee": 1.0242534346551755
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 113.45414468353414
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3121.14893428267
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2731.7393297479953
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 29.109397708950183
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 217.6998330419779
+        }
+      ]
+    },
+    {
+      "pose": "hip_roll=0.133",
+      "angles": {
+        "fl_hip_roll": 0.1333333333333333,
+        "fl_hip_pitch": -0.5265399287796663,
+        "fl_knee": 1.0242534346551755
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 213.30462934150165
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2595.6287953109277
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 60.77442351164093
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 52.98867740137547
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 113.45414468351962
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3121.148934281947
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2731.7393297479966
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 217.69983288578288
+        }
+      ]
+    },
+    {
+      "pose": "hip_roll=0.267",
+      "angles": {
+        "fl_hip_roll": 0.2666666666666666,
+        "fl_hip_pitch": -0.5265399287796663,
+        "fl_knee": 1.0242534346551755
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1165.0781473214604
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 21.56696240191795
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 0.15859774272172822
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 113.45414468354373
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3121.148934281671
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2731.7393297479834
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 217.69983290582724
+        }
+      ]
+    },
+    {
+      "pose": "hip_roll=0.400",
+      "angles": {
+        "fl_hip_roll": 0.4,
+        "fl_hip_pitch": -0.5265399287796663,
+        "fl_knee": 1.0242534346551755
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 207.8303638884379
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 113.45414468353479
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3121.1489342822706
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2731.739329747991
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 217.6998328870252
+        }
+      ]
+    },
+    {
+      "pose": "h=-0.9 k=0.2",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.9,
+        "fl_knee": 0.2
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_servo",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 17.648226082952377
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 427.9357891639996
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3376.8601158255037
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2871.824361095614
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 44.77719497390782
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 190.74834092955317
+        }
+      ]
+    },
+    {
+      "pose": "h=-0.9 k=1.0",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.9,
+        "fl_knee": 1.0
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_shin_cheek_rear"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 0.13299555624636356
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 92.271726586281
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3119.8973766402028
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2734.657068033587
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 44.77719497390782
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 216.02331386836647
+        }
+      ]
+    },
+    {
+      "pose": "h=-0.9 k=1.8",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.9,
+        "fl_knee": 1.8
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_strap_-41.55",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 12.210862606576185
+        },
+        {
+          "parts": [
+            "fl_knee_strap_-7.550000000000001",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 12.210862606576306
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3480.8951608383763
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3007.4082070264226
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 44.77719497390782
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 241.4375374487977
+        }
+      ]
+    },
+    {
+      "pose": "h=-0.3 k=0.2",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.3,
+        "fl_knee": 0.2
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "fl_thigh_spacer_-35.15"
+          ],
+          "links": [
+            "fl_roll",
+            "fl_thigh"
+          ],
+          "overlap_mm3": 22.1114684208195
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-7.550000000000001",
+            "fl_thigh_spacer_-35.15"
+          ],
+          "links": [
+            "fl_roll",
+            "fl_thigh"
+          ],
+          "overlap_mm3": 22.111468421219037
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_servo",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 17.64822608295055
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 427.9357891639439
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3376.860115825508
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2871.8243610956865
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 1.9845962997713302
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 190.74834090234617
+        }
+      ]
+    },
+    {
+      "pose": "h=-0.3 k=1.0",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.3,
+        "fl_knee": 1.0
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "fl_thigh_spacer_-35.15"
+          ],
+          "links": [
+            "fl_roll",
+            "fl_thigh"
+          ],
+          "overlap_mm3": 22.1114684208195
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-7.550000000000001",
+            "fl_thigh_spacer_-35.15"
+          ],
+          "links": [
+            "fl_roll",
+            "fl_thigh"
+          ],
+          "overlap_mm3": 22.111468421219037
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_shin_cheek_rear"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 0.13299555624632253
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 92.27172658625754
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3119.897376640202
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2734.6570680335803
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 1.9845962997713302
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 216.02331384775826
+        }
+      ]
+    },
+    {
+      "pose": "h=-0.3 k=1.8",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.3,
+        "fl_knee": 1.8
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "fl_thigh_spacer_-35.15"
+          ],
+          "links": [
+            "fl_roll",
+            "fl_thigh"
+          ],
+          "overlap_mm3": 22.1114684208195
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-7.550000000000001",
+            "fl_thigh_spacer_-35.15"
+          ],
+          "links": [
+            "fl_roll",
+            "fl_thigh"
+          ],
+          "overlap_mm3": 22.111468421219037
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_strap_-41.55",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 12.210862606574864
+        },
+        {
+          "parts": [
+            "fl_knee_strap_-7.550000000000001",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 12.210862606573542
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3480.895160838375
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3007.4082070264885
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 1.9845962997713302
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 241.43758324824643
+        }
+      ]
+    },
+    {
+      "pose": "h=0.4 k=0.2",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": 0.4,
+        "fl_knee": 0.2
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_servo",
+            "fl_thigh_spacer_-35.15"
+          ],
+          "links": [
+            "fl_roll",
+            "fl_thigh"
+          ],
+          "overlap_mm3": 709.034620025982
+        },
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "fl_thigh_spacer_-35.15"
+          ],
+          "links": [
+            "fl_roll",
+            "fl_thigh"
+          ],
+          "overlap_mm3": 161.7115101946
+        },
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_servo",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 17.648226082950185
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 427.93578916392767
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3376.860115825559
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2871.824361095609
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 13.21927641996476
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 190.74834091941315
+        }
+      ]
+    },
+    {
+      "pose": "h=0.4 k=1.0",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": 0.4,
+        "fl_knee": 1.0
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_servo",
+            "fl_thigh_spacer_-35.15"
+          ],
+          "links": [
+            "fl_roll",
+            "fl_thigh"
+          ],
+          "overlap_mm3": 709.034620025982
+        },
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "fl_thigh_spacer_-35.15"
+          ],
+          "links": [
+            "fl_roll",
+            "fl_thigh"
+          ],
+          "overlap_mm3": 161.7115101946
+        },
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_shin_cheek_rear"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 0.1329955562463438
+        },
+        {
+          "parts": [
+            "fl_knee_cradle",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 92.27172658625518
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3119.8973766402055
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 2734.6570680335903
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 13.21927641996476
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 216.02331388110224
+        }
+      ]
+    },
+    {
+      "pose": "h=0.4 k=1.8",
+      "angles": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": 0.4,
+        "fl_knee": 1.8
+      },
+      "intersections": [
+        {
+          "parts": [
+            "fl_pitch_servo",
+            "fl_thigh_spacer_-35.15"
+          ],
+          "links": [
+            "fl_roll",
+            "fl_thigh"
+          ],
+          "overlap_mm3": 709.034620025982
+        },
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "fl_thigh_spacer_-35.15"
+          ],
+          "links": [
+            "fl_roll",
+            "fl_thigh"
+          ],
+          "overlap_mm3": 161.7115101946
+        },
+        {
+          "parts": [
+            "fl_pitch_cradle",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 1370.1449992912758
+        },
+        {
+          "parts": [
+            "fl_pitch_strap_-41.55",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 15.260905201230798
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 2341.061309995085
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "rail_1"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 285.2811182007829
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "body_cowl"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 44.24116203139892
+        },
+        {
+          "parts": [
+            "fl_roll_yoke",
+            "fl_roll_cradle"
+          ],
+          "links": [
+            "fl_roll",
+            "torso"
+          ],
+          "overlap_mm3": 85.83796447372309
+        },
+        {
+          "parts": [
+            "fl_knee_strap_-41.55",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 12.21086260657114
+        },
+        {
+          "parts": [
+            "fl_knee_strap_-7.550000000000001",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 12.21086260657059
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_5",
+            "fl_shin_cheek_front"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3480.8951608384273
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "fl_knee_support_fork"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 3007.4082070263835
+        },
+        {
+          "parts": [
+            "fl_thigh_cheek_-60.1",
+            "chassis_deck"
+          ],
+          "links": [
+            "fl_thigh",
+            "torso"
+          ],
+          "overlap_mm3": 13.21927641996476
+        },
+        {
+          "parts": [
+            "fl_thigh_fairing",
+            "fl_shin_fairing"
+          ],
+          "links": [
+            "fl_thigh",
+            "fl_shin"
+          ],
+          "overlap_mm3": 241.4375375226996
+        }
+      ]
+    }
+  ],
+  "complete": true,
+  "method": "Exact placed CAD BRep intersection across different rigid links; threshold 0.1mm3",
+  "source_sha256": {
+    "config/robot.yaml": "5e8502148aa2b1a539999d614fcd2cf1a530247a5be1ae67e8bc58fe8c41005a",
+    "simulation/model.py": "c6570261caa1290a9fab53e1ce816a2094f0a25eef83d1740ce27a515cf598c5",
+    "cad/src/lib/shapes.py": "5e94f7f2330806f2d242d2849693eb97ff394369005ff6ee6033a9e888827e9d",
+    "cad/src/lib/sensors_face.py": "7148d93c61fa3bc742fead75e10f87bad4f528b4981de4efdb32bd309cf12b94",
+    "cad/src/lib/actuation_v04.py": "d4b6ef5cfa80efdca347168f1a912bd35a6005d55d578758bdc3c5f73abeac76"
+  }
+}

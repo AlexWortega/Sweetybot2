@@ -28,3 +28,14 @@ def continuous_limits(c, speed=0.):
         a=actuator(c,name);vf=min(1.,(6. if name.startswith('ear_') else c['power']['battery']['cutoff_voltage'])/a['voltage'])
         limits.append(a.get('rated_torque',a['stall_torque']*.25)*vf*max(0.,1-speed/(a['no_load_speed']*vf)))
     return limits
+
+def require_mechanical_gate():
+    import json,hashlib
+    p=ROOT/'reports/mechanical_gate.json'
+    if not p.exists():raise ValueError('Mechanical release gate is missing; no fabrication package permitted')
+    g=json.loads(p.read_text())
+    if not g.get('passed') or not g.get('all_link_pairs_checked'):
+        raise ValueError(g.get('reason','Full mechanical audit has not passed'))
+    for name,digest in g.get('source_sha256',{}).items():
+        if hashlib.sha256((ROOT/name).read_bytes()).hexdigest()!=digest:raise ValueError('Mechanical audit is stale: '+name)
+    return g

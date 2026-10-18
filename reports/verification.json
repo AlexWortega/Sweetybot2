@@ -1,5 +1,5 @@
 {
-  "passed": true,
+  "passed": false,
   "checks": [
     {
       "name": "pytest",
@@ -26,5 +26,8 @@
     "joint_range_warning_count": 0,
     "physical_validation": "not run",
     "trained_v04_policy": "not evaluated"
-  }
+  },
+  "software_checks_previously_passed": true,
+  "mechanical_gate_passed": false,
+  "release_block_reason": "Exact CAD checks find interpenetrating independently moving parts, including at home. Do not fabricate v04 or treat its simplified MuJoCo stand as mechanical validation."
 }

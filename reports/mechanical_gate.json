@@ -1,0 +1,139 @@
+{
+  "passed": false,
+  "status": "WITHDRAWN_MECHANICAL_INTERFERENCE",
+  "reason": "Exact CAD checks find interpenetrating independently moving parts, including at home. Do not fabricate v04 or treat its simplified MuJoCo stand as mechanical validation.",
+  "audit": "reports/v04_motion_audit.json",
+  "sampled_poses": 39,
+  "poses_with_intersections": 39,
+  "home_intersections": [
+    {
+      "parts": [
+        "fl_pitch_cradle",
+        "chassis_deck"
+      ],
+      "links": [
+        "fl_roll",
+        "torso"
+      ],
+      "overlap_mm3": 1370.1449992912758
+    },
+    {
+      "parts": [
+        "fl_pitch_strap_-41.55",
+        "chassis_deck"
+      ],
+      "links": [
+        "fl_roll",
+        "torso"
+      ],
+      "overlap_mm3": 15.260905201230798
+    },
+    {
+      "parts": [
+        "fl_roll_yoke",
+        "chassis_deck"
+      ],
+      "links": [
+        "fl_roll",
+        "torso"
+      ],
+      "overlap_mm3": 2341.061309995085
+    },
+    {
+      "parts": [
+        "fl_roll_yoke",
+        "rail_1"
+      ],
+      "links": [
+        "fl_roll",
+        "torso"
+      ],
+      "overlap_mm3": 285.2811182007829
+    },
+    {
+      "parts": [
+        "fl_roll_yoke",
+        "body_cowl"
+      ],
+      "links": [
+        "fl_roll",
+        "torso"
+      ],
+      "overlap_mm3": 44.24116203139892
+    },
+    {
+      "parts": [
+        "fl_roll_yoke",
+        "fl_roll_cradle"
+      ],
+      "links": [
+        "fl_roll",
+        "torso"
+      ],
+      "overlap_mm3": 85.83796447372309
+    },
+    {
+      "parts": [
+        "fl_knee_cradle",
+        "fl_knee_support_fork"
+      ],
+      "links": [
+        "fl_thigh",
+        "fl_shin"
+      ],
+      "overlap_mm3": 113.45414468353414
+    },
+    {
+      "parts": [
+        "fl_thigh_cheek_5",
+        "fl_shin_cheek_front"
+      ],
+      "links": [
+        "fl_thigh",
+        "fl_shin"
+      ],
+      "overlap_mm3": 3121.14893428267
+    },
+    {
+      "parts": [
+        "fl_thigh_cheek_-60.1",
+        "fl_knee_support_fork"
+      ],
+      "links": [
+        "fl_thigh",
+        "fl_shin"
+      ],
+      "overlap_mm3": 2731.7393297479953
+    },
+    {
+      "parts": [
+        "fl_thigh_cheek_-60.1",
+        "chassis_deck"
+      ],
+      "links": [
+        "fl_thigh",
+        "torso"
+      ],
+      "overlap_mm3": 29.109397708950183
+    },
+    {
+      "parts": [
+        "fl_thigh_fairing",
+        "fl_shin_fairing"
+      ],
+      "links": [
+        "fl_thigh",
+        "fl_shin"
+      ],
+      "overlap_mm3": 217.6998330419779
+    }
+  ],
+  "all_link_pairs_checked": false,
+  "source_sha256": {
+    "config/robot.yaml": "5e8502148aa2b1a539999d614fcd2cf1a530247a5be1ae67e8bc58fe8c41005a",
+    "simulation/model.py": "c6570261caa1290a9fab53e1ce816a2094f0a25eef83d1740ce27a515cf598c5",
+    "cad/src/lib/shapes.py": "5e94f7f2330806f2d242d2849693eb97ff394369005ff6ee6033a9e888827e9d",
+    "cad/src/lib/sensors_face.py": "7148d93c61fa3bc742fead75e10f87bad4f528b4981de4efdb32bd309cf12b94",
+    "cad/src/lib/actuation_v04.py": "d4b6ef5cfa80efdca347168f1a912bd35a6005d55d578758bdc3c5f73abeac76"
+  }
+}

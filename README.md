@@ -1,5 +1,7 @@
 # Sweetybot2
 
+> **V04 WITHDRAWN — do not fabricate.** A subsequent exact CAD motion audit found solid interference between moving thigh/shin plates, knee supports and the torso frame, already at the home pose. The software tests and simplified MuJoCo standing checks did not validate those surfaces. [Mechanical failure report](reports/mechanical_gate.json). The leg/frame layout requires redesign.
+
 **Inspired by [Sweetie Bot](https://github.com/sweetie-bot-project/sweetie_bot) and [Microduck](https://github.com/pollen-robotics/microduck).** Independent pony robot CAD and MuJoCo policy experiments.
 
 ![V04 stronger-actuator hardware candidate](renders/v04/01-midnight-hero.png)

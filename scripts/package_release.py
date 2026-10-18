@@ -1,6 +1,6 @@
 """Package v04 source, saved CAD, sensor contract, references and evidence."""
 import hashlib,json,zipfile
-from scripts.common import ROOT,load
+from scripts.common import ROOT,load,require_mechanical_gate
 
 def files():
  paths=[ROOT/x for x in ['README.md','pyproject.toml','uv.lock','Makefile','.gitignore','.gitattributes']]
@@ -12,6 +12,7 @@ def files():
  return sorted(set(paths))
 
 def main():
+ require_mechanical_gate()
  c=load();v=json.loads((ROOT/'reports/v04_validation.json').read_text());check=json.loads((ROOT/'reports/verification.json').read_text());assert v['all_passed'] and check['passed']
  for n,digest in v['input_sha256'].items():assert hashlib.sha256((ROOT/n).read_bytes()).hexdigest()==digest,n
  selected=files();entries=[]
