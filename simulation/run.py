@@ -4,7 +4,7 @@ import argparse, json, math, time
 from collections import deque
 import numpy as np
 import mujoco
-from scripts.common import ROOT,load,joint_names
+from scripts.common import ROOT,load,joint_names,actuator
 from simulation.model import home,ik,joint_spec
 
 def ease(s):return s*s*s*(10+s*(-15+6*s))
@@ -79,6 +79,11 @@ def run(task='stand',seconds=60.,mass_scale=1.,friction=.9,delay=1,backlash=.017
     a=c['actuator_candidates'][c['selection']['selected']];cfg=c['control'];step=1/cfg['physics_hz'];period=1/cfg['policy_hz'];substeps=round(period/step)
     qids=np.array([model.jnt_qposadr[model.joint(n).id] for n in names]);dids=np.array([model.jnt_dofadr[model.joint(n).id] for n in names]);limits=np.array([joint_spec(n,c)['limits'] for n in names])
     homeq=np.array([home(c)[n] for n in names]);queue=deque([homeq.copy() for _ in range(delay+1)],maxlen=delay+1);target=homeq.copy()
+    motors=[actuator(c,n) for n in names];heat=np.zeros(16)
+    voltage=np.array([min(1.,(6. if n.startswith('ear_') else c['power']['battery']['cutoff_voltage'])/a['voltage']) for n,a in zip(names,motors)])
+    stall=np.array([a['stall_torque'] for a in motors])*voltage
+    speed=np.array([a['no_load_speed'] for a in motors])*voltage
+    rated=np.array([a.get('rated_torque',a['stall_torque']*.25) for a in motors])*voltage
     torque_peak=np.zeros(16);torque_sum2=np.zeros(16);maxspeed=np.zeros(16);max_tracking=0.; max_yaw_error=0.; angle_excess=0.;min_z=99.;max_tilt=0.;nonfoot=[];rows=[];error=None;writer=None;renderer=None;frames=0
     tstart=time.monotonic();initial=data.qpos[:3].copy();previous_q=homeq.copy();command_speed=np.zeros(16);next_frame=record_start
     if record:
@@ -134,10 +139,11 @@ def run(task='stand',seconds=60.,mass_scale=1.,friction=.9,delay=1,backlash=.017
         for substep in range(substeps):
             q=data.qpos[qids];vel=data.qvel[dids];err=target-q;err=np.sign(err)*np.maximum(np.abs(err)-backlash,0)
             # Uncalibrated DC torque-speed envelope at low battery; no ideal position actuators.
-            voltage_factor=c['power']['battery'].get('cutoff_voltage',10.5)/a['voltage']
-            speed=a['no_load_speed']*voltage_factor
-            limit=a['stall_torque']*voltage_factor*c['selection']['transient_fraction_of_stall']*np.maximum(0,1-np.abs(vel)/speed)
-            tau=np.clip(kp*err-kd*vel+feedforward,-limit,limit);data.ctrl[:]=tau
+            continuous=rated*np.maximum(.05,1-np.abs(vel)/speed);burst=.55*stall
+            limit=np.minimum(burst,continuous+(burst-continuous)*np.clip(1-heat,0,1))
+            lo=np.clip(-stall*(1+vel/speed),-limit,limit);hi=np.clip(stall*(1-vel/speed),-limit,limit)
+            tau=np.clip(kp*err-kd*vel+feedforward,lo,hi);data.ctrl[:]=tau
+            heat=np.maximum(0,heat+step*(np.square(tau/np.maximum(continuous,.01))-heat)/c['actuation']['thermal_time_constant_s'])
             mujoco.mj_step(model,data)
             torque_peak=np.maximum(torque_peak,np.abs(tau));torque_sum2+=tau*tau;maxspeed=np.maximum(maxspeed,np.abs(vel))
         min_z=min(min_z,float(data.qpos[2]));R=np.zeros(9);mujoco.mju_quat2Mat(R,data.qpos[3:7]);tilt=math.acos(float(np.clip(R.reshape(3,3)[2,2],-1,1)));max_tilt=max(max_tilt,tilt)
@@ -145,7 +151,7 @@ def run(task='stand',seconds=60.,mass_scale=1.,friction=.9,delay=1,backlash=.017
             n1=mujoco.mj_id2name(model,mujoco.mjtObj.mjOBJ_GEOM,contact.geom1);n2=mujoco.mj_id2name(model,mujoco.mjtObj.mjOBJ_GEOM,contact.geom2)
             if 'floor' in (n1,n2):
                 other=n2 if n1=='floor' else n1
-                if not other.endswith('_shin_g1') and len(nonfoot)<20:nonfoot.append({'t':t,'geometry':other})
+                if not other.endswith('_sole_contact') and len(nonfoot)<20:nonfoot.append({'t':t,'geometry':other})
             elif contact.dist<-.002 and len(nonfoot)<20:nonfoot.append({'t':t,'self_collision':[n1,n2],'penetration_m':float(contact.dist)})
         if tick%5==0:rows.append(dict(t=t,x=float(data.qpos[0]),y=float(data.qpos[1]),z=float(data.qpos[2]),tilt_rad=tilt,phase=phase))
         if renderer is not None and t+1e-9>=next_frame and t<record_start+record_seconds:

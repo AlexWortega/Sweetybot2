@@ -1,0 +1,1716 @@
+{
+  "revision": "digital-prototype-04-actuation-sensing",
+  "status": "digital hardware and learning candidate; physical validation and trained v04 policies pending",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 137,
+      "sha256": "322bed320fbe131862e486c08f6605166ad18054130aab004539d9e4d13a381e"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 303,
+      "sha256": "4e1a8abaffe9d744be1ff43704075447438278f4d7bd2c6e1e50d725dd1f56d9"
+    },
+    {
+      "path": "Makefile",
+      "bytes": 1114,
+      "sha256": "1b9c90830ae035ac7246112c1914658b5181aeb22b6988418cda1130516b2fdd"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4181,
+      "sha256": "0533a3a1caaa02efb45646eb6029d6a0ccfbc43d0e9c656fc208ac8ed0b8c6b7"
+    },
+    {
+      "path": "cad/GLB/assembly.glb",
+      "bytes": 47077892,
+      "sha256": "4a64ef6ef0660dafb6a3989d3097a97312736c7f88a5b620fc383a44cdc5c7e8"
+    },
+    {
+      "path": "cad/STEP/assembly.step",
+      "bytes": 47533550,
+      "sha256": "7ce47a869947d5a5735a26e6bdc680f8bf1dff5de6cb3c44529d1327c9675900"
+    },
+    {
+      "path": "cad/STEP/axle_adapter.step",
+      "bytes": 11706,
+      "sha256": "65e5b9e2874378a94755c5a6f2ee96cfd2e827db5fe67da6028922d8f57d6a8c"
+    },
+    {
+      "path": "cad/STEP/body_shell.step",
+      "bytes": 1654112,
+      "sha256": "3c4ebaafdea002cb6c6052e1e0e72a28bd1903cec5d394ccdcf876df50a84822"
+    },
+    {
+      "path": "cad/STEP/camera_carrier.step",
+      "bytes": 191016,
+      "sha256": "0d854bb2fef7693ea2c5585498a141808fa195b638a7c339a72ac1ec92faea65"
+    },
+    {
+      "path": "cad/STEP/deck.step",
+      "bytes": 211627,
+      "sha256": "9463c66126a2b62a18e7e1f47f264b8369eb6a7d0830c21dd5edc28e2ae329d2"
+    },
+    {
+      "path": "cad/STEP/depth_pod.step",
+      "bytes": 228949,
+      "sha256": "fe3c64c478e70a4525ba75be6ff0f5d575c7c8f9e4ba129ed1ec022226977551"
+    },
+    {
+      "path": "cad/STEP/ear.step",
+      "bytes": 195767,
+      "sha256": "0e5f616da286df8d86aede4d8e32a041d4703e1b3e0aa7c642b3d7395033f052"
+    },
+    {
+      "path": "cad/STEP/exploded.step",
+      "bytes": 47533710,
+      "sha256": "a45ba2513e9e68491eb2e84da7e2217a2f18e82040b802a55fe3d0931be7e0ef"
+    },
+    {
+      "path": "cad/STEP/eye_bezel.step",
+      "bytes": 11532,
+      "sha256": "cebafc2e3596f37efc95d9c1509919266995937574c0ef66f332ad7935aaa4e6"
+    },
+    {
+      "path": "cad/STEP/fit_coupon.step",
+      "bytes": 43421,
+      "sha256": "e5531284db8d2523d914f81cd973a0dbf94712085a67cf9b7ba22b7bbd4e65c4"
+    },
+    {
+      "path": "cad/STEP/head_hatch.step",
+      "bytes": 163467,
+      "sha256": "d56cbdf803282341712c3e8e0c3028d5d1b2e0de41744fc6a3be1328f2e5f25b"
+    },
+    {
+      "path": "cad/STEP/head_shell.step",
+      "bytes": 1839070,
+      "sha256": "7d236ad2afc98b39bbfee26917fb530a7e62f6cd2771543d385e06aa020b9624"
+    },
+    {
+      "path": "cad/STEP/head_yoke.step",
+      "bytes": 85424,
+      "sha256": "82dcbf6f510ac096da0ce4480fad11cfe79ecb202219293c4844df072fe34f2f"
+    },
+    {
+      "path": "cad/STEP/hoof.step",
+      "bytes": 298147,
+      "sha256": "4056b6db152a0a8311e184576ea9917e1ab5fba364871cf7b2ec2813fb8853c2"
+    },
+    {
+      "path": "cad/STEP/hoof_actuator.step",
+      "bytes": 11402,
+      "sha256": "5cef9b38c5790280a2e4cf6859dfc7ba25a2d4ffc7d4961c472a8255997748be"
+    },
+    {
+      "path": "cad/STEP/hoof_sole_plate.step",
+      "bytes": 85087,
+      "sha256": "0141457b95896fc11e0f348a7ec7c9385483ab94e4c6653ec195ea35a40260fe"
+    },
+    {
+      "path": "cad/STEP/hoof_tpu_pad.step",
+      "bytes": 276801,
+      "sha256": "5332b365cf1cec16df4e9eec34a4bd00e3715175b47af28903584bbbeb47b8c7"
+    },
+    {
+      "path": "cad/STEP/horn.step",
+      "bytes": 11512,
+      "sha256": "0b2b24697eadda63103198186ebbed20ca6160071ca9658d96259fd6c1f36473"
+    },
+    {
+      "path": "cad/STEP/imported/bearing_623zz.step",
+      "bytes": 42531,
+      "sha256": "2d5722b56a3e31d0582df451457028009af1c7e1beedd8874006c72e5f38ff78"
+    },
+    {
+      "path": "cad/STEP/imported/feetech_sts3250.step",
+      "bytes": 10390008,
+      "sha256": "cf46f17da455e1f158114791bb31404c24d925e8a758bbd6189f8ee815a571bf"
+    },
+    {
+      "path": "cad/STEP/imported/iso4762_socket_head_cap_screw_m3x12.step",
+      "bytes": 58826,
+      "sha256": "7720179ea94ed5c4e2b32f6e4c2583a77423240599c602690c5b2b2f5471cc47"
+    },
+    {
+      "path": "cad/STEP/imported/waveshare_feetech_st3215_servo.step",
+      "bytes": 3025292,
+      "sha256": "29954eb73bd22b3f9536de2c1d8f96843b5c5b32288a8f4cb09709b8b892e39b"
+    },
+    {
+      "path": "cad/STEP/internal.step",
+      "bytes": 43103420,
+      "sha256": "fa65cc27bf8aaafb569a64feb01afb0e2e8e3a684d40d2c38714c501bad4fa36"
+    },
+    {
+      "path": "cad/STEP/knee_fork.step",
+      "bytes": 84674,
+      "sha256": "88cd9af5772d0d7c173171e082165ef80358ed78572329a946d5be181b3f147e"
+    },
+    {
+      "path": "cad/STEP/mane.step",
+      "bytes": 697275,
+      "sha256": "cd54c2bd5c11345692fe0cd55e397a43610db38f6e8938f41298904399049337"
+    },
+    {
+      "path": "cad/STEP/mane_stripe.step",
+      "bytes": 7999,
+      "sha256": "fbbb19ce14027211409cab606c9674202c794b0ae67778696c48b9bd9e6d4494"
+    },
+    {
+      "path": "cad/STEP/neck_collar.step",
+      "bytes": 48685,
+      "sha256": "a2d5b070317bbcb84a5c3c5344b37d134c11d22fccca590d5a70471e7bf14b82"
+    },
+    {
+      "path": "cad/STEP/rail.step",
+      "bytes": 137278,
+      "sha256": "2ff54b71ece7f23385b069176f3525f57fb2a430b7319bd07c2e0cd368cb74de"
+    },
+    {
+      "path": "cad/STEP/roll_yoke.step",
+      "bytes": 102206,
+      "sha256": "7a20f6ab476acbdb0529b86f382760de19ff8ce43a2b73a580cf04f1f70c3dbc"
+    },
+    {
+      "path": "cad/STEP/sensor_tray.step",
+      "bytes": 170452,
+      "sha256": "badc24fceb81e1442c1a638d9a8e90d9a1e08981eab2c895c4ddfe6d0c9acee2"
+    },
+    {
+      "path": "cad/STEP/servo_cradle.step",
+      "bytes": 331921,
+      "sha256": "71b42b6d09fb26e869a6fc312c7946c727d02f3d0c1795a5aeabfcc0530345ad"
+    },
+    {
+      "path": "cad/STEP/servo_cradle_sm105.step",
+      "bytes": 277386,
+      "sha256": "308eb5335417c67c82e9730e0bfcd282b08efe36bcf5c38a517fe3b1e2dad561"
+    },
+    {
+      "path": "cad/STEP/servo_cradle_sm80.step",
+      "bytes": 276309,
+      "sha256": "7bfb2c7446d1e396d635ab794904b6ccbcc4eb58bb936d9614fdf13f72c2f6b8"
+    },
+    {
+      "path": "cad/STEP/servo_strap.step",
+      "bytes": 73384,
+      "sha256": "a0cd5d9e8c4c4494cdea3d3bdeb8d32e5f3943e2c21bd0af947a07411e7c0e01"
+    },
+    {
+      "path": "cad/STEP/servo_strap_sm105.step",
+      "bytes": 148084,
+      "sha256": "3f677f42c17cb98891b7ec6f5f44407a79f33714d4db7fcf1586e8bd3385e560"
+    },
+    {
+      "path": "cad/STEP/servo_strap_sm80.step",
+      "bytes": 147860,
+      "sha256": "0a9a51fd16fe4f44791809a80d48cf2ed60bc12a55efb2067d9311b2f0e00e09"
+    },
+    {
+      "path": "cad/STEP/shin_fairing.step",
+      "bytes": 259275,
+      "sha256": "1d3c0a4ecb3853046a1f0f101c1269ed7a4029cd224d70bcd820846236dd499f"
+    },
+    {
+      "path": "cad/STEP/shin_plate.step",
+      "bytes": 106332,
+      "sha256": "e7f70f786972a4ae422641ab67ddbb987049208e77374c4f25c4baeb1f843a98"
+    },
+    {
+      "path": "cad/STEP/shin_rear_plate.step",
+      "bytes": 132189,
+      "sha256": "7ef1180a32fc609eaa56a0d9d9e9bcb099cd8a48187275c097c12bf24b327f24"
+    },
+    {
+      "path": "cad/STEP/tail.step",
+      "bytes": 278483,
+      "sha256": "470a4541297289b7c25dfbf5fb415f0f42c499768bf5dee8864be750c18fe358"
+    },
+    {
+      "path": "cad/STEP/thigh_fairing.step",
+      "bytes": 250419,
+      "sha256": "7618af2dc2e8404cb760f7481cef2a8f3da066d6f8ebc464cc899309b0dfe206"
+    },
+    {
+      "path": "cad/STEP/thigh_plate.step",
+      "bytes": 188893,
+      "sha256": "ca4fc67fb4e5e1170a24f02b2aa35c0d64a3d7bdf0640a60882b5a597cc9c045"
+    },
+    {
+      "path": "cad/STL/axle_adapter.stl",
+      "bytes": 32084,
+      "sha256": "e0a10ccd0c8573bf730e471fbb58c9b86b17d41a45d04ebf11554de2cd979321"
+    },
+    {
+      "path": "cad/STL/body_shell.stl",
+      "bytes": 854384,
+      "sha256": "25a4200511d6dc171e4c145b55e5c9ec7958c5cd81962a84125779126ae26fdf"
+    },
+    {
+      "path": "cad/STL/camera_carrier.stl",
+      "bytes": 315484,
+      "sha256": "607be030eaf041f10d8c675a7d1704f0790f31117fc70a835bb6ccbdb780374f"
+    },
+    {
+      "path": "cad/STL/deck.stl",
+      "bytes": 782284,
+      "sha256": "4b78aefe579e334f8fc6748145d2a2f3ba3e43b8543399e4932ac617c1751927"
+    },
+    {
+      "path": "cad/STL/depth_pod.stl",
+      "bytes": 668384,
+      "sha256": "d4d94cd9abae76cbec730269c701646ede2fd482ca53eedccf5adebc4eb10a8c"
+    },
+    {
+      "path": "cad/STL/ear.stl",
+      "bytes": 603834,
+      "sha256": "4b495029f00a37853774318878c5af33e7420ccf5098843ad0219ca55f50f06d"
+    },
+    {
+      "path": "cad/STL/eye_bezel.stl",
+      "bytes": 64884,
+      "sha256": "27fcad6370b280a9515b1a1cf830ef579988e444a66885be77662f8e133545a4"
+    },
+    {
+      "path": "cad/STL/fit_coupon.stl",
+      "bytes": 104234,
+      "sha256": "f0a4102872a0af1723769ef00368d32b287f506bd7787cc9a1954a25a88a56c3"
+    },
+    {
+      "path": "cad/STL/head_hatch.stl",
+      "bytes": 185184,
+      "sha256": "ab14973a9da93864c1cb76c277d063f9603a621aca7b215af5d261e75e682f52"
+    },
+    {
+      "path": "cad/STL/head_shell.stl",
+      "bytes": 1133934,
+      "sha256": "61de6fa342d6be0f2eb753de975692360414c18815ec45bd01ae5b569f1a4fcd"
+    },
+    {
+      "path": "cad/STL/head_yoke.stl",
+      "bytes": 53684,
+      "sha256": "1fbaac799319d8c9cbd707bdce6f8b341f64efa8ce3e69e9534aa60a5c5445fe"
+    },
+    {
+      "path": "cad/STL/hoof.stl",
+      "bytes": 838484,
+      "sha256": "1ed91b88b417e572244b6cc3bb4d74541189fe2fade901de3fe877b6a111b0b6"
+    },
+    {
+      "path": "cad/STL/hoof_actuator.stl",
+      "bytes": 44684,
+      "sha256": "5f3bc3852a0d63e6105cc8c957ce791ce5eafbdf08897f7f53a341b9665a08d7"
+    },
+    {
+      "path": "cad/STL/hoof_sole_plate.stl",
+      "bytes": 448884,
+      "sha256": "da1b32aa36e78c846f206d5223ee88417ee57cc1f9a7dd739701691ea8fc252b"
+    },
+    {
+      "path": "cad/STL/hoof_tpu_pad.stl",
+      "bytes": 1057684,
+      "sha256": "563996302ad07b9b737a179843f75f42224333b714e48ef7cc9994cabb09dccd"
+    },
+    {
+      "path": "cad/STL/horn.stl",
+      "bytes": 106484,
+      "sha256": "9c8f06e8991efa12b8fca00f752f1ce7bcc9e9623d46c54aa52b46cefbfc4756"
+    },
+    {
+      "path": "cad/STL/knee_fork.stl",
+      "bytes": 160284,
+      "sha256": "829e0178e455e0bd95711773bd73eacb511455c61f0369f47eb0eaade8f0275a"
+    },
+    {
+      "path": "cad/STL/links/ear_left.msh",
+      "bytes": 132244,
+      "sha256": "41060c8f2b270e982590f868307f0729335e5ed479245f122f2cae699bf93f24"
+    },
+    {
+      "path": "cad/STL/links/ear_left.stl",
+      "bytes": 367384,
+      "sha256": "b5e24426870d8c7ace597a21a8097c332bf9faba22a476a665e083b858e95d3a"
+    },
+    {
+      "path": "cad/STL/links/ear_right.msh",
+      "bytes": 132244,
+      "sha256": "74edb104c823358ab15a32aad13a9378dcd61cec294b51ed7582e97b415ac8c5"
+    },
+    {
+      "path": "cad/STL/links/ear_right.stl",
+      "bytes": 367384,
+      "sha256": "681b61769bf353ba26924d47654247748ea488a7941b9dbf9358a4500fea5cf0"
+    },
+    {
+      "path": "cad/STL/links/fl_roll.msh",
+      "bytes": 211648,
+      "sha256": "2bf984fb3bad026a7bb13c0951e3ecb3aafc50a2e51e639d7a24e54d1269d167"
+    },
+    {
+      "path": "cad/STL/links/fl_roll.stl",
+      "bytes": 588884,
+      "sha256": "720f1bf233c31ad489d2cef1fbce9f536f115e39ca69aec32be603d2e6cec1b4"
+    },
+    {
+      "path": "cad/STL/links/fl_shin.msh",
+      "bytes": 467332,
+      "sha256": "9dddd4b65c8bb0b04b3d72c47689f77b578bcb7ef8096bff4220f231bbc952f6"
+    },
+    {
+      "path": "cad/STL/links/fl_shin.stl",
+      "bytes": 1301084,
+      "sha256": "b71681ac26d2d57620542653fe640aba1383c11de96a7b00b00f2199a460d2b8"
+    },
+    {
+      "path": "cad/STL/links/fl_thigh.msh",
+      "bytes": 490612,
+      "sha256": "a1a82804569b304320b5dd329592357d3630f2b3242c313006ee11c5c553df27"
+    },
+    {
+      "path": "cad/STL/links/fl_thigh.stl",
+      "bytes": 1365984,
+      "sha256": "9c0d35493fc9024df525a6acb0515d8fbbb1409d5b9b8d6fcb82d8f965b9c545"
+    },
+    {
+      "path": "cad/STL/links/fr_roll.msh",
+      "bytes": 211648,
+      "sha256": "b6a663b071c2f0fc36d135dbbde95cea5aa17a3d6bfee01b1e6d13eab3f6aa28"
+    },
+    {
+      "path": "cad/STL/links/fr_roll.stl",
+      "bytes": 588884,
+      "sha256": "f32e023129287f6c532c374bf7f6b483432a6e8a3a732d1dfbb2eda832358f75"
+    },
+    {
+      "path": "cad/STL/links/fr_shin.msh",
+      "bytes": 467332,
+      "sha256": "be0a5c213b7b6de91ab91a8a2b439f1a680768d0e5bc84d0b1e079308effde8f"
+    },
+    {
+      "path": "cad/STL/links/fr_shin.stl",
+      "bytes": 1301084,
+      "sha256": "ab30e4763da30943b34ef48a609b6b3744002ad50b21e29316bdc56ea2246b27"
+    },
+    {
+      "path": "cad/STL/links/fr_thigh.msh",
+      "bytes": 490612,
+      "sha256": "8a99c1f55a1b89be47d5d1884b47d24df18c34a1de661c3a3cf109c0009543aa"
+    },
+    {
+      "path": "cad/STL/links/fr_thigh.stl",
+      "bytes": 1365984,
+      "sha256": "8ab7893449fb2e0420b693cadd1c90166ba364bbaed40343a936c13f9fe218db"
+    },
+    {
+      "path": "cad/STL/links/head.msh",
+      "bytes": 3448636,
+      "sha256": "6e4dffc330968f955adf571c5f60889148bcc5ed4154bbdfc3d556b824d0cee0"
+    },
+    {
+      "path": "cad/STL/links/head.stl",
+      "bytes": 9589684,
+      "sha256": "9b9a5d8a8389aeb1247bb827d44b0f807682a86affb5f28927a7fd9315477057"
+    },
+    {
+      "path": "cad/STL/links/neck_yaw.msh",
+      "bytes": 3545044,
+      "sha256": "4cb61bb85b8592e3671c8b5daf00673079963c1636fa3432bc5a670f691275cc"
+    },
+    {
+      "path": "cad/STL/links/neck_yaw.stl",
+      "bytes": 9960184,
+      "sha256": "bc7cbf7c7a49f917709f7929bacfa8fae8200a148ef612d3c389c54278ebfb28"
+    },
+    {
+      "path": "cad/STL/links/rl_roll.msh",
+      "bytes": 211648,
+      "sha256": "a282696bfbf2c99ee47a3c3ef88b56e1061228f8f4349f681da95b9bf00f04f7"
+    },
+    {
+      "path": "cad/STL/links/rl_roll.stl",
+      "bytes": 588884,
+      "sha256": "b9c887b757a7d032781c13339bbb8a053bb595d594f41e6ca446732d4fe4d73c"
+    },
+    {
+      "path": "cad/STL/links/rl_shin.msh",
+      "bytes": 467332,
+      "sha256": "9dddd4b65c8bb0b04b3d72c47689f77b578bcb7ef8096bff4220f231bbc952f6"
+    },
+    {
+      "path": "cad/STL/links/rl_shin.stl",
+      "bytes": 1301084,
+      "sha256": "b71681ac26d2d57620542653fe640aba1383c11de96a7b00b00f2199a460d2b8"
+    },
+    {
+      "path": "cad/STL/links/rl_thigh.msh",
+      "bytes": 490612,
+      "sha256": "a1a82804569b304320b5dd329592357d3630f2b3242c313006ee11c5c553df27"
+    },
+    {
+      "path": "cad/STL/links/rl_thigh.stl",
+      "bytes": 1365984,
+      "sha256": "9c0d35493fc9024df525a6acb0515d8fbbb1409d5b9b8d6fcb82d8f965b9c545"
+    },
+    {
+      "path": "cad/STL/links/rr_roll.msh",
+      "bytes": 211648,
+      "sha256": "bd352fcceaf6f863b9300ac358d22b6b0a409c321e704fa7d7ea8b1d222885fa"
+    },
+    {
+      "path": "cad/STL/links/rr_roll.stl",
+      "bytes": 588884,
+      "sha256": "4f71234d86f0b0b595aac0864bdc6291697922b108aac890f54bf63f5b6f6dc9"
+    },
+    {
+      "path": "cad/STL/links/rr_shin.msh",
+      "bytes": 467332,
+      "sha256": "be0a5c213b7b6de91ab91a8a2b439f1a680768d0e5bc84d0b1e079308effde8f"
+    },
+    {
+      "path": "cad/STL/links/rr_shin.stl",
+      "bytes": 1301084,
+      "sha256": "ab30e4763da30943b34ef48a609b6b3744002ad50b21e29316bdc56ea2246b27"
+    },
+    {
+      "path": "cad/STL/links/rr_thigh.msh",
+      "bytes": 490612,
+      "sha256": "8a99c1f55a1b89be47d5d1884b47d24df18c34a1de661c3a3cf109c0009543aa"
+    },
+    {
+      "path": "cad/STL/links/rr_thigh.stl",
+      "bytes": 1365984,
+      "sha256": "8ab7893449fb2e0420b693cadd1c90166ba364bbaed40343a936c13f9fe218db"
+    },
+    {
+      "path": "cad/STL/links/torso.msh",
+      "bytes": 4625560,
+      "sha256": "7f9908ed2c789808c64a7bbae3ec21319e6a2dadef3a55a39ddabf7745970d83"
+    },
+    {
+      "path": "cad/STL/links/torso.stl",
+      "bytes": 12973684,
+      "sha256": "0bed314827635039f2576a3f93a6414f013e9b5ed891996b9297d6d832615137"
+    },
+    {
+      "path": "cad/STL/mane.stl",
+      "bytes": 1043634,
+      "sha256": "d94c490ef0a0c2c3ded01958220d1256ecf8aeb8a27f837b549bec77dc2c90b2"
+    },
+    {
+      "path": "cad/STL/mane_stripe.stl",
+      "bytes": 302584,
+      "sha256": "5cea64aa1fac0f751a24d782928e48420ec5df8b847d90ddedb18cb673c6ccb8"
+    },
+    {
+      "path": "cad/STL/neck_collar.stl",
+      "bytes": 132684,
+      "sha256": "f93ba25c24023e99fd684f89e6c37526bc3a5efa3e5f7979eaa401a718539348"
+    },
+    {
+      "path": "cad/STL/rail.stl",
+      "bytes": 141184,
+      "sha256": "feac9f1abd633e1bedd5312b784462daae3581bd920a512ae3028799136490a9"
+    },
+    {
+      "path": "cad/STL/roll_yoke.stl",
+      "bytes": 196684,
+      "sha256": "2ec3245e91dccd6689ac7530c7f45880a9489977c4cb677410bbf55d896f1dad"
+    },
+    {
+      "path": "cad/STL/sensor_tray.stl",
+      "bytes": 193284,
+      "sha256": "f6a6cbadae10726611a8cfedbd56237e9506f6add5749af39dc3b20f875dadad"
+    },
+    {
+      "path": "cad/STL/servo_cradle.stl",
+      "bytes": 566984,
+      "sha256": "8e822d401ef8f91714e7f55e2b4db2530a9585be451c3545bd124dbe6f382211"
+    },
+    {
+      "path": "cad/STL/servo_cradle_sm105.stl",
+      "bytes": 528584,
+      "sha256": "d6d3e271f51b6431a015a744480f65dd493cec018653686c708fa42f5f092bac"
+    },
+    {
+      "path": "cad/STL/servo_cradle_sm80.stl",
+      "bytes": 513784,
+      "sha256": "5d8eff1d466c76d026b6f2893f54189ba361e430e96253c5748775ea61f44aa6"
+    },
+    {
+      "path": "cad/STL/servo_strap.stl",
+      "bytes": 390684,
+      "sha256": "ce036ed9ea3dee03d6ae372822147e7fd0cfe781980e86678e21332950422be2"
+    },
+    {
+      "path": "cad/STL/servo_strap_sm105.stl",
+      "bytes": 493084,
+      "sha256": "1461833e3f6faca9325a3edc7a70a17016c939695338c4f3c2fe6a21346d7cca"
+    },
+    {
+      "path": "cad/STL/servo_strap_sm80.stl",
+      "bytes": 499284,
+      "sha256": "b46b8b0e8b97cb778ed9bac26e093c8fc97e2455ead7efdbfe1960969299a36f"
+    },
+    {
+      "path": "cad/STL/shin_fairing.stl",
+      "bytes": 694734,
+      "sha256": "17a2988d6bd75e9fda1bbee62d5ec1629248537dc634095748e3bea292678909"
+    },
+    {
+      "path": "cad/STL/shin_plate.stl",
+      "bytes": 207284,
+      "sha256": "f4265f8e7e20617dfa66e598091e4783d97255451562a975dd143d0671c1b143"
+    },
+    {
+      "path": "cad/STL/shin_rear_plate.stl",
+      "bytes": 257784,
+      "sha256": "6c10caacd1173b29af3fc5d7ec8b1c1608cb1bb88de8a1e5c3f74ce20e02c22a"
+    },
+    {
+      "path": "cad/STL/tail.stl",
+      "bytes": 638284,
+      "sha256": "3e0a500f868b921d11a615839a20b1c31255964af6dfcfe561625b849e607bdc"
+    },
+    {
+      "path": "cad/STL/thigh_fairing.stl",
+      "bytes": 686234,
+      "sha256": "2283f0407500fdb5420e1acf5a2064b2ab5bc4dc90dd553c670a2c3b5a99862d"
+    },
+    {
+      "path": "cad/STL/thigh_plate.stl",
+      "bytes": 711684,
+      "sha256": "2d48b0b61a57b02042ede68900d6b16594a85f6259b992a2e18d3ff696faed2f"
+    },
+    {
+      "path": "cad/src/README.md",
+      "bytes": 1288,
+      "sha256": "214a31fc06b9930178435a4bb89c20d5fc3ec72c6b2a6b8579462171790ad8f9"
+    },
+    {
+      "path": "cad/src/assembly.py",
+      "bytes": 366,
+      "sha256": "388ab0f7b89d05c502c474dd1c04165caad687c0412b6bcb5c182447a4739d1c"
+    },
+    {
+      "path": "cad/src/axle_adapter.py",
+      "bytes": 359,
+      "sha256": "ae2da3dac8562ae39c23e3ac44c94fd5d88a1c5a8652debc5166b1b90f7e2b4e"
+    },
+    {
+      "path": "cad/src/body_shell.py",
+      "bytes": 349,
+      "sha256": "60d2fffb9c3993ae97603149b18f2f7b812ee164cbd7baea25e3c4003156ac0a"
+    },
+    {
+      "path": "cad/src/camera_carrier.py",
+      "bytes": 369,
+      "sha256": "4ffb2e34525ea792d103053aea08c0486a7f1cff9cfe36225d8210dc3babdcd8"
+    },
+    {
+      "path": "cad/src/deck.py",
+      "bytes": 319,
+      "sha256": "5049ce0553f17f945f513c68954e5b908a64c8dd6eb242febeab900cbea07d06"
+    },
+    {
+      "path": "cad/src/depth_pod.py",
+      "bytes": 344,
+      "sha256": "d4941eab6c0c4dbf5d82fdb4b729b8cc00071628baab39197708d1b1f9ed10d7"
+    },
+    {
+      "path": "cad/src/ear.py",
+      "bytes": 314,
+      "sha256": "deb8331f405458470d5a6396a7f480fb0379362a7881578fc75c21350072bee5"
+    },
+    {
+      "path": "cad/src/exploded.py",
+      "bytes": 290,
+      "sha256": "003a7089eff5d5466c36df14d0b8f19b8d888b7de4ef279ed3de67fbb1a58280"
+    },
+    {
+      "path": "cad/src/eye_bezel.py",
+      "bytes": 344,
+      "sha256": "3d139e55cfab6806f236039b7e421a83acc175632b2fd94769529e1ae3266f32"
+    },
+    {
+      "path": "cad/src/fit_coupon.py",
+      "bytes": 349,
+      "sha256": "5c4601957b569d91955a7fa589a6a16196c52e9c3cd9fa30c43f78bfc643c823"
+    },
+    {
+      "path": "cad/src/head_hatch.py",
+      "bytes": 349,
+      "sha256": "18f2a33731fb11c4b8fa3e3e13cc679431c0e8d7e4dd860bffed1030f30cd968"
+    },
+    {
+      "path": "cad/src/head_shell.py",
+      "bytes": 349,
+      "sha256": "ae14c97a29bf77923286c7cabca8a82bdf8d41159292e06a7d2eafd3a78099a7"
+    },
+    {
+      "path": "cad/src/head_yoke.py",
+      "bytes": 344,
+      "sha256": "41cd24310c18b16f26bcce1f9bab4b67ab8b840e12a2d3828692fb32f9f4cb92"
+    },
+    {
+      "path": "cad/src/hoof.py",
+      "bytes": 319,
+      "sha256": "dd47c35326544e8981cdd4f01138fdadf1e54e59117ec00bd1ed533b02c7869b"
+    },
+    {
+      "path": "cad/src/hoof_actuator.py",
+      "bytes": 364,
+      "sha256": "4b6ebffa3f88fece772486ed6d60be94191696c4feb7fce66172aa3ece60a32d"
+    },
+    {
+      "path": "cad/src/hoof_sole_plate.py",
+      "bytes": 374,
+      "sha256": "bbc3535d2a02f6a1ff90ef0e24f2170b606997fa5225e5d723de9648b5e38150"
+    },
+    {
+      "path": "cad/src/hoof_tpu_pad.py",
+      "bytes": 359,
+      "sha256": "2bb9506e3b77506687ba2ae9cad14274b21ae7dddb8e3e78c214142df27f4f6c"
+    },
+    {
+      "path": "cad/src/horn.py",
+      "bytes": 319,
+      "sha256": "4418f15b80ac78cc99bcba113f00a30857f29e99c522260ca60e504385da2c07"
+    },
+    {
+      "path": "cad/src/internal.py",
+      "bytes": 290,
+      "sha256": "2b4e76f3d0de52089b83539ea06330ff6c1c755169f923333509d19e4778b0d1"
+    },
+    {
+      "path": "cad/src/knee_fork.py",
+      "bytes": 344,
+      "sha256": "7fee2f8a94c058a1a7c4598c5ee4c2a403249c4def792bf8a04477fe7651e7b0"
+    },
+    {
+      "path": "cad/src/lib/actuation_v04.py",
+      "bytes": 9178,
+      "sha256": "d4b6ef5cfa80efdca347168f1a912bd35a6005d55d578758bdc3c5f73abeac76"
+    },
+    {
+      "path": "cad/src/lib/sensors_face.py",
+      "bytes": 12078,
+      "sha256": "7148d93c61fa3bc742fead75e10f87bad4f528b4981de4efdb32bd309cf12b94"
+    },
+    {
+      "path": "cad/src/lib/shapes.py",
+      "bytes": 18798,
+      "sha256": "5e94f7f2330806f2d242d2849693eb97ff394369005ff6ee6033a9e888827e9d"
+    },
+    {
+      "path": "cad/src/mane.py",
+      "bytes": 319,
+      "sha256": "7a8c8a7c5cbe2fb2ba1bd793d07dbe938f03d9d21d3fb5b415df776963b7edad"
+    },
+    {
+      "path": "cad/src/mane_stripe.py",
+      "bytes": 354,
+      "sha256": "9571a557f99a911d694fa06aae51e4be30ebb66b6cba27c600470ceba3f2abbc"
+    },
+    {
+      "path": "cad/src/neck_collar.py",
+      "bytes": 354,
+      "sha256": "e69eb8ae0862f52e5f1034f13d7d1f4abbd9f162eae1d51e7ff6d69766947412"
+    },
+    {
+      "path": "cad/src/rail.py",
+      "bytes": 319,
+      "sha256": "59fef8dacfd3b5ad289d140a64dd2d713e5fdebe6986a2e66bf6cc8019a25eae"
+    },
+    {
+      "path": "cad/src/roll_yoke.py",
+      "bytes": 344,
+      "sha256": "5029c0cb94a876c508a0f14c70bc703058185bb9bb204f51d20a2190c6d4c8a8"
+    },
+    {
+      "path": "cad/src/sensor_tray.py",
+      "bytes": 354,
+      "sha256": "685572404d1d892f2c903eb3400e964fb13f9afb75ad263fea05c60112977c82"
+    },
+    {
+      "path": "cad/src/servo_cradle.py",
+      "bytes": 359,
+      "sha256": "06a9f8f741123f0be5b262c1da755d5cf94f776c05a32cdf43af32300211004e"
+    },
+    {
+      "path": "cad/src/servo_cradle_sm105.py",
+      "bytes": 389,
+      "sha256": "53944843c30d4f88876218d674c761d0dbd000b54eba8db0878d872c71944334"
+    },
+    {
+      "path": "cad/src/servo_cradle_sm80.py",
+      "bytes": 384,
+      "sha256": "fcc3c231c583cf06c5be099aa66cc09412354eb278991b096b258657ceb28c95"
+    },
+    {
+      "path": "cad/src/servo_strap.py",
+      "bytes": 354,
+      "sha256": "540a1e21106171595b9c2c7fe676f4b9f9293988ba49cc3b62034157c8266544"
+    },
+    {
+      "path": "cad/src/servo_strap_sm105.py",
+      "bytes": 384,
+      "sha256": "18298c31e22f4fe36639b7801c5d5427086a79915757dbe24a8e5aac0aca4414"
+    },
+    {
+      "path": "cad/src/servo_strap_sm80.py",
+      "bytes": 379,
+      "sha256": "b3453a76a0493bdf7dfeae820b703a007e80cf1b9283cddbdb3170d4d74da481"
+    },
+    {
+      "path": "cad/src/shin_fairing.py",
+      "bytes": 359,
+      "sha256": "4834e29306f8171b521197cf8f1e77e47c5435571b6a4ede43f5f397f5e57ec9"
+    },
+    {
+      "path": "cad/src/shin_plate.py",
+      "bytes": 349,
+      "sha256": "0f0dedce235b4d50af75516d96f94f5e475d628760bc571ad4d9972721e1c5d0"
+    },
+    {
+      "path": "cad/src/shin_rear_plate.py",
+      "bytes": 374,
+      "sha256": "e9a3faff0878696bf33e0ac6e406e4362ef8f9c59debf56486c7516dc320c3d8"
+    },
+    {
+      "path": "cad/src/tail.py",
+      "bytes": 319,
+      "sha256": "dc4e889caa74f6b821c5551ee358ca902d69d63ecf6be013b2e9f6810c2602fc"
+    },
+    {
+      "path": "cad/src/thigh_fairing.py",
+      "bytes": 364,
+      "sha256": "4460162b2e73d24f5b3f86636df9161a4964b048d6660e7bcd2ce6f76d0a99f8"
+    },
+    {
+      "path": "cad/src/thigh_plate.py",
+      "bytes": 354,
+      "sha256": "c46fffc02db5b5b09d9d2927153e71ea5cb32127e88a1589157375a84a0b3e8a"
+    },
+    {
+      "path": "config/robot.yaml",
+      "bytes": 18826,
+      "sha256": "5e8502148aa2b1a539999d614fcd2cf1a530247a5be1ae67e8bc58fe8c41005a"
+    },
+    {
+      "path": "docs/assembly.md",
+      "bytes": 6538,
+      "sha256": "33ac06b66d3b6312d5c1da5f47c36ecb910f9f44685cbb35d60bff04686716a1"
+    },
+    {
+      "path": "docs/bom-v03.csv",
+      "bytes": 2238,
+      "sha256": "ef3723a3387db8b388beac6c795bae56c038e47f56d2739b1f1d37ed07793f82"
+    },
+    {
+      "path": "docs/bom-v04.csv",
+      "bytes": 4063,
+      "sha256": "230e331f07b9f72ff41531d1742b4a721e31e2119327536473c67164c7ed9887"
+    },
+    {
+      "path": "docs/bom.md",
+      "bytes": 3263,
+      "sha256": "7976ed56816c98e3debc49d02793d189f5f83f406d033ea39b684f2c721eedb7"
+    },
+    {
+      "path": "docs/cad-gallery.md",
+      "bytes": 2041,
+      "sha256": "9915a7dd91168a755a7dc708d2b317ef4f6a238354c8c7852c06d34ffbcf3e42"
+    },
+    {
+      "path": "docs/control-interface.md",
+      "bytes": 3972,
+      "sha256": "71e0aecbb900022a4b9e126bbe777ad2381b12d09d1e30bc9a7211c3fdeaca17"
+    },
+    {
+      "path": "docs/design.md",
+      "bytes": 4697,
+      "sha256": "e58fe3fb7e8ac3ccb209974b6be75f7469c73a36baf16e390805ebf632d075cc"
+    },
+    {
+      "path": "docs/feasibility.md",
+      "bytes": 1451,
+      "sha256": "c8cbe6f47bf9fe05616add9de2e4c9ea5e495cf72733c60bce3fffeee86edbb6"
+    },
+    {
+      "path": "docs/mechanical_review.md",
+      "bytes": 2420,
+      "sha256": "c90ac737af6e4ffb33a9f5c417278cd9c091990e982692493fc72d62ca9ccfc3"
+    },
+    {
+      "path": "docs/provenance.md",
+      "bytes": 2721,
+      "sha256": "e4b06e00a4069fa92c8129ef5630ea01644007bb5469b5e0a79398f37b5046ba"
+    },
+    {
+      "path": "docs/redesign-v2.md",
+      "bytes": 2177,
+      "sha256": "11850ce4b3d9b1d02b5f173c6b5dbe7579d31becf127728f9dead8b267a76644"
+    },
+    {
+      "path": "docs/results.md",
+      "bytes": 529,
+      "sha256": "d332d33f251eb1069ca4a3731cb8246aeb62126390fd3bb1ad3c896fdca717a9"
+    },
+    {
+      "path": "docs/rl-training.md",
+      "bytes": 4581,
+      "sha256": "604a514b457ba6a2b5f4e3d181b520688cdcbab19ac405275921807a706f5a4e"
+    },
+    {
+      "path": "docs/sensors.md",
+      "bytes": 7914,
+      "sha256": "67ec97a8035061e70424477bfffd430856bad483dc2c0ce670dd394cee2b93fd"
+    },
+    {
+      "path": "docs/servo-selection.md",
+      "bytes": 2248,
+      "sha256": "0408692c1e56b9f84a1b8863093f4dc52f1207df2da11e83453c79a28fb12f24"
+    },
+    {
+      "path": "docs/studio-renders.md",
+      "bytes": 1795,
+      "sha256": "8a40a763eded100baa2d45cadfa1f94987205d4caf9a9455e33bbf01776b2efd"
+    },
+    {
+      "path": "docs/v04.md",
+      "bytes": 5596,
+      "sha256": "50fea0a60433daedd55205d92ab55c190c053fc706d7b8cfd4d9c238e041a697"
+    },
+    {
+      "path": "docs/validation-v03.md",
+      "bytes": 2217,
+      "sha256": "ba7011d64ab839ef455a83e3662b8ec0d31126b9dd0209a509e6957d345f74a7"
+    },
+    {
+      "path": "docs/validation.md",
+      "bytes": 3700,
+      "sha256": "5d7d78a5406982b09cb3a837b0923baa148edc89c2226168068a72c0d1e709cd"
+    },
+    {
+      "path": "docs/wiring.md",
+      "bytes": 2067,
+      "sha256": "5a061f6fa676ff587b34f97b3132aaf1113f3897265c70386de3c75a5f589645"
+    },
+    {
+      "path": "docs/wiring.svg",
+      "bytes": 1959,
+      "sha256": "c0e224de885fd5f7faa5c1af3f528576e249b4d588e44374840a6fa0a7c937c5"
+    },
+    {
+      "path": "hardware/contact_adc.py",
+      "bytes": 1522,
+      "sha256": "d475914d604a116f79f5a760040fe487d824f4057e8ead8dcf1b0038a875ef0d"
+    },
+    {
+      "path": "hardware/observation.py",
+      "bytes": 993,
+      "sha256": "1d1b688af2de9db4006554311c2256b6a77b06c22db57617cc2eea56d85be132"
+    },
+    {
+      "path": "hardware/telemetry.py",
+      "bytes": 1978,
+      "sha256": "eddd363cf0c3bcf11342b5954aabea00050376545b787016b1f24772acaeba9a"
+    },
+    {
+      "path": "learning/PLAN.md",
+      "bytes": 6579,
+      "sha256": "8ab1b365a678533bffdf5ece22f42b50e86ec6f039768035545217a0334a67c7"
+    },
+    {
+      "path": "learning/README.md",
+      "bytes": 8926,
+      "sha256": "d923effc95de35df094e304c24cd4bb06027b31bd0a603cbe08eddc2e734fd4d"
+    },
+    {
+      "path": "learning/__init__.py",
+      "bytes": 60,
+      "sha256": "c808d223a55c5e8ec311dafe378960b67bd640c1c8a009d0752c70b740fb248d"
+    },
+    {
+      "path": "learning/build_native.py",
+      "bytes": 2186,
+      "sha256": "9e6b77c01805773f56975f314c491252ac1d3ede3a472407ecd0e660d5fe18b5"
+    },
+    {
+      "path": "learning/driver.py",
+      "bytes": 29282,
+      "sha256": "50d63266a78e02f96c2a8c17a0b17b80df4caf41e148adba22c4bf7c42e16dcb"
+    },
+    {
+      "path": "learning/env.py",
+      "bytes": 22932,
+      "sha256": "44b6560cfe229e9bb1fe674db3d16a7e9ff3e6907f6f0f6c585a90d9dbfb154d"
+    },
+    {
+      "path": "learning/evaluate.py",
+      "bytes": 21662,
+      "sha256": "68942cb8b694fca7aeb4fb50db9a48fb9575df525d0c4ada2ae237c04a8a9fb3"
+    },
+    {
+      "path": "learning/motion.py",
+      "bytes": 2838,
+      "sha256": "90b89ec24995091a15e15aadfccd0e7767cf55e3ae03697f3395cb9f541ea196"
+    },
+    {
+      "path": "learning/native.cpp",
+      "bytes": 14991,
+      "sha256": "f1e315403738acedaed9d633a7d9b9784258e497f5bb62f2ea4efef74cc7e419"
+    },
+    {
+      "path": "learning/play.py",
+      "bytes": 21303,
+      "sha256": "54d21b535a2870171eb15123183d786a309de947838133da09579a24b79f07e0"
+    },
+    {
+      "path": "learning/ppo.py",
+      "bytes": 25423,
+      "sha256": "3ac97a7545b2e5b50ceb604e6d12eabac06308a16d811bada795cc2e98185a9c"
+    },
+    {
+      "path": "learning/requirements.txt",
+      "bytes": 379,
+      "sha256": "838754bcfce34271c18f7458fbca1c5eb65590e9ab984105de0830fc2710616e"
+    },
+    {
+      "path": "learning/rewards.py",
+      "bytes": 2831,
+      "sha256": "ed472edbeed333de60485706c7c31b1ccc09cd5f5780682324111605ee5ba722"
+    },
+    {
+      "path": "learning/sensors.py",
+      "bytes": 5797,
+      "sha256": "8ec90005f6070beaeceec24b55fb6b05dc646a7621ff2000b7f01538050f12cf"
+    },
+    {
+      "path": "learning/watch.py",
+      "bytes": 6995,
+      "sha256": "5b67afc1627cfba7dce6b3e83a35f5b00c2a36eb198af3319e1b6515d6370fd9"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 364,
+      "sha256": "0f68cb1fb9ffed12ae0f09d6fb5f3bf54ea0615de2da75fc2eb7f4b4ced46554"
+    },
+    {
+      "path": "references/STS3250-manufacturer.pdf",
+      "bytes": 542825,
+      "sha256": "c471fe4e3b872423100ec28726800e65bfc5eb7aa14a82e35db28d3c8e89ab28"
+    },
+    {
+      "path": "references/appearance/manifest.json",
+      "bytes": 855,
+      "sha256": "ccf1175913f3d698a37fe933d2ac07c406a23e746cb3ab2772d1186b66df600f"
+    },
+    {
+      "path": "references/appearance/sweetie-official.jpg",
+      "bytes": 17402,
+      "sha256": "e2da527590464464628c24132e4a7f3b6270c8639a7379b4c82ed16289507711"
+    },
+    {
+      "path": "references/appearance/sweetie-proto3-body.jpg",
+      "bytes": 11075,
+      "sha256": "8ee020eba20475232d9e4d6334740b5440d66ad94e2bac1034dbbeaa1ea5864a"
+    },
+    {
+      "path": "references/catalog_parts.json",
+      "bytes": 5387,
+      "sha256": "e9211fdf158acd75cc5fe39715c023e3a8dc1b44729a0bf56eec36ca63609b90"
+    },
+    {
+      "path": "references/catalog_searches.json",
+      "bytes": 127,
+      "sha256": "966df65fa020793ae69160d13918103600d78b0a4d63dc9389c84bd7d374bcff"
+    },
+    {
+      "path": "references/catalog_sts3250_search.json",
+      "bytes": 205,
+      "sha256": "cfe79dc1dd45821cdbc743a98e065b218b430731e3ba06325b90e3a3b9fbb735"
+    },
+    {
+      "path": "references/feetech_series.html",
+      "bytes": 38724,
+      "sha256": "fcde8d5b6c95f220905b66ee5b6c76f77e37ca1e59412322ec0ba4aab691c9be"
+    },
+    {
+      "path": "references/previous_design/assembly-v1.png",
+      "bytes": 1219424,
+      "sha256": "798451ae701b964e7e294935c35e5c39b476eeb02340c80ae64b817ed2aed9be"
+    },
+    {
+      "path": "references/previous_design/model-v1.py",
+      "bytes": 5437,
+      "sha256": "c4c36b3337347f6d1283ad3c2d066d37f30459f04546d1c833b2d51da8145b74"
+    },
+    {
+      "path": "references/previous_design/robot-v1.yaml",
+      "bytes": 4147,
+      "sha256": "fa52a3f34039d5a37cf1db1708fd718183ccdc4fb4f9bbf0b1b40a2f29703055"
+    },
+    {
+      "path": "references/previous_design/shapes-v1.py",
+      "bytes": 14478,
+      "sha256": "4abc1d5fcecdf0806873ddb9008c557109d2ecef17176c23f747429e05936dc8"
+    },
+    {
+      "path": "references/previous_design/validation-v1.json",
+      "bytes": 34840,
+      "sha256": "009c2b6ec60e5fb88f321af1cf171f30fd22405d2c194887d3d0f8adb9ff8d9d"
+    },
+    {
+      "path": "references/previous_design/validation-v2-before-final-cowl.json",
+      "bytes": 34846,
+      "sha256": "000f8eb0579e6e473d7c06076b4e76415269d051e48b14cc89b26cb995ce359d"
+    },
+    {
+      "path": "references/upstream/manifest.json",
+      "bytes": 4538,
+      "sha256": "9365b8c8a239562451a7df1d9a55984e5dcf4ad297c89ae8b8201e5cbc13e667"
+    },
+    {
+      "path": "references/upstream/microduck/LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "path": "references/upstream/microduck/README.md",
+      "bytes": 5137,
+      "sha256": "28b4c4c092b1a6cf09796290cdd0398210a14e17ea88a23ef262704c4e0d3678"
+    },
+    {
+      "path": "references/upstream/microduck/docs/design/architecture.md",
+      "bytes": 39612,
+      "sha256": "91831909e910085eaf44fe1ad0b438a4091de66998a28b145ddbcdc2708b0505"
+    },
+    {
+      "path": "references/upstream/microduck/docs/design/robotd-design.md",
+      "bytes": 75709,
+      "sha256": "37c1ee8a7c80b492d190f34d5de27b736ad237aede0a5c06916013566192af04"
+    },
+    {
+      "path": "references/upstream/microduck_rl/LICENSE",
+      "bytes": 11351,
+      "sha256": "2d3fd9ffffa70a4307498ec630b14a6b4731e010f8ddda92686eaf65733c2dfe"
+    },
+    {
+      "path": "references/upstream/microduck_rl/README.md",
+      "bytes": 9290,
+      "sha256": "cac2fb08c302f3b282d0f6acc4ca56f2a151be60becc20f08b84dc7913658259"
+    },
+    {
+      "path": "references/upstream/microduck_rl/src/mjlab_microduck/robot/microduck/config_mjcf_walk.json",
+      "bytes": 1814,
+      "sha256": "31fdf5bd061170fb41729b3a82a7780e772121ec566625c5a6bf849b890b31f9"
+    },
+    {
+      "path": "references/upstream/sweetie_bot/.gitmodules",
+      "bytes": 1247,
+      "sha256": "0939d517d424e4435691120c0e9aa43ae8ba0565cd00a7e987ffc9cff3c58b4c"
+    },
+    {
+      "path": "references/upstream/sweetie_bot/LICENSE",
+      "bytes": 1524,
+      "sha256": "c20a662c7d2a7a2da33a04aa22514a1041ef8fbd97297d28b01f61cf65ad502c"
+    },
+    {
+      "path": "references/upstream/sweetie_bot/README.md",
+      "bytes": 7530,
+      "sha256": "f071274f0cdd0b2773cf161e4311350bf3c5ae506531b7ba8511e94f97e16852"
+    },
+    {
+      "path": "references/upstream/sweetie_bot/config/sweetie_bot_proto2_deploy/README.md",
+      "bytes": 540,
+      "sha256": "f67005702fe61880dd72c6476be90fc2bad2fce98221c9b59f5b3cbc64cf5c39"
+    },
+    {
+      "path": "references/upstream/sweetie_proto2/README.md",
+      "bytes": 1088,
+      "sha256": "1d345366dd5e3d7472ee50c48228e02a6406a550c1e74cd5e2c2ae04baefd285"
+    },
+    {
+      "path": "references/upstream/sweetie_proto2/urdf/sweetie_bot_proto2_description_dynamics.urdf",
+      "bytes": 29997,
+      "sha256": "bbb9f7b2bda5654a24223ae16d0f12be39ed507b49427583fca28db7d5891c58"
+    },
+    {
+      "path": "references/v04/SM105BL-C001.pdf",
+      "bytes": 582902,
+      "sha256": "116d8f70b0f1db79b31c4e1c884977a85fe8c95927437158b5f17019e680ed8b"
+    },
+    {
+      "path": "references/v04/SM80BL-C001.pdf",
+      "bytes": 812731,
+      "sha256": "a5f151c985b78bd02efd7fbd54873a4ac66508787ff6939202a251730fd70544"
+    },
+    {
+      "path": "references/v04/manifest.json",
+      "bytes": 1651,
+      "sha256": "c03a51f6005900038302a28604ff560a92d44676fb59b73b76fe7b8961d3eaff"
+    },
+    {
+      "path": "references/v04/sm-105b-c001.html",
+      "bytes": 49078,
+      "sha256": "8ed75ddb219609d01e2497b70e39af436d6e29e0963b46c6c389902334dde818"
+    },
+    {
+      "path": "references/v04/sm-105b-c001.webp",
+      "bytes": 133896,
+      "sha256": "10c9334cab07e816f110c4542425b0959f021452d63cd32aef6e0b89438f9e4e"
+    },
+    {
+      "path": "references/v04/sm-80bl-c001.html",
+      "bytes": 49692,
+      "sha256": "0788da0a0f2a81f32b12d3a287db0b90840c6a6baadef3fce3293496327170bd"
+    },
+    {
+      "path": "references/v04/sm-80bl-c001.webp",
+      "bytes": 24130,
+      "sha256": "ed5379fa8b22bdb551e1299ea0674edcf58ccec94bf8cabe34025bb26577106d"
+    },
+    {
+      "path": "references/xc330_product.html",
+      "bytes": 537732,
+      "sha256": "104bffc9cb982ea02e58077978ca0d61a4eeaf011e24da5f0649082cfe13a60e"
+    },
+    {
+      "path": "references/xl330_product.html",
+      "bytes": 579533,
+      "sha256": "2555182cd8e5303ea86969f7e8a2be8b0a691dec842cfa968b1694ee44ff2189"
+    },
+    {
+      "path": "renders/assembly.png",
+      "bytes": 1237919,
+      "sha256": "97db9d1cad5860f8ad87a0713133c78f3b9e01ea2d610254512f5d55d8c59c56"
+    },
+    {
+      "path": "renders/assembly_front.png",
+      "bytes": 695141,
+      "sha256": "abfea3a2f423e53bff7e63f376f24322b1c1460177d0c2333e2cfdea4d64773d"
+    },
+    {
+      "path": "renders/assembly_left.png",
+      "bytes": 653373,
+      "sha256": "e6d3f57f37c2822c530d8113b27c95c089a392cca2cc7fb5152b51a7ed900fc8"
+    },
+    {
+      "path": "renders/compact-muzzle/02-portrait.jpg",
+      "bytes": 276175,
+      "sha256": "941d72c2e7d2efd5ee9931578b0400dadd2ab0a2679a2d43ef513198ab3c30c2"
+    },
+    {
+      "path": "renders/compact-muzzle/03-violet-profile.jpg",
+      "bytes": 241137,
+      "sha256": "a0dbbed3a23308aac73b3e0625a3846c94abf3f665c14d4dcd9c7336c4c19910"
+    },
+    {
+      "path": "renders/compact-muzzle/comparison.jpg",
+      "bytes": 214392,
+      "sha256": "b4bad909ae109fdca49b3ebffc477bade350a3830a11771210c20fee1928b987"
+    },
+    {
+      "path": "renders/compact-muzzle/profile-comparison.jpg",
+      "bytes": 143451,
+      "sha256": "c214f9014c1f49162cc5ea2ec0e195d5c872aeb471834151e7bf561628384002"
+    },
+    {
+      "path": "renders/compact-muzzle/render-manifest.json",
+      "bytes": 1395,
+      "sha256": "72b75b200085e5464b0f243d071521beea3b72207c0f5077b4190f5898169145"
+    },
+    {
+      "path": "renders/exploded.png",
+      "bytes": 1250622,
+      "sha256": "c62881c86416379f16075a12b81c7d22f5f01148847839b94a8b59f732169a82"
+    },
+    {
+      "path": "renders/eyes_demo.gif",
+      "bytes": 91260,
+      "sha256": "34d919eebb014b9c89ac1bfca172f9f2c9a1eee6522767d880d2039c222dceba"
+    },
+    {
+      "path": "renders/internal.png",
+      "bytes": 1243446,
+      "sha256": "6e3b7314ef7307ece69a34c91ff309a3bd61276065605eb40bb1121b0f0cc4a6"
+    },
+    {
+      "path": "renders/parts_review.jpg",
+      "bytes": 432600,
+      "sha256": "5bd32ef5a4f152738d8dc983cac2f9c5d812ccfab2f8b1e74fca8f71390ec74a"
+    },
+    {
+      "path": "renders/redesign_comparison.jpg",
+      "bytes": 108219,
+      "sha256": "cab6995c03204a97d7022eedd9b96904ed90fbfbb436b39133bb05d8c0c9d670"
+    },
+    {
+      "path": "renders/studio/01-midnight-hero.jpg",
+      "bytes": 250238,
+      "sha256": "6ab97113cfa5c7bbc1d267e87e723f62fcd387e0c6b68854700487fcc1f7c767"
+    },
+    {
+      "path": "renders/studio/01-midnight-hero.png",
+      "bytes": 2557650,
+      "sha256": "7995760af46aa845a5e39378a35cddcb94420b6848b2850c48f3e7e1d29ba40b"
+    },
+    {
+      "path": "renders/studio/02-portrait.jpg",
+      "bytes": 241783,
+      "sha256": "7bbf288c2295a5e70bdae47816d87b2b47f9186d7f35916f8897840b73477e0f"
+    },
+    {
+      "path": "renders/studio/02-portrait.png",
+      "bytes": 2482364,
+      "sha256": "7d2abdd40c8de6d6b930fc80d9aef8344721cb118668e718f585edc54b7f4fe5"
+    },
+    {
+      "path": "renders/studio/03-violet-profile.jpg",
+      "bytes": 207673,
+      "sha256": "75fe8fe40f1c93d3df417a758002319ba6e227657ad9251d073b660aff80c8ae"
+    },
+    {
+      "path": "renders/studio/03-violet-profile.png",
+      "bytes": 2458225,
+      "sha256": "408b8ad78ffa96d49a0c7b4cbbfd8b954202b601c0c6ab86becd272e53bd263e"
+    },
+    {
+      "path": "renders/studio/manifest.json",
+      "bytes": 1774,
+      "sha256": "a9ca461ea8a3195267a2e72dcc4f4600a007b090960d3d2183dc3f29566f863f"
+    },
+    {
+      "path": "renders/sweetybot2-training.gif",
+      "bytes": 5828551,
+      "sha256": "6a75e591787c61a934c2cf2fd5146b6d7b42db2c2fc5d40855249a941cad6f38"
+    },
+    {
+      "path": "renders/training_preview_20261017/manifest.json",
+      "bytes": 2104,
+      "sha256": "eff8f427ff1fdde1d13b53df05ee32d5ca4543496a8f67975ab68b8a41773819"
+    },
+    {
+      "path": "renders/training_preview_20261017/sweetybot2-preview.mp4",
+      "bytes": 627650,
+      "sha256": "835d6d78a60a761f923a89a516238a85dabfbea6cd914d13c13088f2f03a3211"
+    },
+    {
+      "path": "renders/v04/01-midnight-hero.png",
+      "bytes": 2616063,
+      "sha256": "483bdcd3449695597c1d180cbde65ef1af5003dbc29248b867717c1a0ef630d3"
+    },
+    {
+      "path": "renders/v04/02-portrait.png",
+      "bytes": 2491522,
+      "sha256": "f5a050477d5abacf062d874f6f81c851c0e2f31874527ef03aefe6ce5c410df8"
+    },
+    {
+      "path": "renders/v04/03-violet-profile.png",
+      "bytes": 2490408,
+      "sha256": "45239a84c0a5769ba67af6a504e0be785a6e9b48081059d6d30094b41d95071f"
+    },
+    {
+      "path": "renders/v04/manifest.json",
+      "bytes": 1769,
+      "sha256": "d20c351d4cb15d0872e638410224df18d3e0b5dc9c5caf4388b0170efba4bc2b"
+    },
+    {
+      "path": "reports/actuation_clearances.json",
+      "bytes": 150,
+      "sha256": "58290b7272c0dc501b1e8a75d2c04bb569759a555f273cee7de3b37ece73e0b8"
+    },
+    {
+      "path": "reports/assembly_bounds.json",
+      "bytes": 4509,
+      "sha256": "52154201b84dd55e7155a24b4045c9a59ded74172177a85f905c1ed302a2301a"
+    },
+    {
+      "path": "reports/bom.json",
+      "bytes": 9010,
+      "sha256": "36d4ed7c2ebe474e2fe0ee303df0aebbc763923f803e6f00b53b64ca9263731e"
+    },
+    {
+      "path": "reports/cad_parts.json",
+      "bytes": 13542,
+      "sha256": "f01ccc72fd0d220d4d6504316fa0c89884ec90ccd87afa7e3434ba501016c7a6"
+    },
+    {
+      "path": "reports/clearance_screen.json",
+      "bytes": 460,
+      "sha256": "870ad296e9c1b84c0970c320e29f888c9e5f9f320853e7de9e90fad84c612e44"
+    },
+    {
+      "path": "reports/feasibility.json",
+      "bytes": 8831,
+      "sha256": "49e39b621ad0ed2ca423c9cfc798975cae2d8c9db801ef3877f7b8c249824118"
+    },
+    {
+      "path": "reports/legacy-v02/README.md",
+      "bytes": 182,
+      "sha256": "37185714d8b3c0e3eaf022b5817a0b88ba7c57a9ecb56d496a0ea987d09fc039"
+    },
+    {
+      "path": "reports/legacy-v02/sensitivity_backlash_2deg.json",
+      "bytes": 3405,
+      "sha256": "802e9f1d1d65d8987da76d0a06fbb8c77285eae750369accf6a06b955aced902"
+    },
+    {
+      "path": "reports/legacy-v02/sensitivity_backlash_2deg.trajectory.json",
+      "bytes": 926200,
+      "sha256": "30e89325c68d99dc3b5c8aa11af8ef7f9fc63385e8ebf26f008b2907a87810c6"
+    },
+    {
+      "path": "reports/legacy-v02/sensitivity_combined.json",
+      "bytes": 3397,
+      "sha256": "4f2cb18fa9bf7ef4c2a747744e08ce89c1fd4b72aed4c4e68eef6f4f8b09a840"
+    },
+    {
+      "path": "reports/legacy-v02/sensitivity_combined.trajectory.json",
+      "bytes": 926280,
+      "sha256": "ca2dcb37fac384c2b9aeb9905360ab530402a69c7fc90d41be8ffecc86469346"
+    },
+    {
+      "path": "reports/legacy-v02/sensitivity_delay_60ms.json",
+      "bytes": 3399,
+      "sha256": "25d1594df167e0cdcb5d2e42a6d0e0eefa173b97ecadd964686b368c0bb0b267"
+    },
+    {
+      "path": "reports/legacy-v02/sensitivity_delay_60ms.trajectory.json",
+      "bytes": 926288,
+      "sha256": "d39ece9f3ec39a925ea760659a71e52fbc00eccf602c4ba46eca2890f8322408"
+    },
+    {
+      "path": "reports/legacy-v02/sensitivity_low_friction.json",
+      "bytes": 3404,
+      "sha256": "1035102dc1f9ce9fd4ce904d886dae99a3078afb7d68f66b47affd33674ec339"
+    },
+    {
+      "path": "reports/legacy-v02/sensitivity_low_friction.trajectory.json",
+      "bytes": 926416,
+      "sha256": "40c13b3c90f8616611f62d6ec49067f18ee7a9f00f9f424b9f46111695b9cfbd"
+    },
+    {
+      "path": "reports/legacy-v02/sensitivity_mass_plus_20.json",
+      "bytes": 3396,
+      "sha256": "f1279f786bf88a2401457e9ab60be8c2932445a0c386b1d9d87bbd3851077df1"
+    },
+    {
+      "path": "reports/legacy-v02/sensitivity_mass_plus_20.trajectory.json",
+      "bytes": 926500,
+      "sha256": "842b0d9987a81966ddee53bf677135b11cc1c4e7402f2eeef0ab3ea0229f2e8d"
+    },
+    {
+      "path": "reports/legacy-v02/sim_sit.json",
+      "bytes": 3425,
+      "sha256": "05ef02278dffeb02cf857542ce84bf9b7b88b48bcb49c3cfd92c182e1e331390"
+    },
+    {
+      "path": "reports/legacy-v02/sim_sit.trajectory.json",
+      "bytes": 18239,
+      "sha256": "b37c68109c0bcdf31bfaf363198059a4c230b6d98aeeeb384873bd07238e4ed8"
+    },
+    {
+      "path": "reports/legacy-v02/sim_stand.json",
+      "bytes": 3437,
+      "sha256": "84085a95d8bcfed2a109603a169262dabffd74755b4aac7072242b540779d0ee"
+    },
+    {
+      "path": "reports/legacy-v02/sim_stand.trajectory.json",
+      "bytes": 91199,
+      "sha256": "9ad63763ea1fdebe6352e189cd7cb27a1240805ac680288eaba7238c1cf804ac"
+    },
+    {
+      "path": "reports/legacy-v02/sim_turn.json",
+      "bytes": 3405,
+      "sha256": "2abd87d837af81a2505aa9231cee81ae815e3dad4cbec0d0f79e08424c815bc2"
+    },
+    {
+      "path": "reports/legacy-v02/sim_turn.trajectory.json",
+      "bytes": 482113,
+      "sha256": "34783a57d8fd78f9f0d6121385bedbf132e536c9b30b838d38109158286a53c2"
+    },
+    {
+      "path": "reports/legacy-v02/sim_walk.json",
+      "bytes": 3401,
+      "sha256": "82c0e910cfc022892ab0eb13c0d4e5a4265a26ca1695723f1f692218c59f9ab2"
+    },
+    {
+      "path": "reports/legacy-v02/sim_walk.trajectory.json",
+      "bytes": 926273,
+      "sha256": "09b87488158e9d8b89fb418d7f58dfd6edb0e33a741f3bca5ac310330284b500"
+    },
+    {
+      "path": "reports/legacy-v02/urdf_validation.json",
+      "bytes": 251,
+      "sha256": "4690a3b4f79ff0db4e7cc54012fb06ad5e3c00f609ac0e086b5733391111acdf"
+    },
+    {
+      "path": "reports/legacy-v02/validation.json",
+      "bytes": 35251,
+      "sha256": "e1416534f15f672cee8b0b054566bd5f6fbdb4aecbfc45e19f7bb70209f045b5"
+    },
+    {
+      "path": "reports/legacy-v02/walk_video.json",
+      "bytes": 3419,
+      "sha256": "c5273164cdf128b9786fa74176e56ce2dc441baa4d12b9d193603d1086fd3bc5"
+    },
+    {
+      "path": "reports/legacy-v02/walk_video.trajectory.json",
+      "bytes": 926273,
+      "sha256": "09b87488158e9d8b89fb418d7f58dfd6edb0e33a741f3bca5ac310330284b500"
+    },
+    {
+      "path": "reports/link_meshes.json",
+      "bytes": 4612,
+      "sha256": "a729acdfa07600d0ecfb2b128f52732e0c35242d074f1ef0276723f7b2e791d3"
+    },
+    {
+      "path": "reports/mass_budget.json",
+      "bytes": 65424,
+      "sha256": "565b18ea70e64226d101d381813cb6b62cba9b84c094bab2b3ddd67dd142392d"
+    },
+    {
+      "path": "reports/model.json",
+      "bytes": 32954,
+      "sha256": "07d8457ba5e43f993e533ed73d5c36ba06f2756d26e6f9db4d109221b7a177f7"
+    },
+    {
+      "path": "reports/new_clearances.json",
+      "bytes": 2754,
+      "sha256": "d2257e396a2bde1342b0194dfe7c30848dc3c816dc665ac4dd6f083f8a315283"
+    },
+    {
+      "path": "reports/sensor_contract.json",
+      "bytes": 675,
+      "sha256": "61efdc89ff2ee45e149793002b2e69da8f0e7b473de8c8f4afa51b615ccdc84f"
+    },
+    {
+      "path": "reports/urdf-v04.json",
+      "bytes": 299,
+      "sha256": "2d5dfadb865cf9d85a8276e51da0516452f7f701f6d32866bac4f93939bac852"
+    },
+    {
+      "path": "reports/v04_ppo_smoke.json",
+      "bytes": 1134,
+      "sha256": "d38136cfabaea90c7639a21ff70f4999160708801223de2c2733e16b3b18358a"
+    },
+    {
+      "path": "reports/v04_ppo_smoke_evaluation.json",
+      "bytes": 21655,
+      "sha256": "76fdb82b9d2cfe8958092d5812c28b72246b0873ce557366619b0fd07a5cdbcf"
+    },
+    {
+      "path": "reports/v04_source_baseline.json",
+      "bytes": 236,
+      "sha256": "9e38a259959af022a05b63c2f04abd148daa643f5392ef6d80fb1b178068c1a0"
+    },
+    {
+      "path": "reports/v04_validation.json",
+      "bytes": 9081,
+      "sha256": "9eb4980363820308158d259c36f1c5802e462b5d641355fecaef5b91523cb61a"
+    },
+    {
+      "path": "reports/verification.json",
+      "bytes": 1971,
+      "sha256": "3cc1e54912441bd4dfa33d30b2b59f76c58549dd3aff4d4ddab77e905a94f53b"
+    },
+    {
+      "path": "scripts/build_cad.py",
+      "bytes": 1406,
+      "sha256": "38b31296f3a415eb7f007602bb99b44d9ca1a57f73af28fda6328d00942faf6d"
+    },
+    {
+      "path": "scripts/check_actuation_clearances.py",
+      "bytes": 1760,
+      "sha256": "25f54ab1659be387829c1207afffea635c3832b30faa053d15f54295b0328482"
+    },
+    {
+      "path": "scripts/check_assembly.py",
+      "bytes": 3930,
+      "sha256": "e7ec595748793286c2b66ec762775950170a7db37801f0c038d342c5a3e1edcf"
+    },
+    {
+      "path": "scripts/check_cad.py",
+      "bytes": 2240,
+      "sha256": "a0a0de32646f669fa0ae12378776f87a9b1dbdb092f91c4f93c4bfaf1baf81eb"
+    },
+    {
+      "path": "scripts/check_new_clearances.py",
+      "bytes": 1705,
+      "sha256": "89415517a83cedeea98bcda37d1a58ef547aff0d977afe6c62f08356886ecc91"
+    },
+    {
+      "path": "scripts/check_sensor_contract.py",
+      "bytes": 1743,
+      "sha256": "36a334506bf20a971f2170ecbd37e8bd3ed499769d2f38d2b72314ccd2fe8725"
+    },
+    {
+      "path": "scripts/common.py",
+      "bytes": 1588,
+      "sha256": "e30ef2fbc81488c3a85702849004a0bb9ab606e6153f44257989cf95fbfb27c6"
+    },
+    {
+      "path": "scripts/engineering_package.py",
+      "bytes": 4944,
+      "sha256": "999a529ad932514670c512cbe7e81f2f0a2c78567f4f73473d4970350302eb84"
+    },
+    {
+      "path": "scripts/export_desktop.py",
+      "bytes": 793,
+      "sha256": "abd45c168b83b577f0c3847833ac8ba3fa38366c01fcfe34bf0eb6a0831569a8"
+    },
+    {
+      "path": "scripts/export_link_meshes.py",
+      "bytes": 1566,
+      "sha256": "ee7e4ade2f80510046c98f1a1bca31f9f65262bbe192cfb8d65e2990b6495a85"
+    },
+    {
+      "path": "scripts/feasibility.py",
+      "bytes": 3760,
+      "sha256": "edefc934e6bd606678359a2fb4ec16fbd900212596fe67500ed4659827eac6f8"
+    },
+    {
+      "path": "scripts/fetch_references.py",
+      "bytes": 1775,
+      "sha256": "02cd6ed9407e54970d4052bb38f1de2fad1d67dd43e5109853649d51bfd16efe"
+    },
+    {
+      "path": "scripts/generate_descriptions.py",
+      "bytes": 10786,
+      "sha256": "39d4790a7ffda744825c535899fcfa46d79b60f794e776ad320126f70cd3ed9d"
+    },
+    {
+      "path": "scripts/package_release.py",
+      "bytes": 2107,
+      "sha256": "45fb4fc52e39bfe3b105ac54d286abd7c590b48f52faf05d7081503e08636ffc"
+    },
+    {
+      "path": "scripts/reconcile_mass.py",
+      "bytes": 4870,
+      "sha256": "6e1f3d830394075787399127007dcd6dc80687170bdc8f9eb7da3595a23a8b2a"
+    },
+    {
+      "path": "scripts/render_eyes.py",
+      "bytes": 728,
+      "sha256": "388be6f88444ac6397e2763742ce108b08a7e138fd95b8af3649d8b10a6ff86b"
+    },
+    {
+      "path": "scripts/render_package.py",
+      "bytes": 2314,
+      "sha256": "3e693b41925f4162d6844320b3f9d0747257abfaef499d79c0542e10f65cbb50"
+    },
+    {
+      "path": "scripts/render_studio.py",
+      "bytes": 9333,
+      "sha256": "b1d101bc08a2527b2327f876fdb0dac013a17f6ea5fc710d3e696c8be84cc5e5"
+    },
+    {
+      "path": "scripts/validate_legacy_controller.py",
+      "bytes": 3079,
+      "sha256": "40838dee7c618eac80ec0ab42d11a069e3dd0f46cbf18344d14eb0e55d5ec9a3"
+    },
+    {
+      "path": "scripts/validate_simulation.py",
+      "bytes": 156,
+      "sha256": "2477a27fbd08b90a1b0f9237cba202990923324cb07613cc5dd79113fd05a53f"
+    },
+    {
+      "path": "scripts/validate_v04.py",
+      "bytes": 2872,
+      "sha256": "4ac3f7dd5d4e0f6411809cee94e861944026ea761c901af8eadbaed541c4dd7b"
+    },
+    {
+      "path": "scripts/verify_release.py",
+      "bytes": 1899,
+      "sha256": "8637b9fe9dce7d4835bacafaef20987e2767403d7c6a6817f04003b236b2c298"
+    },
+    {
+      "path": "simulation/control_contract.py",
+      "bytes": 2611,
+      "sha256": "4c1d8c98db6aba2700a56dcb5eb0f7a9c37cc08d4c38d3205b677d66a72dd8ca"
+    },
+    {
+      "path": "simulation/eyes.py",
+      "bytes": 660,
+      "sha256": "d23358d42be12f8be9e7ca611ee162e291ea4f29333742fe63397b03a9c63d7f"
+    },
+    {
+      "path": "simulation/generated/sweetie_mini.urdf",
+      "bytes": 26278,
+      "sha256": "2e4dc4e90f351bbfe1ca8c79fdbc567a2f815eed6ed9f4156446aa1eba5524fb"
+    },
+    {
+      "path": "simulation/generated/sweetie_mini.xml",
+      "bytes": 23775,
+      "sha256": "992c8f696ae13398e497b0197bab369880d59bc0f6edb3a4a0ecdd0f686af8b4"
+    },
+    {
+      "path": "simulation/model.py",
+      "bytes": 6908,
+      "sha256": "c6570261caa1290a9fab53e1ce816a2094f0a25eef83d1740ce27a515cf598c5"
+    },
+    {
+      "path": "simulation/run.py",
+      "bytes": 14544,
+      "sha256": "97ec7ecafd083d90be72e7398192e43e0bc852fb075a10d05c9b1036e6066523"
+    },
+    {
+      "path": "tests/test_learning_driver.py",
+      "bytes": 5828,
+      "sha256": "13be0c5f43855a775a6b71242562367754d185ca4e7aae6173fd37fe8b848373"
+    },
+    {
+      "path": "tests/test_learning_env.py",
+      "bytes": 8854,
+      "sha256": "280a7564580f91e7d43884ae4b02ac30e0607012ddc0a5346c1b533e6156311f"
+    },
+    {
+      "path": "tests/test_learning_native.py",
+      "bytes": 5407,
+      "sha256": "716118e3c1ba3d605dbdd7b1c9496c8a2136b749c973dc86523527d997a785d7"
+    },
+    {
+      "path": "tests/test_model.py",
+      "bytes": 5841,
+      "sha256": "9aee8082df547b0b3c77cafcfe1215f0d6b267e02b75528fff105e6cfa1d90fc"
+    },
+    {
+      "path": "tests/test_ppo_learning.py",
+      "bytes": 3188,
+      "sha256": "3af34ca479d41fad3f103be59b9da9c3b5ba0d3a541f4da870610edab3b297ca"
+    },
+    {
+      "path": "tests/test_running_controls.py",
+      "bytes": 6036,
+      "sha256": "b5ad58a7cf90f11c5ca957d0db910c66c99159ba3e8beac4b53512d6bc4b76a4"
+    },
+    {
+      "path": "tests/test_running_driver.py",
+      "bytes": 2745,
+      "sha256": "fd4278ccfc8e255ddd065a6b2ac8dc96be1e093be417fa4689a2b3133d932dbc"
+    },
+    {
+      "path": "tests/test_running_evaluation.py",
+      "bytes": 2807,
+      "sha256": "3a7df06298431101a595a5fcde58777243e264fb4a40ef63750c939e22c4d700"
+    },
+    {
+      "path": "tests/test_running_training.py",
+      "bytes": 6678,
+      "sha256": "8633f5e66c6ba4f2744f6854732a3ba640cef2e8673bc9573bfe7f04f216fe26"
+    },
+    {
+      "path": "tests/test_v04_sensors_rewards.py",
+      "bytes": 6998,
+      "sha256": "1ae293b5c5f3915c7b3c440240687af633c11ef45b22e13c0eef5b9cb658faa6"
+    },
+    {
+      "path": "uv.lock",
+      "bytes": 290274,
+      "sha256": "972039cdb1ca17eb6bd285a12139cb9ea0883488d6ef7d1ee541e66db3486c6c"
+    }
+  ]
+}

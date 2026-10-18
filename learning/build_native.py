@@ -21,10 +21,11 @@ def build(force: bool = False) -> Path:
         raise RuntimeError(f"Cannot locate the MuJoCo library in {package}")
     if output.exists() and not force and output.stat().st_mtime > max(source.stat().st_mtime, Path(__file__).stat().st_mtime):
         return output
+    temporary=output.with_name(output.stem+f".{os.getpid()}.tmp"+output.suffix)
     compiler = shlex.split(os.environ.get("CXX", "c++" if sys.platform == "darwin" else "g++"))
     command = compiler + ["-O3", "-DNDEBUG", "-std=c++17", "-shared", "-fPIC",
         f"-I{pybind11.get_include()}", f"-I{sysconfig.get_path('include')}", f"-I{package / 'include'}",
-        str(source), str(libraries[0]), f"-Wl,-rpath,{package}", "-o", str(output)]
+        str(source), str(libraries[0]), f"-Wl,-rpath,{package}", "-o", str(temporary)]
     if sys.platform == "darwin":
         command += ["-undefined", "dynamic_lookup", "-Wl,-headerpad_max_install_names"]
     else:
@@ -35,7 +36,8 @@ def build(force: bool = False) -> Path:
         # PyPI's dylib keeps the upstream framework install name although the
         # wheel stores it directly in the package directory.
         identity = subprocess.check_output(["otool", "-D", str(libraries[0])], text=True).splitlines()[1].strip()
-        subprocess.run(["install_name_tool", "-change", identity, str(libraries[0]), str(output)], check=True)
+        subprocess.run(["install_name_tool", "-change", identity, str(libraries[0]), str(temporary)], check=True)
+    os.replace(temporary,output)
     return output
 
 

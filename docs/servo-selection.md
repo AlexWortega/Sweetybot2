@@ -1,0 +1,11 @@
+# V04 stronger servos
+
+8 × SM105BL-C001: hip pitch + knee. Catalogue at 12V: rated 50kg.cm (4.903Nm), stall 150kg.cm (14.710Nm), 60RPM, 200g, 58.5×33.5×44mm. 4 × SM80BL-C001: hip roll. Rated 20kg.cm (1.961Nm), stall 80kg.cm (7.845Nm), 62RPM, 97.5g, 46.5×28.5×34mm. Retain 2 × STS3250-12V for neck and 2 × STS3032-C001 6V for ears. Rated points do not establish indefinite continuous torque.
+
+Primary references: [SM105 manufacturer wiki](https://ftservo.github.io/ftservo-wiki/products/models/sm-105b-c001/main/) and [SM80 manufacturer wiki](https://ftservo.github.io/ftservo-wiki/products/models/sm-80bl-c001/main/); PDF specifications and drawing snapshots are pinned with SHA256 in references/v04/manifest.json. The SM105 wiki slug says SM-105B-C001 while its table/specification identify SM105BL-C001. Website and PDF voltage ranges differ; use their conservative 9..12.6V overlap for procurement and keep the 3S LiFePO4 rail at 9.3..10.8V in this robot. No unregulated 12.6V LiPo reaches the 12V neck motors.
+
+New motors require RS485, separate from the neck/ear TTL bus. Neither existing TTL adapter nor old register writes alone can control them. Driver, baud, feedback units, torque-disable and bus watchdog must be verified against purchased firmware. No serial motor driver or physical bus commissioning is claimed.
+
+CAD is reconstructed from dimensioned 2D drawings, not vendor-certified STEP. SM105 reference uses 8×M3 on 26mm PCD and 49.1mm flange span; output spline/engagement and bearing adapters require a sample. External cradles clamp the case without using its housing assembly screws. Load parts are 6061 aluminium; cosmetic fairings remain PETG. Joined yoke CAD is a fit reference, not an FEA/fastener-strength certificate. A loaded single joint must pass before fabrication release.
+
+Native simulation uses each motor's voltage/speed envelope, catalogue rated point, separate 6V ear rail and an I2t load-memory surrogate. Its 10s constant is uncalibrated and is not temperature in degrees. Evaluation reports maximum per-episode RMS per joint and fails promotion when any low-voltage rated-point bound is exceeded. New policies must be evaluated on the heavier robot; successful v02 trajectories do not certify v04.

@@ -1,13 +1,42 @@
-# CAD gallery
+# V04 CAD gallery
 
-| Assembly | Front |
-|---|---|
-| ![Assembly](../renders/assembly.png) | ![Front](../renders/assembly_front.png) |
-| Internal layout | Exploded assembly |
-| ![Internal](../renders/internal.png) | ![Exploded](../renders/exploded.png) |
+Editable sources: cad/src. STEP files open in a CAD viewer; dimensions are millimetres. Full assemblies and GLB are included in the release ZIP.
 
-[All printable parts](../renders/parts_review.jpg) · [Editable factories](../cad/src/README.md) · [STEP files](../cad/STEP) · [STL files](../cad/STL)
-
-The full assembly GLB is in the [preview release](https://github.com/AlexWortega/Sweetybot2/releases/tag/v0.2.0-preview); the CAD archive contains the complete CAD directory.
-
-For an interactive local STEP viewer, run `uv run cadgen viewer --host 127.0.0.1 --json --detach` and open the URL it prints. All dimensions are millimetres; MuJoCo uses metres and radians.
+- [assembly.step](../cad/STEP/assembly.step)
+- [internal.step](../cad/STEP/internal.step)
+- [exploded.step](../cad/STEP/exploded.step)
+- [deck.step](../cad/STEP/deck.step)
+- [rail.step](../cad/STEP/rail.step)
+- [body_shell.step](../cad/STEP/body_shell.step)
+- [servo_cradle.step](../cad/STEP/servo_cradle.step)
+- [roll_yoke.step](../cad/STEP/roll_yoke.step)
+- [thigh_plate.step](../cad/STEP/thigh_plate.step)
+- [shin_plate.step](../cad/STEP/shin_plate.step)
+- [hoof.step](../cad/STEP/hoof.step)
+- [head_shell.step](../cad/STEP/head_shell.step)
+- [head_hatch.step](../cad/STEP/head_hatch.step)
+- [ear.step](../cad/STEP/ear.step)
+- [mane.step](../cad/STEP/mane.step)
+- [fit_coupon.step](../cad/STEP/fit_coupon.step)
+- [axle_adapter.step](../cad/STEP/axle_adapter.step)
+- [knee_fork.step](../cad/STEP/knee_fork.step)
+- [head_yoke.step](../cad/STEP/head_yoke.step)
+- [tail.step](../cad/STEP/tail.step)
+- [servo_strap.step](../cad/STEP/servo_strap.step)
+- [horn.step](../cad/STEP/horn.step)
+- [mane_stripe.step](../cad/STEP/mane_stripe.step)
+- [neck_collar.step](../cad/STEP/neck_collar.step)
+- [thigh_fairing.step](../cad/STEP/thigh_fairing.step)
+- [shin_fairing.step](../cad/STEP/shin_fairing.step)
+- [camera_carrier.step](../cad/STEP/camera_carrier.step)
+- [sensor_tray.step](../cad/STEP/sensor_tray.step)
+- [depth_pod.step](../cad/STEP/depth_pod.step)
+- [hoof_sole_plate.step](../cad/STEP/hoof_sole_plate.step)
+- [hoof_tpu_pad.step](../cad/STEP/hoof_tpu_pad.step)
+- [hoof_actuator.step](../cad/STEP/hoof_actuator.step)
+- [eye_bezel.step](../cad/STEP/eye_bezel.step)
+- [shin_rear_plate.step](../cad/STEP/shin_rear_plate.step)
+- [servo_cradle_sm105.step](../cad/STEP/servo_cradle_sm105.step)
+- [servo_cradle_sm80.step](../cad/STEP/servo_cradle_sm80.step)
+- [servo_strap_sm105.step](../cad/STEP/servo_strap_sm105.step)
+- [servo_strap_sm80.step](../cad/STEP/servo_strap_sm80.step)

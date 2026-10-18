@@ -18,7 +18,7 @@ def test_learning_model_preserves_inertials_and_collisions(terrain):
     for link in graph():
         body = model.body(link["name"])
         assert body.mass[0] == pytest.approx(link["mass"], abs=1e-12)
-        np.testing.assert_allclose(body.inertia, link["inertia"], atol=1e-12)
+        np.testing.assert_allclose(np.sort(body.inertia),np.linalg.eigvalsh(link["inertia_matrix"]), atol=1e-12)
         np.testing.assert_allclose(body.ipos, link["com"], atol=1e-12)
     source = ET.parse(ROOT / "simulation/generated/sweetie_mini.xml").getroot()
     trained = ET.parse(path).getroot()
@@ -26,18 +26,17 @@ def test_learning_model_preserves_inertials_and_collisions(terrain):
         if not geom.get("name") or geom.get("type") == "mesh" or geom.get("name") == "floor":
             continue
         name = geom.get("name")
-        if name == "head_g7":
-            name = "horn_collision"
+
         exported = trained.find(f".//geom[@name='{name}']")
         assert exported is not None
         for attribute in ("type", "size", "pos", "fromto"):
             assert geom.get(attribute) == exported.get(attribute)
         if geom.get("contype", "1") != "0":
             assert exported.get("contype", "1") != "0"
-    horn = model.geom("horn_collision")
+    horn = model.geom("head_g7")
     assert horn.contype[0] == 1 and horn.conaffinity[0] == 1
     assert horn.type[0] == mujoco.mjtGeom.mjGEOM_CAPSULE
-    assert horn.size[0] == pytest.approx(.008)
+    assert horn.size[0] == pytest.approx(.005)
 
 
 @pytest.mark.parametrize("terrain", ["flat", "rough", "slope", "steps"])
@@ -46,7 +45,7 @@ def test_learning_all_reset_poses_clear_terrain_and_neutral_stands(terrain):
                         auto_reset=False, terrain=terrain, difficulty=1., seed=2000001)
     model = mujoco.MjModel.from_xml_path(str(env.model_path))
     data = mujoco.MjData(model)
-    for pose in ("stand", "prone", "left", "right", "supine"):
+    for pose in ("stand", "folded_crouch", "left", "right", "supine"):
         env.reset_pose(pose)
         data.qpos[:] = env.state["qpos"][0]
         mujoco.mj_forward(model, data)
@@ -58,7 +57,7 @@ def test_learning_all_reset_poses_clear_terrain_and_neutral_stands(terrain):
     env.set_command(0, 0, 0)
     for _ in range(150):
         observation, reward, done, _ = env.step(np.zeros((1, 12)))
-    assert observation.shape == (1, 165)
+    assert observation.shape == (1, 591)
     assert np.isfinite(observation).all() and np.isfinite(reward).all()
     assert not done[0]
     assert env.rot[0, 2, 2] > .9
@@ -78,6 +77,7 @@ def test_actor_imu_frames_and_root_translation_velocity_exclusion():
     qvel[0, 3:6] = [.4, -.2, .7]
     env.native.reset(np.array([0]), qpos, qvel, env.params)
     env._read_state()
+    env.sensors.reset([0],quaternion[None]);env.sensors.gyro[0]=qvel[0,3:6]
     frame = env._frame().copy()
     model = mujoco.MjModel.from_xml_path(str(env.model_path))
     data = mujoco.MjData(model)
@@ -85,8 +85,8 @@ def test_actor_imu_frames_and_root_translation_velocity_exclusion():
     data.qvel[:] = qvel[0]
     mujoco.mj_forward(model, data)
     velocity = np.zeros(6)
-    mujoco.mj_objectVelocity(model, data, mujoco.mjtObj.mjOBJ_BODY,
-                            model.body("torso").id, velocity, 1)
+    mujoco.mj_objectVelocity(model, data, mujoco.mjtObj.mjOBJ_SITE,
+                            model.site("torso_imu").id, velocity, 1)
     rotation = data.xmat[model.body("torso").id].reshape(3, 3)
     np.testing.assert_allclose(env.local_angular[0], velocity[:3], atol=1e-12)
     np.testing.assert_allclose(frame[0, :3], rotation.T @ [0, 0, -1], atol=1e-7)
@@ -107,7 +107,7 @@ def test_resampled_command_is_visible_before_next_action():
     env._sample_commands = replace_command
     observation, _, done, _ = env.step(np.zeros((1, 12)))
     assert not done[0]
-    np.testing.assert_allclose(observation.reshape(1, 3, 55)[0, -1, 50:53], [.3, .05, .4])
+    np.testing.assert_allclose(observation.reshape(1, 3, 197)[0, -1, 50:53], [.3, .05, .4])
 
 
 @pytest.mark.parametrize("terrain", ["flat", "rough", "slope", "steps"])
@@ -115,14 +115,14 @@ def test_randomized_fallen_initializations_clear_actual_terrain(terrain):
     env = SweetieVecEnv(task="recovery", num_envs=16, threads=1,
                         randomize=True, auto_reset=True, terrain=terrain,
                         difficulty=1., seed=2000007)
-    for pose in ("prone", "left", "right", "supine"):
+    for pose in ("folded_crouch", "left", "right", "supine"):
         env.reset_pose(pose)
         qpos = env.state["qpos"]
         assert np.isfinite(qpos).all()
         np.testing.assert_allclose(np.linalg.norm(qpos[:, 3:7], axis=1), 1, atol=1e-12)
         assert np.all(qpos[:, 7:] >= env.low - 1e-12)
         assert np.all(qpos[:, 7:] <= env.high + 1e-12)
-        if pose != "prone":
+        if pose != "folded_crouch":
             assert np.max(np.std(qpos[:, 3:7], axis=0)) > .1
         for row in qpos:
             env._reset_data.qpos[:] = row
@@ -181,7 +181,7 @@ def test_expanded_arena_interpolation_edges_and_fast_policy_travel(terrain):
         np.testing.assert_allclose(env.ground_height([-extent, extent], [0, 0]), [0, .005])
     qpos = env.state["qpos"].copy()
     qpos[0, 0] = 6.6  # Twelve seconds of successful 0.55m/s travel must fit.
-    qpos[0, 2] = .199 + env.ground_height(qpos[0, 0], qpos[0, 1])
+    qpos[0, 2] = env.nominal_height + env.ground_height(qpos[0, 0], qpos[0, 1])
     env._clear_reset_penetration(qpos)
     env.native.reset(np.array([0]), qpos, np.zeros((1, 22)), env.params)
     env._read_state()

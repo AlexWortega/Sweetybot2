@@ -4,22 +4,27 @@
     {
       "name": "pytest",
       "exit_code": 0,
-      "stdout": "..........                                                               [100%]\n10 passed in 9.66s\n",
+      "stdout": "........................................................................ [ 76%]\n......................                                                   [100%]\n94 passed in 5.40s\n",
       "stderr": ""
     },
     {
-      "name": "urdf",
+      "name": "digital-sensor-physics",
       "exit_code": 0,
-      "stdout": "{\"ok\":true,\"path\":\"simulation/generated/sweetie_mini.urdf\",\"issues\":[],\"summary\":\"OK simulation/generated/sweetie_mini.urdf: robot 'sweetie_mini', root 'torso_link', 17 links, 16 joints (16 movable), 17 resolved mesh references, total mass 2.711 kg\"}\n",
+      "stdout": "{\n  \"revision\": \"digital-prototype-04-actuation-sensing\",\n  \"nominal_mass_kg\": 5.0614114572179165,\n  \"observation_dimension\": 591,\n  \"observation_contract\": \"v04-sensor-suite-1\",\n  \"reward_version\": \"v04-contact-energy-recovery-1\",\n  \"all_passed\": true,\n  \"policy_quality\": \"No trained v04 policy evaluated; zero-action checks only\",\n  \"physical_validation\": \"not run\",\n  \"root_support_forces\": false,\n  \"mid_episode_resets\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "electrical-contract",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"offline electrical model and reference decoder only; no hardware drivers or firmware verified\",\n  \"checks\": [\n    {\n      \"check\": \"pi_gpio_bcm unique ownership\",\n      \"pass\": true\n    },\n    {\n      \"check\": \"xiao_gpio unique ownership\",\n      \"pass\": true\n    },\n    {\n      \"check\": \"1% resistor corners plus 1% Vref ADC error\",\n      \"pass\": true,\n      \"voltage_ratio_ranges\": {\n        \"air\": [\n          0.485,\n          0.515\n        ],\n        \"contact\": [\n          0.07181818181818182,\n          0.09487394957983192\n        ]\n      }\n    },\n    {\n      \"check\": \"fault immediate; 10ms debounce; >20ms stale invalid\",\n      \"pass\": true\n    }\n  ]\n}\n",
       "stderr": ""
     }
   ],
   "assertions": {
-    "simulation_config_matches": true,
-    "nominal_scenarios": 4,
-    "sensitivity_scenarios": 5,
-    "print_types": 23,
+    "print_types": 35,
+    "all_articulated_ranges_certified": false,
+    "joint_range_warning_count": 0,
     "physical_validation": "not run",
-    "external_ROS_check_urdf": "unavailable"
+    "trained_v04_policy": "not evaluated"
   }
 }

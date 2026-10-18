@@ -1,62 +1,31 @@
-"""Reproducible, conditional actuator screening. Never labels stall derating a rating."""
-import json, math
-from pathlib import Path
-from scripts.common import ROOT, load, total_mass
+"""Per-axis v04 engineering screen using the actual heterogeneous motor set."""
+import json,math
+from scripts.common import ROOT,load,total_mass,joint_names,actuator,continuous_limits
 
 def screen(c):
-    g=c['geometry']; sel=c['selection']; out=[]
-    l1,l2,h=(g[k]/1000 for k in ('thigh','shin','stance_height'))
-    h-=g['hip_drop']/1000
-    knee=math.acos((h*h-l1*l1-l2*l2)/(2*l1*l2))
-    hip=-math.atan2(l2*math.sin(knee),l1+l2*math.cos(knee))
-    knee_arm=abs(l2*math.sin(hip+knee))
-    for name,a in c['actuator_candidates'].items():
-        mass=total_mass(c,a['mass']); design_mass=mass*(1+c['mass']['uncertainty_fraction'])
-        f=design_mass*9.81*sel['load_share_worst']
-        knee_t=f*knee_arm+(c['mass']['shin_and_foot'])*9.81*knee_arm/2
-        roll_t=f*g['abduction_offset']/1000
-        # A heavily loaded leg in a crouched transition; transient, not indefinite sitting.
-        transition_t=f*0.065+0.04
-        head_t=(c['mass']['head_without_servos']+2*a['mass']+2*c['mass']['ear_without_servo'])*9.81*0.065
-        sustained=sel['torque_margin']*max(knee_t,roll_t,head_t)
-        transient=sel['torque_margin']*transition_t
-        # First-order torque-speed envelope; not a measured motor curve.
-        voltage_factor=(c['power']['battery']['cutoff_voltage']/a['voltage']) if name.startswith(('ST3215','STS3250')) else 1.0
-        derate=voltage_factor*max(0,1-sel['required_joint_speed']/(a['no_load_speed']*voltage_factor))
-        allow=a.get('rated_torque',a['stall_torque']*sel['sustained_fraction_of_stall'])*derate
-        burst=a['stall_torque']*sel['transient_fraction_of_stall']*derate
-        out.append(dict(candidate=name,mass_kg=mass,design_mass_kg=design_mass,
-                        knee_arm_m=knee_arm,stance_knee_rad=knee,stance_hip_rad=hip,
-                        sustained_requirement_nm=sustained,transient_requirement_nm=transient,
-                        conditional_sustained_allowance_nm=allow,conditional_transient_allowance_nm=burst,
-                        actuator_cost_usd=16*a['unit_usd'],passes_screen=sustained<=allow and transient<=burst,
-                        price_status=a['price_status']))
-    return out
+ g=c['geometry'];s=c['selection'];mass=total_mass(c);design=mass*(1+c['mass']['uncertainty_fraction'])
+ l1,l2,h=g['thigh']/1000,g['shin']/1000,(g['stance_height']-g['hip_drop'])/1000
+ knee=math.acos((h*h-l1*l1-l2*l2)/(2*l1*l2));hip=-math.atan2(l2*math.sin(knee),l1+l2*math.cos(knee));arm=abs(l2*math.sin(hip+knee))
+ F=design*9.81*s['load_share_worst'];margin=s['torque_margin'];rows=[]
+ limits=continuous_limits(c,s['required_joint_speed'])
+ for i,n in enumerate(joint_names(c)):
+  a=actuator(c,n);vf=min(1.,(6. if n.startswith('ear_') else c['power']['battery']['cutoff_voltage'])/a['voltage'])
+  speed_derate=max(0.,1-s['required_joint_speed']/(a['no_load_speed']*vf))
+  if n.endswith('hip_roll'):required=margin*F*g['abduction_offset']/1000;transient=required
+  elif n.endswith(('hip_pitch','knee')):required=margin*(F*arm+c['mass']['shin_and_foot']*9.81*arm/2);transient=margin*(F*.065+.04)
+  elif n=='head_pitch':required=margin*(c['link_mass_properties']['head']['mass']+2*c['mass']['ear_without_servo'])*9.81*.065;transient=required
+  elif n=='head_yaw':required=.10;transient=.15
+  else:required=margin*c['mass']['ear_without_servo']*9.81*.04;transient=required
+  peak=.55*a['stall_torque']*vf*speed_derate
+  rows.append({'joint':n,'candidate':a.get('model',c['actuation']['assignment'][n]),'mass_kg':mass,'design_mass_kg':design,'sustained_requirement_nm':required,'conditional_sustained_allowance_nm':limits[i],'transient_requirement_nm':transient,'conditional_transient_allowance_nm':peak,'passes_screen':required<=limits[i] and transient<=peak,'actuator_cost_usd':a.get('unit_usd',0),'price_status':a.get('price_status','planning allowance')})
+ return rows
 
 def main():
-    c=load(); rows=screen(c)
-    passed=sorted((r for r in rows if r['passes_screen']),key=lambda r:(r['actuator_cost_usd'],r['mass_kg']))
-    if not passed:raise RuntimeError('No candidate passes conditional screen; revise dimensions or loads')
-    winner=passed[0]['candidate']
-    if winner!=c['selection']['selected']:raise RuntimeError(f'Configuration must select {winner}')
-    p=c['power']; a=c['actuator_candidates'][winner]
-    mean_w=16*p['assumed_average_servo_current_a']*p['battery']['nominal_voltage']+p['electronics_w']
-    result={'status':'conditional analytical screening; thermal validation outstanding','selected':winner,
-            'candidates':rows,'assumptions':{'continuous_duty':'STS3250 uses manufacturer rated torque point with low-voltage/speed derating; thermal bench test still required',
-             'torque_speed':'linear screening envelope, uncalibrated','prices':'USD, taxes/shipping excluded; ST3215 is an allowance'},
-            'power':{'all_servo_stall_a':16*a['stall_current'],'nominal_energy_wh':p['battery']['nominal_voltage']*p['battery']['capacity_ah'],
-             'assumed_average_w':mean_w,'estimated_runtime_min':60*p['usable_energy_fraction']*p['battery']['nominal_voltage']*p['battery']['capacity_ah']/mean_w}}
-    (ROOT/'reports/feasibility.json').write_text(json.dumps(result,indent=2)+'\n')
-    text=['# Actuator and mass screening','',result['status'],'',
-      '| Candidate | Nominal mass kg | Design mass kg | Sustained required/allowance Nm | Transition required/allowance Nm | 16 servos USD | Screen |',
-      '|---|---:|---:|---:|---:|---:|---|']
-    for r in rows:text.append(f"| {r['candidate']} | {r['mass_kg']:.3f} | {r['design_mass_kg']:.3f} | {r['sustained_requirement_nm']:.3f} / {r['conditional_sustained_allowance_nm']:.3f} | {r['transient_requirement_nm']:.3f} / {r['conditional_transient_allowance_nm']:.3f} | {r['actuator_cost_usd']:.2f} | {'conditional pass' if r['passes_screen'] else 'reject'} |")
-    text+=['',f'Selected: **{winner}**, the cheapest candidate passing this conditional screen.',
-     '', 'Load calculation: 20% mass contingency; one leg takes 50% of weight; 1.5 torque margin. Knee lever comes from exact two-link IK at nominal height. Hip roll includes the lateral joint offset. Crouch transition uses a conservative 65 mm moment arm. Head uses a 65 mm lever.',
-     '', 'The torque-speed allowance is stall torque × assumed duty fraction × (1 − speed/no-load speed). STS3250 sustained screening uses its manufacturer rated torque point (16 kg.cm at 12V), with low-battery and speed derating. Other candidates use the configured stall fraction. The rated point is not a verified continuous thermal rating for this robot. A loaded bench test must validate or replace both before fabrication release.',
-     '', 'Candidate screening uses the same 210 mm chassis and 75/80 mm links to avoid comparing different tasks. Smaller servos could support a separate smaller robot; that alternative is not established by this screen.',
-     '',f"Power: {result['power']['nominal_energy_wh']:.2f} Wh nominal; {mean_w:.1f} W assumed average; {result['power']['estimated_runtime_min']:.1f} minutes estimated at 75% usable energy. This is a budget, not measured endurance.",
-     '', f"All-servo stall is {result['power']['all_servo_stall_a']:.1f} A, above the main fuse. Simultaneous stall is a fault condition, not an operating point. Fuse coordination and disconnect behavior require bench testing."]
-    (ROOT/'docs/feasibility.md').write_text('\n'.join(text)+'\n')
-    print(json.dumps(result,indent=2))
+ c=load();rows=screen(c);result={'status':'conditional per-axis analytical screen; temperatures and dynamics unmeasured','nominal_mass_kg':total_mass(c),'design_mass_kg':total_mass(c)*1.2,'all_pass':all(r['passes_screen'] for r in rows),'joints':rows,'assumptions':{'loaded_leg_weight_fraction':.5,'torque_margin':1.5,'transition_moment_arm_m':.065,'battery_v':c['power']['battery']['cutoff_voltage'],'joint_speed_rad_s':c['selection']['required_joint_speed'],'rated_point':'manufacturer rated point is not a proven continuous thermal rating','torque_speed':'uncalibrated linear envelope'},'power':{'main_fuse_a':40,'leg_fuse_a':10,'bms_continuous_a':40,'catalogue_12_leg_stall_a':8*6.3+4*5.9,'all_stall_exceeds_main_fuse':True,'fuse_coordination_verified':False}}
+ (ROOT/'reports/feasibility.json').write_text(json.dumps(result,indent=2)+'\n')
+ text=['# V04 actuator screen','','Rated catalogue points are screened at 9.3V and 0.8rad/s. They are not thermal certification. A 20% mass contingency, 50% load on one leg and 1.5 torque margin are included.','','| Joint | Servo | Required/rated envelope Nm | Transition/burst Nm | Pass |','|---|---|---:|---:|---|']
+ for r in rows:text.append(f"|{r['joint']}|{r['candidate']}|{r['sustained_requirement_nm']:.3f}/{r['conditional_sustained_allowance_nm']:.3f}|{r['transient_requirement_nm']:.3f}/{r['conditional_transient_allowance_nm']:.3f}|{r['passes_screen']}|")
+ text+=['','All simultaneously stalled leg motors alone draw a catalogue 74A, above the 40A main fuse. Stall is a fault, not a valid motion. Fuse, BMS, connectors, regenerative overvoltage and joint temperature require bench validation. No load rating is inferred from stall torque alone.']
+ (ROOT/'docs/feasibility.md').write_text('\n'.join(text)+'\n');print(json.dumps(result,indent=2))
+ if not result['all_pass']:raise SystemExit(1)
 if __name__=='__main__':main()

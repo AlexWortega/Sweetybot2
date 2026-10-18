@@ -1,52 +1,35 @@
-"""Generate BOM and wiring artifact from the robot configuration and measured print volumes."""
-import json
-from scripts.common import ROOT,load,total_mass
-ITEMS=[
-('actuator','Feetech STS3250 12V TTL smart servo, 50kg.cm peak',16,44.99,'https://www.feetechrc.com/sts_ttl_series%20servo.html','planning allowance; use exact 12V version'),
-('compute','Raspberry Pi Zero 2 W',1,18,'https://www.raspberrypi.com/products/raspberry-pi-zero-2-w/','planning allowance'),
-('storage','32GB high-endurance microSD',1,12,'','planning allowance'),
-('interface','Waveshare Bus Servo Adapter (A), USB to ST/SC TTL',1,14,'https://www.waveshare.com/bus-servo-adapter-a.htm','planning allowance; verify ST protocol and pinout'),
-('imu','Adafruit ICM-20948 breakout, 3.3V logic',1,25,'https://www.adafruit.com/product/4554','planning allowance; provisional envelope'),
-('eyes','Waveshare 1.3inch LCD Module, ST7789 SPI',2,13,'https://www.waveshare.com/1.3inch-lcd-module.htm','planning allowance; display mounting needs actual board'),
-('battery','Assembled 3S LiFePO4 26650 pack, >=2.5Ah, >=25A BMS, balance connector',1,65,'https://lithiumwerks.com/products/lithium-ion-26650-cells/','planning allowance; <=82x70x30mm; 10.8V maximum; verify assembled pack'),
-('power','5V 3A buck converter, input >=16V, e.g. Pololu D24V50F5',1,32.95,'https://www.pololu.com/product/2851','planning allowance; confirm exact SKU before ordering'),
-('power','Battery master disconnect + motor-only latching disconnect, >=30A DC',1,18,'','planning allowance; no small signal pushbutton in motor path'),
-('power','25A main fuse + 4x7.5A leg + 5A head fuses + holders',1,12,'','planning allowance; coordination requires load test'),
-('power','16AWG main, 20AWG branches, 22AWG short servo feeds, connectors',1,24,'','planning allowance; confirm connector ampacity'),
-('power','2200uF 25V low-ESR bus capacitor, secure enclosure',1,3,'','planning allowance; not an overvoltage clamp'),
-('hardware','623ZZ 3x10x4 bearing',14,1,'https://www.step.parts/parts/bearing_623zz','planning allowance; external support interfaces provisional'),
-('hardware','M3 heat-set inserts for cowl, 4mm length; verify 4.2mm pilot by coupon',4,.40,'','planning allowance; four matched deck/cowl points'),
-('hardware','M3 screws/nuts/washers/spacers/axles assorted',1,28,'','planning allowance; select lengths after coupon fit'),
-('hardware','Nylon straps, heatshrink, cable sleeves, rubber soles',1,12,'','planning allowance'),
-('printing','PETG filament, 1 kg spool',1,25,'','planning allowance; solid-volume mass check in cad_parts.json'),
-('printing','TPU hoof pads, small spool/allocation',1,10,'','planning allowance'),
-('tools','External LiFe-compatible 3S balance charger',1,30,'','planning allowance; listed separately from robot parts')]
+"""Generate v04 purchasing/build ledger; all prices remain planning allowances."""
+import csv,io,json
+from collections import Counter
+from scripts.common import ROOT,load,actuator
 
 def main():
- c=load();items=[dict(category=a,item=b,quantity=n,unit_usd=u,total_usd=n*u,url=link,status=note) for a,b,n,u,link,note in ITEMS]
- total=sum(i['total_usd'] for i in items if i['category']!='tools');result={'currency':'USD','price_date':'2026-10-17','robot_parts_allowance':round(total,2),'charger_allowance':30,'tax_shipping_tools_excluded':True,'items':items}
- (ROOT/'reports/bom.json').write_text(json.dumps(result,indent=2)+'\n')
- lines=['# Bill of materials','',f'Robot parts allowance: **US${total:.2f}**, plus US$30 charger. Taxes, shipping, printer and tools excluded. These are planning allowances, not verified local quotes. Quantities of consumables include spares.','', '| Item | Qty | Unit USD | Total USD | Source / qualification |','|---|---:|---:|---:|---|']
- for i in items:
-  source=f"[source]({i['url']})" if i['url'] else 'generic procurement specification'
-  lines.append(f"| {i['item']} | {i['quantity']} | {i['unit_usd']:.2f} | {i['total_usd']:.2f} | {source}; {i['status']} |")
- lines+=['','Printed component quantities and measured solid volumes are in [the CAD parts report](../reports/cad_parts.json). Print the coupon first; do not buy an entire actuator set before one loaded joint is tested.','', 'Vendor CAD is a catalog reference for the STS3250 family. It does not certify a particular supplier revision or horn screw pattern. Dimensions, horn spline engagement and bearing adapters must be checked on the purchased sample.']
- (ROOT/'docs/bom.md').write_text('\n'.join(lines)+'\n')
- svg='''<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="900" viewBox="0 0 1300 900">
-<style>text{font-family:Arial,sans-serif;fill:#1e293b} .title{font-size:28px;font-weight:bold}.h{font-size:18px;font-weight:bold}.s{font-size:15px}.box{fill:#f1f5f9;stroke:#94a3b8;stroke-width:2}.power{stroke:#e07040;stroke-width:4;fill:none}.data{stroke:#6378b6;stroke-width:3;fill:none;stroke-dasharray:8 4}</style>
-<rect width="1300" height="900" fill="#fff"/><text x="40" y="50" class="title">Sweetie Mini · power and control architecture</text>
-<text x="40" y="80" class="s">Design specification · common ground · STS3250 + 3S LiFePO4 only · physical pinout must be verified</text>
-<g class="box"><rect x="40" y="130" width="240" height="90" rx="12"/><rect x="360" y="130" width="240" height="90" rx="12"/><rect x="680" y="130" width="250" height="90" rx="12"/><rect x="1010" y="130" width="240" height="90" rx="12"/>
-<rect x="680" y="300" width="250" height="75" rx="12"/><rect x="1010" y="300" width="240" height="75" rx="12"/>
-<rect x="40" y="480" width="240" height="90" rx="12"/><rect x="360" y="480" width="240" height="90" rx="12"/><rect x="680" y="480" width="250" height="90" rx="12"/><rect x="1010" y="480" width="240" height="90" rx="12"/>
-<rect x="360" y="660" width="240" height="75" rx="12"/><rect x="680" y="660" width="250" height="75" rx="12"/></g>
-<g class="h"><text x="60" y="165">3S LiFePO4 · 2500mAh</text><text x="380" y="165">25A fuse + master</text><text x="700" y="165">Motor disconnect</text><text x="1030" y="165">Fused distribution</text><text x="700" y="330">5V buck · 3A budget</text><text x="1030" y="330">12 leg + 4 head servos</text><text x="60" y="515">Robot control process</text><text x="380" y="515">Pi Zero 2 W</text><text x="700" y="515">USB / TTL adapter</text><text x="1030" y="515">ST data bus · 1Mbps</text><text x="380" y="690">ICM-20948 · I²C</text><text x="700" y="690">2 × ST7789 · SPI</text></g>
-<g class="s"><text x="60" y="194">8.7V stop / 10.8V full</text><text x="380" y="194">main cable: 16AWG budget</text><text x="700" y="194">latching, DC-current-rated</text><text x="1030" y="194">legs 7.5A / head 5A</text><text x="700" y="355">own 2A input fuse</text><text x="1030" y="355">parallel power injections</text><text x="60" y="545">single writer + deadman</text><text x="380" y="545">logic survives motor stop</text><text x="700" y="545">USB data / logic power</text><text x="1030" y="545">daisy data, short branches</text></g>
-<path class="power" d="M280 175H360 M600 175H680 M930 175H1010 M1130 220V300 M630 175V337H680 M805 375V420H480V480"/>
-<path class="data" d="M280 525H360 M600 525H680 M930 525H1010 M1130 480V375 M480 570V660 M600 550H640V697H680"/>
-<text x="40" y="795" class="h">Power is parallel. Motor current must not pass through the Pi or a long chain of servo headers.</text>
-<text x="40" y="830" class="s">USB 5V, SPI 3.3V and I²C 3.3V are logic rails. Never connect battery voltage to a GPIO or logic power input.</text>
-<text x="40" y="860" class="s">67.2A total stall exceeds the fuse rating. A simultaneous stall is a fault; fuses are not an active torque limiter.</text></svg>'''
- (ROOT/'docs/wiring.svg').write_text(svg)
- print(f'BOM allowance ${total:.2f}; robot allocation {total_mass(c):.3f} kg')
+ c=load();rows=[]
+ def add(item,n,status,notes,url='',unit_usd=None):rows.append(dict(item=item,quantity=n,status=status,notes=notes,url=url,unit_usd=unit_usd))
+ for model,n in Counter(c['actuation']['assignment'].values()).items():
+  spec=next(actuator(c,j) for j,m in c['actuation']['assignment'].items() if m==model)
+  add(model,n,'candidate; not purchased',spec.get('interface','TTL SMS/STS; confirm firmware protocol'),spec['source'],spec.get('unit_usd',12.))
+ old=list(csv.DictReader((ROOT/'docs/bom-v03.csv').open()))
+ for r in old:
+  if r['item'].startswith('Feetech'):continue
+  add(r['item'],r['quantity'],r['status'],r['notes'])
+ for item,n,note in [('Raspberry Pi Zero 2 W + microSD',1,'logic compute'),('USB RS485 adapter, 3.3V-safe USB logic, SMS protocol support',1,'12 leg motors only; differential A/B and common reference'),('USB TTL servo adapter',1,'2 neck and 2 ear motors; TTL signal bus separate from RS485'),('USB OTG hub/cable + two adapter cables',1,'Pi Zero has one USB data port; envelope and cable routing provisional'),('3S LiFePO4 >=2.5Ah pack with >=40A continuous BMS',1,'9.9V nominal, 10.8V max, loaded cutoff 9.3V; real pack sag unmeasured'),('40A main fuse, four 10A leg, 5A head and 5A logic fuses',1,'DC disconnect and fuse coordination require loaded tests'),('12AWG main, 16AWG leg branches, rated connectors',1,'short feeds; fused parallel power; do not daisy-chain motor load current'),('5V >=3A logic buck + motor-only disconnect',1,'logic survives motor emergency stop'),('6061 CNC load parts',1,'deck, rails, clamps, yokes, cheek plates, forks, adapters and spacers; not FDM load parts'),('Fasteners, passive output supports, horns and bearing interfaces',1,'drawing-derived placeholders; physical fit coupon and loaded joint required')]:add(item,n,'procurement specification',note)
+ (ROOT/'reports/bom.json').write_text(json.dumps({'revision':c['revision'],'price_status':'planning allowances, not quotes','items':rows},indent=2)+'\n')
+ out=io.StringIO();w=csv.DictWriter(out,fieldnames=list(rows[0]),lineterminator='\n');w.writeheader();w.writerows(rows);(ROOT/'docs/bom-v04.csv').write_text(out.getvalue())
+ text=['# V04 bill of materials','','Hardware candidate; no purchasing or physical assembly performed. Servo allowances: SM105 $120 each, SM80 $85 each, STS3250 $44.99 each; these are unverified planning amounts.','','| Item | Qty | Qualification |','|---|---:|---|']
+ for r in rows:text.append(f"|{r['item']}|{r['quantity']}|{r['notes']}|")
+ (ROOT/'docs/bom.md').write_text('\n'.join(text)+'\n')
+ (ROOT/'docs/wiring.md').write_text('''# V04 wiring
+
+3S LiFePO4 (9.3V loaded cutoff, 10.8V full) → DC master disconnect → 40A main fuse → separately fused motor and logic distribution. Motor emergency disconnect leaves logic powered. 4 × 10A leg branches feed motors in parallel; 5A head branch feeds neck and regulated 6V ear power. 5A logic branch feeds 5V regulator, Pi and collector. Fuse coordination, pack/BMS pulse current, connector ampacity, regen clamp and loaded voltage sag are not validated.
+
+Two independent signal interfaces: USB RS485 → 12 leg SM-series motors; USB TTL → STS neck/ear motors. Their signal conductors must never be joined. Common reference ground and power branches are explicit; 6V and battery positive rails must never be joined. Configure IDs once, with one motor connected, then verify each actual model's register map, baud, polarity, timeout and torque-disable behavior before joining its bus. No assumption of protocol interchangeability is a driver implementation.
+
+Pi Zero OTG requires a powered/appropriate USB hub for the two adapters. Hub and harness routing remain provisional. Main current does not flow through USB, Pi or small signal headers. Use hardware motor disconnect/deadman independent of Python.
+
+GPIO ownership is in config/robot.yaml and checked by scripts/check_sensor_contract.py. XIAO reads four resistor-coded 12-bit ADC loops and the LSM6DSV16X; UART is 3.3V logic to Pi. Pi owns ToF I2C and round LCD SPI. Camera uses the 22-pin Pi Zero to 15-pin camera FPC. Dedicated >=0.5A 3.3V regulator supplies ToF; do not parallel regulator output with Pi 3V3. Ear regulator is a separate 6V buck; verify current at 9.3V input.
+
+Each contact: 3V3 — 10k pull-up — ADC wire — [10k EOL || (NO switch + 1k)] — ground. Put EOL beyond the foot connector. Ratios: air ≈0.5, contact ≈0.0833, open ≈1, short ≈0. Wiring faults and stale samples invalidate contact, never become confirmed air. Collector packet format and host decoder are in hardware/telemetry.py; firmware and electrical drivers have not been flashed or bench-tested.
+''')
+ print('Wrote v04 BOM and two-bus wiring specification')
 if __name__=='__main__':main()

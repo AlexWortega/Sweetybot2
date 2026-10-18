@@ -18,3 +18,6 @@ cad/GLB/
 learning/checkpoints/
 *.zip
 *.zip.sha256
+
+# Build diagnostics
+reports/*.log

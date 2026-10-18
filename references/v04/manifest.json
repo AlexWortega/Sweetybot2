@@ -1,0 +1,44 @@
+[
+  {
+    "path": "SM105BL-C001.pdf",
+    "source": "https://www.feetechrc.com/Data/feetechrc/upload/file/20260622/6391773486236271034827287.pdf",
+    "accessed": "2026-10-18",
+    "bytes": 582902,
+    "sha256": "116d8f70b0f1db79b31c4e1c884977a85fe8c95927437158b5f17019e680ed8b"
+  },
+  {
+    "path": "sm-105b-c001.html",
+    "source": "https://ftservo.github.io/ftservo-wiki/products/models/sm-105b-c001/main/",
+    "accessed": "2026-10-18",
+    "bytes": 49078,
+    "sha256": "8ed75ddb219609d01e2497b70e39af436d6e29e0963b46c6c389902334dde818"
+  },
+  {
+    "path": "sm-105b-c001.webp",
+    "source": "https://ftservo.github.io/ftservo-wiki/products/models/sm-105b-c001/images/drawing.webp",
+    "accessed": "2026-10-18",
+    "bytes": 133896,
+    "sha256": "10c9334cab07e816f110c4542425b0959f021452d63cd32aef6e0b89438f9e4e"
+  },
+  {
+    "path": "SM80BL-C001.pdf",
+    "source": "https://www.feetechrc.com/Data/feetechrc/upload/file/20260622/6391773534207674396385437.pdf",
+    "accessed": "2026-10-18",
+    "bytes": 812731,
+    "sha256": "a5f151c985b78bd02efd7fbd54873a4ac66508787ff6939202a251730fd70544"
+  },
+  {
+    "path": "sm-80bl-c001.html",
+    "source": "https://ftservo.github.io/ftservo-wiki/products/models/sm-80bl-c001/main/",
+    "accessed": "2026-10-18",
+    "bytes": 49692,
+    "sha256": "0788da0a0f2a81f32b12d3a287db0b90840c6a6baadef3fce3293496327170bd"
+  },
+  {
+    "path": "sm-80bl-c001.webp",
+    "source": "https://ftservo.github.io/ftservo-wiki/products/models/sm-80bl-c001/images/drawing.webp",
+    "accessed": "2026-10-18",
+    "bytes": 24130,
+    "sha256": "ed5379fa8b22bdb551e1299ea0674edcf58ccec94bf8cabe34025bb26577106d"
+  }
+]

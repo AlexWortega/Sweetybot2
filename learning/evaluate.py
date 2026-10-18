@@ -6,6 +6,7 @@ import hashlib
 import json
 import math
 from pathlib import Path
+from scripts.common import load,continuous_limits
 import time
 
 import numpy as np
@@ -24,7 +25,7 @@ RUNNING_COMMANDS = {
     "fast_forward": (.55, 0., 0.),
     "run_turn": (.45, 0., .50),
 }
-POSES = ("stand", "prone", "left", "right", "supine")
+POSES = ("stand", "folded_crouch", "left", "right", "supine")
 
 
 class FlightEvidence:
@@ -35,8 +36,9 @@ class FlightEvidence:
     glitches from both the interval count and the reported fraction.
     """
 
-    def __init__(self, size, dt, minimum_duration=.04):
+    def __init__(self, size, dt, minimum_duration=.04, nominal_height=.199):
         self.dt = float(dt)
+        self.nominal_height=nominal_height
         self.minimum_ticks = math.ceil(minimum_duration / self.dt - 1e-9)
         self.streak = np.zeros(size, dtype=int)
         self.intervals = np.zeros(size, dtype=int)
@@ -52,7 +54,7 @@ class FlightEvidence:
 
     def update(self, contacts, bad_contacts, up, height, local_vx, active):
         valid = (~np.asarray(contacts, bool).any(axis=1)) & (np.asarray(bad_contacts) == 0)
-        valid &= (np.asarray(up) > .8) & (np.asarray(height) >= .15) & (np.asarray(height) <= .28)
+        valid &= (np.asarray(up) > .8) & (np.asarray(height) >= .75*self.nominal_height) & (np.asarray(height) <= 1.4*self.nominal_height)
         valid &= (np.asarray(local_vx) >= .35) & np.asarray(active, bool)
         self._finish(~valid)
         self.streak[valid] += 1
@@ -122,6 +124,8 @@ def evaluate(checkpoint=None, task="locomotion", terrain="flat", difficulty=.25,
         from learning.ppo import load_policy
         torch.set_num_threads(1)
         policy, metadata = load_policy(checkpoint, device="cpu")
+        from learning.ppo import validate_environment_contract
+        validate_environment_contract(metadata,env)
         if metadata.get("obs_dim", env.obs_dim) != env.obs_dim or metadata.get("action_dim", 12) != 12:
             raise ValueError("Checkpoint observation/action dimensions differ from environment")
         trained_task = metadata.get("config", {}).get("task")
@@ -143,7 +147,7 @@ def evaluate(checkpoint=None, task="locomotion", terrain="flat", difficulty=.25,
     aerial_streak = np.zeros(n)
     longest_aerial = np.zeros(n)
     contact_counts = np.zeros(n)
-    flight = FlightEvidence(n, env.dt)
+    flight = FlightEvidence(n, env.dt, nominal_height=env.nominal_height)
     renderer = writer = None
     record_index = 0 if task == "running" else episodes  # forward run/walk or prone recovery
     recorded_frames = 0
@@ -190,12 +194,12 @@ def evaluate(checkpoint=None, task="locomotion", terrain="flat", difficulty=.25,
             contact_counts[active] += state["bad_contacts"][active]
             flight.update(state["contacts"], state["bad_contacts"], env.rot[:, 2, 2],
                           env.height, env.local_velocity[:, 0], active)
-            air = (~state["contacts"].any(axis=1)) & (env.rot[:, 2, 2] > .75) & (env.height > .12) & active
+            air = (~state["contacts"].any(axis=1)) & (env.rot[:, 2, 2] > .75) & (env.height > .6*env.nominal_height) & active
             aerial += air
             forward_aerial += air & (env.local_velocity[:, 0] > .10)
             aerial_streak = np.where(air, aerial_streak + env.dt, 0.)
             longest_aerial = np.maximum(longest_aerial, aerial_streak)
-            failed = (env.rot[:, 2, 2] < .45) | (env.height < .085)
+            failed = (env.rot[:, 2, 2] < .45) | (env.height < .43*env.nominal_height)
             failed |= (np.abs(state["qpos"][:, :2]) > 3.5).any(axis=1)
             new_fall = alive & failed
             first_fall[new_fall] = now
@@ -213,7 +217,7 @@ def evaluate(checkpoint=None, task="locomotion", terrain="flat", difficulty=.25,
         flight.finish()
         denominator = np.maximum(count, 1)
         mean_velocity = velocity_sum / denominator[:, None]
-        terminal_stable = ((env.rot[:, 2, 2] > .8) & (env.height >= .15) & (env.height <= .28)
+        terminal_stable = ((env.rot[:, 2, 2] > .8) & (env.height >= .75*env.nominal_height) & (env.height <= 1.4*env.nominal_height)
                            & (env.state["bad_contacts"] == 0))
         valid_forward_air_fraction = flight.valid_ticks / denominator
         run_success = running_successes(alive, terminal_stable, mean_velocity[:, 0], command[:, 0],
@@ -288,11 +292,11 @@ def evaluate(checkpoint=None, task="locomotion", terrain="flat", difficulty=.25,
         recovery_mask = labels != "stand"
         public_terrain = {key: value for key, value in env.terrain.items() if key != "height_samples"}
         result = {
-            "schema_version": 1, "task": task, "policy": "checkpoint" if checkpoint else "zero_action_baseline",
+            "schema_version": 2, "observation_contract":"v04-sensor-suite-1", "reward_version":"v04-contact-energy-recovery-1", "task": task, "policy": "checkpoint" if checkpoint else "zero_action_baseline",
             "checkpoint": str(Path(checkpoint).resolve()) if checkpoint else None,
             "checkpoint_sha256": sha256(checkpoint) if checkpoint else None,
             "checkpoint_metadata": metadata, "seed": int(seed),
-            "split": "final" if seed >= 3_000_000 else "preview" if seed >= 2_000_000 else "development" if seed >= 1_000_000 else "training_range",
+            "split": "final" if seed >= 4_000_000 else "preview" if seed >= 2_000_000 else "development" if seed >= 1_000_000 else "training_range",
             "episodes_per_condition": episodes, "episodes": n, "seconds": float(seconds),
             "survival_fraction": float(alive.mean()) if task != "recovery" else None,
             "command_rmse": float(np.linalg.norm(rms_components[moving], axis=1).mean()) if moving.any() else None,
@@ -303,18 +307,19 @@ def evaluate(checkpoint=None, task="locomotion", terrain="flat", difficulty=.25,
             "recovery_episodes": int(recovery_mask.sum()) if task == "recovery" else None,
             "per_command": grouped if task != "recovery" else {},
             "per_orientation": grouped if task == "recovery" else {},
-            "joint_names": env.names, "max_joint_speed_rad_s": speed_peak.max(axis=0).tolist(),
+            "continuous_torque_limits_nm": continuous_limits(load()), "joint_names": env.names, "max_joint_speed_rad_s": speed_peak.max(axis=0).tolist(),
             "max_joint_torque_nm": torque_peak.max(axis=0).tolist(),
             "torque_peak_sampling": peak_kind,
-            "rms_joint_torque_nm": np.sqrt(np.mean(np.square(rms_torque), axis=0)).tolist(),
+            "rms_joint_torque_nm": np.max(rms_torque, axis=0).tolist(),
+            "rms_aggregation": "maximum episode RMS per joint across conditions and replicates",
             "terrain": public_terrain, "model_path": str(env.model_path), "model_sha256": model_hash,
             "terrain_files_sha256": terrain_files, "mujoco_version": mujoco.__version__,
             "source_sha256": {str(path.relative_to(ROOT)): sha256(path) for path in
                               (ROOT/'config/robot.yaml', ROOT/'simulation/model.py', ROOT/'learning/env.py',
-                               ROOT/'learning/native.cpp', ROOT/'learning/evaluate.py')},
+                               ROOT/'learning/native.cpp', ROOT/'learning/evaluate.py', ROOT/'learning/sensors.py', ROOT/'learning/rewards.py')},
             "auto_reset": False, "randomize": False, "root_support_forces": False,
-            "recovery_success_definition": "upright up_z>.90, height>.165m, horizontal speed<.25m/s for .7s, still stable at episode end",
-            "running_success_definition": "survive and end upright up_z>.8, height .15..28m without nonfoot contact; mean local vx>=.35m/s and >=70% commanded vx; >=2 forward flight intervals lasting >=.04s each; valid forward flight >=3% of tracking samples. Flight requires no feet or nonfoot contacts, up_z>.8, height .15..28m, local vx>=.35m/s",
+            "recovery_success_definition": "upright up_z>.90, height>84% nominal stance, horizontal speed<.25m/s for .7s, still stable at episode end",
+            "running_success_definition": "survive and end upright up_z>.8, height 75..140% nominal stance without nonfoot contact; mean local vx>=.35m/s and >=70% commanded vx; >=2 forward flight intervals lasting >=.04s each; valid forward flight >=3% of tracking samples. Flight requires no feet or nonfoot contacts, up_z>.8, height 75..140% nominal stance, local vx>=.35m/s",
             "running_successes": int(run_success.sum()) if task == "running" else None,
             "running_success_rate": float(run_success.mean()) if task == "running" else None,
             "running_success_ci95": _binomial_interval(int(run_success.sum()), n) if task == "running" else None,

@@ -1,4 +1,4 @@
-"""Render the saved v02 GLB in Blender without changing robot geometry.
+"""Render the saved CAD GLB in Blender without changing robot geometry.
 
 Example: blender -b --factory-startup --python scripts/render_studio.py -- --preview
 Full set: blender -b --factory-startup --python scripts/render_studio.py
@@ -73,6 +73,11 @@ def main():
             p.inputs['Base Color'].default_value=(.018,.025,.035,1)
             p.inputs['Roughness'].default_value=.32
             p.inputs['Metallic'].default_value=.12
+        elif b>r*1.5 and .05<value<.25:
+            # v03 optics, pupils and pigment use a deep neutral black finish.
+            p.inputs['Base Color'].default_value=(.010,.012,.020,1)
+            p.inputs['Roughness'].default_value=.22
+            p.inputs['Coat Weight'].default_value=.3
         elif value>.8 and min(r,g,b)>.5:
             p.inputs['Roughness'].default_value=.25
             p.inputs['Coat Weight'].default_value=.24
@@ -135,7 +140,7 @@ def main():
            ('03-violet-profile',Vector((.15,-1.35,.30)),1.46,target.copy(),70)]
     if args.shots:shots=[shot for shot in shots if shot[0] in args.shots]
     if args.preview:shots=shots[:1]
-    manifest={'renderer':bpy.app.version_string,'source':'cad/GLB/assembly.glb','source_sha256':hashlib.sha256(args.glb.read_bytes()).hexdigest(),'robot_mesh_objects':len(robot),'robot_vertices':vertices,'original_bounds_m':{'min':list(lower),'max':list(upper)},'robot_geometry_unchanged':True,'changes':'camera, stage, lighting, surface finishes; vendor CAD blue face markers styled as graphite servo casings; subtle emission on existing green eye material','shots':[]}
+    manifest={'renderer':bpy.app.version_string,'source':'cad/GLB/assembly.glb','source_sha256':hashlib.sha256(args.glb.read_bytes()).hexdigest(),'robot_mesh_objects':len(robot),'robot_vertices':vertices,'original_bounds_m':{'min':list(lower),'max':list(upper)},'robot_geometry_unchanged':True,'changes':'camera, stage, lighting and surface finishes; vendor CAD blue markers styled graphite, v03 pupils/optics styled deep black; native robot geometry preserved','shots':[]}
     for name,direction,distance,look,lens in shots:
         camera.location=look+direction.normalized()*distance;camera_data.lens=lens
         if reference:

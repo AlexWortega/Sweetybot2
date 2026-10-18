@@ -1,62 +1,2771 @@
 {
-  "nominal_mass_kg": 2.71136,
-  "design_mass_kg": 3.253632,
-  "printed_solid_petg_kg": 0.8983578962891197,
-  "servo_mass_kg": 1.192,
-  "per_link_allowances": {
-    "torso_without_servos": {
-      "deck": 0.08297838676064888,
-      "rails": 0.05073927650857818,
-      "cowl": 0.0600111134816814,
-      "five_cradles": 0.07578675683444917,
-      "ten_straps": 0.016172473541148487,
-      "tail": 0.015651975098334762,
-      "battery_pack": 0.28,
-      "compute_storage_imu": 0.016,
-      "adapter_regulator": 0.02,
-      "switch_fuses_wiring": 0.075,
-      "fasteners": 0.035
+  "nominal_mass_kg": 5.061411457217917,
+  "design_mass_kg": 6.0736937486615,
+  "servo_mass_kg": 2.1790000000000003,
+  "method": "placed CAD BRep volume/inertia, 6061/PETG/TPU; catalogue motor masses and unweighed electronics/fastener allowances",
+  "hardware_inertia_assumption": "uniform CAD envelopes; actual component mass distribution and temperatures unmeasured",
+  "components": [
+    {
+      "link": "torso",
+      "part": "chassis_deck",
+      "material": "6061 aluminium",
+      "mass_kg": 0.22702315045644947,
+      "com_m": [
+        8.768515439933686e-05,
+        3.5586861602463524e-18,
+        -0.0264
+      ],
+      "volume_mm3": 84082.64831720351
     },
-    "roll_link_without_servo": {
-      "cradle": 0.015157351366889836,
-      "two_straps": 0.0032344947082296976,
-      "yoke": 0.009934433706762096,
-      "adapter": 0.001333249117983632,
-      "bearings_fasteners": 0.01
+    {
+      "link": "torso",
+      "part": "rail_-1",
+      "material": "6061 aluminium",
+      "mass_kg": 0.0406713234067564,
+      "com_m": [
+        4.135863576668359e-18,
+        -0.04260543141782998,
+        -0.012119313234308406
+      ],
+      "volume_mm3": 15063.453113613481
     },
-    "thigh_without_servo": {
-      "two_cheeks": 0.017563675821106337,
-      "outer_fairing": 0.003138107759132375,
-      "spacers": 0.005,
-      "bearings_fasteners": 0.01
+    {
+      "link": "torso",
+      "part": "rail_1",
+      "material": "6061 aluminium",
+      "mass_kg": 0.0406713234067564,
+      "com_m": [
+        4.000014043128158e-18,
+        0.04260543141782998,
+        -0.012119313234308406
+      ],
+      "volume_mm3": 15063.453113613481
     },
-    "shin_and_foot": {
-      "two_cheeks": 0.01818875407561629,
-      "outer_fairing": 0.003269277970589038,
-      "support_fork": 0.011104332135462636,
-      "hoof": 0.012691772014749138,
-      "fasteners": 0.008
+    {
+      "link": "torso",
+      "part": "body_cowl",
+      "material": "PETG",
+      "mass_kg": 0.07755448188616856,
+      "com_m": [
+        -0.015375400458582029,
+        1.6071218582625429e-06,
+        0.01424157453263148
+      ],
+      "volume_mm3": 61066.52117021147
     },
-    "head_yaw_without_servo": {
-      "cradle": 0.015157351366889836,
-      "two_straps": 0.0032344947082296976,
-      "bearings_fasteners": 0.006,
-      "collar": 0.01623590286639319
+    {
+      "link": "torso",
+      "part": "passive_tail",
+      "material": "PETG",
+      "mass_kg": 0.015651975098425266,
+      "com_m": [
+        -0.12406635012695286,
+        -1.2010146122814744e-09,
+        -0.021620692360987213
+      ],
+      "volume_mm3": 12324.389841279739
     },
-    "head_without_servos": {
-      "shell": 0.0972385653018386,
-      "hatch": 0.024347061909617513,
-      "mane": 0.021431239916042892,
-      "horn": 0.002986581759676291,
-      "pink_stripe": 0.000505679380081051,
-      "support_yoke": 0.006648412104918592,
-      "displays_wire": 0.021,
-      "bearings_fasteners": 0.016
+    {
+      "link": "torso",
+      "part": "battery_envelope",
+      "material": "purchased allowance / uniform envelope",
+      "mass_kg": 0.28,
+      "com_m": [
+        4.521314913677606e-19,
+        -1.6003303985899959e-18,
+        -0.008
+      ],
+      "volume_mm3": 172200.0
     },
-    "ear_without_servo": {
-      "shell": 0.013385415022253407,
-      "fasteners": 0.0015
+    {
+      "link": "torso",
+      "part": "compute_envelope",
+      "material": "purchased allowance / uniform envelope",
+      "mass_kg": 0.013,
+      "com_m": [
+        -7.552168346598054e-19,
+        -9.716823736890259e-20,
+        0.015
+      ],
+      "volume_mm3": 17550.0
+    },
+    {
+      "link": "torso",
+      "part": "adapter_envelope",
+      "material": "purchased allowance / uniform envelope",
+      "mass_kg": 0.01,
+      "com_m": [
+        -0.062,
+        0.0,
+        -0.005
+      ],
+      "volume_mm3": 5520.0
+    },
+    {
+      "link": "torso",
+      "part": "regulator_envelope",
+      "material": "purchased allowance / uniform envelope",
+      "mass_kg": 0.01,
+      "com_m": [
+        -0.062,
+        3.2895497025930564e-20,
+        0.016
+      ],
+      "volume_mm3": 3402.0
+    },
+    {
+      "link": "torso",
+      "part": "head_yaw_servo",
+      "material": "manufacturer mass / uniform envelope",
+      "mass_kg": 0.0745,
+      "com_m": [
+        0.08588588092055087,
+        -9.43670609016299e-07,
+        -0.00299898294456019
+      ],
+      "volume_mm3": 1288.5733753470345
+    },
+    {
+      "link": "torso",
+      "part": "head_yaw_cradle",
+      "material": "6061 aluminium",
+      "mass_kg": 0.03222428993089087,
+      "com_m": [
+        0.08380336122740945,
+        -0.007139802001664177,
+        -0.005999999961357276
+      ],
+      "volume_mm3": 11934.922196626248
+    },
+    {
+      "link": "torso",
+      "part": "head_yaw_cradle_strap_-7",
+      "material": "6061 aluminium",
+      "mass_kg": 0.0034382424063859633,
+      "com_m": [
+        0.0835,
+        0.0171,
+        0.007
+      ],
+      "volume_mm3": 1273.4231134762827
+    },
+    {
+      "link": "torso",
+      "part": "head_yaw_cradle_strap_-33",
+      "material": "6061 aluminium",
+      "mass_kg": 0.0034382424063859633,
+      "com_m": [
+        0.0835,
+        0.0171,
+        -0.019
+      ],
+      "volume_mm3": 1273.4231134762827
+    },
+    {
+      "link": "torso",
+      "part": "sensor_tray",
+      "material": "PETG",
+      "mass_kg": 0.022143614171259124,
+      "com_m": [
+        0.0005629691393719118,
+        3.1297283153103464e-19,
+        0.015732821584286717
+      ],
+      "volume_mm3": 17435.916670282775
+    },
+    {
+      "link": "torso",
+      "part": "imu_board",
+      "material": "purchased allowance / uniform envelope",
+      "mass_kg": 0.004,
+      "com_m": [
+        0.01,
+        4.6526406718762023e-20,
+        0.029
+      ],
+      "volume_mm3": 1032.2560000000003
+    },
+    {
+      "link": "torso",
+      "part": "collector",
+      "material": "purchased allowance / uniform envelope",
+      "mass_kg": 0.005,
+      "com_m": [
+        -0.03,
+        -7.401486830834378e-20,
+        0.029
+      ],
+      "volume_mm3": 2616.6
+    },
+    {
+      "link": "torso",
+      "part": "chest_tof_pod",
+      "material": "PETG",
+      "mass_kg": 0.010988557379454745,
+      "com_m": [
+        0.12611712899539929,
+        6.559380161352181e-13,
+        -0.010312371291385123
+      ],
+      "volume_mm3": 8652.407385397437
+    },
+    {
+      "link": "torso",
+      "part": "depth_board",
+      "material": "purchased allowance / uniform envelope",
+      "mass_kg": 0.007,
+      "com_m": [
+        0.128,
+        1.3744230794790884e-20,
+        -0.0070000000000000045
+      ],
+      "volume_mm3": 1032.255999999999
+    },
+    {
+      "link": "torso",
+      "part": "depth_optic",
+      "material": "purchased allowance / uniform envelope",
+      "mass_kg": 0.001,
+      "com_m": [
+        0.13340000000000005,
+        6.553399798134606e-20,
+        -0.009000000000000001
+      ],
+      "volume_mm3": 38.39999999999999
+    },
+    {
+      "link": "torso",
+      "part": "ear_6V_buck",
+      "material": "purchased allowance / uniform envelope",
+      "mass_kg": 0.012,
+      "com_m": [
+        -0.01,
+        0.029,
+        0.015
+      ],
+      "volume_mm3": 3866.5
+    },
+    {
+      "link": "torso",
+      "part": "depth_3V3_buck",
+      "material": "purchased allowance / uniform envelope",
+      "mass_kg": 0.004,
+      "com_m": [
+        0.036,
+        -1.55772830532022e-19,
+        0.029
+      ],
+      "volume_mm3": 649.9999999999998
+    },
+    {
+      "link": "torso",
+      "part": "fl_roll_servo",
+      "material": "manufacturer mass / uniform envelope",
+      "mass_kg": 0.0975,
+      "com_m": [
+        0.0795,
+        0.046351726604795716,
+        3.58510301262624e-19
+      ],
+      "volume_mm3": 45358.97191522326
+    },
+    {
+      "link": "torso",
+      "part": "fl_roll_cradle",
+      "material": "6061 aluminium",
+      "mass_kg": 0.033625037034850494,
+      "com_m": [
+        0.07950000000000006,
+        0.046250000000000596,
+        -0.007072048544175738
+      ],
+      "volume_mm3": 12453.717420314997
+    },
+    {
+      "link": "torso",
+      "part": "fl_roll_strap_-31.5",
+      "material": "6061 aluminium",
+      "mass_kg": 0.002587655849146114,
+      "com_m": [
+        0.06750000000771453,
+        0.04624999999931893,
+        0.016649999996395114
+      ],
+      "volume_mm3": 958.3910552393014
+    },
+    {
+      "link": "torso",
+      "part": "fl_roll_strap_-7.5",
+      "material": "6061 aluminium",
+      "mass_kg": 0.002587655849146114,
+      "com_m": [
+        0.09150000000771454,
+        0.04624999999931893,
+        0.016649999996395114
+      ],
+      "volume_mm3": 958.3910552393014
+    },
+    {
+      "link": "torso",
+      "part": "fr_roll_servo",
+      "material": "manufacturer mass / uniform envelope",
+      "mass_kg": 0.0975,
+      "com_m": [
+        0.0795,
+        -0.046351726604795716,
+        -3.58510301262624e-19
+      ],
+      "volume_mm3": 45358.97191522326
+    },
+    {
+      "link": "torso",
+      "part": "fr_roll_cradle",
+      "material": "6061 aluminium",
+      "mass_kg": 0.033625037034850494,
+      "com_m": [
+        0.07950000000000006,
+        -0.046250000000000596,
+        0.007072048544175738
+      ],
+      "volume_mm3": 12453.717420314997
+    },
+    {
+      "link": "torso",
+      "part": "fr_roll_strap_-31.5",
+      "material": "6061 aluminium",
+      "mass_kg": 0.002587655849146114,
+      "com_m": [
+        0.06750000000771453,
+        -0.04624999999931893,
+        -0.016649999996395114
+      ],
+      "volume_mm3": 958.3910552393014
+    },
+    {
+      "link": "torso",
+      "part": "fr_roll_strap_-7.5",
+      "material": "6061 aluminium",
+      "mass_kg": 0.002587655849146114,
+      "com_m": [
+        0.09150000000771454,
+        -0.04624999999931893,
+        -0.016649999996395114
+      ],
+      "volume_mm3": 958.3910552393014
+    },
+    {
+      "link": "torso",
+      "part": "rl_roll_servo",
+      "material": "manufacturer mass / uniform envelope",
+      "mass_kg": 0.0975,
+      "com_m": [
+        -0.0795,
+        0.046351726604795716,
+        -3.58510301262624e-19
+      ],
+      "volume_mm3": 45358.97191522326
+    },
+    {
+      "link": "torso",
+      "part": "rl_roll_cradle",
+      "material": "6061 aluminium",
+      "mass_kg": 0.033625037034850494,
+      "com_m": [
+        -0.07950000000000006,
+        0.046250000000000596,
+        0.007072048544175738
+      ],
+      "volume_mm3": 12453.717420314997
+    },
+    {
+      "link": "torso",
+      "part": "rl_roll_strap_-31.5",
+      "material": "6061 aluminium",
+      "mass_kg": 0.002587655849146114,
+      "com_m": [
+        -0.06750000000771453,
+        0.04624999999931893,
+        -0.016649999996395114
+      ],
+      "volume_mm3": 958.3910552393014
+    },
+    {
+      "link": "torso",
+      "part": "rl_roll_strap_-7.5",
+      "material": "6061 aluminium",
+      "mass_kg": 0.002587655849146114,
+      "com_m": [
+        -0.09150000000771454,
+        0.04624999999931893,
+        -0.016649999996395114
+      ],
+      "volume_mm3": 958.3910552393014
+    },
+    {
+      "link": "torso",
+      "part": "rr_roll_servo",
+      "material": "manufacturer mass / uniform envelope",
+      "mass_kg": 0.0975,
+      "com_m": [
+        -0.0795,
+        -0.046351726604795716,
+        3.58510301262624e-19
+      ],
+      "volume_mm3": 45358.97191522326
+    },
+    {
+      "link": "torso",
+      "part": "rr_roll_cradle",
+      "material": "6061 aluminium",
+      "mass_kg": 0.033625037034850494,
+      "com_m": [
+        -0.07950000000000006,
+        -0.046250000000000596,
+        -0.007072048544175738
+      ],
+      "volume_mm3": 12453.717420314997
+    },
+    {
+      "link": "torso",
+      "part": "rr_roll_strap_-31.5",
+      "material": "6061 aluminium",
+      "mass_kg": 0.002587655849146114,
+      "com_m": [
+        -0.06750000000771453,
+        -0.04624999999931893,
+        0.016649999996395114
+      ],
+      "volume_mm3": 958.3910552393014
+    },
+    {
+      "link": "torso",
+      "part": "rr_roll_strap_-7.5",
+      "material": "6061 aluminium",
+      "mass_kg": 0.002587655849146114,
+      "com_m": [
+        -0.09150000000771454,
+        -0.04624999999931893,
+        0.016649999996395114
+      ],
+      "volume_mm3": 958.3910552393014
+    },
+    {
+      "link": "torso",
+      "part": "rs485_adapter",
+      "material": "purchased allowance / uniform envelope",
+      "mass_kg": 0.012,
+      "com_m": [
+        -0.042,
+        0.024,
+        0.015
+      ],
+      "volume_mm3": 5400.0
+    },
+    {
+      "link": "torso",
+      "part": "fastener_wiring_allowance",
+      "material": "unweighed allowance",
+      "mass_kg": 0.123,
+      "com_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "link": "fl_roll",
+      "part": "fl_pitch_servo",
+      "material": "manufacturer mass / uniform envelope",
+      "mass_kg": 0.2,
+      "com_m": [
+        -7.9112531456898045e-19,
+        -0.0005500000000000007,
+        -0.059068079697991854
+      ],
+      "volume_mm3": 90215.25920369825
+    },
+    {
+      "link": "fl_roll",
+      "part": "fl_pitch_cradle",
+      "material": "6061 aluminium",
+      "mass_kg": 0.05160455193494199,
+      "com_m": [
+        -0.008437981769837446,
+        -0.0005499999999998373,
+        -0.05949999999999908
+      ],
+      "volume_mm3": 19112.79701294148
+    },
+    {
+      "link": "fl_roll",
+      "part": "fl_pitch_strap_-41.55",
+      "material": "6061 aluminium",
+      "mass_kg": 0.003191937290976777,
+      "com_m": [
+        0.019149999995942656,
+        -0.017549999992611105,
+        -0.059500000000670225
+      ],
+      "volume_mm3": 1182.1989966580657
+    },
+    {
+      "link": "fl_roll",
+      "part": "fl_pitch_strap_-7.550000000000001",
+      "material": "6061 aluminium",
+      "mass_kg": 0.003191937290976777,
+      "com_m": [
+        0.019149999995942656,
+        0.01645000000738889,
+        -0.05950000000067022
+      ],
+      "volume_mm3": 1182.1989966580657
+    },
+    {
+      "link": "fl_roll",
+      "part": "fl_roll_yoke",
+      "material": "6061 aluminium",
+      "mass_kg": 0.05809528691273861,
+      "com_m": [
+        0.00832788011969235,
+        -0.006472012885395841,
+        -0.030423200381494944
+      ],
+      "volume_mm3": 21516.77293064393
+    },
+    {
+      "link": "fl_roll",
+      "part": "fl_roll_axle",
+      "material": "6061 aluminium",
+      "mass_kg": 0.009617221323853087,
+      "com_m": [
+        0.012249999999999999,
+        2.0558077701348872e-19,
+        -6.582915753347807e-19
+      ],
+      "volume_mm3": 3561.9338236492913
+    },
+    {
+      "link": "fl_roll",
+      "part": "fastener_wiring_allowance",
+      "material": "unweighed allowance",
+      "mass_kg": 0.01,
+      "com_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_knee_servo",
+      "material": "manufacturer mass / uniform envelope",
+      "mass_kg": 0.2,
+      "com_m": [
+        6.992311334442299e-19,
+        -0.024550000000000002,
+        -0.08593192030200814
+      ],
+      "volume_mm3": 90215.25920369824
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_knee_cradle",
+      "material": "6061 aluminium",
+      "mass_kg": 0.051604551934942004,
+      "com_m": [
+        0.00843798176983745,
+        -0.02454999999999983,
+        -0.08550000000000091
+      ],
+      "volume_mm3": 19112.797012941483
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_knee_strap_-41.55",
+      "material": "6061 aluminium",
+      "mass_kg": 0.0031919372909767767,
+      "com_m": [
+        -0.019149999995942656,
+        -0.04154999999261111,
+        -0.08549999999932978
+      ],
+      "volume_mm3": 1182.1989966580654
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_knee_strap_-7.550000000000001",
+      "material": "6061 aluminium",
+      "mass_kg": 0.003191937290976777,
+      "com_m": [
+        -0.019149999995942656,
+        -0.0075499999926111104,
+        -0.08549999999932978
+      ],
+      "volume_mm3": 1182.1989966580657
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_thigh_cheek_5",
+      "material": "6061 aluminium",
+      "mass_kg": 0.030882956859065287,
+      "com_m": [
+        2.1120977321065817e-18,
+        0.005,
+        -0.04750000000000004
+      ],
+      "volume_mm3": 11438.13217002418
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_thigh_cheek_-60.1",
+      "material": "6061 aluminium",
+      "mass_kg": 0.03088295685906531,
+      "com_m": [
+        0.0,
+        -0.0601,
+        -0.047499999999999994
+      ],
+      "volume_mm3": 11438.13217002419
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_thigh_fairing",
+      "material": "PETG",
+      "mass_kg": 0.0036624644868991966,
+      "com_m": [
+        -2.9372316481291997e-07,
+        0.01120840482608917,
+        -0.04750011927857547
+      ],
+      "volume_mm3": 2883.830304645037
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_thigh_spacer_-35.15",
+      "material": "6061 aluminium",
+      "mass_kg": 0.003959849441409485,
+      "com_m": [
+        0.013,
+        -0.02755,
+        -0.035149999999999994
+      ],
+      "volume_mm3": 1466.610904225735
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_thigh_spacer_-49.4",
+      "material": "6061 aluminium",
+      "mass_kg": 0.003959849441409485,
+      "com_m": [
+        0.013,
+        -0.027549999999999998,
+        -0.04939999999999999
+      ],
+      "volume_mm3": 1466.610904225735
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fastener_wiring_allowance",
+      "material": "unweighed allowance",
+      "mass_kg": 0.01,
+      "com_m": [
+        0.0,
+        0.0,
+        -0.04
+      ]
+    },
+    {
+      "link": "fl_shin",
+      "part": "fl_hoof",
+      "material": "PETG",
+      "mass_kg": 0.012983668158888712,
+      "com_m": [
+        0.0035391787408223263,
+        -3.339315961208964e-05,
+        -0.1065137783672382
+      ],
+      "volume_mm3": 10223.360755030482
+    },
+    {
+      "link": "fl_shin",
+      "part": "fl_floating_sole",
+      "material": "PETG",
+      "mass_kg": 0.001974914318722293,
+      "com_m": [
+        0.008450293285575387,
+        3.7400907163704684e-05,
+        -0.11555257352941176
+      ],
+      "volume_mm3": 1555.0506446632228
+    },
+    {
+      "link": "fl_shin",
+      "part": "fl_TPU_pad",
+      "material": "TPU",
+      "mass_kg": 0.002491540596781438,
+      "com_m": [
+        0.009442142994600783,
+        -3.6660156691788954e-19,
+        -0.1173780504694932
+      ],
+      "volume_mm3": 2076.2838306511985
+    },
+    {
+      "link": "fl_shin",
+      "part": "fl_TPU_actuator",
+      "material": "TPU",
+      "mass_kg": 6.334581762992321e-05,
+      "com_m": [
+        0.007371756326217788,
+        -0.008499999999999999,
+        -0.11356755066716027
+      ],
+      "volume_mm3": 52.78818135826934
+    },
+    {
+      "link": "fl_shin",
+      "part": "fl_switch_PCB",
+      "material": "PCB + switch harness allowance",
+      "mass_kg": 0.003,
+      "com_m": [
+        0.004821918767475225,
+        -0.0085,
+        -0.10887463235294118
+      ],
+      "volume_mm3": 230.40000000000003
+    },
+    {
+      "link": "fl_shin",
+      "part": "fl_switch",
+      "material": "switch allowance",
+      "mass_kg": 0.001,
+      "com_m": [
+        0.005681270627025265,
+        -0.0085,
+        -0.11045624999999999
+      ],
+      "volume_mm3": 76.88000000000008
+    },
+    {
+      "link": "fl_shin",
+      "part": "fl_shin_cheek_front",
+      "material": "6061 aluminium",
+      "mass_kg": 0.028095790012244527,
+      "com_m": [
+        3.741909486696993e-19,
+        0.005,
+        -0.039767732828701975
+      ],
+      "volume_mm3": 10405.848152683158
+    },
+    {
+      "link": "fl_shin",
+      "part": "fl_shin_cheek_rear",
+      "material": "6061 aluminium",
+      "mass_kg": 0.0343664808441889,
+      "com_m": [
+        7.097224143005081e-09,
+        -0.0324307265571033,
+        -0.04118927251283805
+      ],
+      "volume_mm3": 12728.326238588481
+    },
+    {
+      "link": "fl_shin",
+      "part": "fl_knee_support_fork",
+      "material": "6061 aluminium",
+      "mass_kg": 0.012241830692631331,
+      "com_m": [
+        0.0038645414797703827,
+        -0.052431980517709365,
+        -0.007577626573284396
+      ],
+      "volume_mm3": 4534.011367641234
+    },
+    {
+      "link": "fl_shin",
+      "part": "fl_shin_fairing",
+      "material": "PETG",
+      "mass_kg": 0.0037934352491263202,
+      "com_m": [
+        -3.006405737234567e-07,
+        0.011212485304017162,
+        -0.04999981681637711
+      ],
+      "volume_mm3": 2986.956889075843
+    },
+    {
+      "link": "fl_shin",
+      "part": "fastener_wiring_allowance",
+      "material": "unweighed allowance",
+      "mass_kg": 0.011,
+      "com_m": [
+        0.0,
+        0.0,
+        -0.04
+      ]
+    },
+    {
+      "link": "fr_roll",
+      "part": "fr_pitch_servo",
+      "material": "manufacturer mass / uniform envelope",
+      "mass_kg": 0.2,
+      "com_m": [
+        7.9112531456898045e-19,
+        0.0005500000000000007,
+        -0.059068079697991854
+      ],
+      "volume_mm3": 90215.25920369825
+    },
+    {
+      "link": "fr_roll",
+      "part": "fr_pitch_cradle",
+      "material": "6061 aluminium",
+      "mass_kg": 0.05160455193494199,
+      "com_m": [
+        0.008437981769837446,
+        0.0005499999999998373,
+        -0.05949999999999908
+      ],
+      "volume_mm3": 19112.79701294148
+    },
+    {
+      "link": "fr_roll",
+      "part": "fr_pitch_strap_-41.55",
+      "material": "6061 aluminium",
+      "mass_kg": 0.003191937290976777,
+      "com_m": [
+        -0.019149999995942656,
+        0.017549999992611105,
+        -0.059500000000670225
+      ],
+      "volume_mm3": 1182.1989966580657
+    },
+    {
+      "link": "fr_roll",
+      "part": "fr_pitch_strap_-7.550000000000001",
+      "material": "6061 aluminium",
+      "mass_kg": 0.003191937290976777,
+      "com_m": [
+        -0.019149999995942656,
+        -0.01645000000738889,
+        -0.05950000000067022
+      ],
+      "volume_mm3": 1182.1989966580657
+    },
+    {
+      "link": "fr_roll",
+      "part": "fr_roll_yoke",
+      "material": "6061 aluminium",
+      "mass_kg": 0.05809528691273861,
+      "com_m": [
+        0.00832788011969235,
+        0.006472012885395841,
+        -0.030423200381494944
+      ],
+      "volume_mm3": 21516.77293064393
+    },
+    {
+      "link": "fr_roll",
+      "part": "fr_roll_axle",
+      "material": "6061 aluminium",
+      "mass_kg": 0.009617221323853087,
+      "com_m": [
+        0.012249999999999999,
+        2.0558077701348872e-19,
+        -6.582915753347807e-19
+      ],
+      "volume_mm3": 3561.9338236492913
+    },
+    {
+      "link": "fr_roll",
+      "part": "fastener_wiring_allowance",
+      "material": "unweighed allowance",
+      "mass_kg": 0.01,
+      "com_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_knee_servo",
+      "material": "manufacturer mass / uniform envelope",
+      "mass_kg": 0.2,
+      "com_m": [
+        -6.992311334442299e-19,
+        0.024550000000000002,
+        -0.08593192030200814
+      ],
+      "volume_mm3": 90215.25920369824
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_knee_cradle",
+      "material": "6061 aluminium",
+      "mass_kg": 0.051604551934942004,
+      "com_m": [
+        -0.00843798176983745,
+        0.02454999999999983,
+        -0.08550000000000091
+      ],
+      "volume_mm3": 19112.797012941483
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_knee_strap_-41.55",
+      "material": "6061 aluminium",
+      "mass_kg": 0.0031919372909767767,
+      "com_m": [
+        0.019149999995942656,
+        0.04154999999261111,
+        -0.08549999999932978
+      ],
+      "volume_mm3": 1182.1989966580654
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_knee_strap_-7.550000000000001",
+      "material": "6061 aluminium",
+      "mass_kg": 0.003191937290976777,
+      "com_m": [
+        0.019149999995942656,
+        0.0075499999926111104,
+        -0.08549999999932978
+      ],
+      "volume_mm3": 1182.1989966580657
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_thigh_cheek_-5",
+      "material": "6061 aluminium",
+      "mass_kg": 0.030882956859065287,
+      "com_m": [
+        -4.323588298665238e-19,
+        -0.005,
+        -0.04750000000000004
+      ],
+      "volume_mm3": 11438.13217002418
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_thigh_cheek_60.1",
+      "material": "6061 aluminium",
+      "mass_kg": 0.0308829568590653,
+      "com_m": [
+        1.664829977072246e-18,
+        0.0601,
+        -0.04750000000000001
+      ],
+      "volume_mm3": 11438.132170024186
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_thigh_fairing",
+      "material": "PETG",
+      "mass_kg": 0.0036624644868991966,
+      "com_m": [
+        -2.9372316481224605e-07,
+        -0.01120840482608917,
+        -0.04750011927857547
+      ],
+      "volume_mm3": 2883.830304645037
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_thigh_spacer_-35.15",
+      "material": "6061 aluminium",
+      "mass_kg": 0.003959849441409484,
+      "com_m": [
+        0.013,
+        0.02755,
+        -0.035149999999999994
+      ],
+      "volume_mm3": 1466.6109042257349
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_thigh_spacer_-49.4",
+      "material": "6061 aluminium",
+      "mass_kg": 0.003959849441409485,
+      "com_m": [
+        0.013,
+        0.02755,
+        -0.04939999999999999
+      ],
+      "volume_mm3": 1466.6109042257353
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fastener_wiring_allowance",
+      "material": "unweighed allowance",
+      "mass_kg": 0.01,
+      "com_m": [
+        0.0,
+        0.0,
+        -0.04
+      ]
+    },
+    {
+      "link": "fr_shin",
+      "part": "fr_hoof",
+      "material": "PETG",
+      "mass_kg": 0.012983668158888712,
+      "com_m": [
+        0.0035391787408223263,
+        -3.339315961208964e-05,
+        -0.1065137783672382
+      ],
+      "volume_mm3": 10223.360755030482
+    },
+    {
+      "link": "fr_shin",
+      "part": "fr_floating_sole",
+      "material": "PETG",
+      "mass_kg": 0.001974914318722293,
+      "com_m": [
+        0.008450293285575387,
+        3.7400907163704684e-05,
+        -0.11555257352941176
+      ],
+      "volume_mm3": 1555.0506446632228
+    },
+    {
+      "link": "fr_shin",
+      "part": "fr_TPU_pad",
+      "material": "TPU",
+      "mass_kg": 0.002491540596781438,
+      "com_m": [
+        0.009442142994600783,
+        -3.6660156691788954e-19,
+        -0.1173780504694932
+      ],
+      "volume_mm3": 2076.2838306511985
+    },
+    {
+      "link": "fr_shin",
+      "part": "fr_TPU_actuator",
+      "material": "TPU",
+      "mass_kg": 6.334581762992321e-05,
+      "com_m": [
+        0.007371756326217788,
+        -0.008499999999999999,
+        -0.11356755066716027
+      ],
+      "volume_mm3": 52.78818135826934
+    },
+    {
+      "link": "fr_shin",
+      "part": "fr_switch_PCB",
+      "material": "PCB + switch harness allowance",
+      "mass_kg": 0.003,
+      "com_m": [
+        0.004821918767475225,
+        -0.0085,
+        -0.10887463235294118
+      ],
+      "volume_mm3": 230.40000000000003
+    },
+    {
+      "link": "fr_shin",
+      "part": "fr_switch",
+      "material": "switch allowance",
+      "mass_kg": 0.001,
+      "com_m": [
+        0.005681270627025265,
+        -0.0085,
+        -0.11045624999999999
+      ],
+      "volume_mm3": 76.88000000000008
+    },
+    {
+      "link": "fr_shin",
+      "part": "fr_shin_cheek_front",
+      "material": "6061 aluminium",
+      "mass_kg": 0.028095790012244527,
+      "com_m": [
+        3.741909486696993e-19,
+        -0.005,
+        -0.039767732828701975
+      ],
+      "volume_mm3": 10405.848152683158
+    },
+    {
+      "link": "fr_shin",
+      "part": "fr_shin_cheek_rear",
+      "material": "6061 aluminium",
+      "mass_kg": 0.0343664808441889,
+      "com_m": [
+        7.0972241420041265e-09,
+        0.0324307265571033,
+        -0.04118927251283805
+      ],
+      "volume_mm3": 12728.326238588481
+    },
+    {
+      "link": "fr_shin",
+      "part": "fr_knee_support_fork",
+      "material": "6061 aluminium",
+      "mass_kg": 0.012241830692631331,
+      "com_m": [
+        0.0038645414797703827,
+        0.052431980517709365,
+        -0.007577626573284396
+      ],
+      "volume_mm3": 4534.011367641234
+    },
+    {
+      "link": "fr_shin",
+      "part": "fr_shin_fairing",
+      "material": "PETG",
+      "mass_kg": 0.0037934352491263202,
+      "com_m": [
+        -3.006405737234704e-07,
+        -0.011212485304017162,
+        -0.04999981681637711
+      ],
+      "volume_mm3": 2986.956889075843
+    },
+    {
+      "link": "fr_shin",
+      "part": "fastener_wiring_allowance",
+      "material": "unweighed allowance",
+      "mass_kg": 0.011,
+      "com_m": [
+        0.0,
+        0.0,
+        -0.04
+      ]
+    },
+    {
+      "link": "rl_roll",
+      "part": "rl_pitch_servo",
+      "material": "manufacturer mass / uniform envelope",
+      "mass_kg": 0.2,
+      "com_m": [
+        -7.9112531456898045e-19,
+        -0.0005500000000000007,
+        -0.059068079697991854
+      ],
+      "volume_mm3": 90215.25920369825
+    },
+    {
+      "link": "rl_roll",
+      "part": "rl_pitch_cradle",
+      "material": "6061 aluminium",
+      "mass_kg": 0.05160455193494199,
+      "com_m": [
+        -0.008437981769837446,
+        -0.0005499999999998373,
+        -0.05949999999999908
+      ],
+      "volume_mm3": 19112.79701294148
+    },
+    {
+      "link": "rl_roll",
+      "part": "rl_pitch_strap_-41.55",
+      "material": "6061 aluminium",
+      "mass_kg": 0.003191937290976777,
+      "com_m": [
+        0.019149999995942656,
+        -0.017549999992611105,
+        -0.059500000000670225
+      ],
+      "volume_mm3": 1182.1989966580657
+    },
+    {
+      "link": "rl_roll",
+      "part": "rl_pitch_strap_-7.550000000000001",
+      "material": "6061 aluminium",
+      "mass_kg": 0.003191937290976777,
+      "com_m": [
+        0.019149999995942656,
+        0.01645000000738889,
+        -0.05950000000067022
+      ],
+      "volume_mm3": 1182.1989966580657
+    },
+    {
+      "link": "rl_roll",
+      "part": "rl_roll_yoke",
+      "material": "6061 aluminium",
+      "mass_kg": 0.05809528691273861,
+      "com_m": [
+        -0.00832788011969235,
+        -0.006472012885395841,
+        -0.030423200381494944
+      ],
+      "volume_mm3": 21516.77293064393
+    },
+    {
+      "link": "rl_roll",
+      "part": "rl_roll_axle",
+      "material": "6061 aluminium",
+      "mass_kg": 0.009617221323853087,
+      "com_m": [
+        -0.012249999999999999,
+        1.886365992298405e-19,
+        -6.582915753347807e-19
+      ],
+      "volume_mm3": 3561.9338236492913
+    },
+    {
+      "link": "rl_roll",
+      "part": "fastener_wiring_allowance",
+      "material": "unweighed allowance",
+      "mass_kg": 0.01,
+      "com_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_knee_servo",
+      "material": "manufacturer mass / uniform envelope",
+      "mass_kg": 0.2,
+      "com_m": [
+        6.992311334442299e-19,
+        -0.024550000000000002,
+        -0.08593192030200814
+      ],
+      "volume_mm3": 90215.25920369824
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_knee_cradle",
+      "material": "6061 aluminium",
+      "mass_kg": 0.051604551934942004,
+      "com_m": [
+        0.00843798176983745,
+        -0.02454999999999983,
+        -0.08550000000000091
+      ],
+      "volume_mm3": 19112.797012941483
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_knee_strap_-41.55",
+      "material": "6061 aluminium",
+      "mass_kg": 0.0031919372909767767,
+      "com_m": [
+        -0.019149999995942656,
+        -0.04154999999261111,
+        -0.08549999999932978
+      ],
+      "volume_mm3": 1182.1989966580654
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_knee_strap_-7.550000000000001",
+      "material": "6061 aluminium",
+      "mass_kg": 0.003191937290976777,
+      "com_m": [
+        -0.019149999995942656,
+        -0.0075499999926111104,
+        -0.08549999999932978
+      ],
+      "volume_mm3": 1182.1989966580657
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_thigh_cheek_5",
+      "material": "6061 aluminium",
+      "mass_kg": 0.030882956859065287,
+      "com_m": [
+        2.1120977321065817e-18,
+        0.005,
+        -0.04750000000000004
+      ],
+      "volume_mm3": 11438.13217002418
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_thigh_cheek_-60.1",
+      "material": "6061 aluminium",
+      "mass_kg": 0.03088295685906531,
+      "com_m": [
+        0.0,
+        -0.0601,
+        -0.047499999999999994
+      ],
+      "volume_mm3": 11438.13217002419
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_thigh_fairing",
+      "material": "PETG",
+      "mass_kg": 0.0036624644868991966,
+      "com_m": [
+        -2.9372316481291997e-07,
+        0.01120840482608917,
+        -0.04750011927857547
+      ],
+      "volume_mm3": 2883.830304645037
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_thigh_spacer_-35.15",
+      "material": "6061 aluminium",
+      "mass_kg": 0.003959849441409485,
+      "com_m": [
+        0.013,
+        -0.02755,
+        -0.035149999999999994
+      ],
+      "volume_mm3": 1466.610904225735
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_thigh_spacer_-49.4",
+      "material": "6061 aluminium",
+      "mass_kg": 0.003959849441409485,
+      "com_m": [
+        0.013,
+        -0.027549999999999998,
+        -0.04939999999999999
+      ],
+      "volume_mm3": 1466.610904225735
+    },
+    {
+      "link": "rl_thigh",
+      "part": "fastener_wiring_allowance",
+      "material": "unweighed allowance",
+      "mass_kg": 0.01,
+      "com_m": [
+        0.0,
+        0.0,
+        -0.04
+      ]
+    },
+    {
+      "link": "rl_shin",
+      "part": "rl_hoof",
+      "material": "PETG",
+      "mass_kg": 0.012983668158888712,
+      "com_m": [
+        0.0035391787408223263,
+        -3.339315961208964e-05,
+        -0.1065137783672382
+      ],
+      "volume_mm3": 10223.360755030482
+    },
+    {
+      "link": "rl_shin",
+      "part": "rl_floating_sole",
+      "material": "PETG",
+      "mass_kg": 0.001974914318722293,
+      "com_m": [
+        0.008450293285575387,
+        3.7400907163704684e-05,
+        -0.11555257352941176
+      ],
+      "volume_mm3": 1555.0506446632228
+    },
+    {
+      "link": "rl_shin",
+      "part": "rl_TPU_pad",
+      "material": "TPU",
+      "mass_kg": 0.002491540596781438,
+      "com_m": [
+        0.009442142994600783,
+        -3.6660156691788954e-19,
+        -0.1173780504694932
+      ],
+      "volume_mm3": 2076.2838306511985
+    },
+    {
+      "link": "rl_shin",
+      "part": "rl_TPU_actuator",
+      "material": "TPU",
+      "mass_kg": 6.334581762992321e-05,
+      "com_m": [
+        0.007371756326217788,
+        -0.008499999999999999,
+        -0.11356755066716027
+      ],
+      "volume_mm3": 52.78818135826934
+    },
+    {
+      "link": "rl_shin",
+      "part": "rl_switch_PCB",
+      "material": "PCB + switch harness allowance",
+      "mass_kg": 0.003,
+      "com_m": [
+        0.004821918767475225,
+        -0.0085,
+        -0.10887463235294118
+      ],
+      "volume_mm3": 230.40000000000003
+    },
+    {
+      "link": "rl_shin",
+      "part": "rl_switch",
+      "material": "switch allowance",
+      "mass_kg": 0.001,
+      "com_m": [
+        0.005681270627025265,
+        -0.0085,
+        -0.11045624999999999
+      ],
+      "volume_mm3": 76.88000000000008
+    },
+    {
+      "link": "rl_shin",
+      "part": "rl_shin_cheek_front",
+      "material": "6061 aluminium",
+      "mass_kg": 0.028095790012244527,
+      "com_m": [
+        3.741909486696993e-19,
+        0.005,
+        -0.039767732828701975
+      ],
+      "volume_mm3": 10405.848152683158
+    },
+    {
+      "link": "rl_shin",
+      "part": "rl_shin_cheek_rear",
+      "material": "6061 aluminium",
+      "mass_kg": 0.0343664808441889,
+      "com_m": [
+        7.097224143005081e-09,
+        -0.0324307265571033,
+        -0.04118927251283805
+      ],
+      "volume_mm3": 12728.326238588481
+    },
+    {
+      "link": "rl_shin",
+      "part": "rl_knee_support_fork",
+      "material": "6061 aluminium",
+      "mass_kg": 0.012241830692631331,
+      "com_m": [
+        0.0038645414797703827,
+        -0.052431980517709365,
+        -0.007577626573284396
+      ],
+      "volume_mm3": 4534.011367641234
+    },
+    {
+      "link": "rl_shin",
+      "part": "rl_shin_fairing",
+      "material": "PETG",
+      "mass_kg": 0.0037934352491263202,
+      "com_m": [
+        -3.006405737234567e-07,
+        0.011212485304017162,
+        -0.04999981681637711
+      ],
+      "volume_mm3": 2986.956889075843
+    },
+    {
+      "link": "rl_shin",
+      "part": "fastener_wiring_allowance",
+      "material": "unweighed allowance",
+      "mass_kg": 0.011,
+      "com_m": [
+        0.0,
+        0.0,
+        -0.04
+      ]
+    },
+    {
+      "link": "rr_roll",
+      "part": "rr_pitch_servo",
+      "material": "manufacturer mass / uniform envelope",
+      "mass_kg": 0.2,
+      "com_m": [
+        7.9112531456898045e-19,
+        0.0005500000000000007,
+        -0.059068079697991854
+      ],
+      "volume_mm3": 90215.25920369825
+    },
+    {
+      "link": "rr_roll",
+      "part": "rr_pitch_cradle",
+      "material": "6061 aluminium",
+      "mass_kg": 0.05160455193494199,
+      "com_m": [
+        0.008437981769837446,
+        0.0005499999999998373,
+        -0.05949999999999908
+      ],
+      "volume_mm3": 19112.79701294148
+    },
+    {
+      "link": "rr_roll",
+      "part": "rr_pitch_strap_-41.55",
+      "material": "6061 aluminium",
+      "mass_kg": 0.003191937290976777,
+      "com_m": [
+        -0.019149999995942656,
+        0.017549999992611105,
+        -0.059500000000670225
+      ],
+      "volume_mm3": 1182.1989966580657
+    },
+    {
+      "link": "rr_roll",
+      "part": "rr_pitch_strap_-7.550000000000001",
+      "material": "6061 aluminium",
+      "mass_kg": 0.003191937290976777,
+      "com_m": [
+        -0.019149999995942656,
+        -0.01645000000738889,
+        -0.05950000000067022
+      ],
+      "volume_mm3": 1182.1989966580657
+    },
+    {
+      "link": "rr_roll",
+      "part": "rr_roll_yoke",
+      "material": "6061 aluminium",
+      "mass_kg": 0.0,
+      "com_m": [
+        -0.00832788011969235,
+        0.006472012885395841,
+        -0.030423200381494944
+      ],
+      "volume_mm3": 0.0
+    },
+    {
+      "link": "rr_roll",
+      "part": "rr_roll_axle",
+      "material": "6061 aluminium",
+      "mass_kg": 0.009617221323853087,
+      "com_m": [
+        -0.012249999999999999,
+        1.886365992298405e-19,
+        -6.582915753347807e-19
+      ],
+      "volume_mm3": 3561.9338236492913
+    },
+    {
+      "link": "rr_roll",
+      "part": "fastener_wiring_allowance",
+      "material": "unweighed allowance",
+      "mass_kg": 0.01,
+      "com_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_knee_servo",
+      "material": "manufacturer mass / uniform envelope",
+      "mass_kg": 0.2,
+      "com_m": [
+        -6.992311334442299e-19,
+        0.024550000000000002,
+        -0.08593192030200814
+      ],
+      "volume_mm3": 90215.25920369824
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_knee_cradle",
+      "material": "6061 aluminium",
+      "mass_kg": 0.051604551934942004,
+      "com_m": [
+        -0.00843798176983745,
+        0.02454999999999983,
+        -0.08550000000000091
+      ],
+      "volume_mm3": 19112.797012941483
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_knee_strap_-41.55",
+      "material": "6061 aluminium",
+      "mass_kg": 0.0031919372909767767,
+      "com_m": [
+        0.019149999995942656,
+        0.04154999999261111,
+        -0.08549999999932978
+      ],
+      "volume_mm3": 1182.1989966580654
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_knee_strap_-7.550000000000001",
+      "material": "6061 aluminium",
+      "mass_kg": 0.003191937290976777,
+      "com_m": [
+        0.019149999995942656,
+        0.0075499999926111104,
+        -0.08549999999932978
+      ],
+      "volume_mm3": 1182.1989966580657
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_thigh_cheek_-5",
+      "material": "6061 aluminium",
+      "mass_kg": 0.030882956859065287,
+      "com_m": [
+        -4.323588298665238e-19,
+        -0.005,
+        -0.04750000000000004
+      ],
+      "volume_mm3": 11438.13217002418
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_thigh_cheek_60.1",
+      "material": "6061 aluminium",
+      "mass_kg": 0.0308829568590653,
+      "com_m": [
+        1.664829977072246e-18,
+        0.0601,
+        -0.04750000000000001
+      ],
+      "volume_mm3": 11438.132170024186
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_thigh_fairing",
+      "material": "PETG",
+      "mass_kg": 0.0036624644868991966,
+      "com_m": [
+        -2.9372316481224605e-07,
+        -0.01120840482608917,
+        -0.04750011927857547
+      ],
+      "volume_mm3": 2883.830304645037
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_thigh_spacer_-35.15",
+      "material": "6061 aluminium",
+      "mass_kg": 0.003959849441409484,
+      "com_m": [
+        0.013,
+        0.02755,
+        -0.035149999999999994
+      ],
+      "volume_mm3": 1466.6109042257349
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_thigh_spacer_-49.4",
+      "material": "6061 aluminium",
+      "mass_kg": 0.003959849441409485,
+      "com_m": [
+        0.013,
+        0.02755,
+        -0.04939999999999999
+      ],
+      "volume_mm3": 1466.6109042257353
+    },
+    {
+      "link": "rr_thigh",
+      "part": "fastener_wiring_allowance",
+      "material": "unweighed allowance",
+      "mass_kg": 0.01,
+      "com_m": [
+        0.0,
+        0.0,
+        -0.04
+      ]
+    },
+    {
+      "link": "rr_shin",
+      "part": "rr_hoof",
+      "material": "PETG",
+      "mass_kg": 0.012983668158888712,
+      "com_m": [
+        0.0035391787408223263,
+        -3.339315961208964e-05,
+        -0.1065137783672382
+      ],
+      "volume_mm3": 10223.360755030482
+    },
+    {
+      "link": "rr_shin",
+      "part": "rr_floating_sole",
+      "material": "PETG",
+      "mass_kg": 0.001974914318722293,
+      "com_m": [
+        0.008450293285575387,
+        3.7400907163704684e-05,
+        -0.11555257352941176
+      ],
+      "volume_mm3": 1555.0506446632228
+    },
+    {
+      "link": "rr_shin",
+      "part": "rr_TPU_pad",
+      "material": "TPU",
+      "mass_kg": 0.002491540596781438,
+      "com_m": [
+        0.009442142994600783,
+        -3.6660156691788954e-19,
+        -0.1173780504694932
+      ],
+      "volume_mm3": 2076.2838306511985
+    },
+    {
+      "link": "rr_shin",
+      "part": "rr_TPU_actuator",
+      "material": "TPU",
+      "mass_kg": 6.334581762992321e-05,
+      "com_m": [
+        0.007371756326217788,
+        -0.008499999999999999,
+        -0.11356755066716027
+      ],
+      "volume_mm3": 52.78818135826934
+    },
+    {
+      "link": "rr_shin",
+      "part": "rr_switch_PCB",
+      "material": "PCB + switch harness allowance",
+      "mass_kg": 0.003,
+      "com_m": [
+        0.004821918767475225,
+        -0.0085,
+        -0.10887463235294118
+      ],
+      "volume_mm3": 230.40000000000003
+    },
+    {
+      "link": "rr_shin",
+      "part": "rr_switch",
+      "material": "switch allowance",
+      "mass_kg": 0.001,
+      "com_m": [
+        0.005681270627025265,
+        -0.0085,
+        -0.11045624999999999
+      ],
+      "volume_mm3": 76.88000000000008
+    },
+    {
+      "link": "rr_shin",
+      "part": "rr_shin_cheek_front",
+      "material": "6061 aluminium",
+      "mass_kg": 0.028095790012244527,
+      "com_m": [
+        3.741909486696993e-19,
+        -0.005,
+        -0.039767732828701975
+      ],
+      "volume_mm3": 10405.848152683158
+    },
+    {
+      "link": "rr_shin",
+      "part": "rr_shin_cheek_rear",
+      "material": "6061 aluminium",
+      "mass_kg": 0.0343664808441889,
+      "com_m": [
+        7.0972241420041265e-09,
+        0.0324307265571033,
+        -0.04118927251283805
+      ],
+      "volume_mm3": 12728.326238588481
+    },
+    {
+      "link": "rr_shin",
+      "part": "rr_knee_support_fork",
+      "material": "6061 aluminium",
+      "mass_kg": 0.012241830692631331,
+      "com_m": [
+        0.0038645414797703827,
+        0.052431980517709365,
+        -0.007577626573284396
+      ],
+      "volume_mm3": 4534.011367641234
+    },
+    {
+      "link": "rr_shin",
+      "part": "rr_shin_fairing",
+      "material": "PETG",
+      "mass_kg": 0.0037934352491263202,
+      "com_m": [
+        -3.006405737234704e-07,
+        -0.011212485304017162,
+        -0.04999981681637711
+      ],
+      "volume_mm3": 2986.956889075843
+    },
+    {
+      "link": "rr_shin",
+      "part": "fastener_wiring_allowance",
+      "material": "unweighed allowance",
+      "mass_kg": 0.011,
+      "com_m": [
+        0.0,
+        0.0,
+        -0.04
+      ]
+    },
+    {
+      "link": "neck_yaw",
+      "part": "head_pitch_servo",
+      "material": "manufacturer mass / uniform envelope",
+      "mass_kg": 0.0745,
+      "com_m": [
+        -9.436706090179037e-07,
+        0.0017010170554397632,
+        0.033885880920550907
+      ],
+      "volume_mm3": 1288.5733753470338
+    },
+    {
+      "link": "neck_yaw",
+      "part": "head_pitch_cradle",
+      "material": "6061 aluminium",
+      "mass_kg": 0.032224289930890854,
+      "com_m": [
+        -0.007139802001664186,
+        -0.001299999961357269,
+        0.03180336122740943
+      ],
+      "volume_mm3": 11934.922196626243
+    },
+    {
+      "link": "neck_yaw",
+      "part": "head_pitch_cradle_strap_-7",
+      "material": "6061 aluminium",
+      "mass_kg": 0.003438242406385962,
+      "com_m": [
+        0.0171,
+        0.011699999999999999,
+        0.0315
+      ],
+      "volume_mm3": 1273.4231134762822
+    },
+    {
+      "link": "neck_yaw",
+      "part": "head_pitch_cradle_strap_-33",
+      "material": "6061 aluminium",
+      "mass_kg": 0.003438242406385961,
+      "com_m": [
+        0.0171,
+        -0.0143,
+        0.03149999999999999
+      ],
+      "volume_mm3": 1273.423113476282
+    },
+    {
+      "link": "neck_yaw",
+      "part": "white_neck_collar",
+      "material": "PETG",
+      "mass_kg": 0.016235902866394317,
+      "com_m": [
+        1.4005121354737587e-09,
+        -1.1419220684906324e-09,
+        0.020000226372496262
+      ],
+      "volume_mm3": 12784.175485349857
+    },
+    {
+      "link": "neck_yaw",
+      "part": "fastener_wiring_allowance",
+      "material": "unweighed allowance",
+      "mass_kg": 0.006,
+      "com_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "link": "head",
+      "part": "pony_head_shell",
+      "material": "PETG",
+      "mass_kg": 0.07519653035018836,
+      "com_m": [
+        0.024326687276825232,
+        6.212465464006597e-06,
+        0.047713679935298445
+      ],
+      "volume_mm3": 59209.86641747115
+    },
+    {
+      "link": "head",
+      "part": "head_service_hatch",
+      "material": "PETG",
+      "mass_kg": 0.011467458799519928,
+      "com_m": [
+        0.04134636703166451,
+        -6.286318285689075e-10,
+        0.010512834653079197
+      ],
+      "volume_mm3": 9029.495117732227
+    },
+    {
+      "link": "head",
+      "part": "head_support_yoke",
+      "material": "6061 aluminium",
+      "mass_kg": 0.014134419435653562,
+      "com_m": [
+        0.009943804956978133,
+        0.0008091540325879612,
+        0.005027413646429209
+      ],
+      "volume_mm3": 5234.9701613531715
+    },
+    {
+      "link": "head",
+      "part": "mane_crest",
+      "material": "PETG",
+      "mass_kg": 0.021431238572186158,
+      "com_m": [
+        0.011045409909086252,
+        -0.001932926520610718,
+        0.09446928312836454
+      ],
+      "volume_mm3": 16874.991001721384
+    },
+    {
+      "link": "head",
+      "part": "pink_mane_stripe",
+      "material": "PETG",
+      "mass_kg": 0.0005056793800810272,
+      "com_m": [
+        0.025468241543273314,
+        -0.0125,
+        0.1039426866792567
+      ],
+      "volume_mm3": 398.17274022128123
+    },
+    {
+      "link": "head",
+      "part": "unicorn_horn",
+      "material": "PETG",
+      "mass_kg": 0.0012695898348566988,
+      "com_m": [
+        0.040000000000000015,
+        2.6675806816550856e-19,
+        0.09622339651720513
+      ],
+      "volume_mm3": 999.6770353202353
+    },
+    {
+      "link": "head",
+      "part": "camera_carrier",
+      "material": "PETG",
+      "mass_kg": 0.004684635975383156,
+      "com_m": [
+        0.06408481259084725,
+        1.041299106020539e-11,
+        0.039720071974838664
+      ],
+      "volume_mm3": 3688.6897443961857
+    },
+    {
+      "link": "head",
+      "part": "camera_board",
+      "material": "purchased allowance / uniform envelope",
+      "mass_kg": 0.008,
+      "com_m": [
+        0.06559999999999999,
+        -4.625929269271491e-20,
+        0.0645
+      ],
+      "volume_mm3": 959.9999999999987
+    },
+    {
+      "link": "head",
+      "part": "camera_lens",
+      "material": "purchased allowance / uniform envelope",
+      "mass_kg": 0.002,
+      "com_m": [
+        0.0718,
+        4.244205290819321e-19,
+        0.067
+      ],
+      "volume_mm3": 1889.1778926803001
+    },
+    {
+      "link": "head",
+      "part": "micro_ear_servo_-1",
+      "material": "manufacturer mass / uniform envelope",
+      "mass_kg": 0.02,
+      "com_m": [
+        0.02,
+        -0.022,
+        0.06
+      ],
+      "volume_mm3": 8000.519999999999
+    },
+    {
+      "link": "head",
+      "part": "ear_output_adapter_-1",
+      "material": "purchased horn allowance",
+      "mass_kg": 0.001,
+      "com_m": [
+        0.039625,
+        -0.022,
+        0.06
+      ],
+      "volume_mm3": 413.7084825696059
+    },
+    {
+      "link": "head",
+      "part": "eye_bezel_-1",
+      "material": "PETG",
+      "mass_kg": 0.0008863151672175952,
+      "com_m": [
+        0.053,
+        -0.042000000000000016,
+        0.04399999999999999
+      ],
+      "volume_mm3": 697.8859584390514
+    },
+    {
+      "link": "head",
+      "part": "display_sclera_-1",
+      "material": "appearance only",
+      "mass_kg": 0.0,
+      "com_m": [
+        0.053362346663143524,
+        -0.0433522961568047,
+        0.044
+      ],
+      "volume_mm3": 371.01580920364745
+    },
+    {
+      "link": "head",
+      "part": "display_iris_-1",
+      "material": "appearance only",
+      "mass_kg": 0.0,
+      "com_m": [
+        0.05636623995050277,
+        -0.042971868610275646,
+        0.04400000000000002
+      ],
+      "volume_mm3": 55.79468552775441
+    },
+    {
+      "link": "head",
+      "part": "display_pupil_-1",
+      "material": "appearance only",
+      "mass_kg": 0.0,
+      "com_m": [
+        0.05836020817390552,
+        -0.04268605271837998,
+        0.044
+      ],
+      "volume_mm3": 24.096015653033742
+    },
+    {
+      "link": "head",
+      "part": "display_highlight_-1",
+      "material": "appearance only",
+      "mass_kg": 0.0,
+      "com_m": [
+        0.05647753213989686,
+        -0.043387216715579956,
+        0.05000000000000002
+      ],
+      "volume_mm3": 3.015928947446156
+    },
+    {
+      "link": "head",
+      "part": "display_glint_-1",
+      "material": "appearance only",
+      "mass_kg": 0.0,
+      "com_m": [
+        0.06034123544505312,
+        -0.04235194053516987,
+        0.03900000000000001
+      ],
+      "volume_mm3": 0.6333450789636923
+    },
+    {
+      "link": "head",
+      "part": "eye_board_-1",
+      "material": "LCD + harness allowance",
+      "mass_kg": 0.015,
+      "com_m": [
+        0.04924712384601345,
+        -0.02799407551880851,
+        0.044
+      ],
+      "volume_mm3": 6060.0
+    },
+    {
+      "link": "head",
+      "part": "eyebrow_-1",
+      "material": "appearance only",
+      "mass_kg": 0.0,
+      "com_m": [
+        0.053500000000000034,
+        -0.035719587699983374,
+        0.06793750000000003
+      ],
+      "volume_mm3": 10.241189926843054
+    },
+    {
+      "link": "head",
+      "part": "micro_ear_servo_1",
+      "material": "manufacturer mass / uniform envelope",
+      "mass_kg": 0.02,
+      "com_m": [
+        0.02,
+        0.021999999999999995,
+        0.06
+      ],
+      "volume_mm3": 8000.519999999999
+    },
+    {
+      "link": "head",
+      "part": "ear_output_adapter_1",
+      "material": "purchased horn allowance",
+      "mass_kg": 0.001,
+      "com_m": [
+        0.039625,
+        0.022,
+        0.06
+      ],
+      "volume_mm3": 413.7084825696059
+    },
+    {
+      "link": "head",
+      "part": "eye_bezel_1",
+      "material": "PETG",
+      "mass_kg": 0.0008863151672175946,
+      "com_m": [
+        0.05300000000000002,
+        0.04200000000000001,
+        0.04399999999999999
+      ],
+      "volume_mm3": 697.8859584390509
+    },
+    {
+      "link": "head",
+      "part": "display_sclera_1",
+      "material": "appearance only",
+      "mass_kg": 0.0,
+      "com_m": [
+        0.05336234666314353,
+        0.0433522961568047,
+        0.044
+      ],
+      "volume_mm3": 371.0158092036475
+    },
+    {
+      "link": "head",
+      "part": "display_iris_1",
+      "material": "appearance only",
+      "mass_kg": 0.0,
+      "com_m": [
+        0.05636623995050277,
+        0.042971868610275646,
+        0.04400000000000001
+      ],
+      "volume_mm3": 55.794685527754424
+    },
+    {
+      "link": "head",
+      "part": "display_pupil_1",
+      "material": "appearance only",
+      "mass_kg": 0.0,
+      "com_m": [
+        0.05836020817390552,
+        0.04268605271837998,
+        0.043999999999999984
+      ],
+      "volume_mm3": 24.096015653033838
+    },
+    {
+      "link": "head",
+      "part": "display_highlight_1",
+      "material": "appearance only",
+      "mass_kg": 0.0,
+      "com_m": [
+        0.056477532139896855,
+        0.043387216715579956,
+        0.05000000000000002
+      ],
+      "volume_mm3": 3.015928947446156
+    },
+    {
+      "link": "head",
+      "part": "display_glint_1",
+      "material": "appearance only",
+      "mass_kg": 0.0,
+      "com_m": [
+        0.060341235445053126,
+        0.04235194053516986,
+        0.039000000000000014
+      ],
+      "volume_mm3": 0.6333450789636893
+    },
+    {
+      "link": "head",
+      "part": "eye_board_1",
+      "material": "LCD + harness allowance",
+      "mass_kg": 0.015,
+      "com_m": [
+        0.04924712384601345,
+        0.027994075518808507,
+        0.044
+      ],
+      "volume_mm3": 6059.999999999999
+    },
+    {
+      "link": "head",
+      "part": "eyebrow_1",
+      "material": "appearance only",
+      "mass_kg": 0.0,
+      "com_m": [
+        0.053500000000000006,
+        0.03571958769998339,
+        0.06793750000000001
+      ],
+      "volume_mm3": 10.241189926843054
+    },
+    {
+      "link": "head",
+      "part": "smile_pigment",
+      "material": "appearance only",
+      "mass_kg": 0.0,
+      "com_m": [
+        0.08630770596686997,
+        1.4641721239616156e-18,
+        0.021033333333333324
+      ],
+      "volume_mm3": 3.1088656357197997
+    },
+    {
+      "link": "head",
+      "part": "nostril_-8",
+      "material": "appearance only",
+      "mass_kg": 0.0,
+      "com_m": [
+        0.08812059242559638,
+        -0.008,
+        0.029
+      ],
+      "volume_mm3": 1.7794572570121405
+    },
+    {
+      "link": "head",
+      "part": "nostril_8",
+      "material": "appearance only",
+      "mass_kg": 0.0,
+      "com_m": [
+        0.08812059244060928,
+        0.008,
+        0.029
+      ],
+      "volume_mm3": 1.7794572570121405
+    },
+    {
+      "link": "head",
+      "part": "fastener_wiring_allowance",
+      "material": "unweighed allowance",
+      "mass_kg": 0.016,
+      "com_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "link": "ear_left",
+      "part": "ear_shell_1",
+      "material": "PETG",
+      "mass_kg": 0.012753756081505372,
+      "com_m": [
+        -0.0010812038281936517,
+        0.004995192035959901,
+        0.0344230676921642
+      ],
+      "volume_mm3": 10042.327623232577
+    },
+    {
+      "link": "ear_left",
+      "part": "ear_inner_1",
+      "material": "appearance only",
+      "mass_kg": 0.0,
+      "com_m": [
+        0.0069996889366874685,
+        0.005999999999999999,
+        0.045
+      ],
+      "volume_mm3": 750.3029187213532
+    },
+    {
+      "link": "ear_left",
+      "part": "fastener_wiring_allowance",
+      "material": "unweighed allowance",
+      "mass_kg": 0.0015,
+      "com_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "link": "ear_right",
+      "part": "ear_shell_-1",
+      "material": "PETG",
+      "mass_kg": 0.012753756081505372,
+      "com_m": [
+        -0.0010812038281936517,
+        -0.004995192035959901,
+        0.0344230676921642
+      ],
+      "volume_mm3": 10042.327623232577
+    },
+    {
+      "link": "ear_right",
+      "part": "ear_inner_-1",
+      "material": "appearance only",
+      "mass_kg": 0.0,
+      "com_m": [
+        0.0069996889366874685,
+        -0.006000000000000001,
+        0.045
+      ],
+      "volume_mm3": 750.3029187213532
+    },
+    {
+      "link": "ear_right",
+      "part": "fastener_wiring_allowance",
+      "material": "unweighed allowance",
+      "mass_kg": 0.0015,
+      "com_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
     }
-  },
-  "method": "saved STEP volume x 1270 kg/m3, explicit purchased hardware allowances, rounded up 1g per link group"
+  ],
+  "links": {
+    "torso": {
+      "mass": 1.5745065954815036,
+      "com": [
+        0.004545228226527387,
+        0.00033252776412736246,
+        -0.0048854048904853325
+      ],
+      "inertia_matrix": [
+        [
+          0.0024453660146115342,
+          2.7527237968917855e-05,
+          3.163199801443364e-07
+        ],
+        [
+          2.7527237968917855e-05,
+          0.007296745942188356,
+          -1.2745968617140677e-05
+        ],
+        [
+          3.163199801443364e-07,
+          -1.2745968617140677e-05,
+          0.008846079338196977
+        ]
+      ]
+    },
+    "fl_roll": {
+      "mass": 0.3357009347534873,
+      "com": [
+        0.0008592006933440976,
+        -0.001542703717513993,
+        -0.050733763624552
+      ],
+      "inertia_matrix": [
+        [
+          0.00027742521731734097,
+          -4.7717973840150175e-06,
+          -2.0624251576044374e-05
+        ],
+        [
+          -4.7717973840150175e-06,
+          0.00025682095709150566,
+          -9.205476619352144e-07
+        ],
+        [
+          -2.0624251576044374e-05,
+          -9.205476619352144e-07,
+          0.00012678342000487904
+        ]
+      ]
+    },
+    "fl_thigh": {
+      "mass": 0.3413365036047443,
+      "com": [
+        0.001219154926532634,
+        -0.024059554213334604,
+        -0.07613322315373477
+      ],
+      "inertia_matrix": [
+        [
+          0.00042739800170517604,
+          5.130020104573726e-07,
+          -5.523256076303072e-07
+        ],
+        [
+          5.130020104573726e-07,
+          0.00034306322537778095,
+          -6.510497011332484e-06
+        ],
+        [
+          -5.523256076303072e-07,
+          -6.510497011332484e-06,
+          0.00016991912280959372
+        ]
+      ]
+    },
+    "fl_shin": {
+      "mass": 0.11101100569021344,
+      "com": [
+        0.0013880405098026733,
+        -0.014487561083584491,
+        -0.05047376707316805
+      ],
+      "inertia_matrix": [
+        [
+          0.00025642633004174,
+          -8.564120390174649e-07,
+          4.400608078331039e-06
+        ],
+        [
+          -8.564120390174649e-07,
+          0.00019988836928297132,
+          5.83309901224592e-05
+        ],
+        [
+          4.400608078331039e-06,
+          5.83309901224592e-05,
+          8.009406285310142e-05
+        ]
+      ]
+    },
+    "fr_roll": {
+      "mass": 0.3357009347534873,
+      "com": [
+        0.0027250702088945484,
+        0.001542703717513993,
+        -0.050733763624552
+      ],
+      "inertia_matrix": [
+        [
+          0.00027742521731734097,
+          5.393601320035713e-06,
+          -1.513330780113435e-05
+        ],
+        [
+          5.393601320035713e-06,
+          0.00025457586248580277,
+          9.205476619352141e-07
+        ],
+        [
+          -1.513330780113435e-05,
+          9.205476619352141e-07,
+          0.00012453832539917616
+        ]
+      ]
+    },
+    "fr_thigh": {
+      "mass": 0.3413365036047443,
+      "com": [
+        -0.0006159085193144666,
+        0.024059554213334604,
+        -0.07613322315373477
+      ],
+      "inertia_matrix": [
+        [
+          0.00042739800170517593,
+          -2.0579945056719594e-07,
+          -6.419432404115593e-06
+        ],
+        [
+          -2.0579945056719594e-07,
+          0.00034344108332761086,
+          6.510497011332512e-06
+        ],
+        [
+          -6.419432404115593e-06,
+          6.510497011332512e-06,
+          0.00017029698075942366
+        ]
+      ]
+    },
+    "fr_shin": {
+      "mass": 0.11101100569021344,
+      "com": [
+        0.001388040509802673,
+        0.013858828079159141,
+        -0.05047376707316805
+      ],
+      "inertia_matrix": [
+        [
+          0.00025840480264550947,
+          1.1103083033623276e-06,
+          4.4006080783310405e-06
+        ],
+        [
+          1.1103083033623276e-06,
+          0.00019988836928297134,
+          -6.243333299931203e-05
+        ],
+        [
+          4.4006080783310405e-06,
+          -6.243333299931203e-05,
+          8.207253545687094e-05
+        ]
+      ]
+    },
+    "rl_roll": {
+      "mass": 0.3357009347534873,
+      "com": [
+        -0.0027250702088945484,
+        -0.001542703717513993,
+        -0.050733763624552
+      ],
+      "inertia_matrix": [
+        [
+          0.00027742521731734097,
+          5.39360132003571e-06,
+          1.5133307801134343e-05
+        ],
+        [
+          5.39360132003571e-06,
+          0.00025457586248580277,
+          -9.205476619352144e-07
+        ],
+        [
+          1.5133307801134343e-05,
+          -9.205476619352144e-07,
+          0.00012453832539917616
+        ]
+      ]
+    },
+    "rl_thigh": {
+      "mass": 0.3413365036047443,
+      "com": [
+        0.001219154926532634,
+        -0.024059554213334604,
+        -0.07613322315373477
+      ],
+      "inertia_matrix": [
+        [
+          0.00042739800170517604,
+          5.130020104573726e-07,
+          -5.523256076303072e-07
+        ],
+        [
+          5.130020104573726e-07,
+          0.00034306322537778095,
+          -6.510497011332484e-06
+        ],
+        [
+          -5.523256076303072e-07,
+          -6.510497011332484e-06,
+          0.00016991912280959372
+        ]
+      ]
+    },
+    "rl_shin": {
+      "mass": 0.11101100569021344,
+      "com": [
+        0.0013880405098026733,
+        -0.014487561083584491,
+        -0.05047376707316805
+      ],
+      "inertia_matrix": [
+        [
+          0.00025642633004174,
+          -8.564120390174649e-07,
+          4.400608078331039e-06
+        ],
+        [
+          -8.564120390174649e-07,
+          0.00019988836928297132,
+          5.83309901224592e-05
+        ],
+        [
+          4.400608078331039e-06,
+          5.83309901224592e-05,
+          8.009406285310142e-05
+        ]
+      ]
+    },
+    "rr_roll": {
+      "mass": 0.27760564784074865,
+      "com": [
+        0.0007037901085645081,
+        0.000511133817488156,
+        -0.05498421028564303
+      ],
+      "inertia_matrix": [
+        [
+          0.00020702681168924348,
+          -7.23895530848612e-08,
+          7.89202961593786e-06
+        ],
+        [
+          -7.23895530848612e-08,
+          0.00019351004708751272,
+          5.932507126500709e-07
+        ],
+        [
+          7.89202961593786e-06,
+          5.932507126500709e-07,
+          8.241482063431986e-05
+        ]
+      ]
+    },
+    "rr_thigh": {
+      "mass": 0.3413365036047443,
+      "com": [
+        -0.0006159085193144666,
+        0.024059554213334604,
+        -0.07613322315373477
+      ],
+      "inertia_matrix": [
+        [
+          0.00042739800170517593,
+          -2.0579945056719594e-07,
+          -6.419432404115593e-06
+        ],
+        [
+          -2.0579945056719594e-07,
+          0.00034344108332761086,
+          6.510497011332512e-06
+        ],
+        [
+          -6.419432404115593e-06,
+          6.510497011332512e-06,
+          0.00017029698075942366
+        ]
+      ]
+    },
+    "rr_shin": {
+      "mass": 0.11101100569021344,
+      "com": [
+        0.001388040509802673,
+        0.013858828079159141,
+        -0.05047376707316805
+      ],
+      "inertia_matrix": [
+        [
+          0.00025840480264550947,
+          1.1103083033623276e-06,
+          4.4006080783310405e-06
+        ],
+        [
+          1.1103083033623276e-06,
+          0.00019988836928297134,
+          -6.243333299931203e-05
+        ],
+        [
+          4.4006080783310405e-06,
+          -6.243333299931203e-05,
+          8.207253545687094e-05
+        ]
+      ]
+    },
+    "neck_yaw": {
+      "mass": 0.13583667761005708,
+      "com": [
+        -0.0008286233302708592,
+        0.0005587205716740854,
+        0.030114619540276024
+      ],
+      "inertia_matrix": [
+        [
+          0.0002819053469895167,
+          -1.8978157286817987e-07,
+          3.549206234452985e-07
+        ],
+        [
+          -1.8978157286817987e-07,
+          0.00022561174246543106,
+          -4.042065082955674e-06
+        ],
+        [
+          3.549206234452985e-07,
+          -4.042065082955674e-06,
+          0.0001700636324312321
+        ]
+      ]
+    },
+    "head": {
+      "mass": 0.2284621826823041,
+      "com": [
+        0.026978541440791027,
+        -0.00015688342842340038,
+        0.046978924929832175
+      ],
+      "inertia_matrix": [
+        [
+          0.000306812580628728,
+          2.575219890810693e-07,
+          -5.020655301153436e-06
+        ],
+        [
+          2.575219890810693e-07,
+          0.0003448810284410238,
+          3.276342206482317e-06
+        ],
+        [
+          -5.020655301153436e-06,
+          3.276342206482317e-06,
+          0.0002787283998478285
+        ]
+      ]
+    },
+    "ear_left": {
+      "mass": 0.014253756081505371,
+      "com": [
+        -0.0009674228898208663,
+        0.004469520906813672,
+        0.030800541724763684
+      ],
+      "inertia_matrix": [
+        [
+          6.534068085136355e-06,
+          2.1096599179797197e-08,
+          1.8448238639934993e-07
+        ],
+        [
+          2.1096599179797197e-08,
+          6.147428670346369e-06,
+          -6.343859456624711e-07
+        ],
+        [
+          1.8448238639934993e-07,
+          -6.343859456624711e-07,
+          6.204418357499664e-07
+        ]
+      ]
+    },
+    "ear_right": {
+      "mass": 0.014253756081505371,
+      "com": [
+        -0.0009674228898208663,
+        -0.004469520906813672,
+        0.030800541724763684
+      ],
+      "inertia_matrix": [
+        [
+          6.534068085136355e-06,
+          -2.1096599179797197e-08,
+          1.8448238639934993e-07
+        ],
+        [
+          -2.1096599179797197e-08,
+          6.147428670346369e-06,
+          6.343859456624711e-07
+        ],
+        [
+          1.8448238639934993e-07,
+          6.343859456624711e-07,
+          6.204418357499664e-07
+        ]
+      ]
+    }
+  }
 }

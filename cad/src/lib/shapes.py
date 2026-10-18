@@ -332,7 +332,7 @@ def link_components():
         add('head',paint(ellipsoid((14,2,20)),'iris','iris'),'iris_'+str(side),(58,side*50,41))
         add('head',paint(ellipsoid((8,1.2,15)),'pupil','eye'),'pupil_'+str(side),(59,side*52,41))
         add('head',paint(ellipsoid((3,1,5)),'eye_highlight','body'),'highlight_'+str(side),(62,side*53.5,48))
-        add('head',paint(ellipsoid((3,4,2.5)),'nostril','eye'),'nostril_'+str(side),(96,side*13,14))
+        add('head',paint(ellipsoid((3,4,2.5)),'nostril','eye'),'nostril_'+str(side),(g['muzzle_center'][0]+g['muzzle_radii'][0]-4,side*g['muzzle_radii'][1]*13/34,g['muzzle_center'][2]))
         earorigin=[g['ear_origin'][0],side*g['ear_origin'][1],g['ear_origin'][2]]
         Re=np.array([[0,1,0],[0,0,-1],[-1,0,0]],float)
         add('head',base,'ear_servo_'+str(side),earorigin,Re)
@@ -385,3 +385,9 @@ def tail():
     for py in [-6,6]:s=s-hole(1.65,20,(-104,py,6),'x')
     return paint(s,'curved_pony_tail','mane')
 FACTORIES['tail']=tail
+
+# v03 candidate only; the accepted v02 workspace is never imported or modified.
+from lib import sensors_face
+sensors_face.install(globals())
+from lib import actuation_v04
+actuation_v04.install(globals())

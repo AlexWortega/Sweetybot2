@@ -2,34 +2,34 @@
   "units": "mm",
   "min": [
     -145.38894849678135,
-    -87.0000001,
-    -8.327144080929299e-17
+    -99.0000001,
+    -9.002520950929238e-14
   ],
   "max": [
-    182.0000001,
-    87.0000001,
-    392.0000001
+    185.4212123121774,
+    99.0000001,
+    426.0000001
   ],
   "dimensions": [
-    327.38894859678135,
-    174.0000002,
-    392.0000001
+    330.81016080895876,
+    198.0000002,
+    426.00000010000014
   ],
   "valid": true,
   "step_roundtrips": [
     {
       "part": "deck",
-      "relative_volume_change": 3.786237140120345e-15,
+      "relative_volume_change": 3.807469691205822e-15,
       "saved_solids": 1
     },
     {
       "part": "rail",
-      "relative_volume_change": 1.2748164270563647e-15,
+      "relative_volume_change": 0.0,
       "saved_solids": 1
     },
     {
       "part": "body_shell",
-      "relative_volume_change": 0.0013724502726962346,
+      "relative_volume_change": 0.000829266008231368,
       "saved_solids": 1
     },
     {
@@ -39,37 +39,37 @@
     },
     {
       "part": "roll_yoke",
-      "relative_volume_change": 1.0464133888365082e-15,
+      "relative_volume_change": 3.3815282791877654e-15,
       "saved_solids": 1
     },
     {
       "part": "thigh_plate",
-      "relative_volume_change": 3.090909858606589e-14,
+      "relative_volume_change": 2.623970829534765e-14,
       "saved_solids": 1
     },
     {
       "part": "shin_plate",
-      "relative_volume_change": 3.213301377453115e-14,
+      "relative_volume_change": 5.908393139870753e-14,
       "saved_solids": 1
     },
     {
       "part": "hoof",
-      "relative_volume_change": 1.6731718218916645e-11,
+      "relative_volume_change": 1.837073545738824e-11,
       "saved_solids": 1
     },
     {
       "part": "head_shell",
-      "relative_volume_change": 1.6463874977595909e-06,
+      "relative_volume_change": 1.2024908493106102e-07,
       "saved_solids": 1
     },
     {
       "part": "head_hatch",
-      "relative_volume_change": 0.0004049361758281798,
+      "relative_volume_change": 1.2288433868068209e-14,
       "saved_solids": 1
     },
     {
       "part": "ear",
-      "relative_volume_change": 1.629888994189986e-12,
+      "relative_volume_change": 5.142344594215085e-13,
       "saved_solids": 1
     },
     {
@@ -84,12 +84,12 @@
     },
     {
       "part": "axle_adapter",
-      "relative_volume_change": 2.1875297688711516e-14,
+      "relative_volume_change": 2.1831342425647996e-14,
       "saved_solids": 1
     },
     {
       "part": "knee_fork",
-      "relative_volume_change": 8.321496563042038e-16,
+      "relative_volume_change": 4.814251900278312e-15,
       "saved_solids": 1
     },
     {
@@ -109,7 +109,7 @@
     },
     {
       "part": "horn",
-      "relative_volume_change": 1.2049173046844019e-12,
+      "relative_volume_change": 1.1554314347949474e-12,
       "saved_solids": 1
     },
     {
@@ -124,12 +124,72 @@
     },
     {
       "part": "thigh_fairing",
-      "relative_volume_change": 2.0906646566327043e-12,
+      "relative_volume_change": 5.46296611098614e-12,
       "saved_solids": 1
     },
     {
       "part": "shin_fairing",
-      "relative_volume_change": 6.1031990201992064e-12,
+      "relative_volume_change": 1.9152340949660293e-12,
+      "saved_solids": 1
+    },
+    {
+      "part": "camera_carrier",
+      "relative_volume_change": 9.546922428525457e-13,
+      "saved_solids": 1
+    },
+    {
+      "part": "sensor_tray",
+      "relative_volume_change": 2.5455123631190816e-14,
+      "saved_solids": 1
+    },
+    {
+      "part": "depth_pod",
+      "relative_volume_change": 1.547930826774998e-10,
+      "saved_solids": 1
+    },
+    {
+      "part": "hoof_sole_plate",
+      "relative_volume_change": 5.994866292725435e-15,
+      "saved_solids": 1
+    },
+    {
+      "part": "hoof_tpu_pad",
+      "relative_volume_change": 6.570595178364975e-16,
+      "saved_solids": 1
+    },
+    {
+      "part": "hoof_actuator",
+      "relative_volume_change": 1.3191056466199275e-14,
+      "saved_solids": 1
+    },
+    {
+      "part": "eye_bezel",
+      "relative_volume_change": 2.1177226343494066e-14,
+      "saved_solids": 1
+    },
+    {
+      "part": "shin_rear_plate",
+      "relative_volume_change": 6.016459073551599e-13,
+      "saved_solids": 1
+    },
+    {
+      "part": "servo_cradle_sm105",
+      "relative_volume_change": 6.508300486751523e-08,
+      "saved_solids": 1
+    },
+    {
+      "part": "servo_cradle_sm80",
+      "relative_volume_change": 8.32628782427799e-08,
+      "saved_solids": 1
+    },
+    {
+      "part": "servo_strap_sm105",
+      "relative_volume_change": 8.602925596009967e-07,
+      "saved_solids": 1
+    },
+    {
+      "part": "servo_strap_sm80",
+      "relative_volume_change": 8.766724394590765e-07,
       "saved_solids": 1
     }
   ]

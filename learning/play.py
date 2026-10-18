@@ -16,16 +16,17 @@ from learning.motion import MotionController, RunButtonLatch
 class RecoverySupervisor:
     """Use separate enter/exit thresholds and dwell times to avoid mode chatter."""
 
-    def __init__(self, available: bool):
+    def __init__(self, available: bool, nominal_height=.199):
         self.available = available
+        self.nominal_height=nominal_height
         self.mode = "walk"
         self.fallen_for = 0.0
         self.upright_for = 0.0
 
     def update(self, height: float, tilt: float, dt: float) -> str:
         finite = math.isfinite(height) and math.isfinite(tilt)
-        fallen = finite and (height < 0.10 or tilt > 0.90)
-        upright = finite and height > 0.15 and tilt < 0.45
+        fallen = finite and (height < .5*self.nominal_height or tilt > 0.90)
+        upright = finite and height > .75*self.nominal_height and tilt < 0.45
         self.fallen_for = self.fallen_for + dt if fallen else 0.0
         self.upright_for = self.upright_for + dt if upright else 0.0
         if self.available and self.mode == "walk" and self.fallen_for >= 0.25:
@@ -139,6 +140,20 @@ def _first(value):
 
 
 def pose_metrics(env):
+    if hasattr(env,'sensors'):
+        from simulation.model import graph,fk,rotation
+        from scripts.common import load
+        frame=env.sensors.frame();gravity=frame[0][0]
+        if not frame[5][0,0]:return float('nan'),float('nan')
+        tilt=math.acos(float(np.clip(-gravity[2],-1,1)))
+        c=load();q=dict(zip(env.names,env.state['qpos'][0,7:]));T=fk(graph(c),q,c);heights=[]
+        for i,leg in enumerate(c['legs']):
+            if not(frame[3][0,i] and frame[4][0,i]):continue
+            angle=-(env.home[i*3+1]+env.home[i*3+2]);foot=np.r_[np.array([0,0,-c['geometry']['shin']/1000])+rotation([0,1,0],angle)@np.array([0,0,-.021]),1.]
+            r=(T[leg+'_shin']@foot)[:3];heights.append(float(r@gravity))
+        height=float(np.median(heights)) if len(heights)>=2 else getattr(env,'_estimated_stance_height',env.nominal_height)
+        if len(heights)>=2:env._estimated_stance_height=height
+        return height,tilt
     state = env.state
     qpos = _first(state["qpos"])
     w, x, y, z = qpos[3:7]
@@ -152,7 +167,7 @@ def pose_metrics(env):
 
 
 def render_model(env, cad=False):
-    """Attach saved v02 CAD visuals to a separate rendering model only.
+    """Attach saved v04 CAD visuals to a separate rendering model only.
 
     The environment keeps its original lightweight native physics model. Joint
     state is copied into this model for display; its dynamics are never stepped.
@@ -250,11 +265,11 @@ def main(argv=None):
     parser.add_argument("--difficulty", type=float, default=0.25)
     parser.add_argument("--seconds", type=float, default=120)
     parser.add_argument("--seed", type=int, default=1_000_090)
-    parser.add_argument("--pose", choices=("stand", "left", "right", "prone", "supine"), default="stand")
+    parser.add_argument("--pose", choices=("stand", "left", "right", "folded_crouch", "supine"), default="stand")
     parser.add_argument("--command", nargs=3, type=float, default=(0., 0., 0.), metavar=("VX", "VY", "YAW"))
     parser.add_argument("--record", type=Path)
     parser.add_argument("--headless", action="store_true")
-    parser.add_argument("--cad", action="store_true", help="Render saved v02 CAD meshes; physics remains lightweight")
+    parser.add_argument("--cad", action="store_true", help="Render saved v04 CAD meshes; physics remains lightweight")
     parser.add_argument("--max-vx", type=float, default=0.25)
     parser.add_argument("--run-max-vx", type=float, default=0.60)
     parser.add_argument("--max-vy", type=float, default=0.20)
@@ -283,7 +298,7 @@ def main(argv=None):
     recovery, recovery_meta = load_policy(args.recover, device="cpu") if args.recover else (None, {})
     running, run_meta = load_policy(args.run, device="cpu") if args.run else (None, {})
     policies = {"walk": walk, "recover": recovery, "run": running, "walk-fast-fallback": walk}
-    supervisor = RecoverySupervisor(recovery is not None)
+    supervisor = RecoverySupervisor(recovery is not None, env.nominal_height)
     env = SweetieVecEnv(task="locomotion", num_envs=1, seed=args.seed, terrain=args.terrain,
                        difficulty=args.difficulty, randomize=False, threads=1)
     env.auto_reset = False
@@ -294,6 +309,8 @@ def main(argv=None):
                                     ("recovery", recovery_meta, recovery)):
         if policy is not None:
             validate_policy_metadata(label, metadata, observed_dim)
+            from learning.ppo import validate_environment_contract
+            validate_environment_contract(metadata,env)
     if args.pose != "stand" and recovery is not None:
         supervisor.mode = "recover"
     model = render_model(env, cad=args.cad)
@@ -381,6 +398,7 @@ def main(argv=None):
                 enabled = False
                 request["halt"] = False
             height, tilt = pose_metrics(env)
+            if not math.isfinite(tilt):raise RuntimeError("Stale or invalid IMU; stopping replay")
             mode = supervisor.update(height, tilt, period)
             command = motion.step(period, enabled=enabled, recovering=mode == "recover")
             effective = motion.effective_policy(recovering=mode == "recover", run_available=running is not None)

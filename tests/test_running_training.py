@@ -34,7 +34,7 @@ def test_running_curriculum_episode_bounds_and_identical_physical_response():
     np.testing.assert_array_equal(walk._reset_model.body_mass,run._reset_model.body_mass)
     np.testing.assert_array_equal(walk._reset_model.body_inertia,run._reset_model.body_inertia)
     np.testing.assert_array_equal(walk._reset_model.body_ipos,run._reset_model.body_ipos)
-    assert run.obs_dim==walk.obs_dim==165 and run.action_dim==walk.action_dim==12
+    assert run.obs_dim==walk.obs_dim==591 and run.action_dim==walk.action_dim==12
     assert run.max_episode_steps*run.dt<=12
     assert 1.2+.65*run.max_episode_steps*run.dt<run.terrain['extent_m']-.5
     for progress in (0.,.5,1.):
@@ -61,7 +61,7 @@ def test_running_curriculum_episode_bounds_and_identical_physical_response():
             np.testing.assert_allclose(walk.state[name],run.state[name],atol=1e-12)
         np.testing.assert_array_equal(walk.targets,run.targets)
         assert np.isfinite(obs).all() and np.isfinite(reward).all()
-        assert np.all(info['reward_terms']['forward_flight_bonus']==0)
+        assert np.all(info['reward_terms']['forward_flight_event']==0)
     assert np.all(run.phase-old_run_phase>walk.phase-old_walk_phase)
 
 

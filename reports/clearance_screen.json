@@ -1,10 +1,10 @@
 {
   "poses_sampled": 113,
-  "envelopes": 21,
+  "envelopes": 20,
   "threshold_mm3": 1,
   "warnings": [],
   "home_cowl_warnings": [],
   "head_pitch_case_center_y_mm": -2.863158165666846e-05,
-  "foot_centre_track_mm": 140,
+  "foot_centre_track_mm": 164,
   "scope": "Conservative axis-aligned-in-link motor/electronics boxes transformed through FK; home cowl checked against these boxes. Full configured ranges are NOT mechanically certified. Clamp, horn, shell, cable and bearing fits require physical checks."
 }

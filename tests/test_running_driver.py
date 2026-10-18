@@ -5,7 +5,7 @@ from learning.driver import migrate_schedule,score_development,POLICY_FILES
 
 def metrics():
     return {'survival_fraction':1.,'linear_command_rmse':.10,'yaw_command_rmse':.2,
-        'running_success_rate':.75,'rms_joint_torque_nm':[.8]*16,
+        'running_success_rate':.75,'rms_joint_torque_nm':[.8]*16,'continuous_torque_limits_nm':[1.5691]*16,
         'per_command':{name:{'running_success_rate':.75,'survival_fraction':1.,'mean_local_vx':.40}
                        for name in ('forward','fast_forward','run_turn')}}
 

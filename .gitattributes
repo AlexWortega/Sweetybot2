@@ -1,11 +1,4 @@
-# Generated CAD is distributed byte-for-byte, with no text diff or line conversion.
-*.step binary
-*.stl binary
-*.msh binary
-*.glb binary
-*.png binary
-*.jpg binary
-*.gif binary
-*.mp4 binary
-*.pdf binary
-references/*.html -diff
+# Generated CAD and verbatim vendor snapshots are reviewed as artifacts.
+cad/STEP/** -diff
+references/v04/*.html -diff
+*.csv text eol=lf

@@ -3,6 +3,8 @@ from pathlib import Path
 import os,subprocess,sys
 from scripts.common import ROOT
 NAMES=['deck','rail','body_shell','servo_cradle','roll_yoke','thigh_plate','shin_plate','hoof','head_shell','head_hatch','ear','mane','fit_coupon','axle_adapter','knee_fork','head_yoke','tail','servo_strap','horn','mane_stripe','neck_collar','thigh_fairing','shin_fairing']
+NAMES += ['camera_carrier', 'sensor_tray', 'depth_pod', 'hoof_sole_plate', 'hoof_tpu_pad', 'hoof_actuator', 'eye_bezel']
+NAMES += ['shin_rear_plate','servo_cradle_sm105','servo_cradle_sm80','servo_strap_sm105','servo_strap_sm80']
 HEADER='''from pathlib import Path
 import sys
 ROOT=Path(__file__).resolve().parents[2]

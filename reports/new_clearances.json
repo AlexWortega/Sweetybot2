@@ -1,0 +1,159 @@
+{
+  "scope": "New interfaces at neutral head/ear pose; not full articulated motion or tolerance certification",
+  "checks": [
+    {
+      "pair": [
+        "eye_board_1",
+        "eye_bezel_1"
+      ],
+      "overlap_mm3": 0,
+      "pass": true
+    },
+    {
+      "pair": [
+        "camera_carrier",
+        "pony_head_shell"
+      ],
+      "overlap_mm3": 0,
+      "pass": true
+    },
+    {
+      "pair": [
+        "camera_board",
+        "micro_ear_servo_1"
+      ],
+      "overlap_mm3": 0,
+      "pass": true
+    },
+    {
+      "pair": [
+        "camera_carrier",
+        "micro_ear_servo_1"
+      ],
+      "overlap_mm3": 0,
+      "pass": true
+    },
+    {
+      "pair": [
+        "eye_board_1",
+        "micro_ear_servo_1"
+      ],
+      "overlap_mm3": 0,
+      "pass": true
+    },
+    {
+      "pair": [
+        "eye_board_-1",
+        "micro_ear_servo_-1"
+      ],
+      "overlap_mm3": 0,
+      "pass": true
+    },
+    {
+      "pair": [
+        "eye_board_1",
+        "pony_head_shell"
+      ],
+      "overlap_mm3": 0,
+      "pass": true
+    },
+    {
+      "pair": [
+        "eye_board_-1",
+        "pony_head_shell"
+      ],
+      "overlap_mm3": 0,
+      "pass": true
+    },
+    {
+      "pair": [
+        "camera_board",
+        "pony_head_shell"
+      ],
+      "overlap_mm3": 0,
+      "pass": true
+    },
+    {
+      "pair": [
+        "camera_board",
+        "camera_carrier"
+      ],
+      "overlap_mm3": 0,
+      "pass": true
+    },
+    {
+      "pair": [
+        "micro_ear_servo_1",
+        "pony_head_shell"
+      ],
+      "overlap_mm3": 0,
+      "pass": true
+    },
+    {
+      "pair": [
+        "sensor_tray",
+        "compute_envelope"
+      ],
+      "overlap_mm3": 0,
+      "pass": true
+    },
+    {
+      "pair": [
+        "sensor_tray",
+        "battery_envelope"
+      ],
+      "overlap_mm3": 0,
+      "pass": true
+    },
+    {
+      "pair": [
+        "ear_6V_buck",
+        "compute_envelope"
+      ],
+      "overlap_mm3": 0,
+      "pass": true
+    },
+    {
+      "pair": [
+        "depth_board",
+        "head_yaw_cradle"
+      ],
+      "overlap_mm3": 0,
+      "pass": true
+    },
+    {
+      "pair": [
+        "depth_board",
+        "chest_tof_pod"
+      ],
+      "overlap_mm3": 0,
+      "pass": true
+    },
+    {
+      "inside_outer_head": "eye_board_1",
+      "outside_mm3": 0,
+      "pass": true
+    },
+    {
+      "inside_outer_head": "eye_board_-1",
+      "outside_mm3": 0,
+      "pass": true
+    },
+    {
+      "inside_outer_head": "camera_board",
+      "outside_mm3": 0,
+      "pass": true
+    },
+    {
+      "inside_outer_head": "micro_ear_servo_1",
+      "outside_mm3": 0,
+      "pass": true
+    },
+    {
+      "inside_outer_head": "micro_ear_servo_-1",
+      "outside_mm3": 0,
+      "pass": true
+    }
+  ],
+  "pass": true
+}

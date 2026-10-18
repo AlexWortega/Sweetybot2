@@ -171,6 +171,12 @@ def _safe_load(path: str | Path, device: str | torch.device):
     return torch.load(path, map_location=device, weights_only=False)
 
 
+def validate_environment_contract(saved,env):
+    expected=getattr(env,'observation_contract',None)
+    if expected and saved.get('environment_metadata',{}).get('observation_contract')!=expected:
+        raise ValueError('Checkpoint sensor observation contract differs; train v04 from scratch')
+
+
 def load_policy(checkpoint: str | Path, device: str = "cpu") -> tuple[Policy, dict[str, Any]]:
     saved = _safe_load(checkpoint, device)
     model = Policy(saved["obs_dim"], saved["action_dim"]).to(device)
@@ -195,7 +201,7 @@ def _checkpoint(path: Path, model: Policy, optimizer, config: TrainConfig,
         "initialization": initialization,
     }
     project = Path(__file__).resolve().parent.parent
-    tracked = ("config/robot.yaml", "simulation/generated/sweetie_mini.xml", "learning/env.py", "learning/native.cpp", "learning/ppo.py")
+    tracked = ("config/robot.yaml", "simulation/generated/sweetie_mini.xml", "learning/env.py", "learning/native.cpp", "learning/ppo.py", "learning/sensors.py", "learning/rewards.py", "hardware/observation.py")
     saved["source_hashes"] = {name: hashlib.sha256((project/name).read_bytes()).hexdigest()
                               for name in tracked if (project/name).exists()}
     if env is not None:
@@ -203,6 +209,8 @@ def _checkpoint(path: Path, model: Policy, optimizer, config: TrainConfig,
         saved["environment_metadata"] = {
             "task": getattr(env, "task", config.task),
             "observation_dimension": model.obs_dim,
+            "observation_contract": getattr(env,"observation_contract",None),
+            "reward_version": getattr(env,"reward_version",None),
             "action_dimension": model.action_dim,
             "model_path": str(model_path) if model_path is not None else None,
             "model_sha256": hashlib.sha256(Path(model_path).read_bytes()).hexdigest() if model_path is not None else None,
@@ -261,6 +269,7 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
         saved = torch.load(io.BytesIO(donor_bytes), map_location=device, weights_only=False)
         if saved["obs_dim"] != env.obs_dim or saved["action_dim"] != env.action_dim:
             raise ValueError("Initializer observation/action dimensions differ")
+        validate_environment_contract(saved,env)
         donor_task = saved.get("config", {}).get("task")
         if donor_task != config.task and (donor_task, config.task) != ("locomotion", "running"):
             raise ValueError("Cross-task initialization only supports locomotion to running")
@@ -279,6 +288,7 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
         saved = _safe_load(config.resume, device)
         if saved["obs_dim"] != env.obs_dim or saved["action_dim"] != env.action_dim:
             raise ValueError("Resume observation/action dimensions differ")
+        validate_environment_contract(saved,env)
         old = saved.get("config", {})
         if old.get("task", config.task) != config.task:
             raise ValueError("Cannot resume another task; use --initialize-from for locomotion to running")

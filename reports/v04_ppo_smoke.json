@@ -1,0 +1,50 @@
+{
+  "status": "max_steps_reached",
+  "steps": 1024,
+  "updates": 8,
+  "wall_seconds": 0.4112710829358548,
+  "metrics": {
+    "steps": 1024,
+    "updates": 8,
+    "wall_seconds": 0.4109549159184098,
+    "initialization_seconds": 3.456137375207618,
+    "process_wall_seconds": 3.86709237517789,
+    "total_wall_seconds": 3.867092458065599,
+    "transitions_per_second": 2491.757514839664,
+    "reward_mean": -0.04646264761686325,
+    "loss": 0.07521810382604599,
+    "approx_kl": 0.00024220533668994904,
+    "clip_fraction": 0.0,
+    "normal_entropy_mean": 8.627629280090332,
+    "episode": {
+      "return": {
+        "mean": -5.139915557686883,
+        "count": 1
+      },
+      "length_s": {
+        "mean": 0.58,
+        "count": 1
+      },
+      "recovery_success": {
+        "mean": 0.0,
+        "count": 1
+      },
+      "command_rmse": {
+        "mean": 0.23960862360086554,
+        "count": 1
+      },
+      "reset_kind": {
+        "mean": 0.0,
+        "count": 1
+      },
+      "fall": {
+        "mean": 1.0,
+        "count": 1
+      },
+      "disturbance_count": {
+        "mean": 0.0,
+        "count": 1
+      }
+    }
+  }
+}

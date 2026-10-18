@@ -1,0 +1,6 @@
+{
+  "pose": "home",
+  "method": "exact CAD BRep intersection; excludes intended clamp contacts",
+  "intersections": [],
+  "below_floor_at_home": []
+}

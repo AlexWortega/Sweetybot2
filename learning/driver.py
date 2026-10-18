@@ -172,7 +172,7 @@ def score_development(task: str, results: list[dict[str, Any]]):
                 raise ValueError("Missing recovery_success_rate")
             rates.append(result["recovery_success_rate"])
             orientations = result.get("per_orientation", {})
-            expected = [orientations.get(name, {}).get("success_rate") for name in ("prone", "left", "right", "supine")]
+            expected = [orientations.get(name, {}).get("success_rate") for name in ("folded_crouch", "left", "right", "supine")]
             if not all(_finite(x) for x in expected):
                 raise ValueError("Recovery evaluation must report all four orientations")
             minima.append(min(expected))
@@ -184,6 +184,7 @@ def score_development(task: str, results: list[dict[str, Any]]):
     # not a calibrated thermal model or evidence of physical validation.
     torque_values = []
     torque_complete = True
+    normalized_torque=[]
     for result in results:
         reported = result.get("rms_joint_torque_nm")
         values = reported if isinstance(reported, (list, tuple)) else [reported]
@@ -191,10 +192,14 @@ def score_development(task: str, results: list[dict[str, Any]]):
             torque_complete = False
         else:
             torque_values.extend(values)
+            limits=result.get("continuous_torque_limits_nm",[])
+            if len(limits)!=len(values) or not all(_finite(x) and x>0 for x in limits):torque_complete=False
+            else:normalized_torque.extend(v/limit for v,limit in zip(values,limits))
     observed_max = max(torque_values) if torque_values else None
-    torque_gate = torque_complete and observed_max is not None and observed_max <= 1.5691
+    torque_gate = torque_complete and observed_max is not None and bool(normalized_torque) and max(normalized_torque)<=1.
     aggregate.update(max_observed_rms_joint_torque_nm=observed_max,
-                     rated_torque_screen_limit_nm=1.5691,
+                     max_normalized_rms_joint_torque=max(normalized_torque) if normalized_torque else None,
+                     torque_screen="per-joint rated point, conservatively low-voltage derated; thermal surrogate separately enforced",
                      torque_gate_passed=bool(torque_gate),
                      torque_screen_physical_thermal_validation=False)
     qualified = qualified and torque_gate
@@ -317,6 +322,7 @@ def main():
     state_path = out / "status.json"
     if state_path.exists():
         state = json.loads(state_path.read_text())
+        if state.get("observation_contract")!="v04-sensor-suite-1":raise ValueError("Use a new v04 output directory; v02 run is immutable")
         if state.get("complete"):
             print("This driver already completed; choose another output for another authorized run.")
             return
@@ -330,7 +336,7 @@ def main():
                 path=Path(checkpoint).resolve()
                 if not path.is_file():raise FileNotFoundError(path)
                 warm_starts[task]=str(path)
-        state = {"started_epoch": started, "deadline_epoch": started+args.hours*3600,
+        state = {"observation_contract":"v04-sensor-suite-1", "reward_version":"v04-contact-energy-recovery-1", "started_epoch": started, "deadline_epoch": started+args.hours*3600,
                  "initial_prior_seconds": args.prior_seconds,
                  "budget_hours": args.hours, "complete": False,
                  "round": 0, "children": [], "latest_training": warm_starts,
@@ -397,7 +403,7 @@ def main():
                     continue
                 try:
                     finals[task][terrain] = evaluate(task, Path(champion["checkpoint"]), out / "final" / task / terrain,
-                                                     terrain, 3_000_000+index, final=True)
+                                                     terrain, 4_000_000+index, final=True)
                 except Exception as error:
                     finals[task][terrain] = {"status": "failed", "error": str(error)}
                 atomic_json(out / "final_results.json", finals)

@@ -36,13 +36,13 @@ def running_flight_bonus(velocity, commands, up, height, contacts, bad_contacts)
 
 
 def make_model(terrain='flat', difficulty=0., seed=1):
-    """Same inertials/joints as v02, primitive visuals and conservative horn contact."""
+    """V04 mass properties and physical sensors; collision primitives for training."""
     difficulty=float(np.clip(difficulty,0,1))
     if terrain=='mixed': terrain='rough'
     if terrain not in ('flat','rough','slope','steps'): raise ValueError(terrain)
     source=ROOT/'simulation/generated/sweetie_mini.xml'
     extent=10.;n_samples=321
-    fingerprint=hashlib.sha256(source.read_bytes()+f'{terrain}/{difficulty}/{seed}/rl-v4-extent10'.encode()).hexdigest()[:16]
+    fingerprint=hashlib.sha256(source.read_bytes()+f'{terrain}/{difficulty}/{seed}/rl-v04-sensors-thermal-1'.encode()).hexdigest()[:16]
     directory=ROOT/'learning/models'; directory.mkdir(parents=True,exist_ok=True)
     path=directory/f'{terrain}_{fingerprint}.xml'
     metadata={'terrain':terrain,'difficulty':difficulty,'seed':int(seed),'slope_radians':0.,'height_range_m':0.,
@@ -55,14 +55,6 @@ def make_model(terrain='flat', difficulty=0., seed=1):
     for geom in root.iter('geom'):
         if geom.get('group')=='3':
             geom.set('group','0'); geom.set('rgba','.90 .90 .96 1')
-        if geom.get('name')=='head_g7':
-            geom.set('contype','1');geom.set('conaffinity','1')
-    # The horn is a visual-only capsule in v02. Explicit collision is necessary
-    # for honest inversion recovery; do not change its mass or other CAD geometry.
-    head=root.find(".//body[@name='head']")
-    horn=head.find("geom[@fromto='0.048 0 0.088 0.048 0 0.121']")
-    if horn is not None:
-        horn.set('contype','1');horn.set('conaffinity','1');horn.set('name','horn_collision')
     root.find('option').set('iterations','40')
     world=root.find('worldbody'); floor=world.find("geom[@name='floor']")
     floor.set('size','12 12 .1')
@@ -97,9 +89,11 @@ def make_model(terrain='flat', difficulty=0., seed=1):
 
 
 class SweetieVecEnv:
+    observation_contract="v04-sensor-suite-1"
+    reward_version="v04-contact-energy-recovery-1"
     action_dim=12
-    frame_dim=55
-    obs_dim=165
+    frame_dim=197
+    obs_dim=591
     dt=.02
     reset_kind_names=('stand','folded_crouch','left','right','supine')
     def __init__(self,task='locomotion',nenvs=None,num_envs=128,threads=16,seed=1,terrain='flat',difficulty=0.,randomize=True,auto_reset=True):
@@ -128,7 +122,10 @@ class SweetieVecEnv:
         self.history=np.zeros((n,3,self.frame_dim),dtype=np.float32)
         self.encoder_bias=np.zeros((n,16));self.returns=np.zeros(n);self.stable=np.zeros(n,int);self.success=np.zeros(n,bool)
         self.reset_kind=np.zeros(n,int);self.params=np.zeros((n,8));self.velocity_error=np.zeros(n)
-        self.previous_up=np.ones(n); self.previous_height=np.full(n,.199)
+        self.nominal_height=(c['geometry']['stance_height']+c['geometry']['foot_radius'])/1000
+        self.previous_up=np.ones(n);self.previous_height=np.full(n,self.nominal_height)
+        from learning.sensors import SensorSuite
+        self.sensors=SensorSuite(n,seed+809,bool(randomize));self.previous_potential=np.zeros(n);self.flight_seconds=np.zeros(n);self.previous_feet=np.zeros((n,4,3));self.foot_velocity=np.zeros((n,4,3))
         self.max_episode_steps=500 if task=='recovery' else 600
         # Keep a bounded diagnostic tail during day-long runs; lifetime and
         # episode disturbance counts remain available in every step's info.
@@ -206,12 +203,12 @@ class SweetieVecEnv:
         kinds=np.zeros(k,int)
         if self.task=='recovery':
             # Keep near-goal resets throughout, progressively introduce real falls.
-            fallen_fraction=.35+.45*min(1,self.progress*3)
+            fallen_fraction=.65+.25*min(1,self.progress*3)
             fallen=r.random(k)<fallen_fraction
-            kinds[fallen]=r.choice([1,2,3,4],fallen.sum(),p=[.35,.25,.20,.20])
-        if pose is not None:kinds[:]=dict(stand=0,prone=1,left=2,right=3,supine=4)[pose]
+            kinds[fallen]=r.choice([1,2,3,4],fallen.sum(),p=[.10,.30,.30,.30])
+        if pose is not None:kinds[:]=dict(stand=0,folded_crouch=1,prone=1,left=2,right=3,supine=4)[pose]
         for i,kind in enumerate(kinds):
-            z=.199
+            z=self.nominal_height
             if kind==1:
                 # Legacy pose name "prone" means this folded upright crouch.
                 # It is easier than lying on the torso and must be reported as
@@ -219,6 +216,10 @@ class SweetieVecEnv:
                 q[i,7:19]=np.tile([0,-1.2,2.05],4);z=.10
             elif kind in (2,3,4):
                 angle={2:np.pi/2,3:-np.pi/2,4:np.pi}[kind]
+                if self.randomize and self.auto_reset:
+                    # Mostly near-goal fall curriculum, but retain 25% full falls from the start.
+                    scale=min(1,.25+1.5*self.progress)
+                    if r.random()>.25:angle*=scale
                 if self.randomize:
                     # Rz(yaw) Ry(pitch) Rx(roll): diversify falls rather than
                     # overwriting the heading with one exact side orientation.
@@ -237,11 +238,11 @@ class SweetieVecEnv:
             q[:,7:19]+=r.normal(0,jitter,(k,12));q[:,7:]=np.clip(q[:,7:],self.low,self.high)
         self._clear_reset_penetration(q)
         # Conservative dynamics randomization; specific STS parameters remain unmeasured.
-        p=np.tile([1.,.9,9.9,1.,1.,.0174533,1.,1.],(k,1))
+        p=np.tile([1.,.9,9.9,1.,1.,.00872665,1.,1.],(k,1))
         if self.randomize:
             spread=.3+.7*min(1,self.progress*3)
             p[:,0]=r.uniform(1-.15*spread,1+.2*spread,k)
-            p[:,1]=r.uniform(.55,1.15,k);p[:,2]=r.uniform(8.7,10.8,k)
+            p[:,1]=r.uniform(.55,1.15,k);p[:,2]=r.uniform(9.3,10.8,k)
             p[:,3]=r.uniform(.85,1.05,k);p[:,4]=r.uniform(.9,1.1,k)
             p[:,5]=r.uniform(.005,.035,k);p[:,6]=r.integers(0,4,k);p[:,7]=r.uniform(.85,1.15,k)
             self.encoder_bias[ids]=r.uniform(-.015,.015,(k,16))
@@ -252,6 +253,10 @@ class SweetieVecEnv:
         self.next_push_step[ids]=r.integers(200,501,k) if self.randomize and self.auto_reset else 10**9
         self._sample_commands(ids);self._read_state()
         self.previous_up[ids]=self.rot[ids,2,2];self.previous_height[ids]=self.height[ids]
+        self.sensors.reset(ids,self.state['imu_quat'][ids]);self.flight_seconds[ids]=0;self.previous_feet[ids]=self.state['feet'][ids]
+        from learning.rewards import recovery_potential
+        pose_error=np.square(self.state['qpos'][ids,7:19]-self.home[:12]).mean(1)
+        self.previous_potential[ids]=recovery_potential(self.rot[ids,2,2],self.height[ids],self.nominal_height,pose_error)
         frames=self._frame()[ids];self.history[ids]=frames[:,None,:]
 
     def _read_state(self):
@@ -263,14 +268,14 @@ class SweetieVecEnv:
 
     def _frame(self):
         q=self.state['qpos'][:,7:]-self.home+self.encoder_bias
-        dq=self.state['qvel'][:,6:]*.1
-        gravity=-self.rot[:,2,:]
-        gyro=self.local_angular*.25
+        dq=self.state['qvel'][:,6:]
+        gravity,gyro,accel,contact,contact_valid,imu_valid,imu_age,depth,depth_valid,depth_age=self.sensors.frame()
         if self.noise_enabled:
-            q=q+self.rng.normal(0,.003,q.shape);dq=dq+self.rng.normal(0,.015,dq.shape)
-            gravity=gravity+self.rng.normal(0,.01,gravity.shape);gyro=gyro+self.rng.normal(0,.01,gyro.shape)
-        return np.concatenate((gravity,gyro,q,dq,self.last_action,self.commands,
-                               np.sin(self.phase)[:,None],np.cos(self.phase)[:,None]),axis=1).astype(np.float32)
+            q=q+self.rng.normal(0,.003,q.shape);dq=dq+self.rng.normal(0,.15,dq.shape)
+        from hardware.observation import encode
+        frame=encode(self.sensors.frame(),q,dq,self.last_action,self.commands,self.phase)
+        assert frame.shape==(self.num_envs,self.frame_dim),frame.shape
+        return frame.astype(np.float32)
 
     def observe(self):return self.history.reshape(self.num_envs,-1).copy()
 
@@ -320,32 +325,33 @@ class SweetieVecEnv:
         self.targets=np.clip(self.targets,self.low,self.high)
         self._training_disturbances()
         self.native.step(self.targets);self.steps+=1;self._read_state()
+        self.sensors.update(self.state)
+        self.foot_velocity=(self.state["feet"]-self.previous_feet)/self.dt;self.previous_feet[:]=self.state["feet"]
         up=self.rot[:,2,2];vel=self.local_velocity;omega=self.local_angular
         error=np.square(vel[:,:2]-self.commands[:,:2]).sum(1)
         torque2=np.square(self.state['torque_rms']).sum(1)
         speed2=np.square(self.state['qvel'][:,6:18]).sum(1)
         action_rate=np.square(actions-self.last_action).mean(1)
         pose=np.square(self.state['qpos'][:,7:19]-self.home[:12]).mean(1)
-        self.stable=np.where((up>.90)&(self.height>.165)&(np.linalg.norm(vel[:,:2],axis=1)<.25),self.stable+1,0)
+        self.stable=np.where((up>.90)&(self.height>.84*self.nominal_height)&(np.linalg.norm(vel[:,:2],axis=1)<.25)&(self.height<1.4*self.nominal_height)&(self.state['contacts'].sum(1)>=3)&(self.state['bad_contacts']==0),self.stable+1,0)
         just_success=(self.stable>=35)&~self.success;self.success|=just_success
-        flight_bonus=np.zeros(self.num_envs)
+        from learning.rewards import locomotion_terms,recovery_terms
+        previous_flight=self.flight_seconds.copy()
+        clean_flight=(~self.state['contacts'].any(1))&(self.state['bad_contacts']==0)&(up>.8)&(self.height>.75*self.nominal_height)&(self.height<1.4*self.nominal_height)&(vel[:,0]>=.35)&(self.commands[:,0]>=.35)&(error<.04)&(np.abs(vel[:,2])<.6)
+        self.flight_seconds=np.where(clean_flight,self.flight_seconds+self.dt,0.)
         if self.task in ('locomotion','running'):
-            tracking=3*np.exp(-error/.025)+np.exp(-np.square(omega[:,2]-self.commands[:,2])/.35)
-            reward=tracking+.5*up+.3*np.exp(-np.square(self.height-.19)/.001)-.1*pose-.025*action_rate-.001*torque2-.0002*speed2-.02*np.square(omega[:,:2]).sum(1)
-            reward-=.05*self.state['bad_contacts']
-            if self.task=='running':
-                flight_bonus=running_flight_bonus(vel,self.commands,up,self.height,
-                                                  self.state['contacts'],self.state['bad_contacts'])
-                reward+=flight_bonus
-            failure=(up<.45)|(self.height<.085)
-            reward[failure]-=3
+            velocity_reward=np.concatenate((vel,self.state['qvel'][:,6:18]),axis=1)
+            terms=locomotion_terms(self.commands,velocity_reward,omega,up,self.height,self.nominal_height,
+                self.state['torque_rms'],self.state['motor_continuous'],actions,self.last_action,
+                self.state['qpos'][:,7:19],self.home[:12],self.state['contacts'],self.foot_velocity,
+                self.state['bad_contacts'],self.task,self.flight_seconds,previous_flight)
+            failure=(up<.45)|(self.height<.43*self.nominal_height)
         else:
-            upright=np.clip((up+1)/2,0,1)
-            height_reward=np.exp(-np.square(self.height-.19)/.002)*(up>.6)
-            reward=1.2*upright+1.5*height_reward+.6*np.exp(-pose/.3)*(up>.8)+3*(self.stable>0)
-            reward+=3*(up-self.previous_up)+8*(self.height-self.previous_height)*(up>.4)+4*just_success
-            reward-=.002*action_rate+.0003*speed2+.001*torque2
+            terms,self.previous_potential=recovery_terms(up,self.height,self.nominal_height,pose,self.previous_potential,
+                self.stable,just_success,actions,self.last_action,self.state['torque_rms'],self.state['motor_continuous'],self.state['bad_contacts'])
             failure=np.zeros(self.num_envs,bool)
+        reward=sum(terms.values())*self.dt
+        if self.task in ('locomotion','running'):reward[failure]-=3.
         failure|=~np.isfinite(self.state['qpos']).all(1)|(np.abs(self.state['qpos'][:,:2])>self.terrain['extent_m']-.5).any(1)
         self.previous_up=up.copy();self.previous_height=self.height.copy();self.returns+=reward;self.velocity_error+=np.sqrt(error)
         clock_base=1.8 if self.task=='running' else 1.2
@@ -366,7 +372,7 @@ class SweetieVecEnv:
                      'disturbance_count':self.disturbance_count[done].copy()}
         info={'truncated':truncated,'terminal_observation':terminal_obs,'episode':episode,'success':self.success.copy(),
               'total_disturbances':int(self.total_disturbances)}
-        if self.task=='running':info['reward_terms']={'forward_flight_bonus':flight_bonus.copy()}
+        info['reward_terms']={k:v.copy() for k,v in terms.items()}
         if self.auto_reset and done.any():self._reset_indices(np.flatnonzero(done))
         return self.observe(),reward.astype(np.float32),done,info
 
