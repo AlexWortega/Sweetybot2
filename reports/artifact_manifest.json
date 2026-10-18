@@ -9,8 +9,8 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 321,
-      "sha256": "fdfcad45f130d7cae669f0e5adb929a67c3976ceab7157d7c87572fb5ab039b1"
+      "bytes": 366,
+      "sha256": "37fa83d039f9bdcb02fe451b2f777d68b870057af93078fb34388efbca19d2b6"
     },
     {
       "path": "Makefile",
@@ -23801,16 +23801,6 @@
       "path": "renders/v05/manifest.json",
       "bytes": 8948,
       "sha256": "f52614d01ec1f9eace93d8bc2cdb1ba9286d3ff2634856b065376c70761266b6"
-    },
-    {
-      "path": "renders/v05/preview-manifest.json",
-      "bytes": 1011,
-      "sha256": "04ad52ab2dbfbb36a2a000f06622f2bcf6bd347044040d170ea70b0f2be57b50"
-    },
-    {
-      "path": "renders/v05/preview.png",
-      "bytes": 733463,
-      "sha256": "ab17633bec509fac5a5adfa7febe1a8320ad27b58d331cade1bd15e775ff3738"
     },
     {
       "path": "renders/v05/turntable/000.png",

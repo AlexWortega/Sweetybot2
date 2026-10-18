@@ -23,3 +23,6 @@ learning/checkpoints/
 reports/*.log
 
 .venv-collision/
+
+# MuJoCo runtime diagnostics
+MUJOCO_LOG.TXT
