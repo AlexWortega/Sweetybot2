@@ -1,6 +1,6 @@
 > **Current v05:** mechanical redesign, 12 SM105 leg motors, CAD-derived convex self-collisions and a dynamics-hashed 591-value sensor contract. Read [v05 digital acceptance and training scope](../docs/v05.md). V04 was withdrawn; v02 training below is historical and remains isolated.
 
-> **V04 update (2026-10-18):** root model now uses heterogeneous stronger servos and 591 observations (197 × 3), including IMU, binary contacts/health and 8×8 ToF. V02 checkpoints/results and the original 24h run remain separate. Start v04 from scratch in a fresh output directory; final held-out seeds are 4000000..4000099. [Current build, rewards and limits](../docs/v04.md). The historical 165-input protocol below describes v02.
+> **V05 update (2026-10-18):** the user authorized a separate 36-hour cycle on the mechanically accepted v05 model, from scratch with 591 observations (197 × 3): IMU, contacts/health and 8×8 ToF. The completed v02 24-hour run and its weights remain isolated. V04 is withdrawn. Final held-out seeds for v05 remain 4000000..4000099. [Current build](../docs/v05.md), [current training budget and protocol](../docs/rl-training.md). The historical 165-input protocol below describes v02.
 
 # SweetieMini v02: command locomotion and recovery
 

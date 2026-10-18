@@ -25,6 +25,14 @@ TASKS=("locomotion","recovery","running")
 POLICY_FILES={"locomotion":"walk.pt","recovery":"recover.pt","running":"run.pt"}
 
 
+def validate_budget(hours: float, chunk_seconds: float):
+    """Bound each authorized cycle, including setup, evaluation and GPU waits."""
+    if not math.isfinite(hours) or not 0 < hours <= 36:
+        raise ValueError("Budget must be finite, >0 and <=36h")
+    if not math.isfinite(chunk_seconds) or chunk_seconds <= 0:
+        raise ValueError("Chunk seconds must be finite and positive")
+
+
 def migrate_schedule(state):
     """Extend an existing run without resetting time, checkpoints or history."""
     if state.get('schedule_version',1)<2:
@@ -308,8 +316,7 @@ def main():
     from learning.readiness import require_training_ready,dynamics_signature
     require_training_ready()
     if args.require_gpu and args.device=='cpu':raise ValueError('--require-gpu cannot be combined with --device cpu')
-    if not 0 < args.hours <= 24 or args.chunk_seconds <= 0:
-        raise ValueError("Budget must be >0 and <=24h; chunk must be positive")
+    validate_budget(args.hours, args.chunk_seconds)
     if not math.isfinite(args.prior_seconds) or args.prior_seconds < 0:
         raise ValueError("Prior seconds must be finite and nonnegative")
     if not 1 <= args.threads <= 16:

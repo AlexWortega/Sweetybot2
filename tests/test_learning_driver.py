@@ -8,7 +8,18 @@ import time
 
 import pytest
 
-from learning.driver import promote, regresses, run_child, score_development, select_gpu
+from learning.driver import promote, regresses, run_child, score_development, select_gpu, validate_budget
+
+
+def test_authorized_36_hour_cycle_retains_a_finite_budget_cap():
+    validate_budget(24, 1200)
+    validate_budget(36, 1200)
+    for hours in (0, -1, 36.001, float('inf'), float('nan')):
+        with pytest.raises(ValueError):
+            validate_budget(hours, 1200)
+    for seconds in (0, -1, float('inf'), float('nan')):
+        with pytest.raises(ValueError):
+            validate_budget(36, seconds)
 
 
 def test_stationary_survivor_does_not_pass_locomotion_gate():

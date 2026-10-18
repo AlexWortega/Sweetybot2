@@ -1,6 +1,8 @@
 # v02: MuJoCo policies and gamepad
 
-The first experiment has a fixed 24-hour budget, started on 2026-10-17. The run now trains three PPO specialists: walking, running and recovery. The curriculum includes a separately trained running specialist. B or RB/R1 toggles walk/run; LB/L1 remains the deadman. A hysteretic runtime switches to recovery after a persistent fall, then returns to the selected motion mode after sustained upright stability. Training is ongoing; presence of weights does not establish completed skills.
+The user authorized a new, separate 36-hour v05 cycle on 2026-10-18. It starts from scratch in a fresh output directory on eva01, uses the accepted v05 dynamics and sensor contract, and trains walking, recovery and running specialists. The driver requires GPU capacity and includes setup, evaluation and any GPU waits in its 36-hour wall-time cap. Only one training GPU is used at a time; existing host services remain running. Check the run's `status.json`, `budget.json` and `launcher.log` for actual progress and deadlines. Presence of weights does not establish completed skills.
+
+The following pilot results describe the completed historical v02 24-hour cycle, not v05. B or RB/R1 toggles walk/run; LB/L1 remains the deadman. A hysteretic runtime switches to recovery after a persistent fall, then returns to the selected motion mode after sustained upright stability.
 
 The first 120-second locomotion pilot completed 1,032,192 transitions and 126 optimizer updates. A preliminary development test of 24 eight-second episodes had no falls. The forward command of 0.20 m/s produced mean local forward velocity 0.196 m/s. Overall linear RMSE was 0.181 m/s and yaw RMSE 0.619 rad/s; backward, side and turn commands remain poor. This pilot fails the full quality gate. Its video is a preliminary result, not proof of running or rough-terrain performance.
 
