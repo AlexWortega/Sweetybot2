@@ -21,3 +21,5 @@ learning/checkpoints/
 
 # Build diagnostics
 reports/*.log
+
+.venv-collision/

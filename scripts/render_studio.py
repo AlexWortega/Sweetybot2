@@ -45,6 +45,7 @@ def main():
     parser.add_argument('--camera-manifest',type=Path,help='Lock framing and lighting placement to an earlier studio manifest')
     parser.add_argument('--shots',nargs='+',choices=['01-midnight-hero','02-portrait','03-violet-profile'])
     parser.add_argument('--samples',type=int,default=96)
+    parser.add_argument('--turntable-frames',type=int,default=0,help='Additional 640x480 actual-CAD orbit frames for a GIF')
     argv=sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else []
     args=parser.parse_args(argv)
     if not args.glb.is_file():raise FileNotFoundError('Extract the complete CAD release first: '+str(args.glb))
@@ -66,6 +67,8 @@ def main():
         if not m.use_nodes:continue
         p=next((n for n in m.node_tree.nodes if n.type=='BSDF_PRINCIPLED'),None)
         if not p:continue
+        # Native glTF defaults to metallic=1; white PETG/TPU finishes are dielectric.
+        p.inputs['Metallic'].default_value=0.
         r,g,b,_=p.inputs['Base Color'].default_value
         value=max(r,g,b)
         if b>.95 and r<.01 and g<.01:
@@ -87,6 +90,7 @@ def main():
             p.inputs['Emission Color'].default_value=(r,g,b,1)
             p.inputs['Emission Strength'].default_value=.45
         elif abs(r-g)<.12 and abs(g-b)<.12 and value<.5:
+            p.inputs['Base Color'].default_value=(.055,.065,.085,1)
             p.inputs['Metallic'].default_value=.65
             p.inputs['Roughness'].default_value=.30
         else:
@@ -135,9 +139,9 @@ def main():
     fill=area('Cool fill',(center.x+.2,center.y+.55,.48),target,8,(.48,.72,1.),.45,.65)
     top=area('Top strip',(center.x-.1,center.y,.98),target,10,(1.,.92,.85),.28,.85)
     front=area('Eye catchlight',(center.x+.7,center.y-.2,.45),target,3,(1.,1.,1.),.15,.5)
-    shots=[('01-midnight-hero',Vector((1.,-1.22,.54)),1.46,target.copy(),70),
+    shots=[('01-midnight-hero',Vector((1.,-1.22,.54)),1.70,target.copy(),70),
            ('02-portrait',Vector((1.,-.88,.20)),.91,Vector((center.x+.073,center.y,frame_upper.z-.105)),82),
-           ('03-violet-profile',Vector((.15,-1.35,.30)),1.46,target.copy(),70)]
+           ('03-violet-profile',Vector((.15,-1.35,.30)),1.70,target.copy(),70)]
     if args.shots:shots=[shot for shot in shots if shot[0] in args.shots]
     if args.preview:shots=shots[:1]
     manifest={'renderer':bpy.app.version_string,'source':'cad/GLB/assembly.glb','source_sha256':hashlib.sha256(args.glb.read_bytes()).hexdigest(),'robot_mesh_objects':len(robot),'robot_vertices':vertices,'original_bounds_m':{'min':list(lower),'max':list(upper)},'robot_geometry_unchanged':True,'changes':'camera, stage, lighting and surface finishes; vendor CAD blue markers styled graphite, v03 pupils/optics styled deep black; native robot geometry preserved','shots':[]}
@@ -151,6 +155,16 @@ def main():
         print('STUDIO_RENDER',name,scene.render.filepath,flush=True)
         bpy.ops.render.render(write_still=True)
         manifest['shots'].append({'file':Path(scene.render.filepath).name,'camera_location_m':list(camera.location),'camera_target_m':list(look),'lens_mm':lens,'resolution':[scene.render.resolution_x,scene.render.resolution_y],'samples':scene.cycles.samples})
+    if args.turntable_frames:
+        directory=args.out/'turntable';directory.mkdir(exist_ok=True)
+        scene.render.resolution_x=640;scene.render.resolution_y=480;scene.cycles.samples=24
+        camera_data.lens=70;manifest['turntable']=[]
+        for index in range(args.turntable_frames):
+            angle=-.88+index*2*math.pi/args.turntable_frames
+            direction=Vector((math.cos(angle),math.sin(angle),.37)).normalized()
+            camera.location=target+direction*1.70;point_at(camera,target)
+            scene.render.filepath=str(directory/f'{index:03d}.png');bpy.ops.render.render(write_still=True)
+            manifest['turntable'].append({'file':str(Path('turntable')/f'{index:03d}.png'),'camera_location_m':list(camera.location),'camera_target_m':list(target)})
     (args.out/('preview-manifest.json' if args.preview else 'manifest.json')).write_text(json.dumps(manifest,indent=2)+'\n')
 
 

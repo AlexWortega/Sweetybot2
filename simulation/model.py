@@ -65,7 +65,9 @@ def graph(c=None):
 
 def joint_spec(name,c):
     kind='ear' if name.startswith('ear_') else name.removeprefix(name.split('_')[0]+'_') if name.split('_')[0] in c['legs'] else name
-    return c['joints'][kind]
+    spec=dict(c['joints'][kind])
+    if kind in ('hip_pitch','knee') and c['legs'][name.split('_')[0]]['x_sign']<0:spec['axis']=[0,-1,0]
+    return spec
 
 def rotation(axis,angle):
     a=np.array(axis,dtype=float);a/=np.linalg.norm(a)

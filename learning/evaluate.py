@@ -52,8 +52,9 @@ class FlightEvidence:
         self.longest_ticks[valid] = np.maximum(self.longest_ticks[valid], self.streak[valid])
         self.streak[ended] = 0
 
-    def update(self, contacts, bad_contacts, up, height, local_vx, active):
+    def update(self, contacts, bad_contacts, up, height, local_vx, active, self_contacts=None):
         valid = (~np.asarray(contacts, bool).any(axis=1)) & (np.asarray(bad_contacts) == 0)
+        if self_contacts is not None:valid &= np.asarray(self_contacts)==0
         valid &= (np.asarray(up) > .8) & (np.asarray(height) >= .75*self.nominal_height) & (np.asarray(height) <= 1.4*self.nominal_height)
         valid &= (np.asarray(local_vx) >= .35) & np.asarray(active, bool)
         self._finish(~valid)
@@ -147,6 +148,7 @@ def evaluate(checkpoint=None, task="locomotion", terrain="flat", difficulty=.25,
     aerial_streak = np.zeros(n)
     longest_aerial = np.zeros(n)
     contact_counts = np.zeros(n)
+    self_contact_ticks = np.zeros(n,int)
     flight = FlightEvidence(n, env.dt, nominal_height=env.nominal_height)
     renderer = writer = None
     record_index = 0 if task == "running" else episodes  # forward run/walk or prone recovery
@@ -192,8 +194,9 @@ def evaluate(checkpoint=None, task="locomotion", terrain="flat", difficulty=.25,
             speed_peak[active] = np.maximum(speed_peak[active], state["max_speed"][active])
             torque_squared[active] += np.square(state["torque_rms"][active])
             contact_counts[active] += state["bad_contacts"][active]
+            self_contact_ticks[active] += state['self_contacts'][active]>0
             flight.update(state["contacts"], state["bad_contacts"], env.rot[:, 2, 2],
-                          env.height, env.local_velocity[:, 0], active)
+                          env.height, env.local_velocity[:, 0], active,state["self_contacts"])
             air = (~state["contacts"].any(axis=1)) & (env.rot[:, 2, 2] > .75) & (env.height > .6*env.nominal_height) & active
             aerial += air
             forward_aerial += air & (env.local_velocity[:, 0] > .10)
@@ -218,10 +221,11 @@ def evaluate(checkpoint=None, task="locomotion", terrain="flat", difficulty=.25,
         denominator = np.maximum(count, 1)
         mean_velocity = velocity_sum / denominator[:, None]
         terminal_stable = ((env.rot[:, 2, 2] > .8) & (env.height >= .75*env.nominal_height) & (env.height <= 1.4*env.nominal_height)
-                           & (env.state["bad_contacts"] == 0))
+                           & (env.state["bad_contacts"] == 0) & (env.state["self_contacts"] == 0))
         valid_forward_air_fraction = flight.valid_ticks / denominator
         run_success = running_successes(alive, terminal_stable, mean_velocity[:, 0], command[:, 0],
                                         flight.intervals, valid_forward_air_fraction)
+        run_success &= self_contact_ticks==0
         rms_components = np.sqrt(error2 / denominator[:, None])
         rms_torque = np.sqrt(torque_squared / denominator[:, None])
         # env.success means at least 0.7 continuous seconds upright and slow.
@@ -250,6 +254,7 @@ def evaluate(checkpoint=None, task="locomotion", terrain="flat", difficulty=.25,
                 "forward_aerial_fraction": float(forward_aerial[index]/denominator[index]),
                 "max_aerial_duration_s": float(longest_aerial[index]),
                 "nonfoot_contacts_mean": float(contact_counts[index]/denominator[index]),
+                "self_contact_fraction":float(self_contact_ticks[index]/denominator[index]),
                 "terminal_stable": bool(terminal_stable[index]),
                 "running_success": bool(run_success[index]),
                 "valid_flight_intervals": int(flight.intervals[index]),
@@ -298,6 +303,7 @@ def evaluate(checkpoint=None, task="locomotion", terrain="flat", difficulty=.25,
             "checkpoint_metadata": metadata, "seed": int(seed),
             "split": "final" if seed >= 4_000_000 else "preview" if seed >= 2_000_000 else "development" if seed >= 1_000_000 else "training_range",
             "episodes_per_condition": episodes, "episodes": n, "seconds": float(seconds),
+            "self_contact_fraction":float(np.max(self_contact_ticks/denominator)),
             "survival_fraction": float(alive.mean()) if task != "recovery" else None,
             "command_rmse": float(np.linalg.norm(rms_components[moving], axis=1).mean()) if moving.any() else None,
             "linear_command_rmse": float(np.linalg.norm(rms_components[moving, :2], axis=1).mean()) if moving.any() else None,

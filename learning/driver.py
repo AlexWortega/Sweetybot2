@@ -202,7 +202,9 @@ def score_development(task: str, results: list[dict[str, Any]]):
                      torque_screen="per-joint rated point, conservatively low-voltage derated; thermal surrogate separately enforced",
                      torque_gate_passed=bool(torque_gate),
                      torque_screen_physical_thermal_validation=False)
-    qualified = qualified and torque_gate
+    collision_gate=all(_finite(r.get('self_contact_fraction')) and r['self_contact_fraction']==0 for r in results)
+    aggregate['self_collision_gate_passed']=bool(collision_gate)
+    qualified = qualified and torque_gate and collision_gate
     return float(score), bool(qualified), aggregate
 
 
@@ -300,8 +302,12 @@ def main():
     parser.add_argument("--threads", type=int, default=16)
     parser.add_argument("--cuda-visible-devices", default="1")
     parser.add_argument("--device", default="cuda:0")
+    parser.add_argument("--require-gpu", action="store_true", help="Wait for an idle GPU instead of silently falling back to CPU; wait counts against wall budget")
     parser.add_argument("--seed", type=int, default=37)
     args = parser.parse_args()
+    from learning.readiness import require_training_ready,dynamics_signature
+    require_training_ready()
+    if args.require_gpu and args.device=='cpu':raise ValueError('--require-gpu cannot be combined with --device cpu')
     if not 0 < args.hours <= 24 or args.chunk_seconds <= 0:
         raise ValueError("Budget must be >0 and <=24h; chunk must be positive")
     if not math.isfinite(args.prior_seconds) or args.prior_seconds < 0:
@@ -322,7 +328,7 @@ def main():
     state_path = out / "status.json"
     if state_path.exists():
         state = json.loads(state_path.read_text())
-        if state.get("observation_contract")!="v04-sensor-suite-1":raise ValueError("Use a new v04 output directory; v02 run is immutable")
+        if state.get("observation_contract")!="v05-sensor-suite-1":raise ValueError("Use a new v05 output directory; v02 run is immutable")
         if state.get("complete"):
             print("This driver already completed; choose another output for another authorized run.")
             return
@@ -336,7 +342,7 @@ def main():
                 path=Path(checkpoint).resolve()
                 if not path.is_file():raise FileNotFoundError(path)
                 warm_starts[task]=str(path)
-        state = {"observation_contract":"v04-sensor-suite-1", "reward_version":"v04-contact-energy-recovery-1", "started_epoch": started, "deadline_epoch": started+args.hours*3600,
+        state = {"dynamics_signature":dynamics_signature(), "observation_contract":"v05-sensor-suite-1", "reward_version":"v05-contact-energy-recovery-1", "started_epoch": started, "deadline_epoch": started+args.hours*3600,
                  "initial_prior_seconds": args.prior_seconds,
                  "budget_hours": args.hours, "complete": False,
                  "round": 0, "children": [], "latest_training": warm_starts,
@@ -418,6 +424,12 @@ def main():
             if spare < 30:
                 state["stop_reason"] = "reserved_final_evaluation_budget"
                 break
+            selection_device = capacity_guard(args.cuda_visible_devices, args.device, environment)
+            if args.require_gpu and selection_device['physical_gpu'] is None:
+                state['gpu_wait']=selection_device
+                persist('waiting_for_gpu')
+                time.sleep(min(30.,max(.01,deadline-time.time())))
+                continue
             round_index = state["round"]
             available=[TASKS[(state['schedule_index']+offset)%len(TASKS)] for offset in range(len(TASKS))
                        if state['consecutive_failures'][TASKS[(state['schedule_index']+offset)%len(TASKS)]]<3]
@@ -437,7 +449,6 @@ def main():
                 directory = directory.with_name(directory.name + f"_retry_{time.time_ns()}")
             directory.mkdir(parents=True, exist_ok=True)
             seconds = min(args.chunk_seconds, spare)
-            selection_device = capacity_guard(args.cuda_visible_devices, args.device, environment)
             chunk_environment = dict(environment)
             chunk_environment["CUDA_VISIBLE_DEVICES"] = selection_device["physical_gpu"] or ""
             command = [sys.executable, "-m", "learning.ppo", "--task", task,

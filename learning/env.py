@@ -1,4 +1,4 @@
-"""Batched, unassisted v02 MuJoCo environments with deployable proprioception.
+"""Batched, unassisted MuJoCo environments with deployable sensor observations.
 
 All root state used below is reward/reset/evaluation-only. The actor sees only
 IMU-like signals, encoders, commands, previous actions and an internal gait clock.
@@ -36,13 +36,13 @@ def running_flight_bonus(velocity, commands, up, height, contacts, bad_contacts)
 
 
 def make_model(terrain='flat', difficulty=0., seed=1):
-    """V04 mass properties and physical sensors; collision primitives for training."""
+    """Current CAD mass properties, convex assembly collisions and physical sensors."""
     difficulty=float(np.clip(difficulty,0,1))
     if terrain=='mixed': terrain='rough'
     if terrain not in ('flat','rough','slope','steps'): raise ValueError(terrain)
     source=ROOT/'simulation/generated/sweetie_mini.xml'
     extent=10.;n_samples=321
-    fingerprint=hashlib.sha256(source.read_bytes()+f'{terrain}/{difficulty}/{seed}/rl-v04-sensors-thermal-1'.encode()).hexdigest()[:16]
+    fingerprint=hashlib.sha256(source.read_bytes()+f'{terrain}/{difficulty}/{seed}/rl-v05-mechanics-1'.encode()).hexdigest()[:16]
     directory=ROOT/'learning/models'; directory.mkdir(parents=True,exist_ok=True)
     path=directory/f'{terrain}_{fingerprint}.xml'
     metadata={'terrain':terrain,'difficulty':difficulty,'seed':int(seed),'slope_radians':0.,'height_range_m':0.,
@@ -50,8 +50,10 @@ def make_model(terrain='flat', difficulty=0., seed=1):
     tree=ET.parse(source); root=tree.getroot()
     for parent in root.iter():
         for item in list(parent):
-            if item.tag=='mesh' or (item.tag=='geom' and item.get('type')=='mesh'):
+            if (item.tag=='mesh' and item.get('name','').endswith('_visual')) or (item.tag=='geom' and item.get('name','').endswith('_cad')):
                 parent.remove(item)
+    for mesh in root.iter('mesh'):
+        if mesh.get('file'):mesh.set('file',str((source.parent/mesh.get('file')).resolve()))
     for geom in root.iter('geom'):
         if geom.get('group')=='3':
             geom.set('group','0'); geom.set('rgba','.90 .90 .96 1')
@@ -73,7 +75,7 @@ def make_model(terrain='flat', difficulty=0., seed=1):
             np.array([n,n],dtype=np.int32).tofile(f);h.astype(np.float32).tofile(f)
         amplitude=max(.00001,.025*difficulty)
         ET.SubElement(root.find('asset'),'hfield',name='terrain',file=binary.name,size=f'{extent} {extent} {amplitude} .1')
-        ET.SubElement(world,'geom',name='terrain',type='hfield',hfield='terrain',rgba='.53 .62 .46 1',friction='.9 .015 .001')
+        ET.SubElement(world,'geom',name='terrain',type='hfield',hfield='terrain',rgba='.53 .62 .46 1',friction='.9 .015 .001',contype='1',conaffinity='7')
         floor.set('pos','0 0 -.101')
         metadata.update(height_range_m=amplitude,height_samples=h.tolist())
     elif terrain=='steps':
@@ -81,7 +83,7 @@ def make_model(terrain='flat', difficulty=0., seed=1):
         metadata['n_steps']=int(2*extent/.1)
         for i in range(metadata['n_steps']):
             x=-extent+(i+.5)*.1; top=height*(i%6)/5
-            ET.SubElement(world,'geom',name=f'step_{i}',type='box',size=f'.05 {extent} {(.1+top)/2}',pos=f'{x} 0 {(top-.1)/2}',rgba='.62 .65 .67 1')
+            ET.SubElement(world,'geom',name=f'step_{i}',type='box',size=f'.05 {extent} {(.1+top)/2}',pos=f'{x} 0 {(top-.1)/2}',rgba='.62 .65 .67 1',contype='1',conaffinity='7')
     ET.indent(root,space='  '); tree.write(path,encoding='unicode')
     public={k:v for k,v in metadata.items() if k!='height_samples'}
     path.with_suffix('.json').write_text(json.dumps(public,indent=2)+'\n')
@@ -89,8 +91,8 @@ def make_model(terrain='flat', difficulty=0., seed=1):
 
 
 class SweetieVecEnv:
-    observation_contract="v04-sensor-suite-1"
-    reward_version="v04-contact-energy-recovery-1"
+    observation_contract="v05-sensor-suite-1"
+    reward_version="v05-contact-energy-recovery-1"
     action_dim=12
     frame_dim=197
     obs_dim=591
@@ -193,6 +195,24 @@ class SweetieVecEnv:
                 raise RuntimeError('Could not initialize robot clear of terrain')
             row[2]=data.qpos[2]
 
+    def _clear_reset_self_collision(self,qpos,reference):
+        """Reject invalid reset jitter; never repair or teleport active episodes.
+
+        Joint limits alone do not certify the Cartesian product of leg angles.
+        Shrink jitter toward the requested reset kind, preserving its root pose.
+        An invalid reference pose is a model error and stops the run.
+        """
+        import mujoco
+        model,data=self._reset_model,self._reset_data
+        for row,base in zip(qpos,reference):
+            delta=row[7:]-base[7:]
+            for attempt in range(9):
+                row[7:]=np.clip(base[7:]+delta*(.5**attempt if attempt<8 else 0.),self.low,self.high)
+                data.qpos[:]=row;data.qpos[2]=2.;data.qvel[:]=0
+                mujoco.mj_forward(model,data)
+                if not any(c.dist<-.00001 and model.geom_bodyid[c.geom1]>0 and model.geom_bodyid[c.geom2]>0 for c in data.contact):break
+            else:raise RuntimeError('Requested reset kind self-collides; mechanical/physics acceptance must be repeated')
+
     def _reset_indices(self,ids,pose=None):
         ids=np.asarray(ids,dtype=np.int64);k=len(ids)
         if not k:return
@@ -209,6 +229,12 @@ class SweetieVecEnv:
         if pose is not None:kinds[:]=dict(stand=0,folded_crouch=1,prone=1,left=2,right=3,supine=4)[pose]
         for i,kind in enumerate(kinds):
             z=self.nominal_height
+            if kind==0 and self.terrain['terrain']=='slope':
+                # Initialize a neutral stance tangent to its support plane.
+                # This is episode setup, never a mid-episode pose correction.
+                tilt=-self.terrain['slope_radians']/2;heading=yaw[i]/2
+                ct,st=np.cos(tilt),np.sin(tilt);ch,sh=np.cos(heading),np.sin(heading)
+                q[i,3:7]=[ct*ch,st*sh,st*ch,ct*sh]
             if kind==1:
                 # Legacy pose name "prone" means this folded upright crouch.
                 # It is easier than lying on the torso and must be reported as
@@ -233,9 +259,11 @@ class SweetieVecEnv:
             elif self.task=='recovery' and r.random()<.5 and pose is None:
                 q[i,7:19]=np.tile([0,-.9,1.75],4);z=.15
             q[i,2]=z+self.ground_height(q[i,0],q[i,1])
+        reference=q.copy()
         if self.randomize:
             jitter=.12 if self.task=='recovery' else .03
             q[:,7:19]+=r.normal(0,jitter,(k,12));q[:,7:]=np.clip(q[:,7:],self.low,self.high)
+        self._clear_reset_self_collision(q,reference)
         self._clear_reset_penetration(q)
         # Conservative dynamics randomization; specific STS parameters remain unmeasured.
         p=np.tile([1.,.9,9.9,1.,1.,.00872665,1.,1.],(k,1))
@@ -325,6 +353,7 @@ class SweetieVecEnv:
         self.targets=np.clip(self.targets,self.low,self.high)
         self._training_disturbances()
         self.native.step(self.targets);self.steps+=1;self._read_state()
+        if self.state['physics_warnings'].any():raise RuntimeError('MuJoCo solver/arena warning; invalid physics must not enter training')
         self.sensors.update(self.state)
         self.foot_velocity=(self.state["feet"]-self.previous_feet)/self.dt;self.previous_feet[:]=self.state["feet"]
         up=self.rot[:,2,2];vel=self.local_velocity;omega=self.local_angular
@@ -333,11 +362,11 @@ class SweetieVecEnv:
         speed2=np.square(self.state['qvel'][:,6:18]).sum(1)
         action_rate=np.square(actions-self.last_action).mean(1)
         pose=np.square(self.state['qpos'][:,7:19]-self.home[:12]).mean(1)
-        self.stable=np.where((up>.90)&(self.height>.84*self.nominal_height)&(np.linalg.norm(vel[:,:2],axis=1)<.25)&(self.height<1.4*self.nominal_height)&(self.state['contacts'].sum(1)>=3)&(self.state['bad_contacts']==0),self.stable+1,0)
+        self.stable=np.where((up>.90)&(self.height>.84*self.nominal_height)&(np.linalg.norm(vel[:,:2],axis=1)<.25)&(self.height<1.4*self.nominal_height)&(self.state['contacts'].sum(1)>=3)&(self.state['bad_contacts']==0)&(self.state.get('self_contacts',np.zeros(self.num_envs))==0),self.stable+1,0)
         just_success=(self.stable>=35)&~self.success;self.success|=just_success
         from learning.rewards import locomotion_terms,recovery_terms
         previous_flight=self.flight_seconds.copy()
-        clean_flight=(~self.state['contacts'].any(1))&(self.state['bad_contacts']==0)&(up>.8)&(self.height>.75*self.nominal_height)&(self.height<1.4*self.nominal_height)&(vel[:,0]>=.35)&(self.commands[:,0]>=.35)&(error<.04)&(np.abs(vel[:,2])<.6)
+        clean_flight=(~self.state['contacts'].any(1))&(self.state['bad_contacts']==0)&(self.state['self_contacts']==0)&(up>.8)&(self.height>.75*self.nominal_height)&(self.height<1.4*self.nominal_height)&(vel[:,0]>=.35)&(self.commands[:,0]>=.35)&(error<.04)&(np.abs(vel[:,2])<.6)
         self.flight_seconds=np.where(clean_flight,self.flight_seconds+self.dt,0.)
         if self.task in ('locomotion','running'):
             velocity_reward=np.concatenate((vel,self.state['qvel'][:,6:18]),axis=1)
@@ -350,6 +379,7 @@ class SweetieVecEnv:
             terms,self.previous_potential=recovery_terms(up,self.height,self.nominal_height,pose,self.previous_potential,
                 self.stable,just_success,actions,self.last_action,self.state['torque_rms'],self.state['motor_continuous'],self.state['bad_contacts'])
             failure=np.zeros(self.num_envs,bool)
+        terms['self_collision']=-.2*np.minimum(self.state.get('self_contacts',np.zeros(self.num_envs)),10)
         reward=sum(terms.values())*self.dt
         if self.task in ('locomotion','running'):reward[failure]-=3.
         failure|=~np.isfinite(self.state['qpos']).all(1)|(np.abs(self.state['qpos'][:,:2])>self.terrain['extent_m']-.5).any(1)

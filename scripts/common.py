@@ -36,6 +36,8 @@ def require_mechanical_gate():
     g=json.loads(p.read_text())
     if not g.get('passed') or not g.get('all_link_pairs_checked'):
         raise ValueError(g.get('reason','Full mechanical audit has not passed'))
+    required={'config/robot.yaml','simulation/model.py','cad/src/lib/shapes.py','cad/src/lib/sensors_face.py','cad/src/lib/actuation_v05.py'}
+    if not required.issubset(g.get('source_sha256',{})):raise ValueError('Mechanical audit input hashes are incomplete')
     for name,digest in g.get('source_sha256',{}).items():
         if hashlib.sha256((ROOT/name).read_bytes()).hexdigest()!=digest:raise ValueError('Mechanical audit is stale: '+name)
     return g

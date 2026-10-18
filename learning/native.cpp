@@ -209,28 +209,29 @@ class Batch {
     py::array_t<double> gyro({count_,10,3}),accel({count_,10,3}),forces({count_,10,4}),depth({count_,64}),age(count_),quat({count_,4}),heat({count_,16}),continuous({count_,16}),caps({count_,16});
     auto gy=gyro.mutable_unchecked<3>(),ac=accel.mutable_unchecked<3>(),fo=forces.mutable_unchecked<3>();
     auto dep=depth.mutable_unchecked<2>(),qu=quat.mutable_unchecked<2>(),he=heat.mutable_unchecked<2>(),ct=continuous.mutable_unchecked<2>(),ca=caps.mutable_unchecked<2>();auto ag=age.mutable_unchecked<1>();
-    py::array_t<bool> contacts({count_,4});py::array_t<int> bad(count_);
+    py::array_t<bool> contacts({count_,4});py::array_t<int> bad(count_),self_contacts(count_),warnings(count_);
     auto qp_=qp.mutable_unchecked<2>(),qv_=qv.mutable_unchecked<2>();
     auto ft=feet.mutable_unchecked<3>();
     auto tq=torque.mutable_unchecked<2>(),rm=rms.mutable_unchecked<2>(),sp=speed.mutable_unchecked<2>();
     auto pk=peak.mutable_unchecked<2>();
-    auto co=contacts.mutable_unchecked<2>();auto bc=bad.mutable_unchecked<1>();
+    auto co=contacts.mutable_unchecked<2>();auto bc=bad.mutable_unchecked<1>();auto sc=self_contacts.mutable_unchecked<1>();auto wa=warnings.mutable_unchecked<1>();
     for(int i=0;i<count_;++i) {
       const auto& e=*envs_[i];const auto* m=e.model.get();const auto* d=e.data.get();
+      wa(i)=0;for(int w=0;w<mjNWARNING;++w)wa(i)+=d->warning[w].number;
       for(int tick=0;tick<10;++tick) {for(int a=0;a<3;++a){gy(i,tick,a)=e.imu_gyro[tick*3+a];ac(i,tick,a)=e.imu_accel[tick*3+a];}for(int f=0;f<4;++f)fo(i,tick,f)=e.foot_force[tick*4+f];}
       for(int f=0;f<4;++f)qu(i,f)=d->sensordata[quat_adr_+f];
       for(int p=0;p<64;++p)dep(i,p)=e.depth[p];ag(i)=e.depth_age;
       for(int j=0;j<16;++j){he(i,j)=e.heat[j];ct(i,j)=e.continuous[j];ca(i,j)=e.caps[j];}
       for(int j=0;j<nq_;++j) qp_(i,j)=d->qpos[j];for(int j=0;j<nv_;++j) qv_(i,j)=d->qvel[j];
       for(int f=0;f<4;++f) {co(i,f)=false;for(int j=0;j<3;++j) ft(i,f,j)=d->site_xpos[3*feet_sites_[f]+j];}
-      bc(i)=0;
+      bc(i)=0;sc(i)=0;
       for(int c=0;c<d->ncon;++c) {
         const auto& contact=d->contact[c];int g1=contact.geom1,g2=contact.geom2;
         if(contact.dist>0) continue;
         int body_geom=-1;
         if(m->geom_bodyid[g1]==0 && m->geom_bodyid[g2]!=0) body_geom=g2;
         else if(m->geom_bodyid[g2]==0 && m->geom_bodyid[g1]!=0) body_geom=g1;
-        if(body_geom<0) continue;bool foot=false;
+        if(body_geom<0) {if(m->geom_bodyid[g1]!=0 && m->geom_bodyid[g2]!=0)++sc(i);continue;}bool foot=false;
         for(int f=0;f<4;++f) if(body_geom==feet_geoms_[f]) {co(i,f)=true;foot=true;}
         if(!foot) ++bc(i);
       }
@@ -239,7 +240,7 @@ class Batch {
     py::dict out;out["qpos"]=qp;out["qvel"]=qv;out["feet"]=feet;out["contacts"]=contacts;
     out["imu_gyro_samples"]=gyro;out["imu_accel_samples"]=accel;out["imu_quat"]=quat;
     out["foot_force_samples"]=forces;out["depth_ranges"]=depth;out["depth_age"]=age;out["motor_heat"]=heat;out["motor_continuous"]=continuous;out["motor_cap"]=caps;
-    out["bad_contacts"]=bad;out["torque"]=torque;out["torque_rms"]=rms;out["torque_peak"]=peak;out["max_speed"]=speed;return out;
+    out["physics_warnings"]=warnings;out["self_contacts"]=self_contacts;out["bad_contacts"]=bad;out["torque"]=torque;out["torque_rms"]=rms;out["torque_peak"]=peak;out["max_speed"]=speed;return out;
   }
 };
 PYBIND11_MODULE(_sweetie_native,m) {

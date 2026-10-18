@@ -1,139 +1,31 @@
 {
-  "passed": false,
-  "status": "WITHDRAWN_MECHANICAL_INTERFERENCE",
-  "reason": "Exact CAD checks find interpenetrating independently moving parts, including at home. Do not fabricate v04 or treat its simplified MuJoCo stand as mechanical validation.",
-  "audit": "reports/v04_motion_audit.json",
-  "sampled_poses": 39,
-  "poses_with_intersections": 39,
-  "home_intersections": [
-    {
-      "parts": [
-        "fl_pitch_cradle",
-        "chassis_deck"
-      ],
-      "links": [
-        "fl_roll",
-        "torso"
-      ],
-      "overlap_mm3": 1370.1449992912758
-    },
-    {
-      "parts": [
-        "fl_pitch_strap_-41.55",
-        "chassis_deck"
-      ],
-      "links": [
-        "fl_roll",
-        "torso"
-      ],
-      "overlap_mm3": 15.260905201230798
-    },
-    {
-      "parts": [
-        "fl_roll_yoke",
-        "chassis_deck"
-      ],
-      "links": [
-        "fl_roll",
-        "torso"
-      ],
-      "overlap_mm3": 2341.061309995085
-    },
-    {
-      "parts": [
-        "fl_roll_yoke",
-        "rail_1"
-      ],
-      "links": [
-        "fl_roll",
-        "torso"
-      ],
-      "overlap_mm3": 285.2811182007829
-    },
-    {
-      "parts": [
-        "fl_roll_yoke",
-        "body_cowl"
-      ],
-      "links": [
-        "fl_roll",
-        "torso"
-      ],
-      "overlap_mm3": 44.24116203139892
-    },
-    {
-      "parts": [
-        "fl_roll_yoke",
-        "fl_roll_cradle"
-      ],
-      "links": [
-        "fl_roll",
-        "torso"
-      ],
-      "overlap_mm3": 85.83796447372309
-    },
-    {
-      "parts": [
-        "fl_knee_cradle",
-        "fl_knee_support_fork"
-      ],
-      "links": [
-        "fl_thigh",
-        "fl_shin"
-      ],
-      "overlap_mm3": 113.45414468353414
-    },
-    {
-      "parts": [
-        "fl_thigh_cheek_5",
-        "fl_shin_cheek_front"
-      ],
-      "links": [
-        "fl_thigh",
-        "fl_shin"
-      ],
-      "overlap_mm3": 3121.14893428267
-    },
-    {
-      "parts": [
-        "fl_thigh_cheek_-60.1",
-        "fl_knee_support_fork"
-      ],
-      "links": [
-        "fl_thigh",
-        "fl_shin"
-      ],
-      "overlap_mm3": 2731.7393297479953
-    },
-    {
-      "parts": [
-        "fl_thigh_cheek_-60.1",
-        "chassis_deck"
-      ],
-      "links": [
-        "fl_thigh",
-        "torso"
-      ],
-      "overlap_mm3": 29.109397708950183
-    },
-    {
-      "parts": [
-        "fl_thigh_fairing",
-        "fl_shin_fairing"
-      ],
-      "links": [
-        "fl_thigh",
-        "fl_shin"
-      ],
-      "overlap_mm3": 217.6998330419779
-    }
+  "passed": true,
+  "status": "SAMPLED_DIGITAL_GEOMETRY_ACCEPTED",
+  "all_link_pairs_checked": true,
+  "sampled_poses": 140,
+  "scope": "All separate physical components at fixed-link assembly and all cross-link surface pairs in the declared home, individual joint, coordinated gait and recovery-reset cohort. Exact solid intersections confirm FCL triangle candidates. This is sampled geometry, not continuous collision detection or all joint combinations.",
+  "fabrication_approved": false,
+  "physical_validation": "not run",
+  "bench_gates": [
+    "shaft/horn spline and screw engagement",
+    "bearing fits and load test",
+    "fastener access and cable routing on actual assembly",
+    "fatigue and servo thermal endurance",
+    "power/BMS/fuse coordination",
+    "real firmware, drivers and sensor timing"
   ],
-  "all_link_pairs_checked": false,
   "source_sha256": {
-    "config/robot.yaml": "5e8502148aa2b1a539999d614fcd2cf1a530247a5be1ae67e8bc58fe8c41005a",
-    "simulation/model.py": "c6570261caa1290a9fab53e1ce816a2094f0a25eef83d1740ce27a515cf598c5",
-    "cad/src/lib/shapes.py": "5e94f7f2330806f2d242d2849693eb97ff394369005ff6ee6033a9e888827e9d",
+    "config/robot.yaml": "7918107f94a430abcd70efedb5671ee4edd806befe7343eeaa28fdb5b398ab08",
+    "simulation/model.py": "542b6e6aca85ee183c502be3ccfef4d2167bf70cc23cd9c044e40c4ebb947b66",
+    "cad/src/lib/shapes.py": "21aeb0ca0604ed4da6e557988d449149189db758f78d3123ec9f0040228e8ca4",
     "cad/src/lib/sensors_face.py": "7148d93c61fa3bc742fead75e10f87bad4f528b4981de4efdb32bd309cf12b94",
-    "cad/src/lib/actuation_v04.py": "d4b6ef5cfa80efdca347168f1a912bd35a6005d55d578758bdc3c5f73abeac76"
+    "cad/src/lib/actuation_v05.py": "7aea4d12aeefd98c00fbade2e5e2a79ae5b7efceac0a0673207880cd49656c31",
+    "reports/static_fit.json": "46d88e0298e8e6c742fb029f9c95354cc7e683a9b7e446dcc264de1dffd98b08",
+    "reports/full_motion_audit.json": "968f0364d4fd3660d25940a908a8737b7e6119f159ee6582fe83dbaf61bab3e9",
+    "scripts/audit_inputs.py": "3508a99a0af25a5fddf9bef03dfa0e0f78b3174a5fb09e329260a6d5afdafb32",
+    "scripts/check_assembly_fits.py": "e14bb7bf8dd09d0ab9dc780a9b3a763516ba0a68b77eb106e8268f2a9f6b4e37",
+    "scripts/check_motion_candidates.py": "9f9edf9d98df97003c492fef3ded242647489c803cc2fc8e71a4b134c53f7e49",
+    "scripts/cad_snapshot.py": "ea11a6a382b6ebff2293e8963cc2ee9c9cf0e5295ee135dd96e6e48ea6ba0d81",
+    "reports/cad_snapshot.json": "235d10cda8cfea7b83b9c0c4a62265520d93e8727b6100f79b0c3848920bc627"
   }
 }

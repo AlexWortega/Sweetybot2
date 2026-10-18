@@ -389,5 +389,5 @@ FACTORIES['tail']=tail
 # v03 candidate only; the accepted v02 workspace is never imported or modified.
 from lib import sensors_face
 sensors_face.install(globals())
-from lib import actuation_v04
-actuation_v04.install(globals())
+from lib import actuation_v05
+actuation_v05.install(globals())

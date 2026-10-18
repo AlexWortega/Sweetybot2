@@ -29,7 +29,7 @@ def test_forward_kinematics_against_engine(c,model):
   for leg in c['legs']:
    pt=transforms[leg+'_shin']@np.array([0,0,-c['geometry']['shin']/1000,1])
    from simulation.model import rotation
-   angle=-(home(c)[leg+'_hip_pitch']+home(c)[leg+'_knee']);pt[:3]+=transforms[leg+'_shin'][:3,:3]@rotation([0,1,0],angle)@np.array([0,0,-.021])
+   angle=-joint_spec(leg+'_hip_pitch',c)['axis'][1]*(home(c)[leg+'_hip_pitch']+home(c)[leg+'_knee']);pt[:3]+=transforms[leg+'_shin'][:3,:3]@rotation([0,1,0],angle)@np.array([0,0,-.021])
    world=pt[:3]+d.qpos[:3]
    np.testing.assert_allclose(world,d.site_xpos[model.site(leg+'_foot').id],atol=1e-9)
 
@@ -107,7 +107,7 @@ def test_mesh_conversion_preserves_geometry():
 def test_requested_narrow_stance_and_centred_neck():
  b=json.loads((ROOT/'reports/assembly_bounds.json').read_text())
  g=json.loads((ROOT/'reports/clearance_screen.json').read_text())
- assert b['dimensions'][1]<=205
- assert g['foot_centre_track_mm']==164
+ assert b['dimensions'][1]<=260
+ assert g['foot_centre_track_mm']==200
  assert abs(g['head_pitch_case_center_y_mm'])<.001
  assert not g['home_cowl_warnings']

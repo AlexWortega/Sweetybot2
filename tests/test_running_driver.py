@@ -4,7 +4,7 @@ from learning.driver import migrate_schedule,score_development,POLICY_FILES
 
 
 def metrics():
-    return {'survival_fraction':1.,'linear_command_rmse':.10,'yaw_command_rmse':.2,
+    return {'self_contact_fraction':0.,'survival_fraction':1.,'linear_command_rmse':.10,'yaw_command_rmse':.2,
         'running_success_rate':.75,'rms_joint_torque_nm':[.8]*16,'continuous_torque_limits_nm':[1.5691]*16,
         'per_command':{name:{'running_success_rate':.75,'survival_fraction':1.,'mean_local_vx':.40}
                        for name in ('forward','fast_forward','run_turn')}}
@@ -47,3 +47,11 @@ def test_running_gate_checks_each_surface_and_real_velocity():
     fallen=metrics();fallen['per_command']['fast_forward']['survival_fraction']=.5
     assert not score_development('running',[metrics(),fallen])[1]
     with pytest.raises(ValueError):score_development('running',[{}])
+
+
+def test_champion_rejects_any_self_collision_or_missing_measurement():
+ good=metrics();assert score_development('running',[good])[1]
+ good['self_contact_fraction']=.001
+ assert not score_development('running',[good])[1]
+ del good['self_contact_fraction']
+ assert not score_development('running',[good])[1]

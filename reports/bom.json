@@ -1,18 +1,10 @@
 {
-  "revision": "digital-prototype-04-actuation-sensing",
+  "revision": "digital-prototype-05-mechanical-redesign",
   "price_status": "planning allowances, not quotes",
   "items": [
     {
-      "item": "SM80BL-C001",
-      "quantity": 4,
-      "status": "candidate; not purchased",
-      "notes": "RS485",
-      "url": "https://ftservo.github.io/ftservo-wiki/products/models/sm-80bl-c001/main/",
-      "unit_usd": 85.0
-    },
-    {
       "item": "SM105BL-C001",
-      "quantity": 8,
+      "quantity": 12,
       "status": "candidate; not purchased",
       "notes": "RS485",
       "url": "https://ftservo.github.io/ftservo-wiki/products/models/sm-105b-c001/main/",
@@ -251,7 +243,7 @@
       "unit_usd": null
     },
     {
-      "item": "USB TTL servo adapter",
+      "item": "Waveshare Bus Servo Adapter A (TTL only), 42x33mm",
       "quantity": 1,
       "status": "procurement specification",
       "notes": "2 neck and 2 ear motors; TTL signal bus separate from RS485",
@@ -259,7 +251,7 @@
       "unit_usd": null
     },
     {
-      "item": "USB OTG hub/cable + two adapter cables",
+      "item": "Adafruit CH334F USB hub 5999 + OTG and adapter cables",
       "quantity": 1,
       "status": "procurement specification",
       "notes": "Pi Zero has one USB data port; envelope and cable routing provisional",
@@ -307,10 +299,34 @@
       "unit_usd": null
     },
     {
-      "item": "Fasteners, passive output supports, horns and bearing interfaces",
+      "item": "6807 bearings, 35x47x7mm",
+      "quantity": 8,
+      "status": "procurement specification",
+      "notes": "catalogue envelope; fits, retention and external load rating require bench checks",
+      "url": "",
+      "unit_usd": null
+    },
+    {
+      "item": "0.75 and 0.80mm rigid shim stock for 14 motor clamps",
+      "quantity": 70,
+      "status": "procurement specification",
+      "notes": "case and strap seating pads, gauge against purchased cases",
+      "url": "",
+      "unit_usd": null
+    },
+    {
+      "item": "M3 low socket heads, <=6mm diameter and <=3mm height",
+      "quantity": 160,
+      "status": "procurement specification",
+      "notes": "8 per driven flange, heads included in CAD; confirm screw lengths and engagement",
+      "url": "",
+      "unit_usd": null
+    },
+    {
+      "item": "M2 bearing retainers and neck/ear horns",
       "quantity": 1,
       "status": "procurement specification",
-      "notes": "drawing-derived placeholders; physical fit coupon and loaded joint required",
+      "notes": "shaft spline datum, screw lengths, shoulder fits and loaded joints remain physical gates",
       "url": "",
       "unit_usd": null
     }

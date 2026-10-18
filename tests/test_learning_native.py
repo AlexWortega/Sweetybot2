@@ -57,7 +57,9 @@ def test_native_neutral_stand_and_no_root_support(physics_xml):
     for _ in range(1000):
         batch.step(target)
     state = batch.state()
-    assert .22 < state["qpos"][0, 2] < .26
+    from scripts.common import load
+    g=load()['geometry'];nominal=(g['stance_height']+g['foot_radius'])/1000
+    assert .85*nominal < state["qpos"][0,2] < 1.05*nominal
     assert np.all(state["contacts"])
     assert not state["bad_contacts"].any()
     assert np.isfinite(state["qpos"]).all()

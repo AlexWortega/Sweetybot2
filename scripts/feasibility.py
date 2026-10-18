@@ -1,4 +1,4 @@
-"""Per-axis v04 engineering screen using the actual heterogeneous motor set."""
+"""Per-axis engineering screen using the configured motor set."""
 import json,math
 from scripts.common import ROOT,load,total_mass,joint_names,actuator,continuous_limits
 
@@ -21,11 +21,11 @@ def screen(c):
  return rows
 
 def main():
- c=load();rows=screen(c);result={'status':'conditional per-axis analytical screen; temperatures and dynamics unmeasured','nominal_mass_kg':total_mass(c),'design_mass_kg':total_mass(c)*1.2,'all_pass':all(r['passes_screen'] for r in rows),'joints':rows,'assumptions':{'loaded_leg_weight_fraction':.5,'torque_margin':1.5,'transition_moment_arm_m':.065,'battery_v':c['power']['battery']['cutoff_voltage'],'joint_speed_rad_s':c['selection']['required_joint_speed'],'rated_point':'manufacturer rated point is not a proven continuous thermal rating','torque_speed':'uncalibrated linear envelope'},'power':{'main_fuse_a':40,'leg_fuse_a':10,'bms_continuous_a':40,'catalogue_12_leg_stall_a':8*6.3+4*5.9,'all_stall_exceeds_main_fuse':True,'fuse_coordination_verified':False}}
+ c=load();rows=screen(c);result={'status':'conditional per-axis analytical screen; temperatures and dynamics unmeasured','nominal_mass_kg':total_mass(c),'design_mass_kg':total_mass(c)*1.2,'all_pass':all(r['passes_screen'] for r in rows),'joints':rows,'assumptions':{'loaded_leg_weight_fraction':.5,'torque_margin':1.5,'transition_moment_arm_m':.065,'battery_v':c['power']['battery']['cutoff_voltage'],'joint_speed_rad_s':c['selection']['required_joint_speed'],'rated_point':'manufacturer rated point is not a proven continuous thermal rating','torque_speed':'uncalibrated linear envelope'},'power':{'main_fuse_a':40,'leg_fuse_a':10,'bms_continuous_a':40,'catalogue_12_leg_stall_a':12*6.3,'all_stall_exceeds_main_fuse':True,'fuse_coordination_verified':False}}
  (ROOT/'reports/feasibility.json').write_text(json.dumps(result,indent=2)+'\n')
- text=['# V04 actuator screen','','Rated catalogue points are screened at 9.3V and 0.8rad/s. They are not thermal certification. A 20% mass contingency, 50% load on one leg and 1.5 torque margin are included.','','| Joint | Servo | Required/rated envelope Nm | Transition/burst Nm | Pass |','|---|---|---:|---:|---|']
+ text=['# V05 actuator screen','','Rated catalogue points are screened at 9.3V and 0.8rad/s. They are not thermal certification. A 20% mass contingency, 50% load on one leg and 1.5 torque margin are included.','','| Joint | Servo | Required/rated envelope Nm | Transition/burst Nm | Pass |','|---|---|---:|---:|---|']
  for r in rows:text.append(f"|{r['joint']}|{r['candidate']}|{r['sustained_requirement_nm']:.3f}/{r['conditional_sustained_allowance_nm']:.3f}|{r['transient_requirement_nm']:.3f}/{r['conditional_transient_allowance_nm']:.3f}|{r['passes_screen']}|")
- text+=['','All simultaneously stalled leg motors alone draw a catalogue 74A, above the 40A main fuse. Stall is a fault, not a valid motion. Fuse, BMS, connectors, regenerative overvoltage and joint temperature require bench validation. No load rating is inferred from stall torque alone.']
+ text+=['','All simultaneously stalled leg motors alone draw a catalogue 75.6A, above the 40A main fuse. Stall is a fault, not a valid motion. Fuse, BMS, connectors, regenerative overvoltage and joint temperature require bench validation. No load rating is inferred from stall torque alone.']
  (ROOT/'docs/feasibility.md').write_text('\n'.join(text)+'\n');print(json.dumps(result,indent=2))
  if not result['all_pass']:raise SystemExit(1)
 if __name__=='__main__':main()

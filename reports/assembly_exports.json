@@ -1,0 +1,60 @@
+{
+  "geometry_signature": "7fd143cc1e7e55dc22f5e6c1abf331cb2fe995ccb3bc5d138c6d5e9b13f2e546",
+  "config_sha256": "7918107f94a430abcd70efedb5671ee4edd806befe7343eeaa28fdb5b398ab08",
+  "cad_snapshot_sha256": "235d10cda8cfea7b83b9c0c4a62265520d93e8727b6100f79b0c3848920bc627",
+  "method": "verified placed component STEP solids, shared FK, semantic surface finishes; geometry preserved",
+  "assemblies": [
+    {
+      "name": "assembly",
+      "step": "cad/STEP/assembly.step",
+      "relative_volume_change": 6.336142464937526e-07,
+      "bounds_mm": [
+        [
+          -165.23914923551632,
+          -123.0,
+          -2.458094109671846e-12
+        ],
+        [
+          185.4212123121774,
+          123.0,
+          532.9988001100006
+        ]
+      ],
+      "glb_sha256": "05184cca0d63e9ed259ec25c16e0564e772ac9a53f8c7846bd17b2ecf26a5359"
+    },
+    {
+      "name": "internal",
+      "step": "cad/STEP/internal.step",
+      "relative_volume_change": 2.6601202427811625e-11,
+      "bounds_mm": [
+        [
+          -165.23914923551632,
+          -123.0,
+          -2.458094109671846e-12
+        ],
+        [
+          184.520681415841,
+          123.0,
+          532.9988001100006
+        ]
+      ]
+    },
+    {
+      "name": "exploded",
+      "step": "cad/STEP/exploded.step",
+      "relative_volume_change": 6.336142464937526e-07,
+      "bounds_mm": [
+        [
+          -205.23914923551635,
+          -183.0,
+          -25.00000000000246
+        ],
+        [
+          205.23914923551635,
+          183.0,
+          602.9988001100006
+        ]
+      ]
+    }
+  ]
+}

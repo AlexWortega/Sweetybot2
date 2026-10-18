@@ -1,0 +1,33 @@
+{
+  "purpose": "optimizer, checkpoint loading and replay plumbing only; no learned capability claim",
+  "dynamics_signature": "966005c71d05349fc90c818df4ee8c9d1e8a7737c9552392cced0ddd210acf4e",
+  "tasks": [
+    {
+      "task": "locomotion",
+      "device": "cpu",
+      "steps": 1024,
+      "updates": 8,
+      "status": "max_steps_reached",
+      "checkpoint_sha256": "c2f7362fc3ce18544ddab47678484df13c164241678d3b36d0f9efbce85dad82"
+    },
+    {
+      "task": "running",
+      "device": "cpu",
+      "steps": 128,
+      "updates": 1,
+      "status": "max_steps_reached",
+      "checkpoint_sha256": "be1183847a55c1eafc3c44d91ed5dd9ee145be339b3c81a9675dca68c10529a4"
+    },
+    {
+      "task": "recovery",
+      "device": "cpu",
+      "steps": 128,
+      "updates": 1,
+      "status": "max_steps_reached",
+      "checkpoint_sha256": "48811f1aed588d8f713b7e5e8e0a6ed7b7129923ee52d1a076a6244006d1e087"
+    }
+  ],
+  "headless_cad_replay_seconds": 1,
+  "run_mode_activated": true,
+  "physical_joystick_tested": false
+}

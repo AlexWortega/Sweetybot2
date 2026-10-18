@@ -1,4 +1,4 @@
-> V04: sensor placement and electrical design retained; sampled actor and simulated contacts are now implemented. See [v04 contract](v04.md). Physical firmware/driver verification is still pending.
+> V05: current placements, sampled actor and electrical limits are in [the v05 contract](v05.md). Head/ear and support-frame geometry changed; the descriptions below are historical sensor selection notes. Physical firmware/driver commissioning is pending.
 
 # Sensor hardware arrangement
 

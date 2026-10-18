@@ -1,11 +1,10 @@
-# V04 bill of materials
+# V05 bill of materials
 
-Hardware candidate; no purchasing or physical assembly performed. Servo allowances: SM105 $120 each, SM80 $85 each, STS3250 $44.99 each; these are unverified planning amounts.
+Hardware candidate; no purchasing or physical assembly performed. Servo allowances: 12 SM105 $120 each, two STS3250 $44.99 each; these are unverified planning amounts.
 
 | Item | Qty | Qualification |
 |---|---:|---|
-|SM80BL-C001|4|RS485|
-|SM105BL-C001|8|RS485|
+|SM105BL-C001|12|RS485|
 |STS3250-12V|2|TTL SMS/STS; confirm firmware protocol|
 |STS3032-C001-6V|2|TTL SMS/STS; confirm firmware protocol|
 |Pololu D30V30F6 6V regulator|1|validate current and temperature at 3S LiFePO4 input|
@@ -35,11 +34,14 @@ Hardware candidate; no purchasing or physical assembly performed. Servo allowanc
 |Actuator tip|4|verify switch actuation and overtravel|
 |Raspberry Pi Zero 2 W + microSD|1|logic compute|
 |USB RS485 adapter, 3.3V-safe USB logic, SMS protocol support|1|12 leg motors only; differential A/B and common reference|
-|USB TTL servo adapter|1|2 neck and 2 ear motors; TTL signal bus separate from RS485|
-|USB OTG hub/cable + two adapter cables|1|Pi Zero has one USB data port; envelope and cable routing provisional|
+|Waveshare Bus Servo Adapter A (TTL only), 42x33mm|1|2 neck and 2 ear motors; TTL signal bus separate from RS485|
+|Adafruit CH334F USB hub 5999 + OTG and adapter cables|1|Pi Zero has one USB data port; envelope and cable routing provisional|
 |3S LiFePO4 >=2.5Ah pack with >=40A continuous BMS|1|9.9V nominal, 10.8V max, loaded cutoff 9.3V; real pack sag unmeasured|
 |40A main fuse, four 10A leg, 5A head and 5A logic fuses|1|DC disconnect and fuse coordination require loaded tests|
 |12AWG main, 16AWG leg branches, rated connectors|1|short feeds; fused parallel power; do not daisy-chain motor load current|
 |5V >=3A logic buck + motor-only disconnect|1|logic survives motor emergency stop|
 |6061 CNC load parts|1|deck, rails, clamps, yokes, cheek plates, forks, adapters and spacers; not FDM load parts|
-|Fasteners, passive output supports, horns and bearing interfaces|1|drawing-derived placeholders; physical fit coupon and loaded joint required|
+|6807 bearings, 35x47x7mm|8|catalogue envelope; fits, retention and external load rating require bench checks|
+|0.75 and 0.80mm rigid shim stock for 14 motor clamps|70|case and strap seating pads, gauge against purchased cases|
+|M3 low socket heads, <=6mm diameter and <=3mm height|160|8 per driven flange, heads included in CAD; confirm screw lengths and engagement|
+|M2 bearing retainers and neck/ear horns|1|shaft spline datum, screw lengths, shoulder fits and loaded joints remain physical gates|

@@ -67,7 +67,8 @@ def test_old_checkpoint_contract_is_rejected_even_if_dimensions_are_forged():
  from learning.ppo import validate_environment_contract
  class E:observation_contract='v04-sensor-suite-1'
  with pytest.raises(ValueError):validate_environment_contract({'obs_dim':591},E())
- validate_environment_contract({'environment_metadata':{'observation_contract':E.observation_contract}},E())
+ from learning.readiness import dynamics_signature
+ validate_environment_contract({'environment_metadata':{'observation_contract':E.observation_contract,'dynamics_signature':dynamics_signature()}},E())
 
 def test_collector_crc_reordering_and_broken_contact_wire_are_invalid():
  from hardware.telemetry import Decoder,pack

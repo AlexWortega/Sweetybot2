@@ -3,204 +3,204 @@
     "link": "torso",
     "path": "cad/STL/links/torso.stl",
     "mujoco_path": "cad/STL/links/torso.msh",
-    "triangles": 259472,
+    "triangles": 78098,
     "bounds_mm": [
-      280.88894859683677,
-      147.00000020000004,
-      112.00000020000104
+      280.88894859678135,
+      208.0,
+      112.00000020000002
     ],
-    "volume_mm3": 666621.5760809816
+    "volume_mm3": 988841.8359724547
   },
   {
     "link": "fl_roll",
     "path": "cad/STL/links/fl_roll.stl",
     "mujoco_path": "cad/STL/links/fl_roll.msh",
-    "triangles": 11776,
+    "triangles": 24228,
     "bounds_mm": [
-      49.0,
-      58.5,
-      104.75000010000016
+      65.25,
+      61.150000000000006,
+      130.75
     ],
-    "volume_mm3": 136771.16096424908
+    "volume_mm3": 178884.18316466387
   },
   {
     "link": "fl_thigh",
     "path": "cad/STL/links/fl_thigh.stl",
     "mujoco_path": "cad/STL/links/fl_thigh.msh",
-    "triangles": 27318,
+    "triangles": 40722,
     "bounds_mm": [
-      41.5000002,
-      74.6000001,
-      136.75000010000016
+      72.0,
+      84.5,
+      163.0000001
     ],
-    "volume_mm3": 140385.77066310073
+    "volume_mm3": 191778.15089972343
   },
   {
     "link": "fl_shin",
     "path": "cad/STL/links/fl_shin.stl",
     "mujoco_path": "cad/STL/links/fl_shin.msh",
-    "triangles": 26020,
+    "triangles": 32064,
     "bounds_mm": [
-      41.92104351730339,
-      78.6000001,
-      143.32859614233266
+      42.0,
+      94.5,
+      152.55046236110843
     ],
-    "volume_mm3": 44869.906059691886
+    "volume_mm3": 75926.86705242658
   },
   {
     "link": "fr_roll",
     "path": "cad/STL/links/fr_roll.stl",
     "mujoco_path": "cad/STL/links/fr_roll.msh",
-    "triangles": 11776,
+    "triangles": 24228,
     "bounds_mm": [
-      49.0,
-      58.5,
-      104.75000010000016
+      65.25,
+      61.150000000000006,
+      130.75
     ],
-    "volume_mm3": 115254.38803360515
+    "volume_mm3": 178884.18316466504
   },
   {
     "link": "fr_thigh",
     "path": "cad/STL/links/fr_thigh.stl",
     "mujoco_path": "cad/STL/links/fr_thigh.msh",
-    "triangles": 27318,
+    "triangles": 40722,
     "bounds_mm": [
-      41.5000002,
-      74.6000001,
-      136.75000010000016
+      72.0,
+      84.5,
+      163.0000001
     ],
-    "volume_mm3": 140385.77066310073
+    "volume_mm3": 191778.15089972244
   },
   {
     "link": "fr_shin",
     "path": "cad/STL/links/fr_shin.stl",
     "mujoco_path": "cad/STL/links/fr_shin.msh",
-    "triangles": 26020,
+    "triangles": 32064,
     "bounds_mm": [
-      41.92104351730339,
-      78.6000001,
-      143.32859614233266
+      42.0,
+      94.5,
+      152.55046236110843
     ],
-    "volume_mm3": 40335.89469205066
+    "volume_mm3": 75926.86705093192
   },
   {
     "link": "rl_roll",
     "path": "cad/STL/links/rl_roll.stl",
     "mujoco_path": "cad/STL/links/rl_roll.msh",
-    "triangles": 11776,
+    "triangles": 24228,
     "bounds_mm": [
-      49.0,
-      58.5,
-      104.75000010000016
+      65.25,
+      61.150000000000006,
+      130.75
     ],
-    "volume_mm3": 111692.45420995586
+    "volume_mm3": 184103.56717783958
   },
   {
     "link": "rl_thigh",
     "path": "cad/STL/links/rl_thigh.stl",
     "mujoco_path": "cad/STL/links/rl_thigh.msh",
-    "triangles": 27318,
+    "triangles": 40722,
     "bounds_mm": [
-      41.5000002,
-      74.6000001,
-      136.75000010000016
+      72.0,
+      84.5,
+      163.0000001
     ],
-    "volume_mm3": 140385.77066310073
+    "volume_mm3": 197676.1189259625
   },
   {
     "link": "rl_shin",
     "path": "cad/STL/links/rl_shin.stl",
     "mujoco_path": "cad/STL/links/rl_shin.msh",
-    "triangles": 26020,
+    "triangles": 32064,
     "bounds_mm": [
-      41.92104351730339,
-      78.6000001,
-      143.32859614233266
+      42.0,
+      94.5,
+      152.55046236110002
     ],
-    "volume_mm3": 44869.906059691886
+    "volume_mm3": 77284.03507717839
   },
   {
     "link": "rr_roll",
     "path": "cad/STL/links/rr_roll.stl",
     "mujoco_path": "cad/STL/links/rr_roll.msh",
-    "triangles": 11776,
+    "triangles": 24228,
     "bounds_mm": [
-      49.0,
-      58.5,
-      104.75000010000016
+      65.25,
+      61.150000000000006,
+      130.75
     ],
-    "volume_mm3": 111692.45420995586
+    "volume_mm3": 183424.98316466456
   },
   {
     "link": "rr_thigh",
     "path": "cad/STL/links/rr_thigh.stl",
     "mujoco_path": "cad/STL/links/rr_thigh.msh",
-    "triangles": 27318,
+    "triangles": 40722,
     "bounds_mm": [
-      41.5000002,
-      74.6000001,
-      136.75000010000016
+      72.0,
+      84.5,
+      163.0000001
     ],
-    "volume_mm3": 140385.77066310073
+    "volume_mm3": 196318.95089972753
   },
   {
     "link": "rr_shin",
     "path": "cad/STL/links/rr_shin.stl",
     "mujoco_path": "cad/STL/links/rr_shin.msh",
-    "triangles": 26020,
+    "triangles": 32064,
     "bounds_mm": [
-      41.92104351730339,
-      78.6000001,
-      143.32859614233266
+      42.0,
+      94.5,
+      152.55046236110002
     ],
-    "volume_mm3": 40335.89469205066
+    "volume_mm3": 75926.86705232412
   },
   {
     "link": "neck_yaw",
     "path": "cad/STL/links/neck_yaw.stl",
     "mujoco_path": "cad/STL/links/neck_yaw.msh",
-    "triangles": 199202,
+    "triangles": 2236,
     "bounds_mm": [
-      60.00000020026852,
-      62.000000200277505,
-      62.50000020000001
+      68.0000002,
+      68.0000002,
+      61.8605001
     ],
-    "volume_mm3": 28554.5172842757
+    "volume_mm3": 81088.87177665051
   },
   {
     "link": "head",
     "path": "cad/STL/links/head.stl",
     "mujoco_path": "cad/STL/links/head.msh",
-    "triangles": 191792,
+    "triangles": 192144,
     "bounds_mm": [
-      120.44704685227524,
-      98.12209012661623,
-      124.00000005
+      121.42121241217743,
+      98.12209012660932,
+      152.00000005
     ],
-    "volume_mm3": 129565.53072173837
+    "volume_mm3": 140778.99037632943
   },
   {
     "link": "ear_left",
     "path": "cad/STL/links/ear_left.stl",
     "mujoco_path": "cad/STL/links/ear_left.msh",
-    "triangles": 7346,
+    "triangles": 17780,
     "bounds_mm": [
-      16.4000002,
-      26.000000200000006,
-      73.00000020000002
+      18.750000088097288,
+      35.0000001999996,
+      62.99880021000065
     ],
-    "volume_mm3": 10792.63054195393
+    "volume_mm3": 9740.880180766939
   },
   {
     "link": "ear_right",
     "path": "cad/STL/links/ear_right.stl",
     "mujoco_path": "cad/STL/links/ear_right.msh",
-    "triangles": 7346,
+    "triangles": 17420,
     "bounds_mm": [
-      16.4000002,
-      26.000000200000006,
-      73.00000020000002
+      18.750000088097288,
+      35.000000199995974,
+      62.99880021000065
     ],
-    "volume_mm3": 10792.63054195393
+    "volume_mm3": 9740.891995534981
   }
 ]

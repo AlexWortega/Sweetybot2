@@ -6,13 +6,13 @@ import json,sys,yaml
 import numpy as np
 from scripts.common import ROOT,load,actuator,actuator_masses
 sys.path.insert(0,str(ROOT/'cad/src'))
-from lib.shapes import link_components
+from scripts.cad_snapshot import load_parts as link_components
 from cadgen import build123d as bd
 
 def main():
- c=load();a=c['sensing']['mass_allowances_kg'];parts=link_components();props={};ledger=[]
+ c=load();a=c['sensing']['mass_allowances_kg'];parts=link_components(require_snapshot=True);props={};ledger=[]
  fixed={'battery_envelope':c['power']['battery']['pack_mass_kg'],'compute_envelope':.013,
- 'adapter_envelope':.010,'rs485_adapter':.012,'regulator_envelope':.010,'imu_board':a['imu_breakout'],
+ 'adapter_envelope':.016,'rs485_adapter':.012,'usb_hub':.0022,'regulator_envelope':.010,'imu_board':a['imu_breakout'],
  'collector':a['collector_with_connector'],'depth_board':a['depth_with_harness']-.001,
  'depth_optic':.001,'ear_6V_buck':.012,'depth_3V3_buck':a['depth_3v3_buck'],
  'camera_board':a['camera_with_fpc']-.002,'camera_lens':.002}
@@ -20,19 +20,22 @@ def main():
   rows=[]
   for s in children:
    n=s.label;material='PETG';density=1.27e-6;mass=None
-   if any(t in n for t in ['display_','eyebrow_','smile_pigment','nostril_','ear_inner_']):mass=0.;material='appearance only'
+   if 'M3_heads' in n:mass=0.;material='purchased fastener heads, mass included in fastener_wiring_allowance'
+   elif '_clamp_shims' in n:density=2.7e-6;material='rigid aluminium shim stock'
+   elif any(t in n for t in ['display_','eyebrow_','smile_pigment','nostril_','ear_inner_']):mass=0.;material='appearance only'
    elif n.endswith('_servo'):
     joint=n.removesuffix('_servo').replace('_roll','_hip_roll').replace('_pitch','_hip_pitch') if n[:2] in c['legs'] else n.removesuffix('_servo')
     mass=actuator(c,joint)['mass'];material='manufacturer mass / uniform envelope'
    elif n.startswith('micro_ear_servo_'):mass=c['ear_actuator']['mass'];material='manufacturer mass / uniform envelope'
    elif n in fixed:mass=fixed[n];material='purchased allowance / uniform envelope'
+   elif n.endswith('_passive_bearing'):mass=.027;material='NSK 6807 catalogue allowance'
    elif n.startswith('eye_board_'):mass=.015;material='LCD + harness allowance'
    elif n.startswith('ear_output_adapter_'):mass=.001;material='purchased horn allowance'
    elif n.endswith('_switch_PCB'):mass=a['foot_pcb_switch_wire_each']-.001;material='PCB + switch harness allowance'
    elif n.endswith('_switch'):mass=.001;material='switch allowance'
    elif any(t in n for t in ['TPU_pad','TPU_actuator']):density=1.2e-6;material='TPU'
-   elif any(t in n for t in ['chassis_deck','rail_','cradle','strap_','roll_yoke','roll_axle','cheek_','spacer_','knee_support_fork','head_support_yoke']):density=2.7e-6;material='6061 aluminium'
-   volume=float(s.volume)
+   elif any(t in n for t in ['chassis_deck','rail_','cradle','strap_','roll_yoke','roll_axle','cheek_','spacer_','knee_support_fork','head_support_yoke','rotor_hub','rotor_spacer','bearing_retainer','knee_cross_spacer']):density=2.7e-6;material='6061 aluminium'
+   volume=float(sum(x.volume for x in s.solids()))
    if mass is None:mass=volume*density
    center=np.array(list(s.center(bd.CenterOf.MASS)))/1000
    inertia=np.asarray(s.matrix_of_inertia)*mass/max(volume,1e-12)*1e-6

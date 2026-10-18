@@ -8,21 +8,22 @@ import numpy as np
 from cadgen import read_step
 from scripts.common import ROOT,load
 from simulation.model import graph,fk,home,joint_spec
-from scripts.build_cad import NAMES
+from scripts.build_cad import NAMES,FITTED
 sys.path.insert(0,str(ROOT/'cad/src'))
-from lib.shapes import FACTORIES,link_components,box,matrix_location
+from lib.shapes import FACTORIES,box,matrix_location
+from scripts.cad_snapshot import load_parts as link_components
 
 def main():
- c=load();roundtrips=[]
+ c=load();roundtrips=[];components=link_components();fitted={s.label:s for vv in components.values() for s in vv}
  for n in NAMES:
-  original=FACTORIES[n]();saved=read_step(ROOT/'cad/STEP'/f'{n}.step')
+  original=fitted[FITTED[n]] if n in FITTED else FACTORIES[n]();saved=read_step(ROOT/'cad/STEP'/f'{n}.step')
   err=abs(saved.volume-original.volume)/original.volume
   roundtrips.append(dict(part=n,relative_volume_change=err,saved_solids=len(saved.solids())))
   assert err<.01 and len(saved.solids())==1,(n,err)
  a=read_step(ROOT/'cad/STEP/assembly.step');bounds=a.bounding_box()
  (ROOT/'reports/assembly_bounds.json').write_text(json.dumps({'units':'mm','min':list(bounds.min),'max':list(bounds.max),'dimensions':list(bounds.size),'valid':bool(a.is_valid),'step_roundtrips':roundtrips},indent=2)+'\n')
  # Only motor/electronics envelopes: excludes all intended clamp/shaft fits.
- parts=[];components=link_components()
+ parts=[]
  pitch=next(s for s in components['neck_yaw'] if s.label=='head_pitch_servo')
  centre_y=float(pitch.bounding_box().center().Y)
  assert abs(centre_y)<.001,'Head pitch case is laterally offset'

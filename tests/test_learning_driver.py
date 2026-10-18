@@ -12,7 +12,7 @@ from learning.driver import promote, regresses, run_child, score_development, se
 
 
 def test_stationary_survivor_does_not_pass_locomotion_gate():
-    metric = {"survival_fraction": 1., "linear_command_rmse": .1,
+    metric = {"self_contact_fraction":0.,"survival_fraction": 1., "linear_command_rmse": .1,
               "yaw_command_rmse": .1, "rms_joint_torque_nm": [.4]*16, "continuous_torque_limits_nm": [1.5691]*16,
               "per_command": {name: {"measured_speed_mps": 0., "command_speed_mps": .2,
                                      "survival_fraction": 1.}
@@ -25,7 +25,7 @@ def test_stationary_survivor_does_not_pass_locomotion_gate():
 
 
 def test_recovery_gate_requires_each_orientation_and_atomic_promotion(tmp_path):
-    metric = {"recovery_success_rate": .9, "rms_joint_torque_nm": [.5]*16, "continuous_torque_limits_nm": [1.5691]*16,
+    metric = {"self_contact_fraction":0.,"recovery_success_rate": .9, "rms_joint_torque_nm": [.5]*16, "continuous_torque_limits_nm": [1.5691]*16,
               "per_orientation": {pose: {"success_rate": .9} for pose in ("folded_crouch", "left", "right", "supine")}}
     assert score_development("recovery", [metric])[1]
     metric["per_orientation"]["supine"]["success_rate"] = 0.
@@ -64,7 +64,7 @@ def test_resume_rejects_metric_regression_and_quality_gate_loss():
 
 
 def test_torque_screen_is_required_for_quality_but_does_not_change_rank():
-    metric = {"recovery_success_rate": 1.,
+    metric = {"self_contact_fraction":0.,"recovery_success_rate": 1.,
               "per_orientation": {pose: {"success_rate": 1.} for pose in ("folded_crouch", "left", "right", "supine")}}
     score_missing, qualified, aggregate = score_development("recovery", [metric])
     assert not qualified
@@ -103,7 +103,7 @@ def test_gpu_capacity_prefers_designated_then_alternate_then_cpu():
 
 
 def test_walk_quality_requires_yaw_tracking_and_every_command_survival():
-    metric = {"survival_fraction": 1., "linear_command_rmse": .1,
+    metric = {"self_contact_fraction":0.,"survival_fraction": 1., "linear_command_rmse": .1,
               "yaw_command_rmse": .6, "rms_joint_torque_nm": [.4]*16, "continuous_torque_limits_nm": [1.5691]*16,
               "per_command": {name: {"measured_speed_mps": .15, "command_speed_mps": .2,
                                      "survival_fraction": 1.}

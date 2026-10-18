@@ -1,25 +1,25 @@
 {
   "units": "mm",
   "min": [
-    -145.38894849678135,
-    -99.0000001,
-    -9.002520950929238e-14
+    -165.2391492355714,
+    -123.0,
+    -1.2695192119771548e-12
   ],
   "max": [
     185.4212123121774,
-    99.0000001,
-    426.0000001
+    123.0,
+    532.9988001100006
   ],
   "dimensions": [
-    330.81016080895876,
-    198.0000002,
-    426.00000010000014
+    350.66036154774883,
+    246.0,
+    532.9988001100019
   ],
   "valid": true,
   "step_roundtrips": [
     {
       "part": "deck",
-      "relative_volume_change": 3.807469691205822e-15,
+      "relative_volume_change": 4.0974481532617393e-10,
       "saved_solids": 1
     },
     {
@@ -29,52 +29,52 @@
     },
     {
       "part": "body_shell",
-      "relative_volume_change": 0.000829266008231368,
+      "relative_volume_change": 5.886064881570267e-05,
       "saved_solids": 1
     },
     {
       "part": "servo_cradle",
-      "relative_volume_change": 1.1689015193734095e-08,
+      "relative_volume_change": 9.412427896439516e-16,
       "saved_solids": 1
     },
     {
       "part": "roll_yoke",
-      "relative_volume_change": 3.3815282791877654e-15,
+      "relative_volume_change": 2.1586633560704178e-14,
       "saved_solids": 1
     },
     {
       "part": "thigh_plate",
-      "relative_volume_change": 2.623970829534765e-14,
+      "relative_volume_change": 3.1169873176206837e-09,
       "saved_solids": 1
     },
     {
       "part": "shin_plate",
-      "relative_volume_change": 5.908393139870753e-14,
+      "relative_volume_change": 3.797215289844194e-14,
       "saved_solids": 1
     },
     {
       "part": "hoof",
-      "relative_volume_change": 1.837073545738824e-11,
+      "relative_volume_change": 1.0995103559924801e-14,
       "saved_solids": 1
     },
     {
       "part": "head_shell",
-      "relative_volume_change": 1.2024908493106102e-07,
+      "relative_volume_change": 1.4495331068010933e-06,
       "saved_solids": 1
     },
     {
       "part": "head_hatch",
-      "relative_volume_change": 1.2288433868068209e-14,
+      "relative_volume_change": 1.1548267947347461e-14,
       "saved_solids": 1
     },
     {
       "part": "ear",
-      "relative_volume_change": 5.142344594215085e-13,
+      "relative_volume_change": 1.131181180038347e-11,
       "saved_solids": 1
     },
     {
       "part": "mane",
-      "relative_volume_change": 6.270550960984519e-08,
+      "relative_volume_change": 0.0,
       "saved_solids": 1
     },
     {
@@ -84,52 +84,52 @@
     },
     {
       "part": "axle_adapter",
-      "relative_volume_change": 2.1831342425647996e-14,
+      "relative_volume_change": 4.3246177322975387e-14,
       "saved_solids": 1
     },
     {
       "part": "knee_fork",
-      "relative_volume_change": 4.814251900278312e-15,
+      "relative_volume_change": 2.98371206760351e-14,
       "saved_solids": 1
     },
     {
       "part": "head_yoke",
-      "relative_volume_change": 9.729129628146496e-15,
+      "relative_volume_change": 3.949355422847328e-16,
       "saved_solids": 1
     },
     {
       "part": "tail",
-      "relative_volume_change": 5.782237399211989e-12,
+      "relative_volume_change": 0.0,
       "saved_solids": 1
     },
     {
       "part": "servo_strap",
-      "relative_volume_change": 1.8212418676694318e-14,
+      "relative_volume_change": 1.0450668410209584e-15,
       "saved_solids": 1
     },
     {
       "part": "horn",
-      "relative_volume_change": 1.1554314347949474e-12,
+      "relative_volume_change": 0.0,
       "saved_solids": 1
     },
     {
       "part": "mane_stripe",
-      "relative_volume_change": 4.72537914887671e-14,
+      "relative_volume_change": 0.0,
       "saved_solids": 1
     },
     {
       "part": "neck_collar",
-      "relative_volume_change": 6.94348125890174e-14,
+      "relative_volume_change": 4.254352869897297e-13,
       "saved_solids": 1
     },
     {
       "part": "thigh_fairing",
-      "relative_volume_change": 5.46296611098614e-12,
+      "relative_volume_change": 1.6918947830684183e-14,
       "saved_solids": 1
     },
     {
       "part": "shin_fairing",
-      "relative_volume_change": 1.9152340949660293e-12,
+      "relative_volume_change": 1.6169748815068758e-14,
       "saved_solids": 1
     },
     {
@@ -139,7 +139,7 @@
     },
     {
       "part": "sensor_tray",
-      "relative_volume_change": 2.5455123631190816e-14,
+      "relative_volume_change": 9.583386551855422e-15,
       "saved_solids": 1
     },
     {
@@ -168,28 +168,48 @@
       "saved_solids": 1
     },
     {
+      "part": "thigh_rear_plate",
+      "relative_volume_change": 5.789074046735096e-13,
+      "saved_solids": 1
+    },
+    {
+      "part": "bearing_retainer",
+      "relative_volume_change": 4.051367163202873e-14,
+      "saved_solids": 1
+    },
+    {
+      "part": "rotor_spacer",
+      "relative_volume_change": 4.4018430489457145e-14,
+      "saved_solids": 1
+    },
+    {
+      "part": "rear_hip_hub",
+      "relative_volume_change": 4.429729968846444e-14,
+      "saved_solids": 1
+    },
+    {
+      "part": "rear_knee_hub",
+      "relative_volume_change": 4.416911403413651e-14,
+      "saved_solids": 1
+    },
+    {
+      "part": "knee_front_hub",
+      "relative_volume_change": 4.4270428891151157e-14,
+      "saved_solids": 1
+    },
+    {
       "part": "shin_rear_plate",
-      "relative_volume_change": 6.016459073551599e-13,
+      "relative_volume_change": 7.30251379716442e-13,
       "saved_solids": 1
     },
     {
       "part": "servo_cradle_sm105",
-      "relative_volume_change": 6.508300486751523e-08,
-      "saved_solids": 1
-    },
-    {
-      "part": "servo_cradle_sm80",
-      "relative_volume_change": 8.32628782427799e-08,
+      "relative_volume_change": 1.1956523138714707e-14,
       "saved_solids": 1
     },
     {
       "part": "servo_strap_sm105",
-      "relative_volume_change": 8.602925596009967e-07,
-      "saved_solids": 1
-    },
-    {
-      "part": "servo_strap_sm80",
-      "relative_volume_change": 8.766724394590765e-07,
+      "relative_volume_change": 1.0938300834260781e-14,
       "saved_solids": 1
     }
   ]

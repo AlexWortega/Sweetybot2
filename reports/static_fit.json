@@ -1,0 +1,13 @@
+{
+  "complete": true,
+  "passed": true,
+  "source_sha256": {
+    "config/robot.yaml": "7918107f94a430abcd70efedb5671ee4edd806befe7343eeaa28fdb5b398ab08",
+    "simulation/model.py": "542b6e6aca85ee183c502be3ccfef4d2167bf70cc23cd9c044e40c4ebb947b66",
+    "cad/src/lib/shapes.py": "21aeb0ca0604ed4da6e557988d449149189db758f78d3123ec9f0040228e8ca4",
+    "cad/src/lib/sensors_face.py": "7148d93c61fa3bc742fead75e10f87bad4f528b4981de4efdb32bd309cf12b94",
+    "cad/src/lib/actuation_v05.py": "7aea4d12aeefd98c00fbade2e5e2a79ae5b7efceac0a0673207880cd49656c31"
+  },
+  "method": "exact BRep overlap between separate physical components on the same rigid link; appearance pigments excluded",
+  "intersections": []
+}

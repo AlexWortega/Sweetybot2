@@ -1,0 +1,8093 @@
+{
+  "dynamics_signature": "966005c71d05349fc90c818df4ee8c9d1e8a7737c9552392cced0ddd210acf4e",
+  "mesh_manifest_sha256": "2b05d36a64eb5205de175d2223c5dde36722deaaf36d6b6b42898cc77fd91d3b",
+  "method": "up to 1024 deterministic surface vertices per part; point in union of convex hull half-spaces, 1mm proxy tolerance (0.3mm coverage also reported); sampled coverage, not a certified Hausdorff bound",
+  "passed": true,
+  "parts": [
+    {
+      "link": "torso",
+      "part": "chassis_deck",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -120.0,
+          -104.0,
+          -28.0
+        ],
+        [
+          120.0,
+          104.0,
+          -20.75
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -119.99481964111328,
+          -104.0,
+          -28.0
+        ],
+        [
+          119.99481964111328,
+          104.0,
+          -20.75
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "rail_-1",
+      "sampled_vertices": 40,
+      "covered_within_03mm": 40,
+      "covered_within_1mm": 40,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -45.0,
+          -45.0,
+          -24.799999237060547
+        ],
+        [
+          45.0,
+          -40.97999954223633,
+          5.199999809265137
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -45.0,
+          -45.0,
+          -24.799684524536133
+        ],
+        [
+          45.0,
+          -40.97999954223633,
+          5.2000017166137695
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "rail_1",
+      "sampled_vertices": 40,
+      "covered_within_03mm": 40,
+      "covered_within_1mm": 40,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -45.0,
+          40.97999954223633,
+          -24.799999237060547
+        ],
+        [
+          45.0,
+          45.0,
+          5.199999809265137
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -45.0,
+          40.97999954223633,
+          -24.799684524536133
+        ],
+        [
+          45.0,
+          45.0,
+          5.2000017166137695
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "body_cowl",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -122.0,
+          -69.94820404052734,
+          -24.799999237060547
+        ],
+        [
+          82.59296417236328,
+          69.94820404052734,
+          46.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -122.0,
+          -69.94820404052734,
+          -24.81999969482422
+        ],
+        [
+          82.59296417236328,
+          69.94762420654297,
+          46.0
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "passive_tail",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -144.61306762695312,
+          -18.036354064941406,
+          -66.0
+        ],
+        [
+          -98.00052642822266,
+          18.05303382873535,
+          16.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -144.61306762695312,
+          -18.036354064941406,
+          -66.0
+        ],
+        [
+          -98.00052642822266,
+          18.05303382873535,
+          16.0
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "battery_envelope",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -41.0,
+          -35.0,
+          -23.0
+        ],
+        [
+          41.0,
+          35.0,
+          7.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -41.0,
+          -35.0,
+          -23.0
+        ],
+        [
+          41.0,
+          35.0,
+          7.0
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "compute_envelope",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -32.5,
+          -15.0,
+          10.5
+        ],
+        [
+          32.5,
+          15.0,
+          19.5
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -32.5,
+          -15.0,
+          10.5
+        ],
+        [
+          32.5,
+          15.0,
+          19.5
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "regulator_envelope",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -71.0,
+          -10.5,
+          11.5
+        ],
+        [
+          -53.0,
+          10.5,
+          20.5
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -71.0,
+          -10.5,
+          11.5
+        ],
+        [
+          -53.0,
+          10.5,
+          20.5
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "head_yaw_servo",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          60.88949966430664,
+          -12.36050033569336,
+          -7.401000022888184
+        ],
+        [
+          106.1104965209961,
+          12.36050033569336,
+          30.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          60.88949966430664,
+          -12.36050033569336,
+          -7.401000499725342
+        ],
+        [
+          106.11050415039062,
+          12.36050033569336,
+          30.0
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "head_yaw_cradle",
+      "sampled_vertices": 352,
+      "covered_within_03mm": 352,
+      "covered_within_1mm": 352,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          53.13949966430664,
+          -16.36050033569336,
+          -11.5
+        ],
+        [
+          113.8604965209961,
+          13.160499572753906,
+          31.5
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          53.13949966430664,
+          -16.36050033569336,
+          -11.4957914352417
+        ],
+        [
+          113.86050415039062,
+          13.160499572753906,
+          31.495792388916016
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "head_yaw_cradle_strap_-7",
+      "sampled_vertices": 176,
+      "covered_within_03mm": 176,
+      "covered_within_1mm": 176,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          53.13949966430664,
+          13.160499572753906,
+          19.5
+        ],
+        [
+          113.8604965209961,
+          16.36050033569336,
+          26.5
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          53.13949966430664,
+          13.160499572753906,
+          19.5
+        ],
+        [
+          113.86050415039062,
+          16.36050033569336,
+          26.5
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "head_yaw_cradle_strap_-33",
+      "sampled_vertices": 176,
+      "covered_within_03mm": 176,
+      "covered_within_1mm": 176,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          53.13949966430664,
+          13.160499572753906,
+          -6.5
+        ],
+        [
+          113.8604965209961,
+          16.36050033569336,
+          0.5
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          53.13949966430664,
+          13.160499572753906,
+          -6.5
+        ],
+        [
+          113.86050415039062,
+          16.36050033569336,
+          0.5
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "sensor_tray",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -52.0,
+          -31.5,
+          -24.799999237060547
+        ],
+        [
+          48.5,
+          31.5,
+          28.200000762939453
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -51.99882507324219,
+          -31.5,
+          -24.799999237060547
+        ],
+        [
+          48.5,
+          31.5,
+          28.19970703125
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "imu_board",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -2.700000047683716,
+          -12.699999809265137,
+          28.200000762939453
+        ],
+        [
+          22.700000762939453,
+          12.699999809265137,
+          29.799999237060547
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -2.6999998092651367,
+          -12.699999809265137,
+          28.200000762939453
+        ],
+        [
+          22.700000762939453,
+          12.699999809265137,
+          29.799999237060547
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "collector",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -40.5,
+          -8.899999618530273,
+          25.5
+        ],
+        [
+          -19.5,
+          8.899999618530273,
+          32.5
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -40.5,
+          -8.899999618530273,
+          25.5
+        ],
+        [
+          -19.5,
+          8.899999618530273,
+          32.5
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "chest_tof_pod",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          109.0,
+          -24.0,
+          -24.799999237060547
+        ],
+        [
+          135.5,
+          24.0,
+          10.5
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          109.0,
+          -24.0,
+          -24.799999237060547
+        ],
+        [
+          135.5,
+          23.999217987060547,
+          10.5
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "depth_board",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          122.90458679199219,
+          -12.699999809265137,
+          -19.207712173461914
+        ],
+        [
+          133.0954132080078,
+          12.699999809265137,
+          5.207712173461914
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          122.90458679199219,
+          -12.699999809265137,
+          -19.207712173461914
+        ],
+        [
+          133.0954132080078,
+          12.699999809265137,
+          5.207712173461914
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "depth_optic",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          131.94728088378906,
+          -3.200000047683716,
+          -10.751559257507324
+        ],
+        [
+          134.85272216796875,
+          3.200000047683716,
+          -7.248440742492676
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          131.94728088378906,
+          -3.200000047683716,
+          -10.751559257507324
+        ],
+        [
+          134.85272216796875,
+          3.200000047683716,
+          -7.248440742492676
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "ear_6V_buck",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -21.0,
+          19.75,
+          10.25
+        ],
+        [
+          1.0,
+          38.25,
+          19.75
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -21.0,
+          19.75,
+          10.25
+        ],
+        [
+          1.0,
+          38.25,
+          19.75
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "depth_3V3_buck",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          29.5,
+          -5.0,
+          26.5
+        ],
+        [
+          42.5,
+          5.0,
+          31.5
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          29.5,
+          -5.0,
+          26.5
+        ],
+        [
+          42.5,
+          5.0,
+          31.5
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "adapter_envelope",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -87.0,
+          -16.5,
+          -12.0
+        ],
+        [
+          -45.0,
+          16.5,
+          4.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -87.0,
+          -16.5,
+          -12.0
+        ],
+        [
+          -45.0,
+          16.5,
+          4.0
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "head_yaw_clamp_shims",
+      "sampled_vertices": 40,
+      "covered_within_03mm": 40,
+      "covered_within_1mm": 40,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          60.13949966430664,
+          -13.160499572753906,
+          -7.401000022888184
+        ],
+        [
+          106.8604965209961,
+          13.160499572753906,
+          30.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          60.13949966430664,
+          -13.160499572753906,
+          -7.4010009765625
+        ],
+        [
+          106.86050415039062,
+          13.160499572753906,
+          30.0
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "fl_roll_servo",
+      "sampled_vertices": 862,
+      "covered_within_03mm": 862,
+      "covered_within_1mm": 862,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          49.900001525878906,
+          31.25,
+          -16.75
+        ],
+        [
+          99.0,
+          89.75,
+          16.75
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          49.900001525878906,
+          31.25,
+          -16.75
+        ],
+        [
+          99.0,
+          89.75,
+          16.75
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "fl_roll_cradle",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          49.25,
+          23.25,
+          -20.75
+        ],
+        [
+          99.6500015258789,
+          97.75,
+          17.549999237060547
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          49.25,
+          23.25,
+          -20.74968719482422
+        ],
+        [
+          99.6500015258789,
+          97.75,
+          17.55000114440918
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "fl_roll_clamp_shims",
+      "sampled_vertices": 40,
+      "covered_within_03mm": 40,
+      "covered_within_1mm": 40,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          52.45000076293945,
+          30.5,
+          -17.549999237060547
+        ],
+        [
+          96.44999694824219,
+          90.5,
+          17.549999237060547
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          52.45000076293945,
+          30.5,
+          -17.549999237060547
+        ],
+        [
+          96.44999694824219,
+          90.5,
+          17.549999237060547
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "fl_roll_strap_-41.55",
+      "sampled_vertices": 856,
+      "covered_within_03mm": 856,
+      "covered_within_1mm": 856,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          54.45000076293945,
+          23.25,
+          17.549999237060547
+        ],
+        [
+          60.45000076293945,
+          97.75,
+          20.75
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          54.45000076293945,
+          23.25,
+          17.549999237060547
+        ],
+        [
+          60.45000076293945,
+          97.75,
+          20.75
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "fl_roll_strap_-7.55",
+      "sampled_vertices": 856,
+      "covered_within_03mm": 856,
+      "covered_within_1mm": 856,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          88.44999694824219,
+          23.25,
+          17.549999237060547
+        ],
+        [
+          94.44999694824219,
+          97.75,
+          20.75
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          88.44999694824219,
+          23.25,
+          17.549999237060547
+        ],
+        [
+          94.44999694824219,
+          97.75,
+          20.75
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "fr_roll_servo",
+      "sampled_vertices": 862,
+      "covered_within_03mm": 862,
+      "covered_within_1mm": 862,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          49.900001525878906,
+          -89.75,
+          -16.75
+        ],
+        [
+          99.0,
+          -31.25,
+          16.75
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          49.900001525878906,
+          -89.75,
+          -16.75
+        ],
+        [
+          99.0,
+          -31.25,
+          16.75
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "fr_roll_cradle",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          49.25,
+          -97.75,
+          -17.549999237060547
+        ],
+        [
+          99.6500015258789,
+          -23.25,
+          20.75
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          49.25,
+          -97.75,
+          -17.55000114440918
+        ],
+        [
+          99.6500015258789,
+          -23.25,
+          20.74968719482422
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "fr_roll_clamp_shims",
+      "sampled_vertices": 40,
+      "covered_within_03mm": 40,
+      "covered_within_1mm": 40,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          52.45000076293945,
+          -90.5,
+          -17.549999237060547
+        ],
+        [
+          96.44999694824219,
+          -30.5,
+          17.549999237060547
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          52.45000076293945,
+          -90.5,
+          -17.549999237060547
+        ],
+        [
+          96.44999694824219,
+          -30.5,
+          17.549999237060547
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "fr_roll_strap_-41.55",
+      "sampled_vertices": 856,
+      "covered_within_03mm": 856,
+      "covered_within_1mm": 856,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          54.45000076293945,
+          -97.75,
+          -20.75
+        ],
+        [
+          60.45000076293945,
+          -23.25,
+          -17.549999237060547
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          54.45000076293945,
+          -97.75,
+          -20.75
+        ],
+        [
+          60.45000076293945,
+          -23.25,
+          -17.549999237060547
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "fr_roll_strap_-7.55",
+      "sampled_vertices": 856,
+      "covered_within_03mm": 856,
+      "covered_within_1mm": 856,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          88.44999694824219,
+          -97.75,
+          -20.75
+        ],
+        [
+          94.44999694824219,
+          -23.25,
+          -17.549999237060547
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          88.44999694824219,
+          -97.75,
+          -20.75
+        ],
+        [
+          94.44999694824219,
+          -23.25,
+          -17.549999237060547
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "rl_roll_servo",
+      "sampled_vertices": 862,
+      "covered_within_03mm": 862,
+      "covered_within_1mm": 862,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -99.0,
+          31.25,
+          -16.75
+        ],
+        [
+          -49.900001525878906,
+          89.75,
+          16.75
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -99.0,
+          31.25,
+          -16.75
+        ],
+        [
+          -49.900001525878906,
+          89.75,
+          16.75
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "rl_roll_cradle",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -99.6500015258789,
+          23.25,
+          -17.549999237060547
+        ],
+        [
+          -49.25,
+          97.75,
+          20.75
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -99.6500015258789,
+          23.25,
+          -17.55000114440918
+        ],
+        [
+          -49.25,
+          97.75,
+          20.74968719482422
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "rl_roll_clamp_shims",
+      "sampled_vertices": 40,
+      "covered_within_03mm": 40,
+      "covered_within_1mm": 40,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -96.44999694824219,
+          30.5,
+          -17.549999237060547
+        ],
+        [
+          -52.45000076293945,
+          90.5,
+          17.549999237060547
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -96.44999694824219,
+          30.5,
+          -17.549999237060547
+        ],
+        [
+          -52.45000076293945,
+          90.5,
+          17.549999237060547
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "rl_roll_strap_-41.55",
+      "sampled_vertices": 856,
+      "covered_within_03mm": 856,
+      "covered_within_1mm": 856,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -60.45000076293945,
+          23.25,
+          -20.75
+        ],
+        [
+          -54.45000076293945,
+          97.75,
+          -17.549999237060547
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -60.45000076293945,
+          23.25,
+          -20.75
+        ],
+        [
+          -54.45000076293945,
+          97.75,
+          -17.549999237060547
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "rl_roll_strap_-7.55",
+      "sampled_vertices": 856,
+      "covered_within_03mm": 856,
+      "covered_within_1mm": 856,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -94.44999694824219,
+          23.25,
+          -20.75
+        ],
+        [
+          -88.44999694824219,
+          97.75,
+          -17.549999237060547
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -94.44999694824219,
+          23.25,
+          -20.75
+        ],
+        [
+          -88.44999694824219,
+          97.75,
+          -17.549999237060547
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "rr_roll_servo",
+      "sampled_vertices": 862,
+      "covered_within_03mm": 862,
+      "covered_within_1mm": 862,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -99.0,
+          -89.75,
+          -16.75
+        ],
+        [
+          -49.900001525878906,
+          -31.25,
+          16.75
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -99.0,
+          -89.75,
+          -16.75
+        ],
+        [
+          -49.900001525878906,
+          -31.25,
+          16.75
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "rr_roll_cradle",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -99.6500015258789,
+          -97.75,
+          -20.75
+        ],
+        [
+          -49.25,
+          -23.25,
+          17.549999237060547
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -99.6500015258789,
+          -97.75,
+          -20.74968719482422
+        ],
+        [
+          -49.25,
+          -23.25,
+          17.55000114440918
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "rr_roll_clamp_shims",
+      "sampled_vertices": 40,
+      "covered_within_03mm": 40,
+      "covered_within_1mm": 40,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -96.44999694824219,
+          -90.5,
+          -17.549999237060547
+        ],
+        [
+          -52.45000076293945,
+          -30.5,
+          17.549999237060547
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -96.44999694824219,
+          -90.5,
+          -17.549999237060547
+        ],
+        [
+          -52.45000076293945,
+          -30.5,
+          17.549999237060547
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "rr_roll_strap_-41.55",
+      "sampled_vertices": 856,
+      "covered_within_03mm": 856,
+      "covered_within_1mm": 856,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -60.45000076293945,
+          -97.75,
+          17.549999237060547
+        ],
+        [
+          -54.45000076293945,
+          -23.25,
+          20.75
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -60.45000076293945,
+          -97.75,
+          17.549999237060547
+        ],
+        [
+          -54.45000076293945,
+          -23.25,
+          20.75
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "rr_roll_strap_-7.55",
+      "sampled_vertices": 856,
+      "covered_within_03mm": 856,
+      "covered_within_1mm": 856,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -94.44999694824219,
+          -97.75,
+          17.549999237060547
+        ],
+        [
+          -88.44999694824219,
+          -23.25,
+          20.75
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -94.44999694824219,
+          -97.75,
+          17.549999237060547
+        ],
+        [
+          -88.44999694824219,
+          -23.25,
+          20.75
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "rs485_adapter",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -15.0,
+          -49.0,
+          7.0
+        ],
+        [
+          15.0,
+          -27.0,
+          21.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -15.0,
+          -49.0,
+          7.0
+        ],
+        [
+          15.0,
+          -27.0,
+          21.0
+        ]
+      ]
+    },
+    {
+      "link": "torso",
+      "part": "usb_hub",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          8.0,
+          34.95000076293945,
+          12.5
+        ],
+        [
+          32.0,
+          55.04999923706055,
+          17.5
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          8.0,
+          34.95000076293945,
+          12.5
+        ],
+        [
+          32.0,
+          55.04999923706055,
+          17.5
+        ]
+      ]
+    },
+    {
+      "link": "fl_roll",
+      "part": "fl_pitch_servo",
+      "sampled_vertices": 862,
+      "covered_within_03mm": 862,
+      "covered_within_1mm": 862,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.75,
+          -19.100000381469727,
+          -100.75
+        ],
+        [
+          16.75,
+          30.0,
+          -42.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.75,
+          -19.099998474121094,
+          -100.75
+        ],
+        [
+          16.75,
+          30.0,
+          -42.25
+        ]
+      ]
+    },
+    {
+      "link": "fl_roll",
+      "part": "fl_pitch_cradle",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -20.75,
+          -19.75,
+          -108.75
+        ],
+        [
+          17.549999237060547,
+          30.649999618530273,
+          -34.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -20.74968719482422,
+          -19.750001907348633,
+          -108.75
+        ],
+        [
+          17.55000114440918,
+          30.650001525878906,
+          -34.25
+        ]
+      ]
+    },
+    {
+      "link": "fl_roll",
+      "part": "fl_pitch_clamp_shims",
+      "sampled_vertices": 40,
+      "covered_within_03mm": 40,
+      "covered_within_1mm": 40,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.549999237060547,
+          -16.549999237060547,
+          -101.5
+        ],
+        [
+          17.549999237060547,
+          27.450000762939453,
+          -41.5
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.549999237060547,
+          -16.549999237060547,
+          -101.5
+        ],
+        [
+          17.549999237060547,
+          27.450000762939453,
+          -41.5
+        ]
+      ]
+    },
+    {
+      "link": "fl_roll",
+      "part": "fl_pitch_strap_-41.55",
+      "sampled_vertices": 856,
+      "covered_within_03mm": 856,
+      "covered_within_1mm": 856,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          17.549999237060547,
+          -14.550000190734863,
+          -108.75
+        ],
+        [
+          20.75,
+          -8.550000190734863,
+          -34.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          17.549999237060547,
+          -14.550000190734863,
+          -108.75
+        ],
+        [
+          20.75,
+          -8.550000190734863,
+          -34.25
+        ]
+      ]
+    },
+    {
+      "link": "fl_roll",
+      "part": "fl_pitch_strap_-7.55",
+      "sampled_vertices": 856,
+      "covered_within_03mm": 856,
+      "covered_within_1mm": 856,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          17.549999237060547,
+          19.450000762939453,
+          -108.75
+        ],
+        [
+          20.75,
+          25.450000762939453,
+          -34.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          17.549999237060547,
+          19.450000762939453,
+          -108.75
+        ],
+        [
+          20.75,
+          25.450000762939453,
+          -34.25
+        ]
+      ]
+    },
+    {
+      "link": "fl_roll",
+      "part": "fl_roll_yoke",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -30.0,
+          -29.0,
+          -91.98633575439453
+        ],
+        [
+          35.25,
+          21.999988555908203,
+          22.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -29.999237060546875,
+          -29.0,
+          -91.98633575439453
+        ],
+        [
+          35.25,
+          21.999990463256836,
+          21.99569320678711
+        ]
+      ]
+    },
+    {
+      "link": "fl_roll",
+      "part": "fl_roll_M3_heads",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          27.5,
+          -15.99161148071289,
+          -16.0
+        ],
+        [
+          30.5,
+          15.99161148071289,
+          16.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          27.5,
+          -15.99161148071289,
+          -16.0
+        ],
+        [
+          30.5,
+          15.99161148071289,
+          16.0
+        ]
+      ]
+    },
+    {
+      "link": "fl_roll",
+      "part": "fl_roll_axle",
+      "sampled_vertices": 840,
+      "covered_within_03mm": 840,
+      "covered_within_1mm": 840,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -2.742602474200542e-15,
+          -17.479999542236328,
+          -17.431121826171875
+        ],
+        [
+          21.5,
+          17.479999542236328,
+          17.431121826171875
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -2.742602474200542e-15,
+          -17.479999542236328,
+          -17.431121826171875
+        ],
+        [
+          21.5,
+          17.479999542236328,
+          17.431121826171875
+        ]
+      ]
+    },
+    {
+      "link": "fl_roll",
+      "part": "fl_hip_passive_bearing",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -23.5,
+          -29.0,
+          -85.43428802490234
+        ],
+        [
+          23.5,
+          -22.0,
+          -38.565711975097656
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -23.5,
+          -29.0,
+          -85.43428802490234
+        ],
+        [
+          23.5,
+          -22.0,
+          -38.565711975097656
+        ]
+      ]
+    },
+    {
+      "link": "fl_roll",
+      "part": "fl_hip_bearing_retainer",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -30.0,
+          -30.5,
+          -91.9161148071289
+        ],
+        [
+          30.0,
+          -29.0,
+          -32.083885192871094
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -30.0,
+          -30.5,
+          -91.91472625732422
+        ],
+        [
+          29.999313354492188,
+          -29.0,
+          -32.083885192871094
+        ]
+      ]
+    },
+    {
+      "link": "fl_roll",
+      "part": "fl_pitch_mount_spacer_-10",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -13.199999809265137,
+          -20.0,
+          -41.1910514831543
+        ],
+        [
+          -6.800000190734863,
+          -19.049999237060547,
+          -34.8089485168457
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -13.199999809265137,
+          -20.0,
+          -41.1910514831543
+        ],
+        [
+          -6.800000190734863,
+          -19.049999237060547,
+          -34.8089485168457
+        ]
+      ]
+    },
+    {
+      "link": "fl_roll",
+      "part": "fl_pitch_mount_spacer_10",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          6.800000190734863,
+          -20.0,
+          -41.1910514831543
+        ],
+        [
+          13.199999809265137,
+          -19.049999237060547,
+          -34.8089485168457
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          6.800000190734863,
+          -20.0,
+          -41.1910514831543
+        ],
+        [
+          13.199999809265137,
+          -19.049999237060547,
+          -34.8089485168457
+        ]
+      ]
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_knee_servo",
+      "sampled_vertices": 862,
+      "covered_within_03mm": 862,
+      "covered_within_1mm": 862,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.75,
+          -49.099998474121094,
+          -134.75
+        ],
+        [
+          16.75,
+          1.7713898381975512e-15,
+          -76.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.75,
+          -49.099998474121094,
+          -134.75
+        ],
+        [
+          16.75,
+          7.629394644936838e-07,
+          -76.25
+        ]
+      ]
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_knee_cradle",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.549999237060547,
+          -49.75,
+          -142.75
+        ],
+        [
+          20.75,
+          0.6499999761581421,
+          -68.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.55000114440918,
+          -49.75,
+          -142.75
+        ],
+        [
+          20.74968719482422,
+          0.650001049041748,
+          -68.25
+        ]
+      ]
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_knee_clamp_shims",
+      "sampled_vertices": 40,
+      "covered_within_03mm": 40,
+      "covered_within_1mm": 40,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.549999237060547,
+          -46.54999923706055,
+          -135.5
+        ],
+        [
+          17.549999237060547,
+          -2.549999952316284,
+          -75.5
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.549999237060547,
+          -46.54999923706055,
+          -135.5
+        ],
+        [
+          17.549999237060547,
+          -2.549999952316284,
+          -75.5
+        ]
+      ]
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_knee_strap_-41.55",
+      "sampled_vertices": 856,
+      "covered_within_03mm": 856,
+      "covered_within_1mm": 856,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -20.75,
+          -44.54999923706055,
+          -142.75
+        ],
+        [
+          -17.549999237060547,
+          -38.54999923706055,
+          -68.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -20.75,
+          -44.54999923706055,
+          -142.75
+        ],
+        [
+          -17.549999237060547,
+          -38.54999923706055,
+          -68.25
+        ]
+      ]
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_knee_strap_-7.55",
+      "sampled_vertices": 856,
+      "covered_within_03mm": 856,
+      "covered_within_1mm": 856,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -20.75,
+          -10.550000190734863,
+          -142.75
+        ],
+        [
+          -17.549999237060547,
+          -4.550000190734863,
+          -68.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -20.75,
+          -10.550000190734863,
+          -142.75
+        ],
+        [
+          -17.549999237060547,
+          -4.550000190734863,
+          -68.25
+        ]
+      ]
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_thigh_cheek_front",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -36.0,
+          3.5,
+          -88.0
+        ],
+        [
+          36.0,
+          6.5,
+          18.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -35.999996185302734,
+          3.499999761581421,
+          -88.0
+        ],
+        [
+          35.998348236083984,
+          6.5,
+          18.0
+        ]
+      ]
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_thigh_cheek_rear",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -36.0,
+          -66.5,
+          -144.91610717773438
+        ],
+        [
+          36.0,
+          -52.0,
+          18.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -36.0,
+          -66.5,
+          -144.91610717773438
+        ],
+        [
+          36.0,
+          -52.0,
+          18.0
+        ]
+      ]
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_hip_front_rotor_spacer",
+      "sampled_vertices": 840,
+      "covered_within_03mm": 840,
+      "covered_within_1mm": 840,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.479999542236328,
+          -1.7763568394002505e-15,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          3.5,
+          17.431121826171875
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.479999542236328,
+          0.0,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          3.5,
+          17.431121826171875
+        ]
+      ]
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_hip_rear_rotor_hub",
+      "sampled_vertices": 840,
+      "covered_within_03mm": 840,
+      "covered_within_1mm": 840,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.479999542236328,
+          -63.5,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          -49.099998474121094,
+          17.431121826171875
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.479999542236328,
+          -63.5,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          -49.099998474121094,
+          17.431121826171875
+        ]
+      ]
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_knee_passive_bearing",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -23.5,
+          -61.0,
+          -138.43429565429688
+        ],
+        [
+          23.5,
+          -54.0,
+          -91.56571197509766
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -23.5,
+          -61.0,
+          -138.43429565429688
+        ],
+        [
+          23.5,
+          -54.0,
+          -91.56571197509766
+        ]
+      ]
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_knee_bearing_retainer",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -30.0,
+          -62.5,
+          -144.91610717773438
+        ],
+        [
+          30.0,
+          -61.0,
+          -85.0838851928711
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -30.0,
+          -62.5,
+          -144.9147186279297
+        ],
+        [
+          29.999313354492188,
+          -61.0,
+          -85.0838851928711
+        ]
+      ]
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_thigh_spacer_-27",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -30.200000762939453,
+          -55.53125,
+          -60.6910514831543
+        ],
+        [
+          -23.799999237060547,
+          3.5,
+          -54.3089485168457
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -30.200000762939453,
+          -55.53125,
+          -60.6910514831543
+        ],
+        [
+          -23.799999237060547,
+          3.5,
+          -54.3089485168457
+        ]
+      ]
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_thigh_spacer_27",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          23.799999237060547,
+          -55.53125,
+          -60.6910514831543
+        ],
+        [
+          30.200000762939453,
+          3.5,
+          -54.3089485168457
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          23.799999237060547,
+          -55.53125,
+          -60.6910514831543
+        ],
+        [
+          30.200000762939453,
+          3.5,
+          -54.3089485168457
+        ]
+      ]
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_knee_mount_spacer_-10_1.725",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -13.199999809265137,
+          -0.05000000074505806,
+          -75.19105529785156
+        ],
+        [
+          -6.800000190734863,
+          3.5,
+          -68.80894470214844
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -13.199999809265137,
+          -0.04999997466802597,
+          -75.19105529785156
+        ],
+        [
+          -6.800000190734863,
+          3.5,
+          -68.80894470214844
+        ]
+      ]
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_knee_mount_spacer_-10_-52.025",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -13.199999809265137,
+          -55.0,
+          -75.19105529785156
+        ],
+        [
+          -6.800000190734863,
+          -49.04999923706055,
+          -68.80894470214844
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -13.199999809265137,
+          -55.0,
+          -75.19105529785156
+        ],
+        [
+          -6.800000190734863,
+          -49.04999923706055,
+          -68.80894470214844
+        ]
+      ]
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_knee_mount_spacer_10_1.725",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          6.800000190734863,
+          -0.05000000074505806,
+          -75.19105529785156
+        ],
+        [
+          13.199999809265137,
+          3.5,
+          -68.80894470214844
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          6.800000190734863,
+          -0.04999997466802597,
+          -75.19105529785156
+        ],
+        [
+          13.199999809265137,
+          3.5,
+          -68.80894470214844
+        ]
+      ]
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_knee_mount_spacer_10_-52.025",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          6.800000190734863,
+          -55.0,
+          -75.19105529785156
+        ],
+        [
+          13.199999809265137,
+          -49.04999923706055,
+          -68.80894470214844
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          6.800000190734863,
+          -55.0,
+          -75.19105529785156
+        ],
+        [
+          13.199999809265137,
+          -49.04999923706055,
+          -68.80894470214844
+        ]
+      ]
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_hip_M3_heads_8.0",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.0,
+          6.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          9.5,
+          15.99161148071289
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.0,
+          6.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          9.5,
+          15.99161148071289
+        ]
+      ]
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_hip_M3_heads_-68.0",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.0,
+          -69.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          -66.5,
+          15.99161148071289
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.0,
+          -69.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          -66.5,
+          15.99161148071289
+        ]
+      ]
+    },
+    {
+      "link": "fl_thigh",
+      "part": "fl_thigh_fairing",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -21.0,
+          9.0,
+          -80.0
+        ],
+        [
+          21.0,
+          15.0,
+          -35.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -21.0,
+          9.000587463378906,
+          -80.0
+        ],
+        [
+          21.0,
+          15.0,
+          -35.0
+        ]
+      ]
+    },
+    {
+      "link": "fl_shin",
+      "part": "fl_hoof",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -18.136781692504883,
+          -17.0,
+          -130.15762329101562
+        ],
+        [
+          20.772356033325195,
+          17.0,
+          -97.39495849609375
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -18.135761260986328,
+          -17.0,
+          -130.15760803222656
+        ],
+        [
+          20.772275924682617,
+          17.0,
+          -97.39697265625
+        ]
+      ]
+    },
+    {
+      "link": "fl_shin",
+      "part": "fl_TPU_actuator",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          2.372737169265747,
+          -11.49161148071289,
+          -126.8504638671875
+        ],
+        [
+          8.367228507995605,
+          -5.508388519287109,
+          -121.80862426757812
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          2.372765064239502,
+          -11.49161148071289,
+          -126.8504638671875
+        ],
+        [
+          8.367228507995605,
+          -5.508388519287109,
+          -121.80873107910156
+        ]
+      ]
+    },
+    {
+      "link": "fl_shin",
+      "part": "fl_switch_PCB",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -2.601189374923706,
+          -14.5,
+          -122.26818084716797
+        ],
+        [
+          9.256014823913574,
+          -2.5,
+          -116.80413818359375
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -2.601189374923706,
+          -14.5,
+          -122.26818084716797
+        ],
+        [
+          9.256014823913574,
+          -2.5,
+          -116.80413818359375
+        ]
+      ]
+    },
+    {
+      "link": "fl_shin",
+      "part": "fl_switch",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          0.6640304327011108,
+          -11.600000381469727,
+          -123.20113372802734
+        ],
+        [
+          7.1768035888671875,
+          -5.400000095367432,
+          -119.27021026611328
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          0.6640304923057556,
+          -11.600000381469727,
+          -123.20113372802734
+        ],
+        [
+          7.1768035888671875,
+          -5.400000095367432,
+          -119.27021026611328
+        ]
+      ]
+    },
+    {
+      "link": "fl_shin",
+      "part": "fl_knee_M3_heads_14.0",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.0,
+          12.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          15.5,
+          15.99161148071289
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.0,
+          12.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          15.5,
+          15.99161148071289
+        ]
+      ]
+    },
+    {
+      "link": "fl_shin",
+      "part": "fl_knee_M3_heads_-70.0",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.0,
+          -71.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          -68.5,
+          15.99161148071289
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.0,
+          -71.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          -68.5,
+          15.99161148071289
+        ]
+      ]
+    },
+    {
+      "link": "fl_shin",
+      "part": "fl_shin_cheek_front",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -19.0,
+          9.5,
+          -113.0
+        ],
+        [
+          19.0,
+          12.5,
+          18.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -19.0,
+          9.5,
+          -113.0
+        ],
+        [
+          19.0,
+          12.5,
+          18.0
+        ]
+      ]
+    },
+    {
+      "link": "fl_shin",
+      "part": "fl_shin_cheek_rear",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -19.0,
+          -68.5,
+          -113.0
+        ],
+        [
+          19.0,
+          -3.5,
+          18.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -19.0,
+          -68.5,
+          -113.0
+        ],
+        [
+          19.0,
+          -3.4999992847442627,
+          17.994136810302734
+        ]
+      ]
+    },
+    {
+      "link": "fl_shin",
+      "part": "fl_knee_cross_spacer",
+      "sampled_vertices": 178,
+      "covered_within_03mm": 178,
+      "covered_within_1mm": 178,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -9.0,
+          -65.5,
+          -44.0
+        ],
+        [
+          9.0,
+          9.5,
+          -36.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -9.0,
+          -65.5,
+          -44.0
+        ],
+        [
+          9.0,
+          9.5,
+          -36.0
+        ]
+      ]
+    },
+    {
+      "link": "fl_shin",
+      "part": "fl_knee_front_rotor_hub",
+      "sampled_vertices": 840,
+      "covered_within_03mm": 840,
+      "covered_within_1mm": 840,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.479999542236328,
+          -1.7763568394002505e-15,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          9.5,
+          17.431121826171875
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.479999542236328,
+          0.0,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          9.5,
+          17.431121826171875
+        ]
+      ]
+    },
+    {
+      "link": "fl_shin",
+      "part": "fl_knee_rear_rotor_hub",
+      "sampled_vertices": 840,
+      "covered_within_03mm": 840,
+      "covered_within_1mm": 840,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.479999542236328,
+          -65.5,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          -49.099998474121094,
+          17.431121826171875
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.479999542236328,
+          -65.5,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          -49.099998474121094,
+          17.431121826171875
+        ]
+      ]
+    },
+    {
+      "link": "fl_shin",
+      "part": "fl_shin_fairing",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -21.0,
+          17.0,
+          -75.0
+        ],
+        [
+          21.0,
+          23.0,
+          -35.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -21.0,
+          17.0,
+          -75.0
+        ],
+        [
+          21.0,
+          23.0,
+          -35.0
+        ]
+      ]
+    },
+    {
+      "link": "fr_roll",
+      "part": "fr_pitch_servo",
+      "sampled_vertices": 862,
+      "covered_within_03mm": 862,
+      "covered_within_1mm": 862,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.75,
+          -30.0,
+          -100.75
+        ],
+        [
+          16.75,
+          19.100000381469727,
+          -42.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.75,
+          -30.0,
+          -100.75
+        ],
+        [
+          16.75,
+          19.099998474121094,
+          -42.25
+        ]
+      ]
+    },
+    {
+      "link": "fr_roll",
+      "part": "fr_pitch_cradle",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.549999237060547,
+          -30.649999618530273,
+          -108.75
+        ],
+        [
+          20.75,
+          19.75,
+          -34.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.55000114440918,
+          -30.650001525878906,
+          -108.75
+        ],
+        [
+          20.74968719482422,
+          19.750001907348633,
+          -34.25
+        ]
+      ]
+    },
+    {
+      "link": "fr_roll",
+      "part": "fr_pitch_clamp_shims",
+      "sampled_vertices": 40,
+      "covered_within_03mm": 40,
+      "covered_within_1mm": 40,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.549999237060547,
+          -27.450000762939453,
+          -101.5
+        ],
+        [
+          17.549999237060547,
+          16.549999237060547,
+          -41.5
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.549999237060547,
+          -27.450000762939453,
+          -101.5
+        ],
+        [
+          17.549999237060547,
+          16.549999237060547,
+          -41.5
+        ]
+      ]
+    },
+    {
+      "link": "fr_roll",
+      "part": "fr_pitch_strap_-41.55",
+      "sampled_vertices": 856,
+      "covered_within_03mm": 856,
+      "covered_within_1mm": 856,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -20.75,
+          8.550000190734863,
+          -108.75
+        ],
+        [
+          -17.549999237060547,
+          14.550000190734863,
+          -34.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -20.75,
+          8.550000190734863,
+          -108.75
+        ],
+        [
+          -17.549999237060547,
+          14.550000190734863,
+          -34.25
+        ]
+      ]
+    },
+    {
+      "link": "fr_roll",
+      "part": "fr_pitch_strap_-7.55",
+      "sampled_vertices": 856,
+      "covered_within_03mm": 856,
+      "covered_within_1mm": 856,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -20.75,
+          -25.450000762939453,
+          -108.75
+        ],
+        [
+          -17.549999237060547,
+          -19.450000762939453,
+          -34.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -20.75,
+          -25.450000762939453,
+          -108.75
+        ],
+        [
+          -17.549999237060547,
+          -19.450000762939453,
+          -34.25
+        ]
+      ]
+    },
+    {
+      "link": "fr_roll",
+      "part": "fr_roll_yoke",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -30.0,
+          -21.999988555908203,
+          -91.98633575439453
+        ],
+        [
+          35.25,
+          29.0,
+          22.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -30.0,
+          -21.999988555908203,
+          -91.98564147949219
+        ],
+        [
+          35.25,
+          29.0,
+          21.99608612060547
+        ]
+      ]
+    },
+    {
+      "link": "fr_roll",
+      "part": "fr_roll_M3_heads",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          27.5,
+          -15.99161148071289,
+          -16.0
+        ],
+        [
+          30.5,
+          15.99161148071289,
+          16.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          27.5,
+          -15.99161148071289,
+          -16.0
+        ],
+        [
+          30.5,
+          15.99161148071289,
+          16.0
+        ]
+      ]
+    },
+    {
+      "link": "fr_roll",
+      "part": "fr_roll_axle",
+      "sampled_vertices": 840,
+      "covered_within_03mm": 840,
+      "covered_within_1mm": 840,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -2.742602474200542e-15,
+          -17.479999542236328,
+          -17.431121826171875
+        ],
+        [
+          21.5,
+          17.479999542236328,
+          17.431121826171875
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -2.742602474200542e-15,
+          -17.479999542236328,
+          -17.431121826171875
+        ],
+        [
+          21.5,
+          17.479999542236328,
+          17.431121826171875
+        ]
+      ]
+    },
+    {
+      "link": "fr_roll",
+      "part": "fr_hip_passive_bearing",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -23.5,
+          22.0,
+          -85.43428802490234
+        ],
+        [
+          23.5,
+          29.0,
+          -38.565711975097656
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -23.5,
+          22.0,
+          -85.43428802490234
+        ],
+        [
+          23.5,
+          29.0,
+          -38.565711975097656
+        ]
+      ]
+    },
+    {
+      "link": "fr_roll",
+      "part": "fr_hip_bearing_retainer",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -30.0,
+          29.0,
+          -91.9161148071289
+        ],
+        [
+          30.0,
+          30.5,
+          -32.083885192871094
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -30.0,
+          29.0,
+          -91.91472625732422
+        ],
+        [
+          29.999313354492188,
+          30.5,
+          -32.083885192871094
+        ]
+      ]
+    },
+    {
+      "link": "fr_roll",
+      "part": "fr_pitch_mount_spacer_-10",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -13.199999809265137,
+          19.049999237060547,
+          -41.1910514831543
+        ],
+        [
+          -6.800000190734863,
+          20.0,
+          -34.8089485168457
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -13.199999809265137,
+          19.049999237060547,
+          -41.1910514831543
+        ],
+        [
+          -6.800000190734863,
+          20.0,
+          -34.8089485168457
+        ]
+      ]
+    },
+    {
+      "link": "fr_roll",
+      "part": "fr_pitch_mount_spacer_10",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          6.800000190734863,
+          19.049999237060547,
+          -41.1910514831543
+        ],
+        [
+          13.199999809265137,
+          20.0,
+          -34.8089485168457
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          6.800000190734863,
+          19.049999237060547,
+          -41.1910514831543
+        ],
+        [
+          13.199999809265137,
+          20.0,
+          -34.8089485168457
+        ]
+      ]
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_knee_servo",
+      "sampled_vertices": 862,
+      "covered_within_03mm": 862,
+      "covered_within_1mm": 862,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.75,
+          -1.7713898381975512e-15,
+          -134.75
+        ],
+        [
+          16.75,
+          49.099998474121094,
+          -76.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.75,
+          -7.629394644936838e-07,
+          -134.75
+        ],
+        [
+          16.75,
+          49.099998474121094,
+          -76.25
+        ]
+      ]
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_knee_cradle",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -20.75,
+          -0.6499999761581421,
+          -142.75
+        ],
+        [
+          17.549999237060547,
+          49.75,
+          -68.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -20.74968719482422,
+          -0.650001049041748,
+          -142.75
+        ],
+        [
+          17.55000114440918,
+          49.75,
+          -68.25
+        ]
+      ]
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_knee_clamp_shims",
+      "sampled_vertices": 40,
+      "covered_within_03mm": 40,
+      "covered_within_1mm": 40,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.549999237060547,
+          2.549999952316284,
+          -135.5
+        ],
+        [
+          17.549999237060547,
+          46.54999923706055,
+          -75.5
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.549999237060547,
+          2.549999952316284,
+          -135.5
+        ],
+        [
+          17.549999237060547,
+          46.54999923706055,
+          -75.5
+        ]
+      ]
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_knee_strap_-41.55",
+      "sampled_vertices": 856,
+      "covered_within_03mm": 856,
+      "covered_within_1mm": 856,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          17.549999237060547,
+          38.54999923706055,
+          -142.75
+        ],
+        [
+          20.75,
+          44.54999923706055,
+          -68.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          17.549999237060547,
+          38.54999923706055,
+          -142.75
+        ],
+        [
+          20.75,
+          44.54999923706055,
+          -68.25
+        ]
+      ]
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_knee_strap_-7.55",
+      "sampled_vertices": 856,
+      "covered_within_03mm": 856,
+      "covered_within_1mm": 856,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          17.549999237060547,
+          4.550000190734863,
+          -142.75
+        ],
+        [
+          20.75,
+          10.550000190734863,
+          -68.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          17.549999237060547,
+          4.550000190734863,
+          -142.75
+        ],
+        [
+          20.75,
+          10.550000190734863,
+          -68.25
+        ]
+      ]
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_thigh_cheek_front",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -36.0,
+          -6.5,
+          -88.0
+        ],
+        [
+          36.0,
+          -3.5,
+          18.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -35.999996185302734,
+          -6.5,
+          -88.0
+        ],
+        [
+          35.998348236083984,
+          -3.499999761581421,
+          18.0
+        ]
+      ]
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_thigh_cheek_rear",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -36.0,
+          52.0,
+          -144.91610717773438
+        ],
+        [
+          36.0,
+          66.5,
+          18.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -36.0,
+          52.0,
+          -144.91610717773438
+        ],
+        [
+          36.0,
+          66.5,
+          17.99629020690918
+        ]
+      ]
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_hip_front_rotor_spacer",
+      "sampled_vertices": 840,
+      "covered_within_03mm": 840,
+      "covered_within_1mm": 840,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.479999542236328,
+          -3.5,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          2.220446049250313e-15,
+          17.431121826171875
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.479999542236328,
+          -3.5,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          0.0,
+          17.431121826171875
+        ]
+      ]
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_hip_rear_rotor_hub",
+      "sampled_vertices": 840,
+      "covered_within_03mm": 840,
+      "covered_within_1mm": 840,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.479999542236328,
+          49.099998474121094,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          63.5,
+          17.431121826171875
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.479999542236328,
+          49.099998474121094,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          63.5,
+          17.431121826171875
+        ]
+      ]
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_knee_passive_bearing",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -23.5,
+          54.0,
+          -138.43429565429688
+        ],
+        [
+          23.5,
+          61.0,
+          -91.56571197509766
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -23.5,
+          54.0,
+          -138.43429565429688
+        ],
+        [
+          23.5,
+          61.0,
+          -91.56571197509766
+        ]
+      ]
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_knee_bearing_retainer",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -30.0,
+          61.0,
+          -144.91610717773438
+        ],
+        [
+          30.0,
+          62.5,
+          -85.0838851928711
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -30.0,
+          61.0,
+          -144.9147186279297
+        ],
+        [
+          29.999313354492188,
+          62.5,
+          -85.0838851928711
+        ]
+      ]
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_thigh_spacer_-27",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -30.200000762939453,
+          -3.5,
+          -60.6910514831543
+        ],
+        [
+          -23.799999237060547,
+          55.53125,
+          -54.3089485168457
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -30.200000762939453,
+          -3.5,
+          -60.6910514831543
+        ],
+        [
+          -23.799999237060547,
+          55.53125,
+          -54.3089485168457
+        ]
+      ]
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_thigh_spacer_27",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          23.799999237060547,
+          -3.5,
+          -60.6910514831543
+        ],
+        [
+          30.200000762939453,
+          55.53125,
+          -54.3089485168457
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          23.799999237060547,
+          -3.5,
+          -60.6910514831543
+        ],
+        [
+          30.200000762939453,
+          55.53125,
+          -54.3089485168457
+        ]
+      ]
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_knee_mount_spacer_-10_1.725",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -13.199999809265137,
+          -3.5,
+          -75.19105529785156
+        ],
+        [
+          -6.800000190734863,
+          0.05000000074505806,
+          -68.80894470214844
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -13.199999809265137,
+          -3.5,
+          -75.19105529785156
+        ],
+        [
+          -6.800000190734863,
+          0.04999997466802597,
+          -68.80894470214844
+        ]
+      ]
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_knee_mount_spacer_-10_-52.025",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -13.199999809265137,
+          49.04999923706055,
+          -75.19105529785156
+        ],
+        [
+          -6.800000190734863,
+          55.0,
+          -68.80894470214844
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -13.199999809265137,
+          49.04999923706055,
+          -75.19105529785156
+        ],
+        [
+          -6.800000190734863,
+          55.0,
+          -68.80894470214844
+        ]
+      ]
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_knee_mount_spacer_10_1.725",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          6.800000190734863,
+          -3.5,
+          -75.19105529785156
+        ],
+        [
+          13.199999809265137,
+          0.05000000074505806,
+          -68.80894470214844
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          6.800000190734863,
+          -3.5,
+          -75.19105529785156
+        ],
+        [
+          13.199999809265137,
+          0.04999997466802597,
+          -68.80894470214844
+        ]
+      ]
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_knee_mount_spacer_10_-52.025",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          6.800000190734863,
+          49.04999923706055,
+          -75.19105529785156
+        ],
+        [
+          13.199999809265137,
+          55.0,
+          -68.80894470214844
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          6.800000190734863,
+          49.04999923706055,
+          -75.19105529785156
+        ],
+        [
+          13.199999809265137,
+          55.0,
+          -68.80894470214844
+        ]
+      ]
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_hip_M3_heads_-8.0",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.0,
+          -9.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          -6.5,
+          15.99161148071289
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.0,
+          -9.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          -6.5,
+          15.99161148071289
+        ]
+      ]
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_hip_M3_heads_68.0",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.0,
+          66.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          69.5,
+          15.99161148071289
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.0,
+          66.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          69.5,
+          15.99161148071289
+        ]
+      ]
+    },
+    {
+      "link": "fr_thigh",
+      "part": "fr_thigh_fairing",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -21.0,
+          -15.0,
+          -80.0
+        ],
+        [
+          21.0,
+          -9.0,
+          -35.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -21.0,
+          -15.0,
+          -80.0
+        ],
+        [
+          21.0,
+          -9.0,
+          -35.0
+        ]
+      ]
+    },
+    {
+      "link": "fr_shin",
+      "part": "fr_hoof",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -18.136781692504883,
+          -17.0,
+          -130.15762329101562
+        ],
+        [
+          20.772356033325195,
+          17.0,
+          -97.39495849609375
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -18.135761260986328,
+          -17.0,
+          -130.15760803222656
+        ],
+        [
+          20.772275924682617,
+          17.0,
+          -97.39697265625
+        ]
+      ]
+    },
+    {
+      "link": "fr_shin",
+      "part": "fr_TPU_actuator",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          2.372737169265747,
+          -11.49161148071289,
+          -126.8504638671875
+        ],
+        [
+          8.367228507995605,
+          -5.508388519287109,
+          -121.80862426757812
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          2.372765064239502,
+          -11.49161148071289,
+          -126.8504638671875
+        ],
+        [
+          8.367228507995605,
+          -5.508388519287109,
+          -121.80873107910156
+        ]
+      ]
+    },
+    {
+      "link": "fr_shin",
+      "part": "fr_switch_PCB",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -2.601189374923706,
+          -14.5,
+          -122.26818084716797
+        ],
+        [
+          9.256014823913574,
+          -2.5,
+          -116.80413818359375
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -2.601189374923706,
+          -14.5,
+          -122.26818084716797
+        ],
+        [
+          9.256014823913574,
+          -2.5,
+          -116.80413818359375
+        ]
+      ]
+    },
+    {
+      "link": "fr_shin",
+      "part": "fr_switch",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          0.6640304327011108,
+          -11.600000381469727,
+          -123.20113372802734
+        ],
+        [
+          7.1768035888671875,
+          -5.400000095367432,
+          -119.27021026611328
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          0.6640304923057556,
+          -11.600000381469727,
+          -123.20113372802734
+        ],
+        [
+          7.1768035888671875,
+          -5.400000095367432,
+          -119.27021026611328
+        ]
+      ]
+    },
+    {
+      "link": "fr_shin",
+      "part": "fr_knee_M3_heads_-14.0",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.0,
+          -15.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          -12.5,
+          15.99161148071289
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.0,
+          -15.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          -12.5,
+          15.99161148071289
+        ]
+      ]
+    },
+    {
+      "link": "fr_shin",
+      "part": "fr_knee_M3_heads_70.0",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.0,
+          68.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          71.5,
+          15.99161148071289
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.0,
+          68.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          71.5,
+          15.99161148071289
+        ]
+      ]
+    },
+    {
+      "link": "fr_shin",
+      "part": "fr_shin_cheek_front",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -19.0,
+          -12.5,
+          -113.0
+        ],
+        [
+          19.0,
+          -9.5,
+          18.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -19.0,
+          -12.5,
+          -113.0
+        ],
+        [
+          19.0,
+          -9.5,
+          18.0
+        ]
+      ]
+    },
+    {
+      "link": "fr_shin",
+      "part": "fr_shin_cheek_rear",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -19.0,
+          3.5,
+          -113.0
+        ],
+        [
+          19.0,
+          68.5,
+          18.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -19.0,
+          3.4999992847442627,
+          -112.99628448486328
+        ],
+        [
+          19.0,
+          68.5,
+          17.994136810302734
+        ]
+      ]
+    },
+    {
+      "link": "fr_shin",
+      "part": "fr_knee_cross_spacer",
+      "sampled_vertices": 178,
+      "covered_within_03mm": 178,
+      "covered_within_1mm": 178,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -9.0,
+          -9.5,
+          -44.0
+        ],
+        [
+          9.0,
+          65.5,
+          -36.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -9.0,
+          -9.5,
+          -44.0
+        ],
+        [
+          9.0,
+          65.5,
+          -36.0
+        ]
+      ]
+    },
+    {
+      "link": "fr_shin",
+      "part": "fr_knee_front_rotor_hub",
+      "sampled_vertices": 840,
+      "covered_within_03mm": 840,
+      "covered_within_1mm": 840,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.479999542236328,
+          -9.5,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          1.7763568394002505e-15,
+          17.431121826171875
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.479999542236328,
+          -9.5,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          0.0,
+          17.431121826171875
+        ]
+      ]
+    },
+    {
+      "link": "fr_shin",
+      "part": "fr_knee_rear_rotor_hub",
+      "sampled_vertices": 840,
+      "covered_within_03mm": 840,
+      "covered_within_1mm": 840,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.479999542236328,
+          49.099998474121094,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          65.5,
+          17.431121826171875
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.479999542236328,
+          49.099998474121094,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          65.5,
+          17.431121826171875
+        ]
+      ]
+    },
+    {
+      "link": "fr_shin",
+      "part": "fr_shin_fairing",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -21.0,
+          -23.0,
+          -75.0
+        ],
+        [
+          21.0,
+          -17.0,
+          -35.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -21.0,
+          -23.0,
+          -75.0
+        ],
+        [
+          21.0,
+          -17.0,
+          -35.0
+        ]
+      ]
+    },
+    {
+      "link": "rl_roll",
+      "part": "rl_pitch_servo",
+      "sampled_vertices": 862,
+      "covered_within_03mm": 862,
+      "covered_within_1mm": 862,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.75,
+          -19.100000381469727,
+          -100.75
+        ],
+        [
+          16.75,
+          30.0,
+          -42.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.75,
+          -19.100000381469727,
+          -100.75
+        ],
+        [
+          16.75,
+          30.0,
+          -42.25
+        ]
+      ]
+    },
+    {
+      "link": "rl_roll",
+      "part": "rl_pitch_cradle",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.549999237060547,
+          -19.75,
+          -108.75
+        ],
+        [
+          20.75,
+          30.649999618530273,
+          -34.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.55000114440918,
+          -19.749998092651367,
+          -108.75
+        ],
+        [
+          20.74968910217285,
+          30.649995803833008,
+          -34.25
+        ]
+      ]
+    },
+    {
+      "link": "rl_roll",
+      "part": "rl_pitch_clamp_shims",
+      "sampled_vertices": 40,
+      "covered_within_03mm": 40,
+      "covered_within_1mm": 40,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.549999237060547,
+          -16.549999237060547,
+          -101.5
+        ],
+        [
+          17.549999237060547,
+          27.450000762939453,
+          -41.5
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.549999237060547,
+          -16.549999237060547,
+          -101.5
+        ],
+        [
+          17.549999237060547,
+          27.450000762939453,
+          -41.5
+        ]
+      ]
+    },
+    {
+      "link": "rl_roll",
+      "part": "rl_pitch_strap_-41.55",
+      "sampled_vertices": 856,
+      "covered_within_03mm": 856,
+      "covered_within_1mm": 856,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -20.75,
+          -14.550000190734863,
+          -108.75
+        ],
+        [
+          -17.549999237060547,
+          -8.550000190734863,
+          -34.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -20.74968719482422,
+          -14.550000190734863,
+          -108.75
+        ],
+        [
+          -17.550312042236328,
+          -8.550000190734863,
+          -34.25
+        ]
+      ]
+    },
+    {
+      "link": "rl_roll",
+      "part": "rl_pitch_strap_-7.55",
+      "sampled_vertices": 856,
+      "covered_within_03mm": 856,
+      "covered_within_1mm": 856,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -20.75,
+          19.450000762939453,
+          -108.75
+        ],
+        [
+          -17.549999237060547,
+          25.450000762939453,
+          -34.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -20.74968719482422,
+          19.450000762939453,
+          -108.75
+        ],
+        [
+          -17.550312042236328,
+          25.450000762939453,
+          -34.25
+        ]
+      ]
+    },
+    {
+      "link": "rl_roll",
+      "part": "rl_roll_yoke",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -35.25,
+          -29.0,
+          -91.98633575439453
+        ],
+        [
+          30.0,
+          21.999988555908203,
+          22.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -35.25,
+          -29.0,
+          -91.98497772216797
+        ],
+        [
+          30.0,
+          21.99998664855957,
+          21.99569320678711
+        ]
+      ]
+    },
+    {
+      "link": "rl_roll",
+      "part": "rl_roll_M3_heads",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -30.5,
+          -15.99161148071289,
+          -16.0
+        ],
+        [
+          -27.5,
+          15.99161148071289,
+          16.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -30.5,
+          -15.99161148071289,
+          -16.0
+        ],
+        [
+          -27.5,
+          15.99161148071289,
+          16.0
+        ]
+      ]
+    },
+    {
+      "link": "rl_roll",
+      "part": "rl_roll_axle",
+      "sampled_vertices": 840,
+      "covered_within_03mm": 840,
+      "covered_within_1mm": 840,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -21.5,
+          -17.479999542236328,
+          -17.431121826171875
+        ],
+        [
+          2.742602474200542e-15,
+          17.479999542236328,
+          17.431121826171875
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -21.5,
+          -17.479999542236328,
+          -17.431121826171875
+        ],
+        [
+          2.742602474200542e-15,
+          17.479999542236328,
+          17.431121826171875
+        ]
+      ]
+    },
+    {
+      "link": "rl_roll",
+      "part": "rl_hip_passive_bearing",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -23.5,
+          -29.0,
+          -85.43428802490234
+        ],
+        [
+          23.5,
+          -22.0,
+          -38.565711975097656
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -23.5,
+          -29.0,
+          -85.43428802490234
+        ],
+        [
+          23.5,
+          -22.0,
+          -38.565711975097656
+        ]
+      ]
+    },
+    {
+      "link": "rl_roll",
+      "part": "rl_hip_bearing_retainer",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -30.0,
+          -30.5,
+          -91.9161148071289
+        ],
+        [
+          30.0,
+          -29.0,
+          -32.083885192871094
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -30.0,
+          -30.5,
+          -91.9161148071289
+        ],
+        [
+          29.999313354492188,
+          -29.0,
+          -32.083885192871094
+        ]
+      ]
+    },
+    {
+      "link": "rl_roll",
+      "part": "rl_pitch_mount_spacer_-10",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          6.800000190734863,
+          -20.0,
+          -41.1910514831543
+        ],
+        [
+          13.199999809265137,
+          -19.049999237060547,
+          -34.8089485168457
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          6.800000190734863,
+          -20.0,
+          -41.1910514831543
+        ],
+        [
+          13.199999809265137,
+          -19.049999237060547,
+          -34.8089485168457
+        ]
+      ]
+    },
+    {
+      "link": "rl_roll",
+      "part": "rl_pitch_mount_spacer_10",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -13.199999809265137,
+          -20.0,
+          -41.1910514831543
+        ],
+        [
+          -6.800000190734863,
+          -19.049999237060547,
+          -34.8089485168457
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -13.199999809265137,
+          -20.0,
+          -41.1910514831543
+        ],
+        [
+          -6.800000190734863,
+          -19.049999237060547,
+          -34.8089485168457
+        ]
+      ]
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_knee_servo",
+      "sampled_vertices": 862,
+      "covered_within_03mm": 862,
+      "covered_within_1mm": 862,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.75,
+          -49.099998474121094,
+          -134.75
+        ],
+        [
+          16.75,
+          1.7713898381975512e-15,
+          -76.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.75,
+          -49.099998474121094,
+          -134.75
+        ],
+        [
+          16.75,
+          7.629394644936838e-07,
+          -76.25
+        ]
+      ]
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_knee_cradle",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -20.75,
+          -49.75,
+          -142.75
+        ],
+        [
+          17.549999237060547,
+          0.6499999761581421,
+          -68.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -20.74968719482422,
+          -49.75,
+          -142.75
+        ],
+        [
+          17.55000114440918,
+          0.650001049041748,
+          -68.2507553100586
+        ]
+      ]
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_knee_clamp_shims",
+      "sampled_vertices": 40,
+      "covered_within_03mm": 40,
+      "covered_within_1mm": 40,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.549999237060547,
+          -46.54999923706055,
+          -135.5
+        ],
+        [
+          17.549999237060547,
+          -2.549999952316284,
+          -75.5
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.549999237060547,
+          -46.54999923706055,
+          -135.5
+        ],
+        [
+          17.549999237060547,
+          -2.549999952316284,
+          -75.5
+        ]
+      ]
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_knee_strap_-41.55",
+      "sampled_vertices": 856,
+      "covered_within_03mm": 856,
+      "covered_within_1mm": 856,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          17.549999237060547,
+          -44.54999923706055,
+          -142.75
+        ],
+        [
+          20.75,
+          -38.54999923706055,
+          -68.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          17.550312042236328,
+          -44.54999923706055,
+          -142.75
+        ],
+        [
+          20.74968719482422,
+          -38.54999923706055,
+          -68.25
+        ]
+      ]
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_knee_strap_-7.55",
+      "sampled_vertices": 856,
+      "covered_within_03mm": 856,
+      "covered_within_1mm": 856,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          17.549999237060547,
+          -10.550000190734863,
+          -142.75
+        ],
+        [
+          20.75,
+          -4.550000190734863,
+          -68.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          17.550312042236328,
+          -10.550000190734863,
+          -142.75
+        ],
+        [
+          20.74968719482422,
+          -4.550000190734863,
+          -68.25
+        ]
+      ]
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_thigh_cheek_front",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -36.0,
+          3.5,
+          -88.0
+        ],
+        [
+          36.0,
+          6.5,
+          18.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -36.0,
+          3.499999761581421,
+          -87.99861907958984
+        ],
+        [
+          35.99833679199219,
+          6.5,
+          18.0
+        ]
+      ]
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_thigh_cheek_rear",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -36.0,
+          -66.5,
+          -144.91610717773438
+        ],
+        [
+          36.0,
+          -52.0,
+          18.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -36.0,
+          -66.49970245361328,
+          -144.91610717773438
+        ],
+        [
+          36.0,
+          -52.0,
+          17.996280670166016
+        ]
+      ]
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_hip_front_rotor_spacer",
+      "sampled_vertices": 840,
+      "covered_within_03mm": 840,
+      "covered_within_1mm": 840,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.479999542236328,
+          -1.7763568394002505e-15,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          3.5,
+          17.431121826171875
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.479999542236328,
+          -1.7763568394002505e-15,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          3.5,
+          17.431121826171875
+        ]
+      ]
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_hip_rear_rotor_hub",
+      "sampled_vertices": 840,
+      "covered_within_03mm": 840,
+      "covered_within_1mm": 840,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.479999542236328,
+          -63.5,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          -49.099998474121094,
+          17.431121826171875
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.479999542236328,
+          -63.5,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          -49.099998474121094,
+          17.431121826171875
+        ]
+      ]
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_knee_passive_bearing",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -23.5,
+          -61.0,
+          -138.43429565429688
+        ],
+        [
+          23.5,
+          -54.0,
+          -91.56571197509766
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -23.499744415283203,
+          -61.0,
+          -138.43348693847656
+        ],
+        [
+          23.499744415283203,
+          -54.0,
+          -91.56571197509766
+        ]
+      ]
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_knee_bearing_retainer",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -30.0,
+          -62.5,
+          -144.91610717773438
+        ],
+        [
+          30.0,
+          -61.0,
+          -85.0838851928711
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -30.0,
+          -62.5,
+          -144.91610717773438
+        ],
+        [
+          29.998720169067383,
+          -61.0,
+          -85.0838851928711
+        ]
+      ]
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_thigh_spacer_-27",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          23.799999237060547,
+          -55.53125,
+          -60.6910514831543
+        ],
+        [
+          30.200000762939453,
+          3.5,
+          -54.3089485168457
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          23.799999237060547,
+          -55.53125,
+          -60.6910514831543
+        ],
+        [
+          30.200000762939453,
+          3.5,
+          -54.3089485168457
+        ]
+      ]
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_thigh_spacer_27",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -30.200000762939453,
+          -55.53125,
+          -60.6910514831543
+        ],
+        [
+          -23.799999237060547,
+          3.5,
+          -54.3089485168457
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -30.200000762939453,
+          -55.53125,
+          -60.6910514831543
+        ],
+        [
+          -23.799999237060547,
+          3.5,
+          -54.3089485168457
+        ]
+      ]
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_knee_mount_spacer_-10_1.725",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          6.800000190734863,
+          -0.05000000074505806,
+          -75.19105529785156
+        ],
+        [
+          13.199999809265137,
+          3.5,
+          -68.80894470214844
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          6.800000190734863,
+          -0.05000000074505806,
+          -75.19105529785156
+        ],
+        [
+          13.199999809265137,
+          3.5,
+          -68.80894470214844
+        ]
+      ]
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_knee_mount_spacer_-10_-52.025",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          6.800000190734863,
+          -55.0,
+          -75.19105529785156
+        ],
+        [
+          13.199999809265137,
+          -49.04999923706055,
+          -68.80894470214844
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          6.800000190734863,
+          -55.0,
+          -75.19105529785156
+        ],
+        [
+          13.199999809265137,
+          -49.04999923706055,
+          -68.80894470214844
+        ]
+      ]
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_knee_mount_spacer_10_1.725",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -13.199999809265137,
+          -0.05000000074505806,
+          -75.19105529785156
+        ],
+        [
+          -6.800000190734863,
+          3.5,
+          -68.80894470214844
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -13.199999809265137,
+          -0.05000000074505806,
+          -75.19105529785156
+        ],
+        [
+          -6.800000190734863,
+          3.5,
+          -68.80894470214844
+        ]
+      ]
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_knee_mount_spacer_10_-52.025",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -13.199999809265137,
+          -55.0,
+          -75.19105529785156
+        ],
+        [
+          -6.800000190734863,
+          -49.04999923706055,
+          -68.80894470214844
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -13.199999809265137,
+          -55.0,
+          -75.19105529785156
+        ],
+        [
+          -6.800000190734863,
+          -49.04999923706055,
+          -68.80894470214844
+        ]
+      ]
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_hip_M3_heads_8.0",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.0,
+          6.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          9.5,
+          15.99161148071289
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.0,
+          6.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          9.5,
+          15.99161148071289
+        ]
+      ]
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_hip_M3_heads_-68.0",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.0,
+          -69.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          -66.5,
+          15.99161148071289
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.0,
+          -69.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          -66.5,
+          15.99161148071289
+        ]
+      ]
+    },
+    {
+      "link": "rl_thigh",
+      "part": "rl_thigh_fairing",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -21.0,
+          9.0,
+          -80.0
+        ],
+        [
+          21.0,
+          15.0,
+          -35.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -21.0,
+          9.000587463378906,
+          -80.0
+        ],
+        [
+          20.999998092651367,
+          15.0,
+          -35.0
+        ]
+      ]
+    },
+    {
+      "link": "rl_shin",
+      "part": "rl_hoof",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -20.772356033325195,
+          -17.0,
+          -130.15762329101562
+        ],
+        [
+          18.136781692504883,
+          17.0,
+          -97.39495849609375
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -20.772356033325195,
+          -17.0,
+          -130.15762329101562
+        ],
+        [
+          18.136781692504883,
+          17.0,
+          -97.39495849609375
+        ]
+      ]
+    },
+    {
+      "link": "rl_shin",
+      "part": "rl_TPU_actuator",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -8.367228507995605,
+          -11.49161148071289,
+          -126.8504638671875
+        ],
+        [
+          -2.372737169265747,
+          -5.508388519287109,
+          -121.80862426757812
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -8.367228507995605,
+          -11.49161148071289,
+          -126.8504638671875
+        ],
+        [
+          -2.372737169265747,
+          -5.508388519287109,
+          -121.80883026123047
+        ]
+      ]
+    },
+    {
+      "link": "rl_shin",
+      "part": "rl_switch_PCB",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -9.256014823913574,
+          -14.5,
+          -122.26818084716797
+        ],
+        [
+          2.601189374923706,
+          -2.5,
+          -116.80413818359375
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -9.256014823913574,
+          -14.5,
+          -122.26818084716797
+        ],
+        [
+          2.601189374923706,
+          -2.5,
+          -116.80413818359375
+        ]
+      ]
+    },
+    {
+      "link": "rl_shin",
+      "part": "rl_switch",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -7.1768035888671875,
+          -11.600000381469727,
+          -123.20113372802734
+        ],
+        [
+          -0.6640304327011108,
+          -5.400000095367432,
+          -119.27021026611328
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -7.1768035888671875,
+          -11.600000381469727,
+          -123.20113372802734
+        ],
+        [
+          -0.6640304327011108,
+          -5.400000095367432,
+          -119.27021026611328
+        ]
+      ]
+    },
+    {
+      "link": "rl_shin",
+      "part": "rl_knee_M3_heads_14.0",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.0,
+          12.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          15.5,
+          15.99161148071289
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.0,
+          12.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          15.5,
+          15.99161148071289
+        ]
+      ]
+    },
+    {
+      "link": "rl_shin",
+      "part": "rl_knee_M3_heads_-70.0",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.0,
+          -71.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          -68.5,
+          15.99161148071289
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.0,
+          -71.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          -68.5,
+          15.99161148071289
+        ]
+      ]
+    },
+    {
+      "link": "rl_shin",
+      "part": "rl_shin_cheek_front",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -19.0,
+          9.5,
+          -113.0
+        ],
+        [
+          19.0,
+          12.5,
+          18.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -19.0,
+          9.5,
+          -113.0
+        ],
+        [
+          19.0,
+          12.5,
+          18.0
+        ]
+      ]
+    },
+    {
+      "link": "rl_shin",
+      "part": "rl_shin_cheek_rear",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -19.0,
+          -68.5,
+          -113.0
+        ],
+        [
+          19.0,
+          -3.5,
+          18.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -19.0,
+          -68.5,
+          -113.0
+        ],
+        [
+          19.0,
+          -3.4999992847442627,
+          17.994136810302734
+        ]
+      ]
+    },
+    {
+      "link": "rl_shin",
+      "part": "rl_knee_cross_spacer",
+      "sampled_vertices": 178,
+      "covered_within_03mm": 178,
+      "covered_within_1mm": 178,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -9.0,
+          -65.5,
+          -44.0
+        ],
+        [
+          9.0,
+          9.5,
+          -36.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -9.0,
+          -65.5,
+          -44.0
+        ],
+        [
+          9.0,
+          9.5,
+          -36.0
+        ]
+      ]
+    },
+    {
+      "link": "rl_shin",
+      "part": "rl_knee_front_rotor_hub",
+      "sampled_vertices": 840,
+      "covered_within_03mm": 840,
+      "covered_within_1mm": 840,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.479999542236328,
+          -1.7763568394002505e-15,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          9.5,
+          17.431121826171875
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.479999542236328,
+          -1.7763568394002505e-15,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          9.5,
+          17.431121826171875
+        ]
+      ]
+    },
+    {
+      "link": "rl_shin",
+      "part": "rl_knee_rear_rotor_hub",
+      "sampled_vertices": 840,
+      "covered_within_03mm": 840,
+      "covered_within_1mm": 840,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.479999542236328,
+          -65.5,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          -49.099998474121094,
+          17.431121826171875
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.479999542236328,
+          -65.5,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          -49.099998474121094,
+          17.431121826171875
+        ]
+      ]
+    },
+    {
+      "link": "rl_shin",
+      "part": "rl_shin_fairing",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -21.0,
+          17.0,
+          -75.0
+        ],
+        [
+          21.0,
+          23.0,
+          -35.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -21.0,
+          17.0,
+          -75.0
+        ],
+        [
+          21.0,
+          23.0,
+          -35.0
+        ]
+      ]
+    },
+    {
+      "link": "rr_roll",
+      "part": "rr_pitch_servo",
+      "sampled_vertices": 862,
+      "covered_within_03mm": 862,
+      "covered_within_1mm": 862,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.75,
+          -30.0,
+          -100.75
+        ],
+        [
+          16.75,
+          19.100000381469727,
+          -42.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.75,
+          -30.0,
+          -100.75
+        ],
+        [
+          16.75,
+          19.100000381469727,
+          -42.25
+        ]
+      ]
+    },
+    {
+      "link": "rr_roll",
+      "part": "rr_pitch_cradle",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -20.75,
+          -30.649999618530273,
+          -108.75
+        ],
+        [
+          17.549999237060547,
+          19.75,
+          -34.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -20.75,
+          -30.64999771118164,
+          -108.7492904663086
+        ],
+        [
+          17.55000114440918,
+          19.749998092651367,
+          -34.250003814697266
+        ]
+      ]
+    },
+    {
+      "link": "rr_roll",
+      "part": "rr_pitch_clamp_shims",
+      "sampled_vertices": 40,
+      "covered_within_03mm": 40,
+      "covered_within_1mm": 40,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.549999237060547,
+          -27.450000762939453,
+          -101.5
+        ],
+        [
+          17.549999237060547,
+          16.549999237060547,
+          -41.5
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.549999237060547,
+          -27.450000762939453,
+          -101.5
+        ],
+        [
+          17.549999237060547,
+          16.549999237060547,
+          -41.5
+        ]
+      ]
+    },
+    {
+      "link": "rr_roll",
+      "part": "rr_pitch_strap_-41.55",
+      "sampled_vertices": 856,
+      "covered_within_03mm": 856,
+      "covered_within_1mm": 856,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          17.549999237060547,
+          8.550000190734863,
+          -108.75
+        ],
+        [
+          20.75,
+          14.550000190734863,
+          -34.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          17.550312042236328,
+          8.550000190734863,
+          -108.75
+        ],
+        [
+          20.74968719482422,
+          14.549734115600586,
+          -34.25
+        ]
+      ]
+    },
+    {
+      "link": "rr_roll",
+      "part": "rr_pitch_strap_-7.55",
+      "sampled_vertices": 856,
+      "covered_within_03mm": 856,
+      "covered_within_1mm": 856,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          17.549999237060547,
+          -25.450000762939453,
+          -108.75
+        ],
+        [
+          20.75,
+          -19.450000762939453,
+          -34.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          17.550312042236328,
+          -25.450000762939453,
+          -108.75
+        ],
+        [
+          20.74968719482422,
+          -19.450000762939453,
+          -34.25
+        ]
+      ]
+    },
+    {
+      "link": "rr_roll",
+      "part": "rr_roll_yoke",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -35.25,
+          -21.999988555908203,
+          -91.98633575439453
+        ],
+        [
+          30.0,
+          29.0,
+          22.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -35.25,
+          -21.999990463256836,
+          -91.98633575439453
+        ],
+        [
+          29.999237060546875,
+          29.0,
+          21.99569320678711
+        ]
+      ]
+    },
+    {
+      "link": "rr_roll",
+      "part": "rr_roll_M3_heads",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -30.5,
+          -15.99161148071289,
+          -16.0
+        ],
+        [
+          -27.5,
+          15.99161148071289,
+          16.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -30.5,
+          -15.99161148071289,
+          -16.0
+        ],
+        [
+          -27.5,
+          15.99161148071289,
+          16.0
+        ]
+      ]
+    },
+    {
+      "link": "rr_roll",
+      "part": "rr_roll_axle",
+      "sampled_vertices": 840,
+      "covered_within_03mm": 840,
+      "covered_within_1mm": 840,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -21.5,
+          -17.479999542236328,
+          -17.431121826171875
+        ],
+        [
+          4.5191964828260236e-15,
+          17.479999542236328,
+          17.431121826171875
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -21.5,
+          -17.479999542236328,
+          -17.431121826171875
+        ],
+        [
+          4.5191964828260236e-15,
+          17.479999542236328,
+          17.431121826171875
+        ]
+      ]
+    },
+    {
+      "link": "rr_roll",
+      "part": "rr_hip_passive_bearing",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -23.5,
+          22.0,
+          -85.43428802490234
+        ],
+        [
+          23.5,
+          29.0,
+          -38.565711975097656
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -23.5,
+          22.0,
+          -85.43428802490234
+        ],
+        [
+          23.5,
+          29.0,
+          -38.565711975097656
+        ]
+      ]
+    },
+    {
+      "link": "rr_roll",
+      "part": "rr_hip_bearing_retainer",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -30.0,
+          29.0,
+          -91.9161148071289
+        ],
+        [
+          30.0,
+          30.5,
+          -32.083885192871094
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -29.999313354492188,
+          29.0,
+          -91.91472625732422
+        ],
+        [
+          30.0,
+          30.5,
+          -32.083885192871094
+        ]
+      ]
+    },
+    {
+      "link": "rr_roll",
+      "part": "rr_pitch_mount_spacer_-10",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          6.800000190734863,
+          19.049999237060547,
+          -41.1910514831543
+        ],
+        [
+          13.199999809265137,
+          20.0,
+          -34.8089485168457
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          6.800000190734863,
+          19.049999237060547,
+          -41.1910514831543
+        ],
+        [
+          13.199999809265137,
+          20.0,
+          -34.8089485168457
+        ]
+      ]
+    },
+    {
+      "link": "rr_roll",
+      "part": "rr_pitch_mount_spacer_10",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -13.199999809265137,
+          19.049999237060547,
+          -41.1910514831543
+        ],
+        [
+          -6.800000190734863,
+          20.0,
+          -34.8089485168457
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -13.199999809265137,
+          19.049999237060547,
+          -41.1910514831543
+        ],
+        [
+          -6.799999713897705,
+          20.0,
+          -34.8089485168457
+        ]
+      ]
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_knee_servo",
+      "sampled_vertices": 862,
+      "covered_within_03mm": 862,
+      "covered_within_1mm": 862,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.75,
+          -1.7713898381975512e-15,
+          -134.75
+        ],
+        [
+          16.75,
+          49.099998474121094,
+          -76.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.75,
+          -7.629394644936838e-07,
+          -134.75
+        ],
+        [
+          16.75,
+          49.099998474121094,
+          -76.25
+        ]
+      ]
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_knee_cradle",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.549999237060547,
+          -0.6499999761581421,
+          -142.75
+        ],
+        [
+          20.75,
+          49.75,
+          -68.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.55000114440918,
+          -0.650001049041748,
+          -142.74612426757812
+        ],
+        [
+          20.74968719482422,
+          49.75,
+          -68.25
+        ]
+      ]
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_knee_clamp_shims",
+      "sampled_vertices": 40,
+      "covered_within_03mm": 40,
+      "covered_within_1mm": 40,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.549999237060547,
+          2.549999952316284,
+          -135.5
+        ],
+        [
+          17.549999237060547,
+          46.54999923706055,
+          -75.5
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.549999237060547,
+          2.549999952316284,
+          -135.5
+        ],
+        [
+          17.549999237060547,
+          46.54999923706055,
+          -75.5
+        ]
+      ]
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_knee_strap_-41.55",
+      "sampled_vertices": 856,
+      "covered_within_03mm": 856,
+      "covered_within_1mm": 856,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -20.75,
+          38.54999923706055,
+          -142.75
+        ],
+        [
+          -17.549999237060547,
+          44.54999923706055,
+          -68.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -20.74968719482422,
+          38.54999923706055,
+          -142.75
+        ],
+        [
+          -17.550312042236328,
+          44.54999923706055,
+          -68.25
+        ]
+      ]
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_knee_strap_-7.55",
+      "sampled_vertices": 856,
+      "covered_within_03mm": 856,
+      "covered_within_1mm": 856,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -20.75,
+          4.550000190734863,
+          -142.75
+        ],
+        [
+          -17.549999237060547,
+          10.550000190734863,
+          -68.25
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -20.74968719482422,
+          4.550000190734863,
+          -142.75
+        ],
+        [
+          -17.550312042236328,
+          10.550000190734863,
+          -68.25
+        ]
+      ]
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_thigh_cheek_front",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -36.0,
+          -6.5,
+          -88.0
+        ],
+        [
+          36.0,
+          -3.5,
+          18.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -35.998348236083984,
+          -6.5,
+          -88.0
+        ],
+        [
+          35.999996185302734,
+          -3.499999761581421,
+          18.0
+        ]
+      ]
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_thigh_cheek_rear",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -36.0,
+          52.0,
+          -144.91610717773438
+        ],
+        [
+          36.0,
+          66.5,
+          18.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -36.0,
+          52.0,
+          -144.91610717773438
+        ],
+        [
+          36.0,
+          66.5,
+          18.0
+        ]
+      ]
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_hip_front_rotor_spacer",
+      "sampled_vertices": 840,
+      "covered_within_03mm": 840,
+      "covered_within_1mm": 840,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.479999542236328,
+          -3.5,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          3.1086244689504383e-15,
+          17.431121826171875
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.479999542236328,
+          -3.5,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          2.14068265067327e-15,
+          17.431121826171875
+        ]
+      ]
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_hip_rear_rotor_hub",
+      "sampled_vertices": 840,
+      "covered_within_03mm": 840,
+      "covered_within_1mm": 840,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.479999542236328,
+          49.099998474121094,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          63.5,
+          17.431121826171875
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.479999542236328,
+          49.099998474121094,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          63.5,
+          17.431121826171875
+        ]
+      ]
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_knee_passive_bearing",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -23.5,
+          54.0,
+          -138.43429565429688
+        ],
+        [
+          23.5,
+          61.0,
+          -91.56571197509766
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -23.5,
+          54.0,
+          -138.43429565429688
+        ],
+        [
+          23.5,
+          61.0,
+          -91.56571197509766
+        ]
+      ]
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_knee_bearing_retainer",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -30.0,
+          61.0,
+          -144.91610717773438
+        ],
+        [
+          30.0,
+          62.5,
+          -85.0838851928711
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -29.999313354492188,
+          61.0,
+          -144.9147186279297
+        ],
+        [
+          30.0,
+          62.5,
+          -85.0838851928711
+        ]
+      ]
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_thigh_spacer_-27",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          23.799999237060547,
+          -3.5,
+          -60.6910514831543
+        ],
+        [
+          30.200000762939453,
+          55.53125,
+          -54.3089485168457
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          23.799999237060547,
+          -3.5,
+          -60.6910514831543
+        ],
+        [
+          30.200000762939453,
+          55.53125,
+          -54.3089485168457
+        ]
+      ]
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_thigh_spacer_27",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -30.200000762939453,
+          -3.5,
+          -60.6910514831543
+        ],
+        [
+          -23.799999237060547,
+          55.53125,
+          -54.3089485168457
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -30.200000762939453,
+          -3.5,
+          -60.6910514831543
+        ],
+        [
+          -23.799999237060547,
+          55.53125,
+          -54.3089485168457
+        ]
+      ]
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_knee_mount_spacer_-10_1.725",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          6.800000190734863,
+          -3.5,
+          -75.19105529785156
+        ],
+        [
+          13.199999809265137,
+          0.05000000074505806,
+          -68.80894470214844
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          6.800000190734863,
+          -3.5,
+          -75.19105529785156
+        ],
+        [
+          13.199999809265137,
+          0.04999997466802597,
+          -68.80894470214844
+        ]
+      ]
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_knee_mount_spacer_-10_-52.025",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          6.800000190734863,
+          49.04999923706055,
+          -75.19105529785156
+        ],
+        [
+          13.199999809265137,
+          55.0,
+          -68.80894470214844
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          6.800000190734863,
+          49.04999923706055,
+          -75.19105529785156
+        ],
+        [
+          13.199999809265137,
+          55.0,
+          -68.80894470214844
+        ]
+      ]
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_knee_mount_spacer_10_1.725",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -13.199999809265137,
+          -3.5,
+          -75.19105529785156
+        ],
+        [
+          -6.800000190734863,
+          0.05000000074505806,
+          -68.80894470214844
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -13.199999809265137,
+          -3.5,
+          -75.19105529785156
+        ],
+        [
+          -6.800000190734863,
+          0.04999997466802597,
+          -68.80894470214844
+        ]
+      ]
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_knee_mount_spacer_10_-52.025",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -13.199999809265137,
+          49.04999923706055,
+          -75.19105529785156
+        ],
+        [
+          -6.800000190734863,
+          55.0,
+          -68.80894470214844
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -13.199999809265137,
+          49.04999923706055,
+          -75.19105529785156
+        ],
+        [
+          -6.799999713897705,
+          55.0,
+          -68.80894470214844
+        ]
+      ]
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_hip_M3_heads_8.0",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.0,
+          -9.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          -6.5,
+          15.99161148071289
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.0,
+          -9.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          -6.5,
+          15.99161148071289
+        ]
+      ]
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_hip_M3_heads_-68.0",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.0,
+          66.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          69.5,
+          15.99161148071289
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.0,
+          66.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          69.5,
+          15.99161148071289
+        ]
+      ]
+    },
+    {
+      "link": "rr_thigh",
+      "part": "rr_thigh_fairing",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -21.0,
+          -15.0,
+          -80.0
+        ],
+        [
+          21.0,
+          -9.0,
+          -35.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -21.0,
+          -15.0,
+          -80.0
+        ],
+        [
+          21.0,
+          -9.000587463378906,
+          -35.0
+        ]
+      ]
+    },
+    {
+      "link": "rr_shin",
+      "part": "rr_hoof",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -20.772356033325195,
+          -17.0,
+          -130.15762329101562
+        ],
+        [
+          18.136781692504883,
+          17.0,
+          -97.39495849609375
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -20.772356033325195,
+          -17.0,
+          -130.15762329101562
+        ],
+        [
+          18.136781692504883,
+          17.0,
+          -97.39495849609375
+        ]
+      ]
+    },
+    {
+      "link": "rr_shin",
+      "part": "rr_TPU_actuator",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -8.367228507995605,
+          -11.49161148071289,
+          -126.8504638671875
+        ],
+        [
+          -2.372737169265747,
+          -5.508388519287109,
+          -121.80862426757812
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -8.367228507995605,
+          -11.49161148071289,
+          -126.8504638671875
+        ],
+        [
+          -2.372737169265747,
+          -5.508388519287109,
+          -121.80883026123047
+        ]
+      ]
+    },
+    {
+      "link": "rr_shin",
+      "part": "rr_switch_PCB",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -9.256014823913574,
+          -14.5,
+          -122.26818084716797
+        ],
+        [
+          2.601189374923706,
+          -2.5,
+          -116.80413818359375
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -9.256014823913574,
+          -14.5,
+          -122.26818084716797
+        ],
+        [
+          2.601189374923706,
+          -2.5,
+          -116.80413818359375
+        ]
+      ]
+    },
+    {
+      "link": "rr_shin",
+      "part": "rr_switch",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -7.1768035888671875,
+          -11.600000381469727,
+          -123.20113372802734
+        ],
+        [
+          -0.6640304327011108,
+          -5.400000095367432,
+          -119.27021026611328
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -7.1768035888671875,
+          -11.600000381469727,
+          -123.20113372802734
+        ],
+        [
+          -0.6640304327011108,
+          -5.400000095367432,
+          -119.27021026611328
+        ]
+      ]
+    },
+    {
+      "link": "rr_shin",
+      "part": "rr_knee_M3_heads_14.0",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.0,
+          -15.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          -12.5,
+          15.99161148071289
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.0,
+          -15.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          -12.5,
+          15.99161148071289
+        ]
+      ]
+    },
+    {
+      "link": "rr_shin",
+      "part": "rr_knee_M3_heads_-70.0",
+      "sampled_vertices": 672,
+      "covered_within_03mm": 672,
+      "covered_within_1mm": 672,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.0,
+          68.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          71.5,
+          15.99161148071289
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.0,
+          68.5,
+          -15.99161148071289
+        ],
+        [
+          16.0,
+          71.5,
+          15.99161148071289
+        ]
+      ]
+    },
+    {
+      "link": "rr_shin",
+      "part": "rr_shin_cheek_front",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -19.0,
+          -12.5,
+          -113.0
+        ],
+        [
+          19.0,
+          -9.5,
+          18.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -19.0,
+          -12.5,
+          -113.0
+        ],
+        [
+          19.0,
+          -9.5,
+          18.0
+        ]
+      ]
+    },
+    {
+      "link": "rr_shin",
+      "part": "rr_shin_cheek_rear",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -19.0,
+          3.5,
+          -113.0
+        ],
+        [
+          19.0,
+          68.5,
+          18.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -19.0,
+          3.4999992847442627,
+          -113.0
+        ],
+        [
+          19.0,
+          68.5,
+          17.994136810302734
+        ]
+      ]
+    },
+    {
+      "link": "rr_shin",
+      "part": "rr_knee_cross_spacer",
+      "sampled_vertices": 178,
+      "covered_within_03mm": 178,
+      "covered_within_1mm": 178,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -9.0,
+          -9.5,
+          -44.0
+        ],
+        [
+          9.0,
+          65.5,
+          -36.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -9.0,
+          -9.5,
+          -44.0
+        ],
+        [
+          9.0,
+          65.5,
+          -36.0
+        ]
+      ]
+    },
+    {
+      "link": "rr_shin",
+      "part": "rr_knee_front_rotor_hub",
+      "sampled_vertices": 840,
+      "covered_within_03mm": 840,
+      "covered_within_1mm": 840,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.479999542236328,
+          -9.5,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          3.552713678800501e-15,
+          17.431121826171875
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.479999542236328,
+          -9.5,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          2.14068265067327e-15,
+          17.431121826171875
+        ]
+      ]
+    },
+    {
+      "link": "rr_shin",
+      "part": "rr_knee_rear_rotor_hub",
+      "sampled_vertices": 840,
+      "covered_within_03mm": 840,
+      "covered_within_1mm": 840,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -17.479999542236328,
+          49.099998474121094,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          65.5,
+          17.431121826171875
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -17.479999542236328,
+          49.099998474121094,
+          -17.431121826171875
+        ],
+        [
+          17.479999542236328,
+          65.5,
+          17.431121826171875
+        ]
+      ]
+    },
+    {
+      "link": "rr_shin",
+      "part": "rr_shin_fairing",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -21.0,
+          -23.0,
+          -75.0
+        ],
+        [
+          21.0,
+          -17.0,
+          -35.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -21.0,
+          -23.0,
+          -75.0
+        ],
+        [
+          21.0,
+          -17.0,
+          -35.0
+        ]
+      ]
+    },
+    {
+      "link": "neck_yaw",
+      "part": "head_pitch_servo",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -12.36050033569336,
+          -18.701000213623047,
+          12.88949966430664
+        ],
+        [
+          12.36050033569336,
+          18.700000762939453,
+          58.11050033569336
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -12.36050033569336,
+          -18.701000213623047,
+          12.88949966430664
+        ],
+        [
+          12.36050033569336,
+          18.700000762939453,
+          58.11050033569336
+        ]
+      ]
+    },
+    {
+      "link": "neck_yaw",
+      "part": "head_pitch_cradle",
+      "sampled_vertices": 352,
+      "covered_within_03mm": 352,
+      "covered_within_1mm": 352,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -16.36050033569336,
+          -22.799999237060547,
+          5.139500141143799
+        ],
+        [
+          13.160499572753906,
+          20.200000762939453,
+          65.8604965209961
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -16.36050033569336,
+          -22.795791625976562,
+          5.139499664306641
+        ],
+        [
+          13.160499572753906,
+          20.195791244506836,
+          65.86050415039062
+        ]
+      ]
+    },
+    {
+      "link": "neck_yaw",
+      "part": "head_pitch_cradle_strap_-7",
+      "sampled_vertices": 176,
+      "covered_within_03mm": 176,
+      "covered_within_1mm": 176,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          13.160499572753906,
+          8.199999809265137,
+          5.139500141143799
+        ],
+        [
+          16.36050033569336,
+          15.199999809265137,
+          65.8604965209961
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          13.160499572753906,
+          8.199999809265137,
+          5.139499664306641
+        ],
+        [
+          16.36050033569336,
+          15.199999809265137,
+          65.86050415039062
+        ]
+      ]
+    },
+    {
+      "link": "neck_yaw",
+      "part": "head_pitch_cradle_strap_-33",
+      "sampled_vertices": 176,
+      "covered_within_03mm": 176,
+      "covered_within_1mm": 176,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          13.160499572753906,
+          -17.799999237060547,
+          5.139500141143799
+        ],
+        [
+          16.36050033569336,
+          -10.800000190734863,
+          65.8604965209961
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          13.160499572753906,
+          -17.799999237060547,
+          5.139499664306641
+        ],
+        [
+          16.36050033569336,
+          -10.800000190734863,
+          65.86050415039062
+        ]
+      ]
+    },
+    {
+      "link": "neck_yaw",
+      "part": "white_neck_collar",
+      "sampled_vertices": 194,
+      "covered_within_03mm": 194,
+      "covered_within_1mm": 194,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -33.97985076904297,
+          -33.95466995239258,
+          4.0
+        ],
+        [
+          34.0,
+          33.99496078491211,
+          40.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -33.97985076904297,
+          -33.953575134277344,
+          4.000000476837158
+        ],
+        [
+          34.0,
+          33.99496078491211,
+          40.0
+        ]
+      ]
+    },
+    {
+      "link": "neck_yaw",
+      "part": "head_pitch_clamp_shims",
+      "sampled_vertices": 40,
+      "covered_within_03mm": 40,
+      "covered_within_1mm": 40,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -13.160499572753906,
+          -18.701000213623047,
+          12.13949966430664
+        ],
+        [
+          13.160499572753906,
+          18.700000762939453,
+          58.86050033569336
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -13.160499572753906,
+          -18.701000213623047,
+          12.13949966430664
+        ],
+        [
+          13.160499572753906,
+          18.700000762939453,
+          58.86050033569336
+        ]
+      ]
+    },
+    {
+      "link": "head",
+      "part": "pony_head_shell",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -30.9202938079834,
+          -48.17093276977539,
+          36.0
+        ],
+        [
+          89.42009735107422,
+          49.04522705078125,
+          122.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -31.820293426513672,
+          -49.87136459350586,
+          32.099998474121094
+        ],
+        [
+          90.30643463134766,
+          49.944175720214844,
+          122.9000015258789
+        ]
+      ]
+    },
+    {
+      "link": "head",
+      "part": "head_service_hatch",
+      "sampled_vertices": 625,
+      "covered_within_03mm": 625,
+      "covered_within_1mm": 625,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          9.553860664367676,
+          -31.946571350097656,
+          33.0
+        ],
+        [
+          75.0,
+          32.0,
+          36.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          9.553860664367676,
+          -31.946569442749023,
+          33.0
+        ],
+        [
+          74.99700927734375,
+          31.999998092651367,
+          36.0
+        ]
+      ]
+    },
+    {
+      "link": "head",
+      "part": "head_support_yoke",
+      "sampled_vertices": 360,
+      "covered_within_03mm": 360,
+      "covered_within_1mm": 360,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -10.0,
+          -42.0,
+          -8.0
+        ],
+        [
+          38.0,
+          42.0,
+          34.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -10.000000953674316,
+          -41.999610900878906,
+          -8.0
+        ],
+        [
+          38.0,
+          41.999610900878906,
+          34.0
+        ]
+      ]
+    },
+    {
+      "link": "head",
+      "part": "mane_crest",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -32.0,
+          -28.97854232788086,
+          94.0
+        ],
+        [
+          25.990482330322266,
+          28.97854232788086,
+          143.99774169921875
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -32.0,
+          -28.97854232788086,
+          94.0
+        ],
+        [
+          25.990482330322266,
+          28.97854232788086,
+          143.99774169921875
+        ]
+      ]
+    },
+    {
+      "link": "head",
+      "part": "pink_mane_stripe",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -6.399991035461426,
+          -13.897615432739258,
+          113.4931869506836
+        ],
+        [
+          22.399999618530273,
+          -11.101564407348633,
+          140.36029052734375
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -6.399991035461426,
+          -13.897615432739258,
+          113.4931869506836
+        ],
+        [
+          22.399999618530273,
+          -11.101564407348633,
+          140.36029052734375
+        ]
+      ]
+    },
+    {
+      "link": "head",
+      "part": "unicorn_horn",
+      "sampled_vertices": 348,
+      "covered_within_03mm": 348,
+      "covered_within_1mm": 348,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          34.41284942626953,
+          -6.116729259490967,
+          114.0
+        ],
+        [
+          46.5,
+          6.127187252044678,
+          136.0
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          34.41284942626953,
+          -6.1165924072265625,
+          114.0
+        ],
+        [
+          46.5,
+          6.127187252044678,
+          136.0
+        ]
+      ]
+    },
+    {
+      "link": "head",
+      "part": "camera_carrier",
+      "sampled_vertices": 408,
+      "covered_within_03mm": 408,
+      "covered_within_1mm": 408,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          58.0,
+          -23.0,
+          44.0
+        ],
+        [
+          70.0,
+          23.0,
+          103.5
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          58.0,
+          -23.0,
+          44.0
+        ],
+        [
+          70.0,
+          22.999998092651367,
+          103.5
+        ]
+      ]
+    },
+    {
+      "link": "head",
+      "part": "camera_board",
+      "sampled_vertices": 92,
+      "covered_within_03mm": 92,
+      "covered_within_1mm": 92,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          64.80000305175781,
+          -12.5,
+          76.5
+        ],
+        [
+          66.4000015258789,
+          12.5,
+          100.5
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          64.80000305175781,
+          -12.5,
+          76.5
+        ],
+        [
+          66.4000015258789,
+          12.5,
+          100.5
+        ]
+      ]
+    },
+    {
+      "link": "head",
+      "part": "camera_lens",
+      "sampled_vertices": 84,
+      "covered_within_03mm": 84,
+      "covered_within_1mm": 84,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          66.0,
+          -7.179867267608643,
+          83.80000305175781
+        ],
+        [
+          77.5999984741211,
+          7.179867267608643,
+          98.19999694824219
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          66.0,
+          -7.179867267608643,
+          83.80000305175781
+        ],
+        [
+          77.5999984741211,
+          7.179867267608643,
+          98.19999694824219
+        ]
+      ]
+    },
+    {
+      "link": "head",
+      "part": "micro_ear_servo_-1",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          5.75,
+          -18.049999237060547,
+          90.4000015258789
+        ],
+        [
+          34.25,
+          -5.949999809265137,
+          113.5999984741211
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          5.75,
+          -18.049999237060547,
+          90.4000015258789
+        ],
+        [
+          34.25,
+          -5.949999809265137,
+          113.5999984741211
+        ]
+      ]
+    },
+    {
+      "link": "head",
+      "part": "eye_bezel_-1",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          34.240234375,
+          -48.10255432128906,
+          48.953407287597656
+        ],
+        [
+          71.759765625,
+          -35.89744567871094,
+          87.04659271240234
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          34.240234375,
+          -48.10255432128906,
+          48.953407287597656
+        ],
+        [
+          71.759765625,
+          -35.89744567871094,
+          87.04659271240234
+        ]
+      ]
+    },
+    {
+      "link": "head",
+      "part": "eye_board_-1",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          29.217784881591797,
+          -35.15407180786133,
+          49.25
+        ],
+        [
+          69.2764663696289,
+          -20.83407974243164,
+          86.75
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          29.217782974243164,
+          -35.15407180786133,
+          49.25
+        ],
+        [
+          69.2764663696289,
+          -20.83407974243164,
+          86.75
+        ]
+      ]
+    },
+    {
+      "link": "head",
+      "part": "micro_ear_servo_1",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          5.75,
+          5.949999809265137,
+          90.4000015258789
+        ],
+        [
+          34.25,
+          18.049999237060547,
+          113.5999984741211
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          5.75,
+          5.949999809265137,
+          90.4000015258789
+        ],
+        [
+          34.25,
+          18.049999237060547,
+          113.5999984741211
+        ]
+      ]
+    },
+    {
+      "link": "head",
+      "part": "eye_bezel_1",
+      "sampled_vertices": 168,
+      "covered_within_03mm": 168,
+      "covered_within_1mm": 168,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          34.240234375,
+          35.89744567871094,
+          48.953407287597656
+        ],
+        [
+          71.759765625,
+          48.10255432128906,
+          87.04659271240234
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          34.240234375,
+          35.89744567871094,
+          48.953407287597656
+        ],
+        [
+          71.759765625,
+          48.10255432128906,
+          87.04659271240234
+        ]
+      ]
+    },
+    {
+      "link": "head",
+      "part": "eye_board_1",
+      "sampled_vertices": 8,
+      "covered_within_03mm": 8,
+      "covered_within_1mm": 8,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          29.217784881591797,
+          20.83407974243164,
+          49.25
+        ],
+        [
+          69.2764663696289,
+          35.15407180786133,
+          86.75
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          29.217782974243164,
+          20.83407974243164,
+          49.25
+        ],
+        [
+          69.2764663696289,
+          35.15407180786133,
+          86.75
+        ]
+      ]
+    },
+    {
+      "link": "ear_left",
+      "part": "ear_shell_1",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -7.7994232177734375,
+          -5.983222961425781,
+          -6.0
+        ],
+        [
+          6.116401672363281,
+          28.956039428710938,
+          56.99879837036133
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -8.079999923706055,
+          -6.03000020980835,
+          -6.03000020980835
+        ],
+        [
+          8.079999923706055,
+          29.1299991607666,
+          57.2400016784668
+        ]
+      ]
+    },
+    {
+      "link": "ear_left",
+      "part": "ear_output_adapter_1",
+      "sampled_vertices": 84,
+      "covered_within_03mm": 84,
+      "covered_within_1mm": 84,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -10.75,
+          -3.490213394165039,
+          -3.5
+        ],
+        [
+          0.0,
+          3.490213394165039,
+          3.5
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -10.75,
+          -3.490213394165039,
+          -3.5
+        ],
+        [
+          0.0,
+          3.490213394165039,
+          3.5
+        ]
+      ]
+    },
+    {
+      "link": "ear_right",
+      "part": "ear_shell_-1",
+      "sampled_vertices": 1024,
+      "covered_within_03mm": 1024,
+      "covered_within_1mm": 1024,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -7.7994232177734375,
+          -28.956039428710938,
+          -6.0
+        ],
+        [
+          6.116401672363281,
+          5.983222961425781,
+          56.99879837036133
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -8.079999923706055,
+          -29.1299991607666,
+          -6.03000020980835
+        ],
+        [
+          8.079999923706055,
+          6.03000020980835,
+          57.2400016784668
+        ]
+      ]
+    },
+    {
+      "link": "ear_right",
+      "part": "ear_output_adapter_-1",
+      "sampled_vertices": 84,
+      "covered_within_03mm": 84,
+      "covered_within_1mm": 84,
+      "uncovered": 0,
+      "uncovered_points_mm": [],
+      "source_bounds_mm": [
+        [
+          -10.75,
+          -3.490213394165039,
+          -3.5
+        ],
+        [
+          0.0,
+          3.490213394165039,
+          3.5
+        ]
+      ],
+      "proxy_bounds_mm": [
+        [
+          -10.75,
+          -3.490213394165039,
+          -3.5
+        ],
+        [
+          0.0,
+          3.490213394165039,
+          3.5
+        ]
+      ]
+    }
+  ]
+}

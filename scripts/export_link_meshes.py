@@ -4,7 +4,7 @@ import numpy as np
 from scripts.common import ROOT,load
 sys.path.insert(0,str(ROOT/'cad/src'))
 from cadgen import build123d as bd
-from lib.shapes import link_components
+from scripts.cad_snapshot import load_parts as link_components
 
 def export_msh(stl,target):
  # MuJoCo's STL reader has a 200k-face limit. MSH preserves all triangles,

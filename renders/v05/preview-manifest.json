@@ -1,0 +1,42 @@
+{
+  "renderer": "5.1.1",
+  "source": "cad/GLB/assembly.glb",
+  "source_sha256": "69ef1dc18342c6ec4736ad285f589229ecc458aed00b902d6ec4c1992eaea073",
+  "robot_mesh_objects": 9,
+  "robot_vertices": 1041078,
+  "original_bounds_m": {
+    "min": [
+      -0.14535444974899292,
+      -0.12300000339746475,
+      0.0
+    ],
+    "max": [
+      0.18541429936885834,
+      0.12300000339746475,
+      0.5288994908332825
+    ]
+  },
+  "robot_geometry_unchanged": true,
+  "changes": "camera, stage, lighting and surface finishes; vendor CAD blue markers styled graphite, v03 pupils/optics styled deep black; native robot geometry preserved",
+  "shots": [
+    {
+      "file": "preview.png",
+      "camera_location_m": [
+        0.8956797122955322,
+        -1.0682927370071411,
+        0.7373006343841553
+      ],
+      "camera_target_m": [
+        0.02002992480993271,
+        0.0,
+        0.26444974541664124
+      ],
+      "lens_mm": 70,
+      "resolution": [
+        960,
+        720
+      ],
+      "samples": 32
+    }
+  ]
+}

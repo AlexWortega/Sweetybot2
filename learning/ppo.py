@@ -174,7 +174,10 @@ def _safe_load(path: str | Path, device: str | torch.device):
 def validate_environment_contract(saved,env):
     expected=getattr(env,'observation_contract',None)
     if expected and saved.get('environment_metadata',{}).get('observation_contract')!=expected:
-        raise ValueError('Checkpoint sensor observation contract differs; train v04 from scratch')
+        raise ValueError('Checkpoint sensor observation contract differs; use a matching robot version')
+    if expected:
+        from learning.readiness import dynamics_signature
+        if saved.get('environment_metadata',{}).get('dynamics_signature')!=dynamics_signature():raise ValueError('Checkpoint dynamics differ from current robot; explicit retraining required')
 
 
 def load_policy(checkpoint: str | Path, device: str = "cpu") -> tuple[Policy, dict[str, Any]]:
@@ -211,6 +214,7 @@ def _checkpoint(path: Path, model: Policy, optimizer, config: TrainConfig,
             "observation_dimension": model.obs_dim,
             "observation_contract": getattr(env,"observation_contract",None),
             "reward_version": getattr(env,"reward_version",None),
+            "dynamics_signature": __import__("learning.readiness",fromlist=["dynamics_signature"]).dynamics_signature() if getattr(env,"observation_contract",None) else None,
             "action_dimension": model.action_dim,
             "model_path": str(model_path) if model_path is not None else None,
             "model_sha256": hashlib.sha256(Path(model_path).read_bytes()).hexdigest() if model_path is not None else None,
@@ -240,6 +244,9 @@ def _json_value(value):
 def train(env, config: TrainConfig, process_started: float | None = None) -> dict[str, Any]:
     # --seconds governs useful learning time; the driver separately charges all
     # import/initialization/evaluation wall time against the fixed global cap.
+    if getattr(env,"observation_contract",None):
+        from learning.readiness import require_training_ready
+        require_training_ready()
     process_started = time.monotonic() if process_started is None else process_started
     if config.seconds <= 0 or config.rollout_steps < 1 or config.epochs < 1:
         raise ValueError("Positive seconds, rollout_steps and epochs required")
@@ -469,6 +476,8 @@ def main() -> None:
     parser.add_argument("--save-interval", type=float, default=60)
     parser.add_argument("--gpu-memory-gib", type=float, default=2.0)
     config = TrainConfig(**vars(parser.parse_args()))
+    from learning.readiness import require_training_ready
+    require_training_ready()
     # Import lazily: CPU inference tools need only this module and torch/numpy.
     from learning.env import SweetieVecEnv
     env = SweetieVecEnv(task=config.task, nenvs=config.nenvs, threads=config.threads,

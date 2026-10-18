@@ -33,10 +33,16 @@ def test_learning_model_preserves_inertials_and_collisions(terrain):
             assert geom.get(attribute) == exported.get(attribute)
         if geom.get("contype", "1") != "0":
             assert exported.get("contype", "1") != "0"
-    horn = model.geom("head_g7")
-    assert horn.contype[0] == 1 and horn.conaffinity[0] == 1
-    assert horn.type[0] == mujoco.mjtGeom.mjGEOM_CAPSULE
-    assert horn.size[0] == pytest.approx(.005)
+    # The real horn/brackets, retained as CAD-derived convex collision meshes.
+    horn_ids=[i for i in range(model.ngeom) if 'unicorn_horn' in (mujoco.mj_id2name(model,mujoco.mjtObj.mjOBJ_GEOM,i) or '')]
+    assert horn_ids and all(model.geom_type[i]==mujoco.mjtGeom.mjGEOM_MESH for i in horn_ids)
+    assert all(model.geom_contype[i]==4 and model.geom_conaffinity[i]==5 for i in horn_ids)
+    assert model.opt.disableflags & int(mujoco.mjtDisableBit.mjDSBL_FILTERPARENT)
+    assert trained.find('asset/mesh') is not None
+    for mesh in source.findall('asset/mesh'):
+        if not mesh.get('name').endswith('_visual'):
+            assert trained.find(f"asset/mesh[@name='{mesh.get('name')}']") is not None
+
 
 
 @pytest.mark.parametrize("terrain", ["flat", "rough", "slope", "steps"])

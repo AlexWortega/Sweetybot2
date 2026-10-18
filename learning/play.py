@@ -141,7 +141,7 @@ def _first(value):
 
 def pose_metrics(env):
     if hasattr(env,'sensors'):
-        from simulation.model import graph,fk,rotation
+        from simulation.model import graph,fk,rotation,joint_spec
         from scripts.common import load
         frame=env.sensors.frame();gravity=frame[0][0]
         if not frame[5][0,0]:return float('nan'),float('nan')
@@ -149,7 +149,7 @@ def pose_metrics(env):
         c=load();q=dict(zip(env.names,env.state['qpos'][0,7:]));T=fk(graph(c),q,c);heights=[]
         for i,leg in enumerate(c['legs']):
             if not(frame[3][0,i] and frame[4][0,i]):continue
-            angle=-(env.home[i*3+1]+env.home[i*3+2]);foot=np.r_[np.array([0,0,-c['geometry']['shin']/1000])+rotation([0,1,0],angle)@np.array([0,0,-.021]),1.]
+            angle=-joint_spec(leg+'_hip_pitch',c)['axis'][1]*(env.home[i*3+1]+env.home[i*3+2]);foot=np.r_[np.array([0,0,-c['geometry']['shin']/1000])+rotation([0,1,0],angle)@np.array([0,0,-.021]),1.]
             r=(T[leg+'_shin']@foot)[:3];heights.append(float(r@gravity))
         height=float(np.median(heights)) if len(heights)>=2 else getattr(env,'_estimated_stance_height',env.nominal_height)
         if len(heights)>=2:env._estimated_stance_height=height
@@ -167,7 +167,7 @@ def pose_metrics(env):
 
 
 def render_model(env, cad=False):
-    """Attach saved v04 CAD visuals to a separate rendering model only.
+    """Attach current CAD visuals to a separate rendering model only.
 
     The environment keeps its original lightweight native physics model. Joint
     state is copied into this model for display; its dynamics are never stepped.
@@ -183,7 +183,7 @@ def render_model(env, cad=False):
     source = ET.parse(source_path).getroot()
     target = ET.parse(env.model_path).getroot()
     source_asset = source.find("asset")
-    meshes = source_asset.findall("mesh") if source_asset is not None else []
+    meshes = [m for m in source_asset.findall("mesh") if m.get('name','').endswith('_visual')] if source_asset is not None else []
     if not meshes:
         raise ValueError("--cad requires saved CAD mesh assets in the original v02 MJCF")
     assets = target.find("asset")
@@ -298,9 +298,9 @@ def main(argv=None):
     recovery, recovery_meta = load_policy(args.recover, device="cpu") if args.recover else (None, {})
     running, run_meta = load_policy(args.run, device="cpu") if args.run else (None, {})
     policies = {"walk": walk, "recover": recovery, "run": running, "walk-fast-fallback": walk}
-    supervisor = RecoverySupervisor(recovery is not None, env.nominal_height)
     env = SweetieVecEnv(task="locomotion", num_envs=1, seed=args.seed, terrain=args.terrain,
                        difficulty=args.difficulty, randomize=False, threads=1)
+    supervisor = RecoverySupervisor(recovery is not None, env.nominal_height)
     env.auto_reset = False
     env.reset()
     env.reset_pose(args.pose)

@@ -1,16 +1,16 @@
 {
-  "passed": false,
+  "passed": true,
   "checks": [
     {
       "name": "pytest",
       "exit_code": 0,
-      "stdout": "........................................................................ [ 76%]\n......................                                                   [100%]\n94 passed in 5.40s\n",
+      "stdout": "........................................................................ [ 72%]\n...........................                                              [100%]\n99 passed in 71.19s (0:01:11)\n",
       "stderr": ""
     },
     {
       "name": "digital-sensor-physics",
       "exit_code": 0,
-      "stdout": "{\n  \"revision\": \"digital-prototype-04-actuation-sensing\",\n  \"nominal_mass_kg\": 5.0614114572179165,\n  \"observation_dimension\": 591,\n  \"observation_contract\": \"v04-sensor-suite-1\",\n  \"reward_version\": \"v04-contact-energy-recovery-1\",\n  \"all_passed\": true,\n  \"policy_quality\": \"No trained v04 policy evaluated; zero-action checks only\",\n  \"physical_validation\": \"not run\",\n  \"root_support_forces\": false,\n  \"mid_episode_resets\": false\n}\n",
+      "stdout": "{\n  \"passed\": true,\n  \"dynamics_signature\": \"966005c71d05349fc90c818df4ee8c9d1e8a7737c9552392cced0ddd210acf4e\",\n  \"reason\": \"Digital collision/sensor checks passed; new task policies still require training and independent evaluation\",\n  \"report\": \"reports/v05_validation.json\"\n}\n",
       "stderr": ""
     },
     {
@@ -21,13 +21,10 @@
     }
   ],
   "assertions": {
-    "print_types": 35,
+    "print_types": 39,
     "all_articulated_ranges_certified": false,
-    "joint_range_warning_count": 0,
+    "mechanical_audit": "reports/mechanical_gate.json",
     "physical_validation": "not run",
-    "trained_v04_policy": "not evaluated"
-  },
-  "software_checks_previously_passed": true,
-  "mechanical_gate_passed": false,
-  "release_block_reason": "Exact CAD checks find interpenetrating independently moving parts, including at home. Do not fabricate v04 or treat its simplified MuJoCo stand as mechanical validation."
+    "trained_v05_policy": "not evaluated"
+  }
 }

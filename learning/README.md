@@ -1,4 +1,4 @@
-> **V04 update (2026-10-18):** root model now uses heterogeneous stronger servos and 591 observations (197 × 3), including IMU, binary contacts/health and 8×8 ToF. V02 checkpoints/results and the original 24h run remain separate. Start v04 from scratch in a fresh output directory; final held-out seeds are 4000000..4000099. [Current build, rewards and limits](../docs/v04.md). The historical 165-input protocol below describes v02.
+> **Current v05:** use the [v05 build and protocol](../docs/v05.md). V04 was withdrawn. The 591-value sensor contract now includes a dynamics signature, CAD-derived self-collisions and solver-warning rejection. The original v02 cycle below is complete and incompatible. Start a new directory; `--require-gpu` waits for an available GPU rather than using CPU fallback. Waiting counts against the configured wall-time limit.
 
 # SweetieMini v02 learning and joystick replay
 

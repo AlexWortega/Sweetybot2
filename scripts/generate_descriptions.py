@@ -9,8 +9,11 @@ def sub(p,tag,**attrs):return E.SubElement(p,tag,{k:str(v) for k,v in attrs.item
 def write(tree,path):E.indent(tree,space='  ');E.ElementTree(tree).write(path,encoding='unicode',xml_declaration=True)
 
 def main():
- c=load();links=graph(c); a=c['actuator_candidates'][c['selection']['selected']]
+ c=load();links=graph(c);collision=json.loads((ROOT/'reports/collision_meshes.json').read_text());assert collision['complete'];colliders={}
+ for row in collision['parts']:colliders.setdefault(row['link'],[]).append(row)
+ a=c['actuator_candidates'][c['selection']['selected']]
  root=E.Element('mujoco',model=c['name'])
+ sub(root,'size',memory='64M')
  custom=sub(root,'custom');specs=[]
  for name in joint_names(c):
   motor=actuator(c,name);kp,kd=(18.,.35) if name.endswith(('hip_pitch','knee')) else (12.,.22) if name.endswith('hip_roll') else (4.,.08) if name=='head_pitch' else (2.,.06) if name=='head_yaw' else (.5,.01)
@@ -18,13 +21,17 @@ def main():
  sub(custom,'numeric',name='motor_specs',data=nums(specs))
  sub(custom,'numeric',name='tof_half_tangent',data=math.tan(math.radians(c['sensing']['depth']['diagonal_fov_deg']/2))/math.sqrt(2))
  sub(root,'compiler',angle='radian',inertiafromgeom='false',autolimits='true')
- sub(root,'option',timestep=1/c['control']['physics_hz'],gravity='0 0 -9.81',integrator='implicitfast',iterations=70)
+ option=sub(root,'option',timestep=1/c['control']['physics_hz'],gravity='0 0 -9.81',integrator='implicitfast',iterations=70);sub(option,'flag',filterparent='disable')
  visual=sub(root,'visual');sub(visual,'global',offwidth=1200,offheight=900)
  default=sub(root,'default');sub(default,'joint',damping=c['control']['joint_viscous_friction'],armature='.00006',frictionloss=c['control']['joint_coulomb_friction'])
  sub(default,'geom',friction=f"{c['control']['friction_coefficient']} .015 .001",solref='.008 1',solimp='.95 .99 .001',condim=4)
  world=sub(root,'worldbody');sub(world,'light',pos='0 -1 2',dir='0 0 -1');sub(world,'light',pos='1 1 1.8',diffuse='.5 .5 .5')
- sub(world,'geom',name='floor',type='plane',size='5 5 .1',rgba='.87 .88 .91 1')
+ sub(world,'geom',name='floor',type='plane',size='5 5 .1',rgba='.87 .88 .91 1',contype=1,conaffinity=7)
  asset=sub(root,'asset')
+ for records in colliders.values():
+  for row in records:
+   if row['role']=='sole_visual':continue
+   for k,path in enumerate(row['hulls']):sub(asset,'mesh',name=row['link']+'__'+row['part']+f'__{k}',file='../../'+path,scale='.001 .001 .001')
  mesh_ready=all((ROOT/'cad/STL/links'/f'{l["name"]}.msh').exists() for l in links)
  if mesh_ready:
   for l in links:sub(asset,'mesh',name=l['name']+'_visual',file=f'../../cad/STL/links/{l["name"]}.msh',scale='.001 .001 .001')
@@ -37,25 +44,16 @@ def main():
    j=joint_spec(l['joint'],c);sub(b,'joint',name=l['joint'],type='hinge',axis=nums(j['axis']),range=nums(j['limits']))
   I=np.array(l['inertia_matrix']);sub(b,'inertial',mass=l['mass'],pos=nums(l['com']),fullinertia=nums([I[0,0],I[1,1],I[2,2],I[0,1],I[0,2],I[1,2]]))
   if mesh_ready:sub(b,'geom',name=l['name']+'_cad',type='mesh',mesh=l['name']+'_visual',contype=0,conaffinity=0,group=1,rgba=nums(COLORS['body']))
-  for idx,g in enumerate(l['geoms']):
-   kind=g['kind'];size=g['size'];attrs=dict(name=f"{l['name']}_g{idx}",type=kind,rgba=nums(COLORS[g['color']]),pos=nums(g['pos']))
-   if kind=='box':size=[v/2 for v in size]
-   if kind=='capsule':attrs.pop('pos');attrs['fromto']=nums(g['pos']+g['end']);size=size[:1]
-   attrs['size']=nums(size)
-   if 'quat' in g:attrs['quat']=nums(g['quat'])
-   if mesh_ready:attrs['group']=3;attrs['rgba']='0 0 0 0'
-   if not g['collision']:attrs.update(contype=0,conaffinity=0,group=1)
-   if l['name'].endswith('_shin') and idx==1:
-    from simulation.model import rotation
-    leg=l['name'][:2];angle=-(home(c)[leg+'_hip_pitch']+home(c)[leg+'_knee']);R=rotation([0,1,0],angle)
-    attrs['pos']=nums([0,0,-c['geometry']['shin']/1000]+R@__import__('numpy').array([0,0,-.004]))
-    attrs['quat']=nums([math.cos(angle/2),0,math.sin(angle/2),0])
-   sub(b,'geom',**attrs)
+  for row in colliders.get(l['name'],[]):
+   if row['role']=='sole_visual':continue
+   for k,path in enumerate(row['hulls']):
+    name=row['link']+'__'+row['part']+f'__{k}';interface=row['role']=='interface'
+    sub(b,'geom',name=name,type='mesh',mesh=name,contype=2 if interface else 4,conaffinity=1 if interface else 5,group=0,rgba=nums(COLORS['frame']))
   if l['name'].endswith('_shin'):
    from simulation.model import rotation
-   leg=l['name'][:2];angle=-(home(c)[leg+'_hip_pitch']+home(c)[leg+'_knee']);R=rotation([0,1,0],angle);o=np.array([0,0,-c['geometry']['shin']/1000])
+   leg=l['name'][:2];angle=-joint_spec(leg+'_hip_pitch',c)['axis'][1]*(home(c)[leg+'_hip_pitch']+home(c)[leg+'_knee']);R=rotation([0,1,0],angle);o=np.array([0,0,-c['geometry']['shin']/1000])
    quat=nums([math.cos(angle/2),0,math.sin(angle/2),0])
-   sub(b,'geom',name=leg+'_sole_contact',type='box',size='.015 .015 .0021',pos=nums(o+R@np.array([0,0,-.0189])),quat=quat,rgba=nums(COLORS['hoof']),friction='1 .02 .001',solref='.004 1')
+   sub(b,'geom',name=leg+'_sole_contact',type='box',size='.015 .015 .0021',pos=nums(o+R@np.array([0,0,-.0189])),quat=quat,rgba=nums(COLORS['hoof']),contype=4,conaffinity=5,friction='1 .02 .001',solref='.004 1')
    sub(b,'site',name=leg+'_foot',pos=nums(o+R@np.array([0,0,-.021])),size='.002')
    sub(b,'site',name=leg+'_touch',type='box',pos=nums(o+R@np.array([0,0,-.0189])),quat=quat,size='.016 .016 .003',rgba='0 1 0 0')
  imu=c['sensing']['torso_imu'];sub(bodies['torso'],'site',name='torso_imu',pos=nums([v/1000 for v in imu['center_torso_mm']]),quat=nums(imu['mount_quaternion_wxyz']),size='.003')
@@ -86,20 +84,10 @@ def main():
   # CAD exports these meshes into link frames, independent of assembly pose.
   vis=sub(b,'visual');sub(vis,'origin',xyz='0 0 0',rpy='0 0 0');vg=sub(vis,'geometry');sub(vg,'mesh',filename=f'../../cad/STL/links/{l["name"]}.stl',scale='.001 .001 .001')
   sub(vis,'material',name='body')
-  for g in (x for x in l['geoms'] if x['collision']):
-   v=sub(b,'collision');kind=g['kind'];pos=g['pos'];size=g['size']
-   if kind=='capsule':
-    # Cylinder plus foot sphere already represented separately; URDF has no capsule primitive.
-    pos=[(x+y)/2 for x,y in zip(pos,g['end'])]
-   rpy=[2*math.atan2(g['quat'][1],g['quat'][0]),0,0] if 'quat' in g else [0,0,0]
-   if l['name'].endswith('_shin') and kind=='box' and g['size']==[.034,.034,.024]:
-    angle=-(home(c)[l['name'][:2]+'_hip_pitch']+home(c)[l['name'][:2]+'_knee']);rpy=[0,angle,0]
-    pos=np.array([0,0,-c['geometry']['shin']/1000])+rotation([0,1,0],angle)@np.array([0,0,-.004])
-   sub(v,'origin',xyz=nums(pos),rpy=nums(rpy));geom=sub(v,'geometry')
-   if kind=='box':sub(geom,'box',size=nums(size))
-   elif kind=='sphere':sub(geom,'sphere',radius=size[0])
-   elif kind=='capsule':sub(geom,'cylinder',radius=size[0],length=size[1])
-   else:sub(geom,'box',size=nums([2*v for v in size]))
+  for row in colliders.get(l['name'],[]):
+   if row['role']=='sole_visual':continue
+   for path in row['hulls']:
+    v=sub(b,'collision');sub(v,'origin',xyz='0 0 0',rpy='0 0 0');sub(sub(v,'geometry'),'mesh',filename='../../'+path,scale='.001 .001 .001')
   if l['name'].endswith('_shin'):
    angle=-(home(c)[l['name'][:2]+'_hip_pitch']+home(c)[l['name'][:2]+'_knee']);o=np.array([0,0,-c['geometry']['shin']/1000]);v=sub(b,'collision');sub(v,'origin',xyz=nums(o+rotation([0,1,0],angle)@np.array([0,0,-.0189])),rpy=nums([0,angle,0]));sub(sub(v,'geometry'),'box',size='.03 .03 .0042')
   if l['parent']:
