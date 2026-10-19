@@ -26,6 +26,8 @@ Digital checks include exact same-link assembly fits; full-assembly surface cand
 
 The actor has **591 observations**: three 197-value frames from sampled IMU, encoders, command/action history, binary contacts/health and ToF/health. RGB is available for rendering/perception and is not an actor input. True root state/contact forces are reward/evaluation-only. Walk/run rewards penalise slip, work, overload and self-collision; running requires repeated sustained forward flight. Recovery requires a stable feet-supported stand. A dynamics signature binds checkpoints to configuration, mesh bytes and sensor/reward code; v02/v04 weights are incompatible. Solver/arena warnings stop training.
 
+**Training update, 2026-10-19:** the authorized 36-hour v05 campaign now uses the [MicroDuck-inspired curriculum](docs/microduck-training.md): persistent learning stages, easy-to-hard recovery starts, late motion smoothing, explicit command buckets, and a walking-policy teacher gated to near-upright stance. The eva01 worker runs source `35138d3`; old checkpoints are preserved and walking weights transferred with exact parity and a fresh optimizer. The original deadline remains **2026-10-20 09:08 Europe/Belgrade**. Local verification passed 110 tests plus digital physics/sensor checks; remote recipe checks passed 25 tests. Initial PPO updates establish liveness; running/get-up improvements still require evaluation.
+
 ## Historical v02 policy preview
 
 ![Historical v02 walking and running/recovery attempts](renders/sweetybot2-training.gif)
