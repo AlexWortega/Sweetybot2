@@ -3,7 +3,7 @@
   "nominal_mass_kg": 7.36472235411874,
   "observation_dimension": 591,
   "observation_contract": "v05-sensor-suite-1",
-  "reward_version": "v05-contact-energy-recovery-1",
+  "reward_version": "v05-microduck-curriculum-1",
   "all_passed": true,
   "cases": [
     {
@@ -431,13 +431,14 @@
     "simulation/model.py": "542b6e6aca85ee183c502be3ccfef4d2167bf70cc23cd9c044e40c4ebb947b66",
     "simulation/generated/sweetie_mini.xml": "40049f9a30ba53b653661eb87fa02c9908ba75b885c18beb5d4eb8b245f6840a",
     "reports/collision_meshes.json": "2b05d36a64eb5205de175d2223c5dde36722deaaf36d6b6b42898cc77fd91d3b",
-    "learning/env.py": "be1ad99cb546d60b4663f31598dfd2097abdaa63c877c206822891e399e5ce4c",
     "learning/native.cpp": "8be5e2f5e8ab33050dbd281a331a992f699e6129d9e148bcd8bc237cad0ee094",
     "learning/sensors.py": "8ec90005f6070beaeceec24b55fb6b05dc646a7621ff2000b7f01538050f12cf",
-    "learning/rewards.py": "ed472edbeed333de60485706c7c31b1ccc09cd5f5780682324111605ee5ba722",
-    "hardware/observation.py": "c01f49cf032c46c58eb25084a437cc10c6eb7ade37a68a2470422df0f59c03fb"
+    "hardware/observation.py": "c01f49cf032c46c58eb25084a437cc10c6eb7ade37a68a2470422df0f59c03fb",
+    "learning/env.py": "4d22119574b240bb4adf2d15a0b95977522a9541233562fc0cb72923b086a012",
+    "learning/rewards.py": "66b5fef751bfb97f4ba4919c35391399355af7bb779cdba5fc8e1bb9f61da76c",
+    "learning/curriculum.py": "c23f6d1cf97617e7e969870da527fa8948bcd2ace67a67e4ddc0360b166d6527"
   },
-  "dynamics_signature": "966005c71d05349fc90c818df4ee8c9d1e8a7737c9552392cced0ddd210acf4e",
+  "dynamics_signature": "b83d7465695ee00516ba61a73d97db2fbb00a0f904dd37a0eb1ecb0776dcacb7",
   "policy_quality": "No trained v05 policy evaluated; neutral targets and physics checks only",
   "physical_validation": "not run",
   "root_support_forces": false,

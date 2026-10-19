@@ -164,6 +164,11 @@ class TrainConfig:
     value_coefficient: float = 0.5
     save_interval: float = 60
     gpu_memory_gib: float = 2.0
+    curriculum_horizon_steps: int = 50_000
+    curriculum_start_steps: float = 0.
+    initializer_source: str | None = None
+    recovery_teacher: str | None = None
+    teacher_weight: float = .2
 
 
 def _safe_load(path: str | Path, device: str | torch.device):
@@ -190,7 +195,8 @@ def load_policy(checkpoint: str | Path, device: str = "cpu") -> tuple[Policy, di
 
 
 def _checkpoint(path: Path, model: Policy, optimizer, config: TrainConfig,
-                steps: int, updates: int, wall: float, env=None, initialization=None) -> None:
+                steps: int, updates: int, wall: float, env=None, initialization=None,
+                curriculum_env_steps: float = 0.) -> None:
     saved = {
         "format_version": 1,
         "policy": model.state_dict(), "optimizer": optimizer.state_dict(),
@@ -202,9 +208,10 @@ def _checkpoint(path: Path, model: Policy, optimizer, config: TrainConfig,
         "cuda_rng": torch.cuda.get_rng_state(model.device) if model.device.type == "cuda" else None,
         "environment_resume": "fresh_episodes",
         "initialization": initialization,
+        "curriculum_env_steps": curriculum_env_steps,
     }
     project = Path(__file__).resolve().parent.parent
-    tracked = ("config/robot.yaml", "simulation/generated/sweetie_mini.xml", "learning/env.py", "learning/native.cpp", "learning/ppo.py", "learning/sensors.py", "learning/rewards.py", "hardware/observation.py")
+    tracked = ("config/robot.yaml", "simulation/generated/sweetie_mini.xml", "learning/env.py", "learning/native.cpp", "learning/ppo.py", "learning/sensors.py", "learning/rewards.py", "learning/curriculum.py", "learning/transfer.py", "hardware/observation.py")
     saved["source_hashes"] = {name: hashlib.sha256((project/name).read_bytes()).hexdigest()
                               for name in tracked if (project/name).exists()}
     if env is not None:
@@ -252,6 +259,10 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
         raise ValueError("Positive seconds, rollout_steps and epochs required")
     if config.resume and config.initialize_from:
         raise ValueError("--resume and --initialize-from are mutually exclusive")
+    from learning.curriculum import progress as curriculum_progress, recovery_stage
+    curriculum_progress(config.curriculum_start_steps,config.curriculum_horizon_steps)
+    if not math.isfinite(config.teacher_weight) or config.teacher_weight<0:raise ValueError('Invalid teacher weight')
+    if config.recovery_teacher and config.task!='recovery':raise ValueError('Walking teacher is gated to recovery only')
     torch.set_num_threads(2)
     device = torch.device(config.device)
     if device.type == "cuda":
@@ -268,6 +279,7 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
     prior_wall = 0.0
     restored_env = False
     initialization = None
+    curriculum_start=config.curriculum_start_steps
     if config.initialize_from:
         donor_path = Path(config.initialize_from)
         # Hash the exact bytes loaded, even if a training writer atomically
@@ -276,7 +288,8 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
         saved = torch.load(io.BytesIO(donor_bytes), map_location=device, weights_only=False)
         if saved["obs_dim"] != env.obs_dim or saved["action_dim"] != env.action_dim:
             raise ValueError("Initializer observation/action dimensions differ")
-        validate_environment_contract(saved,env)
+        from learning.transfer import validate_initializer
+        transfer=validate_initializer(saved,env,config.initializer_source)
         donor_task = saved.get("config", {}).get("task")
         if donor_task != config.task and (donor_task, config.task) != ("locomotion", "running"):
             raise ValueError("Cross-task initialization only supports locomotion to running")
@@ -290,6 +303,7 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
             "donor_config": saved.get("config", {}),
             "donor_steps": saved.get("steps"),
             "donor_updates": saved.get("updates"),
+            "recipe_transfer": transfer,
         }
     if config.resume:
         saved = _safe_load(config.resume, device)
@@ -304,6 +318,7 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
         steps, updates = saved["steps"], saved["updates"]
         prior_wall = saved.get("wall_seconds", 0.0)
         initialization = saved.get("initialization")
+        curriculum_start=saved.get('curriculum_env_steps',steps/max(1,old.get('nenvs',config.nenvs)))
         random.setstate(saved["python_rng"])
         np.random.set_state(saved["numpy_rng"])
         torch.set_rng_state(saved["torch_rng"].cpu())
@@ -312,9 +327,26 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
         if "environment" in saved and callable(getattr(env, "load_state_dict", None)):
             env.load_state_dict(saved["environment"])
             restored_env = True
+    teacher=None
+    if config.recovery_teacher:
+        from learning.transfer import validate_initializer
+        teacher,teacher_metadata=load_policy(config.recovery_teacher,device=str(device))
+        if teacher_metadata.get('config',{}).get('task')!='locomotion':raise ValueError('Recovery anchor must be a walking policy')
+        teacher_transfer=validate_initializer(teacher_metadata,env,config.initializer_source)
+        teacher_receipt={'checkpoint':str(Path(config.recovery_teacher).resolve()),
+                         'sha256':hashlib.sha256(Path(config.recovery_teacher).read_bytes()).hexdigest(),
+                         'role':'near_upright_stance_anchor_only','recipe_transfer':teacher_transfer}
+        if initialization is None:initialization={'mode':'fresh_policy'}
+        previous_teacher=initialization.get('recovery_teacher')
+        if previous_teacher and previous_teacher['sha256']!=teacher_receipt['sha256']:
+            raise ValueError('Resumed recovery teacher checkpoint changed')
+        initialization['recovery_teacher']=teacher_receipt
+        teacher.requires_grad_(False)
     out = Path(config.out)
     out.mkdir(parents=True, exist_ok=True)
     (out / "config.json").write_text(json.dumps(asdict(config), indent=2) + "\n")
+    if callable(getattr(env,'set_progress',None)):
+        env.set_progress(curriculum_progress(curriculum_start,config.curriculum_horizon_steps))
     obs = env.observation() if restored_env and callable(getattr(env, "observation", None)) else env.reset()
     obs = np.asarray(obs, dtype=np.float32)
     if obs.shape != (env.num_envs, env.obs_dim):
@@ -331,7 +363,8 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
                 if config.max_steps is not None and steps >= config.max_steps:
                     status = "max_steps_reached"
                     break
-                fraction = min(1.0, (time.monotonic() - start) / config.seconds)
+                curriculum_steps=curriculum_start+(steps-initial_steps)/env.num_envs
+                fraction = curriculum_progress(curriculum_steps,config.curriculum_horizon_steps)
                 if callable(getattr(env, "set_progress", None)):
                     env.set_progress(fraction)
                 # Frozen normalizer throughout collection and all associated updates.
@@ -339,6 +372,7 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
                 observations, actions, raw_actions = [], [], []
                 logprobs, values, rewards, dones = [], [], [], []
                 episode_metrics: dict[str, list[float]] = {}
+                term_metrics: dict[str, list[float]] = {}
                 for _ in range(config.rollout_steps):
                     if time.monotonic() - start >= config.seconds:
                         break
@@ -371,6 +405,8 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
                         finite = array[np.isfinite(array)]
                         if len(finite):
                             episode_metrics.setdefault(key, []).extend(finite.tolist())
+                    for key,val in info.get('reward_terms',{}).items():
+                        term_metrics.setdefault(key,[]).append(float(np.mean(val))*getattr(env,'dt',1.))
                     obs = np.asarray(next_obs, dtype=np.float32)
                     steps += env.num_envs
                 if not rewards:
@@ -385,7 +421,11 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
                 flat_returns = returns.flatten()
                 flat_advantages = advantages.flatten()
                 flat_advantages = (flat_advantages - flat_advantages.mean()) / (flat_advantages.std(unbiased=False) + 1e-8)
-                losses, kls, clips = [], [], []
+                teacher_actions=teacher_mask=None
+                if teacher is not None:
+                    from learning.transfer import recovery_teacher_targets
+                    teacher_actions,teacher_mask=recovery_teacher_targets(teacher,flat_obs)
+                losses, kls, clips, bc_losses = [], [], [], []
                 stop_update = False
                 for _ in range(config.epochs):
                     permutation = torch.randperm(len(flat_obs), device=device)
@@ -401,6 +441,12 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
                         clipped_value = flat_values[ids] + (new_value-flat_values[ids]).clamp(-config.clip, config.clip)
                         value_loss = 0.5 * torch.maximum((new_value-flat_returns[ids]).square(), (clipped_value-flat_returns[ids]).square()).mean()
                         loss = -surrogate.mean() + config.value_coefficient * value_loss - config.entropy * entropy.mean()
+                        if teacher is not None and teacher_mask[ids].any():
+                            mask=teacher_mask[ids]
+                            predicted=model.distribution(flat_obs[ids]).mean.tanh()
+                            bc=(predicted[mask]-teacher_actions[ids][mask]).square().mean()
+                            loss=loss+config.teacher_weight*bc
+                            bc_losses.append(bc.detach())
                         if not torch.isfinite(loss):
                             raise FloatingPointError("Nonfinite PPO objective")
                         optimizer.zero_grad(set_to_none=True)
@@ -427,21 +473,27 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
                     "approx_kl": float(torch.stack(kls).mean().cpu()) if kls else None,
                     "clip_fraction": float(torch.stack(clips).mean().cpu()) if clips else None,
                     "normal_entropy_mean": float(model.distribution(obs).entropy().sum(-1).mean().detach().cpu()),
+                    "curriculum_env_steps": curriculum_start+(steps-initial_steps)/env.num_envs,
+                    "curriculum_progress": fraction,
+                    "recovery_stage": recovery_stage(fraction)['name'] if config.task=='recovery' else None,
+                    "teacher_bc_loss": float(torch.stack(bc_losses).mean().cpu()) if bc_losses else None,
+                    "teacher_eligible_fraction": float(teacher_mask.float().mean().cpu()) if teacher_mask is not None else 0.,
+                    "reward_terms_per_policy_step": {k:float(np.mean(v)) for k,v in term_metrics.items()},
                     "episode": {key: {"mean": float(np.mean(value)), "count": len(value)} for key, value in episode_metrics.items()},
                 }
                 logfile.write(json.dumps(last_metrics, allow_nan=False) + "\n")
                 print(json.dumps(last_metrics, allow_nan=False), flush=True)
                 if time.monotonic()-last_save >= config.save_interval:
-                    _checkpoint(out / "latest.pt", model, optimizer, config, steps, updates, prior_wall+time.monotonic()-process_started, env, initialization)
+                    _checkpoint(out / "latest.pt", model, optimizer, config, steps, updates, prior_wall+time.monotonic()-process_started, env, initialization, curriculum_start+(steps-initial_steps)/env.num_envs)
                     last_save = time.monotonic()
     except KeyboardInterrupt:
         status = "interrupted"
     except BaseException:
-        _checkpoint(out / "failure.pt", model, optimizer, config, steps, updates, prior_wall+time.monotonic()-process_started, env, initialization)
+        _checkpoint(out / "failure.pt", model, optimizer, config, steps, updates, prior_wall+time.monotonic()-process_started, env, initialization, curriculum_start+(steps-initial_steps)/env.num_envs)
         raise
     finally:
         elapsed = time.monotonic() - start
-        _checkpoint(out / "latest.pt", model, optimizer, config, steps, updates, prior_wall+time.monotonic()-process_started, env, initialization)
+        _checkpoint(out / "latest.pt", model, optimizer, config, steps, updates, prior_wall+time.monotonic()-process_started, env, initialization, curriculum_start+(steps-initial_steps)/env.num_envs)
     result = {"status": status, "steps": steps, "updates": updates, "wall_seconds": elapsed,
               "initialization_seconds": initialization_seconds,
               "process_wall_seconds": time.monotonic()-process_started,
@@ -475,6 +527,11 @@ def main() -> None:
     parser.add_argument("--entropy", type=float, default=0.005)
     parser.add_argument("--save-interval", type=float, default=60)
     parser.add_argument("--gpu-memory-gib", type=float, default=2.0)
+    parser.add_argument('--curriculum-horizon-steps',type=int,default=50_000)
+    parser.add_argument('--curriculum-start-steps',type=float,default=0.)
+    parser.add_argument('--initializer-source')
+    parser.add_argument('--recovery-teacher')
+    parser.add_argument('--teacher-weight',type=float,default=.2)
     config = TrainConfig(**vars(parser.parse_args()))
     from learning.readiness import require_training_ready
     require_training_ready()

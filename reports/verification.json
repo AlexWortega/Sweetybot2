@@ -4,13 +4,13 @@
     {
       "name": "pytest",
       "exit_code": 0,
-      "stdout": "........................................................................ [ 72%]\n...........................                                              [100%]\n99 passed in 71.19s (0:01:11)\n",
+      "stdout": "........................................................................ [ 65%]\n......................................                                   [100%]\n110 passed in 82.71s (0:01:22)\n",
       "stderr": ""
     },
     {
       "name": "digital-sensor-physics",
       "exit_code": 0,
-      "stdout": "{\n  \"passed\": true,\n  \"dynamics_signature\": \"966005c71d05349fc90c818df4ee8c9d1e8a7737c9552392cced0ddd210acf4e\",\n  \"reason\": \"Digital collision/sensor checks passed; new task policies still require training and independent evaluation\",\n  \"report\": \"reports/v05_validation.json\"\n}\n",
+      "stdout": "{\n  \"passed\": true,\n  \"dynamics_signature\": \"b83d7465695ee00516ba61a73d97db2fbb00a0f904dd37a0eb1ecb0776dcacb7\",\n  \"reason\": \"Digital collision/sensor checks passed; new task policies still require training and independent evaluation\",\n  \"report\": \"reports/v05_validation.json\"\n}\n",
       "stderr": ""
     },
     {

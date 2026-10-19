@@ -1,0 +1,98 @@
+{
+  "recipe": "v05-microduck-curriculum-1",
+  "dynamics_signature": "b83d7465695ee00516ba61a73d97db2fbb00a0f904dd37a0eb1ecb0776dcacb7",
+  "physical_sensor_signature": "a4f685a56bf278913a39e7c5e566a13df0fbdd02c260c2697c6137e3938452c0",
+  "walk_transfer": {
+    "all_weights_and_normalizer_bitwise_equal": true,
+    "fresh_optimizer": true,
+    "donor_sha256": "f076a15f3b82b336d3f5c310c7b6c3b3a8353e1bbdfd21a8b4e76f504a4dce14",
+    "target_sha256": "9dead7f80f04854c65b2439077651e165672813c0710792d899eb7352fd9ff27",
+    "provenance": {
+      "mode": "weights_and_observation_normalizer_only",
+      "donor_path": "/private/tmp/sweetybot2-v05-walk-parent.pt",
+      "donor_sha256": "f076a15f3b82b336d3f5c310c7b6c3b3a8353e1bbdfd21a8b4e76f504a4dce14",
+      "donor_config": {
+        "task": "locomotion",
+        "out": "/mnt/elements/alexw/sweetybot2-v05-20261018/training-36h/runs/0021_locomotion_mixed",
+        "nenvs": 128,
+        "threads": 12,
+        "seconds": 1200.0,
+        "max_steps": null,
+        "seed": 166336,
+        "device": "cuda:0",
+        "terrain": "mixed",
+        "difficulty": 0.36,
+        "randomize": true,
+        "resume": "/mnt/elements/alexw/sweetybot2-v05-20261018/training-36h/runs/0003_locomotion_mixed/latest.pt",
+        "initialize_from": null,
+        "rollout_steps": 64,
+        "epochs": 4,
+        "minibatch_size": 2048,
+        "learning_rate": 0.0003,
+        "gamma": 0.99,
+        "gae_lambda": 0.95,
+        "clip": 0.2,
+        "entropy": 0.005,
+        "value_coefficient": 0.5,
+        "save_interval": 60.0,
+        "gpu_memory_gib": 2.0
+      },
+      "donor_steps": 1979392,
+      "donor_updates": 243,
+      "recipe_transfer": {
+        "mode": "explicit_training_recipe_transfer",
+        "source_snapshot": "/private/tmp/sweetybot2-v05-recipe-parent",
+        "source_dynamics_signature": "966005c71d05349fc90c818df4ee8c9d1e8a7737c9552392cced0ddd210acf4e",
+        "target_dynamics_signature": "b83d7465695ee00516ba61a73d97db2fbb00a0f904dd37a0eb1ecb0776dcacb7",
+        "physical_sensor_signature": "a4f685a56bf278913a39e7c5e566a13df0fbdd02c260c2697c6137e3938452c0",
+        "optimizer_restored": false,
+        "source_hashes_verified": true
+      }
+    }
+  },
+  "learned_improvement": "not established by a transfer or short optimizer smoke",
+  "recovery_cpu_smoke": {
+    "steps": 256,
+    "updates": 8,
+    "curriculum_env_steps": 64.0,
+    "checkpoint_sha256": "b05db1908b3f7d4f3495a2489fa27249368c30f2cb0d555ae1a68cd78fe5cd83",
+    "teacher": {
+      "checkpoint": "/Users/aleksandrnikolich/Desktop/Sweetybot2-v05/learning/runs/microduck-recipe/walk-bootstrap/latest.pt",
+      "sha256": "9dead7f80f04854c65b2439077651e165672813c0710792d899eb7352fd9ff27",
+      "role": "near_upright_stance_anchor_only",
+      "recipe_transfer": null
+    },
+    "latest_metrics": {
+      "steps": 256,
+      "updates": 8,
+      "wall_seconds": 1.3006764999590814,
+      "initialization_seconds": 5.021360791055486,
+      "process_wall_seconds": 6.322037625126541,
+      "total_wall_seconds": 6.322037750156596,
+      "transitions_per_second": 196.8206544886862,
+      "reward_mean": -0.020391924306750298,
+      "loss": 0.1893284171819687,
+      "approx_kl": 0.0,
+      "clip_fraction": 0.0,
+      "normal_entropy_mean": 8.628411293029785,
+      "curriculum_env_steps": 64.0,
+      "curriculum_progress": 0.00112,
+      "recovery_stage": "stand_and_crouch",
+      "teacher_bc_loss": 0.7100120186805725,
+      "teacher_eligible_fraction": 0.375,
+      "reward_terms_per_policy_step": {
+        "potential_progress": -0.006897515750435679,
+        "time_cost": -0.003,
+        "stable_support": 0.0,
+        "completed_stand": 0.0,
+        "overload": -0.006800041785543765,
+        "action_rate": -3.3458903751383094e-06,
+        "upright_body_contact": -0.0024375000000000004,
+        "arrival_damping": -3.5198532413151294e-06,
+        "self_collision": -0.00125
+      },
+      "episode": {}
+    },
+    "proves_learned_recovery": false
+  }
+}

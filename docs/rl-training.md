@@ -2,6 +2,8 @@
 
 The user authorized a new, separate 36-hour v05 cycle on 2026-10-18. It starts from scratch in a fresh output directory on eva01, uses the accepted v05 dynamics and sensor contract, and trains walking, recovery and running specialists. The driver requires GPU capacity and includes setup, evaluation and any GPU waits in its 36-hour wall-time cap. Only one training GPU is used at a time; existing host services remain running. Check the run's `status.json`, `budget.json` and `launcher.log` for actual progress and deadlines. Presence of weights does not establish completed skills.
 
+On 2026-10-19 the user requested adapting MicroDuck's training ideas. The [new recipe](microduck-training.md) adds persistent curricula, easier recovery starts, late motion smoothing, explicit command buckets and a gated walking-policy anchor near upright. Its handoff preserves the original 36-hour campaign deadline and old checkpoint history; changed recipes require explicit, audited weights-only transfer.
+
 The following pilot results describe the completed historical v02 24-hour cycle, not v05. B or RB/R1 toggles walk/run; LB/L1 remains the deadman. A hysteretic runtime switches to recovery after a persistent fall, then returns to the selected motion mode after sustained upright stability.
 
 The first 120-second locomotion pilot completed 1,032,192 transitions and 126 optimizer updates. A preliminary development test of 24 eight-second episodes had no falls. The forward command of 0.20 m/s produced mean local forward velocity 0.196 m/s. Overall linear RMSE was 0.181 m/s and yaw RMSE 0.619 rad/s; backward, side and turn commands remain poor. This pilot fails the full quality gate. Its video is a preliminary result, not proof of running or rough-terrain performance.

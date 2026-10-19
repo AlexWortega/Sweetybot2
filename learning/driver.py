@@ -33,6 +33,16 @@ def validate_budget(hours: float, chunk_seconds: float):
         raise ValueError("Chunk seconds must be finite and positive")
 
 
+def campaign_window(hours, now, prior_seconds=0., start_epoch=None):
+    validate_budget(hours,1.)
+    if not math.isfinite(prior_seconds) or prior_seconds<0:
+        raise ValueError('Prior seconds must be finite and nonnegative')
+    if start_epoch is not None and (not math.isfinite(start_epoch) or start_epoch>now or prior_seconds):
+        raise ValueError('Campaign start must be finite, in the past, and cannot combine with prior seconds')
+    started=start_epoch if start_epoch is not None else now-prior_seconds
+    return started,started+hours*3600
+
+
 def migrate_schedule(state):
     """Extend an existing run without resetting time, checkpoints or history."""
     if state.get('schedule_version',1)<2:
@@ -300,6 +310,10 @@ def main():
     parser.add_argument("--hours", type=float, default=24)
     parser.add_argument("--prior-seconds", type=float, default=0,
                         help="Charge preceding pilot/setup/evaluation wall time to the same total budget")
+    parser.add_argument('--budget-start-epoch',type=float,help='Preserve an already authorized campaign start/deadline across a recipe handoff')
+    parser.add_argument('--start-task',choices=TASKS,default='locomotion')
+    parser.add_argument('--recovery-teacher',help='Matching v05 walking checkpoint; near-upright recovery anchor only')
+    parser.add_argument('--curriculum-horizon-steps',type=int,default=50_000)
     parser.add_argument("--initial-walk", help="Own pilot checkpoint for locomotion warm start; not automatically a champion")
     parser.add_argument("--initial-recover", help="Own pilot checkpoint for recovery warm start; not automatically a champion")
     parser.add_argument("--chunk-seconds", type=float, default=1200)
@@ -317,8 +331,7 @@ def main():
     require_training_ready()
     if args.require_gpu and args.device=='cpu':raise ValueError('--require-gpu cannot be combined with --device cpu')
     validate_budget(args.hours, args.chunk_seconds)
-    if not math.isfinite(args.prior_seconds) or args.prior_seconds < 0:
-        raise ValueError("Prior seconds must be finite and nonnegative")
+    campaign_started,campaign_deadline=campaign_window(args.hours,time.time(),args.prior_seconds,args.budget_start_epoch)
     if not 1 <= args.threads <= 16:
         raise ValueError("CPU worker cap is 16")
     out = Path(args.out).resolve()
@@ -341,21 +354,24 @@ def main():
             return
         if abs(state["budget_hours"]-args.hours) > 1e-9:
             raise ValueError("A persisted run cannot silently change its budget")
+        if args.budget_start_epoch is not None and abs(state['started_epoch']-args.budget_start_epoch)>.001:
+            raise ValueError('A persisted campaign cannot change its start/deadline')
     else:
-        started = time.time()-args.prior_seconds
+        started = campaign_started
         warm_starts={}
         for task,checkpoint in (("locomotion",args.initial_walk),("recovery",args.initial_recover)):
             if checkpoint:
                 path=Path(checkpoint).resolve()
                 if not path.is_file():raise FileNotFoundError(path)
                 warm_starts[task]=str(path)
-        state = {"dynamics_signature":dynamics_signature(), "observation_contract":"v05-sensor-suite-1", "reward_version":"v05-contact-energy-recovery-1", "started_epoch": started, "deadline_epoch": started+args.hours*3600,
+        from learning.env import SweetieVecEnv
+        state = {"dynamics_signature":dynamics_signature(), "observation_contract":"v05-sensor-suite-1", "reward_version":SweetieVecEnv.reward_version, "started_epoch": started, "deadline_epoch": campaign_deadline,
                  "initial_prior_seconds": args.prior_seconds,
                  "budget_hours": args.hours, "complete": False,
                  "round": 0, "children": [], "latest_training": warm_starts,
                  "champions": {}, "consecutive_failures": {"locomotion": 0, "recovery": 0},
                  "final_started": False, "config": vars(args)}
-        state.update(schedule_version=2,schedule_index=0,completed_chunks_by_task={task:0 for task in TASKS})
+        state.update(schedule_version=2,schedule_index=TASKS.index(args.start_task),completed_chunks_by_task={task:0 for task in TASKS})
         atomic_json(state_path, state)
     migrate_schedule(state)
     state['runtime_config']=vars(args)
@@ -449,6 +465,9 @@ def main():
             terrain_cycle = ("flat", "mixed", "slope", "mixed", "steps", "mixed")
             terrain = terrain_cycle[task_round % len(terrain_cycle)]
             difficulty = min(1., .12+.04*max(0, task_round-1)) if terrain != "flat" else 0.
+            if task=='recovery':
+                from learning.curriculum import recovery_terrain
+                terrain,difficulty=recovery_terrain(task_round,state['champions'].get(task))
             seed = (args.seed+round_index*7919) % 1_000_000
             directory = out / "runs" / f"{round_index:04d}_{task}_{terrain}"
             if directory.exists():
@@ -463,7 +482,10 @@ def main():
                        "--threads", str(args.threads), "--seconds", str(seconds),
                        "--seed", str(seed), "--device", selection_device["device"],
                        "--terrain", terrain, "--difficulty", str(difficulty),
+                       '--curriculum-horizon-steps',str(args.curriculum_horizon_steps),
                        "--gpu-memory-gib", "2", "--save-interval", "60"]
+            if task=='recovery' and args.recovery_teacher:
+                command.extend(('--recovery-teacher',args.recovery_teacher))
             if task in state["latest_training"]:
                 command.extend(("--resume", state["latest_training"][task]))
             elif task=='running':

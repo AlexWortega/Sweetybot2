@@ -92,7 +92,7 @@ def make_model(terrain='flat', difficulty=0., seed=1):
 
 class SweetieVecEnv:
     observation_contract="v05-sensor-suite-1"
-    reward_version="v05-contact-energy-recovery-1"
+    reward_version="v05-microduck-curriculum-1"
     action_dim=12
     frame_dim=197
     obs_dim=591
@@ -163,13 +163,15 @@ class SweetieVecEnv:
             self.commands[ids,2]=r.uniform(-.6,.6,k)*min(1,self.progress*3)
             self.commands[ids[r.random(k)<.1]]=0
             return
-        self.commands[ids,0]=r.uniform(.12,.25+.35*self.progress,k)
-        self.commands[ids,1]=r.uniform(-.08,.08,k)*min(1,self.progress*3)
-        self.commands[ids,2]=r.uniform(-1.,1.,k)*min(1,self.progress*3)
-        modes=r.random(k)
-        self.commands[ids[modes<.1]]=0
-        self.commands[ids[(modes>=.1)&(modes<.2)],0]*=-1
-        if self.task=='recovery':self.commands[ids]=0
+        self.commands[ids]=0
+        if self.task=='recovery':return
+        # Explicit buckets train exact idle, backward, sideways and turn-in-place.
+        modes=r.random(k);forward=(modes>=.20)&(modes<.55)
+        backward=(modes>=.55)&(modes<.70);side=(modes>=.70)&(modes<.85);turn=modes>=.85
+        self.commands[ids[forward],0]=r.uniform(.12,.25+.35*self.progress,forward.sum())
+        self.commands[ids[backward],0]=-r.uniform(.08,.15+.15*self.progress,backward.sum())
+        self.commands[ids[side],1]=r.choice([-1.,1.],side.sum())*r.uniform(.06,.10+.06*self.progress,side.sum())
+        self.commands[ids[turn],2]=r.choice([-1.,1.],turn.sum())*r.uniform(.20,.35+.65*self.progress,turn.sum())
 
     def _clear_reset_penetration(self,qpos):
         """Lift only episode initializations; never correct an active episode."""
@@ -222,10 +224,9 @@ class SweetieVecEnv:
         q[:,3]=np.cos(yaw/2);q[:,6]=np.sin(yaw/2)
         kinds=np.zeros(k,int)
         if self.task=='recovery':
-            # Keep near-goal resets throughout, progressively introduce real falls.
-            fallen_fraction=.65+.25*min(1,self.progress*3)
-            fallen=r.random(k)<fallen_fraction
-            kinds[fallen]=r.choice([1,2,3,4],fallen.sum(),p=[.10,.30,.30,.30])
+            from learning.curriculum import recovery_stage
+            stage=recovery_stage(self.progress)
+            kinds=r.choice(5,k,p=stage['probabilities'])
         if pose is not None:kinds[:]=dict(stand=0,folded_crouch=1,prone=1,left=2,right=3,supine=4)[pose]
         for i,kind in enumerate(kinds):
             z=self.nominal_height
@@ -243,9 +244,9 @@ class SweetieVecEnv:
             elif kind in (2,3,4):
                 angle={2:np.pi/2,3:-np.pi/2,4:np.pi}[kind]
                 if self.randomize and self.auto_reset:
-                    # Mostly near-goal fall curriculum, but retain 25% full falls from the start.
-                    scale=min(1,.25+1.5*self.progress)
-                    if r.random()>.25:angle*=scale
+                    # Reverse curriculum: starts partway through the roll.
+                    if r.random()>stage['full_fall_probability']:
+                        angle*=r.uniform(.15,stage['roll_scale'])
                 if self.randomize:
                     # Rz(yaw) Ry(pitch) Rx(roll): diversify falls rather than
                     # overwriting the heading with one exact side orientation.
@@ -257,7 +258,10 @@ class SweetieVecEnv:
                 else:q[i,3:7]=[np.cos(angle/2),np.sin(angle/2),0,0]
                 z=.32
             elif self.task=='recovery' and r.random()<.5 and pose is None:
-                q[i,7:19]=np.tile([0,-.9,1.75],4);z=.15
+                # Near-goal starts teach the last part of the rise first.
+                blend=r.uniform(.1,.6)
+                q[i,7:19]=(1-blend)*self.home[:12]+blend*np.tile([0,-1.2,2.05],4)
+                z=max(.15,self.nominal_height*(1-.5*blend))
             q[i,2]=z+self.ground_height(q[i,0],q[i,1])
         reference=q.copy()
         if self.randomize:
@@ -373,11 +377,11 @@ class SweetieVecEnv:
             terms=locomotion_terms(self.commands,velocity_reward,omega,up,self.height,self.nominal_height,
                 self.state['torque_rms'],self.state['motor_continuous'],actions,self.last_action,
                 self.state['qpos'][:,7:19],self.home[:12],self.state['contacts'],self.foot_velocity,
-                self.state['bad_contacts'],self.task,self.flight_seconds,previous_flight)
+                self.state['bad_contacts'],self.task,self.flight_seconds,previous_flight,progress=self.progress)
             failure=(up<.45)|(self.height<.43*self.nominal_height)
         else:
             terms,self.previous_potential=recovery_terms(up,self.height,self.nominal_height,pose,self.previous_potential,
-                self.stable,just_success,actions,self.last_action,self.state['torque_rms'],self.state['motor_continuous'],self.state['bad_contacts'])
+                self.stable,just_success,actions,self.last_action,self.state['torque_rms'],self.state['motor_continuous'],self.state['bad_contacts'],progress=self.progress,omega=omega)
             failure=np.zeros(self.num_envs,bool)
         terms['self_collision']=-.2*np.minimum(self.state.get('self_contacts',np.zeros(self.num_envs)),10)
         reward=sum(terms.values())*self.dt
