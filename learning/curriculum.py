@@ -5,7 +5,7 @@ Resets place an episode's initial state only; they do not assist active motion.
 """
 import numpy as np
 
-RECIPE = 'v05-microduck-curriculum-1'
+RECIPE = 'v05-microduck-rewards-2'
 
 
 def progress(env_steps, horizon=50_000):
@@ -37,3 +37,12 @@ def recovery_terrain(task_round, champion):
     cycle=('flat','mixed','slope','mixed','steps','mixed')
     terrain=cycle[task_round % len(cycle)]
     return terrain, 0. if terrain=='flat' else min(1., .12+.04*max(0,task_round-1))
+
+
+def recovery_progress_cap(champion):
+    """Keep elapsed experience, but unlock hard starts after measured skills."""
+    rates=(champion or {}).get('metrics',{}).get('per_orientation_success_rate',{})
+    if rates.get('folded_crouch',0.)<.25:return .19
+    if min(rates.get('left',0.),rates.get('right',0.))<.25:return .49
+    if rates.get('supine',0.)<.25:return .84
+    return 1.

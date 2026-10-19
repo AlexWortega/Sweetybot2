@@ -23,3 +23,23 @@ The existing native CPU MuJoCo physics backend is retained for this bounded revi
 ## Interpretation
 
 Baseline v05 walking passed its preliminary easy-terrain development gate but undertracked speed; selected running and recovery policies had zero strict task successes. This revision is a training hypothesis. Unit tests, neutral physics acceptance, checkpoint transfer and short PPO smokes establish implementation/liveness only. Learned improvements must be measured on unchanged development tests, then the reserved final set, and watched in rollouts.
+
+## Expanded rewards, revision 2 (2026-10-19)
+
+The user subsequently requested all applicable MicroDuck reward components and explicitly emphasized actual speed. Recipe `v05-microduck-rewards-2` adds:
+
+| Component | Adaptation for this quadruped |
+|---|---|
+| Linear/yaw tracking | Broader Gaussian tracking gradients plus bounded commanded-direction progress; explicit under-speed, over-speed and under-turn costs. Exact small sideways commands are normalized by their own magnitude. Speed in the wrong direction earns no progress. |
+| Foot air time | Per-foot touchdown events after 0.10–0.35 s swing for walking (0.08–0.30 s for running); only after prior support, useful clearance, actual commanded translation/rotation, upright posture and clean contacts. |
+| Swing/clearance | Approximately 25 mm target foot lift, horizontal swing-motion gate, landing peak-height score, drag/excess-lift costs. Stationary leg waving and in-place jumping cannot earn positive foot shaping. |
+| Standing posture | Stronger home-pose preference at zero command, relaxed posture during movement, plus weak position-limit proximity costs. |
+| Dense get-up target | Broad/sharp body-height scores, normalized absolute height error, linear/sharp upright terms, leg pose and multiplicative height × upright × pose score. Goal bonuses require at least three feet, no body-floor bracing and no self-contact. |
+| Rising | Direct positive height-rate signal, paid only for newly achieved heights after initial floor contact. An initial drop is excluded and repeated bobbing below an old peak earns no additional rise reward. |
+| Smoothness | Late normalized torque-change and vertical-impact costs; rotation damping remains limited to upright arrival. Motor saturation and overload costs stay active. |
+
+All reward measurements remain training-only. The actor still receives the same 591 values, produces the same 12 leg actions, and uses identical native motor physics, masses and collision geometry. No neck/head-pose commands, ball/trick objectives, roller objectives or XL330-specific parameters are added: these do not match this policy's action/command interface. Running still requires independently measured sustained forward flight; per-foot air-time reward does not qualify a run by itself.
+
+Recovery curriculum counters remain persistent, while difficult starts are unlocked by development success: crouch, both sides, then supine (25% threshold per condition). The original transferred policies are evaluated on all four development surfaces **before** further training and enter the normal champion/rollback mechanism. A candidate losing a qualified baseline's quality gate cannot replace it merely by increasing aggregate score.
+
+Revision 2 uses another immutable source/output phase within the **same original 36-hour campaign** and the same final held-out protocol. Initializers preserve actor/normalizer weights and record the exact parent/source hashes; optimizers start fresh for the changed reward objective. Actual learned gains remain to be measured.

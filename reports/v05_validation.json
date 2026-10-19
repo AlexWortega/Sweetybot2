@@ -3,7 +3,7 @@
   "nominal_mass_kg": 7.36472235411874,
   "observation_dimension": 591,
   "observation_contract": "v05-sensor-suite-1",
-  "reward_version": "v05-microduck-curriculum-1",
+  "reward_version": "v05-microduck-rewards-2",
   "all_passed": true,
   "cases": [
     {
@@ -434,11 +434,11 @@
     "learning/native.cpp": "8be5e2f5e8ab33050dbd281a331a992f699e6129d9e148bcd8bc237cad0ee094",
     "learning/sensors.py": "8ec90005f6070beaeceec24b55fb6b05dc646a7621ff2000b7f01538050f12cf",
     "hardware/observation.py": "c01f49cf032c46c58eb25084a437cc10c6eb7ade37a68a2470422df0f59c03fb",
-    "learning/env.py": "4d22119574b240bb4adf2d15a0b95977522a9541233562fc0cb72923b086a012",
-    "learning/rewards.py": "66b5fef751bfb97f4ba4919c35391399355af7bb779cdba5fc8e1bb9f61da76c",
-    "learning/curriculum.py": "c23f6d1cf97617e7e969870da527fa8948bcd2ace67a67e4ddc0360b166d6527"
+    "learning/env.py": "4e6639e23cc77b7b22785d60653f049e55f8b0495b96e887d85fa42a72e24183",
+    "learning/rewards.py": "0eb48885025081d9d928573ed3aa2dfd847a2f81f665953dfbee3390caf05dde",
+    "learning/curriculum.py": "24ce33b643159558a7b615b6b6415d38ac71674baae0c48fb5274b0e01f83db5"
   },
-  "dynamics_signature": "b83d7465695ee00516ba61a73d97db2fbb00a0f904dd37a0eb1ecb0776dcacb7",
+  "dynamics_signature": "91c428babb2e320dde92607963fb24d030015ca2e3607f9162b2f31d98360054",
   "policy_quality": "No trained v05 policy evaluated; neutral targets and physics checks only",
   "physical_validation": "not run",
   "root_support_forces": false,

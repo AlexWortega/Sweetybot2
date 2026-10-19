@@ -92,7 +92,7 @@ def make_model(terrain='flat', difficulty=0., seed=1):
 
 class SweetieVecEnv:
     observation_contract="v05-sensor-suite-1"
-    reward_version="v05-microduck-curriculum-1"
+    reward_version="v05-microduck-rewards-2"
     action_dim=12
     frame_dim=197
     obs_dim=591
@@ -128,6 +128,8 @@ class SweetieVecEnv:
         self.previous_up=np.ones(n);self.previous_height=np.full(n,self.nominal_height)
         from learning.sensors import SensorSuite
         self.sensors=SensorSuite(n,seed+809,bool(randomize));self.previous_potential=np.zeros(n);self.flight_seconds=np.zeros(n);self.previous_feet=np.zeros((n,4,3));self.foot_velocity=np.zeros((n,4,3))
+        from learning.rewards import FootMotion,RiseMotion
+        self.foot_motion=FootMotion(n,self.dt);self.rise_motion=RiseMotion(n,self.dt)
         self.max_episode_steps=500 if task=='recovery' else 600
         # Keep a bounded diagnostic tail during day-long runs; lifetime and
         # episode disturbance counts remain available in every step's info.
@@ -286,6 +288,8 @@ class SweetieVecEnv:
         self._sample_commands(ids);self._read_state()
         self.previous_up[ids]=self.rot[ids,2,2];self.previous_height[ids]=self.height[ids]
         self.sensors.reset(ids,self.state['imu_quat'][ids]);self.flight_seconds[ids]=0;self.previous_feet[ids]=self.state['feet'][ids]
+        self.foot_motion.reset(ids)
+        self.rise_motion.reset(ids,self.height[ids],self.state['qvel'][ids,2])
         from learning.rewards import recovery_potential
         pose_error=np.square(self.state['qpos'][ids,7:19]-self.home[:12]).mean(1)
         self.previous_potential[ids]=recovery_potential(self.rot[ids,2,2],self.height[ids],self.nominal_height,pose_error)
@@ -355,11 +359,16 @@ class SweetieVecEnv:
         else:desired[:,:12]+=.65*actions
         self.targets+=np.clip(desired-self.targets,-.11,.11)
         self.targets=np.clip(self.targets,self.low,self.high)
+        previous_torque=self.state['torque_rms'].copy()
         self._training_disturbances()
         self.native.step(self.targets);self.steps+=1;self._read_state()
         if self.state['physics_warnings'].any():raise RuntimeError('MuJoCo solver/arena warning; invalid physics must not enter training')
         self.sensors.update(self.state)
         self.foot_velocity=(self.state["feet"]-self.previous_feet)/self.dt;self.previous_feet[:]=self.state["feet"]
+        feet=self.state['feet']
+        clearance=np.maximum(0,feet[:,:,2]-self.ground_height(feet[:,:,0],feet[:,:,1]))
+        gait=self.foot_motion.update(self.state['contacts'],clearance,(self.state['bad_contacts']==0)&(self.state['self_contacts']==0))
+        rise_velocity,vertical_accel=self.rise_motion.update(self.height,self.state['qvel'][:,2],self.state['contacts'].any(1)|(self.state['bad_contacts']>0),self.nominal_height)
         up=self.rot[:,2,2];vel=self.local_velocity;omega=self.local_angular
         error=np.square(vel[:,:2]-self.commands[:,:2]).sum(1)
         torque2=np.square(self.state['torque_rms']).sum(1)
@@ -377,11 +386,14 @@ class SweetieVecEnv:
             terms=locomotion_terms(self.commands,velocity_reward,omega,up,self.height,self.nominal_height,
                 self.state['torque_rms'],self.state['motor_continuous'],actions,self.last_action,
                 self.state['qpos'][:,7:19],self.home[:12],self.state['contacts'],self.foot_velocity,
-                self.state['bad_contacts'],self.task,self.flight_seconds,previous_flight,progress=self.progress)
+                self.state['bad_contacts'],self.task,self.flight_seconds,previous_flight,progress=self.progress,
+                gait=gait,previous_torque=previous_torque,joint_limits=(self.low[:12],self.high[:12]),self_contacts=self.state['self_contacts'])
             failure=(up<.45)|(self.height<.43*self.nominal_height)
         else:
             terms,self.previous_potential=recovery_terms(up,self.height,self.nominal_height,pose,self.previous_potential,
-                self.stable,just_success,actions,self.last_action,self.state['torque_rms'],self.state['motor_continuous'],self.state['bad_contacts'],progress=self.progress,omega=omega)
+                self.stable,just_success,actions,self.last_action,self.state['torque_rms'],self.state['motor_continuous'],self.state['bad_contacts'],progress=self.progress,omega=omega,
+                feet_contacts=self.state['contacts'],self_contacts=self.state['self_contacts'],rise_velocity=rise_velocity,vertical_accel=vertical_accel,
+                joints=self.state['qpos'][:,7:19],joint_limits=(self.low[:12],self.high[:12]),previous_torque=previous_torque)
             failure=np.zeros(self.num_envs,bool)
         terms['self_collision']=-.2*np.minimum(self.state.get('self_contacts',np.zeros(self.num_envs)),10)
         reward=sum(terms.values())*self.dt

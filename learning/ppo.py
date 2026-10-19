@@ -166,6 +166,7 @@ class TrainConfig:
     gpu_memory_gib: float = 2.0
     curriculum_horizon_steps: int = 50_000
     curriculum_start_steps: float = 0.
+    curriculum_progress_cap: float = 1.
     initializer_source: str | None = None
     recovery_teacher: str | None = None
     teacher_weight: float = .2
@@ -261,6 +262,7 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
         raise ValueError("--resume and --initialize-from are mutually exclusive")
     from learning.curriculum import progress as curriculum_progress, recovery_stage
     curriculum_progress(config.curriculum_start_steps,config.curriculum_horizon_steps)
+    if not math.isfinite(config.curriculum_progress_cap) or not 0<=config.curriculum_progress_cap<=1:raise ValueError('Curriculum cap must be between 0 and 1')
     if not math.isfinite(config.teacher_weight) or config.teacher_weight<0:raise ValueError('Invalid teacher weight')
     if config.recovery_teacher and config.task!='recovery':raise ValueError('Walking teacher is gated to recovery only')
     torch.set_num_threads(2)
@@ -346,7 +348,7 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
     out.mkdir(parents=True, exist_ok=True)
     (out / "config.json").write_text(json.dumps(asdict(config), indent=2) + "\n")
     if callable(getattr(env,'set_progress',None)):
-        env.set_progress(curriculum_progress(curriculum_start,config.curriculum_horizon_steps))
+        env.set_progress(min(config.curriculum_progress_cap,curriculum_progress(curriculum_start,config.curriculum_horizon_steps)))
     obs = env.observation() if restored_env and callable(getattr(env, "observation", None)) else env.reset()
     obs = np.asarray(obs, dtype=np.float32)
     if obs.shape != (env.num_envs, env.obs_dim):
@@ -364,7 +366,7 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
                     status = "max_steps_reached"
                     break
                 curriculum_steps=curriculum_start+(steps-initial_steps)/env.num_envs
-                fraction = curriculum_progress(curriculum_steps,config.curriculum_horizon_steps)
+                fraction = min(config.curriculum_progress_cap,curriculum_progress(curriculum_steps,config.curriculum_horizon_steps))
                 if callable(getattr(env, "set_progress", None)):
                     env.set_progress(fraction)
                 # Frozen normalizer throughout collection and all associated updates.
@@ -475,6 +477,7 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
                     "normal_entropy_mean": float(model.distribution(obs).entropy().sum(-1).mean().detach().cpu()),
                     "curriculum_env_steps": curriculum_start+(steps-initial_steps)/env.num_envs,
                     "curriculum_progress": fraction,
+                    "curriculum_progress_cap": config.curriculum_progress_cap,
                     "recovery_stage": recovery_stage(fraction)['name'] if config.task=='recovery' else None,
                     "teacher_bc_loss": float(torch.stack(bc_losses).mean().cpu()) if bc_losses else None,
                     "teacher_eligible_fraction": float(teacher_mask.float().mean().cpu()) if teacher_mask is not None else 0.,
@@ -529,6 +532,7 @@ def main() -> None:
     parser.add_argument("--gpu-memory-gib", type=float, default=2.0)
     parser.add_argument('--curriculum-horizon-steps',type=int,default=50_000)
     parser.add_argument('--curriculum-start-steps',type=float,default=0.)
+    parser.add_argument('--curriculum-progress-cap',type=float,default=1.)
     parser.add_argument('--initializer-source')
     parser.add_argument('--recovery-teacher')
     parser.add_argument('--teacher-weight',type=float,default=.2)

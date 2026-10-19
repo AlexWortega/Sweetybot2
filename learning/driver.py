@@ -195,7 +195,9 @@ def score_development(task: str, results: list[dict[str, Any]]):
                 raise ValueError("Recovery evaluation must report all four orientations")
             minima.append(min(expected))
         aggregate = {"recovery_success_rate": sum(rates)/len(rates),
-                     "worst_orientation_success_rate": min(minima)}
+                     "worst_orientation_success_rate": min(minima),
+                     "per_orientation_success_rate":{name:sum(r['per_orientation'][name]['success_rate'] for r in results)/len(results)
+                        for name in ('folded_crouch','left','right','supine')}}
         score = aggregate["recovery_success_rate"]+aggregate["worst_orientation_success_rate"]
         qualified = min(minima) >= .5
     # Manufacturer rated torque is a continuous-load engineering screen,
@@ -316,6 +318,7 @@ def main():
     parser.add_argument('--curriculum-horizon-steps',type=int,default=50_000)
     parser.add_argument("--initial-walk", help="Own pilot checkpoint for locomotion warm start; not automatically a champion")
     parser.add_argument("--initial-recover", help="Own pilot checkpoint for recovery warm start; not automatically a champion")
+    parser.add_argument('--initial-run',help='Matching running bootstrap checkpoint; evaluated before training')
     parser.add_argument("--chunk-seconds", type=float, default=1200)
     parser.add_argument("--eval-seconds", type=float, default=12)
     parser.add_argument("--eval-timeout", type=float, default=300)
@@ -349,6 +352,7 @@ def main():
     if state_path.exists():
         state = json.loads(state_path.read_text())
         if state.get("observation_contract")!="v05-sensor-suite-1":raise ValueError("Use a new v05 output directory; v02 run is immutable")
+        if state.get('dynamics_signature')!=dynamics_signature():raise ValueError('Recipe changed; use a fresh output and explicit weights-only transfer')
         if state.get("complete"):
             print("This driver already completed; choose another output for another authorized run.")
             return
@@ -359,7 +363,7 @@ def main():
     else:
         started = campaign_started
         warm_starts={}
-        for task,checkpoint in (("locomotion",args.initial_walk),("recovery",args.initial_recover)):
+        for task,checkpoint in (("locomotion",args.initial_walk),("recovery",args.initial_recover),('running',args.initial_run)):
             if checkpoint:
                 path=Path(checkpoint).resolve()
                 if not path.is_file():raise FileNotFoundError(path)
@@ -440,6 +444,23 @@ def main():
 
     persist("starting")
     try:
+        # Score transferred policies under the CURRENT recipe before training.
+        # This retains a qualified walking baseline in the same promotion gate.
+        if not state.get('bootstrap_evaluated'):
+            for task,checkpoint in state['latest_training'].items():
+                directory=out/'baseline'/task
+                evaluations=[evaluate(task,Path(checkpoint),directory/surface,surface,1_000_000+offset)
+                             for offset,surface in enumerate(('flat','rough','slope','steps'))]
+                score,qualified,metrics=score_development(task,evaluations)
+                selection={'score':score,'quality_gate_passed':qualified,'metrics':metrics,
+                           'checkpoint':checkpoint,'checkpoint_sha256':sha256(Path(checkpoint)),
+                           'round':-1,'baseline':True}
+                state['champions'][task]=selection
+                atomic_json(directory/'selection.json',selection)
+                promote(Path(checkpoint),out/POLICY_FILES[task])
+                persist('bootstrap_evaluation')
+            state['bootstrap_evaluated']=True
+            persist('between_chunks')
         while True:
             # Reserve independent final evaluation plus all development surfaces.
             remaining = deadline-time.time()
@@ -486,6 +507,9 @@ def main():
                        "--gpu-memory-gib", "2", "--save-interval", "60"]
             if task=='recovery' and args.recovery_teacher:
                 command.extend(('--recovery-teacher',args.recovery_teacher))
+            if task=='recovery':
+                from learning.curriculum import recovery_progress_cap
+                command.extend(('--curriculum-progress-cap',str(recovery_progress_cap(state['champions'].get(task)))))
             if task in state["latest_training"]:
                 command.extend(("--resume", state["latest_training"][task]))
             elif task=='running':
