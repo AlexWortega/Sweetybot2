@@ -1,4 +1,4 @@
-> **Current v05:** use the [v05 build and protocol](../docs/v05.md). V04 was withdrawn. The 591-value sensor contract now includes a dynamics signature, CAD-derived self-collisions and solver-warning rejection. The original v02 cycle below is complete and incompatible. Start a new directory; `--require-gpu` waits for an available GPU rather than using CPU fallback. Waiting counts against the configured wall-time limit.
+> **Current v05:** read the [compact policy revision](../docs/compact-policy.md) and [v05 build](../docs/v05.md). Default training uses a 63-value actor / 81-value privileged critic; the sensor transport and explicit legacy 591-value mode remain. The previous v05 and original v02 cycles are complete. Start a fresh directory and use a new explicit compute budget. `--require-gpu` waits for capacity; waiting counts against wall time.
 
 # SweetieMini v02 learning and joystick replay
 

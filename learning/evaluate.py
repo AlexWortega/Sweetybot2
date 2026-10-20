@@ -105,9 +105,17 @@ def evaluate(checkpoint=None, task="locomotion", terrain="flat", difficulty=.25,
     conditions = POSES if task == "recovery" else tuple(commands)
     n = episodes * len(conditions)
     labels = np.repeat(conditions, episodes)
+    policy,metadata=None,{}
+    mode='legacy'
+    if checkpoint is not None:
+        import torch
+        from learning.ppo import load_policy,observation_mode_for_checkpoint
+        torch.set_num_threads(1)
+        policy,metadata=load_policy(checkpoint,device='cpu')
+        mode=observation_mode_for_checkpoint(metadata)
     env = SweetieVecEnv(task=task, num_envs=n, threads=threads, seed=seed,
                        terrain=terrain, difficulty=difficulty, randomize=False,
-                       auto_reset=False)
+                       auto_reset=False,observation_mode=mode)
     env.manual_command = True
     env.reset_pose("stand")
     if task == "recovery":
@@ -119,12 +127,7 @@ def evaluate(checkpoint=None, task="locomotion", terrain="flat", difficulty=.25,
     env.commands[:] = command
     env.history[:, -1] = env._frame()
     initial = env.state["qpos"][:, :3].copy()
-    policy, metadata = None, {}
     if checkpoint is not None:
-        import torch
-        from learning.ppo import load_policy
-        torch.set_num_threads(1)
-        policy, metadata = load_policy(checkpoint, device="cpu")
         from learning.ppo import validate_environment_contract
         validate_environment_contract(metadata,env)
         if metadata.get("obs_dim", env.obs_dim) != env.obs_dim or metadata.get("action_dim", 12) != 12:
@@ -297,7 +300,7 @@ def evaluate(checkpoint=None, task="locomotion", terrain="flat", difficulty=.25,
         recovery_mask = labels != "stand"
         public_terrain = {key: value for key, value in env.terrain.items() if key != "height_samples"}
         result = {
-            "schema_version": 2, "observation_contract":"v04-sensor-suite-1", "reward_version":"v04-contact-energy-recovery-1", "task": task, "policy": "checkpoint" if checkpoint else "zero_action_baseline",
+            "schema_version": 2, "observation_contract":env.observation_contract, "reward_version":env.reward_version, "task": task, "policy": "checkpoint" if checkpoint else "zero_action_baseline",
             "checkpoint": str(Path(checkpoint).resolve()) if checkpoint else None,
             "checkpoint_sha256": sha256(checkpoint) if checkpoint else None,
             "checkpoint_metadata": metadata, "seed": int(seed),

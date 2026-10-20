@@ -18,16 +18,19 @@ import torch
 
 from learning.env import SweetieVecEnv
 from learning.play import render_model
-from learning.ppo import load_policy, validate_environment_contract
+from learning.ppo import load_policy, validate_environment_contract, observation_mode_for_checkpoint
 from learning.readiness import dynamics_signature
 
 
 def render(job, output, seconds=10., seed=1_000_090):
     checkpoint=Path(job['checkpoint'])
+    terrain=job.get('terrain','flat');difficulty=float(job.get('difficulty',0.))
+    seed=int(job.get('seed',seed))
     policy,metadata=load_policy(checkpoint,device='cpu')
     assert metadata['config']['task']==job['task']
     env=SweetieVecEnv(task=job['task'],num_envs=1,threads=1,randomize=False,
-                     auto_reset=False,terrain='flat',difficulty=0.,seed=seed)
+                     auto_reset=False,terrain=terrain,difficulty=difficulty,seed=seed,
+                     observation_mode=observation_mode_for_checkpoint(metadata))
     validate_environment_contract(metadata,env)
     env.manual_command=True
     env.reset_pose(job.get('pose','stand'))
@@ -66,11 +69,13 @@ def render(job, output, seconds=10., seed=1_000_090):
                 if tick%2:continue
                 data.qpos[:]=env.state['qpos'][0];data.qvel[:]=env.state['qvel'][0]
                 mujoco.mj_forward(model,data)
-                camera.lookat[:]=[root[0],root[1],.255]
+                camera.lookat[:]=[root[0],root[1],float(env.ground_height(root[0],root[1]))+.255]
                 renderer.update_scene(data,camera,scene_option=options)
                 # 10 cm world grid makes translation visible with a following camera.
                 center=np.round(root[:2]/.1)*.1
-                for axis in (0,1):
+                # The flat reference grid must not obscure nonflat terrain or
+                # imply a different ground surface than the physics model.
+                for axis in ((0,1) if terrain=='flat' else ()):
                     for offset in np.arange(-1.2,1.21,.1):
                         a=np.array([center[0]-1.2,center[1]-1.2,.001])
                         b=np.array([center[0]+1.2,center[1]+1.2,.001])
@@ -97,6 +102,9 @@ def render(job, output, seconds=10., seed=1_000_090):
     record={**job,'checkpoint_sha256':hashlib.sha256(checkpoint.read_bytes()).hexdigest(),
         'checkpoint_steps':metadata.get('steps'),'checkpoint_updates':metadata.get('updates'),
         'dynamics_signature':dynamics_signature(),'seed':seed,'seconds':seconds,
+        'terrain':terrain,'difficulty':difficulty,
+        'terrain_metadata':{k:v for k,v in env.terrain.items() if k!='height_samples'},
+        'physics_model_sha256':hashlib.sha256(Path(env.model_path).read_bytes()).hexdigest(),
         'fps':25,'video_frames':frames,'gif':str(gif),'mp4':str(mp4),'fell':fell,
         'self_contact_ticks':self_ticks,'terminal_stable_recovery':bool(env.stable[0]>=35),
         'mean_forward_velocity_mps':float(np.mean([r['vx'] for r in trajectory])),

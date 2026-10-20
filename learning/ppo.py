@@ -54,9 +54,9 @@ class RunningNorm(nn.Module):
         return ((values - self.mean) / torch.sqrt(self.var + 1e-8)).clamp(-10, 10)
 
 
-def _mlp(input_dim: int, output_dim: int, output_gain: float) -> nn.Sequential:
+def _mlp(input_dim: int, output_dim: int, output_gain: float, hidden_dims=(256,128,128)) -> nn.Sequential:
     layers: list[nn.Module] = []
-    for width in (256, 128, 128):
+    for width in hidden_dims:
         linear = nn.Linear(input_dim, width)
         nn.init.orthogonal_(linear.weight, math.sqrt(2))
         nn.init.zeros_(linear.bias)
@@ -70,12 +70,15 @@ def _mlp(input_dim: int, output_dim: int, output_gain: float) -> nn.Sequential:
 
 
 class Policy(nn.Module):
-    def __init__(self, obs_dim: int, action_dim: int = 12):
+    def __init__(self, obs_dim: int, action_dim: int = 12, critic_obs_dim=None, hidden_dims=(256,128,128)):
         super().__init__()
         self.obs_dim, self.action_dim = int(obs_dim), int(action_dim)
+        self.critic_obs_dim=int(critic_obs_dim) if critic_obs_dim is not None else None
+        self.hidden_dims=tuple(hidden_dims)
         self.normalizer = RunningNorm(self.obs_dim)
-        self.actor = _mlp(self.obs_dim, self.action_dim, 0.01)
-        self.critic = _mlp(self.obs_dim, 1, 1.0)
+        self.critic_normalizer=RunningNorm(self.critic_obs_dim) if self.critic_obs_dim is not None else None
+        self.actor = _mlp(self.obs_dim, self.action_dim, 0.01, self.hidden_dims)
+        self.critic = _mlp(self.critic_obs_dim or self.obs_dim, 1, 1.0, self.hidden_dims)
         self.log_std = nn.Parameter(torch.full((self.action_dim,), -0.7))
 
     @property
@@ -88,15 +91,22 @@ class Policy(nn.Module):
     def normalize(self, obs: np.ndarray | torch.Tensor) -> torch.Tensor:
         return self.normalizer(self.tensor(obs))
 
-    def update_norm(self, obs: np.ndarray | torch.Tensor) -> None:
+    def update_norm(self, obs: np.ndarray | torch.Tensor, critic_obs=None) -> None:
         self.normalizer.update(self.tensor(obs))
+        if self.critic_normalizer is not None:
+            if critic_obs is None:raise ValueError('Asymmetric critic observations required')
+            self.critic_normalizer.update(self.tensor(critic_obs))
 
     def distribution(self, obs: np.ndarray | torch.Tensor) -> Normal:
         mean = self.actor(self.normalize(obs))
         return Normal(mean, self.log_std.clamp(-5, 1).exp().expand_as(mean))
 
-    def value(self, obs: np.ndarray | torch.Tensor) -> torch.Tensor:
-        return self.critic(self.normalize(obs)).squeeze(-1)
+    def value(self, obs: np.ndarray | torch.Tensor, critic_obs=None) -> torch.Tensor:
+        if self.critic_normalizer is not None:
+            if critic_obs is None:raise ValueError('Asymmetric critic observations required')
+            value_obs=self.critic_normalizer(self.tensor(critic_obs))
+        else:value_obs=self.normalize(obs)
+        return self.critic(value_obs).squeeze(-1)
 
     @staticmethod
     def _log_prob(distribution: Normal, raw: torch.Tensor) -> torch.Tensor:
@@ -104,11 +114,11 @@ class Policy(nn.Module):
         correction = 2.0 * (math.log(2.0) - raw - nn.functional.softplus(-2.0 * raw))
         return (distribution.log_prob(raw) - correction).sum(-1)
 
-    def sample(self, obs: np.ndarray | torch.Tensor):
+    def sample(self, obs: np.ndarray | torch.Tensor, critic_obs=None):
         distribution = self.distribution(obs)
         raw = distribution.sample()
         action = raw.tanh()
-        return action, self._log_prob(distribution, raw), self.value(obs), raw
+        return action, self._log_prob(distribution, raw), self.value(obs,critic_obs), raw
 
     @torch.no_grad()
     def act(self, obs: np.ndarray | torch.Tensor, deterministic: bool = True) -> torch.Tensor:
@@ -116,12 +126,12 @@ class Policy(nn.Module):
         return (distribution.mean if deterministic else distribution.sample()).tanh()
 
     def evaluate_actions(self, obs: torch.Tensor, actions: torch.Tensor,
-                         raw_actions: torch.Tensor | None = None):
+                         raw_actions: torch.Tensor | None = None, critic_obs=None):
         distribution = self.distribution(obs)
         raw = torch.atanh(actions.clamp(-1 + 1e-6, 1 - 1e-6)) if raw_actions is None else raw_actions
         # Base Normal entropy is a stable exploration regularizer. Report its
         # identity explicitly; it is not transformed action differential entropy.
-        return self._log_prob(distribution, raw), distribution.entropy().sum(-1), self.value(obs)
+        return self._log_prob(distribution, raw), distribution.entropy().sum(-1), self.value(obs,critic_obs)
 
 
 def compute_gae(rewards: torch.Tensor, dones: torch.Tensor, values: torch.Tensor,
@@ -170,6 +180,33 @@ class TrainConfig:
     initializer_source: str | None = None
     recovery_teacher: str | None = None
     teacher_weight: float = .2
+    teacher_source: str | None = None
+    observation_mode: str = 'compact'
+    desired_kl: float = .01
+
+
+def policy_for_env(env):
+    asymmetric=getattr(env,'critic_obs_dim',None)
+    return Policy(env.obs_dim,env.action_dim,critic_obs_dim=asymmetric,
+                  hidden_dims=(512,256,128) if asymmetric is not None else (256,128,128))
+
+
+def observation_mode_for_checkpoint(metadata):
+    from hardware.policy_observation import CONTRACT
+    contract=metadata.get('environment_metadata',{}).get('observation_contract')
+    if contract==CONTRACT:return 'compact'
+    if contract in (None,'v05-sensor-suite-1'):return 'legacy'
+    raise ValueError('Unknown checkpoint observation contract: '+str(contract))
+
+
+def adapt_learning_rate(optimizer, kl, desired_kl):
+    """Bounded KL schedule; does not discard rollouts or restore old policies."""
+    if not math.isfinite(kl):raise FloatingPointError('Nonfinite PPO KL')
+    rate=optimizer.param_groups[0]['lr']
+    if kl>2*desired_kl:rate=max(1e-5,rate/1.5)
+    elif 0<kl<desired_kl/2:rate=min(1e-3,rate*1.5)
+    for group in optimizer.param_groups:group['lr']=rate
+    return rate
 
 
 def _safe_load(path: str | Path, device: str | torch.device):
@@ -184,14 +221,20 @@ def validate_environment_contract(saved,env):
     if expected:
         from learning.readiness import dynamics_signature
         if saved.get('environment_metadata',{}).get('dynamics_signature')!=dynamics_signature():raise ValueError('Checkpoint dynamics differ from current robot; explicit retraining required')
+        critic=getattr(env,'critic_observation_contract',None)
+        if critic and saved.get('environment_metadata',{}).get('critic_observation_contract')!=critic:
+            raise ValueError('Checkpoint critic observation contract differs')
 
 
 def load_policy(checkpoint: str | Path, device: str = "cpu") -> tuple[Policy, dict[str, Any]]:
     saved = _safe_load(checkpoint, device)
-    model = Policy(saved["obs_dim"], saved["action_dim"]).to(device)
+    architecture=saved.get('architecture',{})
+    model = Policy(saved["obs_dim"], saved["action_dim"],
+                   critic_obs_dim=architecture.get('critic_obs_dim'),
+                   hidden_dims=architecture.get('hidden_dims',(256,128,128))).to(device)
     model.load_state_dict(saved["policy"])
     model.eval()
-    metadata = {key: saved[key] for key in ("config", "steps", "updates", "wall_seconds", "obs_dim", "action_dim", "format_version", "environment_metadata", "source_hashes", "initialization") if key in saved}
+    metadata = {key: saved[key] for key in ("config", "steps", "updates", "wall_seconds", "obs_dim", "action_dim", "format_version", "environment_metadata", "source_hashes", "initialization", "architecture") if key in saved}
     return model, metadata
 
 
@@ -199,7 +242,8 @@ def _checkpoint(path: Path, model: Policy, optimizer, config: TrainConfig,
                 steps: int, updates: int, wall: float, env=None, initialization=None,
                 curriculum_env_steps: float = 0.) -> None:
     saved = {
-        "format_version": 1,
+        "format_version": 2,
+        "architecture":{'hidden_dims':model.hidden_dims,'critic_obs_dim':model.critic_obs_dim},
         "policy": model.state_dict(), "optimizer": optimizer.state_dict(),
         "config": asdict(config), "obs_dim": model.obs_dim,
         "action_dim": model.action_dim, "steps": steps,
@@ -212,7 +256,7 @@ def _checkpoint(path: Path, model: Policy, optimizer, config: TrainConfig,
         "curriculum_env_steps": curriculum_env_steps,
     }
     project = Path(__file__).resolve().parent.parent
-    tracked = ("config/robot.yaml", "simulation/generated/sweetie_mini.xml", "learning/env.py", "learning/native.cpp", "learning/ppo.py", "learning/sensors.py", "learning/rewards.py", "learning/curriculum.py", "learning/transfer.py", "hardware/observation.py")
+    tracked = ("config/robot.yaml", "simulation/generated/sweetie_mini.xml", "learning/env.py", "learning/native.cpp", "learning/ppo.py", "learning/sensors.py", "learning/rewards.py", "learning/curriculum.py", "learning/transfer.py", "learning/distill.py", "hardware/observation.py", "hardware/policy_observation.py")
     saved["source_hashes"] = {name: hashlib.sha256((project/name).read_bytes()).hexdigest()
                               for name in tracked if (project/name).exists()}
     if env is not None:
@@ -221,6 +265,9 @@ def _checkpoint(path: Path, model: Policy, optimizer, config: TrainConfig,
             "task": getattr(env, "task", config.task),
             "observation_dimension": model.obs_dim,
             "observation_contract": getattr(env,"observation_contract",None),
+            "observation_mode":getattr(env,'observation_mode','legacy'),
+            "critic_observation_dimension":model.critic_obs_dim or model.obs_dim,
+            "critic_observation_contract":getattr(env,'critic_observation_contract',None),
             "reward_version": getattr(env,"reward_version",None),
             "dynamics_signature": __import__("learning.readiness",fromlist=["dynamics_signature"]).dynamics_signature() if getattr(env,"observation_contract",None) else None,
             "action_dimension": model.action_dim,
@@ -264,6 +311,7 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
     curriculum_progress(config.curriculum_start_steps,config.curriculum_horizon_steps)
     if not math.isfinite(config.curriculum_progress_cap) or not 0<=config.curriculum_progress_cap<=1:raise ValueError('Curriculum cap must be between 0 and 1')
     if not math.isfinite(config.teacher_weight) or config.teacher_weight<0:raise ValueError('Invalid teacher weight')
+    if not math.isfinite(config.desired_kl) or config.desired_kl<=0:raise ValueError('Invalid desired KL')
     if config.recovery_teacher and config.task!='recovery':raise ValueError('Walking teacher is gated to recovery only')
     torch.set_num_threads(2)
     device = torch.device(config.device)
@@ -275,7 +323,7 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
     random.seed(config.seed)
     np.random.seed(config.seed)
     torch.manual_seed(config.seed)
-    model = Policy(env.obs_dim, env.action_dim).to(device)
+    model = policy_for_env(env).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=config.learning_rate, eps=1e-5)
     steps = updates = 0
     prior_wall = 0.0
@@ -331,10 +379,10 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
             restored_env = True
     teacher=None
     if config.recovery_teacher:
-        from learning.transfer import validate_initializer
+        from learning.transfer import validate_teacher
         teacher,teacher_metadata=load_policy(config.recovery_teacher,device=str(device))
         if teacher_metadata.get('config',{}).get('task')!='locomotion':raise ValueError('Recovery anchor must be a walking policy')
-        teacher_transfer=validate_initializer(teacher_metadata,env,config.initializer_source)
+        teacher_transfer=validate_teacher(teacher_metadata,env,config.teacher_source or config.initializer_source)
         teacher_receipt={'checkpoint':str(Path(config.recovery_teacher).resolve()),
                          'sha256':hashlib.sha256(Path(config.recovery_teacher).read_bytes()).hexdigest(),
                          'role':'near_upright_stance_anchor_only','recipe_transfer':teacher_transfer}
@@ -353,6 +401,13 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
     obs = np.asarray(obs, dtype=np.float32)
     if obs.shape != (env.num_envs, env.obs_dim):
         raise ValueError(f"Unexpected reset observation shape {obs.shape}")
+    def critic_observation():
+        if model.critic_obs_dim is None:return None
+        result=np.asarray(env.observe_critic(),dtype=np.float32)
+        if result.shape!=(env.num_envs,model.critic_obs_dim) or not np.isfinite(result).all():
+            raise ValueError('Invalid asymmetric critic observation')
+        return result
+    critic_obs=critic_observation()
     initial_steps = steps
     last_save = time.monotonic()
     status = "budget_exhausted"
@@ -370,8 +425,9 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
                 if callable(getattr(env, "set_progress", None)):
                     env.set_progress(fraction)
                 # Frozen normalizer throughout collection and all associated updates.
-                model.update_norm(obs)
+                model.update_norm(obs,critic_obs)
                 observations, actions, raw_actions = [], [], []
+                critic_observations,teacher_observations=[],[]
                 logprobs, values, rewards, dones = [], [], [], []
                 episode_metrics: dict[str, list[float]] = {}
                 term_metrics: dict[str, list[float]] = {}
@@ -381,8 +437,11 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
                     if config.max_steps is not None and steps >= config.max_steps:
                         break
                     observation = model.tensor(obs)
+                    value_observation=model.tensor(critic_obs) if critic_obs is not None else None
+                    if teacher is not None and teacher.obs_dim!=model.obs_dim:
+                        teacher_observations.append(model.tensor(env.teacher_observation()))
                     with torch.no_grad():
-                        action, logprob, value, raw = model.sample(observation)
+                        action, logprob, value, raw = model.sample(observation,value_observation)
                     next_obs, reward, done, info = env.step(action.cpu().numpy())
                     reward = torch.as_tensor(reward, dtype=torch.float32, device=device).clone()
                     done_tensor = torch.as_tensor(done, dtype=torch.float32, device=device)
@@ -391,11 +450,14 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
                         if "terminal_observation" not in info:
                             raise ValueError("Timeout requires terminal_observation for correct bootstrap")
                         with torch.no_grad():
-                            terminal_value = model.value(info["terminal_observation"])
+                            if model.critic_obs_dim is not None and 'terminal_critic_observation' not in info:
+                                raise ValueError('Timeout requires terminal critic observation before autoreset')
+                            terminal_value = model.value(info["terminal_observation"],info.get('terminal_critic_observation'))
                         reward += config.gamma * terminal_value * model.tensor(truncated)
                     if not torch.isfinite(reward).all() or not np.isfinite(next_obs).all():
                         raise FloatingPointError("Nonfinite environment transition")
                     observations.append(observation)
+                    if value_observation is not None:critic_observations.append(value_observation)
                     actions.append(action)
                     raw_actions.append(raw)
                     logprobs.append(logprob)
@@ -410,12 +472,14 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
                     for key,val in info.get('reward_terms',{}).items():
                         term_metrics.setdefault(key,[]).append(float(np.mean(val))*getattr(env,'dt',1.))
                     obs = np.asarray(next_obs, dtype=np.float32)
+                    critic_obs=critic_observation()
                     steps += env.num_envs
                 if not rewards:
                     break
                 with torch.no_grad():
-                    advantages, returns = compute_gae(torch.stack(rewards), torch.stack(dones), torch.stack(values), model.value(obs), config.gamma, config.gae_lambda)
+                    advantages, returns = compute_gae(torch.stack(rewards), torch.stack(dones), torch.stack(values), model.value(obs,critic_obs), config.gamma, config.gae_lambda)
                 flat_obs = torch.cat(observations)
+                flat_critic=torch.cat(critic_observations) if critic_observations else None
                 flat_actions = torch.cat(actions)
                 flat_raw = torch.cat(raw_actions)
                 flat_logprobs = torch.cat(logprobs)
@@ -426,7 +490,8 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
                 teacher_actions=teacher_mask=None
                 if teacher is not None:
                     from learning.transfer import recovery_teacher_targets
-                    teacher_actions,teacher_mask=recovery_teacher_targets(teacher,flat_obs)
+                    teacher_actions,teacher_mask=recovery_teacher_targets(teacher,flat_obs,
+                        legacy_obs=torch.cat(teacher_observations) if teacher_observations else None)
                 losses, kls, clips, bc_losses = [], [], [], []
                 stop_update = False
                 for _ in range(config.epochs):
@@ -436,7 +501,8 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
                             stop_update = True
                             break
                         ids = permutation[begin:begin + config.minibatch_size]
-                        new_logprob, entropy, new_value = model.evaluate_actions(flat_obs[ids], flat_actions[ids], flat_raw[ids])
+                        new_logprob, entropy, new_value = model.evaluate_actions(flat_obs[ids], flat_actions[ids], flat_raw[ids],
+                            critic_obs=flat_critic[ids] if flat_critic is not None else None)
                         logratio = new_logprob - flat_logprobs[ids]
                         ratio = logratio.exp()
                         surrogate = torch.minimum(ratio * flat_advantages[ids], ratio.clamp(1-config.clip, 1+config.clip) * flat_advantages[ids])
@@ -457,6 +523,8 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
                         if not torch.isfinite(grad_norm):
                             raise FloatingPointError("Nonfinite PPO gradients")
                         optimizer.step()
+                        if model.critic_obs_dim is not None:
+                            adapt_learning_rate(optimizer,float(((ratio-1)-logratio).mean().detach().cpu()),config.desired_kl)
                         losses.append(loss.detach())
                         kls.append(((ratio-1)-logratio).mean().detach())
                         clips.append(((ratio-1).abs() > config.clip).float().mean().detach())
@@ -478,6 +546,9 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
                     "curriculum_env_steps": curriculum_start+(steps-initial_steps)/env.num_envs,
                     "curriculum_progress": fraction,
                     "curriculum_progress_cap": config.curriculum_progress_cap,
+                    "learning_rate":optimizer.param_groups[0]['lr'],
+                    "actor_observation_dimension":model.obs_dim,
+                    "critic_observation_dimension":model.critic_obs_dim or model.obs_dim,
                     "recovery_stage": recovery_stage(fraction)['name'] if config.task=='recovery' else None,
                     "teacher_bc_loss": float(torch.stack(bc_losses).mean().cpu()) if bc_losses else None,
                     "teacher_eligible_fraction": float(teacher_mask.float().mean().cpu()) if teacher_mask is not None else 0.,
@@ -536,6 +607,9 @@ def main() -> None:
     parser.add_argument('--initializer-source')
     parser.add_argument('--recovery-teacher')
     parser.add_argument('--teacher-weight',type=float,default=.2)
+    parser.add_argument('--teacher-source')
+    parser.add_argument('--observation-mode',choices=('compact','legacy'),default='compact')
+    parser.add_argument('--desired-kl',type=float,default=.01)
     config = TrainConfig(**vars(parser.parse_args()))
     from learning.readiness import require_training_ready
     require_training_ready()
@@ -543,7 +617,8 @@ def main() -> None:
     from learning.env import SweetieVecEnv
     env = SweetieVecEnv(task=config.task, nenvs=config.nenvs, threads=config.threads,
                         seed=config.seed, terrain=config.terrain,
-                        difficulty=config.difficulty, randomize=config.randomize)
+                        difficulty=config.difficulty, randomize=config.randomize,
+                        observation_mode=config.observation_mode)
     try:
         print(json.dumps(train(env, config, process_started=MODULE_STARTED), indent=2), flush=True)
     finally:

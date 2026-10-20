@@ -1,5 +1,7 @@
 # MicroDuck-inspired v05 training revision
 
+**Current 2026-10-20:** [revision 3](compact-policy.md) replaces the default actor input with 63 proprioceptive values and adds an 81-value privileged critic. It separates training continuation from champion promotion, adds fixed mixed commands, smooth resampling, KL-adaptive learning rate and explicit teacher distillation. The completed 36-hour cycle described below used the legacy 591-input policy; its budget is not extended. New compact final seeds are 5000000..5000099. Earlier transfer/parity claims below apply only within their original architecture.
+
 This revision adapts training ideas from [pollen-robotics/microduck_rl](https://github.com/pollen-robotics/microduck_rl/tree/b02fdea4902c2b93b7d34a83a6f05da4ececb7d3), checked on 2026-10-19. Implementation is specific to Sweetybot2's quadruped, sensor ABI and motor model. Inspiration: the [stand-up curriculum](https://github.com/pollen-robotics/microduck_rl/blob/b02fdea4902c2b93b7d34a83a6f05da4ececb7d3/src/mjlab_microduck/tasks/microduck_standup_env_cfg.py), [reward-design lessons](https://github.com/pollen-robotics/microduck_rl/blob/b02fdea4902c2b93b7d34a83a6f05da4ececb7d3/AGENTS.md), and [VelStand teacher/student recipe](https://github.com/pollen-robotics/microduck_rl/blob/b02fdea4902c2b93b7d34a83a6f05da4ececb7d3/docs/velstand_policy.md).
 
 ## Changes

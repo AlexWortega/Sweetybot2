@@ -91,6 +91,7 @@ def make_model(terrain='flat', difficulty=0., seed=1):
 
 
 class SweetieVecEnv:
+    observation_mode='legacy'
     observation_contract="v05-sensor-suite-1"
     reward_version="v05-microduck-rewards-2"
     action_dim=12
@@ -98,8 +99,14 @@ class SweetieVecEnv:
     obs_dim=591
     dt=.02
     reset_kind_names=('stand','folded_crouch','left','right','supine')
-    def __init__(self,task='locomotion',nenvs=None,num_envs=128,threads=16,seed=1,terrain='flat',difficulty=0.,randomize=True,auto_reset=True):
+    def __init__(self,task='locomotion',nenvs=None,num_envs=128,threads=16,seed=1,terrain='flat',difficulty=0.,randomize=True,auto_reset=True,observation_mode='legacy'):
         if task not in ('locomotion','running','recovery'):raise ValueError(task)
+        if observation_mode not in ('legacy','compact'):raise ValueError(observation_mode)
+        self.observation_mode=observation_mode
+        if observation_mode=='compact':
+            from hardware.policy_observation import CONTRACT,DIM,CRITIC_CONTRACT,CRITIC_DIM
+            self.observation_contract=CONTRACT;self.obs_dim=DIM
+            self.critic_observation_contract=CRITIC_CONTRACT;self.critic_obs_dim=CRITIC_DIM
         self.task=task; self.num_envs=int(nenvs if nenvs is not None else num_envs)
         self.seed=int(seed); self.rng=np.random.default_rng(seed);self.randomize=randomize;self.auto_reset=auto_reset
         self.difficulty=float(difficulty);self.progress=0.;self.noise_enabled=bool(randomize)
@@ -120,11 +127,14 @@ class SweetieVecEnv:
         limits=np.array([joint_spec(n,c)['limits'] for n in self.names]);self.low,self.high=limits.T
         n=self.num_envs
         self.commands=np.zeros((n,3));self.steps=np.zeros(n,dtype=int);self.phase=np.zeros(n)
+        self.command_targets=np.zeros((n,3))
         self.last_action=np.zeros((n,12));self.targets=np.tile(self.home,(n,1))
         self.history=np.zeros((n,3,self.frame_dim),dtype=np.float32)
         self.encoder_bias=np.zeros((n,16));self.returns=np.zeros(n);self.stable=np.zeros(n,int);self.success=np.zeros(n,bool)
         self.reset_kind=np.zeros(n,int);self.params=np.zeros((n,8));self.velocity_error=np.zeros(n)
         self.nominal_height=(c['geometry']['stance_height']+c['geometry']['foot_radius'])/1000
+        from scripts.common import total_mass
+        self.weight_newtons=max(.1,total_mass(c)*9.81)
         self.previous_up=np.ones(n);self.previous_height=np.full(n,self.nominal_height)
         from learning.sensors import SensorSuite
         self.sensors=SensorSuite(n,seed+809,bool(randomize));self.previous_potential=np.zeros(n);self.flight_seconds=np.zeros(n);self.previous_feet=np.zeros((n,4,3));self.foot_velocity=np.zeros((n,4,3))
@@ -157,6 +167,26 @@ class SweetieVecEnv:
     def _sample_commands(self,ids):
         if self.manual_command:return
         k=len(ids);r=self.rng
+        if self.observation_mode=='compact':
+            target=np.zeros((k,3))
+            if self.task=='running':
+                target[:,0]=r.uniform(.35,.55,k)
+                target[:,1]=r.uniform(-.05,.05,k);target[:,2]=r.uniform(-.35,.35,k)
+                target[r.random(k)<.1]=0
+            elif self.task=='locomotion':
+                modes=r.random(k)
+                turn=(modes>=.20)&(modes<.35);forward=(modes>=.35)&(modes<.55)
+                backward=(modes>=.55)&(modes<.65);side=(modes>=.65)&(modes<.75);mixed=modes>=.75
+                target[turn,2]=r.choice([-1.,1.],turn.sum())*r.uniform(.2,1.,turn.sum())
+                target[forward,0]=r.uniform(.08,.30,forward.sum())
+                target[backward,0]=-r.uniform(.08,.18,backward.sum())
+                target[side,1]=r.choice([-1.,1.],side.sum())*r.uniform(.04,.12,side.sum())
+                target[mixed,0]=r.uniform(-.15,.30,mixed.sum())
+                target[mixed,1]=r.uniform(-.10,.10,mixed.sum());target[mixed,2]=r.uniform(-.6,.6,mixed.sum())
+            self.command_targets[ids]=target
+            reset=self.steps[ids]==0
+            self.commands[ids[reset]]=target[reset]
+            return
         if self.task=='running':
             # Start from a forward gait and expand speed, lateral and turn
             # demands together; this is a command target, not a speed claim.
@@ -313,7 +343,32 @@ class SweetieVecEnv:
         assert frame.shape==(self.num_envs,self.frame_dim),frame.shape
         return frame.astype(np.float32)
 
-    def observe(self):return self.history.reshape(self.num_envs,-1).copy()
+    def observe(self):
+        if self.observation_mode=='compact':
+            from hardware.policy_observation import from_sensor_frame
+            return from_sensor_frame(self.history[:,-1]).copy()
+        return self.history.reshape(self.num_envs,-1).copy()
+
+    def teacher_observation(self):
+        """Legacy teacher input is training-only, never passed to compact actor."""
+        return self.history.reshape(self.num_envs,-1).copy()
+
+    def observe_critic(self):
+        if self.observation_mode!='compact':return self.observe()
+        from hardware.policy_observation import encode,CRITIC_DIM
+        n=self.num_envs
+        clean=(-self.rot[:,2,:],self.local_angular*.25,None,
+               self.state['contacts'].astype(float),np.ones((n,4)),np.ones((n,1)),
+               np.zeros((n,1)),None,None,None,None)
+        core=encode(clean,self.state['qpos'][:,7:]-self.home,self.state['qvel'][:,6:],self.last_action,self.commands)
+        feet=self.state['feet']
+        clearance=feet[:,:,2]-self.ground_height(feet[:,:,0],feet[:,:,1])
+        forces=np.clip(self.state['foot_force_samples'][:,-1,:]/self.weight_newtons,0,10)
+        collision=np.stack((self.state['bad_contacts'],self.state['self_contacts']),1)/10.
+        obs=np.concatenate((core,self.local_velocity,(self.height/self.nominal_height)[:,None],
+                            forces,clearance,self.foot_motion.air,collision),1).astype(np.float32)
+        if obs.shape!=(n,CRITIC_DIM) or not np.isfinite(obs).all():raise ValueError('Invalid critic observation')
+        return obs
 
     def reset(self):
         self._reset_indices(np.arange(self.num_envs));return self.observe()
@@ -326,6 +381,7 @@ class SweetieVecEnv:
         self.manual_command=True
         low,high=([0.,-.08,-.6],[.65,.08,.6]) if self.task=='running' else ([-.45,-.2,-1.5],[.6,.2,1.5])
         self.commands[:]=np.clip([vx,vy,yaw],low,high)
+        self.command_targets[:]=self.commands
         self.history[:,-1,:]=self._frame()
 
     def apply_impulse(self,dv):
@@ -407,9 +463,16 @@ class SweetieVecEnv:
             # command immediately in the observation for the following action.
             ids=np.flatnonzero((self.steps%200==0)&(self.steps>0)&~failure&(self.steps<self.max_episode_steps))
             self._sample_commands(ids)
+            if self.observation_mode=='compact' and not self.manual_command:
+                delta=self.command_targets-self.commands
+                norm=np.linalg.norm(delta[:,:2],axis=1)
+                delta[:,:2]*=np.minimum(1.,.6*self.dt/np.maximum(norm,1e-12))[:,None]
+                delta[:,2]=np.clip(delta[:,2],-.6*self.dt,.6*self.dt)
+                self.commands+=delta
         self.last_action[:]=actions
         self.history[:,:-1]=self.history[:,1:];self.history[:,-1]=self._frame()
         terminal_obs=self.observe();truncated=(self.steps>=self.max_episode_steps)&~failure;done=failure|truncated
+        terminal_critic_obs=self.observe_critic() if self.observation_mode=='compact' else None
         episode={}
         if done.any():
             episode={'return':self.returns[done].copy(),'length_s':self.steps[done]*self.dt,
@@ -418,6 +481,7 @@ class SweetieVecEnv:
                      'disturbance_count':self.disturbance_count[done].copy()}
         info={'truncated':truncated,'terminal_observation':terminal_obs,'episode':episode,'success':self.success.copy(),
               'total_disturbances':int(self.total_disturbances)}
+        if terminal_critic_obs is not None:info['terminal_critic_observation']=terminal_critic_obs
         info['reward_terms']={k:v.copy() for k,v in terms.items()}
         if self.auto_reset and done.any():self._reset_indices(np.flatnonzero(done))
         return self.observe(),reward.astype(np.float32),done,info

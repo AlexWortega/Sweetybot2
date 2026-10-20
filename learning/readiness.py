@@ -2,7 +2,8 @@
 import hashlib,json
 from scripts.common import ROOT,load,require_mechanical_gate
 PHYSICAL_FILES=('config/robot.yaml','simulation/model.py','simulation/generated/sweetie_mini.xml','reports/collision_meshes.json','learning/native.cpp','learning/sensors.py','hardware/observation.py')
-DYNAMICS_FILES=PHYSICAL_FILES+('learning/env.py','learning/rewards.py','learning/curriculum.py')
+DYNAMICS_V2_FILES=PHYSICAL_FILES+('learning/env.py','learning/rewards.py','learning/curriculum.py')
+DYNAMICS_FILES=DYNAMICS_V2_FILES+('hardware/policy_observation.py',)
 LEGACY_DYNAMICS_FILES=('config/robot.yaml','simulation/model.py','simulation/generated/sweetie_mini.xml','reports/collision_meshes.json','learning/env.py','learning/native.cpp','learning/sensors.py','learning/rewards.py','hardware/observation.py')
 def source_signature(root,files):
  h=hashlib.sha256()

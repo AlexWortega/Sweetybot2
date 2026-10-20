@@ -291,7 +291,7 @@ def main(argv=None):
     import mujoco
     import torch
     from learning.env import SweetieVecEnv
-    from learning.ppo import load_policy
+    from learning.ppo import load_policy,observation_mode_for_checkpoint
 
     torch.set_num_threads(1)
     walk, walk_meta = load_policy(args.walk, device="cpu")
@@ -299,7 +299,8 @@ def main(argv=None):
     running, run_meta = load_policy(args.run, device="cpu") if args.run else (None, {})
     policies = {"walk": walk, "recover": recovery, "run": running, "walk-fast-fallback": walk}
     env = SweetieVecEnv(task="locomotion", num_envs=1, seed=args.seed, terrain=args.terrain,
-                       difficulty=args.difficulty, randomize=False, threads=1)
+                       difficulty=args.difficulty, randomize=False, threads=1,
+                       observation_mode=observation_mode_for_checkpoint(walk_meta))
     supervisor = RecoverySupervisor(recovery is not None, env.nominal_height)
     env.auto_reset = False
     env.reset()

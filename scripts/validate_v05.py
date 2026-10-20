@@ -38,7 +38,13 @@ def main():
  e.reset_pose('stand');q=e.state['qpos'].copy();q[:,2]=1.5;e.native.reset(np.array([0]),q,np.zeros((1,22)),e.params);e._read_state()
  for _ in range(5):e.step(np.zeros((1,12)))
  rows.append({'scenario':'unsupported freefall and real IMU specific force','pass':bool(np.linalg.norm(e.sensors.accel[0])<.3 and e.state['qvel'][0,2]<-.8),'specific_force_norm_m_s2':float(np.linalg.norm(e.sensors.accel[0])),'vertical_velocity_m_s':float(e.state['qvel'][0,2])})
- report={'revision':load()['revision'],'nominal_mass_kg':total_mass(load()),'observation_dimension':591,'observation_contract':e.observation_contract,'reward_version':e.reward_version,'all_passed':all(r['pass'] for r in rows),'cases':rows,'input_sha256':{p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in DYNAMICS_FILES},'dynamics_signature':dynamics_signature(),'policy_quality':'No trained v05 policy evaluated; neutral targets and physics checks only','physical_validation':'not run','root_support_forces':False,'mid_episode_resets':False}
+ compact=SweetieVecEnv(num_envs=2,threads=1,randomize=False,auto_reset=False,observation_mode='compact')
+ compact.set_command(0,0,0)
+ for _ in range(100):
+  actor,_,_,_=compact.step(np.zeros((2,12)));critic=compact.observe_critic()
+  assert actor.shape==(2,63) and critic.shape==(2,81) and np.isfinite(actor).all() and np.isfinite(critic).all()
+ rows.append({'scenario':'compact actor and privileged critic neutral stand','pass':bool((compact.rot[:,2,2]>.9).all() and not compact.state['self_contacts'].any()),'actor_dimension':compact.obs_dim,'critic_dimension':compact.critic_obs_dim})
+ report={'revision':load()['revision'],'nominal_mass_kg':total_mass(load()),'observation_dimension':compact.obs_dim,'observation_contract':compact.observation_contract,'critic_observation_dimension':compact.critic_obs_dim,'sensor_transport_frame_dimension':197,'legacy_policy_dimension':591,'reward_version':e.reward_version,'all_passed':all(r['pass'] for r in rows),'cases':rows,'input_sha256':{p:hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in DYNAMICS_FILES},'dynamics_signature':dynamics_signature(),'policy_quality':'No trained compact policy evaluated; neutral targets and physics checks only','physical_validation':'not run','root_support_forces':False,'mid_episode_resets':False}
  (ROOT/'reports/v05_validation.json').write_text(json.dumps(report,indent=2)+'\n')
  ready={'passed':report['all_passed'],'dynamics_signature':report['dynamics_signature'],'reason':'Digital collision/sensor checks passed; new task policies still require training and independent evaluation' if report['all_passed'] else 'Digital validation failed','report':'reports/v05_validation.json'}
  (ROOT/'reports/rl_readiness.json').write_text(json.dumps(ready,indent=2)+'\n');print(json.dumps(ready,indent=2))

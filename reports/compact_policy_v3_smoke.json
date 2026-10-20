@@ -1,0 +1,127 @@
+{
+  "revision": "compact-policy-v3",
+  "dynamics_signature": "207e212281c911560d9540f68d4ca7323e15d50a2b50f59e2873983093cc084c",
+  "physical_sensor_signature": "a4f685a56bf278913a39e7c5e566a13df0fbdd02c260c2697c6137e3938452c0",
+  "actor_dimension": 63,
+  "critic_dimension": 81,
+  "hidden_dims": [
+    512,
+    256,
+    128
+  ],
+  "actor_parameters": 198540,
+  "full_local_tests": 142,
+  "post_driver_change_tests": 21,
+  "verification_passed": true,
+  "cpu_smoke": {
+    "dynamics_signature": "207e212281c911560d9540f68d4ca7323e15d50a2b50f59e2873983093cc084c",
+    "physical_sensor_signature": "a4f685a56bf278913a39e7c5e566a13df0fbdd02c260c2697c6137e3938452c0",
+    "device": "cpu",
+    "tasks": [
+      {
+        "task": "locomotion",
+        "first_steps": 128,
+        "resumed_steps": 192,
+        "updates": 6,
+        "architecture": {
+          "hidden_dims": [
+            512,
+            256,
+            128
+          ],
+          "critic_obs_dim": 81
+        },
+        "finite": true
+      },
+      {
+        "task": "recovery",
+        "first_steps": 128,
+        "resumed_steps": 192,
+        "updates": 6,
+        "architecture": {
+          "hidden_dims": [
+            512,
+            256,
+            128
+          ],
+          "critic_obs_dim": 81
+        },
+        "finite": true
+      },
+      {
+        "task": "running",
+        "first_steps": 128,
+        "resumed_steps": 192,
+        "updates": 6,
+        "architecture": {
+          "hidden_dims": [
+            512,
+            256,
+            128
+          ],
+          "critic_obs_dim": 81
+        },
+        "finite": true
+      }
+    ],
+    "claim": "bounded optimizer/checkpoint/timeout wiring smoke only; no learned skill evidence"
+  },
+  "teacher_transfer_smoke": {
+    "locomotion": {
+      "steps": 128,
+      "updates": 4,
+      "teacher_eligible_fraction": 0.0,
+      "teacher_bc_loss": null,
+      "checkpoint": "/Users/aleksandrnikolich/Desktop/Sweetybot2-compact-v3-2026-10-20/transfer-smoke/locomotion/latest.pt"
+    },
+    "recovery": {
+      "steps": 128,
+      "updates": 4,
+      "teacher_eligible_fraction": 0.25,
+      "teacher_bc_loss": 0.6601690053939819,
+      "checkpoint": "/Users/aleksandrnikolich/Desktop/Sweetybot2-compact-v3-2026-10-20/transfer-smoke/recovery/latest.pt"
+    }
+  },
+  "distillation": {
+    "initialization": {
+      "mode": "compact_actor_distillation",
+      "teacher_checkpoint": "/Users/aleksandrnikolich/Desktop/Sweetybot2-walking-surfaces-2026-10-20/details/walk-selected.pt",
+      "teacher_sha256": "7b4b8090c7d2bdc0dc2b949817f8dc8c5180707112abf519a7347e52b9381074",
+      "teacher_source": {
+        "mode": "frozen_legacy_teacher_only",
+        "source_snapshot": "/Users/aleksandrnikolich/Desktop/Sweetybot2-v05/.run-cache/teacher-source-596bf65",
+        "source_dynamics_signature": "91c428babb2e320dde92607963fb24d030015ca2e3607f9162b2f31d98360054",
+        "target_dynamics_signature": "207e212281c911560d9540f68d4ca7323e15d50a2b50f59e2873983093cc084c",
+        "physical_sensor_signature": "a4f685a56bf278913a39e7c5e566a13df0fbdd02c260c2697c6137e3938452c0",
+        "optimizer_restored": false,
+        "source_hashes_verified": true
+      },
+      "samples": 8192,
+      "bc_updates": 16,
+      "critic": "fresh",
+      "optimizer_restored": false,
+      "quality": "training fit only; independent evaluation required"
+    },
+    "metrics": {
+      "samples": 8192,
+      "bc_updates": 16,
+      "training_mse_before": 0.07549065351486206,
+      "training_mse_after": 0.069495290517807,
+      "teacher_rollin_fraction": 0.7,
+      "wall_seconds": 34.27894758293405
+    },
+    "checkpoint": "/Users/aleksandrnikolich/Desktop/Sweetybot2-compact-v3-2026-10-20/walk-initializer/latest.pt"
+  },
+  "replay_smoke": {
+    "episodes": 6,
+    "seconds": 2.0,
+    "seed": 1000091,
+    "split": "development",
+    "survival_fraction": 1.0,
+    "command_rmse": 0.4190974807720694
+  },
+  "gpu_campaign_started": false,
+  "new_gpu_budget": "not yet allocated",
+  "held_out_final_seed_base": 5000000,
+  "interpretation": "Implementation and bounded CPU preparation only; no independent compact-policy quality result"
+}

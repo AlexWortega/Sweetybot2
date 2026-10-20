@@ -1,8 +1,11 @@
 {
   "revision": "digital-prototype-05-mechanical-redesign",
   "nominal_mass_kg": 7.36472235411874,
-  "observation_dimension": 591,
-  "observation_contract": "v05-sensor-suite-1",
+  "observation_dimension": 63,
+  "observation_contract": "v05-compact-proprio-1",
+  "critic_observation_dimension": 81,
+  "sensor_transport_frame_dimension": 197,
+  "legacy_policy_dimension": 591,
   "reward_version": "v05-microduck-rewards-2",
   "all_passed": true,
   "cases": [
@@ -424,6 +427,12 @@
       "pass": true,
       "specific_force_norm_m_s2": 1.8383103327735147e-15,
       "vertical_velocity_m_s": -0.9809999999999989
+    },
+    {
+      "scenario": "compact actor and privileged critic neutral stand",
+      "pass": true,
+      "actor_dimension": 63,
+      "critic_dimension": 81
     }
   ],
   "input_sha256": {
@@ -434,12 +443,13 @@
     "learning/native.cpp": "8be5e2f5e8ab33050dbd281a331a992f699e6129d9e148bcd8bc237cad0ee094",
     "learning/sensors.py": "8ec90005f6070beaeceec24b55fb6b05dc646a7621ff2000b7f01538050f12cf",
     "hardware/observation.py": "c01f49cf032c46c58eb25084a437cc10c6eb7ade37a68a2470422df0f59c03fb",
-    "learning/env.py": "4e6639e23cc77b7b22785d60653f049e55f8b0495b96e887d85fa42a72e24183",
+    "learning/env.py": "e5ab28fe6b482de19c836c7b64509bfaf82182256a9590e368a4367af7009ce1",
     "learning/rewards.py": "0eb48885025081d9d928573ed3aa2dfd847a2f81f665953dfbee3390caf05dde",
-    "learning/curriculum.py": "24ce33b643159558a7b615b6b6415d38ac71674baae0c48fb5274b0e01f83db5"
+    "learning/curriculum.py": "24ce33b643159558a7b615b6b6415d38ac71674baae0c48fb5274b0e01f83db5",
+    "hardware/policy_observation.py": "e3415b48a67649e0ce38c3ded3d096a340fc43aee37ffa5cf53db6d9cd549d28"
   },
-  "dynamics_signature": "91c428babb2e320dde92607963fb24d030015ca2e3607f9162b2f31d98360054",
-  "policy_quality": "No trained v05 policy evaluated; neutral targets and physics checks only",
+  "dynamics_signature": "207e212281c911560d9540f68d4ca7323e15d50a2b50f59e2873983093cc084c",
+  "policy_quality": "No trained compact policy evaluated; neutral targets and physics checks only",
   "physical_validation": "not run",
   "root_support_forces": false,
   "mid_episode_resets": false

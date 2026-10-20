@@ -229,9 +229,25 @@ def score_development(task: str, results: list[dict[str, Any]]):
 
 
 def regresses(score: float, qualified: bool, champion: dict[str, Any] | None):
+    """Historical regression diagnostic; never used to rewind training."""
     return champion is not None and (
         score < champion["score"]-.10
         or (champion["quality_gate_passed"] and not qualified))
+
+
+def apply_selection(state,task,selection):
+    """Continue the valid training chain independently of champion promotion."""
+    old=state['champions'].get(task)
+    qualified=selection['quality_gate_passed']
+    promote_candidate=(old is None or
+        (qualified and not old['quality_gate_passed']) or
+        (qualified==old['quality_gate_passed'] and selection['score']>old['score']))
+    state['latest_training'][task]=selection['checkpoint']
+    selection.update(discarded_for_resume=False,continued_training=True,
+                     promoted_to_champion=promote_candidate,
+                     regressed_against_champion=regresses(selection['score'],qualified,old))
+    if promote_candidate:state['champions'][task]=selection
+    return promote_candidate
 
 
 def promote(checkpoint: Path, link: Path):
@@ -329,6 +345,8 @@ def main():
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument("--require-gpu", action="store_true", help="Wait for an idle GPU instead of silently falling back to CPU; wait counts against wall budget")
     parser.add_argument("--seed", type=int, default=37)
+    parser.add_argument('--observation-mode',choices=('compact','legacy'),default='compact')
+    parser.add_argument('--teacher-source',help='Verified source for a frozen legacy walking teacher')
     args = parser.parse_args()
     from learning.readiness import require_training_ready,dynamics_signature
     require_training_ready()
@@ -349,9 +367,11 @@ def main():
         raise KeyboardInterrupt(f"Driver received signal {signum}")
     signal.signal(signal.SIGTERM, handle_termination)
     state_path = out / "status.json"
+    from hardware.policy_observation import CONTRACT as COMPACT_CONTRACT
+    expected_contract=COMPACT_CONTRACT if args.observation_mode=='compact' else 'v05-sensor-suite-1'
     if state_path.exists():
         state = json.loads(state_path.read_text())
-        if state.get("observation_contract")!="v05-sensor-suite-1":raise ValueError("Use a new v05 output directory; v02 run is immutable")
+        if state.get("observation_contract")!=expected_contract:raise ValueError("Actor contract changed; use a fresh output directory")
         if state.get('dynamics_signature')!=dynamics_signature():raise ValueError('Recipe changed; use a fresh output and explicit weights-only transfer')
         if state.get("complete"):
             print("This driver already completed; choose another output for another authorized run.")
@@ -367,12 +387,19 @@ def main():
             if checkpoint:
                 path=Path(checkpoint).resolve()
                 if not path.is_file():raise FileNotFoundError(path)
+                from learning.ppo import _safe_load
+                seed_metadata=_safe_load(path,'cpu').get('environment_metadata',{})
+                if seed_metadata.get('observation_contract')!=expected_contract:
+                    raise ValueError('Bootstrap actor contract differs; distill into the compact policy first')
+                if seed_metadata.get('dynamics_signature')!=dynamics_signature():
+                    raise ValueError('Bootstrap source differs; use explicit verified transfer first')
                 warm_starts[task]=str(path)
         from learning.env import SweetieVecEnv
-        state = {"dynamics_signature":dynamics_signature(), "observation_contract":"v05-sensor-suite-1", "reward_version":SweetieVecEnv.reward_version, "started_epoch": started, "deadline_epoch": campaign_deadline,
+        state = {"dynamics_signature":dynamics_signature(), "observation_contract":expected_contract, "reward_version":SweetieVecEnv.reward_version, "started_epoch": started, "deadline_epoch": campaign_deadline,
                  "initial_prior_seconds": args.prior_seconds,
                  "budget_hours": args.hours, "complete": False,
                  "round": 0, "children": [], "latest_training": warm_starts,
+                 'final_seed_base':5_000_000 if args.observation_mode=='compact' else 4_000_000,
                  "champions": {}, "consecutive_failures": {"locomotion": 0, "recovery": 0},
                  "final_started": False, "config": vars(args)}
         state.update(schedule_version=2,schedule_index=TASKS.index(args.start_task),completed_chunks_by_task={task:0 for task in TASKS})
@@ -380,6 +407,7 @@ def main():
     migrate_schedule(state)
     state['runtime_config']=vars(args)
     state['runtime_source_snapshot']=str(Path(__file__).resolve().parents[1])
+    state['selection_policy']='independent_latest_and_champion_v1'
     state.pop('stop_reason',None)
     deadline = state["deadline_epoch"]
     environment = dict(os.environ)
@@ -436,7 +464,7 @@ def main():
                     continue
                 try:
                     finals[task][terrain] = evaluate(task, Path(champion["checkpoint"]), out / "final" / task / terrain,
-                                                     terrain, 4_000_000+index, final=True)
+                                                     terrain, state.get('final_seed_base',4_000_000)+index, final=True)
                 except Exception as error:
                     finals[task][terrain] = {"status": "failed", "error": str(error)}
                 atomic_json(out / "final_results.json", finals)
@@ -503,10 +531,12 @@ def main():
                        "--threads", str(args.threads), "--seconds", str(seconds),
                        "--seed", str(seed), "--device", selection_device["device"],
                        "--terrain", terrain, "--difficulty", str(difficulty),
+                       '--observation-mode',args.observation_mode,
                        '--curriculum-horizon-steps',str(args.curriculum_horizon_steps),
                        "--gpu-memory-gib", "2", "--save-interval", "60"]
             if task=='recovery' and args.recovery_teacher:
                 command.extend(('--recovery-teacher',args.recovery_teacher))
+                if args.teacher_source:command.extend(('--teacher-source',args.teacher_source))
             if task=='recovery':
                 from learning.curriculum import recovery_progress_cap
                 command.extend(('--curriculum-progress-cap',str(recovery_progress_cap(state['champions'].get(task)))))
@@ -515,8 +545,10 @@ def main():
             elif task=='running':
                 donor=state['champions'].get('locomotion',{}).get('checkpoint') or state['latest_training'].get('locomotion')
                 if donor:command.extend(('--initialize-from',donor))
+            resume_before_chunk=state['latest_training'].get(task)
             state["active_run"] = {"round": round_index, "task": task, "terrain": terrain,
                                    "directory": str(directory), "seconds": seconds,
+                                   'resume_checkpoint':resume_before_chunk,
                                    "selected_device": selection_device}
             persist("training")
             result = run_child(command, directory / "process.log", deadline,
@@ -524,10 +556,13 @@ def main():
             state["children"].append({"kind": "training", "round": round_index, "task": task,
                                       "selected_device": selection_device, **result})
             checkpoint = directory / "latest.pt"
+            valid_training=False
             try:
                 if result["status"] != "completed" or not checkpoint.exists():
                     raise RuntimeError(f"Training {result['status']}")
                 state['completed_chunks_by_task'][task]+=1
+                valid_training=True
+                state['consecutive_failures'][task]=0
                 # Latest may be resumed even if it does not beat the champion.
                 state["latest_training"][task] = str(checkpoint)
                 evaluations = [evaluate(task, checkpoint, directory / "development" / surface,
@@ -538,27 +573,23 @@ def main():
                              "metrics": metrics, "checkpoint": str(checkpoint),
                              "checkpoint_sha256": sha256(checkpoint), "round": round_index}
                 atomic_json(directory / "selection.json", selection)
-                old = state["champions"].get(task)
-                regressed = regresses(score, qualified, old)
-                selection["discarded_for_resume"] = bool(regressed)
-                if regressed:
-                    state["latest_training"][task] = old["checkpoint"]
-                    selection["resume_rollback_checkpoint"] = old["checkpoint"]
-                elif old is None or score > old["score"]:
-                    state["champions"][task] = selection
+                if apply_selection(state,task,selection):
                     promote(checkpoint, out / POLICY_FILES[task])
                 atomic_json(directory / "selection.json", selection)
                 state["consecutive_failures"][task] = 0
             except Exception as error:
-                state["consecutive_failures"][task] += 1
-                rollback = state["champions"].get(task, {}).get("checkpoint")
-                if rollback:
-                    state["latest_training"][task] = rollback
-                else:
-                    # An unevaluated candidate cannot be the bootstrap source.
-                    state["latest_training"].pop(task, None)
+                # Failed evaluation does not invalidate a successful PPO chunk.
+                # Only failed workers rewind to the previous training checkpoint.
+                rollback=None
+                if not valid_training:
+                    state["consecutive_failures"][task] += 1
+                    rollback=resume_before_chunk
+                    if rollback:state["latest_training"][task]=rollback
+                    else:state["latest_training"].pop(task,None)
                 atomic_json(directory / "failure.json", {"error": str(error), "training": result,
-                            "discarded_for_resume": True, "resume_rollback_checkpoint": rollback})
+                            "discarded_for_resume":not valid_training,
+                            'stage':'evaluation' if valid_training else 'training',
+                            "resume_rollback_checkpoint": rollback})
             state["round"] += 1
             state['schedule_index']=(TASKS.index(task)+1)%len(TASKS)
             persist("between_chunks")
