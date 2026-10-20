@@ -1,0 +1,37 @@
+{
+  "source_commit": "6491c4a6a78d65bee7906f424216e3ab3ce0aa61",
+  "source": "/home/alexw/sweetybot2-v05-20261018/source-6491c4a",
+  "output": "/home/alexw/storage/sweetybot2-v05-20261018/training-compact-200h",
+  "budget_hours": 200,
+  "started_epoch": 1792496415.0,
+  "deadline_epoch": 1793216415.0,
+  "deadline_utc": "2026-10-28T19:40:15+00:00",
+  "deadline_belgrade": "2026-10-28T20:40:15+01:00",
+  "service": "sweetybot2-compact-200h.service",
+  "absolute_stop_timer": "sweetybot2-compact-200h-stop.timer",
+  "initial_gpu_verification": {
+    "utc": "2026-10-20T11:56:33.596221+00:00",
+    "phase": "training",
+    "baseline_cases": 4,
+    "remaining_hours": 199.728,
+    "task": "locomotion",
+    "steps": 40960,
+    "updates": 5,
+    "learning_rate": 2.6337448559670777e-05,
+    "transitions_per_second": 445.986078242546,
+    "checkpoint_bytes": 4899858
+  },
+  "checkpoint": {
+    "path": "/mnt/elements/alexw/sweetybot2-v05-20261018/training-compact-200h/runs/0000_locomotion_flat/latest.pt",
+    "sha256": "2271ca21e3bc621297cf9e12e87e513c3ed699f9d5a930ea26fdf543b891a259",
+    "bytes": 4899858,
+    "steps": 81920,
+    "updates": 10,
+    "actor_dimension": 63,
+    "critic_dimension": 81
+  },
+  "local_relevant_tests_passed": 32,
+  "remote_relevant_tests": "31 passed / 1 initial native-import skip, then that native test passed separately",
+  "learned_improvement": "not yet evaluated",
+  "source_immutable": true
+}
