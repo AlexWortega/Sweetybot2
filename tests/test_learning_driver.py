@@ -11,15 +11,26 @@ import pytest
 from learning.driver import promote, regresses, run_child, score_development, select_gpu, validate_budget
 
 
-def test_authorized_36_hour_cycle_retains_a_finite_budget_cap():
+def test_authorized_200_hour_cycle_retains_a_finite_budget_cap():
     validate_budget(24, 1200)
     validate_budget(36, 1200)
-    for hours in (0, -1, 36.001, float('inf'), float('nan')):
+    validate_budget(200, 1200)
+    for hours in (0, -1, 200.001, float('inf'), float('nan')):
         with pytest.raises(ValueError):
             validate_budget(hours, 1200)
     for seconds in (0, -1, float('inf'), float('nan')):
         with pytest.raises(ValueError):
-            validate_budget(36, seconds)
+            validate_budget(200, seconds)
+
+
+def test_long_campaign_restart_keeps_absolute_deadline_and_charges_downtime():
+    from learning.driver import campaign_window
+    start=1_792_494_000.
+    first=campaign_window(200,start)
+    resumed=campaign_window(200,start+72*3600,start_epoch=start)
+    assert first==resumed==(start,start+720000)
+    # The old 36-hour cycle is still finite; it is not extended by the new cap.
+    assert campaign_window(36,start)==(start,start+129600)
 
 
 def test_stationary_survivor_does_not_pass_locomotion_gate():

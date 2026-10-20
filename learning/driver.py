@@ -23,12 +23,13 @@ from typing import Any
 
 TASKS=("locomotion","recovery","running")
 POLICY_FILES={"locomotion":"walk.pt","recovery":"recover.pt","running":"run.pt"}
+MAX_CAMPAIGN_HOURS=200.
 
 
 def validate_budget(hours: float, chunk_seconds: float):
     """Bound each authorized cycle, including setup, evaluation and GPU waits."""
-    if not math.isfinite(hours) or not 0 < hours <= 36:
-        raise ValueError("Budget must be finite, >0 and <=36h")
+    if not math.isfinite(hours) or not 0 < hours <= MAX_CAMPAIGN_HOURS:
+        raise ValueError(f"Budget must be finite, >0 and <={MAX_CAMPAIGN_HOURS:g}h")
     if not math.isfinite(chunk_seconds) or chunk_seconds <= 0:
         raise ValueError("Chunk seconds must be finite and positive")
 
