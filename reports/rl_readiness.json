@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "dynamics_signature": "207e212281c911560d9540f68d4ca7323e15d50a2b50f59e2873983093cc084c",
+  "dynamics_signature": "73654a024a564833ec3377fd2c903e098d991cb99ae4c0e5dff5c85db1456825",
   "reason": "Digital collision/sensor checks passed; new task policies still require training and independent evaluation",
   "report": "reports/v05_validation.json"
 }

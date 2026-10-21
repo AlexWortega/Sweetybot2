@@ -18,8 +18,8 @@ def test_handoff_does_not_buy_a_new_budget():
 
 def test_recovery_curriculum_retains_easy_starts_and_introduces_hard_falls_late():
     early=recovery_stage(0);late=recovery_stage(1)
-    assert early['probabilities'][4]==0 and early['full_fall_probability']==0
-    assert sum(early['probabilities'][:2])==pytest.approx(.9)
+    assert early['probabilities'][4]>=.10 and early['full_fall_probability']>=.20
+    assert sum(early['probabilities'][:2])==pytest.approx(.6)
     assert late['probabilities'][4]>.3 and late['roll_scale']==1
     for value in np.linspace(0,1,21):
         plan=recovery_stage(value)

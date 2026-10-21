@@ -5,7 +5,7 @@ Resets place an episode's initial state only; they do not assist active motion.
 """
 import numpy as np
 
-RECIPE = 'v05-microduck-rewards-2'
+RECIPE = 'v05-recovery-waypoints-1'
 
 
 def progress(env_steps, horizon=50_000):
@@ -17,11 +17,11 @@ def progress(env_steps, horizon=50_000):
 def recovery_stage(value):
     value = float(np.clip(value, 0., 1.))
     if value < .20:
-        return dict(name='stand_and_crouch', probabilities=[.35,.55,.05,.05,0.], roll_scale=.20, full_fall_probability=0.)
+        return dict(name='stand_and_crouch', probabilities=[.20,.40,.15,.15,.10], roll_scale=.35, full_fall_probability=.20)
     if value < .50:
-        return dict(name='partial_rolls', probabilities=[.20,.35,.20,.20,.05], roll_scale=.45, full_fall_probability=.10)
+        return dict(name='partial_rolls', probabilities=[.10,.25,.20,.20,.25], roll_scale=.65, full_fall_probability=.35)
     if value < .85:
-        return dict(name='side_recovery', probabilities=[.10,.20,.25,.25,.20], roll_scale=.70, full_fall_probability=.35)
+        return dict(name='side_recovery', probabilities=[.10,.15,.225,.225,.30], roll_scale=.85, full_fall_probability=.50)
     return dict(name='full_falls', probabilities=[.10,.10,.20,.20,.40], roll_scale=1., full_fall_probability=.75)
 
 
@@ -43,6 +43,8 @@ def recovery_progress_cap(champion):
     """Keep elapsed experience, but unlock hard starts after measured skills."""
     rates=(champion or {}).get('metrics',{}).get('per_orientation_success_rate',{})
     if rates.get('folded_crouch',0.)<.25:return .19
-    if min(rates.get('left',0.),rates.get('right',0.))<.25:return .49
+    # Partial rotations cannot unlock full side recovery if full side starts
+    # are almost absent. Keep side/back exposure while measuring milestones.
+    if min(rates.get('left',0.),rates.get('right',0.))<.25:return .74
     if rates.get('supine',0.)<.25:return .84
     return 1.

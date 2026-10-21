@@ -93,7 +93,7 @@ def make_model(terrain='flat', difficulty=0., seed=1):
 class SweetieVecEnv:
     observation_mode='legacy'
     observation_contract="v05-sensor-suite-1"
-    reward_version="v05-microduck-rewards-2"
+    reward_version="v05-recovery-waypoints-1"
     action_dim=12
     frame_dim=197
     obs_dim=591
@@ -138,8 +138,9 @@ class SweetieVecEnv:
         self.previous_up=np.ones(n);self.previous_height=np.full(n,self.nominal_height)
         from learning.sensors import SensorSuite
         self.sensors=SensorSuite(n,seed+809,bool(randomize));self.previous_potential=np.zeros(n);self.flight_seconds=np.zeros(n);self.previous_feet=np.zeros((n,4,3));self.foot_velocity=np.zeros((n,4,3))
-        from learning.rewards import FootMotion,RiseMotion
+        from learning.rewards import FootMotion,RiseMotion,RecoveryWaypoints
         self.foot_motion=FootMotion(n,self.dt);self.rise_motion=RiseMotion(n,self.dt)
+        self.recovery_waypoints=RecoveryWaypoints(n,self.dt)
         self.max_episode_steps=500 if task=='recovery' else 600
         # Keep a bounded diagnostic tail during day-long runs; lifetime and
         # episode disturbance counts remain available in every step's info.
@@ -320,6 +321,7 @@ class SweetieVecEnv:
         self.sensors.reset(ids,self.state['imu_quat'][ids]);self.flight_seconds[ids]=0;self.previous_feet[ids]=self.state['feet'][ids]
         self.foot_motion.reset(ids)
         self.rise_motion.reset(ids,self.height[ids],self.state['qvel'][ids,2])
+        self.recovery_waypoints.reset(ids,self.rot[ids,2,2],self.height[ids],self.nominal_height,self.state['contacts'][ids])
         from learning.rewards import recovery_potential
         pose_error=np.square(self.state['qpos'][ids,7:19]-self.home[:12]).mean(1)
         self.previous_potential[ids]=recovery_potential(self.rot[ids,2,2],self.height[ids],self.nominal_height,pose_error)
@@ -446,10 +448,12 @@ class SweetieVecEnv:
                 gait=gait,previous_torque=previous_torque,joint_limits=(self.low[:12],self.high[:12]),self_contacts=self.state['self_contacts'])
             failure=(up<.45)|(self.height<.43*self.nominal_height)
         else:
+            waypoint_terms=self.recovery_waypoints.update(up,self.height,self.nominal_height,
+                self.state['contacts'],self.state['bad_contacts'],self.state['self_contacts'],omega,self.stable)
             terms,self.previous_potential=recovery_terms(up,self.height,self.nominal_height,pose,self.previous_potential,
                 self.stable,just_success,actions,self.last_action,self.state['torque_rms'],self.state['motor_continuous'],self.state['bad_contacts'],progress=self.progress,omega=omega,
                 feet_contacts=self.state['contacts'],self_contacts=self.state['self_contacts'],rise_velocity=rise_velocity,vertical_accel=vertical_accel,
-                joints=self.state['qpos'][:,7:19],joint_limits=(self.low[:12],self.high[:12]),previous_torque=previous_torque)
+                joints=self.state['qpos'][:,7:19],joint_limits=(self.low[:12],self.high[:12]),previous_torque=previous_torque,waypoints=waypoint_terms)
             failure=np.zeros(self.num_envs,bool)
         terms['self_collision']=-.2*np.minimum(self.state.get('self_contacts',np.zeros(self.num_envs)),10)
         reward=sum(terms.values())*self.dt
@@ -479,6 +483,11 @@ class SweetieVecEnv:
                      'recovery_success':self.success[done].astype(float),'command_rmse':self.velocity_error[done]/self.steps[done],
                      'reset_kind':self.reset_kind[done].copy(),'fall':failure[done].astype(float),
                      'disturbance_count':self.disturbance_count[done].copy()}
+            if self.task=='recovery':
+                episode['recovery_initial_waypoint']=self.recovery_waypoints.initial_level[done].copy()
+                episode['recovery_final_waypoint']=self.recovery_waypoints.level[done].copy()
+                for i,name in enumerate(self.recovery_waypoints.names):
+                    episode['reached_'+name]=self.recovery_waypoints.earned[done,i].astype(float)
         info={'truncated':truncated,'terminal_observation':terminal_obs,'episode':episode,'success':self.success.copy(),
               'total_disturbances':int(self.total_disturbances)}
         if terminal_critic_obs is not None:info['terminal_critic_observation']=terminal_critic_obs

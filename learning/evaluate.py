@@ -127,6 +127,8 @@ def evaluate(checkpoint=None, task="locomotion", terrain="flat", difficulty=.25,
     env.commands[:] = command
     env.history[:, -1] = env._frame()
     initial = env.state["qpos"][:, :3].copy()
+    initial_up=env.rot[:,2,2].copy()
+    initial_height=env.height.copy()
     if checkpoint is not None:
         from learning.ppo import validate_environment_contract
         validate_environment_contract(metadata,env)
@@ -239,6 +241,9 @@ def evaluate(checkpoint=None, task="locomotion", terrain="flat", difficulty=.25,
         for index in range(n):
             records.append({
                 "condition": str(labels[index]), "replicate": int(index % episodes),
+                "initial_up_z":float(initial_up[index]),"initial_body_height_m":float(initial_height[index]),
+                "recovery_waypoints_reached":{name:bool(env.recovery_waypoints.earned[index,i])
+                    for i,name in enumerate(env.recovery_waypoints.names)} if task=='recovery' else {},
                 "command": command[index].tolist(), "samples": int(count[index]),
                 "survived": bool(alive[index]),
                 "first_fall_s": float(first_fall[index]) if np.isfinite(first_fall[index]) else None,
@@ -275,6 +280,8 @@ def evaluate(checkpoint=None, task="locomotion", terrain="flat", difficulty=.25,
                 "survival_ci95": _binomial_interval(int(alive[ix].sum()), len(rows)),
                 "successes": int(final_success[ix].sum()), "success_rate": float(final_success[ix].mean()),
                 "success_ci95": _binomial_interval(int(final_success[ix].sum()), len(rows)),
+                "waypoint_reach_rates":{name:float(env.recovery_waypoints.earned[ix,i].mean())
+                    for i,name in enumerate(env.recovery_waypoints.names)} if task=='recovery' else {},
                 "ever_recovered": int(np.isfinite(first_success[ix]).sum()),
                 "time_to_stand_mean_s": _mean(first_success[ix]),
                 "command": command[ix[0]].tolist(),

@@ -1,0 +1,21 @@
+{
+  "recipe": "v05-recovery-waypoints-1",
+  "full_tests": 153,
+  "focused_final_tests": 10,
+  "digital_readiness": {
+    "passed": true,
+    "dynamics_signature": "73654a024a564833ec3377fd2c903e098d991cb99ae4c0e5dff5c85db1456825",
+    "reason": "Digital collision/sensor checks passed; new task policies still require training and independent evaluation",
+    "report": "reports/v05_validation.json"
+  },
+  "physical_sensor_signature": "a4f685a56bf278913a39e7c5e566a13df0fbdd02c260c2697c6137e3938452c0",
+  "dynamics_signature": "73654a024a564833ec3377fd2c903e098d991cb99ae4c0e5dff5c85db1456825",
+  "ppo_smoke": {
+    "steps": 256,
+    "updates": 8,
+    "status": "max_steps_reached"
+  },
+  "evaluation_smoke": "supine starts up_z=-1; per-orientation waypoint rates recorded",
+  "learned_recovery_quality": "not demonstrated",
+  "budget": "Original 200-hour start and deadline retained; no parallel training GPU"
+}

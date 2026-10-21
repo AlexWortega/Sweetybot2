@@ -3,6 +3,61 @@ Tests cover stationary flight farming, sliding and overload counterexamples.
 """
 import numpy as np
 
+class RecoveryWaypoints:
+ """Episode-local pose milestones; no repeated payment for holding or cycling.
+
+ Levels describe geometry/support rather than a commanded joint animation.
+ Initial poses receive no milestone credit. The ledger is reward-only: neither
+ privileged pose measurements nor milestone IDs are added to actor inputs.
+ """
+ names=('side','belly_support','supported_crouch','stable_stand')
+ def __init__(self,n,dt=.02):
+  self.dt=dt;self.level=np.zeros(n,int);self.initial_level=np.zeros(n,int)
+  self.dwell=np.zeros(n,int);self.peak=np.zeros(n);self.earned=np.zeros((n,4),bool)
+
+ def _score(self,up,height,nominal_height,contacts,stable,levels=None):
+  count=np.asarray(contacts).sum(1);h=height/nominal_height
+  scores=np.stack((np.clip((up+1)/.8,0,1),
+   .75*np.clip((up+.2)/.75,0,1)+.25*np.minimum(count,1),
+   .4*np.clip((up-.55)/.30,0,1)+.3*np.clip((h-.20)/.30,0,1)+.3*np.minimum(count/2,1),
+   .25*np.clip((up-.85)/.10,0,1)+.25*np.clip((h-.5)/.34,0,1)+.25*np.minimum(count/3,1)+.25*np.minimum(stable/35,1)),axis=1)
+  return scores[np.arange(len(up)),np.minimum(self.level if levels is None else levels,3)]
+
+ def reset(self,ids,up,height,nominal_height,contacts):
+  # Recognize poses already present at reset, even before the first contact.
+  # Dropping an initially upright robot onto its feet cannot earn roll bonuses.
+  self.level[ids]=((up>=-.20).astype(int)+(up>=.55).astype(int)+
+                   ((up>=.85)&(height>=.5*nominal_height)).astype(int))
+  self.initial_level[ids]=self.level[ids];self.dwell[ids]=0;self.earned[ids]=False
+  self.peak[ids]=self._score(up,height,nominal_height,contacts,np.zeros(len(ids)),self.level[ids])
+
+ def update(self,up,height,nominal_height,contacts,bad_contacts,self_contacts,omega,stable):
+  count=np.asarray(contacts).sum(1);h=height/nominal_height
+  grounded=(count>0)|(bad_contacts>0)
+  clean=(self_contacts==0)&np.isfinite(up)&np.isfinite(height)&np.isfinite(omega).all(1)
+  controlled=np.linalg.norm(omega,axis=1)<4.
+  conditions=np.stack((up>=-.20,(up>=.55)&(count>=1),
+   (up>=.85)&(h>=.5)&(count>=2)&(bad_contacts==0),
+   (stable>=35)&(count>=3)&(bad_contacts==0)&(up>.90)&(h>.84)&(h<1.4)),axis=1)
+  index=np.minimum(self.level,3);active=self.level<4
+  qualified=conditions[np.arange(len(up)),index]&clean&grounded&controlled&active
+  self.dwell=np.where(qualified,self.dwell+1,0)
+  # Require a pose to persist: transient tumbles are not milestones.
+  durations=np.array([.12,.16,.20,self.dt])
+  reached=qualified&(self.dwell*self.dt+1e-9>=durations[index])
+  events=np.zeros_like(self.earned)
+  rows=np.flatnonzero(reached);events[rows,index[rows]]=True
+  self.earned|=events
+  score=self._score(up,height,nominal_height,contacts,stable)
+  progress=np.maximum(0,score-self.peak)*clean*grounded*active
+  self.peak=np.where(clean&grounded,np.maximum(self.peak,score),self.peak)
+  bonuses=np.array([.5,.75,1.,1.5])
+  terms={'waypoint_progress':2.*progress/self.dt}
+  for i,name in enumerate(self.names):terms['waypoint_'+name]=bonuses[i]*events[:,i]/self.dt
+  self.level[rows]+=1;self.dwell[rows]=0
+  if len(rows):self.peak[rows]=self._score(up,height,nominal_height,contacts,stable)[rows]
+  return terms
+
 class FootMotion:
  """Per-foot landing events; an initial fall and contact chatter earn nothing."""
  def __init__(self,n,dt=.02):
@@ -114,7 +169,7 @@ def recovery_potential(up,height,nominal_height,pose_error):
  # Inverted plateaus receive low potential and no positive survival reward.
  return 2.*np.clip((up+1)/2,0,1)+1.2*np.exp(-np.square(height-nominal_height)/(.2*nominal_height)**2)*(up>.5)+.2*np.exp(-pose_error/.4)*(up>.8)
 
-def recovery_terms(up,height,nominal_height,pose_error,previous_potential,stable,just_success,actions,previous_actions,torque,continuous,bad_contacts,progress=1.,omega=None,feet_contacts=None,self_contacts=None,rise_velocity=None,vertical_accel=None,joints=None,joint_limits=None,previous_torque=None):
+def recovery_terms(up,height,nominal_height,pose_error,previous_potential,stable,just_success,actions,previous_actions,torque,continuous,bad_contacts,progress=1.,omega=None,feet_contacts=None,self_contacts=None,rise_velocity=None,vertical_accel=None,joints=None,joint_limits=None,previous_torque=None,waypoints=None):
  from learning.curriculum import polish_weight
  polish=polish_weight(progress)
  potential=recovery_potential(up,height,nominal_height,pose_error)
@@ -146,4 +201,10 @@ def recovery_terms(up,height,nominal_height,pose_error,previous_potential,stable
  if omega is not None:
   # Brake near arrival only; do not tax the rotation needed to leave the back.
   terms['arrival_damping']=-.025*polish*np.square(omega[:,:2]).sum(1)*(up>.85)*(height>.8*nominal_height)
+ if waypoints is not None:
+  terms.update(waypoints)
+  # Lowering the torso and folding limbs is useful during a roll. Full-height
+  # and stand-pose shaping takes over only after the torso faces upright.
+  terms['height_stand_l1']*=np.where(up>.55,1.,.1)
+  terms['upright_linear']*=np.where(up>.55,1.,.25)
  return terms,potential

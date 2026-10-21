@@ -132,7 +132,7 @@ def test_dense_goal_rewards_require_feet_and_rise_is_directly_encouraged():
 def test_hard_starts_unlock_by_measured_success_not_elapsed_time():
  assert recovery_progress_cap(None)==.19
  def champion(**rates):return {'metrics':{'per_orientation_success_rate':rates}}
- assert recovery_progress_cap(champion(folded_crouch=.3))==.49
+ assert recovery_progress_cap(champion(folded_crouch=.3))==.74
  assert recovery_progress_cap(champion(folded_crouch=.3,left=.3,right=.3))==.84
  assert recovery_progress_cap(champion(folded_crouch=.3,left=.3,right=.3,supine=.3))==1
 

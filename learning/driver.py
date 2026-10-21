@@ -348,7 +348,10 @@ def main():
     parser.add_argument("--seed", type=int, default=37)
     parser.add_argument('--observation-mode',choices=('compact','legacy'),default='compact')
     parser.add_argument('--teacher-source',help='Verified source for a frozen legacy walking teacher')
+    parser.add_argument('--bootstrap-episodes',type=int,default=8,
+                        help='Replicates per fixed condition for the initial baseline only; training development/final remain 8')
     args = parser.parse_args()
+    if not 1<=args.bootstrap_episodes<=8:raise ValueError('Bootstrap replicates must be between 1 and 8')
     from learning.readiness import require_training_ready,dynamics_signature
     require_training_ready()
     if args.require_gpu and args.device=='cpu':raise ValueError('--require-gpu cannot be combined with --device cpu')
@@ -433,11 +436,11 @@ def main():
         atomic_json(out / "budget.json", {key: state[key] for key in (
             "budget_hours", "started_epoch", "deadline_epoch", "charged_wall_seconds", "remaining_seconds")})
 
-    def evaluate(task, checkpoint, directory, terrain, seed, final=False):
+    def evaluate(task, checkpoint, directory, terrain, seed, final=False,episodes=8):
         directory.mkdir(parents=True, exist_ok=True)
         command = [sys.executable, "-m", "learning.evaluate", "--checkpoint", str(checkpoint),
                    "--out", str(directory), "--task", task, "--terrain", terrain,
-                   "--difficulty", "1.0" if final else ".2", "--episodes", "8",
+                   "--difficulty", "1.0" if final else ".2", "--episodes", str(episodes),
                    "--seconds", str(args.eval_seconds), "--seed", str(seed),
                    "--threads", str(min(8, args.threads))]
         result = run_child(command, directory / "process.log", deadline,
@@ -478,7 +481,7 @@ def main():
         if not state.get('bootstrap_evaluated'):
             for task,checkpoint in state['latest_training'].items():
                 directory=out/'baseline'/task
-                evaluations=[evaluate(task,Path(checkpoint),directory/surface,surface,1_000_000+offset)
+                evaluations=[evaluate(task,Path(checkpoint),directory/surface,surface,1_000_000+offset,episodes=args.bootstrap_episodes)
                              for offset,surface in enumerate(('flat','rough','slope','steps'))]
                 score,qualified,metrics=score_development(task,evaluations)
                 selection={'score':score,'quality_gate_passed':qualified,'metrics':metrics,
