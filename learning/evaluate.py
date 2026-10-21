@@ -75,6 +75,12 @@ def sha256(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
+def locomotion_failure(up,height,nominal_height,position,extent):
+    """Use the current terrain boundary, not the obsolete 3.5m arena."""
+    return ((np.asarray(up)<.45)|(np.asarray(height)<.43*nominal_height)|
+            (np.abs(np.asarray(position)[:,:2])>extent-.5).any(axis=1))
+
+
 def _mean(values):
     finite = [float(value) for value in values if value is not None and np.isfinite(value)]
     return float(np.mean(finite)) if finite else None
@@ -91,7 +97,7 @@ def _binomial_interval(successes, count):
 
 
 def evaluate(checkpoint=None, task="locomotion", terrain="flat", difficulty=.25,
-             episodes=16, seed=1_000_000, seconds=12., threads=8, record=None):
+             episodes=16, seed=1_000_000, seconds=12., threads=8, record=None,speed_challenge=None):
     import mujoco
     from learning.env import SweetieVecEnv
     from scripts.common import ROOT
@@ -102,6 +108,9 @@ def evaluate(checkpoint=None, task="locomotion", terrain="flat", difficulty=.25,
     if episodes < 1 or seconds <= 0 or not np.isfinite([seconds, difficulty]).all():
         raise ValueError("Expected positive episodes/seconds and finite difficulty")
     commands = RUNNING_COMMANDS if task == "running" else COMMANDS
+    if speed_challenge is not None:
+        if task!='running' or not np.isfinite(speed_challenge) or not .55<=speed_challenge<=1.:raise ValueError('Running speed challenge must be 0.55..1.0 m/s')
+        commands={'profile_forward':(speed_challenge-.10,0.,0.),'profile_max':(speed_challenge,0.,0.)}
     conditions = POSES if task == "recovery" else tuple(commands)
     n = episodes * len(conditions)
     labels = np.repeat(conditions, episodes)
@@ -207,8 +216,7 @@ def evaluate(checkpoint=None, task="locomotion", terrain="flat", difficulty=.25,
             forward_aerial += air & (env.local_velocity[:, 0] > .10)
             aerial_streak = np.where(air, aerial_streak + env.dt, 0.)
             longest_aerial = np.maximum(longest_aerial, aerial_streak)
-            failed = (env.rot[:, 2, 2] < .45) | (env.height < .43*env.nominal_height)
-            failed |= (np.abs(state["qpos"][:, :2]) > 3.5).any(axis=1)
+            failed = locomotion_failure(env.rot[:,2,2],env.height,env.nominal_height,state['qpos'],env.terrain['extent_m'])
             new_fall = alive & failed
             first_fall[new_fall] = now
             alive &= ~failed
@@ -308,11 +316,13 @@ def evaluate(checkpoint=None, task="locomotion", terrain="flat", difficulty=.25,
         public_terrain = {key: value for key, value in env.terrain.items() if key != "height_samples"}
         result = {
             "schema_version": 2, "observation_contract":env.observation_contract, "reward_version":env.reward_version, "task": task, "policy": "checkpoint" if checkpoint else "zero_action_baseline",
+            "evaluation_protocol":"terrain-boundary-v3","arena_exit_limit_m":env.terrain['extent_m']-.5,
             "checkpoint": str(Path(checkpoint).resolve()) if checkpoint else None,
             "checkpoint_sha256": sha256(checkpoint) if checkpoint else None,
             "checkpoint_metadata": metadata, "seed": int(seed),
             "split": "final" if seed >= 4_000_000 else "preview" if seed >= 2_000_000 else "development" if seed >= 1_000_000 else "training_range",
             "episodes_per_condition": episodes, "episodes": n, "seconds": float(seconds),
+            "speed_challenge_mps":speed_challenge,
             "self_contact_fraction":float(np.max(self_contact_ticks/denominator)),
             "survival_fraction": float(alive.mean()) if task != "recovery" else None,
             "command_rmse": float(np.linalg.norm(rms_components[moving], axis=1).mean()) if moving.any() else None,
@@ -372,9 +382,10 @@ def main(argv=None):
     parser.add_argument("--seconds", type=float, default=12.)
     parser.add_argument("--threads", type=int, default=8)
     parser.add_argument("--record", type=Path)
+    parser.add_argument('--speed-challenge',type=float)
     args = parser.parse_args(argv)
     result = evaluate(args.checkpoint, args.task, args.terrain, args.difficulty, args.episodes,
-                      args.seed, args.seconds, args.threads, args.record)
+                      args.seed, args.seconds, args.threads, args.record,args.speed_challenge)
     output = args.out if args.out.suffix == ".json" else args.out/'result.json'
     output.parent.mkdir(parents=True, exist_ok=True)
     temporary = output.with_name(output.name+'.tmp')

@@ -1,0 +1,19 @@
+{
+  "profile": "higher-v1",
+  "walk_ceiling_mps": 0.4,
+  "run_stage_ceilings_mps": [
+    0.65,
+    0.8,
+    1.0
+  ],
+  "slow_forward_anchor_fraction": 0.5,
+  "stage_unlock": "all standard command buckets survive >=90%, torque/self-contact gates, plus current-speed 8s probe survival>=90%, RMSE<=0.15 and mean vx>=80% command",
+  "local_full_tests": 166,
+  "command_tests": 13,
+  "ppo_smoke_transitions": 128,
+  "ppo_smoke_updates": 4,
+  "arena_boundary": "9.5m matching physical terrain, obsolete 3.5m removed",
+  "evaluation_protocol": "terrain-boundary-v3",
+  "policy_quality": "No new trained-speed claim; old/corrected survival are not a controlled learning comparison",
+  "preserve": "recovery milestones, actor/critic/optimizer checkpoints, original absolute 200-hour budget"
+}

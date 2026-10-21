@@ -183,6 +183,8 @@ class TrainConfig:
     teacher_source: str | None = None
     observation_mode: str = 'compact'
     desired_kl: float = .01
+    speed_profile: str = 'baseline'
+    speed_stage: int = 0
 
 
 def policy_for_env(env):
@@ -256,7 +258,7 @@ def _checkpoint(path: Path, model: Policy, optimizer, config: TrainConfig,
         "curriculum_env_steps": curriculum_env_steps,
     }
     project = Path(__file__).resolve().parent.parent
-    tracked = ("config/robot.yaml", "simulation/generated/sweetie_mini.xml", "learning/env.py", "learning/native.cpp", "learning/ppo.py", "learning/sensors.py", "learning/rewards.py", "learning/curriculum.py", "learning/transfer.py", "learning/distill.py", "learning/recipe_bootstrap.py", "hardware/observation.py", "hardware/policy_observation.py")
+    tracked = ("config/robot.yaml", "simulation/generated/sweetie_mini.xml", "learning/env.py", "learning/native.cpp", "learning/ppo.py", "learning/speed_profile.py", "learning/sensors.py", "learning/rewards.py", "learning/curriculum.py", "learning/transfer.py", "learning/distill.py", "learning/recipe_bootstrap.py", "hardware/observation.py", "hardware/policy_observation.py")
     saved["source_hashes"] = {name: hashlib.sha256((project/name).read_bytes()).hexdigest()
                               for name in tracked if (project/name).exists()}
     if env is not None:
@@ -269,6 +271,8 @@ def _checkpoint(path: Path, model: Policy, optimizer, config: TrainConfig,
             "critic_observation_dimension":model.critic_obs_dim or model.obs_dim,
             "critic_observation_contract":getattr(env,'critic_observation_contract',None),
             "reward_version": getattr(env,"reward_version",None),
+            "training_command_profile":getattr(config,'speed_profile','baseline'),
+            "training_speed_stage":getattr(config,'speed_stage',0),
             "dynamics_signature": __import__("learning.readiness",fromlist=["dynamics_signature"]).dynamics_signature() if getattr(env,"observation_contract",None) else None,
             "action_dimension": model.action_dim,
             "model_path": str(model_path) if model_path is not None else None,
@@ -313,6 +317,8 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
     if not math.isfinite(config.teacher_weight) or config.teacher_weight<0:raise ValueError('Invalid teacher weight')
     if not math.isfinite(config.desired_kl) or config.desired_kl<=0:raise ValueError('Invalid desired KL')
     if config.recovery_teacher and config.task!='recovery':raise ValueError('Walking teacher is gated to recovery only')
+    from learning.speed_profile import forward_ceiling
+    target_forward_ceiling=forward_ceiling(config.task,config.speed_profile,config.speed_stage)
     torch.set_num_threads(2)
     device = torch.device(config.device)
     if device.type == "cuda":
@@ -550,6 +556,8 @@ def train(env, config: TrainConfig, process_started: float | None = None) -> dic
                     "actor_observation_dimension":model.obs_dim,
                     "critic_observation_dimension":model.critic_obs_dim or model.obs_dim,
                     "recovery_stage": recovery_stage(fraction)['name'] if config.task=='recovery' else None,
+                    "speed_profile":config.speed_profile,"speed_stage":config.speed_stage,
+                    "target_forward_ceiling_mps":target_forward_ceiling,
                     "teacher_bc_loss": float(torch.stack(bc_losses).mean().cpu()) if bc_losses else None,
                     "teacher_eligible_fraction": float(teacher_mask.float().mean().cpu()) if teacher_mask is not None else 0.,
                     "reward_terms_per_policy_step": {k:float(np.mean(v)) for k,v in term_metrics.items()},
@@ -610,12 +618,18 @@ def main() -> None:
     parser.add_argument('--teacher-source')
     parser.add_argument('--observation-mode',choices=('compact','legacy'),default='compact')
     parser.add_argument('--desired-kl',type=float,default=.01)
+    parser.add_argument('--speed-profile',choices=('baseline','higher-v1'),default='baseline')
+    parser.add_argument('--speed-stage',type=int,choices=range(3),default=0)
     config = TrainConfig(**vars(parser.parse_args()))
     from learning.readiness import require_training_ready
     require_training_ready()
     # Import lazily: CPU inference tools need only this module and torch/numpy.
     from learning.env import SweetieVecEnv
-    env = SweetieVecEnv(task=config.task, nenvs=config.nenvs, threads=config.threads,
+    if config.speed_profile=='higher-v1' and config.task!='recovery':
+        from learning.speed_profile import SpeedTargetEnv
+        env_class=lambda **kwargs:SpeedTargetEnv(speed_stage=config.speed_stage,**kwargs)
+    else:env_class=SweetieVecEnv
+    env = env_class(task=config.task, nenvs=config.nenvs, threads=config.threads,
                         seed=config.seed, terrain=config.terrain,
                         difficulty=config.difficulty, randomize=config.randomize,
                         observation_mode=config.observation_mode)

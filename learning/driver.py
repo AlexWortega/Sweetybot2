@@ -120,6 +120,7 @@ def score_development(task: str, results: list[dict[str, Any]]):
     if task not in TASKS:raise ValueError(f'Unknown task {task}')
     if task == "running":
         survival,linear,yaw,rates,minima,speeds=[],[],[],[],[],[]
+        command_survivals=[]
         coverage=True
         for result in results:
             for key in ('survival_fraction','linear_command_rmse','yaw_command_rmse','running_success_rate'):
@@ -133,12 +134,13 @@ def score_development(task: str, results: list[dict[str, Any]]):
                 row=conditions.get(name,{})
                 values=(row.get('running_success_rate'),row.get('survival_fraction'),row.get('mean_local_vx'))
                 if not all(_finite(v) for v in values):coverage=False;continue
-                minima.append(values[0]);speeds.append(values[2])
+                minima.append(values[0]);speeds.append(values[2]);command_survivals.append(values[1])
                 coverage &= values[1]>=.8
         aggregate={'running_success_rate':sum(rates)/len(rates),'worst_command_running_success_rate':min(minima) if minima else None,
             'survival_fraction':sum(survival)/len(survival),'linear_command_rmse':sum(linear)/len(linear),
             'yaw_command_rmse':sum(yaw)/len(yaw),'worst_command_mean_forward_velocity_mps':min(speeds) if speeds else None,
-            'command_coverage_complete':bool(coverage),'running_evidence_requires_repeated_flight':True}
+            'command_coverage_complete':bool(coverage),'running_evidence_requires_repeated_flight':True,
+            'worst_command_running_survival_fraction':min(command_survivals) if command_survivals else 0.}
         score=2*aggregate['survival_fraction']+2*aggregate['running_success_rate']+(min(minima) if minima else 0)-aggregate['linear_command_rmse']-.1*aggregate['yaw_command_rmse']
         qualified=bool(coverage and minima and speeds and min(survival)>=.8 and min(minima)>=.5
                        and min(speeds)>=.35 and max(linear)<=.20 and max(yaw)<=.5)
@@ -350,6 +352,7 @@ def main():
     parser.add_argument('--teacher-source',help='Verified source for a frozen legacy walking teacher')
     parser.add_argument('--bootstrap-episodes',type=int,default=8,
                         help='Replicates per fixed condition for the initial baseline only; training development/final remain 8')
+    parser.add_argument('--speed-profile',choices=('baseline','higher-v1'),default='baseline')
     args = parser.parse_args()
     if not 1<=args.bootstrap_episodes<=8:raise ValueError('Bootstrap replicates must be between 1 and 8')
     from learning.readiness import require_training_ready,dynamics_signature
@@ -412,6 +415,10 @@ def main():
     state['runtime_config']=vars(args)
     state['runtime_source_snapshot']=str(Path(__file__).resolve().parents[1])
     state['selection_policy']='independent_latest_and_champion_v1'
+    if state.get('speed_profile','baseline')!=args.speed_profile:
+        state.setdefault('migration_log',[]).append({'epoch':time.time(),'reason':'user_requested_higher_target_speed','profile':args.speed_profile})
+    state['speed_profile']=args.speed_profile
+    state.setdefault('speed_stage',0)
     state.pop('stop_reason',None)
     deadline = state["deadline_epoch"]
     environment = dict(os.environ)
@@ -436,13 +443,14 @@ def main():
         atomic_json(out / "budget.json", {key: state[key] for key in (
             "budget_hours", "started_epoch", "deadline_epoch", "charged_wall_seconds", "remaining_seconds")})
 
-    def evaluate(task, checkpoint, directory, terrain, seed, final=False,episodes=8):
+    def evaluate(task, checkpoint, directory, terrain, seed, final=False,episodes=8,speed_challenge=None):
         directory.mkdir(parents=True, exist_ok=True)
         command = [sys.executable, "-m", "learning.evaluate", "--checkpoint", str(checkpoint),
                    "--out", str(directory), "--task", task, "--terrain", terrain,
                    "--difficulty", "1.0" if final else ".2", "--episodes", str(episodes),
-                   "--seconds", str(args.eval_seconds), "--seed", str(seed),
+                   "--seconds", str(min(8.,args.eval_seconds) if speed_challenge is not None else args.eval_seconds), "--seed", str(seed),
                    "--threads", str(min(8, args.threads))]
+        if speed_challenge is not None:command.extend(('--speed-challenge',str(speed_challenge)))
         result = run_child(command, directory / "process.log", deadline,
                            args.eval_timeout, environment)
         state["children"].append({"kind": "final" if final else "development", "task": task, "terrain": terrain, **result})
@@ -538,6 +546,7 @@ def main():
                        '--observation-mode',args.observation_mode,
                        '--curriculum-horizon-steps',str(args.curriculum_horizon_steps),
                        "--gpu-memory-gib", "2", "--save-interval", "60"]
+            command.extend(('--speed-profile',args.speed_profile,'--speed-stage',str(state['speed_stage'])))
             if task=='recovery' and args.recovery_teacher:
                 command.extend(('--recovery-teacher',args.recovery_teacher))
                 if args.teacher_source:command.extend(('--teacher-source',args.teacher_source))
@@ -554,6 +563,7 @@ def main():
                                    "directory": str(directory), "seconds": seconds,
                                    'resume_checkpoint':resume_before_chunk,
                                    "selected_device": selection_device}
+            state['active_run'].update(speed_profile=args.speed_profile,speed_stage=state['speed_stage'])
             persist("training")
             result = run_child(command, directory / "process.log", deadline,
                                seconds+300, chunk_environment)
@@ -573,6 +583,13 @@ def main():
                                          surface, 1_000_000+offset)
                                for offset, surface in enumerate(("flat", "rough", "slope", "steps"))]
                 score, qualified, metrics = score_development(task, evaluations)
+                if task=='running' and args.speed_profile=='higher-v1':
+                    from learning.speed_profile import run_ceiling,speed_stage_ready
+                    ceiling=run_ceiling(state['speed_stage'])
+                    probe=evaluate(task,checkpoint,directory/'speed_challenge','flat',1_500_000+round_index,speed_challenge=ceiling)
+                    ready=speed_stage_ready(metrics,probe)
+                    state.setdefault('speed_progress',[]).append({'round':round_index,'ceiling_mps':ceiling,'passed':ready,'probe':str(directory/'speed_challenge/result.json')})
+                    if ready:state['speed_stage']=min(2,state['speed_stage']+1)
                 selection = {"score": score, "quality_gate_passed": qualified,
                              "metrics": metrics, "checkpoint": str(checkpoint),
                              "checkpoint_sha256": sha256(checkpoint), "round": round_index}

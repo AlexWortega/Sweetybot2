@@ -270,8 +270,8 @@ def main(argv=None):
     parser.add_argument("--record", type=Path)
     parser.add_argument("--headless", action="store_true")
     parser.add_argument("--cad", action="store_true", help="Render saved v04 CAD meshes; physics remains lightweight")
-    parser.add_argument("--max-vx", type=float, default=0.25)
-    parser.add_argument("--run-max-vx", type=float, default=0.60)
+    parser.add_argument("--max-vx", type=float, default=None,help='Defaults to 0.40 for higher-v1 walking checkpoints, otherwise 0.25')
+    parser.add_argument("--run-max-vx", type=float, default=None,help='Defaults to the running checkpoint target ceiling, or 0.60 for older checkpoints')
     parser.add_argument("--max-vy", type=float, default=0.20)
     parser.add_argument("--max-yaw", type=float, default=1.0)
     parser.add_argument("--deadzone", type=float, default=0.12)
@@ -281,9 +281,9 @@ def main(argv=None):
     args = parser.parse_args(argv)
     if args.seconds <= 0 or not 0 <= args.deadzone < 1:
         parser.error("--seconds must be positive; --deadzone must be in [0, 1)")
-    if not np.isfinite([args.seconds, args.difficulty, args.max_vx, args.run_max_vx, args.max_vy, args.max_yaw]).all():
+    if not np.isfinite([x for x in [args.seconds, args.difficulty, args.max_vx, args.run_max_vx, args.max_vy, args.max_yaw] if x is not None]).all():
         parser.error("Timing, difficulty and command limits must be finite")
-    if min(args.max_vx, args.run_max_vx, args.max_vy, args.max_yaw) < 0:
+    if min(x for x in [args.max_vx, args.run_max_vx, args.max_vy, args.max_yaw] if x is not None) < 0:
         parser.error("Command limits must be nonnegative")
     if any(path is not None and not path.is_file() for path in (args.walk, args.recover, args.run)):
         parser.error("Policy checkpoint does not exist")
@@ -295,10 +295,18 @@ def main(argv=None):
 
     torch.set_num_threads(1)
     walk, walk_meta = load_policy(args.walk, device="cpu")
+    if args.max_vx is None:args.max_vx=.40 if walk_meta.get('config',{}).get('speed_profile')=='higher-v1' else .25
     recovery, recovery_meta = load_policy(args.recover, device="cpu") if args.recover else (None, {})
     running, run_meta = load_policy(args.run, device="cpu") if args.run else (None, {})
+    env_class=SweetieVecEnv
+    if run_meta.get('config',{}).get('speed_profile')=='higher-v1':
+        from learning.speed_profile import SpeedTargetEnv,run_ceiling
+        stage=run_meta['config'].get('speed_stage',0)
+        env_class=lambda **kwargs:SpeedTargetEnv(speed_stage=stage,**kwargs)
+        if args.run_max_vx is None:args.run_max_vx=run_ceiling(stage)
+    if args.run_max_vx is None:args.run_max_vx=.60
     policies = {"walk": walk, "recover": recovery, "run": running, "walk-fast-fallback": walk}
-    env = SweetieVecEnv(task="locomotion", num_envs=1, seed=args.seed, terrain=args.terrain,
+    env = env_class(task="locomotion", num_envs=1, seed=args.seed, terrain=args.terrain,
                        difficulty=args.difficulty, randomize=False, threads=1,
                        observation_mode=observation_mode_for_checkpoint(walk_meta))
     supervisor = RecoverySupervisor(recovery is not None, env.nominal_height)
