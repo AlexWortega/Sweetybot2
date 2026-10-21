@@ -4,27 +4,33 @@
     {
       "name": "pytest",
       "exit_code": 0,
-      "stdout": "........................................................................ [ 50%]\n......................................................................   [100%]\n142 passed in 87.46s (0:01:27)\n",
-      "stderr": ""
+      "stdout": "........................................................................ [ 42%]\n........................................................................ [ 85%]\n.........................                                                [100%]\n169 passed in 120.56s (0:02:00)\n",
+      "stderr": "",
+      "execution": "Completed current validation process; no repeated test run"
     },
     {
       "name": "digital-sensor-physics",
       "exit_code": 0,
-      "stdout": "{\n  \"passed\": true,\n  \"dynamics_signature\": \"207e212281c911560d9540f68d4ca7323e15d50a2b50f59e2873983093cc084c\",\n  \"reason\": \"Digital collision/sensor checks passed; new task policies still require training and independent evaluation\",\n  \"report\": \"reports/v05_validation.json\"\n}\n",
-      "stderr": ""
+      "stdout": "{\n  \"passed\": true,\n  \"dynamics_signature\": \"bd983c4559ec2910aaad2d0d58d62631216e741fe1b87c6cb39bd61a7bbc7c39\",\n  \"reason\": \"Digital collision/sensor checks passed; new task policies still require training and independent evaluation\",\n  \"report\": \"reports/v05_validation.json\"\n}\n",
+      "stderr": "",
+      "execution": "Completed current validation process; no repeated test run"
     },
     {
       "name": "electrical-contract",
       "exit_code": 0,
       "stdout": "{\n  \"status\": \"offline electrical model and reference decoder only; no hardware drivers or firmware verified\",\n  \"checks\": [\n    {\n      \"check\": \"pi_gpio_bcm unique ownership\",\n      \"pass\": true\n    },\n    {\n      \"check\": \"xiao_gpio unique ownership\",\n      \"pass\": true\n    },\n    {\n      \"check\": \"1% resistor corners plus 1% Vref ADC error\",\n      \"pass\": true,\n      \"voltage_ratio_ranges\": {\n        \"air\": [\n          0.485,\n          0.515\n        ],\n        \"contact\": [\n          0.07181818181818182,\n          0.09487394957983192\n        ]\n      }\n    },\n    {\n      \"check\": \"fault immediate; 10ms debounce; >20ms stale invalid\",\n      \"pass\": true\n    }\n  ]\n}\n",
-      "stderr": ""
+      "stderr": "",
+      "execution": "Completed current validation process; no repeated test run"
     }
   ],
+  "checks_reused_from_current_validation_processes": true,
   "assertions": {
     "print_types": 39,
     "all_articulated_ranges_certified": false,
     "mechanical_audit": "reports/mechanical_gate.json",
     "physical_validation": "not run",
     "trained_v05_policy": "not evaluated"
-  }
+  },
+  "dynamics_signature": "bd983c4559ec2910aaad2d0d58d62631216e741fe1b87c6cb39bd61a7bbc7c39",
+  "epoch": 1792597925.879147
 }

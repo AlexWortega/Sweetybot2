@@ -1,5 +1,5 @@
 {
-  "geometry_signature": "7fd143cc1e7e55dc22f5e6c1abf331cb2fe995ccb3bc5d138c6d5e9b13f2e546",
+  "geometry_signature": "c4e6124487cf5762439d220799d31a89b2ef11991ba98476b152a780e6e6eb78",
   "fabrication_approved": false,
   "parts": [
     {
@@ -7,1281 +7,1281 @@
       "part": "chassis_deck",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/torso__chassis_deck.step",
-      "sha256": "8632c3ee0cd06bbaa634cd9a5527bd5ea405bf7a41ad9f3d5a38c69a2dd7f522"
+      "sha256": "226638dd5f11969e1a7fa8f7a344c0c3d1435fa2faec73a508cf973b72e294b2"
     },
     {
       "link": "torso",
       "part": "rail_-1",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/torso__rail_-1.step",
-      "sha256": "57b1940302e3049c72f1570a0dde2cb3b06468e973a3066f9b68bbc2c65c4d82"
+      "sha256": "9d1b782d74172a6192c61540aa7819152259a739cc0d4998c4a241ed564dd0e3"
     },
     {
       "link": "torso",
       "part": "rail_1",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/torso__rail_1.step",
-      "sha256": "c7973041cc2526d89c79bbc69504ff4d97de5d64ae5b95c1c813c05bf4915243"
+      "sha256": "d99ca0ce09ffc50b21714ee5a1fc1ccba3ec0833d0e75b0d439d61b05a9ad9dd"
     },
     {
       "link": "torso",
       "part": "body_cowl",
       "material": "PETG",
       "step": "cad/manufacturing/torso__body_cowl.step",
-      "sha256": "c1c66248e676fed5b941a1fd344853dee15176e06e62c0352abb87f87a679be0"
+      "sha256": "888fb57aeb9fb6f461ca45f376a346ab4d56cbb6f836c956b6a67ed749bb9de6"
     },
     {
       "link": "torso",
       "part": "passive_tail",
       "material": "PETG",
       "step": "cad/manufacturing/torso__passive_tail.step",
-      "sha256": "7ca3e88fd8b5625f5e0a460ae455b3c8f6ad3564d13f0ce979ace50d93b9249a"
+      "sha256": "eaa00519735ec8420c968f52da01a719ac03b569b4e08e1af4570c63247f0318"
     },
     {
       "link": "torso",
       "part": "head_yaw_cradle",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/torso__head_yaw_cradle.step",
-      "sha256": "d8e30567904a83edd12b10274cc533336734d67b975e7419a0f00c447b19d6b2"
+      "sha256": "69839807624dcf13c161a7ed19872b78e065579e1666139575f4b68785c7d190"
     },
     {
       "link": "torso",
       "part": "head_yaw_cradle_strap_-7",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/torso__head_yaw_cradle_strap_-7.step",
-      "sha256": "342bb7c57a9e47e5509c4a9909ecf63bfd0f4e0546fee2e5a37d3408125e881f"
+      "sha256": "2bfb75e75b8533ce5ab1c430bd2ae879baf20df3696b1a4c067d850ddc26ffb5"
     },
     {
       "link": "torso",
       "part": "head_yaw_cradle_strap_-33",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/torso__head_yaw_cradle_strap_-33.step",
-      "sha256": "2b295555c07b56d60eef635df3a211b203c174220131bad626ebbc897bf76fc3"
+      "sha256": "98afcdf0e307b4dc85f0d75c3c97f97fddc3efc2ef0a7bbbf1f286a5057f01d6"
     },
     {
       "link": "torso",
       "part": "sensor_tray",
       "material": "PETG",
       "step": "cad/manufacturing/torso__sensor_tray.step",
-      "sha256": "0919e6c14ee94dd8571dc7a9a6f966119fa1834da74441d150a6b7ba3916239e"
+      "sha256": "2d2c62e7b53679838eef48621ed3ab183dd7afbfbc7b74e00323a2f1e1e6eee8"
     },
     {
       "link": "torso",
       "part": "chest_tof_pod",
       "material": "PETG",
       "step": "cad/manufacturing/torso__chest_tof_pod.step",
-      "sha256": "533e59b9559699bbf803b49242b8e4c8b0223b7f2dc1e4e76ec8f64beebb1def"
+      "sha256": "dd2008f796674e9b44b7642e4acdf8a2deae83e5bbbbc1619a1766bec279ecee"
     },
     {
       "link": "torso",
       "part": "head_yaw_clamp_shims",
       "material": "rigid aluminium shim stock",
       "step": "cad/manufacturing/torso__head_yaw_clamp_shims.step",
-      "sha256": "bf8280bdc1e768701624a661e345675663b7a8660c9233cea0339427b75c8fc3"
+      "sha256": "391ced49e59345ed6e074362a990cfebbbc5a28fbf730c2c95674614ead7867f"
     },
     {
       "link": "torso",
       "part": "fl_roll_cradle",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/torso__fl_roll_cradle.step",
-      "sha256": "66504aa71e0a8772d5848836806ee672a2d32c889ca9caada07deeb96b2e7960"
+      "sha256": "8bdf417e8d451341b2c8f2907874acb8d509328c832aab076485352b3c97debe"
     },
     {
       "link": "torso",
       "part": "fl_roll_clamp_shims",
       "material": "rigid aluminium shim stock",
       "step": "cad/manufacturing/torso__fl_roll_clamp_shims.step",
-      "sha256": "9f03a75050640a5875666e6b4f3da6627a44876109026a5f109fa141ca895987"
+      "sha256": "c1d419ef2c2a5704de874ec33455fb2d823989f1cbf5645cf02386c507ecce61"
     },
     {
       "link": "torso",
       "part": "fl_roll_strap_-41.55",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/torso__fl_roll_strap_-41.55.step",
-      "sha256": "9b6247d125e4d4cf8da0548497265deeea0cddc0d96e39c46090a91b6b8cc3d3"
+      "sha256": "c55dbd35dcb9fba7c40a2921ddfdd463c34cd19ece45216684ca7a21a50d2eaa"
     },
     {
       "link": "torso",
       "part": "fl_roll_strap_-7.55",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/torso__fl_roll_strap_-7.55.step",
-      "sha256": "8ddd83813b5c04da00566615b8052ecd17d9445718e9a1b9f179c1466e0edbfe"
+      "sha256": "fe06d5e1509612eba74b54db7a6f49658b336261ff966b24f1e8ce274c05ac00"
     },
     {
       "link": "torso",
       "part": "fr_roll_cradle",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/torso__fr_roll_cradle.step",
-      "sha256": "667e74278997038406f4fdb0e5a3cb9d84cfffde3197d5bed66cb8ab5bceed15"
+      "sha256": "a9e831c07fa8ad8a1b2c9890c2dd5be6f040467735b70f36a0cb96d98aee2058"
     },
     {
       "link": "torso",
       "part": "fr_roll_clamp_shims",
       "material": "rigid aluminium shim stock",
       "step": "cad/manufacturing/torso__fr_roll_clamp_shims.step",
-      "sha256": "53fdb38af41111d9542af2d04fe46049a32a88378a63b6aa0f0235b6491ae0cf"
+      "sha256": "213771fa2f2084ab98f3a74a8491db1c817f9086f7c88dd433c492752ffa0f72"
     },
     {
       "link": "torso",
       "part": "fr_roll_strap_-41.55",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/torso__fr_roll_strap_-41.55.step",
-      "sha256": "3df9acd62723f5e520c60c1724eb86959586694e9c7f48d42348f4eaca4aac84"
+      "sha256": "d7e43881afc756f25d1ce62074fe88ec75c19960ed0804ed7509932b3ee4f1f6"
     },
     {
       "link": "torso",
       "part": "fr_roll_strap_-7.55",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/torso__fr_roll_strap_-7.55.step",
-      "sha256": "2801322ae4f47b5fb57cef96a0fb4b5ffe2ae53116f0efe5e74507959d164373"
+      "sha256": "92da88ef52c3d88ea625fbb70923a08bad598d71f8afb76b37c43baed0f6ae0d"
     },
     {
       "link": "torso",
       "part": "rl_roll_cradle",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/torso__rl_roll_cradle.step",
-      "sha256": "fa27d6622d528d1e020f80122db90014432288a2f531fba2e47ef160f8e63111"
+      "sha256": "8257730996898c30e6ad1cdff63e702bfbcab444cd5008ecd8acef84641dc283"
     },
     {
       "link": "torso",
       "part": "rl_roll_clamp_shims",
       "material": "rigid aluminium shim stock",
       "step": "cad/manufacturing/torso__rl_roll_clamp_shims.step",
-      "sha256": "598f174054f2fe53de3ccb4d5d7bc7058728dc7116a97b904027ab39504174a9"
+      "sha256": "bccba5bcfc915a975233996bb901ba55b4cd029895ff38b4e03ad1fd78fe51bf"
     },
     {
       "link": "torso",
       "part": "rl_roll_strap_-41.55",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/torso__rl_roll_strap_-41.55.step",
-      "sha256": "e602980b605af1fec4418f4202f3444c14e576624fde12440c2f07f144bf9ff9"
+      "sha256": "c79f1fcbb90384d0fec0ea3fc84adad8a21874fafe5e716a37ace1c40b0f5c27"
     },
     {
       "link": "torso",
       "part": "rl_roll_strap_-7.55",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/torso__rl_roll_strap_-7.55.step",
-      "sha256": "e9de9b159615f4f1e622bf29261dc65e232643fdaac3ec5a01a382a4e2410730"
+      "sha256": "dcb7aeb7fbc71407e5e825b7e1954140cc494d7d94b1bc6092aebe29260f3021"
     },
     {
       "link": "torso",
       "part": "rr_roll_cradle",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/torso__rr_roll_cradle.step",
-      "sha256": "63cb7e2632e47695dcb3059e9bb2d4acee009d6f84c1da82251b3f3220162606"
+      "sha256": "c6e9f463540cb73e9545bdc301860d0313b6d738f7bd89e3501b808c30b178c3"
     },
     {
       "link": "torso",
       "part": "rr_roll_clamp_shims",
       "material": "rigid aluminium shim stock",
       "step": "cad/manufacturing/torso__rr_roll_clamp_shims.step",
-      "sha256": "750324a43a7e2ea5857b1fdaea760e1c7d6ec7dd58d6f71ba71a5392471d2f38"
+      "sha256": "69230f06b59fe1c10296c4868339386e7056025464cde45f4df59de4237501a3"
     },
     {
       "link": "torso",
       "part": "rr_roll_strap_-41.55",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/torso__rr_roll_strap_-41.55.step",
-      "sha256": "4fbcaf84d8aa7670d44234f1957d737df76e5763456b9fe28388e6b4b8896a4f"
+      "sha256": "5864d67a78bba65a0df38de086be1ece3092abf0f686436fca5a4c0e21c32ba2"
     },
     {
       "link": "torso",
       "part": "rr_roll_strap_-7.55",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/torso__rr_roll_strap_-7.55.step",
-      "sha256": "3fe0f3b152ed34bb3544cd4b05836bb2721a93a5f65bb8a5bb1fadc110fa8567"
+      "sha256": "39fe780cbcc25d4b3b62edf9000ff5691db9aec21fcb7d0db6c26a7ae77d909a"
     },
     {
       "link": "fl_roll",
       "part": "fl_pitch_cradle",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_roll__fl_pitch_cradle.step",
-      "sha256": "37424df88d80f3a01bb44576c330e048cf3b3899a3b0bac0ea4f8ceb7c440c9d"
+      "sha256": "57817dfd489c23380a52357d2c71a1a726a30f43b2ca06d92c0b22fbfa24b133"
     },
     {
       "link": "fl_roll",
       "part": "fl_pitch_clamp_shims",
       "material": "rigid aluminium shim stock",
       "step": "cad/manufacturing/fl_roll__fl_pitch_clamp_shims.step",
-      "sha256": "23ec3b5e9c3ba1b41e55b538e920f72df7cb6f13c74c81eaf987d52f96542a94"
+      "sha256": "25b649f2432043551e4498b546ca63da01f38afc7eceaf5bc16e71223a6621aa"
     },
     {
       "link": "fl_roll",
       "part": "fl_pitch_strap_-41.55",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_roll__fl_pitch_strap_-41.55.step",
-      "sha256": "c3b65c69c6d0d8cc98041a6e562cfa2b030fc1149fd9a043727eb7dccfeffc68"
+      "sha256": "84cbe5473d41b8b9d0d40511c7fefec09bba27de7b48bfe2362a5e0e2b9e1641"
     },
     {
       "link": "fl_roll",
       "part": "fl_pitch_strap_-7.55",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_roll__fl_pitch_strap_-7.55.step",
-      "sha256": "2ab367fb3bdd55b0dc817970c811707e723c2beb5830c2e4c306e1f9e78fd1a7"
+      "sha256": "820cf04d4d1feb0d150b742b8f19bde5093765de85c71d757d10703c8d87b3a5"
     },
     {
       "link": "fl_roll",
       "part": "fl_roll_yoke",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_roll__fl_roll_yoke.step",
-      "sha256": "ca6691e358699c820f50173308334ad0715007e8c775389cdcd605aaeaa09c94"
+      "sha256": "83196add40eb949d24c4b1286ab1d4c04c2c670e85d7fa257c473327a2948ac8"
     },
     {
       "link": "fl_roll",
       "part": "fl_roll_axle",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_roll__fl_roll_axle.step",
-      "sha256": "5bf78efab5be85bda3e6ec68b1a317ea2bbd99cb951e37a81f46e98d116e69c5"
+      "sha256": "a4380d50b41f30257f474f5d076ce8e92378a269593d82f8d4dc04fc81ce839a"
     },
     {
       "link": "fl_roll",
       "part": "fl_hip_bearing_retainer",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_roll__fl_hip_bearing_retainer.step",
-      "sha256": "7cd3cf483667f4c256481e34007863e70c92ffd30cb1293a88cdf338c9de42dd"
+      "sha256": "24853af2de89668475dd9632044ac2924b66cad9dd19c880e54e39d9e0be446a"
     },
     {
       "link": "fl_roll",
       "part": "fl_pitch_mount_spacer_-10",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_roll__fl_pitch_mount_spacer_-10.step",
-      "sha256": "76f4d02fccae444533dfa2161b0821b45c2371bf6180f0df30838e4204c71f97"
+      "sha256": "14dada34b68361ad842fbfb09d06407cacc3371e73a8340d06fb9f4e0257ee7c"
     },
     {
       "link": "fl_roll",
       "part": "fl_pitch_mount_spacer_10",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_roll__fl_pitch_mount_spacer_10.step",
-      "sha256": "0e8a6d7087d12ccbe256d0a7073d3d3df20979b52056c230442afe9f5a76275f"
+      "sha256": "89301f39a83bb87248fcc9629d68d3c178abd96a32b4e643f6deece12c03574b"
     },
     {
       "link": "fl_thigh",
       "part": "fl_knee_cradle",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_thigh__fl_knee_cradle.step",
-      "sha256": "92bcd40eee65378af282d7998601221c9c09c22ad3bba31cb6af5dff9a123d77"
+      "sha256": "db4be61869947eb0eccc89dbe4dd76f12e57922062a4cfb6a286159b0c521afb"
     },
     {
       "link": "fl_thigh",
       "part": "fl_knee_clamp_shims",
       "material": "rigid aluminium shim stock",
       "step": "cad/manufacturing/fl_thigh__fl_knee_clamp_shims.step",
-      "sha256": "6dc0cf40d6b41abbbc2950e5990cc6320d0d262e592765366d1f276ff97cdbe5"
+      "sha256": "db0036ad2f5afd2b604ce0e696cda7e2d6080b661cbed0f81368ee37de409553"
     },
     {
       "link": "fl_thigh",
       "part": "fl_knee_strap_-41.55",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_thigh__fl_knee_strap_-41.55.step",
-      "sha256": "958b3f33621f56680f87715e285c327bda2904c7b0df48b9cec8ac2b539d83f6"
+      "sha256": "a4230d749823ea8a65bf488949ec7754df6f3f7f857b75c50581200bdc99fcfe"
     },
     {
       "link": "fl_thigh",
       "part": "fl_knee_strap_-7.55",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_thigh__fl_knee_strap_-7.55.step",
-      "sha256": "58bcb666869fef06d0e24ef0e044ab6623be3497b8eef33e21e249260532ea51"
+      "sha256": "50802620b035518c7cf8b18d6ece1b563b03636090e4a8e02cc0c5032faf5951"
     },
     {
       "link": "fl_thigh",
       "part": "fl_thigh_cheek_front",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_thigh__fl_thigh_cheek_front.step",
-      "sha256": "b352bba05f95be8e9f5c74a11c08fff6963b09b6e8e46de8cdf099051cf921fb"
+      "sha256": "d0eb916bd44c053c66472a06f366b3c6a6189cc3a38afdbae5fd630bce646bc9"
     },
     {
       "link": "fl_thigh",
       "part": "fl_thigh_cheek_rear",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_thigh__fl_thigh_cheek_rear.step",
-      "sha256": "7b4d42d0dddffeebbd40fbe59fd6f14308c9653fc00c8b0aa63cda4a5c8b053c"
+      "sha256": "adcf9aa86992470be0eaaa8931be1d251b86033fc865db796d6bc4c1fa64ca9e"
     },
     {
       "link": "fl_thigh",
       "part": "fl_hip_front_rotor_spacer",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_thigh__fl_hip_front_rotor_spacer.step",
-      "sha256": "88a752b13ed85c919f56aeea6d0e471e48af3699ec9efe741036417711af8f55"
+      "sha256": "d8d544476979e5f8121c7db6640a136f82152b5bcecfa9d106acd9c06897257e"
     },
     {
       "link": "fl_thigh",
       "part": "fl_hip_rear_rotor_hub",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_thigh__fl_hip_rear_rotor_hub.step",
-      "sha256": "8110f07f9e2bdb41190e5cd1b12f11bc41cae809745b7ed9044c205cd9e0eed7"
+      "sha256": "d56a945c085bd44761475d9fdf8064a48958cfc7b26802e5fbbf7f855589e8ec"
     },
     {
       "link": "fl_thigh",
       "part": "fl_knee_bearing_retainer",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_thigh__fl_knee_bearing_retainer.step",
-      "sha256": "0c4b70c9806fff1540b9e31c1172b9d36f30bddb63d7309092399405ff7c9438"
+      "sha256": "08d624c63f54720717331d5e4bde7a4654b49d52f9b9062a873e5ec2a889acbd"
     },
     {
       "link": "fl_thigh",
       "part": "fl_thigh_spacer_-27",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_thigh__fl_thigh_spacer_-27.step",
-      "sha256": "ac386aa000ff487371a80d589198ce791a5f25ad3fe76e3d0eae7bca4fe0d772"
+      "sha256": "49baaabb2c90b2b81f378db496a4d5a7c1a4afc28ee6005d3748287aac990f12"
     },
     {
       "link": "fl_thigh",
       "part": "fl_thigh_spacer_27",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_thigh__fl_thigh_spacer_27.step",
-      "sha256": "2a9431a589d63872cd04b647db31f0e396946d4f48a9da3909880f63b718d057"
+      "sha256": "d23327278e214e5911b2efd9aac4167aa0fa4776cb747e4ea1fe369dcf98b419"
     },
     {
       "link": "fl_thigh",
       "part": "fl_knee_mount_spacer_-10_1.725",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_thigh__fl_knee_mount_spacer_-10_1.725.step",
-      "sha256": "6a28c7104d31cc757aaff1d56e62e92f82b172ad2ecdbde996ffc7f77ac8f936"
+      "sha256": "5f50d3560c77f8aa5d8912518536b6058a83687d817188f2b3fa48cdeedb023b"
     },
     {
       "link": "fl_thigh",
       "part": "fl_knee_mount_spacer_-10_-52.025",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_thigh__fl_knee_mount_spacer_-10_-52.025.step",
-      "sha256": "504c57568274a1a5ef6fdc39c6780aa2f2960f2448765502c281e1da8cd32ed2"
+      "sha256": "895e74626ecb2f875ee85e5c2500aeea6c5fb870af3e42ddef64772a77cc788f"
     },
     {
       "link": "fl_thigh",
       "part": "fl_knee_mount_spacer_10_1.725",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_thigh__fl_knee_mount_spacer_10_1.725.step",
-      "sha256": "796404ae312c0faca056f7291dc657588ca88ac475ebee23c4345733c6cc7fca"
+      "sha256": "dc134e3a67b30b3e4abc3f93a587962b256fe34f093eef404cc12a872ff33adc"
     },
     {
       "link": "fl_thigh",
       "part": "fl_knee_mount_spacer_10_-52.025",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_thigh__fl_knee_mount_spacer_10_-52.025.step",
-      "sha256": "39eaadc1321deaac2424b2ad9907a0e50cd1d8d78a0217d973fb71f261d107e0"
+      "sha256": "b1deb8282af07f094479e801ade75d5d9edb9b4fbe50bcc7bb9d1b02892c74e8"
     },
     {
       "link": "fl_thigh",
       "part": "fl_thigh_fairing",
       "material": "PETG",
       "step": "cad/manufacturing/fl_thigh__fl_thigh_fairing.step",
-      "sha256": "06cf919d81efaac180ed67c553abe84b82d05f221add8a9dd6503833c6333f91"
+      "sha256": "0045f5bd5d57af9866b9192ad1260c5fcd07015184d7323d8a3e3d045cc13774"
     },
     {
       "link": "fl_shin",
       "part": "fl_hoof",
       "material": "PETG",
       "step": "cad/manufacturing/fl_shin__fl_hoof.step",
-      "sha256": "ccf2ba0a12d5cb9ef2ff0d490207eef6626d9dcde978f7e0d2c8fd148e49f61f"
+      "sha256": "4308dd750e015b1e81c8a90c5e329dcbce4faabea44e6b4dfb337dc6367211de"
     },
     {
       "link": "fl_shin",
       "part": "fl_floating_sole",
       "material": "PETG",
       "step": "cad/manufacturing/fl_shin__fl_floating_sole.step",
-      "sha256": "9326325bbd8a02649f287654f5bf4dc0d2b8f9dc0b8e1b9863da5b2ef71d876d"
+      "sha256": "883ceb9f4935d3174ae4c0f91c6ed31f1fb2f65dba2b5a9b44ccef8fe08680cd"
     },
     {
       "link": "fl_shin",
       "part": "fl_TPU_pad",
       "material": "TPU",
       "step": "cad/manufacturing/fl_shin__fl_TPU_pad.step",
-      "sha256": "b21e228c227d837c0318ceb35a677e41c0dbd3a93dab192037a0493a9b2dd253"
+      "sha256": "4d53b783055ec160dfa4593182059b8afb8eb4e9df8367715426655a02d77ee0"
     },
     {
       "link": "fl_shin",
       "part": "fl_TPU_actuator",
       "material": "TPU",
       "step": "cad/manufacturing/fl_shin__fl_TPU_actuator.step",
-      "sha256": "854fc5f4aa9e622ac4527d4867dfe281bf80e00ba63b0f71b5b98a811b1ea814"
+      "sha256": "6f7c58050b0fd2c4d53d77db64d7a1fb93ddd9ab5da0174b4d0e645a7690917d"
     },
     {
       "link": "fl_shin",
       "part": "fl_shin_cheek_front",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_shin__fl_shin_cheek_front.step",
-      "sha256": "c7629f10d0aa807e2f1a065b81eb210ab57f61137d4b548bb249e12274023e49"
+      "sha256": "169fe6396d1b69cfffe40ba2668dd68fd0b56b5cddbbf9a9e8a887f0953b309a"
     },
     {
       "link": "fl_shin",
       "part": "fl_shin_cheek_rear",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_shin__fl_shin_cheek_rear.step",
-      "sha256": "9f60066adc13c90198c530ab19759e92268b9fb2c9e9e4d287ffeb68c3c84dd8"
+      "sha256": "9486e067079d609026408f4ee3e5ecf854b9a0fb8c9b3a2fb9d33b517793817c"
     },
     {
       "link": "fl_shin",
       "part": "fl_knee_cross_spacer",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_shin__fl_knee_cross_spacer.step",
-      "sha256": "43962806dd06eeb5978fbe21b8cfbf489fe5450a724468afa84b5bcd05c59c1d"
+      "sha256": "6487a511c7efc108f83a1d31efcaffb0bcc7b301f117a1052e395cd1cde1621d"
     },
     {
       "link": "fl_shin",
       "part": "fl_knee_front_rotor_hub",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_shin__fl_knee_front_rotor_hub.step",
-      "sha256": "4915e6213cefaf857cba050eb19c3c133af364f3759eb901c09641aa8c51c255"
+      "sha256": "20211cf3e2a1b5d851ea32a9923e882ffb120b93d9433e8d8ec7c3c5aaf653c7"
     },
     {
       "link": "fl_shin",
       "part": "fl_knee_rear_rotor_hub",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fl_shin__fl_knee_rear_rotor_hub.step",
-      "sha256": "c0437cfb2ab42c1cb1bbfb788b42a037fa36a6e9484c16cdaca2d980a7debccc"
+      "sha256": "bf386c2494f797127fd2340458005f57bb526dfb82076312074ee20f226630ba"
     },
     {
       "link": "fl_shin",
       "part": "fl_shin_fairing",
       "material": "PETG",
       "step": "cad/manufacturing/fl_shin__fl_shin_fairing.step",
-      "sha256": "dd5d90578c2c0cbfe6d7465c947b96f9e789898997abb861e3aa3e7d33487cdd"
+      "sha256": "2613dd537c2fd5ed870a3bc51df247ea5bfef57581907caa0a876691f584abf0"
     },
     {
       "link": "fr_roll",
       "part": "fr_pitch_cradle",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_roll__fr_pitch_cradle.step",
-      "sha256": "6f5572f154a7b997e025906a5a621754d7555c65b10d58d4d30ba673087bc6f6"
+      "sha256": "e3d66f682a2d30e813fc89c7c20f4a84dc452d4421c8c3a7ef424fbae5d21917"
     },
     {
       "link": "fr_roll",
       "part": "fr_pitch_clamp_shims",
       "material": "rigid aluminium shim stock",
       "step": "cad/manufacturing/fr_roll__fr_pitch_clamp_shims.step",
-      "sha256": "2c0601e8afcaba53b7cc13d96328af47b59d1e604a6250571758e59a7965f91d"
+      "sha256": "94a74394ef71bf298b133db93514c8d469f5472701d4936b1ec30a4649f71bab"
     },
     {
       "link": "fr_roll",
       "part": "fr_pitch_strap_-41.55",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_roll__fr_pitch_strap_-41.55.step",
-      "sha256": "3639feee7da3d9a4b7695216de734a7446e17ed9a77c37d1172ec87fb8c62269"
+      "sha256": "c1e55c781d337a0397d3f974f38c5042f15321022f99d64a4cf71a302930d431"
     },
     {
       "link": "fr_roll",
       "part": "fr_pitch_strap_-7.55",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_roll__fr_pitch_strap_-7.55.step",
-      "sha256": "232b66617945cca4cb289a085fa502a1e8294934b8ebd3dff442d15837fce1f2"
+      "sha256": "66ffe9fa9e68102af016746da14156078db3322f11b73c22d318ab47a5060d44"
     },
     {
       "link": "fr_roll",
       "part": "fr_roll_yoke",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_roll__fr_roll_yoke.step",
-      "sha256": "399a3a2abefbbb36ab48aaa5b09336b4fcaedafa9d0c42faba7a7a44f2f5e686"
+      "sha256": "3c753eb050476d7b1fed245f1a4273b359e2aca03b02f2b20ccdf8b716f69a84"
     },
     {
       "link": "fr_roll",
       "part": "fr_roll_axle",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_roll__fr_roll_axle.step",
-      "sha256": "65048b3df5a68e6f3827e0b377ff09822efdec0dabbe117e532dabe1ad1b9f67"
+      "sha256": "ca329b7f7e2262ea9f24cc116552f7ba17d538add66018614b94e8d9f8c60b9c"
     },
     {
       "link": "fr_roll",
       "part": "fr_hip_bearing_retainer",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_roll__fr_hip_bearing_retainer.step",
-      "sha256": "2a2c827fadcf9a58222313b8220e63fbae28d41ba9a1ee299693829cac4b1a8f"
+      "sha256": "685b3a72a70f522686acbe5572246b7f0b9e860f9112f112312889e025224f7a"
     },
     {
       "link": "fr_roll",
       "part": "fr_pitch_mount_spacer_-10",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_roll__fr_pitch_mount_spacer_-10.step",
-      "sha256": "903a9d61f95116dc7190f44bb25b2bece222c542a9189457279155d359018c67"
+      "sha256": "e6b1128141548682e8b5d543b15d6f523ebfafea9f58d7fa2463efceef663434"
     },
     {
       "link": "fr_roll",
       "part": "fr_pitch_mount_spacer_10",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_roll__fr_pitch_mount_spacer_10.step",
-      "sha256": "8e5b87907a9750ec7f1ec6ad2850532433ae36e52e5ecd642e69ba88890d3054"
+      "sha256": "545850fd5cd132c9e8ec4479cda928b97821187b19b74d514bb769fdc7a8bff4"
     },
     {
       "link": "fr_thigh",
       "part": "fr_knee_cradle",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_thigh__fr_knee_cradle.step",
-      "sha256": "7b29ea76c03195085987d730cebba2e6699e5b3f16f9f4602b058b04e65dd6bd"
+      "sha256": "167089e909640937d30694d0e83c7e0d7b60f9eca1e8b3345d9590006f931827"
     },
     {
       "link": "fr_thigh",
       "part": "fr_knee_clamp_shims",
       "material": "rigid aluminium shim stock",
       "step": "cad/manufacturing/fr_thigh__fr_knee_clamp_shims.step",
-      "sha256": "d51d73d81342c2327a985a703a4a5ba99f4100936802084acfe0a9b8ae6be70d"
+      "sha256": "b4e3d7925c4904e919c4846d62a3b7ff95dc6f03f700b595781b407e8d002bdd"
     },
     {
       "link": "fr_thigh",
       "part": "fr_knee_strap_-41.55",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_thigh__fr_knee_strap_-41.55.step",
-      "sha256": "8c78cdf4fe49f74f421eeb6336ea800816680527cceb26dfd9e4f8a57d532565"
+      "sha256": "9c794b6166a5fea5c68387c1f060d6ec4d38b3a475e82f014677c6709297f02c"
     },
     {
       "link": "fr_thigh",
       "part": "fr_knee_strap_-7.55",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_thigh__fr_knee_strap_-7.55.step",
-      "sha256": "f70a608c5c4f15b8dc919627b9fea5036b4fdbd5b0c51df9ac059f9f7e5c66d5"
+      "sha256": "333b2473ddb55a20fea5465b19f84e50bd19a3f43a0eda8a0cd9fbe2cc97820c"
     },
     {
       "link": "fr_thigh",
       "part": "fr_thigh_cheek_front",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_thigh__fr_thigh_cheek_front.step",
-      "sha256": "e38813f0c755d5acf343ada2444074863f426bf6eacdfd034c09469ebe5a029a"
+      "sha256": "f453c335e507dd7f4f8b6859438dd6c41ff0bb02c98e40808cac0395e4efd357"
     },
     {
       "link": "fr_thigh",
       "part": "fr_thigh_cheek_rear",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_thigh__fr_thigh_cheek_rear.step",
-      "sha256": "31274080401f51ead0bf59037a8bf342e60e286f435415a4b22c93dccdef1583"
+      "sha256": "c8b1dac473aa0c0dfedf95cc1bff34787897e168e890adf73427cbe7dd7c3fff"
     },
     {
       "link": "fr_thigh",
       "part": "fr_hip_front_rotor_spacer",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_thigh__fr_hip_front_rotor_spacer.step",
-      "sha256": "7e26fca0daa514b263eba30f235e69445de797cd37f6a7e40c142b4002bbd0f5"
+      "sha256": "78cbf5e2d84d55a226f413a020c23b91ac02a2410f3d04e9f9b28d56a0dfa897"
     },
     {
       "link": "fr_thigh",
       "part": "fr_hip_rear_rotor_hub",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_thigh__fr_hip_rear_rotor_hub.step",
-      "sha256": "7fa6daf9e1391432229a2aaa8ca8542552164e308cbd313ed0c8d16b55e4ff66"
+      "sha256": "63de3a26e1a1a358a01c41561a572a68039e07b70c6fe6737ab5dd323d681496"
     },
     {
       "link": "fr_thigh",
       "part": "fr_knee_bearing_retainer",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_thigh__fr_knee_bearing_retainer.step",
-      "sha256": "a363aa71c01225676e428e4e13ade37acb86d26215240fe37f74cf6b7b0512b6"
+      "sha256": "5aab783c80bda4d5f27f45afb2bfcd5a84efeb6ef4e4b1a4230786b08adfb868"
     },
     {
       "link": "fr_thigh",
       "part": "fr_thigh_spacer_-27",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_thigh__fr_thigh_spacer_-27.step",
-      "sha256": "b6b06af752baf07a555d6f799e1ed8b8a6cf26404d8b96254410b4019d7a64eb"
+      "sha256": "af16786eb5306158e5b3e13cb75005b29de7c7d1d5babe0c0babb5fc0868e653"
     },
     {
       "link": "fr_thigh",
       "part": "fr_thigh_spacer_27",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_thigh__fr_thigh_spacer_27.step",
-      "sha256": "d749d68d5c9afa30704852ce6ebfb7a390c1f805a86577f46175c3967d0d5d3d"
+      "sha256": "bb4ce68ace8e855c0769a5753d8c6525bb7d86ef65141a32d626cc179e267935"
     },
     {
       "link": "fr_thigh",
       "part": "fr_knee_mount_spacer_-10_1.725",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_thigh__fr_knee_mount_spacer_-10_1.725.step",
-      "sha256": "b3f46ae060b292c0a9de792b3fd8337887a6abf9bfc9b2f61a4538652a80a450"
+      "sha256": "30fac32c9d5c99c44aa857edb785e25d3c0f19e89607f3582bb6a8cd7e97fed8"
     },
     {
       "link": "fr_thigh",
       "part": "fr_knee_mount_spacer_-10_-52.025",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_thigh__fr_knee_mount_spacer_-10_-52.025.step",
-      "sha256": "467c53ac6ae5b93cb656cbc09cd35a6dc3eeca6026013ba7a4579f7e33ea0e60"
+      "sha256": "eaf387db964fe3ce2bf97f5fbf9c31388a29d4fc6cb9a4ad0f178149029bf016"
     },
     {
       "link": "fr_thigh",
       "part": "fr_knee_mount_spacer_10_1.725",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_thigh__fr_knee_mount_spacer_10_1.725.step",
-      "sha256": "f28fa316294e5c7395eaaaf46e71065cdc5ab2d73a93b753ea3e6ff85a53bc13"
+      "sha256": "da804b6cffd66e6a951f607684edf3b089b5f0ba0ed894df3f5debd97500c3ed"
     },
     {
       "link": "fr_thigh",
       "part": "fr_knee_mount_spacer_10_-52.025",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_thigh__fr_knee_mount_spacer_10_-52.025.step",
-      "sha256": "03582e005885f312b9f82053c0f6ddc609de57a42f6089b3cba3d1505518714c"
+      "sha256": "9a4af356cfebbdcc009f72ec24ecc08bdc479df266caabf88b3b9a13f671910d"
     },
     {
       "link": "fr_thigh",
       "part": "fr_thigh_fairing",
       "material": "PETG",
       "step": "cad/manufacturing/fr_thigh__fr_thigh_fairing.step",
-      "sha256": "0db2b6bcb89aba0d05ea5fdc41ad844f4eef28db0dae38b4f6298b1586de9c8c"
+      "sha256": "5d807b37a10fa66aa21f43cff1c97f689186356d4813cc5758d639751af95c14"
     },
     {
       "link": "fr_shin",
       "part": "fr_hoof",
       "material": "PETG",
       "step": "cad/manufacturing/fr_shin__fr_hoof.step",
-      "sha256": "d6e1c3794a823d166e227494a90feb0014d3b3221d16d1e3041056d351fce0c7"
+      "sha256": "3bab092f5639cd33a6b7ad1781833cc4b0d8f6ca2792f36951a06924138877f0"
     },
     {
       "link": "fr_shin",
       "part": "fr_floating_sole",
       "material": "PETG",
       "step": "cad/manufacturing/fr_shin__fr_floating_sole.step",
-      "sha256": "0512d174ebe9e349baeb0540d8cc55294fc9f85915ab30dc1a4efd4fd09d2665"
+      "sha256": "45c03a10e9c6c09e867d72cedd31ad5f2cf6baca8eb005c369abc7797c42d8c8"
     },
     {
       "link": "fr_shin",
       "part": "fr_TPU_pad",
       "material": "TPU",
       "step": "cad/manufacturing/fr_shin__fr_TPU_pad.step",
-      "sha256": "05618b1b2203c601fbd81aa4d4c784914a2bdc179f1fa65f191464e2e8a8ce14"
+      "sha256": "54c794b07e2c2d96900096fb569da7d68acc2835c7fcba4eab6bbb7ca8377b0b"
     },
     {
       "link": "fr_shin",
       "part": "fr_TPU_actuator",
       "material": "TPU",
       "step": "cad/manufacturing/fr_shin__fr_TPU_actuator.step",
-      "sha256": "74af9daa1291a57b8b76bdb1b4710c2779ecc9bfe0e1ebefe265a59051d34c36"
+      "sha256": "6f4959da637c2675a5e364d89aa5048cbf36610bb42323c9445685bf5bd02b8d"
     },
     {
       "link": "fr_shin",
       "part": "fr_shin_cheek_front",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_shin__fr_shin_cheek_front.step",
-      "sha256": "a8556eb826ec52d5fb59bdba0b36c4e781af7c5fd5aa5afbac56e5317abd916d"
+      "sha256": "337360cfbbe3f6ab84a9e233d7d3e92dd2fad4b2a76579bac2cdf93d030013e9"
     },
     {
       "link": "fr_shin",
       "part": "fr_shin_cheek_rear",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_shin__fr_shin_cheek_rear.step",
-      "sha256": "a2c4457b40354a4b8b7e6cb2c80d4ec3c37b99f7bdfd8e0c38136df6f0e288b6"
+      "sha256": "7ca39fa2dad0fdc6abb893947d4d54f9a757ff6e0d6fda0a96e5281a8d8ca9c8"
     },
     {
       "link": "fr_shin",
       "part": "fr_knee_cross_spacer",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_shin__fr_knee_cross_spacer.step",
-      "sha256": "3ed6bb0cc6f2c9fcb609ecfbcaed80f35d3e35191a77af1fe77e32e613e03e5b"
+      "sha256": "ce03abf6dd17dce486b2e9120bd0e8e5bac9a2ee2c520a708cf62847664e9bc2"
     },
     {
       "link": "fr_shin",
       "part": "fr_knee_front_rotor_hub",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_shin__fr_knee_front_rotor_hub.step",
-      "sha256": "e4f7b9a0f3a21f53602e5dd8a940b23c0568285cd7344ba03a70706dc0addf86"
+      "sha256": "e986e8c915aac554e792f5b1b02c114020c8958acd36348f2157e26c428c8821"
     },
     {
       "link": "fr_shin",
       "part": "fr_knee_rear_rotor_hub",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/fr_shin__fr_knee_rear_rotor_hub.step",
-      "sha256": "8bf819123ae90d050be4535a426c7dcff29e366b68d3e3c1b680de9aa81191b6"
+      "sha256": "c578590f4d7ab895e07484d6c3d1b4dbaadccb92984ae8b062463e4e5eab34ac"
     },
     {
       "link": "fr_shin",
       "part": "fr_shin_fairing",
       "material": "PETG",
       "step": "cad/manufacturing/fr_shin__fr_shin_fairing.step",
-      "sha256": "e62f2a8ee980488b0afbae84183c4ff536e822ea692372d07be3562ba7af21ba"
+      "sha256": "d84d0d01d44665bfb5cc4d262bf1d7e25ec7bf112036fc3b2204f75a7f7804f1"
     },
     {
       "link": "rl_roll",
       "part": "rl_pitch_cradle",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_roll__rl_pitch_cradle.step",
-      "sha256": "63f35eedc12922ee62755415002b0e9267363c8c81c6bc3db38e5e9ab1bdabaa"
+      "sha256": "a0deed702090299a1d9ffbc42e29231f043f9545f4bee34174dd9813b4a24740"
     },
     {
       "link": "rl_roll",
       "part": "rl_pitch_clamp_shims",
       "material": "rigid aluminium shim stock",
       "step": "cad/manufacturing/rl_roll__rl_pitch_clamp_shims.step",
-      "sha256": "1f8c958b433b31cb7cb3f14bdc99119a654aa1caeb0c4935bce4c0340efb8245"
+      "sha256": "d4b98cf9253bb017c8fc1206f9168e634030fac07b5c025f14fb0ca17bd14557"
     },
     {
       "link": "rl_roll",
       "part": "rl_pitch_strap_-41.55",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_roll__rl_pitch_strap_-41.55.step",
-      "sha256": "9564b77f88c162012bae969dec534d0354db65631356a26b183150ba6a34dc4e"
+      "sha256": "318302f70f1fd1fce944ddcaf882a45e0a537a480dd52cdddf7133d30799cbe5"
     },
     {
       "link": "rl_roll",
       "part": "rl_pitch_strap_-7.55",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_roll__rl_pitch_strap_-7.55.step",
-      "sha256": "30f821288d595ff071c2544770e41bda44b8512db732d7764b5d0a448257d0c7"
+      "sha256": "f597c24cbf7890ace34527546ccc8808cada440d6cd050b4f3664d6229904aee"
     },
     {
       "link": "rl_roll",
       "part": "rl_roll_yoke",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_roll__rl_roll_yoke.step",
-      "sha256": "b408aac726ea55e8f112fc07b4e691d1f39b15cf7451a6b7378527bc39704eb2"
+      "sha256": "3553d4d0f69655a255cf5cf6d56359a24793a7ad67aadfd2ed5dc0aa99591f97"
     },
     {
       "link": "rl_roll",
       "part": "rl_roll_axle",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_roll__rl_roll_axle.step",
-      "sha256": "9a7fda428e8bacf2bbaee9d8392e77206964828b40bc38bdebc07d585a6a3d16"
+      "sha256": "307b6e6c12d30d8f3ce59174bed18c8a9ed87366f4a2e51e146cd5661f5e875a"
     },
     {
       "link": "rl_roll",
       "part": "rl_hip_bearing_retainer",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_roll__rl_hip_bearing_retainer.step",
-      "sha256": "ca9c2e347e22707b345273a7f3dd1af310ff520604eccaa0d543880e418bd65d"
+      "sha256": "08b70e972ffe12e55ec4387fc1d571e6441801b08124f75b5871ce335b643010"
     },
     {
       "link": "rl_roll",
       "part": "rl_pitch_mount_spacer_-10",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_roll__rl_pitch_mount_spacer_-10.step",
-      "sha256": "a94941b55b6570d5220fc97b8680f156dffaa1e86bf03170ea09ab05a0cdcf21"
+      "sha256": "12725b99af7f1d388c1990d3465190cd5f59f4125452de0ee6a57dfd43a16b5c"
     },
     {
       "link": "rl_roll",
       "part": "rl_pitch_mount_spacer_10",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_roll__rl_pitch_mount_spacer_10.step",
-      "sha256": "84e0e3e842794cb172ba1c34e2ebd2f06e56a6ccf434cb28919fdaba86376dce"
+      "sha256": "90cfa328f3aa9a32f1ee882d4da4cbb8b08527b0e78ff3d61977ad60e12e548c"
     },
     {
       "link": "rl_thigh",
       "part": "rl_knee_cradle",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_thigh__rl_knee_cradle.step",
-      "sha256": "2f3d3ce3c42b44e74ebfe6d1645c5c27be7c492fe389ba2844ef055257f96d28"
+      "sha256": "0623388822720945f52e938578180618e0a9f892133af6f3ef42515eeb32a296"
     },
     {
       "link": "rl_thigh",
       "part": "rl_knee_clamp_shims",
       "material": "rigid aluminium shim stock",
       "step": "cad/manufacturing/rl_thigh__rl_knee_clamp_shims.step",
-      "sha256": "a80b4be204083576bd8bd74e824dcfd943dcae9f3fe7ccaaac5cb95a4d1241ee"
+      "sha256": "dfbcba8ac4f3ffe7f12bd69d51a85c4651012c92d6701e394c5c784d70b9f002"
     },
     {
       "link": "rl_thigh",
       "part": "rl_knee_strap_-41.55",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_thigh__rl_knee_strap_-41.55.step",
-      "sha256": "a1a5830b9c356a1157642bfbed7ef9faefb50ef96d4bd18a49aa3427ec38ca59"
+      "sha256": "2ff6447e506802b3ddd72097b5452b74ab1d8b8cbcc2d0ba0064f2625c5b2465"
     },
     {
       "link": "rl_thigh",
       "part": "rl_knee_strap_-7.55",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_thigh__rl_knee_strap_-7.55.step",
-      "sha256": "8d955d00a8a90809e744def0aa8ce84cb1f42754cf45d0e98647da861d9e7fd2"
+      "sha256": "d0e54cf73c71340f03760500b96f77f59c50c05419766b246ddbfd699b3b6189"
     },
     {
       "link": "rl_thigh",
       "part": "rl_thigh_cheek_front",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_thigh__rl_thigh_cheek_front.step",
-      "sha256": "a3914a9128d2ce8ea6990ec9ed564eefd8ef8bc7751519061368589435b3b71a"
+      "sha256": "31c3815ed11a144d2ff5b938c087dbf7bb7d57a5d1e1919cdd05f18f4540b0fe"
     },
     {
       "link": "rl_thigh",
       "part": "rl_thigh_cheek_rear",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_thigh__rl_thigh_cheek_rear.step",
-      "sha256": "b35b58cbe7c955cbaa7e1457bc7226ea83a1467e78d9f0ce67a296dead394e27"
+      "sha256": "0789154b0b723b66f3e7b4d776576a9f6076c3185ae0325187d76c0c3f343146"
     },
     {
       "link": "rl_thigh",
       "part": "rl_hip_front_rotor_spacer",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_thigh__rl_hip_front_rotor_spacer.step",
-      "sha256": "1436bfd28ae4f9d790919d172ad00383838d4e66282fc24004792c4bbc169f93"
+      "sha256": "6c4500bd7809a852cf680d465db9282dbc8133568e1eeb7ecb61801dae261e2e"
     },
     {
       "link": "rl_thigh",
       "part": "rl_hip_rear_rotor_hub",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_thigh__rl_hip_rear_rotor_hub.step",
-      "sha256": "dea9c6586895aa4a33e320ae1ce183c439bf23f330c6074f6e1331c78ba7348b"
+      "sha256": "270a52649b8c9996e806cde8c7355d3da03c0571679c493a6d19ed59675cefb0"
     },
     {
       "link": "rl_thigh",
       "part": "rl_knee_bearing_retainer",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_thigh__rl_knee_bearing_retainer.step",
-      "sha256": "4cb345d58fad5295e1c1c29db6e3cd031bf3bae7c71d4abe9d5c3ec32f043c6d"
+      "sha256": "b4bf5965330bf19cc198a66494966841b1d4729895880d4ff0ff3a7f5254475f"
     },
     {
       "link": "rl_thigh",
       "part": "rl_thigh_spacer_-27",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_thigh__rl_thigh_spacer_-27.step",
-      "sha256": "c61d0fc5145003a47e1723115caf850b732dbf25f7233e9fcb456b9a12ecb0c9"
+      "sha256": "6519c39af07b4aaedb6d5ce0a325edd1c810f871e26f1d61c38297f2c9dbf6f3"
     },
     {
       "link": "rl_thigh",
       "part": "rl_thigh_spacer_27",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_thigh__rl_thigh_spacer_27.step",
-      "sha256": "f78a15c02fe329f9367aa1f0a9198a320f443feb8f777d0611acbe5b15269211"
+      "sha256": "82a15ce0b4aa097cf18bcc945fcd9b3fa6004896278977c29649e4f5eff6a6b8"
     },
     {
       "link": "rl_thigh",
       "part": "rl_knee_mount_spacer_-10_1.725",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_thigh__rl_knee_mount_spacer_-10_1.725.step",
-      "sha256": "c6a2f69425c22cbbb69fc3d268082c32208266e7639c026261a6882deeac120a"
+      "sha256": "54da5de4c2a6b38861c808a1063eb55db42d0f8c07015b5d1226ed5b5f618f31"
     },
     {
       "link": "rl_thigh",
       "part": "rl_knee_mount_spacer_-10_-52.025",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_thigh__rl_knee_mount_spacer_-10_-52.025.step",
-      "sha256": "ff6a5f85fa30193f1b682c00415d590aaa7272aa1c97df348f7419f2a0b35e6e"
+      "sha256": "936bb89f9b258a4a158dc42848971fb216b49f3251c15e4ba2833f1e77452187"
     },
     {
       "link": "rl_thigh",
       "part": "rl_knee_mount_spacer_10_1.725",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_thigh__rl_knee_mount_spacer_10_1.725.step",
-      "sha256": "3bedab511cfa52fe60fbd6b33ddbc2b51799799d25da30c60a105d0ea72b8185"
+      "sha256": "0eec4c43ffaf5f742ddb67d32b6e6e7d8cdf720904aeec3595903b77cdca9abf"
     },
     {
       "link": "rl_thigh",
       "part": "rl_knee_mount_spacer_10_-52.025",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_thigh__rl_knee_mount_spacer_10_-52.025.step",
-      "sha256": "9b7cfd5aa92f297b8347bd86b1e929a70322c53599556293abc5f72ea8187425"
+      "sha256": "05dd207d92bbedf7ddb218d9155bfef236236cab96bf91c4943bef6fea98c621"
     },
     {
       "link": "rl_thigh",
       "part": "rl_thigh_fairing",
       "material": "PETG",
       "step": "cad/manufacturing/rl_thigh__rl_thigh_fairing.step",
-      "sha256": "e8441575a4c997ec8ae544d827f428a17b03f860fe650320a8aea5ceb7bdce1b"
+      "sha256": "d0fb6268452b49cf5e722679089d333c1aa7a1ac8ab4393dc036be6e75172630"
     },
     {
       "link": "rl_shin",
       "part": "rl_hoof",
       "material": "PETG",
       "step": "cad/manufacturing/rl_shin__rl_hoof.step",
-      "sha256": "bb53cbc483bb01a7042a161ca1ae7449a331ba48f9748c33d234bd845c25a861"
+      "sha256": "2a88b392f07dfadba632b869f6fee0ae836b43e8b6350fe0b3fe5989c46b9de3"
     },
     {
       "link": "rl_shin",
       "part": "rl_floating_sole",
       "material": "PETG",
       "step": "cad/manufacturing/rl_shin__rl_floating_sole.step",
-      "sha256": "86139650d36fa8021478373371dcfc224fe142b427534a6e233285f6f2460580"
+      "sha256": "174bbd3abdb408258630c3863cf9eb59f12fde310112927df009c705b719c70a"
     },
     {
       "link": "rl_shin",
       "part": "rl_TPU_pad",
       "material": "TPU",
       "step": "cad/manufacturing/rl_shin__rl_TPU_pad.step",
-      "sha256": "cd3210f1ff7d8d9e5147487d5bf068d10a3dd4319f53fc7969eef7ba2301f4c9"
+      "sha256": "2d7a2f199d97698be967fb0734dfea74b7a7065d368bc211462f56e09db69a58"
     },
     {
       "link": "rl_shin",
       "part": "rl_TPU_actuator",
       "material": "TPU",
       "step": "cad/manufacturing/rl_shin__rl_TPU_actuator.step",
-      "sha256": "d6d1af1b8ab58436ac7152e0d1beec4c41b85da36587e535c0b49735396aa31a"
+      "sha256": "8f90d6aec438ad559407ad55d3c5fbb69d65d3145cebda8d5aa7aa90eb926dbd"
     },
     {
       "link": "rl_shin",
       "part": "rl_shin_cheek_front",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_shin__rl_shin_cheek_front.step",
-      "sha256": "778f2e94a13e1ae7b797fd4b502922ef6d808dd68667f069e1e77c47b010f656"
+      "sha256": "822c2a003050bf26e77c07c403ede6de97a5b96062db36840fbc57a706e55680"
     },
     {
       "link": "rl_shin",
       "part": "rl_shin_cheek_rear",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_shin__rl_shin_cheek_rear.step",
-      "sha256": "49272054a4aa4e973c2e0ab4462016e8fd6441b55a441472dd92e2c574d9ee66"
+      "sha256": "666df75afcd5c415ad685722e5498b11089e63e64fd2d1a70812ec81355376ee"
     },
     {
       "link": "rl_shin",
       "part": "rl_knee_cross_spacer",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_shin__rl_knee_cross_spacer.step",
-      "sha256": "e3f2cc4170a7d55939bb6f0766a13dfd22a3e04999b9cf482a0944f6ab7088e2"
+      "sha256": "2c73fc13de826f30a7387fc1043fea6e4f8cacf10de43dd77b71545e7628af95"
     },
     {
       "link": "rl_shin",
       "part": "rl_knee_front_rotor_hub",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_shin__rl_knee_front_rotor_hub.step",
-      "sha256": "11ea03afa26a649ca3f9f01e566823eeb9aad700a67e8619e405ab5947986d17"
+      "sha256": "23340903f688196847e9afeef5ee88eaf840ae766683db3928f1df52cd58e2d1"
     },
     {
       "link": "rl_shin",
       "part": "rl_knee_rear_rotor_hub",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rl_shin__rl_knee_rear_rotor_hub.step",
-      "sha256": "77a3a2500ed2f900412ce360ece7861b8dca25620a92498e2ed5ad38383783c6"
+      "sha256": "df2ed3353c3d6d92626706d1f95838749e715f0d61dab1b066a4f89e9e15a9d8"
     },
     {
       "link": "rl_shin",
       "part": "rl_shin_fairing",
       "material": "PETG",
       "step": "cad/manufacturing/rl_shin__rl_shin_fairing.step",
-      "sha256": "d4db3e5d7fcbc6d8ee2ff8fb244b38fd936185b55a586929a84dfbad44b8c020"
+      "sha256": "9d5994f88dec5d0a1de1c223a89e43b6ed7c96049942f2bd286fb4e92b39c34b"
     },
     {
       "link": "rr_roll",
       "part": "rr_pitch_cradle",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_roll__rr_pitch_cradle.step",
-      "sha256": "2d2557f70e636aec6b5a67007912d4b2deaefd9a9aa0d6b792107543de8e62d0"
+      "sha256": "967e7132a53e288f435cbf13f13922a1ea6d98db768e21241e77149f98123cab"
     },
     {
       "link": "rr_roll",
       "part": "rr_pitch_clamp_shims",
       "material": "rigid aluminium shim stock",
       "step": "cad/manufacturing/rr_roll__rr_pitch_clamp_shims.step",
-      "sha256": "de8bbe2f5c58b5977931ae681964900ff1f7cc1f6e9d5f4133b34dc22ebb7ca4"
+      "sha256": "7d216a1bb8f7c453145b19d819f6ee55335a4f6f48a5344600a2e7c9af7b441d"
     },
     {
       "link": "rr_roll",
       "part": "rr_pitch_strap_-41.55",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_roll__rr_pitch_strap_-41.55.step",
-      "sha256": "28fea2089f93d6684ba649ca5847e08f18e704ad90b7ed241ece1548e8c3e38e"
+      "sha256": "5bbc57aa79fcb2af314c9212302bcb89860061ca44e3f63ea83e64a254d27e5f"
     },
     {
       "link": "rr_roll",
       "part": "rr_pitch_strap_-7.55",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_roll__rr_pitch_strap_-7.55.step",
-      "sha256": "41387a4c6f917ac783fbae236de0cc49e641ae1f96b7ae8e10585f8231f065b0"
+      "sha256": "57585acba8b9efc9b9e74ee43b3dc61fe1fbb54def8c26e75b4ab499a8712d01"
     },
     {
       "link": "rr_roll",
       "part": "rr_roll_yoke",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_roll__rr_roll_yoke.step",
-      "sha256": "2ebad3a6007adb99d7ca1f247f2afedc42d69bc8894af5e375bbacc01d4942b5"
+      "sha256": "e9f16448524558f7094d8944f10c0f7c670a16904b57f9f7731140744e654be7"
     },
     {
       "link": "rr_roll",
       "part": "rr_roll_axle",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_roll__rr_roll_axle.step",
-      "sha256": "791cfb0a3f3714a015257e1935f57537a12b7724ad6a1a682bdba68ea6355f62"
+      "sha256": "e8bc668707fcf9162efccd92117bba83f61fd95f47707564b1efb14064a638f7"
     },
     {
       "link": "rr_roll",
       "part": "rr_hip_bearing_retainer",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_roll__rr_hip_bearing_retainer.step",
-      "sha256": "50e92bffd4d357cf30d629c77de13ef80865bf1c82fe14a54da86cc04cd445f1"
+      "sha256": "039dca0461f7563549568bc143121e1b29c5e23e584c25852a7668d272878b13"
     },
     {
       "link": "rr_roll",
       "part": "rr_pitch_mount_spacer_-10",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_roll__rr_pitch_mount_spacer_-10.step",
-      "sha256": "a735775f516350a78e6f946fae99bf288dc8613b8939bf0e15c8d7cf21d4a8a4"
+      "sha256": "63169aa79b63fc526a93b3113a1801338583747816389200628f198cb492dada"
     },
     {
       "link": "rr_roll",
       "part": "rr_pitch_mount_spacer_10",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_roll__rr_pitch_mount_spacer_10.step",
-      "sha256": "17a57ce2afb0b6d872c663f8b9d656a7a3e9495a8d55c2f79201f91f61b93523"
+      "sha256": "3bd0a07b82218235eb407d49ec9c661244abce5e9c8c299700edf94913fcf319"
     },
     {
       "link": "rr_thigh",
       "part": "rr_knee_cradle",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_thigh__rr_knee_cradle.step",
-      "sha256": "453e054848768508a51839180d36fad1d7e6d818a4eb6e3a25423f17ea1a8062"
+      "sha256": "f5c4dd42fd107c0012b9109bba51c21b0e9304988ac7771187b918573501c9b6"
     },
     {
       "link": "rr_thigh",
       "part": "rr_knee_clamp_shims",
       "material": "rigid aluminium shim stock",
       "step": "cad/manufacturing/rr_thigh__rr_knee_clamp_shims.step",
-      "sha256": "4736bd53faee39c793657517c269b2a2b9ad68a6179e945365718f8a2b24ee72"
+      "sha256": "0af5e5e259098b891027f97d3eed94e2792699c0fcba407fa7b15aa80ee62d9a"
     },
     {
       "link": "rr_thigh",
       "part": "rr_knee_strap_-41.55",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_thigh__rr_knee_strap_-41.55.step",
-      "sha256": "f5fead96cc911408a96b6373eae263c3a261449d5806a704b10d51556a2fc323"
+      "sha256": "86370b7b6d255f8aeca42ef4c32fda8a56a8c0ab05a771316f6aa5f8750607a7"
     },
     {
       "link": "rr_thigh",
       "part": "rr_knee_strap_-7.55",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_thigh__rr_knee_strap_-7.55.step",
-      "sha256": "e4ae922e1c302fa03d50d9da021a4927193b69294c8c236c0d0345b79e42b6bf"
+      "sha256": "38c46521ecb9b68ce5d157affbe2a6a141a114fb239a51ac09e10100048a7b6b"
     },
     {
       "link": "rr_thigh",
       "part": "rr_thigh_cheek_front",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_thigh__rr_thigh_cheek_front.step",
-      "sha256": "580a0d6ac2635846579389314d5ef3e5a8803d42b7bcef2d02daf607cd8a0f24"
+      "sha256": "4678482fc2845f2ae941523e9cfefa52bc0a3d5cba9fc45fc767a9440bf1a33a"
     },
     {
       "link": "rr_thigh",
       "part": "rr_thigh_cheek_rear",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_thigh__rr_thigh_cheek_rear.step",
-      "sha256": "bb71e71abca5111a43f491c845cc6cdf619de91af2be93cd37f15b9c55cfdf53"
+      "sha256": "f3514ffc9258b12e78cb97e384cf11e60fdf431b21d10472d1004fb9220b57f2"
     },
     {
       "link": "rr_thigh",
       "part": "rr_hip_front_rotor_spacer",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_thigh__rr_hip_front_rotor_spacer.step",
-      "sha256": "88712548d51f23ef5cdbbb1cced7cd7b98bc569a68f95daf7431f1c4d058adb0"
+      "sha256": "3f1b01ec8bba7e141f30cc8f6fe9082e49e06d0db2e9a32411d34a95a4938cf3"
     },
     {
       "link": "rr_thigh",
       "part": "rr_hip_rear_rotor_hub",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_thigh__rr_hip_rear_rotor_hub.step",
-      "sha256": "af75f0e3eb08ffe651510fc938d52ba95dfb487c9b686322b29ce9889a2b6119"
+      "sha256": "05a6f22938ffdb8abceb91991faaa0acaa6226c461b6b8b1031cee2f2aca93d3"
     },
     {
       "link": "rr_thigh",
       "part": "rr_knee_bearing_retainer",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_thigh__rr_knee_bearing_retainer.step",
-      "sha256": "16265cd61e2a3d78c329673b7751e79cc766110ff419252ac4e18c685a202a49"
+      "sha256": "ecc7f2b00d680c6e36c3f620a63cf577be8939646ab16b3b4df600134fbe56c3"
     },
     {
       "link": "rr_thigh",
       "part": "rr_thigh_spacer_-27",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_thigh__rr_thigh_spacer_-27.step",
-      "sha256": "4de077633c3b802123672be80a630cac816f430007e189077b385b77a16d7e67"
+      "sha256": "ca71840b894bef8c8ba79a70050910ba9352d94907c42da2ca54737f719ff1fc"
     },
     {
       "link": "rr_thigh",
       "part": "rr_thigh_spacer_27",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_thigh__rr_thigh_spacer_27.step",
-      "sha256": "45a8f87ac8be180bb531554b85c7828b677faebe500f426c6ead9941551973ef"
+      "sha256": "c39ba6fe79020db203603309adc0ff902424b63f529e1601b302875e978e993c"
     },
     {
       "link": "rr_thigh",
       "part": "rr_knee_mount_spacer_-10_1.725",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_thigh__rr_knee_mount_spacer_-10_1.725.step",
-      "sha256": "299f8c0a507d3a6f3ead625a0891c1dc6e8640b48babed5cc2daf04fcb62094b"
+      "sha256": "3a2e9f4e2f3ad529d11ab502540c592b2ba335c7a734f613f1256d5e37608b26"
     },
     {
       "link": "rr_thigh",
       "part": "rr_knee_mount_spacer_-10_-52.025",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_thigh__rr_knee_mount_spacer_-10_-52.025.step",
-      "sha256": "e5c224913366f17852bd870ad9bd0c5805d5ed289f4a8a258f588d377392242a"
+      "sha256": "7c918fdbb6aa33e8b20bbfab2929dc9e63913fea07c1ddb411d37b3e84f0ae28"
     },
     {
       "link": "rr_thigh",
       "part": "rr_knee_mount_spacer_10_1.725",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_thigh__rr_knee_mount_spacer_10_1.725.step",
-      "sha256": "df4cfc873ed8c3127b4768971c4d5b007fb1655ad9add185c12e051204fb392a"
+      "sha256": "886f71b31b0466e813b0b09d2aaf38e3454f2d79c650f0ad64224a3bf174808d"
     },
     {
       "link": "rr_thigh",
       "part": "rr_knee_mount_spacer_10_-52.025",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_thigh__rr_knee_mount_spacer_10_-52.025.step",
-      "sha256": "163a07667a349887ab00a0002bfb4af74d4050aaa9fa9f3c3af00662e7171f46"
+      "sha256": "324ba0898902f1bb28de7181b4f730f887b3a39bc3c022d57bd54965cbd5679a"
     },
     {
       "link": "rr_thigh",
       "part": "rr_thigh_fairing",
       "material": "PETG",
       "step": "cad/manufacturing/rr_thigh__rr_thigh_fairing.step",
-      "sha256": "55d105dc8967ae6dbff8224c5b9d4dbfed7a5eb08f6c2121588c8e044e647daa"
+      "sha256": "3cd2092d77a24abf7063390b02ea292b84735c5a814d2e07f8c7e2252a7906e3"
     },
     {
       "link": "rr_shin",
       "part": "rr_hoof",
       "material": "PETG",
       "step": "cad/manufacturing/rr_shin__rr_hoof.step",
-      "sha256": "6b6efa3061dc4465b6d0aaad639b8632510d8a3e8e07b345487b83c0d521f8dc"
+      "sha256": "b8c7e5a52e0a6c84cda5a502019fe196a392f047385bc3ab0c66998bb7fbd83c"
     },
     {
       "link": "rr_shin",
       "part": "rr_floating_sole",
       "material": "PETG",
       "step": "cad/manufacturing/rr_shin__rr_floating_sole.step",
-      "sha256": "dbbd637ffb5debbd09182f084a367f38013e60255c3536dbc2712916984ccd24"
+      "sha256": "06e8683dbc516a7fe0dc2f50c1858520129dea02baa8422b30dcece6da0363ce"
     },
     {
       "link": "rr_shin",
       "part": "rr_TPU_pad",
       "material": "TPU",
       "step": "cad/manufacturing/rr_shin__rr_TPU_pad.step",
-      "sha256": "7adacf74196d7725d5c306c925f2bd34602683304fb7b12f415dc5f5786c11c7"
+      "sha256": "376cc445352d43d16d4dd883577590e34e934ec07db7f361e4c30233107510f6"
     },
     {
       "link": "rr_shin",
       "part": "rr_TPU_actuator",
       "material": "TPU",
       "step": "cad/manufacturing/rr_shin__rr_TPU_actuator.step",
-      "sha256": "bb967a88622d8389d748e048c284a29b1ea0619586dac2195090274f5e4d89c0"
+      "sha256": "fdeca61a023ba2df7725414f295df4b5a08fa5b70b0700151a80015a744902d4"
     },
     {
       "link": "rr_shin",
       "part": "rr_shin_cheek_front",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_shin__rr_shin_cheek_front.step",
-      "sha256": "e439b73de147d679e72dafff02fd986a8662587db41e8dbd24549c5a34951a78"
+      "sha256": "1ccaa694e1dd9df0237edc2d8a0f2d063a177fd2c1d7da574bd5fa08717b910e"
     },
     {
       "link": "rr_shin",
       "part": "rr_shin_cheek_rear",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_shin__rr_shin_cheek_rear.step",
-      "sha256": "de01699532b46e368e552b31d7d4323196ca14fbc5a4991da28023af034f84c9"
+      "sha256": "93ddb54c43360e304a915fe4c6cd584da030367613f73f761dbee9a7e287a846"
     },
     {
       "link": "rr_shin",
       "part": "rr_knee_cross_spacer",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_shin__rr_knee_cross_spacer.step",
-      "sha256": "5fab11587df9e1d073083e830a53f912b35b8124b52125a028d5383a38116599"
+      "sha256": "5e6ff34d9a77fafdb0e6d7bd1e8351f8b2ec4137178359a4ce4a8df6a359b62f"
     },
     {
       "link": "rr_shin",
       "part": "rr_knee_front_rotor_hub",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_shin__rr_knee_front_rotor_hub.step",
-      "sha256": "a0254f31b132639ff1b2037cf88307107f253ebd2f046e669779803a9b50625a"
+      "sha256": "46f679b29787f3262d08a5b7e27e47a1bc1c090438bce9c6f7146bb8cd183f17"
     },
     {
       "link": "rr_shin",
       "part": "rr_knee_rear_rotor_hub",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/rr_shin__rr_knee_rear_rotor_hub.step",
-      "sha256": "07a3a6f850b5801f9d1d92b7c3577433e0f0e06a64c3d3dbfa7391ba7c7d16f3"
+      "sha256": "d80d0e738441235e40250aaa2aee3aa2a53bee48c9a92b813f8dc409aa37e877"
     },
     {
       "link": "rr_shin",
       "part": "rr_shin_fairing",
       "material": "PETG",
       "step": "cad/manufacturing/rr_shin__rr_shin_fairing.step",
-      "sha256": "e93fe00c88e4a46895315cd46b07bf15b1dbbdf73c6777e174f0596ac1024618"
+      "sha256": "249bb70df13888b3f01427560c9bdabb3439f5ee7d6f0e59cc25976e30e62f7b"
     },
     {
       "link": "neck_yaw",
       "part": "head_pitch_cradle",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/neck_yaw__head_pitch_cradle.step",
-      "sha256": "89681ca062ce50212e83b27e29d37974999954c5619e9363f25fe89079f32810"
+      "sha256": "b7763ad613b87e8c2a92c8c112ad89d96e98b26881fa5baabbb89763edf794a3"
     },
     {
       "link": "neck_yaw",
       "part": "head_pitch_cradle_strap_-7",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/neck_yaw__head_pitch_cradle_strap_-7.step",
-      "sha256": "65491cedd39c9f0fff34d822d9d658e873380c6a06293b311865b124a0cc1b3c"
+      "sha256": "77ef78d1a111a850da233afecb158c4a1a283a95fd6162dc1e0df975c4fdb52e"
     },
     {
       "link": "neck_yaw",
       "part": "head_pitch_cradle_strap_-33",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/neck_yaw__head_pitch_cradle_strap_-33.step",
-      "sha256": "4fea029c873128630b9b3861ee42383692328b0905635477667c46c3af135549"
+      "sha256": "990c70253bdae81f8c936694a6e0f39a9a8a891962e64c79ec0d06943c18eb1f"
     },
     {
       "link": "neck_yaw",
       "part": "white_neck_collar",
       "material": "PETG",
       "step": "cad/manufacturing/neck_yaw__white_neck_collar.step",
-      "sha256": "092d9c50531c45aa310e7ec6e004879bafe6f6b5d620e15d39adbb459f5967ca"
+      "sha256": "82d2bb4ba8507e823b0f3e40b31524950396a5613f7609d1510fa1f9c84d31af"
     },
     {
       "link": "neck_yaw",
       "part": "head_pitch_clamp_shims",
       "material": "rigid aluminium shim stock",
       "step": "cad/manufacturing/neck_yaw__head_pitch_clamp_shims.step",
-      "sha256": "4e0f1ab2f0b0d41074eec5dcb34e7d05e3dc38496d040e1d8db31b2d45403312"
+      "sha256": "a1212bc639d744da4ca53ecd75686cfdfb22682ffd3384216b22e0191bb59824"
     },
     {
       "link": "head",
       "part": "pony_head_shell",
       "material": "PETG",
       "step": "cad/manufacturing/head__pony_head_shell.step",
-      "sha256": "40eb6e22cfff05cca7cfd046a72f586a096a9a1807f03046f17ac3f5d84df43c"
+      "sha256": "3af13f63f131e32cae1e5726c37beab8eae09f5a4046e8bcefcff680b49296a2"
     },
     {
       "link": "head",
       "part": "head_service_hatch",
       "material": "PETG",
       "step": "cad/manufacturing/head__head_service_hatch.step",
-      "sha256": "9c8d21403f1f54486f6704d4f2eae4cc636d022e75ed6eb5c20bd296271f94c9"
+      "sha256": "8a53933ff9136b769881f179eb260f53dd4db09855925dca0c2e9dd3a1a7d520"
     },
     {
       "link": "head",
       "part": "head_support_yoke",
       "material": "6061 aluminium",
       "step": "cad/manufacturing/head__head_support_yoke.step",
-      "sha256": "fbe858be1b1a6c9f956ff1ea42d141b1e3c0ef0b548b22fa084e387436dbb3d0"
+      "sha256": "a76da8f9750e0b62273fb18e766cb73f330119c3c7531ee9303b85c1912e0dab"
     },
     {
       "link": "head",
       "part": "mane_crest",
       "material": "PETG",
       "step": "cad/manufacturing/head__mane_crest.step",
-      "sha256": "357391d7d24ea80da254ec162a8e1f6347a039d3273f973429089b9c987fe869"
+      "sha256": "f629ba2001eb3b7024b6ab720007688aed424c0e8e4b3a2e86bcf228331a6869"
     },
     {
       "link": "head",
       "part": "pink_mane_stripe",
       "material": "PETG",
       "step": "cad/manufacturing/head__pink_mane_stripe.step",
-      "sha256": "5923a8f7e41f7524ce066287479867dcb1c5d3f5ee0eeed95713657101947723"
+      "sha256": "9183bfec11db6f73c651931f11e8159539996c201f697f313be42c541dff101a"
     },
     {
       "link": "head",
       "part": "unicorn_horn",
       "material": "PETG",
       "step": "cad/manufacturing/head__unicorn_horn.step",
-      "sha256": "7bebbdf9e9177a2da25b3c842f3c3799afc9cccfd8210d54b29bb1498146cc80"
+      "sha256": "46b6bb6647b93568fdaa7a7336e0b849fad1f39d170fb80646c25c7fd1a2336a"
     },
     {
       "link": "head",
       "part": "camera_carrier",
       "material": "PETG",
       "step": "cad/manufacturing/head__camera_carrier.step",
-      "sha256": "cce8f0288ba918dcd52f8221f842506fa575820616d1a413693ea08000990a59"
+      "sha256": "58e38532d7e144d997fc8e6c525b6451592b08f130d9373a26c8fc7b4835c44b"
     },
     {
       "link": "head",
       "part": "eye_bezel_-1",
       "material": "PETG",
       "step": "cad/manufacturing/head__eye_bezel_-1.step",
-      "sha256": "a34b326398ecbdd712bfced5450f1c88b2900aec1588385dd751b57218f99b94"
+      "sha256": "c3d5871e02a14f6278aaac366dc207dd759cddf725c0ba287ab433df5415a3fd"
     },
     {
       "link": "head",
       "part": "eye_bezel_1",
       "material": "PETG",
       "step": "cad/manufacturing/head__eye_bezel_1.step",
-      "sha256": "6a4ca92e46cf4019744db11c2c54b26e83d76a473bede31865635412c9b9bbbf"
+      "sha256": "f146c843499f56af2cb8c95f16dc2413f3f2f27ddeb345daeedf481898345cab"
     },
     {
       "link": "ear_left",
       "part": "ear_shell_1",
       "material": "PETG",
       "step": "cad/manufacturing/ear_left__ear_shell_1.step",
-      "sha256": "a1579b946cb789a9b631bfab890c43ffb4b1a5d8ef2d930f0218242f8398086b"
+      "sha256": "a9a76ccac5f698132563f0f61061b6c57c252819163f2ab0b7d591efe14722d0"
     },
     {
       "link": "ear_right",
       "part": "ear_shell_-1",
       "material": "PETG",
       "step": "cad/manufacturing/ear_right__ear_shell_-1.step",
-      "sha256": "86f1f4b6e9fad81d46eef23f627c0be6e29729a88c9dc36decc7b175e7cf504e"
+      "sha256": "aea72d405eab233a8c976eff45d55260e5d6d6643de6e9c9a1ffa240ad8b0424"
     }
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "epoch": 1792597925.8793669,
+  "canonical_roll_degrees": [
+    -6,
+    45
+  ],
+  "right_roll_degrees": [
+    -45,
+    6
+  ],
+  "sampled_mechanical_poses": 185,
+  "exact_pair_tests": 646,
+  "tests_passed": 169,
+  "collision_coverage": true,
+  "digital_sensor_physics": true,
+  "physical_signature": "20166e449409e09fa7c729d0e0d07cd5087fd039add2b9ec82b3fbb5f0f60883",
+  "dynamics_signature": "bd983c4559ec2910aaad2d0d58d62631216e741fe1b87c6cb39bd61a7bbc7c39",
+  "learned_back_recovery": "not established",
+  "physical_build": "not validated"
+}

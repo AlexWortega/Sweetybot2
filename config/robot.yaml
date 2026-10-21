@@ -184,8 +184,10 @@ joints:
     - 0
     - 0
     limits:
-    - -0.15
-    - 0.15
+    - -0.10471975511965978
+    - 0.7853981633974483
+    # Canonical left leg: 6 degrees inward, 45 outward; right legs mirror.
+    mirror_limits_by_side: true
     home: 0.0
   hip_pitch:
     axis:

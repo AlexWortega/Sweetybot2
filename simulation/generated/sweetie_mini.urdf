@@ -7865,7 +7865,7 @@
     <child link="fl_roll_link" />
     <origin xyz="0.099 0.07 0" rpy="0 0 0" />
     <axis xyz="1 0 0" />
-    <limit lower="-0.15" upper="0.15" effort="6.270126843750001" velocity="4.869468613064179" />
+    <limit lower="-0.10471975511965978" upper="0.7853981633974483" effort="6.270126843750001" velocity="4.869468613064179" />
     <dynamics damping="0.015" friction="0.018" />
   </joint>
   <link name="fl_thigh_link">
@@ -9755,7 +9755,7 @@
     <child link="fr_roll_link" />
     <origin xyz="0.099 -0.07 0" rpy="0 0 0" />
     <axis xyz="1 0 0" />
-    <limit lower="-0.15" upper="0.15" effort="6.270126843750001" velocity="4.869468613064179" />
+    <limit lower="-0.7853981633974483" upper="0.10471975511965978" effort="6.270126843750001" velocity="4.869468613064179" />
     <dynamics damping="0.015" friction="0.018" />
   </joint>
   <link name="fr_thigh_link">
@@ -11657,7 +11657,7 @@
     <child link="rl_roll_link" />
     <origin xyz="-0.099 0.07 0" rpy="0 0 0" />
     <axis xyz="1 0 0" />
-    <limit lower="-0.15" upper="0.15" effort="6.270126843750001" velocity="4.869468613064179" />
+    <limit lower="-0.10471975511965978" upper="0.7853981633974483" effort="6.270126843750001" velocity="4.869468613064179" />
     <dynamics damping="0.015" friction="0.018" />
   </joint>
   <link name="rl_thigh_link">
@@ -13577,7 +13577,7 @@
     <child link="rr_roll_link" />
     <origin xyz="-0.099 -0.07 0" rpy="0 0 0" />
     <axis xyz="1 0 0" />
-    <limit lower="-0.15" upper="0.15" effort="6.270126843750001" velocity="4.869468613064179" />
+    <limit lower="-0.7853981633974483" upper="0.10471975511965978" effort="6.270126843750001" velocity="4.869468613064179" />
     <dynamics damping="0.015" friction="0.018" />
   </joint>
   <link name="rr_thigh_link">

@@ -10,7 +10,7 @@ import torch
 from learning.readiness import ROOT, DYNAMICS_FILES, DYNAMICS_V2_FILES, LEGACY_DYNAMICS_FILES, dynamics_signature, physical_signature, source_signature
 
 
-def _verified_source(saved,source_root):
+def _verified_source(saved,source_root,joint_limit_transfer=False):
     source=Path(source_root).resolve()
     files=(DYNAMICS_FILES if (source/'hardware/policy_observation.py').is_file() else
            DYNAMICS_V2_FILES if (source/'learning/curriculum.py').is_file() else LEGACY_DYNAMICS_FILES)
@@ -21,13 +21,18 @@ def _verified_source(saved,source_root):
         if hashlib.sha256((source/name).read_bytes()).hexdigest()!=digest:
             raise ValueError('Initializer source was modified: '+name)
     physical=physical_signature(source)
-    if physical!=physical_signature():raise ValueError('Initializer robot physics/sensors differ')
+    limits=None
+    if physical!=physical_signature():
+        if not joint_limit_transfer:raise ValueError('Initializer robot physics/sensors differ')
+        from learning.joint_limit_transfer import validate_limit_change
+        limits=validate_limit_change(source)
     return dict(source_snapshot=str(source),source_dynamics_signature=old,
                 target_dynamics_signature=dynamics_signature(),physical_sensor_signature=physical,
+                target_physical_sensor_signature=physical_signature(),joint_limit_transfer=limits,
                 optimizer_restored=False,source_hashes_verified=True)
 
 
-def validate_initializer(saved, env, source_root=None):
+def validate_initializer(saved, env, source_root=None, *, joint_limit_transfer=False):
     metadata=saved.get('environment_metadata',{})
     expected=getattr(env,'observation_contract',None)
     if not expected:
@@ -40,7 +45,7 @@ def validate_initializer(saved, env, source_root=None):
     target=dynamics_signature()
     if metadata.get('dynamics_signature')==target:return None
     if not source_root:raise ValueError('Changed recipe initializer requires explicit --initializer-source')
-    return dict(mode='explicit_training_recipe_transfer',**_verified_source(saved,source_root))
+    return dict(mode='explicit_training_recipe_transfer',**_verified_source(saved,source_root,joint_limit_transfer))
 
 
 def validate_teacher(saved,env,source_root=None):

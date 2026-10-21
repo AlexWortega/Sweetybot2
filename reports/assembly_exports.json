@@ -1,7 +1,7 @@
 {
-  "geometry_signature": "7fd143cc1e7e55dc22f5e6c1abf331cb2fe995ccb3bc5d138c6d5e9b13f2e546",
-  "config_sha256": "7918107f94a430abcd70efedb5671ee4edd806befe7343eeaa28fdb5b398ab08",
-  "cad_snapshot_sha256": "235d10cda8cfea7b83b9c0c4a62265520d93e8727b6100f79b0c3848920bc627",
+  "geometry_signature": "c4e6124487cf5762439d220799d31a89b2ef11991ba98476b152a780e6e6eb78",
+  "config_sha256": "b207c4f7ec2d1eef5a61ac94898162c34d67b2b1c55e112d5dc6e279d61426da",
+  "cad_snapshot_sha256": "cd7193a2373e0d239259995d3f920a115382d936c230edddf552e2e7b496ed2f",
   "method": "verified placed component STEP solids, shared FK, semantic surface finishes; geometry preserved",
   "assemblies": [
     {
@@ -20,7 +20,7 @@
           532.9988001100006
         ]
       ],
-      "glb_sha256": "05184cca0d63e9ed259ec25c16e0564e772ac9a53f8c7846bd17b2ecf26a5359"
+      "glb_sha256": "6df0e51a998f6b7a87a7e86f33cb19aaf9af8af2f6071dd9477dc016b73d20b1"
     },
     {
       "name": "internal",

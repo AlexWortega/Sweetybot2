@@ -1,7 +1,7 @@
 {
   "source_sha256": {
-    "config/robot.yaml": "7918107f94a430abcd70efedb5671ee4edd806befe7343eeaa28fdb5b398ab08",
-    "simulation/model.py": "542b6e6aca85ee183c502be3ccfef4d2167bf70cc23cd9c044e40c4ebb947b66",
+    "config/robot.yaml": "b207c4f7ec2d1eef5a61ac94898162c34d67b2b1c55e112d5dc6e279d61426da",
+    "simulation/model.py": "64d5ed3f7688ecdb8711517069ca1a361bf8b0791dfbfe798c9ff71b29d3975b",
     "cad/src/lib/shapes.py": "21aeb0ca0604ed4da6e557988d449149189db758f78d3123ec9f0040228e8ca4",
     "cad/src/lib/sensors_face.py": "7148d93c61fa3bc742fead75e10f87bad4f528b4981de4efdb32bd309cf12b94",
     "cad/src/lib/actuation_v05.py": "7aea4d12aeefd98c00fbade2e5e2a79ae5b7efceac0a0673207880cd49656c31"
@@ -32,9 +32,9 @@
       "intersections": []
     },
     {
-      "pose": "fl_hip_roll=-0.150",
+      "pose": "fl_hip_roll=-0.105",
       "q": {
-        "fl_hip_roll": -0.15,
+        "fl_hip_roll": -0.10471975511965978,
         "fl_hip_pitch": -0.3205862932421793,
         "fl_knee": 0.6563039114886379,
         "fr_hip_roll": 0.0,
@@ -54,9 +54,9 @@
       "intersections": []
     },
     {
-      "pose": "fl_hip_roll=-0.100",
+      "pose": "fl_hip_roll=0.044",
       "q": {
-        "fl_hip_roll": -0.1,
+        "fl_hip_roll": 0.043633231299858244,
         "fl_hip_pitch": -0.3205862932421793,
         "fl_knee": 0.6563039114886379,
         "fr_hip_roll": 0.0,
@@ -76,9 +76,9 @@
       "intersections": []
     },
     {
-      "pose": "fl_hip_roll=-0.050",
+      "pose": "fl_hip_roll=0.192",
       "q": {
-        "fl_hip_roll": -0.05,
+        "fl_hip_roll": 0.19198621771937627,
         "fl_hip_pitch": -0.3205862932421793,
         "fl_knee": 0.6563039114886379,
         "fr_hip_roll": 0.0,
@@ -98,9 +98,9 @@
       "intersections": []
     },
     {
-      "pose": "fl_hip_roll=0.000",
+      "pose": "fl_hip_roll=0.340",
       "q": {
-        "fl_hip_roll": 0.0,
+        "fl_hip_roll": 0.3403392041388943,
         "fl_hip_pitch": -0.3205862932421793,
         "fl_knee": 0.6563039114886379,
         "fr_hip_roll": 0.0,
@@ -120,9 +120,9 @@
       "intersections": []
     },
     {
-      "pose": "fl_hip_roll=0.050",
+      "pose": "fl_hip_roll=0.489",
       "q": {
-        "fl_hip_roll": 0.04999999999999999,
+        "fl_hip_roll": 0.4886921905584123,
         "fl_hip_pitch": -0.3205862932421793,
         "fl_knee": 0.6563039114886379,
         "fr_hip_roll": 0.0,
@@ -142,9 +142,9 @@
       "intersections": []
     },
     {
-      "pose": "fl_hip_roll=0.100",
+      "pose": "fl_hip_roll=0.637",
       "q": {
-        "fl_hip_roll": 0.09999999999999998,
+        "fl_hip_roll": 0.6370451769779303,
         "fl_hip_pitch": -0.3205862932421793,
         "fl_knee": 0.6563039114886379,
         "fr_hip_roll": 0.0,
@@ -164,9 +164,9 @@
       "intersections": []
     },
     {
-      "pose": "fl_hip_roll=0.150",
+      "pose": "fl_hip_roll=0.785",
       "q": {
-        "fl_hip_roll": 0.15,
+        "fl_hip_roll": 0.7853981633974483,
         "fl_hip_pitch": -0.3205862932421793,
         "fl_knee": 0.6563039114886379,
         "fr_hip_roll": 0.0,
@@ -494,12 +494,12 @@
       "intersections": []
     },
     {
-      "pose": "fr_hip_roll=-0.150",
+      "pose": "fr_hip_roll=-0.785",
       "q": {
         "fl_hip_roll": 0.0,
         "fl_hip_pitch": -0.3205862932421793,
         "fl_knee": 0.6563039114886379,
-        "fr_hip_roll": -0.15,
+        "fr_hip_roll": -0.7853981633974483,
         "fr_hip_pitch": -0.3205862932421793,
         "fr_knee": 0.6563039114886379,
         "rl_hip_roll": 0.0,
@@ -516,12 +516,12 @@
       "intersections": []
     },
     {
-      "pose": "fr_hip_roll=-0.100",
+      "pose": "fr_hip_roll=-0.637",
       "q": {
         "fl_hip_roll": 0.0,
         "fl_hip_pitch": -0.3205862932421793,
         "fl_knee": 0.6563039114886379,
-        "fr_hip_roll": -0.1,
+        "fr_hip_roll": -0.6370451769779303,
         "fr_hip_pitch": -0.3205862932421793,
         "fr_knee": 0.6563039114886379,
         "rl_hip_roll": 0.0,
@@ -538,12 +538,12 @@
       "intersections": []
     },
     {
-      "pose": "fr_hip_roll=-0.050",
+      "pose": "fr_hip_roll=-0.489",
       "q": {
         "fl_hip_roll": 0.0,
         "fl_hip_pitch": -0.3205862932421793,
         "fl_knee": 0.6563039114886379,
-        "fr_hip_roll": -0.05,
+        "fr_hip_roll": -0.48869219055841223,
         "fr_hip_pitch": -0.3205862932421793,
         "fr_knee": 0.6563039114886379,
         "rl_hip_roll": 0.0,
@@ -560,12 +560,12 @@
       "intersections": []
     },
     {
-      "pose": "fr_hip_roll=0.000",
+      "pose": "fr_hip_roll=-0.340",
       "q": {
         "fl_hip_roll": 0.0,
         "fl_hip_pitch": -0.3205862932421793,
         "fl_knee": 0.6563039114886379,
-        "fr_hip_roll": 0.0,
+        "fr_hip_roll": -0.3403392041388942,
         "fr_hip_pitch": -0.3205862932421793,
         "fr_knee": 0.6563039114886379,
         "rl_hip_roll": 0.0,
@@ -582,12 +582,12 @@
       "intersections": []
     },
     {
-      "pose": "fr_hip_roll=0.050",
+      "pose": "fr_hip_roll=-0.192",
       "q": {
         "fl_hip_roll": 0.0,
         "fl_hip_pitch": -0.3205862932421793,
         "fl_knee": 0.6563039114886379,
-        "fr_hip_roll": 0.04999999999999999,
+        "fr_hip_roll": -0.19198621771937618,
         "fr_hip_pitch": -0.3205862932421793,
         "fr_knee": 0.6563039114886379,
         "rl_hip_roll": 0.0,
@@ -604,12 +604,12 @@
       "intersections": []
     },
     {
-      "pose": "fr_hip_roll=0.100",
+      "pose": "fr_hip_roll=-0.044",
       "q": {
         "fl_hip_roll": 0.0,
         "fl_hip_pitch": -0.3205862932421793,
         "fl_knee": 0.6563039114886379,
-        "fr_hip_roll": 0.09999999999999998,
+        "fr_hip_roll": -0.04363323129985819,
         "fr_hip_pitch": -0.3205862932421793,
         "fr_knee": 0.6563039114886379,
         "rl_hip_roll": 0.0,
@@ -626,12 +626,12 @@
       "intersections": []
     },
     {
-      "pose": "fr_hip_roll=0.150",
+      "pose": "fr_hip_roll=0.105",
       "q": {
         "fl_hip_roll": 0.0,
         "fl_hip_pitch": -0.3205862932421793,
         "fl_knee": 0.6563039114886379,
-        "fr_hip_roll": 0.15,
+        "fr_hip_roll": 0.10471975511965978,
         "fr_hip_pitch": -0.3205862932421793,
         "fr_knee": 0.6563039114886379,
         "rl_hip_roll": 0.0,
@@ -956,7 +956,7 @@
       "intersections": []
     },
     {
-      "pose": "rl_hip_roll=-0.150",
+      "pose": "rl_hip_roll=-0.105",
       "q": {
         "fl_hip_roll": 0.0,
         "fl_hip_pitch": -0.3205862932421793,
@@ -964,7 +964,7 @@
         "fr_hip_roll": 0.0,
         "fr_hip_pitch": -0.3205862932421793,
         "fr_knee": 0.6563039114886379,
-        "rl_hip_roll": -0.15,
+        "rl_hip_roll": -0.10471975511965978,
         "rl_hip_pitch": -0.3205862932421793,
         "rl_knee": 0.6563039114886379,
         "rr_hip_roll": 0.0,
@@ -978,7 +978,7 @@
       "intersections": []
     },
     {
-      "pose": "rl_hip_roll=-0.100",
+      "pose": "rl_hip_roll=0.044",
       "q": {
         "fl_hip_roll": 0.0,
         "fl_hip_pitch": -0.3205862932421793,
@@ -986,7 +986,7 @@
         "fr_hip_roll": 0.0,
         "fr_hip_pitch": -0.3205862932421793,
         "fr_knee": 0.6563039114886379,
-        "rl_hip_roll": -0.1,
+        "rl_hip_roll": 0.043633231299858244,
         "rl_hip_pitch": -0.3205862932421793,
         "rl_knee": 0.6563039114886379,
         "rr_hip_roll": 0.0,
@@ -1000,7 +1000,7 @@
       "intersections": []
     },
     {
-      "pose": "rl_hip_roll=-0.050",
+      "pose": "rl_hip_roll=0.192",
       "q": {
         "fl_hip_roll": 0.0,
         "fl_hip_pitch": -0.3205862932421793,
@@ -1008,7 +1008,7 @@
         "fr_hip_roll": 0.0,
         "fr_hip_pitch": -0.3205862932421793,
         "fr_knee": 0.6563039114886379,
-        "rl_hip_roll": -0.05,
+        "rl_hip_roll": 0.19198621771937627,
         "rl_hip_pitch": -0.3205862932421793,
         "rl_knee": 0.6563039114886379,
         "rr_hip_roll": 0.0,
@@ -1022,7 +1022,7 @@
       "intersections": []
     },
     {
-      "pose": "rl_hip_roll=0.000",
+      "pose": "rl_hip_roll=0.340",
       "q": {
         "fl_hip_roll": 0.0,
         "fl_hip_pitch": -0.3205862932421793,
@@ -1030,7 +1030,7 @@
         "fr_hip_roll": 0.0,
         "fr_hip_pitch": -0.3205862932421793,
         "fr_knee": 0.6563039114886379,
-        "rl_hip_roll": 0.0,
+        "rl_hip_roll": 0.3403392041388943,
         "rl_hip_pitch": -0.3205862932421793,
         "rl_knee": 0.6563039114886379,
         "rr_hip_roll": 0.0,
@@ -1044,7 +1044,7 @@
       "intersections": []
     },
     {
-      "pose": "rl_hip_roll=0.050",
+      "pose": "rl_hip_roll=0.489",
       "q": {
         "fl_hip_roll": 0.0,
         "fl_hip_pitch": -0.3205862932421793,
@@ -1052,7 +1052,7 @@
         "fr_hip_roll": 0.0,
         "fr_hip_pitch": -0.3205862932421793,
         "fr_knee": 0.6563039114886379,
-        "rl_hip_roll": 0.04999999999999999,
+        "rl_hip_roll": 0.4886921905584123,
         "rl_hip_pitch": -0.3205862932421793,
         "rl_knee": 0.6563039114886379,
         "rr_hip_roll": 0.0,
@@ -1066,7 +1066,7 @@
       "intersections": []
     },
     {
-      "pose": "rl_hip_roll=0.100",
+      "pose": "rl_hip_roll=0.637",
       "q": {
         "fl_hip_roll": 0.0,
         "fl_hip_pitch": -0.3205862932421793,
@@ -1074,7 +1074,7 @@
         "fr_hip_roll": 0.0,
         "fr_hip_pitch": -0.3205862932421793,
         "fr_knee": 0.6563039114886379,
-        "rl_hip_roll": 0.09999999999999998,
+        "rl_hip_roll": 0.6370451769779303,
         "rl_hip_pitch": -0.3205862932421793,
         "rl_knee": 0.6563039114886379,
         "rr_hip_roll": 0.0,
@@ -1088,7 +1088,7 @@
       "intersections": []
     },
     {
-      "pose": "rl_hip_roll=0.150",
+      "pose": "rl_hip_roll=0.785",
       "q": {
         "fl_hip_roll": 0.0,
         "fl_hip_pitch": -0.3205862932421793,
@@ -1096,7 +1096,7 @@
         "fr_hip_roll": 0.0,
         "fr_hip_pitch": -0.3205862932421793,
         "fr_knee": 0.6563039114886379,
-        "rl_hip_roll": 0.15,
+        "rl_hip_roll": 0.7853981633974483,
         "rl_hip_pitch": -0.3205862932421793,
         "rl_knee": 0.6563039114886379,
         "rr_hip_roll": 0.0,
@@ -1418,7 +1418,7 @@
       "intersections": []
     },
     {
-      "pose": "rr_hip_roll=-0.150",
+      "pose": "rr_hip_roll=-0.785",
       "q": {
         "fl_hip_roll": 0.0,
         "fl_hip_pitch": -0.3205862932421793,
@@ -1429,7 +1429,7 @@
         "rl_hip_roll": 0.0,
         "rl_hip_pitch": -0.3205862932421793,
         "rl_knee": 0.6563039114886379,
-        "rr_hip_roll": -0.15,
+        "rr_hip_roll": -0.7853981633974483,
         "rr_hip_pitch": -0.3205862932421793,
         "rr_knee": 0.6563039114886379,
         "head_yaw": 0.0,
@@ -1440,7 +1440,7 @@
       "intersections": []
     },
     {
-      "pose": "rr_hip_roll=-0.100",
+      "pose": "rr_hip_roll=-0.637",
       "q": {
         "fl_hip_roll": 0.0,
         "fl_hip_pitch": -0.3205862932421793,
@@ -1451,7 +1451,7 @@
         "rl_hip_roll": 0.0,
         "rl_hip_pitch": -0.3205862932421793,
         "rl_knee": 0.6563039114886379,
-        "rr_hip_roll": -0.1,
+        "rr_hip_roll": -0.6370451769779303,
         "rr_hip_pitch": -0.3205862932421793,
         "rr_knee": 0.6563039114886379,
         "head_yaw": 0.0,
@@ -1462,7 +1462,7 @@
       "intersections": []
     },
     {
-      "pose": "rr_hip_roll=-0.050",
+      "pose": "rr_hip_roll=-0.489",
       "q": {
         "fl_hip_roll": 0.0,
         "fl_hip_pitch": -0.3205862932421793,
@@ -1473,7 +1473,7 @@
         "rl_hip_roll": 0.0,
         "rl_hip_pitch": -0.3205862932421793,
         "rl_knee": 0.6563039114886379,
-        "rr_hip_roll": -0.05,
+        "rr_hip_roll": -0.48869219055841223,
         "rr_hip_pitch": -0.3205862932421793,
         "rr_knee": 0.6563039114886379,
         "head_yaw": 0.0,
@@ -1484,7 +1484,7 @@
       "intersections": []
     },
     {
-      "pose": "rr_hip_roll=0.000",
+      "pose": "rr_hip_roll=-0.340",
       "q": {
         "fl_hip_roll": 0.0,
         "fl_hip_pitch": -0.3205862932421793,
@@ -1495,7 +1495,7 @@
         "rl_hip_roll": 0.0,
         "rl_hip_pitch": -0.3205862932421793,
         "rl_knee": 0.6563039114886379,
-        "rr_hip_roll": 0.0,
+        "rr_hip_roll": -0.3403392041388942,
         "rr_hip_pitch": -0.3205862932421793,
         "rr_knee": 0.6563039114886379,
         "head_yaw": 0.0,
@@ -1506,7 +1506,7 @@
       "intersections": []
     },
     {
-      "pose": "rr_hip_roll=0.050",
+      "pose": "rr_hip_roll=-0.192",
       "q": {
         "fl_hip_roll": 0.0,
         "fl_hip_pitch": -0.3205862932421793,
@@ -1517,7 +1517,7 @@
         "rl_hip_roll": 0.0,
         "rl_hip_pitch": -0.3205862932421793,
         "rl_knee": 0.6563039114886379,
-        "rr_hip_roll": 0.04999999999999999,
+        "rr_hip_roll": -0.19198621771937618,
         "rr_hip_pitch": -0.3205862932421793,
         "rr_knee": 0.6563039114886379,
         "head_yaw": 0.0,
@@ -1528,7 +1528,7 @@
       "intersections": []
     },
     {
-      "pose": "rr_hip_roll=0.100",
+      "pose": "rr_hip_roll=-0.044",
       "q": {
         "fl_hip_roll": 0.0,
         "fl_hip_pitch": -0.3205862932421793,
@@ -1539,7 +1539,7 @@
         "rl_hip_roll": 0.0,
         "rl_hip_pitch": -0.3205862932421793,
         "rl_knee": 0.6563039114886379,
-        "rr_hip_roll": 0.09999999999999998,
+        "rr_hip_roll": -0.04363323129985819,
         "rr_hip_pitch": -0.3205862932421793,
         "rr_knee": 0.6563039114886379,
         "head_yaw": 0.0,
@@ -1550,7 +1550,7 @@
       "intersections": []
     },
     {
-      "pose": "rr_hip_roll=0.150",
+      "pose": "rr_hip_roll=0.105",
       "q": {
         "fl_hip_roll": 0.0,
         "fl_hip_pitch": -0.3205862932421793,
@@ -1561,7 +1561,7 @@
         "rl_hip_roll": 0.0,
         "rl_hip_pitch": -0.3205862932421793,
         "rl_knee": 0.6563039114886379,
-        "rr_hip_roll": 0.15,
+        "rr_hip_roll": 0.10471975511965978,
         "rr_hip_pitch": -0.3205862932421793,
         "rr_knee": 0.6563039114886379,
         "head_yaw": 0.0,
@@ -3082,6 +3082,996 @@
         "rr_hip_roll": 0.0,
         "rr_hip_pitch": -0.9,
         "rr_knee": 1.75,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/standing/all/-6",
+      "q": {
+        "fl_hip_roll": -0.10471975511965978,
+        "fl_hip_pitch": -0.3205862932421793,
+        "fl_knee": 0.6563039114886379,
+        "fr_hip_roll": 0.10471975511965978,
+        "fr_hip_pitch": -0.3205862932421793,
+        "fr_knee": 0.6563039114886379,
+        "rl_hip_roll": -0.10471975511965978,
+        "rl_hip_pitch": -0.3205862932421793,
+        "rl_knee": 0.6563039114886379,
+        "rr_hip_roll": 0.10471975511965978,
+        "rr_hip_pitch": -0.3205862932421793,
+        "rr_knee": 0.6563039114886379,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/standing/left/-6",
+      "q": {
+        "fl_hip_roll": -0.10471975511965978,
+        "fl_hip_pitch": -0.3205862932421793,
+        "fl_knee": 0.6563039114886379,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -0.3205862932421793,
+        "fr_knee": 0.6563039114886379,
+        "rl_hip_roll": -0.10471975511965978,
+        "rl_hip_pitch": -0.3205862932421793,
+        "rl_knee": 0.6563039114886379,
+        "rr_hip_roll": 0.0,
+        "rr_hip_pitch": -0.3205862932421793,
+        "rr_knee": 0.6563039114886379,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/standing/diagonal/-6",
+      "q": {
+        "fl_hip_roll": -0.10471975511965978,
+        "fl_hip_pitch": -0.3205862932421793,
+        "fl_knee": 0.6563039114886379,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -0.3205862932421793,
+        "fr_knee": 0.6563039114886379,
+        "rl_hip_roll": 0.0,
+        "rl_hip_pitch": -0.3205862932421793,
+        "rl_knee": 0.6563039114886379,
+        "rr_hip_roll": 0.10471975511965978,
+        "rr_hip_pitch": -0.3205862932421793,
+        "rr_knee": 0.6563039114886379,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/standing/all/0",
+      "q": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.3205862932421793,
+        "fl_knee": 0.6563039114886379,
+        "fr_hip_roll": -0.0,
+        "fr_hip_pitch": -0.3205862932421793,
+        "fr_knee": 0.6563039114886379,
+        "rl_hip_roll": 0.0,
+        "rl_hip_pitch": -0.3205862932421793,
+        "rl_knee": 0.6563039114886379,
+        "rr_hip_roll": -0.0,
+        "rr_hip_pitch": -0.3205862932421793,
+        "rr_knee": 0.6563039114886379,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/standing/left/0",
+      "q": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.3205862932421793,
+        "fl_knee": 0.6563039114886379,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -0.3205862932421793,
+        "fr_knee": 0.6563039114886379,
+        "rl_hip_roll": 0.0,
+        "rl_hip_pitch": -0.3205862932421793,
+        "rl_knee": 0.6563039114886379,
+        "rr_hip_roll": 0.0,
+        "rr_hip_pitch": -0.3205862932421793,
+        "rr_knee": 0.6563039114886379,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/standing/diagonal/0",
+      "q": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.3205862932421793,
+        "fl_knee": 0.6563039114886379,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -0.3205862932421793,
+        "fr_knee": 0.6563039114886379,
+        "rl_hip_roll": 0.0,
+        "rl_hip_pitch": -0.3205862932421793,
+        "rl_knee": 0.6563039114886379,
+        "rr_hip_roll": -0.0,
+        "rr_hip_pitch": -0.3205862932421793,
+        "rr_knee": 0.6563039114886379,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/standing/all/15",
+      "q": {
+        "fl_hip_roll": 0.2617993877991494,
+        "fl_hip_pitch": -0.3205862932421793,
+        "fl_knee": 0.6563039114886379,
+        "fr_hip_roll": -0.2617993877991494,
+        "fr_hip_pitch": -0.3205862932421793,
+        "fr_knee": 0.6563039114886379,
+        "rl_hip_roll": 0.2617993877991494,
+        "rl_hip_pitch": -0.3205862932421793,
+        "rl_knee": 0.6563039114886379,
+        "rr_hip_roll": -0.2617993877991494,
+        "rr_hip_pitch": -0.3205862932421793,
+        "rr_knee": 0.6563039114886379,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/standing/left/15",
+      "q": {
+        "fl_hip_roll": 0.2617993877991494,
+        "fl_hip_pitch": -0.3205862932421793,
+        "fl_knee": 0.6563039114886379,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -0.3205862932421793,
+        "fr_knee": 0.6563039114886379,
+        "rl_hip_roll": 0.2617993877991494,
+        "rl_hip_pitch": -0.3205862932421793,
+        "rl_knee": 0.6563039114886379,
+        "rr_hip_roll": 0.0,
+        "rr_hip_pitch": -0.3205862932421793,
+        "rr_knee": 0.6563039114886379,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/standing/diagonal/15",
+      "q": {
+        "fl_hip_roll": 0.2617993877991494,
+        "fl_hip_pitch": -0.3205862932421793,
+        "fl_knee": 0.6563039114886379,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -0.3205862932421793,
+        "fr_knee": 0.6563039114886379,
+        "rl_hip_roll": 0.0,
+        "rl_hip_pitch": -0.3205862932421793,
+        "rl_knee": 0.6563039114886379,
+        "rr_hip_roll": -0.2617993877991494,
+        "rr_hip_pitch": -0.3205862932421793,
+        "rr_knee": 0.6563039114886379,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/standing/all/30",
+      "q": {
+        "fl_hip_roll": 0.5235987755982988,
+        "fl_hip_pitch": -0.3205862932421793,
+        "fl_knee": 0.6563039114886379,
+        "fr_hip_roll": -0.5235987755982988,
+        "fr_hip_pitch": -0.3205862932421793,
+        "fr_knee": 0.6563039114886379,
+        "rl_hip_roll": 0.5235987755982988,
+        "rl_hip_pitch": -0.3205862932421793,
+        "rl_knee": 0.6563039114886379,
+        "rr_hip_roll": -0.5235987755982988,
+        "rr_hip_pitch": -0.3205862932421793,
+        "rr_knee": 0.6563039114886379,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/standing/left/30",
+      "q": {
+        "fl_hip_roll": 0.5235987755982988,
+        "fl_hip_pitch": -0.3205862932421793,
+        "fl_knee": 0.6563039114886379,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -0.3205862932421793,
+        "fr_knee": 0.6563039114886379,
+        "rl_hip_roll": 0.5235987755982988,
+        "rl_hip_pitch": -0.3205862932421793,
+        "rl_knee": 0.6563039114886379,
+        "rr_hip_roll": 0.0,
+        "rr_hip_pitch": -0.3205862932421793,
+        "rr_knee": 0.6563039114886379,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/standing/diagonal/30",
+      "q": {
+        "fl_hip_roll": 0.5235987755982988,
+        "fl_hip_pitch": -0.3205862932421793,
+        "fl_knee": 0.6563039114886379,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -0.3205862932421793,
+        "fr_knee": 0.6563039114886379,
+        "rl_hip_roll": 0.0,
+        "rl_hip_pitch": -0.3205862932421793,
+        "rl_knee": 0.6563039114886379,
+        "rr_hip_roll": -0.5235987755982988,
+        "rr_hip_pitch": -0.3205862932421793,
+        "rr_knee": 0.6563039114886379,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/standing/all/45",
+      "q": {
+        "fl_hip_roll": 0.7853981633974483,
+        "fl_hip_pitch": -0.3205862932421793,
+        "fl_knee": 0.6563039114886379,
+        "fr_hip_roll": -0.7853981633974483,
+        "fr_hip_pitch": -0.3205862932421793,
+        "fr_knee": 0.6563039114886379,
+        "rl_hip_roll": 0.7853981633974483,
+        "rl_hip_pitch": -0.3205862932421793,
+        "rl_knee": 0.6563039114886379,
+        "rr_hip_roll": -0.7853981633974483,
+        "rr_hip_pitch": -0.3205862932421793,
+        "rr_knee": 0.6563039114886379,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/standing/left/45",
+      "q": {
+        "fl_hip_roll": 0.7853981633974483,
+        "fl_hip_pitch": -0.3205862932421793,
+        "fl_knee": 0.6563039114886379,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -0.3205862932421793,
+        "fr_knee": 0.6563039114886379,
+        "rl_hip_roll": 0.7853981633974483,
+        "rl_hip_pitch": -0.3205862932421793,
+        "rl_knee": 0.6563039114886379,
+        "rr_hip_roll": 0.0,
+        "rr_hip_pitch": -0.3205862932421793,
+        "rr_knee": 0.6563039114886379,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/standing/diagonal/45",
+      "q": {
+        "fl_hip_roll": 0.7853981633974483,
+        "fl_hip_pitch": -0.3205862932421793,
+        "fl_knee": 0.6563039114886379,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -0.3205862932421793,
+        "fr_knee": 0.6563039114886379,
+        "rl_hip_roll": 0.0,
+        "rl_hip_pitch": -0.3205862932421793,
+        "rl_knee": 0.6563039114886379,
+        "rr_hip_roll": -0.7853981633974483,
+        "rr_hip_pitch": -0.3205862932421793,
+        "rr_knee": 0.6563039114886379,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/folded/all/-6",
+      "q": {
+        "fl_hip_roll": -0.10471975511965978,
+        "fl_hip_pitch": -1.2,
+        "fl_knee": 2.05,
+        "fr_hip_roll": 0.10471975511965978,
+        "fr_hip_pitch": -1.2,
+        "fr_knee": 2.05,
+        "rl_hip_roll": -0.10471975511965978,
+        "rl_hip_pitch": -1.2,
+        "rl_knee": 2.05,
+        "rr_hip_roll": 0.10471975511965978,
+        "rr_hip_pitch": -1.2,
+        "rr_knee": 2.05,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/folded/left/-6",
+      "q": {
+        "fl_hip_roll": -0.10471975511965978,
+        "fl_hip_pitch": -1.2,
+        "fl_knee": 2.05,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -1.2,
+        "fr_knee": 2.05,
+        "rl_hip_roll": -0.10471975511965978,
+        "rl_hip_pitch": -1.2,
+        "rl_knee": 2.05,
+        "rr_hip_roll": 0.0,
+        "rr_hip_pitch": -1.2,
+        "rr_knee": 2.05,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/folded/diagonal/-6",
+      "q": {
+        "fl_hip_roll": -0.10471975511965978,
+        "fl_hip_pitch": -1.2,
+        "fl_knee": 2.05,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -1.2,
+        "fr_knee": 2.05,
+        "rl_hip_roll": 0.0,
+        "rl_hip_pitch": -1.2,
+        "rl_knee": 2.05,
+        "rr_hip_roll": 0.10471975511965978,
+        "rr_hip_pitch": -1.2,
+        "rr_knee": 2.05,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/folded/all/0",
+      "q": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -1.2,
+        "fl_knee": 2.05,
+        "fr_hip_roll": -0.0,
+        "fr_hip_pitch": -1.2,
+        "fr_knee": 2.05,
+        "rl_hip_roll": 0.0,
+        "rl_hip_pitch": -1.2,
+        "rl_knee": 2.05,
+        "rr_hip_roll": -0.0,
+        "rr_hip_pitch": -1.2,
+        "rr_knee": 2.05,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/folded/left/0",
+      "q": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -1.2,
+        "fl_knee": 2.05,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -1.2,
+        "fr_knee": 2.05,
+        "rl_hip_roll": 0.0,
+        "rl_hip_pitch": -1.2,
+        "rl_knee": 2.05,
+        "rr_hip_roll": 0.0,
+        "rr_hip_pitch": -1.2,
+        "rr_knee": 2.05,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/folded/diagonal/0",
+      "q": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -1.2,
+        "fl_knee": 2.05,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -1.2,
+        "fr_knee": 2.05,
+        "rl_hip_roll": 0.0,
+        "rl_hip_pitch": -1.2,
+        "rl_knee": 2.05,
+        "rr_hip_roll": -0.0,
+        "rr_hip_pitch": -1.2,
+        "rr_knee": 2.05,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/folded/all/15",
+      "q": {
+        "fl_hip_roll": 0.2617993877991494,
+        "fl_hip_pitch": -1.2,
+        "fl_knee": 2.05,
+        "fr_hip_roll": -0.2617993877991494,
+        "fr_hip_pitch": -1.2,
+        "fr_knee": 2.05,
+        "rl_hip_roll": 0.2617993877991494,
+        "rl_hip_pitch": -1.2,
+        "rl_knee": 2.05,
+        "rr_hip_roll": -0.2617993877991494,
+        "rr_hip_pitch": -1.2,
+        "rr_knee": 2.05,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/folded/left/15",
+      "q": {
+        "fl_hip_roll": 0.2617993877991494,
+        "fl_hip_pitch": -1.2,
+        "fl_knee": 2.05,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -1.2,
+        "fr_knee": 2.05,
+        "rl_hip_roll": 0.2617993877991494,
+        "rl_hip_pitch": -1.2,
+        "rl_knee": 2.05,
+        "rr_hip_roll": 0.0,
+        "rr_hip_pitch": -1.2,
+        "rr_knee": 2.05,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/folded/diagonal/15",
+      "q": {
+        "fl_hip_roll": 0.2617993877991494,
+        "fl_hip_pitch": -1.2,
+        "fl_knee": 2.05,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -1.2,
+        "fr_knee": 2.05,
+        "rl_hip_roll": 0.0,
+        "rl_hip_pitch": -1.2,
+        "rl_knee": 2.05,
+        "rr_hip_roll": -0.2617993877991494,
+        "rr_hip_pitch": -1.2,
+        "rr_knee": 2.05,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/folded/all/30",
+      "q": {
+        "fl_hip_roll": 0.5235987755982988,
+        "fl_hip_pitch": -1.2,
+        "fl_knee": 2.05,
+        "fr_hip_roll": -0.5235987755982988,
+        "fr_hip_pitch": -1.2,
+        "fr_knee": 2.05,
+        "rl_hip_roll": 0.5235987755982988,
+        "rl_hip_pitch": -1.2,
+        "rl_knee": 2.05,
+        "rr_hip_roll": -0.5235987755982988,
+        "rr_hip_pitch": -1.2,
+        "rr_knee": 2.05,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/folded/left/30",
+      "q": {
+        "fl_hip_roll": 0.5235987755982988,
+        "fl_hip_pitch": -1.2,
+        "fl_knee": 2.05,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -1.2,
+        "fr_knee": 2.05,
+        "rl_hip_roll": 0.5235987755982988,
+        "rl_hip_pitch": -1.2,
+        "rl_knee": 2.05,
+        "rr_hip_roll": 0.0,
+        "rr_hip_pitch": -1.2,
+        "rr_knee": 2.05,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/folded/diagonal/30",
+      "q": {
+        "fl_hip_roll": 0.5235987755982988,
+        "fl_hip_pitch": -1.2,
+        "fl_knee": 2.05,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -1.2,
+        "fr_knee": 2.05,
+        "rl_hip_roll": 0.0,
+        "rl_hip_pitch": -1.2,
+        "rl_knee": 2.05,
+        "rr_hip_roll": -0.5235987755982988,
+        "rr_hip_pitch": -1.2,
+        "rr_knee": 2.05,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/folded/all/45",
+      "q": {
+        "fl_hip_roll": 0.7853981633974483,
+        "fl_hip_pitch": -1.2,
+        "fl_knee": 2.05,
+        "fr_hip_roll": -0.7853981633974483,
+        "fr_hip_pitch": -1.2,
+        "fr_knee": 2.05,
+        "rl_hip_roll": 0.7853981633974483,
+        "rl_hip_pitch": -1.2,
+        "rl_knee": 2.05,
+        "rr_hip_roll": -0.7853981633974483,
+        "rr_hip_pitch": -1.2,
+        "rr_knee": 2.05,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/folded/left/45",
+      "q": {
+        "fl_hip_roll": 0.7853981633974483,
+        "fl_hip_pitch": -1.2,
+        "fl_knee": 2.05,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -1.2,
+        "fr_knee": 2.05,
+        "rl_hip_roll": 0.7853981633974483,
+        "rl_hip_pitch": -1.2,
+        "rl_knee": 2.05,
+        "rr_hip_roll": 0.0,
+        "rr_hip_pitch": -1.2,
+        "rr_knee": 2.05,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/folded/diagonal/45",
+      "q": {
+        "fl_hip_roll": 0.7853981633974483,
+        "fl_hip_pitch": -1.2,
+        "fl_knee": 2.05,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -1.2,
+        "fr_knee": 2.05,
+        "rl_hip_roll": 0.0,
+        "rl_hip_pitch": -1.2,
+        "rl_knee": 2.05,
+        "rr_hip_roll": -0.7853981633974483,
+        "rr_hip_pitch": -1.2,
+        "rr_knee": 2.05,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/extended/all/-6",
+      "q": {
+        "fl_hip_roll": -0.10471975511965978,
+        "fl_hip_pitch": -0.6,
+        "fl_knee": 1.2,
+        "fr_hip_roll": 0.10471975511965978,
+        "fr_hip_pitch": -0.6,
+        "fr_knee": 1.2,
+        "rl_hip_roll": -0.10471975511965978,
+        "rl_hip_pitch": -0.6,
+        "rl_knee": 1.2,
+        "rr_hip_roll": 0.10471975511965978,
+        "rr_hip_pitch": -0.6,
+        "rr_knee": 1.2,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/extended/left/-6",
+      "q": {
+        "fl_hip_roll": -0.10471975511965978,
+        "fl_hip_pitch": -0.6,
+        "fl_knee": 1.2,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -0.6,
+        "fr_knee": 1.2,
+        "rl_hip_roll": -0.10471975511965978,
+        "rl_hip_pitch": -0.6,
+        "rl_knee": 1.2,
+        "rr_hip_roll": 0.0,
+        "rr_hip_pitch": -0.6,
+        "rr_knee": 1.2,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/extended/diagonal/-6",
+      "q": {
+        "fl_hip_roll": -0.10471975511965978,
+        "fl_hip_pitch": -0.6,
+        "fl_knee": 1.2,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -0.6,
+        "fr_knee": 1.2,
+        "rl_hip_roll": 0.0,
+        "rl_hip_pitch": -0.6,
+        "rl_knee": 1.2,
+        "rr_hip_roll": 0.10471975511965978,
+        "rr_hip_pitch": -0.6,
+        "rr_knee": 1.2,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/extended/all/0",
+      "q": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.6,
+        "fl_knee": 1.2,
+        "fr_hip_roll": -0.0,
+        "fr_hip_pitch": -0.6,
+        "fr_knee": 1.2,
+        "rl_hip_roll": 0.0,
+        "rl_hip_pitch": -0.6,
+        "rl_knee": 1.2,
+        "rr_hip_roll": -0.0,
+        "rr_hip_pitch": -0.6,
+        "rr_knee": 1.2,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/extended/left/0",
+      "q": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.6,
+        "fl_knee": 1.2,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -0.6,
+        "fr_knee": 1.2,
+        "rl_hip_roll": 0.0,
+        "rl_hip_pitch": -0.6,
+        "rl_knee": 1.2,
+        "rr_hip_roll": 0.0,
+        "rr_hip_pitch": -0.6,
+        "rr_knee": 1.2,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/extended/diagonal/0",
+      "q": {
+        "fl_hip_roll": 0.0,
+        "fl_hip_pitch": -0.6,
+        "fl_knee": 1.2,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -0.6,
+        "fr_knee": 1.2,
+        "rl_hip_roll": 0.0,
+        "rl_hip_pitch": -0.6,
+        "rl_knee": 1.2,
+        "rr_hip_roll": -0.0,
+        "rr_hip_pitch": -0.6,
+        "rr_knee": 1.2,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/extended/all/15",
+      "q": {
+        "fl_hip_roll": 0.2617993877991494,
+        "fl_hip_pitch": -0.6,
+        "fl_knee": 1.2,
+        "fr_hip_roll": -0.2617993877991494,
+        "fr_hip_pitch": -0.6,
+        "fr_knee": 1.2,
+        "rl_hip_roll": 0.2617993877991494,
+        "rl_hip_pitch": -0.6,
+        "rl_knee": 1.2,
+        "rr_hip_roll": -0.2617993877991494,
+        "rr_hip_pitch": -0.6,
+        "rr_knee": 1.2,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/extended/left/15",
+      "q": {
+        "fl_hip_roll": 0.2617993877991494,
+        "fl_hip_pitch": -0.6,
+        "fl_knee": 1.2,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -0.6,
+        "fr_knee": 1.2,
+        "rl_hip_roll": 0.2617993877991494,
+        "rl_hip_pitch": -0.6,
+        "rl_knee": 1.2,
+        "rr_hip_roll": 0.0,
+        "rr_hip_pitch": -0.6,
+        "rr_knee": 1.2,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/extended/diagonal/15",
+      "q": {
+        "fl_hip_roll": 0.2617993877991494,
+        "fl_hip_pitch": -0.6,
+        "fl_knee": 1.2,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -0.6,
+        "fr_knee": 1.2,
+        "rl_hip_roll": 0.0,
+        "rl_hip_pitch": -0.6,
+        "rl_knee": 1.2,
+        "rr_hip_roll": -0.2617993877991494,
+        "rr_hip_pitch": -0.6,
+        "rr_knee": 1.2,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/extended/all/30",
+      "q": {
+        "fl_hip_roll": 0.5235987755982988,
+        "fl_hip_pitch": -0.6,
+        "fl_knee": 1.2,
+        "fr_hip_roll": -0.5235987755982988,
+        "fr_hip_pitch": -0.6,
+        "fr_knee": 1.2,
+        "rl_hip_roll": 0.5235987755982988,
+        "rl_hip_pitch": -0.6,
+        "rl_knee": 1.2,
+        "rr_hip_roll": -0.5235987755982988,
+        "rr_hip_pitch": -0.6,
+        "rr_knee": 1.2,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/extended/left/30",
+      "q": {
+        "fl_hip_roll": 0.5235987755982988,
+        "fl_hip_pitch": -0.6,
+        "fl_knee": 1.2,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -0.6,
+        "fr_knee": 1.2,
+        "rl_hip_roll": 0.5235987755982988,
+        "rl_hip_pitch": -0.6,
+        "rl_knee": 1.2,
+        "rr_hip_roll": 0.0,
+        "rr_hip_pitch": -0.6,
+        "rr_knee": 1.2,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/extended/diagonal/30",
+      "q": {
+        "fl_hip_roll": 0.5235987755982988,
+        "fl_hip_pitch": -0.6,
+        "fl_knee": 1.2,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -0.6,
+        "fr_knee": 1.2,
+        "rl_hip_roll": 0.0,
+        "rl_hip_pitch": -0.6,
+        "rl_knee": 1.2,
+        "rr_hip_roll": -0.5235987755982988,
+        "rr_hip_pitch": -0.6,
+        "rr_knee": 1.2,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/extended/all/45",
+      "q": {
+        "fl_hip_roll": 0.7853981633974483,
+        "fl_hip_pitch": -0.6,
+        "fl_knee": 1.2,
+        "fr_hip_roll": -0.7853981633974483,
+        "fr_hip_pitch": -0.6,
+        "fr_knee": 1.2,
+        "rl_hip_roll": 0.7853981633974483,
+        "rl_hip_pitch": -0.6,
+        "rl_knee": 1.2,
+        "rr_hip_roll": -0.7853981633974483,
+        "rr_hip_pitch": -0.6,
+        "rr_knee": 1.2,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/extended/left/45",
+      "q": {
+        "fl_hip_roll": 0.7853981633974483,
+        "fl_hip_pitch": -0.6,
+        "fl_knee": 1.2,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -0.6,
+        "fr_knee": 1.2,
+        "rl_hip_roll": 0.7853981633974483,
+        "rl_hip_pitch": -0.6,
+        "rl_knee": 1.2,
+        "rr_hip_roll": 0.0,
+        "rr_hip_pitch": -0.6,
+        "rr_knee": 1.2,
+        "head_yaw": 0.0,
+        "head_pitch": 0.0,
+        "ear_left": 0.0,
+        "ear_right": 0.0
+      },
+      "intersections": []
+    },
+    {
+      "pose": "recovery_abduction/extended/diagonal/45",
+      "q": {
+        "fl_hip_roll": 0.7853981633974483,
+        "fl_hip_pitch": -0.6,
+        "fl_knee": 1.2,
+        "fr_hip_roll": 0.0,
+        "fr_hip_pitch": -0.6,
+        "fr_knee": 1.2,
+        "rl_hip_roll": 0.0,
+        "rl_hip_pitch": -0.6,
+        "rl_knee": 1.2,
+        "rr_hip_roll": -0.7853981633974483,
+        "rr_hip_pitch": -0.6,
+        "rr_knee": 1.2,
         "head_yaw": 0.0,
         "head_pitch": 0.0,
         "ear_left": 0.0,

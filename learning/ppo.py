@@ -258,7 +258,7 @@ def _checkpoint(path: Path, model: Policy, optimizer, config: TrainConfig,
         "curriculum_env_steps": curriculum_env_steps,
     }
     project = Path(__file__).resolve().parent.parent
-    tracked = ("config/robot.yaml", "simulation/generated/sweetie_mini.xml", "learning/env.py", "learning/native.cpp", "learning/ppo.py", "learning/speed_profile.py", "learning/sensors.py", "learning/rewards.py", "learning/curriculum.py", "learning/transfer.py", "learning/distill.py", "learning/recipe_bootstrap.py", "hardware/observation.py", "hardware/policy_observation.py")
+    tracked = ("config/robot.yaml", "simulation/generated/sweetie_mini.xml", "learning/env.py", "learning/native.cpp", "learning/ppo.py", "learning/speed_profile.py", "learning/sensors.py", "learning/rewards.py", "learning/curriculum.py", "learning/transfer.py", "learning/distill.py", "learning/recipe_bootstrap.py", "learning/joint_limit_transfer.py", "hardware/observation.py", "hardware/policy_observation.py")
     saved["source_hashes"] = {name: hashlib.sha256((project/name).read_bytes()).hexdigest()
                               for name in tracked if (project/name).exists()}
     if env is not None:

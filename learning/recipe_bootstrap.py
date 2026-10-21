@@ -16,7 +16,7 @@ from learning.ppo import TrainConfig, _checkpoint, policy_for_env
 from learning.transfer import validate_initializer
 
 
-def export(donor, source, output, task):
+def export(donor, source, output, task, *, joint_limit_transfer=False):
     raw=Path(donor).read_bytes()
     saved=torch.load(io.BytesIO(raw),map_location='cpu',weights_only=False)
     if saved.get('config',{}).get('task')!=task:
@@ -26,7 +26,7 @@ def export(donor, source, output, task):
     torch.set_num_threads(1);torch.manual_seed(37)
     env=SweetieVecEnv(task=task,num_envs=1,threads=1,randomize=False,
                      auto_reset=False,observation_mode='compact')
-    provenance=validate_initializer(saved,env,source)
+    provenance=validate_initializer(saved,env,source,joint_limit_transfer=joint_limit_transfer)
     model=policy_for_env(env)
     actor_keys={k:v for k,v in saved['policy'].items()
                 if k=='log_std' or k.startswith(('actor.','normalizer.'))}
@@ -51,7 +51,8 @@ def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--donor',required=True);p.add_argument('--source',required=True)
     p.add_argument('--out',required=True);p.add_argument('--task',choices=('locomotion','recovery','running'),required=True)
-    a=p.parse_args();print(export(a.donor,a.source,a.out,a.task),flush=True)
+    p.add_argument('--joint-limit-transfer',action='store_true',help='Explicit actor-only transfer after joint-limit-only mechanical revalidation')
+    a=p.parse_args();print(export(a.donor,a.source,a.out,a.task,joint_limit_transfer=a.joint_limit_transfer),flush=True)
 
 
 if __name__=='__main__':main()

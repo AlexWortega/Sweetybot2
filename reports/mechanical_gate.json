@@ -2,7 +2,7 @@
   "passed": true,
   "status": "SAMPLED_DIGITAL_GEOMETRY_ACCEPTED",
   "all_link_pairs_checked": true,
-  "sampled_poses": 140,
+  "sampled_poses": 185,
   "scope": "All separate physical components at fixed-link assembly and all cross-link surface pairs in the declared home, individual joint, coordinated gait and recovery-reset cohort. Exact solid intersections confirm FCL triangle candidates. This is sampled geometry, not continuous collision detection or all joint combinations.",
   "fabrication_approved": false,
   "physical_validation": "not run",
@@ -15,17 +15,19 @@
     "real firmware, drivers and sensor timing"
   ],
   "source_sha256": {
-    "config/robot.yaml": "7918107f94a430abcd70efedb5671ee4edd806befe7343eeaa28fdb5b398ab08",
-    "simulation/model.py": "542b6e6aca85ee183c502be3ccfef4d2167bf70cc23cd9c044e40c4ebb947b66",
+    "config/robot.yaml": "b207c4f7ec2d1eef5a61ac94898162c34d67b2b1c55e112d5dc6e279d61426da",
+    "simulation/model.py": "64d5ed3f7688ecdb8711517069ca1a361bf8b0791dfbfe798c9ff71b29d3975b",
     "cad/src/lib/shapes.py": "21aeb0ca0604ed4da6e557988d449149189db758f78d3123ec9f0040228e8ca4",
     "cad/src/lib/sensors_face.py": "7148d93c61fa3bc742fead75e10f87bad4f528b4981de4efdb32bd309cf12b94",
     "cad/src/lib/actuation_v05.py": "7aea4d12aeefd98c00fbade2e5e2a79ae5b7efceac0a0673207880cd49656c31",
-    "reports/static_fit.json": "46d88e0298e8e6c742fb029f9c95354cc7e683a9b7e446dcc264de1dffd98b08",
-    "reports/full_motion_audit.json": "968f0364d4fd3660d25940a908a8737b7e6119f159ee6582fe83dbaf61bab3e9",
+    "reports/static_fit.json": "b75c8bb6066207a611b70d903b3ed607fdc0bdfaa41d82a388edf07cc79f2943",
+    "reports/full_motion_audit.json": "c73dac320c6e25c581f1519cc780797a03549eb1633bca41e3a00d56fcb1e73a",
+    "reports/fcl_motion_candidates.json": "25cacdf018201debcdeeaf195c3b22e6a316a5bcc69d6cc6dc1ae6c70de92bf2",
     "scripts/audit_inputs.py": "3508a99a0af25a5fddf9bef03dfa0e0f78b3174a5fb09e329260a6d5afdafb32",
+    "scripts/find_motion_candidates.py": "d88b21c72faf2b0a545726d0b0abb86eb758242a9d95b42509bb3611003b26dd",
     "scripts/check_assembly_fits.py": "e14bb7bf8dd09d0ab9dc780a9b3a763516ba0a68b77eb106e8268f2a9f6b4e37",
     "scripts/check_motion_candidates.py": "9f9edf9d98df97003c492fef3ded242647489c803cc2fc8e71a4b134c53f7e49",
-    "scripts/cad_snapshot.py": "ea11a6a382b6ebff2293e8963cc2ee9c9cf0e5295ee135dd96e6e48ea6ba0d81",
-    "reports/cad_snapshot.json": "235d10cda8cfea7b83b9c0c4a62265520d93e8727b6100f79b0c3848920bc627"
+    "scripts/cad_snapshot.py": "0b33f238dbe4202d9ac73f922fe8295b50cace2daf49bd1b8eb961f78dfb477d",
+    "reports/cad_snapshot.json": "cd7193a2373e0d239259995d3f920a115382d936c230edddf552e2e7b496ed2f"
   }
 }

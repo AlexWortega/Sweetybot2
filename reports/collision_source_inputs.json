@@ -1,9 +1,9 @@
 {
   "complete": true,
-  "geometry_signature": "7fd143cc1e7e55dc22f5e6c1abf331cb2fe995ccb3bc5d138c6d5e9b13f2e546",
+  "geometry_signature": "c4e6124487cf5762439d220799d31a89b2ef11991ba98476b152a780e6e6eb78",
   "source_sha256": {
-    "config/robot.yaml": "a2f2b25e5b86bbbd781a390b12ea971ba32a89cdc26642380cb383daf7eada4b",
-    "simulation/model.py": "542b6e6aca85ee183c502be3ccfef4d2167bf70cc23cd9c044e40c4ebb947b66",
+    "config/robot.yaml": "b207c4f7ec2d1eef5a61ac94898162c34d67b2b1c55e112d5dc6e279d61426da",
+    "simulation/model.py": "64d5ed3f7688ecdb8711517069ca1a361bf8b0791dfbfe798c9ff71b29d3975b",
     "cad/src/lib/shapes.py": "21aeb0ca0604ed4da6e557988d449149189db758f78d3123ec9f0040228e8ca4",
     "cad/src/lib/sensors_face.py": "7148d93c61fa3bc742fead75e10f87bad4f528b4981de4efdb32bd309cf12b94",
     "cad/src/lib/actuation_v05.py": "7aea4d12aeefd98c00fbade2e5e2a79ae5b7efceac0a0673207880cd49656c31"

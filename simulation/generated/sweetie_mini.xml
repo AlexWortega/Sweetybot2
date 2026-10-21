@@ -1231,7 +1231,7 @@
       <geom name="torso__rs485_adapter__0" type="mesh" mesh="torso__rs485_adapter__0" contype="4" conaffinity="5" group="0" rgba="0.25 0.32 0.4 1" />
       <geom name="torso__usb_hub__0" type="mesh" mesh="torso__usb_hub__0" contype="4" conaffinity="5" group="0" rgba="0.25 0.32 0.4 1" />
       <body name="fl_roll" pos="0.099 0.07 0">
-        <joint name="fl_hip_roll" type="hinge" axis="1 0 0" range="-0.15 0.15" />
+        <joint name="fl_hip_roll" type="hinge" axis="1 0 0" range="-0.1047197551 0.7853981634" />
         <inertial mass="0.474059733811006" pos="0.00285964076 -6.969887005e-05 -0.05586058649" fullinertia="0.0006311824977 0.0006169216533 0.0002208829286 4.652599048e-06 -8.697367941e-05 1.506534594e-05" />
         <geom name="fl_roll_cad" type="mesh" mesh="fl_roll_visual" contype="0" conaffinity="0" group="1" rgba="0.93 0.94 0.98 1" />
         <geom name="fl_roll__fl_pitch_servo__0" type="mesh" mesh="fl_roll__fl_pitch_servo__0" contype="4" conaffinity="5" group="0" rgba="0.25 0.32 0.4 1" />
@@ -1552,7 +1552,7 @@
         </body>
       </body>
       <body name="fr_roll" pos="0.099 -0.07 0">
-        <joint name="fr_hip_roll" type="hinge" axis="1 0 0" range="-0.15 0.15" />
+        <joint name="fr_hip_roll" type="hinge" axis="1 0 0" range="-0.7853981634 0.1047197551" />
         <inertial mass="0.4740597338110091" pos="0.005232598678 6.969887005e-05 -0.05586058649" fullinertia="0.0006311824977 0.0006078185005 0.0002117797759 1.556641574e-06 -6.794391463e-05 -1.506534594e-05" />
         <geom name="fr_roll_cad" type="mesh" mesh="fr_roll_visual" contype="0" conaffinity="0" group="1" rgba="0.93 0.94 0.98 1" />
         <geom name="fr_roll__fr_pitch_servo__0" type="mesh" mesh="fr_roll__fr_pitch_servo__0" contype="4" conaffinity="5" group="0" rgba="0.25 0.32 0.4 1" />
@@ -1873,7 +1873,7 @@
         </body>
       </body>
       <body name="rl_roll" pos="-0.099 0.07 0">
-        <joint name="rl_hip_roll" type="hinge" axis="1 0 0" range="-0.15 0.15" />
+        <joint name="rl_hip_roll" type="hinge" axis="1 0 0" range="-0.1047197551 0.7853981634" />
         <inertial mass="0.47405973381100697" pos="-0.00285964076 -6.969887005e-05 -0.05586058649" fullinertia="0.0006311824977 0.0006169216533 0.0002208829286 -4.652599048e-06 8.697367941e-05 1.506534594e-05" />
         <geom name="rl_roll_cad" type="mesh" mesh="rl_roll_visual" contype="0" conaffinity="0" group="1" rgba="0.93 0.94 0.98 1" />
         <geom name="rl_roll__rl_pitch_servo__0" type="mesh" mesh="rl_roll__rl_pitch_servo__0" contype="4" conaffinity="5" group="0" rgba="0.25 0.32 0.4 1" />
@@ -2196,7 +2196,7 @@
         </body>
       </body>
       <body name="rr_roll" pos="-0.099 -0.07 0">
-        <joint name="rr_hip_roll" type="hinge" axis="1 0 0" range="-0.15 0.15" />
+        <joint name="rr_hip_roll" type="hinge" axis="1 0 0" range="-0.7853981634 0.1047197551" />
         <inertial mass="0.47405973381100724" pos="-0.005232598678 6.969887005e-05 -0.05586058649" fullinertia="0.0006311824977 0.0006078185005 0.0002117797759 -1.556641574e-06 6.794391463e-05 -1.506534594e-05" />
         <geom name="rr_roll_cad" type="mesh" mesh="rr_roll_visual" contype="0" conaffinity="0" group="1" rgba="0.93 0.94 0.98 1" />
         <geom name="rr_roll__rr_pitch_servo__0" type="mesh" mesh="rr_roll__rr_pitch_servo__0" contype="4" conaffinity="5" group="0" rgba="0.25 0.32 0.4 1" />

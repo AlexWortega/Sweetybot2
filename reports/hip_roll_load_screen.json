@@ -1,0 +1,127 @@
+{
+  "scope": "Vertical force at hoof, level torso, 50% design weight on one leg, 1.5 torque margin. This is not a recovery trajectory or a certification of loaded range.",
+  "range_is_not_load_rating": true,
+  "conditional_roll_allowance_nm": 3.800076875,
+  "cases": [
+    {
+      "pose": "recovery_abduction/standing/all/-6",
+      "leg": "fl",
+      "lateral_vertical_load_lever_m": 0.0010903294624434873,
+      "conditional_static_torque_nm": 0.07089663837482096
+    },
+    {
+      "pose": "recovery_abduction/standing/all/-6",
+      "leg": "fr",
+      "lateral_vertical_load_lever_m": 0.0010903294624434873,
+      "conditional_static_torque_nm": 0.07089663837482096
+    },
+    {
+      "pose": "recovery_abduction/standing/all/-6",
+      "leg": "rl",
+      "lateral_vertical_load_lever_m": 0.0010903294624434873,
+      "conditional_static_torque_nm": 0.07089663837482096
+    },
+    {
+      "pose": "recovery_abduction/standing/all/-6",
+      "leg": "rr",
+      "lateral_vertical_load_lever_m": 0.0010903294624434873,
+      "conditional_static_torque_nm": 0.07089663837482096
+    },
+    {
+      "pose": "recovery_abduction/standing/all/0",
+      "leg": "fl",
+      "lateral_vertical_load_lever_m": 0.03,
+      "conditional_static_torque_nm": 1.9506940099354309
+    },
+    {
+      "pose": "recovery_abduction/standing/all/0",
+      "leg": "fr",
+      "lateral_vertical_load_lever_m": 0.03,
+      "conditional_static_torque_nm": 1.9506940099354309
+    },
+    {
+      "pose": "recovery_abduction/standing/all/0",
+      "leg": "rl",
+      "lateral_vertical_load_lever_m": 0.03,
+      "conditional_static_torque_nm": 1.9506940099354309
+    },
+    {
+      "pose": "recovery_abduction/standing/all/0",
+      "leg": "rr",
+      "lateral_vertical_load_lever_m": 0.03,
+      "conditional_static_torque_nm": 1.9506940099354309
+    },
+    {
+      "pose": "recovery_abduction/standing/all/15",
+      "leg": "fl",
+      "lateral_vertical_load_lever_m": 0.10015301219186529,
+      "conditional_static_torque_nm": 6.512262698655393
+    },
+    {
+      "pose": "recovery_abduction/standing/all/15",
+      "leg": "fr",
+      "lateral_vertical_load_lever_m": 0.10015301219186529,
+      "conditional_static_torque_nm": 6.512262698655393
+    },
+    {
+      "pose": "recovery_abduction/standing/all/15",
+      "leg": "rl",
+      "lateral_vertical_load_lever_m": 0.10015301219186529,
+      "conditional_static_torque_nm": 6.512262698655393
+    },
+    {
+      "pose": "recovery_abduction/standing/all/15",
+      "leg": "rr",
+      "lateral_vertical_load_lever_m": 0.10015301219186529,
+      "conditional_static_torque_nm": 6.512262698655393
+    },
+    {
+      "pose": "recovery_abduction/standing/all/30",
+      "leg": "fl",
+      "lateral_vertical_load_lever_m": 0.16348076211353316,
+      "conditional_static_torque_nm": 10.630031446484942
+    },
+    {
+      "pose": "recovery_abduction/standing/all/30",
+      "leg": "fr",
+      "lateral_vertical_load_lever_m": 0.16348076211353316,
+      "conditional_static_torque_nm": 10.630031446484942
+    },
+    {
+      "pose": "recovery_abduction/standing/all/30",
+      "leg": "rl",
+      "lateral_vertical_load_lever_m": 0.16348076211353316,
+      "conditional_static_torque_nm": 10.630031446484942
+    },
+    {
+      "pose": "recovery_abduction/standing/all/30",
+      "leg": "rr",
+      "lateral_vertical_load_lever_m": 0.16348076211353316,
+      "conditional_static_torque_nm": 10.630031446484942
+    },
+    {
+      "pose": "recovery_abduction/standing/all/45",
+      "leg": "fl",
+      "lateral_vertical_load_lever_m": 0.21566756826189698,
+      "conditional_static_torque_nm": 14.023381118194102
+    },
+    {
+      "pose": "recovery_abduction/standing/all/45",
+      "leg": "fr",
+      "lateral_vertical_load_lever_m": 0.21566756826189698,
+      "conditional_static_torque_nm": 14.023381118194102
+    },
+    {
+      "pose": "recovery_abduction/standing/all/45",
+      "leg": "rl",
+      "lateral_vertical_load_lever_m": 0.21566756826189698,
+      "conditional_static_torque_nm": 14.023381118194102
+    },
+    {
+      "pose": "recovery_abduction/standing/all/45",
+      "leg": "rr",
+      "lateral_vertical_load_lever_m": 0.21566756826189698,
+      "conditional_static_torque_nm": 14.023381118194102
+    }
+  ]
+}

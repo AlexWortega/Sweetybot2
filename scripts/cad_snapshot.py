@@ -16,12 +16,14 @@ def load_parts(require_snapshot=False):
  if p.exists():
   meta=json.loads(p.read_text())
   if meta.get('geometry_signature')==geometry_signature():
-   from cadgen import read_step
+   # Use the same cold STEP importer as the export round-trip proof. Avoid
+   # compiling each immutable component into the viewer/store in a subprocess.
+   from cadgen import build123d as bd
    parts={}
    for row in meta['parts']:
     path=ROOT/row['step']
     if hashlib.sha256(path.read_bytes()).hexdigest()!=row['step_sha256']:raise ValueError('CAD snapshot corrupted: '+row['step'])
-    shape=read_step(path);shape.label=row['part']
+    shape=bd.import_step(path);shape.label=row['part']
     if 'original_volume_mm3' not in row:raise ValueError('CAD snapshot lacks STEP round-trip proof; re-export sources')
     volume=sum(x.volume for x in shape.solids())
     if abs(volume-row['original_volume_mm3'])/max(row['original_volume_mm3'],1e-12)>=.01:raise ValueError('STEP geometry differs from original CAD: '+row['part'])

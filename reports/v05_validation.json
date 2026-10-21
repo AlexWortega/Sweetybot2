@@ -11,7 +11,7 @@
   "cases": [
     {
       "scenario": "CAD-derived MuJoCo self-collision proxies",
-      "poses": 140,
+      "poses": 185,
       "pass": true,
       "failures": []
     },
@@ -436,9 +436,9 @@
     }
   ],
   "input_sha256": {
-    "config/robot.yaml": "7918107f94a430abcd70efedb5671ee4edd806befe7343eeaa28fdb5b398ab08",
-    "simulation/model.py": "542b6e6aca85ee183c502be3ccfef4d2167bf70cc23cd9c044e40c4ebb947b66",
-    "simulation/generated/sweetie_mini.xml": "40049f9a30ba53b653661eb87fa02c9908ba75b885c18beb5d4eb8b245f6840a",
+    "config/robot.yaml": "b207c4f7ec2d1eef5a61ac94898162c34d67b2b1c55e112d5dc6e279d61426da",
+    "simulation/model.py": "64d5ed3f7688ecdb8711517069ca1a361bf8b0791dfbfe798c9ff71b29d3975b",
+    "simulation/generated/sweetie_mini.xml": "33bfe5c14a5f6c9e357b081b74a519ca4060803bb55d46d5845575c12474cc5c",
     "reports/collision_meshes.json": "2b05d36a64eb5205de175d2223c5dde36722deaaf36d6b6b42898cc77fd91d3b",
     "learning/native.cpp": "8be5e2f5e8ab33050dbd281a331a992f699e6129d9e148bcd8bc237cad0ee094",
     "learning/sensors.py": "8ec90005f6070beaeceec24b55fb6b05dc646a7621ff2000b7f01538050f12cf",
@@ -448,7 +448,7 @@
     "learning/curriculum.py": "032f05181d8720638245821d91897d845108ad55206f1e847474297c0769a507",
     "hardware/policy_observation.py": "e3415b48a67649e0ce38c3ded3d096a340fc43aee37ffa5cf53db6d9cd549d28"
   },
-  "dynamics_signature": "73654a024a564833ec3377fd2c903e098d991cb99ae4c0e5dff5c85db1456825",
+  "dynamics_signature": "bd983c4559ec2910aaad2d0d58d62631216e741fe1b87c6cb39bd61a7bbc7c39",
   "policy_quality": "No trained compact policy evaluated; neutral targets and physics checks only",
   "physical_validation": "not run",
   "root_support_forces": false,

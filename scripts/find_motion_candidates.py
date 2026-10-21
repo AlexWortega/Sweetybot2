@@ -20,6 +20,16 @@ for kind,h,k in [('folded_crouch',-1.2,2.05),('near_goal_crouch',-.9,1.75)]:
  q=base.copy()
  for leg in c['legs']:q[leg+'_hip_pitch']=h;q[leg+'_knee']=k
  poses.append((kind,q))
+# Coordinated abduction during recovery, including crossing-inward limits.
+# Single-joint sweeps alone miss opposing shins meeting near the centreline.
+for posture,h,k in [('standing',None,None),('folded',-1.2,2.05),('extended',-.6,1.2)]:
+ for outward_degrees in (-6,0,15,30,45):
+  for pattern,selected in [('all',tuple(c['legs'])),('left',('fl','rl')),('diagonal',('fl','rr'))]:
+   q=base.copy()
+   for leg,side in c['legs'].items():
+    if h is not None:q[leg+'_hip_pitch']=h;q[leg+'_knee']=k
+    if leg in selected:q[leg+'_hip_roll']=float(np.deg2rad(outward_degrees)*side['y_sign'])
+   poses.append((f'recovery_abduction/{posture}/{pattern}/{outward_degrees}',q))
 for i in range(100):
  rng=np.random.default_rng(505+i);q={n:float(rng.uniform(*joint_spec(n,c)['limits'])) for n in joint_names(c)};poses.append((f'random={i}',q))
 result=[]
