@@ -1,6 +1,6 @@
 # Recovery through intermediate poses
 
-Recipe `v05-recovery-waypoints-1` replaces the direct-stand-only discovery signal
+Recipe `v05-recovery-waypoints-1` extends the direct-stand discovery signal
 with an episode-local geometric milestone ledger. It is an experiment, not a
 demonstration of learned self-righting.
 

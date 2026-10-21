@@ -1,0 +1,32 @@
+{
+  "executor_commit": "413ed0c849c12e0d649ac8787964d6e906cd8b93",
+  "source": "/home/alexw/sweetybot2-v05-20261018/source-413ed0c",
+  "recipe": "v05-recovery-waypoints-1",
+  "observed_utc": "2026-10-21T09:46:53.955628+00:00",
+  "output": "training-compact-200h-waypoints",
+  "continued_from": "training-compact-200h",
+  "started_epoch": 1792496415.0,
+  "deadline_epoch": 1793216415.0,
+  "budget_hours": 200,
+  "deadline_extended": false,
+  "single_training_gpu": true,
+  "physical_gpu": 3,
+  "task": "recovery",
+  "ppo_steps_at_observation": 32768,
+  "ppo_updates_at_observation": 4,
+  "checkpoint_bytes": 4900946,
+  "curriculum_progress": 0.74,
+  "curriculum_stage": "side_recovery",
+  "waypoint_terms_recorded": [
+    "waypoint_progress",
+    "waypoint_side",
+    "waypoint_belly_support",
+    "waypoint_supported_crouch",
+    "waypoint_stable_stand"
+  ],
+  "local_tests": 153,
+  "eva01_tests": 56,
+  "learned_side_back_recovery": "not demonstrated; unchanged development/final success gates remain required",
+  "startup_baseline_replicates": 1,
+  "development_final_replicates": 8
+}

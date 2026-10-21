@@ -56,3 +56,22 @@ The old v05 campaign completed on 2026-10-20 and is immutable. Its deadline is n
 ### 200-hour launch receipt
 
 Executor `6491c4a6a78d65bee7906f424216e3ab3ce0aa61` is immutable at `/home/alexw/sweetybot2-v05-20261018/source-6491c4a`; output is `training-compact-200h`. The total window is 2026-10-20 11:40:15 UTC to 2026-10-28 19:40:15 UTC (20:40:15 Europe/Belgrade after the DST change). An enabled user service restarts failed drivers with the same absolute budget; a persistent independent timer stops only its cgroup before expiry. Launch verification observed physical GPU 1 and a checkpoint with 10 updates / 81,920 transitions. This proves active optimization and persistence, not learned quality. [Receipt](../reports/compact_200h_launch.json).
+
+### Intermediate-pose continuation, 2026-10-21
+
+The original source/output above is retained. The same campaign continues at
+`training-compact-200h-waypoints`, immutable executor `source-413ed0c`, using the
+same `started_epoch=1792496415` and `deadline_epoch=1793216415`. The existing
+service and independent absolute stop timer enforce that deadline across the
+handoff. No parallel training GPU or new 200-hour allowance is created.
+
+The [recovery revision](recovery-waypoints.md) adds a reward-only geometric
+milestone ledger and avoids the old 0.49 curriculum cap. Exact actor/normalizer
+weights are transferred from selected walking `0054`, recovery `0061` and
+stable running candidate `0002`; their original immutable source and unchanged
+physical/sensor signature are verified. Critics and optimizers start fresh for
+the recipe change. Export counts zero PPO transitions. The first scheduled task
+is recovery; initial baselines use one deterministic replicate per condition on
+each surface, while subsequent development/final runs retain eight. The reserved
+final seeds have not been queried for this handoff. Initial intermediate-pose
+counters and a running optimizer do not establish successful self-righting.

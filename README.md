@@ -28,6 +28,8 @@ The current default trainer uses a **63-value, single-frame proprioceptive actor
 
 **Training update, 2026-10-20:** the prior v05 campaign is complete; executor `596bf65`, output `training-microduck-rewards2`, remains archived. Legacy walking survived 48/48 final episodes each on flat/rough/steps and 26/48 on the 8° slope; recovery succeeded 8/128 times, running 0/96. No skill passed its full final gate. The new [compact revision](docs/compact-policy.md) separates exploratory continuation from champion selection, adds fixed mixed commands, smooth resampling and KL-adaptive learning rates. A separately authorized **200-hour compact campaign** on eva01 uses one training GPU at a time and a persisted absolute deadline, including setup, waits and evaluations. The old campaign is not extended. Local software/physics checks and bounded CPU preparation do not establish improved learned skill; fresh independent final seeds are reserved.
 
+**Recovery experiment, 2026-10-21:** [intermediate supported poses](docs/recovery-waypoints.md) add one-time side, belly-support, crouch and stand milestones, bounded progress rewards and per-orientation achievement counters. Initial upright poses receive no roll credit. Full side/back starts remain in training while the curriculum advances. The same 200-hour campaign continues under its original deadline; the previous source/results remain archived. Software and neutral-physics validation passed; successful side/back recovery has not yet been demonstrated.
+
 ## Historical v02 policy preview
 
 ![Historical v02 walking and running/recovery attempts](renders/sweetybot2-training.gif)
