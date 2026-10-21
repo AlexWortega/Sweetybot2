@@ -75,3 +75,11 @@ is recovery; initial baselines use one deterministic replicate per condition on
 each surface, while subsequent development/final runs retain eight. The reserved
 final seeds have not been queried for this handoff. Initial intermediate-pose
 counters and a running optimizer do not establish successful self-righting.
+
+The subsequent [speed-profile update](speed-targets.md), executor
+`source-e851b4e`, resumes the same output and existing optimizers. It adds
+`--speed-profile higher-v1`: walk ceiling 0.40 m/s and measured run stages
+0.65/0.80/1.00 m/s. Current source/profile/stage are recorded in `status.json`;
+the service uses `launch-speed.json`. Recovery's saved 483456-transition,
+60-update checkpoint was retained across this switch. No budget was added.
+The evaluation boundary correction is a protocol change, not a learned gain.

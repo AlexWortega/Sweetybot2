@@ -1,0 +1,32 @@
+{
+  "source_commit": "e851b4e10c750c2c60f13ce0b43593eb297fdf9e",
+  "observed_utc": "2026-10-21T10:07:44.676233+00:00",
+  "output": "/home/alexw/storage/sweetybot2-v05-20261018/training-compact-200h-waypoints",
+  "profile": "higher-v1",
+  "walk_target_ceiling_mps": 0.4,
+  "run_target_ceilings_mps": [
+    0.65,
+    0.8,
+    1.0
+  ],
+  "active_task": "running",
+  "physical_gpu": "3",
+  "steps": 16384,
+  "updates": 2,
+  "active_target_ceiling_mps": 0.65,
+  "preserved_recovery_checkpoint": {
+    "task": "recovery",
+    "checkpoint": "/mnt/elements/alexw/sweetybot2-v05-20261018/training-compact-200h-waypoints/runs/0000_recovery_flat/latest.pt",
+    "sha256": "8f6263843e786e774d33946398e70d14c61e022d2983acf0b07422338031273b",
+    "steps": 483456,
+    "updates": 60,
+    "optimizer_restored_on_resume": true
+  },
+  "started_epoch": 1792496415.0,
+  "deadline_epoch": 1793216415.0,
+  "optimizer_reset": false,
+  "local_tests": 166,
+  "eva01_tests": 37,
+  "achieved_target_speed": "not demonstrated",
+  "evaluation_protocol": "terrain-boundary-v3"
+}

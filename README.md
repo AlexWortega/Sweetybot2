@@ -30,6 +30,8 @@ The current default trainer uses a **63-value, single-frame proprioceptive actor
 
 **Recovery experiment, 2026-10-21:** [intermediate supported poses](docs/recovery-waypoints.md) add one-time side, belly-support, crouch and stand milestones, bounded progress rewards and per-orientation achievement counters. Initial upright poses receive no roll credit. Full side/back starts remain in training while the curriculum advances. The same 200-hour campaign continues under its original deadline; the previous source/results remain archived. Software and neutral-physics validation passed; successful side/back recovery has not yet been demonstrated.
 
+The same campaign also enables the [higher command-speed profile](docs/speed-targets.md): walking targets up to 0.40 m/s, running initially up to 0.65 m/s, with 0.80/1.00 m/s unlocked by survival/tracking/load checks. These are requested training targets. The evaluator's obsolete 3.5 m boundary was corrected to the current terrain limit; changed survival statistics must not be presented as policy improvement.
+
 ## Historical v02 policy preview
 
 ![Historical v02 walking and running/recovery attempts](renders/sweetybot2-training.gif)
