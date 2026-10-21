@@ -83,3 +83,25 @@ The subsequent [speed-profile update](speed-targets.md), executor
 the service uses `launch-speed.json`. Recovery's saved 483456-transition,
 60-update checkpoint was retained across this switch. No budget was added.
 The evaluation boundary correction is a protocol change, not a learned gain.
+
+
+### Mirrored hip-roll continuation (2026-10-21)
+
+Current executor: `7cee7eaba9a78d4e7a3652ff3ea2f1eebf7f37a9`, remote
+`/home/alexw/sweetybot2-v05-20261018/source-7cee7ea`. Current output:
+`/home/alexw/storage/sweetybot2-v05-20261018/training-compact-200h-wide-hips`.
+The previous `training-compact-200h-waypoints` output is archived and points
+to this continuation. The same service and original deadline remain active.
+
+[Roll limits and transfer scope](joint-limits.md): 45 degrees outward and
+6 inward, mirrored by side. The 63-input actors, normalizers and exploration
+scales are preserved exactly; critics and optimizer states are fresh. Donor
+source snapshots and all other physical inputs are verified. The prior
+legacy walking teacher has old limits; upright finishing now uses the
+matching transferred compact walking actor. Old scores are not carried over
+as new champions. Baseline evaluations precede recovery PPO; their results
+and later checkpoints must be inspected before claiming skill improvement.
+
+Launch verified after the 12 baseline cases: recovery PPO, physical GPU 3,
+4 updates / 32,768 transitions saved. [Timestamped receipt](../reports/hip-range-launch-verified.json).
+This confirms training and persistence, not improved recovery.

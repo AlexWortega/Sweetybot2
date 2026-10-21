@@ -1,0 +1,121 @@
+{
+  "verified_epoch": 1792598632.852184,
+  "source": "/home/alexw/sweetybot2-v05-20261018/source-7cee7ea",
+  "source_commit": "7cee7eaba9a78d4e7a3652ff3ea2f1eebf7f37a9",
+  "phase": "training",
+  "task": "recovery",
+  "checkpoint": "/mnt/elements/alexw/sweetybot2-v05-20261018/training-compact-200h-wide-hips/runs/0000_recovery_flat/latest.pt",
+  "checkpoint_sha256": "e9424943b1b4095469e782d6c6d284f579ab79ebf9b199ed9803882cac01eeba",
+  "updates": 4,
+  "steps": 32768,
+  "physical_gpu": 3,
+  "worker_gpu_rows": [
+    "2421570, 484, GPU-c154b001-1a23-8a93-2c39-d5761d6898c4"
+  ],
+  "physical_signature": "20166e449409e09fa7c729d0e0d07cd5087fd039add2b9ec82b3fbb5f0f60883",
+  "dynamics_signature": "bd983c4559ec2910aaad2d0d58d62631216e741fe1b87c6cb39bd61a7bbc7c39",
+  "started_epoch": 1792496415.0,
+  "deadline_epoch": 1793216415.0,
+  "baseline_cases": 12,
+  "baselines": {
+    "baseline/locomotion/flat/result.json": {
+      "task": "locomotion",
+      "episodes": 6,
+      "survival_fraction": 0.8333333333333334,
+      "command_rmse": 0.5660244970334803,
+      "recovery_success_rate": null,
+      "running_success_rate": null
+    },
+    "baseline/locomotion/rough/result.json": {
+      "task": "locomotion",
+      "episodes": 6,
+      "survival_fraction": 1.0,
+      "command_rmse": 0.453908771002738,
+      "recovery_success_rate": null,
+      "running_success_rate": null
+    },
+    "baseline/locomotion/slope/result.json": {
+      "task": "locomotion",
+      "episodes": 6,
+      "survival_fraction": 0.6666666666666666,
+      "command_rmse": 0.6363919045607039,
+      "recovery_success_rate": null,
+      "running_success_rate": null
+    },
+    "baseline/locomotion/steps/result.json": {
+      "task": "locomotion",
+      "episodes": 6,
+      "survival_fraction": 1.0,
+      "command_rmse": 0.4401308152012556,
+      "recovery_success_rate": null,
+      "running_success_rate": null
+    },
+    "baseline/recovery/flat/result.json": {
+      "task": "recovery",
+      "episodes": 5,
+      "survival_fraction": null,
+      "command_rmse": null,
+      "recovery_success_rate": 0.0,
+      "running_success_rate": null
+    },
+    "baseline/recovery/rough/result.json": {
+      "task": "recovery",
+      "episodes": 5,
+      "survival_fraction": null,
+      "command_rmse": null,
+      "recovery_success_rate": 0.0,
+      "running_success_rate": null
+    },
+    "baseline/recovery/slope/result.json": {
+      "task": "recovery",
+      "episodes": 5,
+      "survival_fraction": null,
+      "command_rmse": null,
+      "recovery_success_rate": 0.0,
+      "running_success_rate": null
+    },
+    "baseline/recovery/steps/result.json": {
+      "task": "recovery",
+      "episodes": 5,
+      "survival_fraction": null,
+      "command_rmse": null,
+      "recovery_success_rate": 0.0,
+      "running_success_rate": null
+    },
+    "baseline/running/flat/result.json": {
+      "task": "running",
+      "episodes": 3,
+      "survival_fraction": 0.3333333333333333,
+      "command_rmse": 0.7729702279726327,
+      "recovery_success_rate": null,
+      "running_success_rate": 0.0
+    },
+    "baseline/running/rough/result.json": {
+      "task": "running",
+      "episodes": 3,
+      "survival_fraction": 0.6666666666666666,
+      "command_rmse": 0.7908286432785898,
+      "recovery_success_rate": null,
+      "running_success_rate": 0.0
+    },
+    "baseline/running/slope/result.json": {
+      "task": "running",
+      "episodes": 3,
+      "survival_fraction": 1.0,
+      "command_rmse": 0.6973166461183863,
+      "recovery_success_rate": null,
+      "running_success_rate": 0.0
+    },
+    "baseline/running/steps/result.json": {
+      "task": "running",
+      "episodes": 3,
+      "survival_fraction": 0.3333333333333333,
+      "command_rmse": 0.7604503386573819,
+      "recovery_success_rate": null,
+      "running_success_rate": 0.0
+    }
+  },
+  "service_active": true,
+  "stop_timer_active": true,
+  "policy_quality": "Training liveness confirmed; improved skill not established"
+}

@@ -19,18 +19,18 @@
     },
     {
       "path": "README.md",
-      "bytes": 4880,
-      "sha256": "1aefa36d15b00ceae8b08ff095898ce66e52f2d37e7008c963530fee93e11a08"
+      "bytes": 7411,
+      "sha256": "0ff0ec36e50ffda6d7695799e78eb04bd2eed8375e58bc26588446d1d3b7eba4"
     },
     {
       "path": "cad/GLB/assembly.glb",
-      "bytes": 20608216,
-      "sha256": "05184cca0d63e9ed259ec25c16e0564e772ac9a53f8c7846bd17b2ecf26a5359"
+      "bytes": 20602232,
+      "sha256": "6df0e51a998f6b7a87a7e86f33cb19aaf9af8af2f6071dd9477dc016b73d20b1"
     },
     {
       "path": "cad/STEP/assembly.step",
-      "bytes": 36071394,
-      "sha256": "069b53dcf2c490935200088781645b98e097d20111d67bb7fec8c70789366455"
+      "bytes": 36063270,
+      "sha256": "994e982b6533cdf39f259eb724f807239fe2abf9c29ef7ff06cf944ac3d7ce81"
     },
     {
       "path": "cad/STEP/axle_adapter.step",
@@ -69,8 +69,8 @@
     },
     {
       "path": "cad/STEP/exploded.step",
-      "bytes": 36072310,
-      "sha256": "feab47f8674ce49d25e6f1a680265cec9900f6fea7ec11c3c065c5c2a52b7fb7"
+      "bytes": 36064186,
+      "sha256": "9802ba8dd579ff20396c4fbb5d47be05896beff6b4c12286c519af6405a91b1d"
     },
     {
       "path": "cad/STEP/eye_bezel.step",
@@ -144,8 +144,8 @@
     },
     {
       "path": "cad/STEP/internal.step",
-      "bytes": 28565005,
-      "sha256": "1897e67d0a552615c127f8faace3b4c62cbe490724dfe69b80f378c316bdb981"
+      "bytes": 28556874,
+      "sha256": "212ca5dca288d07be4a07df0726ae79cca9a4877bf8c2d30f8633da136e2fb96"
     },
     {
       "path": "cad/STEP/knee_fork.step",
@@ -17280,12 +17280,12 @@
     {
       "path": "cad/collision/source/ear_left__ear_inner_1.step",
       "bytes": 7431,
-      "sha256": "c09ec572f61966a96bb9c4fd07ff4f084124554e3db04b6c8d88ac3f4cfe5643"
+      "sha256": "5445c4110c9bb967d5960ec4c45d872dc2051e5a1738e7a8aa6b2a69fdce0922"
     },
     {
       "path": "cad/collision/source/ear_left__ear_output_adapter_1.step",
       "bytes": 8020,
-      "sha256": "deb61b94c87d6a964b454cc640e3d32303430f067d3c52c85ab0fd0d39642fda"
+      "sha256": "a21bc04246ecf919228b2cf4955642acf9d2bcd0fa51c587369b9c1ab3cd95c1"
     },
     {
       "path": "cad/collision/source/ear_left__ear_output_adapter_1.stl",
@@ -17300,7 +17300,7 @@
     {
       "path": "cad/collision/source/ear_left__ear_shell_1.step",
       "bytes": 373998,
-      "sha256": "a1579b946cb789a9b631bfab890c43ffb4b1a5d8ef2d930f0218242f8398086b"
+      "sha256": "a9a76ccac5f698132563f0f61061b6c57c252819163f2ab0b7d591efe14722d0"
     },
     {
       "path": "cad/collision/source/ear_left__ear_shell_1.stl",
@@ -17315,12 +17315,12 @@
     {
       "path": "cad/collision/source/ear_right__ear_inner_-1.step",
       "bytes": 7441,
-      "sha256": "62be7d0393dfdbc7e78e500d6adb582312b89e8a81dfcfdb8d36a0beae0f0bfe"
+      "sha256": "841e9d4615a3384b94995dc68aa51d3f77a77df7fed0743986746522d4f27f16"
     },
     {
       "path": "cad/collision/source/ear_right__ear_output_adapter_-1.step",
       "bytes": 8026,
-      "sha256": "1f5fe4e2415f560d1469b3bdb0ff2be7cdcbf48b9f6199ff07a59179aab4a29d"
+      "sha256": "0e1627144cc0d75cf562ce3f05c63f860da8e36fc27f51593cfe2a7990f3838a"
     },
     {
       "path": "cad/collision/source/ear_right__ear_output_adapter_-1.stl",
@@ -17335,7 +17335,7 @@
     {
       "path": "cad/collision/source/ear_right__ear_shell_-1.step",
       "bytes": 376910,
-      "sha256": "86f1f4b6e9fad81d46eef23f627c0be6e29729a88c9dc36decc7b175e7cf504e"
+      "sha256": "aea72d405eab233a8c976eff45d55260e5d6d6643de6e9c9a1ffa240ad8b0424"
     },
     {
       "path": "cad/collision/source/ear_right__ear_shell_-1.stl",
@@ -17350,7 +17350,7 @@
     {
       "path": "cad/collision/source/fl_roll__fl_hip_bearing_retainer.step",
       "bytes": 35353,
-      "sha256": "7cd3cf483667f4c256481e34007863e70c92ffd30cb1293a88cdf338c9de42dd"
+      "sha256": "24853af2de89668475dd9632044ac2924b66cad9dd19c880e54e39d9e0be446a"
     },
     {
       "path": "cad/collision/source/fl_roll__fl_hip_bearing_retainer.stl",
@@ -17365,7 +17365,7 @@
     {
       "path": "cad/collision/source/fl_roll__fl_hip_passive_bearing.step",
       "bytes": 12393,
-      "sha256": "37f81d7b9bffd704d654c8830297a67f820f0c709e58ed3ed6a0e458eff44640"
+      "sha256": "96c0cf7899d45e5700ef2c52cbe1d96db56c51f2a4817a1199bf978828b14029"
     },
     {
       "path": "cad/collision/source/fl_roll__fl_hip_passive_bearing.stl",
@@ -17380,7 +17380,7 @@
     {
       "path": "cad/collision/source/fl_roll__fl_pitch_clamp_shims.step",
       "bytes": 86876,
-      "sha256": "23ec3b5e9c3ba1b41e55b538e920f72df7cb6f13c74c81eaf987d52f96542a94"
+      "sha256": "25b649f2432043551e4498b546ca63da01f38afc7eceaf5bc16e71223a6621aa"
     },
     {
       "path": "cad/collision/source/fl_roll__fl_pitch_clamp_shims.stl",
@@ -17395,7 +17395,7 @@
     {
       "path": "cad/collision/source/fl_roll__fl_pitch_cradle.step",
       "bytes": 358001,
-      "sha256": "37424df88d80f3a01bb44576c330e048cf3b3899a3b0bac0ea4f8ceb7c440c9d"
+      "sha256": "57817dfd489c23380a52357d2c71a1a726a30f43b2ca06d92c0b22fbfa24b133"
     },
     {
       "path": "cad/collision/source/fl_roll__fl_pitch_cradle.stl",
@@ -17410,7 +17410,7 @@
     {
       "path": "cad/collision/source/fl_roll__fl_pitch_mount_spacer_-10.step",
       "bytes": 11255,
-      "sha256": "76f4d02fccae444533dfa2161b0821b45c2371bf6180f0df30838e4204c71f97"
+      "sha256": "14dada34b68361ad842fbfb09d06407cacc3371e73a8340d06fb9f4e0257ee7c"
     },
     {
       "path": "cad/collision/source/fl_roll__fl_pitch_mount_spacer_-10.stl",
@@ -17425,7 +17425,7 @@
     {
       "path": "cad/collision/source/fl_roll__fl_pitch_mount_spacer_10.step",
       "bytes": 11252,
-      "sha256": "0e8a6d7087d12ccbe256d0a7073d3d3df20979b52056c230442afe9f5a76275f"
+      "sha256": "89301f39a83bb87248fcc9629d68d3c178abd96a32b4e643f6deece12c03574b"
     },
     {
       "path": "cad/collision/source/fl_roll__fl_pitch_mount_spacer_10.stl",
@@ -17440,7 +17440,7 @@
     {
       "path": "cad/collision/source/fl_roll__fl_pitch_servo.step",
       "bytes": 98645,
-      "sha256": "36a18b188709003ce17f33422a624e2fbfc3a49a0d9db2f46eff996abf11bbd9"
+      "sha256": "904b177f41e5acb366eb816ad824243d2b987f030133d9ab0ab2cbfceb2c3c21"
     },
     {
       "path": "cad/collision/source/fl_roll__fl_pitch_servo.stl",
@@ -17455,7 +17455,7 @@
     {
       "path": "cad/collision/source/fl_roll__fl_pitch_strap_-41.55.step",
       "bytes": 74525,
-      "sha256": "c3b65c69c6d0d8cc98041a6e562cfa2b030fc1149fd9a043727eb7dccfeffc68"
+      "sha256": "84cbe5473d41b8b9d0d40511c7fefec09bba27de7b48bfe2362a5e0e2b9e1641"
     },
     {
       "path": "cad/collision/source/fl_roll__fl_pitch_strap_-41.55.stl",
@@ -17470,7 +17470,7 @@
     {
       "path": "cad/collision/source/fl_roll__fl_pitch_strap_-7.55.step",
       "bytes": 74518,
-      "sha256": "2ab367fb3bdd55b0dc817970c811707e723c2beb5830c2e4c306e1f9e78fd1a7"
+      "sha256": "820cf04d4d1feb0d150b742b8f19bde5093765de85c71d757d10703c8d87b3a5"
     },
     {
       "path": "cad/collision/source/fl_roll__fl_pitch_strap_-7.55.stl",
@@ -17485,7 +17485,7 @@
     {
       "path": "cad/collision/source/fl_roll__fl_roll_M3_heads.step",
       "bytes": 55092,
-      "sha256": "403e3b730392e63650e973ddbea3a3d1394ad216ee2c9cc88f0c14b5b9c6add3"
+      "sha256": "ce6a7ac512ff6f1905090cdc3e559d80f5b7a95067ee00fd4442ba4f92bcd631"
     },
     {
       "path": "cad/collision/source/fl_roll__fl_roll_M3_heads.stl",
@@ -17500,7 +17500,7 @@
     {
       "path": "cad/collision/source/fl_roll__fl_roll_axle.step",
       "bytes": 43316,
-      "sha256": "5bf78efab5be85bda3e6ec68b1a317ea2bbd99cb951e37a81f46e98d116e69c5"
+      "sha256": "a4380d50b41f30257f474f5d076ce8e92378a269593d82f8d4dc04fc81ce839a"
     },
     {
       "path": "cad/collision/source/fl_roll__fl_roll_axle.stl",
@@ -17515,7 +17515,7 @@
     {
       "path": "cad/collision/source/fl_roll__fl_roll_yoke.step",
       "bytes": 192141,
-      "sha256": "ca6691e358699c820f50173308334ad0715007e8c775389cdcd605aaeaa09c94"
+      "sha256": "83196add40eb949d24c4b1286ab1d4c04c2c670e85d7fa257c473327a2948ac8"
     },
     {
       "path": "cad/collision/source/fl_roll__fl_roll_yoke.stl",
@@ -17530,7 +17530,7 @@
     {
       "path": "cad/collision/source/fl_shin__fl_TPU_actuator.step",
       "bytes": 12266,
-      "sha256": "854fc5f4aa9e622ac4527d4867dfe281bf80e00ba63b0f71b5b98a811b1ea814"
+      "sha256": "6f7c58050b0fd2c4d53d77db64d7a1fb93ddd9ab5da0174b4d0e645a7690917d"
     },
     {
       "path": "cad/collision/source/fl_shin__fl_TPU_actuator.stl",
@@ -17545,7 +17545,7 @@
     {
       "path": "cad/collision/source/fl_shin__fl_TPU_pad.step",
       "bytes": 277982,
-      "sha256": "b21e228c227d837c0318ceb35a677e41c0dbd3a93dab192037a0493a9b2dd253"
+      "sha256": "4d53b783055ec160dfa4593182059b8afb8eb4e9df8367715426655a02d77ee0"
     },
     {
       "path": "cad/collision/source/fl_shin__fl_TPU_pad.stl",
@@ -17560,7 +17560,7 @@
     {
       "path": "cad/collision/source/fl_shin__fl_floating_sole.step",
       "bytes": 86080,
-      "sha256": "9326325bbd8a02649f287654f5bf4dc0d2b8f9dc0b8e1b9863da5b2ef71d876d"
+      "sha256": "883ceb9f4935d3174ae4c0f91c6ed31f1fb2f65dba2b5a9b44ccef8fe08680cd"
     },
     {
       "path": "cad/collision/source/fl_shin__fl_floating_sole.stl",
@@ -17575,7 +17575,7 @@
     {
       "path": "cad/collision/source/fl_shin__fl_hoof.step",
       "bytes": 495488,
-      "sha256": "ccf2ba0a12d5cb9ef2ff0d490207eef6626d9dcde978f7e0d2c8fd148e49f61f"
+      "sha256": "4308dd750e015b1e81c8a90c5e329dcbce4faabea44e6b4dfb337dc6367211de"
     },
     {
       "path": "cad/collision/source/fl_shin__fl_hoof.stl",
@@ -17590,7 +17590,7 @@
     {
       "path": "cad/collision/source/fl_shin__fl_knee_M3_heads_-70.0.step",
       "bytes": 55030,
-      "sha256": "309013c62357a3cd0c9b46abbbb385812f64d3e44fd55a6fd5ac797585c1ea0a"
+      "sha256": "a778d9ee577021f1d2d4e5a11022db045918aa1b157eb6588a362e607d830605"
     },
     {
       "path": "cad/collision/source/fl_shin__fl_knee_M3_heads_-70.0.stl",
@@ -17605,7 +17605,7 @@
     {
       "path": "cad/collision/source/fl_shin__fl_knee_M3_heads_14.0.step",
       "bytes": 55013,
-      "sha256": "f088aa02eb50564e2f98187a95861968eaabb1fd89056faa1085f6168bc93f69"
+      "sha256": "c6a0dcdcc3784af201fbbc06e3565fe7172ca50d7ca82e2d9130411be50f2a92"
     },
     {
       "path": "cad/collision/source/fl_shin__fl_knee_M3_heads_14.0.stl",
@@ -17620,7 +17620,7 @@
     {
       "path": "cad/collision/source/fl_shin__fl_knee_cross_spacer.step",
       "bytes": 37450,
-      "sha256": "43962806dd06eeb5978fbe21b8cfbf489fe5450a724468afa84b5bcd05c59c1d"
+      "sha256": "6487a511c7efc108f83a1d31efcaffb0bcc7b301f117a1052e395cd1cde1621d"
     },
     {
       "path": "cad/collision/source/fl_shin__fl_knee_cross_spacer.stl",
@@ -17635,7 +17635,7 @@
     {
       "path": "cad/collision/source/fl_shin__fl_knee_front_rotor_hub.step",
       "bytes": 43352,
-      "sha256": "4915e6213cefaf857cba050eb19c3c133af364f3759eb901c09641aa8c51c255"
+      "sha256": "20211cf3e2a1b5d851ea32a9923e882ffb120b93d9433e8d8ec7c3c5aaf653c7"
     },
     {
       "path": "cad/collision/source/fl_shin__fl_knee_front_rotor_hub.stl",
@@ -17650,7 +17650,7 @@
     {
       "path": "cad/collision/source/fl_shin__fl_knee_rear_rotor_hub.step",
       "bytes": 43377,
-      "sha256": "c0437cfb2ab42c1cb1bbfb788b42a037fa36a6e9484c16cdaca2d980a7debccc"
+      "sha256": "bf386c2494f797127fd2340458005f57bb526dfb82076312074ee20f226630ba"
     },
     {
       "path": "cad/collision/source/fl_shin__fl_knee_rear_rotor_hub.stl",
@@ -17665,7 +17665,7 @@
     {
       "path": "cad/collision/source/fl_shin__fl_shin_cheek_front.step",
       "bytes": 91828,
-      "sha256": "c7629f10d0aa807e2f1a065b81eb210ab57f61137d4b548bb249e12274023e49"
+      "sha256": "169fe6396d1b69cfffe40ba2668dd68fd0b56b5cddbbf9a9e8a887f0953b309a"
     },
     {
       "path": "cad/collision/source/fl_shin__fl_shin_cheek_front.stl",
@@ -17680,7 +17680,7 @@
     {
       "path": "cad/collision/source/fl_shin__fl_shin_cheek_rear.step",
       "bytes": 231166,
-      "sha256": "9f60066adc13c90198c530ab19759e92268b9fb2c9e9e4d287ffeb68c3c84dd8"
+      "sha256": "9486e067079d609026408f4ee3e5ecf854b9a0fb8c9b3a2fb9d33b517793817c"
     },
     {
       "path": "cad/collision/source/fl_shin__fl_shin_cheek_rear.stl",
@@ -17695,7 +17695,7 @@
     {
       "path": "cad/collision/source/fl_shin__fl_shin_fairing.step",
       "bytes": 113632,
-      "sha256": "dd5d90578c2c0cbfe6d7465c947b96f9e789898997abb861e3aa3e7d33487cdd"
+      "sha256": "2613dd537c2fd5ed870a3bc51df247ea5bfef57581907caa0a876691f584abf0"
     },
     {
       "path": "cad/collision/source/fl_shin__fl_shin_fairing.stl",
@@ -17710,7 +17710,7 @@
     {
       "path": "cad/collision/source/fl_shin__fl_switch.step",
       "bytes": 17781,
-      "sha256": "65f62f72f8569e50ee49593af777c232eaaf1bb7465cc59b1b1ff34d1555d9a4"
+      "sha256": "5121a928d936f071995d6a7f3572dcc9a32ee504b75b35f790a9e2358a11c787"
     },
     {
       "path": "cad/collision/source/fl_shin__fl_switch.stl",
@@ -17720,7 +17720,7 @@
     {
       "path": "cad/collision/source/fl_shin__fl_switch_PCB.step",
       "bytes": 17792,
-      "sha256": "4d164fb89e8d4a2f0878466b22c026d269fc017e706ade73d2f54bb15b73cf1a"
+      "sha256": "09120b07ea8cd8377a6ca71a905e6ca9de1808241f23f2691522aa41c16d927d"
     },
     {
       "path": "cad/collision/source/fl_shin__fl_switch_PCB.stl",
@@ -17740,7 +17740,7 @@
     {
       "path": "cad/collision/source/fl_thigh__fl_hip_M3_heads_-68.0.step",
       "bytes": 55021,
-      "sha256": "d6c7298e15fd5cf486129d6b0f1b19e3713abdd4f193a22c092ccdc072be10f8"
+      "sha256": "2d8f613eb37159b255e950538b7d123df865a813564d288131b2260a605ef44a"
     },
     {
       "path": "cad/collision/source/fl_thigh__fl_hip_M3_heads_-68.0.stl",
@@ -17755,7 +17755,7 @@
     {
       "path": "cad/collision/source/fl_thigh__fl_hip_M3_heads_8.0.step",
       "bytes": 55079,
-      "sha256": "14bb0b8be8d7b5ac9c9f47919db341ca830f80f3fd9b68731cf6165706285e88"
+      "sha256": "483c3a565d9a380baf00546484640af79bf6d4038d40c50ddad197332f45ec0a"
     },
     {
       "path": "cad/collision/source/fl_thigh__fl_hip_M3_heads_8.0.stl",
@@ -17770,7 +17770,7 @@
     {
       "path": "cad/collision/source/fl_thigh__fl_hip_front_rotor_spacer.step",
       "bytes": 43356,
-      "sha256": "88a752b13ed85c919f56aeea6d0e471e48af3699ec9efe741036417711af8f55"
+      "sha256": "d8d544476979e5f8121c7db6640a136f82152b5bcecfa9d106acd9c06897257e"
     },
     {
       "path": "cad/collision/source/fl_thigh__fl_hip_front_rotor_spacer.stl",
@@ -17785,7 +17785,7 @@
     {
       "path": "cad/collision/source/fl_thigh__fl_hip_rear_rotor_hub.step",
       "bytes": 43400,
-      "sha256": "8110f07f9e2bdb41190e5cd1b12f11bc41cae809745b7ed9044c205cd9e0eed7"
+      "sha256": "d56a945c085bd44761475d9fdf8064a48958cfc7b26802e5fbbf7f855589e8ec"
     },
     {
       "path": "cad/collision/source/fl_thigh__fl_hip_rear_rotor_hub.stl",
@@ -17800,7 +17800,7 @@
     {
       "path": "cad/collision/source/fl_thigh__fl_knee_bearing_retainer.step",
       "bytes": 35363,
-      "sha256": "0c4b70c9806fff1540b9e31c1172b9d36f30bddb63d7309092399405ff7c9438"
+      "sha256": "08d624c63f54720717331d5e4bde7a4654b49d52f9b9062a873e5ec2a889acbd"
     },
     {
       "path": "cad/collision/source/fl_thigh__fl_knee_bearing_retainer.stl",
@@ -17815,7 +17815,7 @@
     {
       "path": "cad/collision/source/fl_thigh__fl_knee_clamp_shims.step",
       "bytes": 86871,
-      "sha256": "6dc0cf40d6b41abbbc2950e5990cc6320d0d262e592765366d1f276ff97cdbe5"
+      "sha256": "db0036ad2f5afd2b604ce0e696cda7e2d6080b661cbed0f81368ee37de409553"
     },
     {
       "path": "cad/collision/source/fl_thigh__fl_knee_clamp_shims.stl",
@@ -17830,7 +17830,7 @@
     {
       "path": "cad/collision/source/fl_thigh__fl_knee_cradle.step",
       "bytes": 357994,
-      "sha256": "92bcd40eee65378af282d7998601221c9c09c22ad3bba31cb6af5dff9a123d77"
+      "sha256": "db4be61869947eb0eccc89dbe4dd76f12e57922062a4cfb6a286159b0c521afb"
     },
     {
       "path": "cad/collision/source/fl_thigh__fl_knee_cradle.stl",
@@ -17845,7 +17845,7 @@
     {
       "path": "cad/collision/source/fl_thigh__fl_knee_mount_spacer_-10_-52.025.step",
       "bytes": 11290,
-      "sha256": "504c57568274a1a5ef6fdc39c6780aa2f2960f2448765502c281e1da8cd32ed2"
+      "sha256": "895e74626ecb2f875ee85e5c2500aeea6c5fb870af3e42ddef64772a77cc788f"
     },
     {
       "path": "cad/collision/source/fl_thigh__fl_knee_mount_spacer_-10_-52.025.stl",
@@ -17860,7 +17860,7 @@
     {
       "path": "cad/collision/source/fl_thigh__fl_knee_mount_spacer_-10_1.725.step",
       "bytes": 11278,
-      "sha256": "6a28c7104d31cc757aaff1d56e62e92f82b172ad2ecdbde996ffc7f77ac8f936"
+      "sha256": "5f50d3560c77f8aa5d8912518536b6058a83687d817188f2b3fa48cdeedb023b"
     },
     {
       "path": "cad/collision/source/fl_thigh__fl_knee_mount_spacer_-10_1.725.stl",
@@ -17875,7 +17875,7 @@
     {
       "path": "cad/collision/source/fl_thigh__fl_knee_mount_spacer_10_-52.025.step",
       "bytes": 11283,
-      "sha256": "39eaadc1321deaac2424b2ad9907a0e50cd1d8d78a0217d973fb71f261d107e0"
+      "sha256": "b1deb8282af07f094479e801ade75d5d9edb9b4fbe50bcc7bb9d1b02892c74e8"
     },
     {
       "path": "cad/collision/source/fl_thigh__fl_knee_mount_spacer_10_-52.025.stl",
@@ -17890,7 +17890,7 @@
     {
       "path": "cad/collision/source/fl_thigh__fl_knee_mount_spacer_10_1.725.step",
       "bytes": 11271,
-      "sha256": "796404ae312c0faca056f7291dc657588ca88ac475ebee23c4345733c6cc7fca"
+      "sha256": "dc134e3a67b30b3e4abc3f93a587962b256fe34f093eef404cc12a872ff33adc"
     },
     {
       "path": "cad/collision/source/fl_thigh__fl_knee_mount_spacer_10_1.725.stl",
@@ -17905,7 +17905,7 @@
     {
       "path": "cad/collision/source/fl_thigh__fl_knee_passive_bearing.step",
       "bytes": 12406,
-      "sha256": "a10359998313626b7747786cc8628971937529e3e8650d9d3c10b6c511e3a03b"
+      "sha256": "ccdd646a1556a68a8165ee416614851c44900a6df23fdb8a9584dc22452e8bb5"
     },
     {
       "path": "cad/collision/source/fl_thigh__fl_knee_passive_bearing.stl",
@@ -17920,7 +17920,7 @@
     {
       "path": "cad/collision/source/fl_thigh__fl_knee_servo.step",
       "bytes": 98638,
-      "sha256": "fc7a9cc72c32132ce7ff0927123a18379802a6717aae7949e501a4c15108c338"
+      "sha256": "e99efc84a390f043c15cbdde4067a8675ce94e246c91d7cdb3d5367ebae93ecb"
     },
     {
       "path": "cad/collision/source/fl_thigh__fl_knee_servo.stl",
@@ -17935,7 +17935,7 @@
     {
       "path": "cad/collision/source/fl_thigh__fl_knee_strap_-41.55.step",
       "bytes": 74521,
-      "sha256": "958b3f33621f56680f87715e285c327bda2904c7b0df48b9cec8ac2b539d83f6"
+      "sha256": "a4230d749823ea8a65bf488949ec7754df6f3f7f857b75c50581200bdc99fcfe"
     },
     {
       "path": "cad/collision/source/fl_thigh__fl_knee_strap_-41.55.stl",
@@ -17950,7 +17950,7 @@
     {
       "path": "cad/collision/source/fl_thigh__fl_knee_strap_-7.55.step",
       "bytes": 74514,
-      "sha256": "58bcb666869fef06d0e24ef0e044ab6623be3497b8eef33e21e249260532ea51"
+      "sha256": "50802620b035518c7cf8b18d6ece1b563b03636090e4a8e02cc0c5032faf5951"
     },
     {
       "path": "cad/collision/source/fl_thigh__fl_knee_strap_-7.55.stl",
@@ -17965,7 +17965,7 @@
     {
       "path": "cad/collision/source/fl_thigh__fl_thigh_cheek_front.step",
       "bytes": 299290,
-      "sha256": "b352bba05f95be8e9f5c74a11c08fff6963b09b6e8e46de8cdf099051cf921fb"
+      "sha256": "d0eb916bd44c053c66472a06f366b3c6a6189cc3a38afdbae5fd630bce646bc9"
     },
     {
       "path": "cad/collision/source/fl_thigh__fl_thigh_cheek_front.stl",
@@ -17980,7 +17980,7 @@
     {
       "path": "cad/collision/source/fl_thigh__fl_thigh_cheek_rear.step",
       "bytes": 292932,
-      "sha256": "7b4d42d0dddffeebbd40fbe59fd6f14308c9653fc00c8b0aa63cda4a5c8b053c"
+      "sha256": "adcf9aa86992470be0eaaa8931be1d251b86033fc865db796d6bc4c1fa64ca9e"
     },
     {
       "path": "cad/collision/source/fl_thigh__fl_thigh_cheek_rear.stl",
@@ -17995,7 +17995,7 @@
     {
       "path": "cad/collision/source/fl_thigh__fl_thigh_fairing.step",
       "bytes": 113637,
-      "sha256": "06cf919d81efaac180ed67c553abe84b82d05f221add8a9dd6503833c6333f91"
+      "sha256": "0045f5bd5d57af9866b9192ad1260c5fcd07015184d7323d8a3e3d045cc13774"
     },
     {
       "path": "cad/collision/source/fl_thigh__fl_thigh_fairing.stl",
@@ -18010,7 +18010,7 @@
     {
       "path": "cad/collision/source/fl_thigh__fl_thigh_spacer_-27.step",
       "bytes": 12461,
-      "sha256": "ac386aa000ff487371a80d589198ce791a5f25ad3fe76e3d0eae7bca4fe0d772"
+      "sha256": "49baaabb2c90b2b81f378db496a4d5a7c1a4afc28ee6005d3748287aac990f12"
     },
     {
       "path": "cad/collision/source/fl_thigh__fl_thigh_spacer_-27.stl",
@@ -18025,7 +18025,7 @@
     {
       "path": "cad/collision/source/fl_thigh__fl_thigh_spacer_27.step",
       "bytes": 12454,
-      "sha256": "2a9431a589d63872cd04b647db31f0e396946d4f48a9da3909880f63b718d057"
+      "sha256": "d23327278e214e5911b2efd9aac4167aa0fa4776cb747e4ea1fe369dcf98b419"
     },
     {
       "path": "cad/collision/source/fl_thigh__fl_thigh_spacer_27.stl",
@@ -18040,7 +18040,7 @@
     {
       "path": "cad/collision/source/fr_roll__fr_hip_bearing_retainer.step",
       "bytes": 35353,
-      "sha256": "2a2c827fadcf9a58222313b8220e63fbae28d41ba9a1ee299693829cac4b1a8f"
+      "sha256": "685b3a72a70f522686acbe5572246b7f0b9e860f9112f112312889e025224f7a"
     },
     {
       "path": "cad/collision/source/fr_roll__fr_hip_bearing_retainer.stl",
@@ -18055,7 +18055,7 @@
     {
       "path": "cad/collision/source/fr_roll__fr_hip_passive_bearing.step",
       "bytes": 12393,
-      "sha256": "5927ce1260bbb595a051f393db92c63582bac70a04ecca2423f0f5f826186e0b"
+      "sha256": "9e4e67fda5c3036f2cd6b5d1a5a7622dd4674a40a7b2eeaf9a7a715cd594c075"
     },
     {
       "path": "cad/collision/source/fr_roll__fr_hip_passive_bearing.stl",
@@ -18070,7 +18070,7 @@
     {
       "path": "cad/collision/source/fr_roll__fr_pitch_clamp_shims.step",
       "bytes": 86886,
-      "sha256": "2c0601e8afcaba53b7cc13d96328af47b59d1e604a6250571758e59a7965f91d"
+      "sha256": "94a74394ef71bf298b133db93514c8d469f5472701d4936b1ec30a4649f71bab"
     },
     {
       "path": "cad/collision/source/fr_roll__fr_pitch_clamp_shims.stl",
@@ -18085,7 +18085,7 @@
     {
       "path": "cad/collision/source/fr_roll__fr_pitch_cradle.step",
       "bytes": 358003,
-      "sha256": "6f5572f154a7b997e025906a5a621754d7555c65b10d58d4d30ba673087bc6f6"
+      "sha256": "e3d66f682a2d30e813fc89c7c20f4a84dc452d4421c8c3a7ef424fbae5d21917"
     },
     {
       "path": "cad/collision/source/fr_roll__fr_pitch_cradle.stl",
@@ -18100,7 +18100,7 @@
     {
       "path": "cad/collision/source/fr_roll__fr_pitch_mount_spacer_-10.step",
       "bytes": 11255,
-      "sha256": "903a9d61f95116dc7190f44bb25b2bece222c542a9189457279155d359018c67"
+      "sha256": "e6b1128141548682e8b5d543b15d6f523ebfafea9f58d7fa2463efceef663434"
     },
     {
       "path": "cad/collision/source/fr_roll__fr_pitch_mount_spacer_-10.stl",
@@ -18115,7 +18115,7 @@
     {
       "path": "cad/collision/source/fr_roll__fr_pitch_mount_spacer_10.step",
       "bytes": 11252,
-      "sha256": "8e5b87907a9750ec7f1ec6ad2850532433ae36e52e5ecd642e69ba88890d3054"
+      "sha256": "545850fd5cd132c9e8ec4479cda928b97821187b19b74d514bb769fdc7a8bff4"
     },
     {
       "path": "cad/collision/source/fr_roll__fr_pitch_mount_spacer_10.stl",
@@ -18130,7 +18130,7 @@
     {
       "path": "cad/collision/source/fr_roll__fr_pitch_servo.step",
       "bytes": 98647,
-      "sha256": "8a70c0f76ca1172be8d5bcc6f1fd3f8a312cd17a366ccc736ea02ffda8006a33"
+      "sha256": "a740dc6f11af8fe65768c981d5851539ff0ea459344e8ba8774706da5036daec"
     },
     {
       "path": "cad/collision/source/fr_roll__fr_pitch_servo.stl",
@@ -18145,7 +18145,7 @@
     {
       "path": "cad/collision/source/fr_roll__fr_pitch_strap_-41.55.step",
       "bytes": 74526,
-      "sha256": "3639feee7da3d9a4b7695216de734a7446e17ed9a77c37d1172ec87fb8c62269"
+      "sha256": "c1e55c781d337a0397d3f974f38c5042f15321022f99d64a4cf71a302930d431"
     },
     {
       "path": "cad/collision/source/fr_roll__fr_pitch_strap_-41.55.stl",
@@ -18160,7 +18160,7 @@
     {
       "path": "cad/collision/source/fr_roll__fr_pitch_strap_-7.55.step",
       "bytes": 74521,
-      "sha256": "232b66617945cca4cb289a085fa502a1e8294934b8ebd3dff442d15837fce1f2"
+      "sha256": "66ffe9fa9e68102af016746da14156078db3322f11b73c22d318ab47a5060d44"
     },
     {
       "path": "cad/collision/source/fr_roll__fr_pitch_strap_-7.55.stl",
@@ -18175,7 +18175,7 @@
     {
       "path": "cad/collision/source/fr_roll__fr_roll_M3_heads.step",
       "bytes": 55119,
-      "sha256": "9d16e702a55e9fcb5d86e88d2ecff7975f07a59a17697a8a45ab7ad9e865ae09"
+      "sha256": "9fb26c05ae57633fa944cd20a78cbb1a4aac052c5f86997b6b3f2aaeeb708c98"
     },
     {
       "path": "cad/collision/source/fr_roll__fr_roll_M3_heads.stl",
@@ -18190,7 +18190,7 @@
     {
       "path": "cad/collision/source/fr_roll__fr_roll_axle.step",
       "bytes": 43317,
-      "sha256": "65048b3df5a68e6f3827e0b377ff09822efdec0dabbe117e532dabe1ad1b9f67"
+      "sha256": "ca329b7f7e2262ea9f24cc116552f7ba17d538add66018614b94e8d9f8c60b9c"
     },
     {
       "path": "cad/collision/source/fr_roll__fr_roll_axle.stl",
@@ -18205,7 +18205,7 @@
     {
       "path": "cad/collision/source/fr_roll__fr_roll_yoke.step",
       "bytes": 224411,
-      "sha256": "399a3a2abefbbb36ab48aaa5b09336b4fcaedafa9d0c42faba7a7a44f2f5e686"
+      "sha256": "3c753eb050476d7b1fed245f1a4273b359e2aca03b02f2b20ccdf8b716f69a84"
     },
     {
       "path": "cad/collision/source/fr_roll__fr_roll_yoke.stl",
@@ -18220,7 +18220,7 @@
     {
       "path": "cad/collision/source/fr_shin__fr_TPU_actuator.step",
       "bytes": 12266,
-      "sha256": "74af9daa1291a57b8b76bdb1b4710c2779ecc9bfe0e1ebefe265a59051d34c36"
+      "sha256": "6f4959da637c2675a5e364d89aa5048cbf36610bb42323c9445685bf5bd02b8d"
     },
     {
       "path": "cad/collision/source/fr_shin__fr_TPU_actuator.stl",
@@ -18235,7 +18235,7 @@
     {
       "path": "cad/collision/source/fr_shin__fr_TPU_pad.step",
       "bytes": 277982,
-      "sha256": "05618b1b2203c601fbd81aa4d4c784914a2bdc179f1fa65f191464e2e8a8ce14"
+      "sha256": "54c794b07e2c2d96900096fb569da7d68acc2835c7fcba4eab6bbb7ca8377b0b"
     },
     {
       "path": "cad/collision/source/fr_shin__fr_TPU_pad.stl",
@@ -18250,7 +18250,7 @@
     {
       "path": "cad/collision/source/fr_shin__fr_floating_sole.step",
       "bytes": 86080,
-      "sha256": "0512d174ebe9e349baeb0540d8cc55294fc9f85915ab30dc1a4efd4fd09d2665"
+      "sha256": "45c03a10e9c6c09e867d72cedd31ad5f2cf6baca8eb005c369abc7797c42d8c8"
     },
     {
       "path": "cad/collision/source/fr_shin__fr_floating_sole.stl",
@@ -18265,7 +18265,7 @@
     {
       "path": "cad/collision/source/fr_shin__fr_hoof.step",
       "bytes": 495488,
-      "sha256": "d6e1c3794a823d166e227494a90feb0014d3b3221d16d1e3041056d351fce0c7"
+      "sha256": "3bab092f5639cd33a6b7ad1781833cc4b0d8f6ca2792f36951a06924138877f0"
     },
     {
       "path": "cad/collision/source/fr_shin__fr_hoof.stl",
@@ -18280,7 +18280,7 @@
     {
       "path": "cad/collision/source/fr_shin__fr_knee_M3_heads_-14.0.step",
       "bytes": 55030,
-      "sha256": "e6bf09e99f974612e1a41e53382f64de8f5549cdf1bcb059ac01da6e387171aa"
+      "sha256": "f19bc27de4c218a2a75e6a6f1e0e2e13c0e24f4d497588f1d82934b2fdb482d6"
     },
     {
       "path": "cad/collision/source/fr_shin__fr_knee_M3_heads_-14.0.stl",
@@ -18295,7 +18295,7 @@
     {
       "path": "cad/collision/source/fr_shin__fr_knee_M3_heads_70.0.step",
       "bytes": 55013,
-      "sha256": "5b49915503d5d2996640b3830dc588af53153649337b4348efb53bbc90bab923"
+      "sha256": "9c3e94d97d8c099f54b96e008e0a1e476a1cd7e2f9338ba60e8d070bdd71b2f2"
     },
     {
       "path": "cad/collision/source/fr_shin__fr_knee_M3_heads_70.0.stl",
@@ -18310,7 +18310,7 @@
     {
       "path": "cad/collision/source/fr_shin__fr_knee_cross_spacer.step",
       "bytes": 34205,
-      "sha256": "3ed6bb0cc6f2c9fcb609ecfbcaed80f35d3e35191a77af1fe77e32e613e03e5b"
+      "sha256": "ce03abf6dd17dce486b2e9120bd0e8e5bac9a2ee2c520a708cf62847664e9bc2"
     },
     {
       "path": "cad/collision/source/fr_shin__fr_knee_cross_spacer.stl",
@@ -18325,7 +18325,7 @@
     {
       "path": "cad/collision/source/fr_shin__fr_knee_front_rotor_hub.step",
       "bytes": 54157,
-      "sha256": "e4f7b9a0f3a21f53602e5dd8a940b23c0568285cd7344ba03a70706dc0addf86"
+      "sha256": "e986e8c915aac554e792f5b1b02c114020c8958acd36348f2157e26c428c8821"
     },
     {
       "path": "cad/collision/source/fr_shin__fr_knee_front_rotor_hub.stl",
@@ -18340,7 +18340,7 @@
     {
       "path": "cad/collision/source/fr_shin__fr_knee_rear_rotor_hub.step",
       "bytes": 54176,
-      "sha256": "8bf819123ae90d050be4535a426c7dcff29e366b68d3e3c1b680de9aa81191b6"
+      "sha256": "c578590f4d7ab895e07484d6c3d1b4dbaadccb92984ae8b062463e4e5eab34ac"
     },
     {
       "path": "cad/collision/source/fr_shin__fr_knee_rear_rotor_hub.stl",
@@ -18355,7 +18355,7 @@
     {
       "path": "cad/collision/source/fr_shin__fr_shin_cheek_front.step",
       "bytes": 91829,
-      "sha256": "a8556eb826ec52d5fb59bdba0b36c4e781af7c5fd5aa5afbac56e5317abd916d"
+      "sha256": "337360cfbbe3f6ab84a9e233d7d3e92dd2fad4b2a76579bac2cdf93d030013e9"
     },
     {
       "path": "cad/collision/source/fr_shin__fr_shin_cheek_front.stl",
@@ -18370,7 +18370,7 @@
     {
       "path": "cad/collision/source/fr_shin__fr_shin_cheek_rear.step",
       "bytes": 230256,
-      "sha256": "a2c4457b40354a4b8b7e6cb2c80d4ec3c37b99f7bdfd8e0c38136df6f0e288b6"
+      "sha256": "7ca39fa2dad0fdc6abb893947d4d54f9a757ff6e0d6fda0a96e5281a8d8ca9c8"
     },
     {
       "path": "cad/collision/source/fr_shin__fr_shin_cheek_rear.stl",
@@ -18385,7 +18385,7 @@
     {
       "path": "cad/collision/source/fr_shin__fr_shin_fairing.step",
       "bytes": 109999,
-      "sha256": "e62f2a8ee980488b0afbae84183c4ff536e822ea692372d07be3562ba7af21ba"
+      "sha256": "d84d0d01d44665bfb5cc4d262bf1d7e25ec7bf112036fc3b2204f75a7f7804f1"
     },
     {
       "path": "cad/collision/source/fr_shin__fr_shin_fairing.stl",
@@ -18400,7 +18400,7 @@
     {
       "path": "cad/collision/source/fr_shin__fr_switch.step",
       "bytes": 17781,
-      "sha256": "3ff4eeab8bd948167aeb10fcb55b16ce693bad46b80e8b4e45ed6f9ff32e7189"
+      "sha256": "0a0853a874a74ba23177b04d675d4483f875c95a393c7a3c584dd1d7fa71d219"
     },
     {
       "path": "cad/collision/source/fr_shin__fr_switch.stl",
@@ -18410,7 +18410,7 @@
     {
       "path": "cad/collision/source/fr_shin__fr_switch_PCB.step",
       "bytes": 17792,
-      "sha256": "b6686a16d1a2e23fc68e65cf3f74e2a303f2d889dc41b542e9e1c516d4a06cfb"
+      "sha256": "1de875949e2c94372e2a94167c3bec3f7e3808a73ff810e6342587ed3da0d4aa"
     },
     {
       "path": "cad/collision/source/fr_shin__fr_switch_PCB.stl",
@@ -18430,7 +18430,7 @@
     {
       "path": "cad/collision/source/fr_thigh__fr_hip_M3_heads_-8.0.step",
       "bytes": 55095,
-      "sha256": "9205c3df871acaa0c1a9a4bfee05cfeed2dc7a362794034505ff78b008eded00"
+      "sha256": "e14cc320ef32e651ed6a74b855fdd49d4af322f8d52ee644ee6b50c6c3230cd9"
     },
     {
       "path": "cad/collision/source/fr_thigh__fr_hip_M3_heads_-8.0.stl",
@@ -18445,7 +18445,7 @@
     {
       "path": "cad/collision/source/fr_thigh__fr_hip_M3_heads_68.0.step",
       "bytes": 55007,
-      "sha256": "f4ea03a23ceeb431a40459d0e8188d6005f0f7859572d2f0e44573c47fa21770"
+      "sha256": "3ddef35953e889074648ac22b6be412481ab8c0d399d49d56ac0ca26130570a0"
     },
     {
       "path": "cad/collision/source/fr_thigh__fr_hip_M3_heads_68.0.stl",
@@ -18460,7 +18460,7 @@
     {
       "path": "cad/collision/source/fr_thigh__fr_hip_front_rotor_spacer.step",
       "bytes": 54161,
-      "sha256": "7e26fca0daa514b263eba30f235e69445de797cd37f6a7e40c142b4002bbd0f5"
+      "sha256": "78cbf5e2d84d55a226f413a020c23b91ac02a2410f3d04e9f9b28d56a0dfa897"
     },
     {
       "path": "cad/collision/source/fr_thigh__fr_hip_front_rotor_spacer.stl",
@@ -18475,7 +18475,7 @@
     {
       "path": "cad/collision/source/fr_thigh__fr_hip_rear_rotor_hub.step",
       "bytes": 54171,
-      "sha256": "7fa6daf9e1391432229a2aaa8ca8542552164e308cbd313ed0c8d16b55e4ff66"
+      "sha256": "63de3a26e1a1a358a01c41561a572a68039e07b70c6fe6737ab5dd323d681496"
     },
     {
       "path": "cad/collision/source/fr_thigh__fr_hip_rear_rotor_hub.stl",
@@ -18490,7 +18490,7 @@
     {
       "path": "cad/collision/source/fr_thigh__fr_knee_bearing_retainer.step",
       "bytes": 35362,
-      "sha256": "a363aa71c01225676e428e4e13ade37acb86d26215240fe37f74cf6b7b0512b6"
+      "sha256": "5aab783c80bda4d5f27f45afb2bfcd5a84efeb6ef4e4b1a4230786b08adfb868"
     },
     {
       "path": "cad/collision/source/fr_thigh__fr_knee_bearing_retainer.stl",
@@ -18505,7 +18505,7 @@
     {
       "path": "cad/collision/source/fr_thigh__fr_knee_clamp_shims.step",
       "bytes": 86878,
-      "sha256": "d51d73d81342c2327a985a703a4a5ba99f4100936802084acfe0a9b8ae6be70d"
+      "sha256": "b4e3d7925c4904e919c4846d62a3b7ff95dc6f03f700b595781b407e8d002bdd"
     },
     {
       "path": "cad/collision/source/fr_thigh__fr_knee_clamp_shims.stl",
@@ -18520,7 +18520,7 @@
     {
       "path": "cad/collision/source/fr_thigh__fr_knee_cradle.step",
       "bytes": 357995,
-      "sha256": "7b29ea76c03195085987d730cebba2e6699e5b3f16f9f4602b058b04e65dd6bd"
+      "sha256": "167089e909640937d30694d0e83c7e0d7b60f9eca1e8b3345d9590006f931827"
     },
     {
       "path": "cad/collision/source/fr_thigh__fr_knee_cradle.stl",
@@ -18535,7 +18535,7 @@
     {
       "path": "cad/collision/source/fr_thigh__fr_knee_mount_spacer_-10_-52.025.step",
       "bytes": 11289,
-      "sha256": "467c53ac6ae5b93cb656cbc09cd35a6dc3eeca6026013ba7a4579f7e33ea0e60"
+      "sha256": "eaf387db964fe3ce2bf97f5fbf9c31388a29d4fc6cb9a4ad0f178149029bf016"
     },
     {
       "path": "cad/collision/source/fr_thigh__fr_knee_mount_spacer_-10_-52.025.stl",
@@ -18550,7 +18550,7 @@
     {
       "path": "cad/collision/source/fr_thigh__fr_knee_mount_spacer_-10_1.725.step",
       "bytes": 11279,
-      "sha256": "b3f46ae060b292c0a9de792b3fd8337887a6abf9bfc9b2f61a4538652a80a450"
+      "sha256": "30fac32c9d5c99c44aa857edb785e25d3c0f19e89607f3582bb6a8cd7e97fed8"
     },
     {
       "path": "cad/collision/source/fr_thigh__fr_knee_mount_spacer_-10_1.725.stl",
@@ -18565,7 +18565,7 @@
     {
       "path": "cad/collision/source/fr_thigh__fr_knee_mount_spacer_10_-52.025.step",
       "bytes": 11282,
-      "sha256": "03582e005885f312b9f82053c0f6ddc609de57a42f6089b3cba3d1505518714c"
+      "sha256": "9a4af356cfebbdcc009f72ec24ecc08bdc479df266caabf88b3b9a13f671910d"
     },
     {
       "path": "cad/collision/source/fr_thigh__fr_knee_mount_spacer_10_-52.025.stl",
@@ -18580,7 +18580,7 @@
     {
       "path": "cad/collision/source/fr_thigh__fr_knee_mount_spacer_10_1.725.step",
       "bytes": 11272,
-      "sha256": "f28fa316294e5c7395eaaaf46e71065cdc5ab2d73a93b753ea3e6ff85a53bc13"
+      "sha256": "da804b6cffd66e6a951f607684edf3b089b5f0ba0ed894df3f5debd97500c3ed"
     },
     {
       "path": "cad/collision/source/fr_thigh__fr_knee_mount_spacer_10_1.725.stl",
@@ -18595,7 +18595,7 @@
     {
       "path": "cad/collision/source/fr_thigh__fr_knee_passive_bearing.step",
       "bytes": 12405,
-      "sha256": "3366561ec0228847d808dc04186c2575909115107322e59326265ef335f91ccb"
+      "sha256": "ea2d11ed0ce133731fe83cae1faa1d506346c7394cc5053e6b2d0df697a7a5cb"
     },
     {
       "path": "cad/collision/source/fr_thigh__fr_knee_passive_bearing.stl",
@@ -18610,7 +18610,7 @@
     {
       "path": "cad/collision/source/fr_thigh__fr_knee_servo.step",
       "bytes": 98639,
-      "sha256": "7c54ebbd0392cfef7ab66e7f077a7d217cc326e2a63c7c0f9a0e0f33fca7ca07"
+      "sha256": "a817b6b5c5ddf859b2cb3017df6bcaac14d19dfbf9755e831ed147d08a428b49"
     },
     {
       "path": "cad/collision/source/fr_thigh__fr_knee_servo.stl",
@@ -18625,7 +18625,7 @@
     {
       "path": "cad/collision/source/fr_thigh__fr_knee_strap_-41.55.step",
       "bytes": 74519,
-      "sha256": "8c78cdf4fe49f74f421eeb6336ea800816680527cceb26dfd9e4f8a57d532565"
+      "sha256": "9c794b6166a5fea5c68387c1f060d6ec4d38b3a475e82f014677c6709297f02c"
     },
     {
       "path": "cad/collision/source/fr_thigh__fr_knee_strap_-41.55.stl",
@@ -18640,7 +18640,7 @@
     {
       "path": "cad/collision/source/fr_thigh__fr_knee_strap_-7.55.step",
       "bytes": 74512,
-      "sha256": "f70a608c5c4f15b8dc919627b9fea5036b4fdbd5b0c51df9ac059f9f7e5c66d5"
+      "sha256": "333b2473ddb55a20fea5465b19f84e50bd19a3f43a0eda8a0cd9fbe2cc97820c"
     },
     {
       "path": "cad/collision/source/fr_thigh__fr_knee_strap_-7.55.stl",
@@ -18655,7 +18655,7 @@
     {
       "path": "cad/collision/source/fr_thigh__fr_thigh_cheek_front.step",
       "bytes": 299291,
-      "sha256": "e38813f0c755d5acf343ada2444074863f426bf6eacdfd034c09469ebe5a029a"
+      "sha256": "f453c335e507dd7f4f8b6859438dd6c41ff0bb02c98e40808cac0395e4efd357"
     },
     {
       "path": "cad/collision/source/fr_thigh__fr_thigh_cheek_front.stl",
@@ -18670,7 +18670,7 @@
     {
       "path": "cad/collision/source/fr_thigh__fr_thigh_cheek_rear.step",
       "bytes": 297355,
-      "sha256": "31274080401f51ead0bf59037a8bf342e60e286f435415a4b22c93dccdef1583"
+      "sha256": "c8b1dac473aa0c0dfedf95cc1bff34787897e168e890adf73427cbe7dd7c3fff"
     },
     {
       "path": "cad/collision/source/fr_thigh__fr_thigh_cheek_rear.stl",
@@ -18685,7 +18685,7 @@
     {
       "path": "cad/collision/source/fr_thigh__fr_thigh_fairing.step",
       "bytes": 110004,
-      "sha256": "0db2b6bcb89aba0d05ea5fdc41ad844f4eef28db0dae38b4f6298b1586de9c8c"
+      "sha256": "5d807b37a10fa66aa21f43cff1c97f689186356d4813cc5758d639751af95c14"
     },
     {
       "path": "cad/collision/source/fr_thigh__fr_thigh_fairing.stl",
@@ -18700,7 +18700,7 @@
     {
       "path": "cad/collision/source/fr_thigh__fr_thigh_spacer_-27.step",
       "bytes": 12460,
-      "sha256": "b6b06af752baf07a555d6f799e1ed8b8a6cf26404d8b96254410b4019d7a64eb"
+      "sha256": "af16786eb5306158e5b3e13cb75005b29de7c7d1d5babe0c0babb5fc0868e653"
     },
     {
       "path": "cad/collision/source/fr_thigh__fr_thigh_spacer_-27.stl",
@@ -18715,7 +18715,7 @@
     {
       "path": "cad/collision/source/fr_thigh__fr_thigh_spacer_27.step",
       "bytes": 12453,
-      "sha256": "d749d68d5c9afa30704852ce6ebfb7a390c1f805a86577f46175c3967d0d5d3d"
+      "sha256": "bb4ce68ace8e855c0769a5753d8c6525bb7d86ef65141a32d626cc179e267935"
     },
     {
       "path": "cad/collision/source/fr_thigh__fr_thigh_spacer_27.stl",
@@ -18730,7 +18730,7 @@
     {
       "path": "cad/collision/source/head__camera_board.step",
       "bytes": 20082,
-      "sha256": "d2a4b91bc5a93c14a0bc851de878bb5374713e11daeee0952fcb56d57f1bc5a5"
+      "sha256": "96cfe56f54c4a9afea766087cd77375f6864109f30b85c8e55e56066450a6066"
     },
     {
       "path": "cad/collision/source/head__camera_board.stl",
@@ -18745,7 +18745,7 @@
     {
       "path": "cad/collision/source/head__camera_carrier.step",
       "bytes": 191921,
-      "sha256": "cce8f0288ba918dcd52f8221f842506fa575820616d1a413693ea08000990a59"
+      "sha256": "58e38532d7e144d997fc8e6c525b6451592b08f130d9373a26c8fc7b4835c44b"
     },
     {
       "path": "cad/collision/source/head__camera_carrier.stl",
@@ -18760,7 +18760,7 @@
     {
       "path": "cad/collision/source/head__camera_lens.step",
       "bytes": 7953,
-      "sha256": "0c661830ae9798c09ae8ee4c568bb4d0ff012b9fe85a58ddb1774ed73a8d2cfb"
+      "sha256": "58b839ed3a0a650e4d0d41b313d290f20b3bf834dd467332f626db48c623ed1a"
     },
     {
       "path": "cad/collision/source/head__camera_lens.stl",
@@ -18775,57 +18775,57 @@
     {
       "path": "cad/collision/source/head__display_glint_-1.step",
       "bytes": 8783,
-      "sha256": "a5357d2c3ec293db9bdc30171338c7bc9e583b96aa678a53b5837ede444d1bf8"
+      "sha256": "4f4e57332a31338eefd37768d2b263744c8bdc9f86f613fd36dfbe7f4687c23a"
     },
     {
       "path": "cad/collision/source/head__display_glint_1.step",
       "bytes": 8777,
-      "sha256": "7fb254e8153fcb43967628f2de71a1696a89c502c3f666000b0ff7da7d8ff5c0"
+      "sha256": "3d3c1e9c56435a2646d13bb73fdbfef918ee56b6694464688b54489295dc3f47"
     },
     {
       "path": "cad/collision/source/head__display_highlight_-1.step",
       "bytes": 8773,
-      "sha256": "3ac6832b7b0fadd2e3c56834b2e54f369115855ba602f607a6f11f549363377a"
+      "sha256": "8fbe30b580777e879bcca08e9f476bb04d6563e039c0e03c62e8774fae4e887a"
     },
     {
       "path": "cad/collision/source/head__display_highlight_1.step",
       "bytes": 8767,
-      "sha256": "c7bfb86f982445bcc79bdd661cb25ac65d319d62562915efb250966538572b07"
+      "sha256": "ca7a39038ea453ff1b8d59d334e1b979ae33b27f34d9011fa47ff5c0c1c0490b"
     },
     {
       "path": "cad/collision/source/head__display_iris_-1.step",
       "bytes": 8754,
-      "sha256": "8aca319879de1715669d4bfced0267479c3a6707e2d4f9dea901984bead3fda2"
+      "sha256": "f9fdde2ef9247e07d337b8e898f82c7b51da4209d6c24f11c522b3cacf11c5c2"
     },
     {
       "path": "cad/collision/source/head__display_iris_1.step",
       "bytes": 8748,
-      "sha256": "9049750d585d80b917993b3fe5b0cd537ffc7f693f925692775b1b888df30c57"
+      "sha256": "d441fe16206f6e699f2010ece768d2e7a4acc7dc67b734cd91c44580f79e9b02"
     },
     {
       "path": "cad/collision/source/head__display_pupil_-1.step",
       "bytes": 8768,
-      "sha256": "d65276bb39df165b4bc32c015cefcd7aa0d9870305ef21ec01615c0ff3a89306"
+      "sha256": "f6e18577b7de5c1111370717638e48fb36739a9664751d34d8ee8725eb1e316f"
     },
     {
       "path": "cad/collision/source/head__display_pupil_1.step",
       "bytes": 8762,
-      "sha256": "6f2d1d14434948b9ff4df26b354fbbc2b350fce3aa9b137c8633d95f9ff798a6"
+      "sha256": "39e3319bbe32d6afd42bc0147ebf3b1cfbbd6052e3164070c0ebaf277d3ea90c"
     },
     {
       "path": "cad/collision/source/head__display_sclera_-1.step",
       "bytes": 8064,
-      "sha256": "e0043c74f8bbef1fcc8dcacf9036b0b749f6493d05db8e9321aba4bc793d015f"
+      "sha256": "ba23022e8b7bf04edab25f192d4ed796ff993fdff7f4f2d35dc33b6079347ab6"
     },
     {
       "path": "cad/collision/source/head__display_sclera_1.step",
       "bytes": 8062,
-      "sha256": "4198b54db811120b396cfdd9943283cebe7fe8c8a05cee90f67fe2882c0622c2"
+      "sha256": "f54ef49b74a5d6e9aca5a0ff30d31e7355d570af5d680532d935ac6773e4669d"
     },
     {
       "path": "cad/collision/source/head__eye_bezel_-1.step",
       "bytes": 12347,
-      "sha256": "a34b326398ecbdd712bfced5450f1c88b2900aec1588385dd751b57218f99b94"
+      "sha256": "c3d5871e02a14f6278aaac366dc207dd759cddf725c0ba287ab433df5415a3fd"
     },
     {
       "path": "cad/collision/source/head__eye_bezel_-1.stl",
@@ -18840,7 +18840,7 @@
     {
       "path": "cad/collision/source/head__eye_bezel_1.step",
       "bytes": 12337,
-      "sha256": "6a4ca92e46cf4019744db11c2c54b26e83d76a473bede31865635412c9b9bbbf"
+      "sha256": "f146c843499f56af2cb8c95f16dc2413f3f2f27ddeb345daeedf481898345cab"
     },
     {
       "path": "cad/collision/source/head__eye_bezel_1.stl",
@@ -18855,7 +18855,7 @@
     {
       "path": "cad/collision/source/head__eye_board_-1.step",
       "bytes": 17867,
-      "sha256": "81208ef0bba26f8dd56d96a39489aa594eec430a7e3f2ef6c17a1c8929fda9d8"
+      "sha256": "12831feee65e37575fd7001acd3fe81cfa93adbbaab5f4a330e23683b3a23d2d"
     },
     {
       "path": "cad/collision/source/head__eye_board_-1.stl",
@@ -18870,7 +18870,7 @@
     {
       "path": "cad/collision/source/head__eye_board_1.step",
       "bytes": 17859,
-      "sha256": "fe27bb9cebd0d1c80e38ccf0b6b513383e39d908e5efae0dfa0d189175ae5323"
+      "sha256": "609c3dc493a0fc57f2431076bf20ac7ecfb01ea57ad54ad885fbb70b2ec74b48"
     },
     {
       "path": "cad/collision/source/head__eye_board_1.stl",
@@ -18885,17 +18885,17 @@
     {
       "path": "cad/collision/source/head__eyebrow_-1.step",
       "bytes": 95069,
-      "sha256": "f438f44467dca4b07d800b070e55d1e42ada7cf75071cc976447b4ffefc47d4b"
+      "sha256": "352210994e1c7a08869820c6aba810867efb458bb785371b187e64a9fba37aca"
     },
     {
       "path": "cad/collision/source/head__eyebrow_1.step",
       "bytes": 95061,
-      "sha256": "4728712a7029e95f7244382f5aae18ede21a6f2f226697a9f0bab8c2adec6ca3"
+      "sha256": "344174756269d7844050313f7e86b64de0cc60979457e269a6ae9ddd7b46d24e"
     },
     {
       "path": "cad/collision/source/head__head_service_hatch.step",
       "bytes": 172041,
-      "sha256": "9c8d21403f1f54486f6704d4f2eae4cc636d022e75ed6eb5c20bd296271f94c9"
+      "sha256": "8a53933ff9136b769881f179eb260f53dd4db09855925dca0c2e9dd3a1a7d520"
     },
     {
       "path": "cad/collision/source/head__head_service_hatch.stl",
@@ -18910,7 +18910,7 @@
     {
       "path": "cad/collision/source/head__head_support_yoke.step",
       "bytes": 63651,
-      "sha256": "fbe858be1b1a6c9f956ff1ea42d141b1e3c0ef0b548b22fa084e387436dbb3d0"
+      "sha256": "a76da8f9750e0b62273fb18e766cb73f330119c3c7531ee9303b85c1912e0dab"
     },
     {
       "path": "cad/collision/source/head__head_support_yoke.stl",
@@ -18925,7 +18925,7 @@
     {
       "path": "cad/collision/source/head__mane_crest.step",
       "bytes": 1036448,
-      "sha256": "357391d7d24ea80da254ec162a8e1f6347a039d3273f973429089b9c987fe869"
+      "sha256": "f629ba2001eb3b7024b6ab720007688aed424c0e8e4b3a2e86bcf228331a6869"
     },
     {
       "path": "cad/collision/source/head__mane_crest.stl",
@@ -18940,7 +18940,7 @@
     {
       "path": "cad/collision/source/head__micro_ear_servo_-1.step",
       "bytes": 17919,
-      "sha256": "09979547e3786b399796ed507d568b82f61715d24e76c9073b376de943ac9930"
+      "sha256": "f478f04a5f82b7b64d6fea490dfad9e58f0c4188bca7dfdc25eeda8e5f7494f6"
     },
     {
       "path": "cad/collision/source/head__micro_ear_servo_-1.stl",
@@ -18955,7 +18955,7 @@
     {
       "path": "cad/collision/source/head__micro_ear_servo_1.step",
       "bytes": 17912,
-      "sha256": "16b999800ae550aad091bc0fc6f0b99d5e2ff3c76fc94f2356316ef2505bd886"
+      "sha256": "79a26ed2b2e82906246d6f142792f9ca45886e5e9064190d4fe4ba42236ecc88"
     },
     {
       "path": "cad/collision/source/head__micro_ear_servo_1.stl",
@@ -18970,17 +18970,17 @@
     {
       "path": "cad/collision/source/head__nostril_-8.step",
       "bytes": 7473,
-      "sha256": "7b2935b347d94bb3675dc673436e7fd71d1bde06fa229dce6536fdaa803af848"
+      "sha256": "af02696c2171c596379c2c1d72a488133c3459c5efba7fd4529f3ae42512e65a"
     },
     {
       "path": "cad/collision/source/head__nostril_8.step",
       "bytes": 7466,
-      "sha256": "bac43d60f184c779b1cca4ec32cc615462308fdcc25796bb15dc042bb7633368"
+      "sha256": "1680922c9176e0852b9fa692341293c3c1aa2c5024b74c596d0c2bab6c70ed52"
     },
     {
       "path": "cad/collision/source/head__pink_mane_stripe.step",
       "bytes": 49332,
-      "sha256": "5923a8f7e41f7524ce066287479867dcb1c5d3f5ee0eeed95713657101947723"
+      "sha256": "9183bfec11db6f73c651931f11e8159539996c201f697f313be42c541dff101a"
     },
     {
       "path": "cad/collision/source/head__pink_mane_stripe.stl",
@@ -18995,7 +18995,7 @@
     {
       "path": "cad/collision/source/head__pony_head_shell.step",
       "bytes": 5180004,
-      "sha256": "40eb6e22cfff05cca7cfd046a72f586a096a9a1807f03046f17ac3f5d84df43c"
+      "sha256": "3af13f63f131e32cae1e5726c37beab8eae09f5a4046e8bcefcff680b49296a2"
     },
     {
       "path": "cad/collision/source/head__pony_head_shell.stl",
@@ -19010,12 +19010,12 @@
     {
       "path": "cad/collision/source/head__smile_pigment.step",
       "bytes": 174590,
-      "sha256": "666842be9086f7cb05b218c86b13f35b27fbcebffd793adfd7df7cc311eabc1f"
+      "sha256": "3527d279bbc94de758419fc582a8c9103b16f2dac5b8f37b0a7cc4d79350e317"
     },
     {
       "path": "cad/collision/source/head__unicorn_horn.step",
       "bytes": 98938,
-      "sha256": "7bebbdf9e9177a2da25b3c842f3c3799afc9cccfd8210d54b29bb1498146cc80"
+      "sha256": "46b6bb6647b93568fdaa7a7336e0b849fad1f39d170fb80646c25c7fd1a2336a"
     },
     {
       "path": "cad/collision/source/head__unicorn_horn.stl",
@@ -19030,7 +19030,7 @@
     {
       "path": "cad/collision/source/neck_yaw__head_pitch_clamp_shims.step",
       "bytes": 87313,
-      "sha256": "4e0f1ab2f0b0d41074eec5dcb34e7d05e3dc38496d040e1d8db31b2d45403312"
+      "sha256": "a1212bc639d744da4ca53ecd75686cfdfb22682ffd3384216b22e0191bb59824"
     },
     {
       "path": "cad/collision/source/neck_yaw__head_pitch_clamp_shims.stl",
@@ -19045,7 +19045,7 @@
     {
       "path": "cad/collision/source/neck_yaw__head_pitch_cradle.step",
       "bytes": 47396,
-      "sha256": "89681ca062ce50212e83b27e29d37974999954c5619e9363f25fe89079f32810"
+      "sha256": "b7763ad613b87e8c2a92c8c112ad89d96e98b26881fa5baabbb89763edf794a3"
     },
     {
       "path": "cad/collision/source/neck_yaw__head_pitch_cradle.stl",
@@ -19060,7 +19060,7 @@
     {
       "path": "cad/collision/source/neck_yaw__head_pitch_cradle_strap_-33.step",
       "bytes": 25829,
-      "sha256": "4fea029c873128630b9b3861ee42383692328b0905635477667c46c3af135549"
+      "sha256": "990c70253bdae81f8c936694a6e0f39a9a8a891962e64c79ec0d06943c18eb1f"
     },
     {
       "path": "cad/collision/source/neck_yaw__head_pitch_cradle_strap_-33.stl",
@@ -19075,7 +19075,7 @@
     {
       "path": "cad/collision/source/neck_yaw__head_pitch_cradle_strap_-7.step",
       "bytes": 25822,
-      "sha256": "65491cedd39c9f0fff34d822d9d658e873380c6a06293b311865b124a0cc1b3c"
+      "sha256": "77ef78d1a111a850da233afecb158c4a1a283a95fd6162dc1e0df975c4fdb52e"
     },
     {
       "path": "cad/collision/source/neck_yaw__head_pitch_cradle_strap_-7.stl",
@@ -19090,7 +19090,7 @@
     {
       "path": "cad/collision/source/neck_yaw__head_pitch_servo.step",
       "bytes": 18155,
-      "sha256": "1d9fd62a275191b4fc83bb9fc24241ae82d929a47d96adeb1f8a788309a4e488"
+      "sha256": "91a0bfa05fc50e61c00786c7b5adacc244abd239a23cf89da75a100bfab0e11b"
     },
     {
       "path": "cad/collision/source/neck_yaw__head_pitch_servo.stl",
@@ -19105,7 +19105,7 @@
     {
       "path": "cad/collision/source/neck_yaw__white_neck_collar.step",
       "bytes": 17248,
-      "sha256": "092d9c50531c45aa310e7ec6e004879bafe6f6b5d620e15d39adbb459f5967ca"
+      "sha256": "82d2bb4ba8507e823b0f3e40b31524950396a5613f7609d1510fa1f9c84d31af"
     },
     {
       "path": "cad/collision/source/neck_yaw__white_neck_collar.stl",
@@ -19120,7 +19120,7 @@
     {
       "path": "cad/collision/source/rl_roll__rl_hip_bearing_retainer.step",
       "bytes": 42662,
-      "sha256": "ca9c2e347e22707b345273a7f3dd1af310ff520604eccaa0d543880e418bd65d"
+      "sha256": "08b70e972ffe12e55ec4387fc1d571e6441801b08124f75b5871ce335b643010"
     },
     {
       "path": "cad/collision/source/rl_roll__rl_hip_bearing_retainer.stl",
@@ -19135,7 +19135,7 @@
     {
       "path": "cad/collision/source/rl_roll__rl_hip_passive_bearing.step",
       "bytes": 12272,
-      "sha256": "972316c48118fc8cc07ef5980fff2e28613561249cc2acd127ec62577fbdcfe6"
+      "sha256": "143a00618f0707ae698d85de161cf603ea4bc1de2a392612a86aba99e5893520"
     },
     {
       "path": "cad/collision/source/rl_roll__rl_hip_passive_bearing.stl",
@@ -19150,7 +19150,7 @@
     {
       "path": "cad/collision/source/rl_roll__rl_pitch_clamp_shims.step",
       "bytes": 76322,
-      "sha256": "1f8c958b433b31cb7cb3f14bdc99119a654aa1caeb0c4935bce4c0340efb8245"
+      "sha256": "d4b98cf9253bb017c8fc1206f9168e634030fac07b5c025f14fb0ca17bd14557"
     },
     {
       "path": "cad/collision/source/rl_roll__rl_pitch_clamp_shims.stl",
@@ -19165,7 +19165,7 @@
     {
       "path": "cad/collision/source/rl_roll__rl_pitch_cradle.step",
       "bytes": 353129,
-      "sha256": "63f35eedc12922ee62755415002b0e9267363c8c81c6bc3db38e5e9ab1bdabaa"
+      "sha256": "a0deed702090299a1d9ffbc42e29231f043f9545f4bee34174dd9813b4a24740"
     },
     {
       "path": "cad/collision/source/rl_roll__rl_pitch_cradle.stl",
@@ -19180,7 +19180,7 @@
     {
       "path": "cad/collision/source/rl_roll__rl_pitch_mount_spacer_-10.step",
       "bytes": 11723,
-      "sha256": "a94941b55b6570d5220fc97b8680f156dffaa1e86bf03170ea09ab05a0cdcf21"
+      "sha256": "12725b99af7f1d388c1990d3465190cd5f59f4125452de0ee6a57dfd43a16b5c"
     },
     {
       "path": "cad/collision/source/rl_roll__rl_pitch_mount_spacer_-10.stl",
@@ -19195,7 +19195,7 @@
     {
       "path": "cad/collision/source/rl_roll__rl_pitch_mount_spacer_10.step",
       "bytes": 11742,
-      "sha256": "84e0e3e842794cb172ba1c34e2ebd2f06e56a6ccf434cb28919fdaba86376dce"
+      "sha256": "90cfa328f3aa9a32f1ee882d4da4cbb8b08527b0e78ff3d61977ad60e12e548c"
     },
     {
       "path": "cad/collision/source/rl_roll__rl_pitch_mount_spacer_10.stl",
@@ -19210,7 +19210,7 @@
     {
       "path": "cad/collision/source/rl_roll__rl_pitch_servo.step",
       "bytes": 93581,
-      "sha256": "7ebc7752ccd4a7f652186b2ce665373d0c18dfe6962161ea21bc0248bab3fea5"
+      "sha256": "afc0fb04a5794c9e3bfb02b3ed7b08306f27a939b9fcb62b7aa1194e46b8be03"
     },
     {
       "path": "cad/collision/source/rl_roll__rl_pitch_servo.stl",
@@ -19225,7 +19225,7 @@
     {
       "path": "cad/collision/source/rl_roll__rl_pitch_strap_-41.55.step",
       "bytes": 72120,
-      "sha256": "9564b77f88c162012bae969dec534d0354db65631356a26b183150ba6a34dc4e"
+      "sha256": "318302f70f1fd1fce944ddcaf882a45e0a537a480dd52cdddf7133d30799cbe5"
     },
     {
       "path": "cad/collision/source/rl_roll__rl_pitch_strap_-41.55.stl",
@@ -19240,7 +19240,7 @@
     {
       "path": "cad/collision/source/rl_roll__rl_pitch_strap_-7.55.step",
       "bytes": 72048,
-      "sha256": "30f821288d595ff071c2544770e41bda44b8512db732d7764b5d0a448257d0c7"
+      "sha256": "f597c24cbf7890ace34527546ccc8808cada440d6cd050b4f3664d6229904aee"
     },
     {
       "path": "cad/collision/source/rl_roll__rl_pitch_strap_-7.55.stl",
@@ -19255,7 +19255,7 @@
     {
       "path": "cad/collision/source/rl_roll__rl_roll_M3_heads.step",
       "bytes": 49557,
-      "sha256": "b3d8fecee2068e00b8a03d36cffc9b593ca29f69b15bf898ceb93bf90bd84bb7"
+      "sha256": "8fd23c54908d167ede870ace2fafa4b2c69b48b5eb5b23508c0b858b1c9a2b78"
     },
     {
       "path": "cad/collision/source/rl_roll__rl_roll_M3_heads.stl",
@@ -19270,7 +19270,7 @@
     {
       "path": "cad/collision/source/rl_roll__rl_roll_axle.step",
       "bytes": 54487,
-      "sha256": "9a7fda428e8bacf2bbaee9d8392e77206964828b40bc38bdebc07d585a6a3d16"
+      "sha256": "307b6e6c12d30d8f3ce59174bed18c8a9ed87366f4a2e51e146cd5661f5e875a"
     },
     {
       "path": "cad/collision/source/rl_roll__rl_roll_axle.stl",
@@ -19285,7 +19285,7 @@
     {
       "path": "cad/collision/source/rl_roll__rl_roll_yoke.step",
       "bytes": 223778,
-      "sha256": "b408aac726ea55e8f112fc07b4e691d1f39b15cf7451a6b7378527bc39704eb2"
+      "sha256": "3553d4d0f69655a255cf5cf6d56359a24793a7ad67aadfd2ed5dc0aa99591f97"
     },
     {
       "path": "cad/collision/source/rl_roll__rl_roll_yoke.stl",
@@ -19300,7 +19300,7 @@
     {
       "path": "cad/collision/source/rl_shin__rl_TPU_actuator.step",
       "bytes": 13072,
-      "sha256": "d6d1af1b8ab58436ac7152e0d1beec4c41b85da36587e535c0b49735396aa31a"
+      "sha256": "8f90d6aec438ad559407ad55d3c5fbb69d65d3145cebda8d5aa7aa90eb926dbd"
     },
     {
       "path": "cad/collision/source/rl_shin__rl_TPU_actuator.stl",
@@ -19315,7 +19315,7 @@
     {
       "path": "cad/collision/source/rl_shin__rl_TPU_pad.step",
       "bytes": 287128,
-      "sha256": "cd3210f1ff7d8d9e5147487d5bf068d10a3dd4319f53fc7969eef7ba2301f4c9"
+      "sha256": "2d7a2f199d97698be967fb0734dfea74b7a7065d368bc211462f56e09db69a58"
     },
     {
       "path": "cad/collision/source/rl_shin__rl_TPU_pad.stl",
@@ -19330,7 +19330,7 @@
     {
       "path": "cad/collision/source/rl_shin__rl_floating_sole.step",
       "bytes": 92332,
-      "sha256": "86139650d36fa8021478373371dcfc224fe142b427534a6e233285f6f2460580"
+      "sha256": "174bbd3abdb408258630c3863cf9eb59f12fde310112927df009c705b719c70a"
     },
     {
       "path": "cad/collision/source/rl_shin__rl_floating_sole.stl",
@@ -19345,7 +19345,7 @@
     {
       "path": "cad/collision/source/rl_shin__rl_hoof.step",
       "bytes": 504912,
-      "sha256": "bb53cbc483bb01a7042a161ca1ae7449a331ba48f9748c33d234bd845c25a861"
+      "sha256": "2a88b392f07dfadba632b869f6fee0ae836b43e8b6350fe0b3fe5989c46b9de3"
     },
     {
       "path": "cad/collision/source/rl_shin__rl_hoof.stl",
@@ -19360,7 +19360,7 @@
     {
       "path": "cad/collision/source/rl_shin__rl_knee_M3_heads_-70.0.step",
       "bytes": 48903,
-      "sha256": "dcce3fec4e94fdacf6c33a2824de992c09f96192cb429ea92350cb6e31eb6f06"
+      "sha256": "3ea8b33f983855761a77ce1fb95d4787930a89de75267c28a799c03254b4d2c6"
     },
     {
       "path": "cad/collision/source/rl_shin__rl_knee_M3_heads_-70.0.stl",
@@ -19375,7 +19375,7 @@
     {
       "path": "cad/collision/source/rl_shin__rl_knee_M3_heads_14.0.step",
       "bytes": 48836,
-      "sha256": "e1ec0be43807c53f9d563bf1d8c7266cff7f9f0505d33bc11efad7fad44628fd"
+      "sha256": "9b1a22f274655c6bfd789af1d32ad95ab9a6e51e067d919ab264daab377e2831"
     },
     {
       "path": "cad/collision/source/rl_shin__rl_knee_M3_heads_14.0.stl",
@@ -19390,7 +19390,7 @@
     {
       "path": "cad/collision/source/rl_shin__rl_knee_cross_spacer.step",
       "bytes": 33155,
-      "sha256": "e3f2cc4170a7d55939bb6f0766a13dfd22a3e04999b9cf482a0944f6ab7088e2"
+      "sha256": "2c73fc13de826f30a7387fc1043fea6e4f8cacf10de43dd77b71545e7628af95"
     },
     {
       "path": "cad/collision/source/rl_shin__rl_knee_cross_spacer.stl",
@@ -19405,7 +19405,7 @@
     {
       "path": "cad/collision/source/rl_shin__rl_knee_front_rotor_hub.step",
       "bytes": 52917,
-      "sha256": "11ea03afa26a649ca3f9f01e566823eeb9aad700a67e8619e405ab5947986d17"
+      "sha256": "23340903f688196847e9afeef5ee88eaf840ae766683db3928f1df52cd58e2d1"
     },
     {
       "path": "cad/collision/source/rl_shin__rl_knee_front_rotor_hub.stl",
@@ -19420,7 +19420,7 @@
     {
       "path": "cad/collision/source/rl_shin__rl_knee_rear_rotor_hub.step",
       "bytes": 52931,
-      "sha256": "77a3a2500ed2f900412ce360ece7861b8dca25620a92498e2ed5ad38383783c6"
+      "sha256": "df2ed3353c3d6d92626706d1f95838749e715f0d61dab1b066a4f89e9e15a9d8"
     },
     {
       "path": "cad/collision/source/rl_shin__rl_knee_rear_rotor_hub.stl",
@@ -19435,7 +19435,7 @@
     {
       "path": "cad/collision/source/rl_shin__rl_shin_cheek_front.step",
       "bytes": 74275,
-      "sha256": "778f2e94a13e1ae7b797fd4b502922ef6d808dd68667f069e1e77c47b010f656"
+      "sha256": "822c2a003050bf26e77c07c403ede6de97a5b96062db36840fbc57a706e55680"
     },
     {
       "path": "cad/collision/source/rl_shin__rl_shin_cheek_front.stl",
@@ -19450,7 +19450,7 @@
     {
       "path": "cad/collision/source/rl_shin__rl_shin_cheek_rear.step",
       "bytes": 229796,
-      "sha256": "49272054a4aa4e973c2e0ab4462016e8fd6441b55a441472dd92e2c574d9ee66"
+      "sha256": "666df75afcd5c415ad685722e5498b11089e63e64fd2d1a70812ec81355376ee"
     },
     {
       "path": "cad/collision/source/rl_shin__rl_shin_cheek_rear.stl",
@@ -19465,7 +19465,7 @@
     {
       "path": "cad/collision/source/rl_shin__rl_shin_fairing.step",
       "bytes": 108816,
-      "sha256": "d4db3e5d7fcbc6d8ee2ff8fb244b38fd936185b55a586929a84dfbad44b8c020"
+      "sha256": "9d5994f88dec5d0a1de1c223a89e43b6ed7c96049942f2bd286fb4e92b39c34b"
     },
     {
       "path": "cad/collision/source/rl_shin__rl_shin_fairing.stl",
@@ -19480,7 +19480,7 @@
     {
       "path": "cad/collision/source/rl_shin__rl_switch.step",
       "bytes": 17268,
-      "sha256": "2768ab6b7f07a15479b1fc60593a3d0562f7808da843dd032c8847d0aca56faf"
+      "sha256": "d29403fcbc978550087ca46727297c1fd392d4e851d4becb26df8b9cad7903e3"
     },
     {
       "path": "cad/collision/source/rl_shin__rl_switch.stl",
@@ -19490,7 +19490,7 @@
     {
       "path": "cad/collision/source/rl_shin__rl_switch_PCB.step",
       "bytes": 17289,
-      "sha256": "90a28dde02d4077e4f9e39090adda5b87e4e79c37dc8cd3d4c55167920ba0474"
+      "sha256": "f2df78b362ed8434a08d2f14196f385d2fd5aa495ad1cbf157c1ed5e1cc2264e"
     },
     {
       "path": "cad/collision/source/rl_shin__rl_switch_PCB.stl",
@@ -19510,7 +19510,7 @@
     {
       "path": "cad/collision/source/rl_thigh__rl_hip_M3_heads_-68.0.step",
       "bytes": 48900,
-      "sha256": "5e7c0f89c7d8360c6e80f3518b0fb32dce61d772b92070a92a836ee7e259e8cc"
+      "sha256": "ff2f504149550faccb2603ed54c6cddb32ceecbc51fb36730cb82c7a9600d4bf"
     },
     {
       "path": "cad/collision/source/rl_thigh__rl_hip_M3_heads_-68.0.stl",
@@ -19525,7 +19525,7 @@
     {
       "path": "cad/collision/source/rl_thigh__rl_hip_M3_heads_8.0.step",
       "bytes": 48766,
-      "sha256": "3f870e24605fb8f8c985c44780969105eaf8a9da6aa1e65390c04c731326fa3d"
+      "sha256": "d5885f5a94cd5481ca6cd2ab5fd9cf8faa654ed8e4dc52049485732a726dd253"
     },
     {
       "path": "cad/collision/source/rl_thigh__rl_hip_M3_heads_8.0.stl",
@@ -19540,7 +19540,7 @@
     {
       "path": "cad/collision/source/rl_thigh__rl_hip_front_rotor_spacer.step",
       "bytes": 52993,
-      "sha256": "1436bfd28ae4f9d790919d172ad00383838d4e66282fc24004792c4bbc169f93"
+      "sha256": "6c4500bd7809a852cf680d465db9282dbc8133568e1eeb7ecb61801dae261e2e"
     },
     {
       "path": "cad/collision/source/rl_thigh__rl_hip_front_rotor_spacer.stl",
@@ -19555,7 +19555,7 @@
     {
       "path": "cad/collision/source/rl_thigh__rl_hip_rear_rotor_hub.step",
       "bytes": 52992,
-      "sha256": "dea9c6586895aa4a33e320ae1ce183c439bf23f330c6074f6e1331c78ba7348b"
+      "sha256": "270a52649b8c9996e806cde8c7355d3da03c0571679c493a6d19ed59675cefb0"
     },
     {
       "path": "cad/collision/source/rl_thigh__rl_hip_rear_rotor_hub.stl",
@@ -19570,7 +19570,7 @@
     {
       "path": "cad/collision/source/rl_thigh__rl_knee_bearing_retainer.step",
       "bytes": 42681,
-      "sha256": "4cb345d58fad5295e1c1c29db6e3cd031bf3bae7c71d4abe9d5c3ec32f043c6d"
+      "sha256": "b4bf5965330bf19cc198a66494966841b1d4729895880d4ff0ff3a7f5254475f"
     },
     {
       "path": "cad/collision/source/rl_thigh__rl_knee_bearing_retainer.stl",
@@ -19585,7 +19585,7 @@
     {
       "path": "cad/collision/source/rl_thigh__rl_knee_clamp_shims.step",
       "bytes": 76329,
-      "sha256": "a80b4be204083576bd8bd74e824dcfd943dcae9f3fe7ccaaac5cb95a4d1241ee"
+      "sha256": "dfbcba8ac4f3ffe7f12bd69d51a85c4651012c92d6701e394c5c784d70b9f002"
     },
     {
       "path": "cad/collision/source/rl_thigh__rl_knee_clamp_shims.stl",
@@ -19600,7 +19600,7 @@
     {
       "path": "cad/collision/source/rl_thigh__rl_knee_cradle.step",
       "bytes": 353394,
-      "sha256": "2f3d3ce3c42b44e74ebfe6d1645c5c27be7c492fe389ba2844ef055257f96d28"
+      "sha256": "0623388822720945f52e938578180618e0a9f892133af6f3ef42515eeb32a296"
     },
     {
       "path": "cad/collision/source/rl_thigh__rl_knee_cradle.stl",
@@ -19615,7 +19615,7 @@
     {
       "path": "cad/collision/source/rl_thigh__rl_knee_mount_spacer_-10_-52.025.step",
       "bytes": 11738,
-      "sha256": "ff6a5f85fa30193f1b682c00415d590aaa7272aa1c97df348f7419f2a0b35e6e"
+      "sha256": "936bb89f9b258a4a158dc42848971fb216b49f3251c15e4ba2833f1e77452187"
     },
     {
       "path": "cad/collision/source/rl_thigh__rl_knee_mount_spacer_-10_-52.025.stl",
@@ -19630,7 +19630,7 @@
     {
       "path": "cad/collision/source/rl_thigh__rl_knee_mount_spacer_-10_1.725.step",
       "bytes": 11720,
-      "sha256": "c6a2f69425c22cbbb69fc3d268082c32208266e7639c026261a6882deeac120a"
+      "sha256": "54da5de4c2a6b38861c808a1063eb55db42d0f8c07015b5d1226ed5b5f618f31"
     },
     {
       "path": "cad/collision/source/rl_thigh__rl_knee_mount_spacer_-10_1.725.stl",
@@ -19645,7 +19645,7 @@
     {
       "path": "cad/collision/source/rl_thigh__rl_knee_mount_spacer_10_-52.025.step",
       "bytes": 11755,
-      "sha256": "9b7cfd5aa92f297b8347bd86b1e929a70322c53599556293abc5f72ea8187425"
+      "sha256": "05dd207d92bbedf7ddb218d9155bfef236236cab96bf91c4943bef6fea98c621"
     },
     {
       "path": "cad/collision/source/rl_thigh__rl_knee_mount_spacer_10_-52.025.stl",
@@ -19660,7 +19660,7 @@
     {
       "path": "cad/collision/source/rl_thigh__rl_knee_mount_spacer_10_1.725.step",
       "bytes": 11737,
-      "sha256": "3bedab511cfa52fe60fbd6b33ddbc2b51799799d25da30c60a105d0ea72b8185"
+      "sha256": "0eec4c43ffaf5f742ddb67d32b6e6e7d8cdf720904aeec3595903b77cdca9abf"
     },
     {
       "path": "cad/collision/source/rl_thigh__rl_knee_mount_spacer_10_1.725.stl",
@@ -19675,7 +19675,7 @@
     {
       "path": "cad/collision/source/rl_thigh__rl_knee_passive_bearing.step",
       "bytes": 12292,
-      "sha256": "24d3adfd79a38ddf248938d87dffd82a5197dc8030e4d4e661885cdd60379ed9"
+      "sha256": "aab2aab14cccaac7231a18c1c5a3a8906211ed0d1334624ef26c520fec576ee9"
     },
     {
       "path": "cad/collision/source/rl_thigh__rl_knee_passive_bearing.stl",
@@ -19690,7 +19690,7 @@
     {
       "path": "cad/collision/source/rl_thigh__rl_knee_servo.step",
       "bytes": 93690,
-      "sha256": "93d220ada503c2228076a99c162dfe2c9eac033c44a557e620b26482f66b1445"
+      "sha256": "8c16f2f91ddab60bf480855c5ff8240092fcf44b4ab407e8972fccf2347ee539"
     },
     {
       "path": "cad/collision/source/rl_thigh__rl_knee_servo.stl",
@@ -19705,7 +19705,7 @@
     {
       "path": "cad/collision/source/rl_thigh__rl_knee_strap_-41.55.step",
       "bytes": 72040,
-      "sha256": "a1a5830b9c356a1157642bfbed7ef9faefb50ef96d4bd18a49aa3427ec38ca59"
+      "sha256": "2ff6447e506802b3ddd72097b5452b74ab1d8b8cbcc2d0ba0064f2625c5b2465"
     },
     {
       "path": "cad/collision/source/rl_thigh__rl_knee_strap_-41.55.stl",
@@ -19720,7 +19720,7 @@
     {
       "path": "cad/collision/source/rl_thigh__rl_knee_strap_-7.55.step",
       "bytes": 71952,
-      "sha256": "8d955d00a8a90809e744def0aa8ce84cb1f42754cf45d0e98647da861d9e7fd2"
+      "sha256": "d0e54cf73c71340f03760500b96f77f59c50c05419766b246ddbfd699b3b6189"
     },
     {
       "path": "cad/collision/source/rl_thigh__rl_knee_strap_-7.55.stl",
@@ -19735,7 +19735,7 @@
     {
       "path": "cad/collision/source/rl_thigh__rl_thigh_cheek_front.step",
       "bytes": 273312,
-      "sha256": "a3914a9128d2ce8ea6990ec9ed564eefd8ef8bc7751519061368589435b3b71a"
+      "sha256": "31c3815ed11a144d2ff5b938c087dbf7bb7d57a5d1e1919cdd05f18f4540b0fe"
     },
     {
       "path": "cad/collision/source/rl_thigh__rl_thigh_cheek_front.stl",
@@ -19750,7 +19750,7 @@
     {
       "path": "cad/collision/source/rl_thigh__rl_thigh_cheek_rear.step",
       "bytes": 296522,
-      "sha256": "b35b58cbe7c955cbaa7e1457bc7226ea83a1467e78d9f0ce67a296dead394e27"
+      "sha256": "0789154b0b723b66f3e7b4d776576a9f6076c3185ae0325187d76c0c3f343146"
     },
     {
       "path": "cad/collision/source/rl_thigh__rl_thigh_cheek_rear.stl",
@@ -19765,7 +19765,7 @@
     {
       "path": "cad/collision/source/rl_thigh__rl_thigh_fairing.step",
       "bytes": 108762,
-      "sha256": "e8441575a4c997ec8ae544d827f428a17b03f860fe650320a8aea5ceb7bdce1b"
+      "sha256": "d0fb6268452b49cf5e722679089d333c1aa7a1ac8ab4393dc036be6e75172630"
     },
     {
       "path": "cad/collision/source/rl_thigh__rl_thigh_fairing.stl",
@@ -19780,7 +19780,7 @@
     {
       "path": "cad/collision/source/rl_thigh__rl_thigh_spacer_-27.step",
       "bytes": 12274,
-      "sha256": "c61d0fc5145003a47e1723115caf850b732dbf25f7233e9fcb456b9a12ecb0c9"
+      "sha256": "6519c39af07b4aaedb6d5ce0a325edd1c810f871e26f1d61c38297f2c9dbf6f3"
     },
     {
       "path": "cad/collision/source/rl_thigh__rl_thigh_spacer_-27.stl",
@@ -19795,7 +19795,7 @@
     {
       "path": "cad/collision/source/rl_thigh__rl_thigh_spacer_27.step",
       "bytes": 12285,
-      "sha256": "f78a15c02fe329f9367aa1f0a9198a320f443feb8f777d0611acbe5b15269211"
+      "sha256": "82a15ce0b4aa097cf18bcc945fcd9b3fa6004896278977c29649e4f5eff6a6b8"
     },
     {
       "path": "cad/collision/source/rl_thigh__rl_thigh_spacer_27.stl",
@@ -19810,7 +19810,7 @@
     {
       "path": "cad/collision/source/rr_roll__rr_hip_bearing_retainer.step",
       "bytes": 35386,
-      "sha256": "50e92bffd4d357cf30d629c77de13ef80865bf1c82fe14a54da86cc04cd445f1"
+      "sha256": "039dca0461f7563549568bc143121e1b29c5e23e584c25852a7668d272878b13"
     },
     {
       "path": "cad/collision/source/rr_roll__rr_hip_bearing_retainer.stl",
@@ -19825,7 +19825,7 @@
     {
       "path": "cad/collision/source/rr_roll__rr_hip_passive_bearing.step",
       "bytes": 12426,
-      "sha256": "221f1657801232d1372c0c3fa100ff40ba4c924ab5300a273f04ac43f310fcec"
+      "sha256": "709ee250f6ab51f7bf0eb7c6eeb933b58ad484c0a1ff70ff1c5183aaae0839d5"
     },
     {
       "path": "cad/collision/source/rr_roll__rr_hip_passive_bearing.stl",
@@ -19840,7 +19840,7 @@
     {
       "path": "cad/collision/source/rr_roll__rr_pitch_clamp_shims.step",
       "bytes": 76268,
-      "sha256": "de8bbe2f5c58b5977931ae681964900ff1f7cc1f6e9d5f4133b34dc22ebb7ca4"
+      "sha256": "7d216a1bb8f7c453145b19d819f6ee55335a4f6f48a5344600a2e7c9af7b441d"
     },
     {
       "path": "cad/collision/source/rr_roll__rr_pitch_clamp_shims.stl",
@@ -19855,7 +19855,7 @@
     {
       "path": "cad/collision/source/rr_roll__rr_pitch_cradle.step",
       "bytes": 353214,
-      "sha256": "2d2557f70e636aec6b5a67007912d4b2deaefd9a9aa0d6b792107543de8e62d0"
+      "sha256": "967e7132a53e288f435cbf13f13922a1ea6d98db768e21241e77149f98123cab"
     },
     {
       "path": "cad/collision/source/rr_roll__rr_pitch_cradle.stl",
@@ -19870,7 +19870,7 @@
     {
       "path": "cad/collision/source/rr_roll__rr_pitch_mount_spacer_-10.step",
       "bytes": 11271,
-      "sha256": "a735775f516350a78e6f946fae99bf288dc8613b8939bf0e15c8d7cf21d4a8a4"
+      "sha256": "63169aa79b63fc526a93b3113a1801338583747816389200628f198cb492dada"
     },
     {
       "path": "cad/collision/source/rr_roll__rr_pitch_mount_spacer_-10.stl",
@@ -19885,7 +19885,7 @@
     {
       "path": "cad/collision/source/rr_roll__rr_pitch_mount_spacer_10.step",
       "bytes": 11270,
-      "sha256": "17a57ce2afb0b6d872c663f8b9d656a7a3e9495a8d55c2f79201f91f61b93523"
+      "sha256": "3bd0a07b82218235eb407d49ec9c661244abce5e9c8c299700edf94913fcf319"
     },
     {
       "path": "cad/collision/source/rr_roll__rr_pitch_mount_spacer_10.stl",
@@ -19900,7 +19900,7 @@
     {
       "path": "cad/collision/source/rr_roll__rr_pitch_servo.step",
       "bytes": 93570,
-      "sha256": "8c635c34c1659d4994df6236861698c4b34f743cee89bb4a597162553a67a2df"
+      "sha256": "8e66055c827a86cc96fea83aa416e24b578aa4a27347619cc88c6688ea7a8090"
     },
     {
       "path": "cad/collision/source/rr_roll__rr_pitch_servo.stl",
@@ -19915,7 +19915,7 @@
     {
       "path": "cad/collision/source/rr_roll__rr_pitch_strap_-41.55.step",
       "bytes": 71879,
-      "sha256": "28fea2089f93d6684ba649ca5847e08f18e704ad90b7ed241ece1548e8c3e38e"
+      "sha256": "5bbc57aa79fcb2af314c9212302bcb89860061ca44e3f63ea83e64a254d27e5f"
     },
     {
       "path": "cad/collision/source/rr_roll__rr_pitch_strap_-41.55.stl",
@@ -19930,7 +19930,7 @@
     {
       "path": "cad/collision/source/rr_roll__rr_pitch_strap_-7.55.step",
       "bytes": 72027,
-      "sha256": "41387a4c6f917ac783fbae236de0cc49e641ae1f96b7ae8e10585f8231f065b0"
+      "sha256": "57585acba8b9efc9b9e74ee43b3dc61fe1fbb54def8c26e75b4ab499a8712d01"
     },
     {
       "path": "cad/collision/source/rr_roll__rr_pitch_strap_-7.55.stl",
@@ -19945,7 +19945,7 @@
     {
       "path": "cad/collision/source/rr_roll__rr_roll_M3_heads.step",
       "bytes": 55136,
-      "sha256": "161e2b12010034152f89a15e66f7c167a5428fd9884302a4ff21e18a63753529"
+      "sha256": "3651e0fa86bd5c0be58d1d8b17e1a6e648e6eb42a0ab83c5230ad3e3be203deb"
     },
     {
       "path": "cad/collision/source/rr_roll__rr_roll_M3_heads.stl",
@@ -19960,7 +19960,7 @@
     {
       "path": "cad/collision/source/rr_roll__rr_roll_axle.step",
       "bytes": 43318,
-      "sha256": "791cfb0a3f3714a015257e1935f57537a12b7724ad6a1a682bdba68ea6355f62"
+      "sha256": "e8bc668707fcf9162efccd92117bba83f61fd95f47707564b1efb14064a638f7"
     },
     {
       "path": "cad/collision/source/rr_roll__rr_roll_axle.stl",
@@ -19975,7 +19975,7 @@
     {
       "path": "cad/collision/source/rr_roll__rr_roll_yoke.step",
       "bytes": 192162,
-      "sha256": "2ebad3a6007adb99d7ca1f247f2afedc42d69bc8894af5e375bbacc01d4942b5"
+      "sha256": "e9f16448524558f7094d8944f10c0f7c670a16904b57f9f7731140744e654be7"
     },
     {
       "path": "cad/collision/source/rr_roll__rr_roll_yoke.stl",
@@ -19990,7 +19990,7 @@
     {
       "path": "cad/collision/source/rr_shin__rr_TPU_actuator.step",
       "bytes": 13072,
-      "sha256": "bb967a88622d8389d748e048c284a29b1ea0619586dac2195090274f5e4d89c0"
+      "sha256": "fdeca61a023ba2df7725414f295df4b5a08fa5b70b0700151a80015a744902d4"
     },
     {
       "path": "cad/collision/source/rr_shin__rr_TPU_actuator.stl",
@@ -20005,7 +20005,7 @@
     {
       "path": "cad/collision/source/rr_shin__rr_TPU_pad.step",
       "bytes": 287128,
-      "sha256": "7adacf74196d7725d5c306c925f2bd34602683304fb7b12f415dc5f5786c11c7"
+      "sha256": "376cc445352d43d16d4dd883577590e34e934ec07db7f361e4c30233107510f6"
     },
     {
       "path": "cad/collision/source/rr_shin__rr_TPU_pad.stl",
@@ -20020,7 +20020,7 @@
     {
       "path": "cad/collision/source/rr_shin__rr_floating_sole.step",
       "bytes": 92332,
-      "sha256": "dbbd637ffb5debbd09182f084a367f38013e60255c3536dbc2712916984ccd24"
+      "sha256": "06e8683dbc516a7fe0dc2f50c1858520129dea02baa8422b30dcece6da0363ce"
     },
     {
       "path": "cad/collision/source/rr_shin__rr_floating_sole.stl",
@@ -20035,7 +20035,7 @@
     {
       "path": "cad/collision/source/rr_shin__rr_hoof.step",
       "bytes": 504912,
-      "sha256": "6b6efa3061dc4465b6d0aaad639b8632510d8a3e8e07b345487b83c0d521f8dc"
+      "sha256": "b8c7e5a52e0a6c84cda5a502019fe196a392f047385bc3ab0c66998bb7fbd83c"
     },
     {
       "path": "cad/collision/source/rr_shin__rr_hoof.stl",
@@ -20050,7 +20050,7 @@
     {
       "path": "cad/collision/source/rr_shin__rr_knee_M3_heads_-70.0.step",
       "bytes": 55047,
-      "sha256": "ed7b62313d491b913360a83138c4c2e6c0549021f26fbdf7db8b03db66a79440"
+      "sha256": "c615c5243df6a6346a3a5fd739adbad2c532db231be6dc81b250d7925a4d3a6d"
     },
     {
       "path": "cad/collision/source/rr_shin__rr_knee_M3_heads_-70.0.stl",
@@ -20065,7 +20065,7 @@
     {
       "path": "cad/collision/source/rr_shin__rr_knee_M3_heads_14.0.step",
       "bytes": 55030,
-      "sha256": "6646a7097bdfaa08dd20a008862bc0943c23ac4f0fc380b42d8bdc30b76daef5"
+      "sha256": "06e71b325ffcb3bf57fb7c1a7a4367351bb0fe05c05cf8dcacb68138b936c0fd"
     },
     {
       "path": "cad/collision/source/rr_shin__rr_knee_M3_heads_14.0.stl",
@@ -20080,7 +20080,7 @@
     {
       "path": "cad/collision/source/rr_shin__rr_knee_cross_spacer.step",
       "bytes": 37467,
-      "sha256": "5fab11587df9e1d073083e830a53f912b35b8124b52125a028d5383a38116599"
+      "sha256": "5e6ff34d9a77fafdb0e6d7bd1e8351f8b2ec4137178359a4ce4a8df6a359b62f"
     },
     {
       "path": "cad/collision/source/rr_shin__rr_knee_cross_spacer.stl",
@@ -20095,7 +20095,7 @@
     {
       "path": "cad/collision/source/rr_shin__rr_knee_front_rotor_hub.step",
       "bytes": 43386,
-      "sha256": "a0254f31b132639ff1b2037cf88307107f253ebd2f046e669779803a9b50625a"
+      "sha256": "46f679b29787f3262d08a5b7e27e47a1bc1c090438bce9c6f7146bb8cd183f17"
     },
     {
       "path": "cad/collision/source/rr_shin__rr_knee_front_rotor_hub.stl",
@@ -20110,7 +20110,7 @@
     {
       "path": "cad/collision/source/rr_shin__rr_knee_rear_rotor_hub.step",
       "bytes": 43409,
-      "sha256": "07a3a6f850b5801f9d1d92b7c3577433e0f0e06a64c3d3dbfa7391ba7c7d16f3"
+      "sha256": "d80d0e738441235e40250aaa2aee3aa2a53bee48c9a92b813f8dc409aa37e877"
     },
     {
       "path": "cad/collision/source/rr_shin__rr_knee_rear_rotor_hub.stl",
@@ -20125,7 +20125,7 @@
     {
       "path": "cad/collision/source/rr_shin__rr_shin_cheek_front.step",
       "bytes": 91863,
-      "sha256": "e439b73de147d679e72dafff02fd986a8662587db41e8dbd24549c5a34951a78"
+      "sha256": "1ccaa694e1dd9df0237edc2d8a0f2d063a177fd2c1d7da574bd5fa08717b910e"
     },
     {
       "path": "cad/collision/source/rr_shin__rr_shin_cheek_front.stl",
@@ -20140,7 +20140,7 @@
     {
       "path": "cad/collision/source/rr_shin__rr_shin_cheek_rear.step",
       "bytes": 231183,
-      "sha256": "de01699532b46e368e552b31d7d4323196ca14fbc5a4991da28023af034f84c9"
+      "sha256": "93ddb54c43360e304a915fe4c6cd584da030367613f73f761dbee9a7e287a846"
     },
     {
       "path": "cad/collision/source/rr_shin__rr_shin_cheek_rear.stl",
@@ -20155,7 +20155,7 @@
     {
       "path": "cad/collision/source/rr_shin__rr_shin_fairing.step",
       "bytes": 113667,
-      "sha256": "e93fe00c88e4a46895315cd46b07bf15b1dbbdf73c6777e174f0596ac1024618"
+      "sha256": "249bb70df13888b3f01427560c9bdabb3439f5ee7d6f0e59cc25976e30e62f7b"
     },
     {
       "path": "cad/collision/source/rr_shin__rr_shin_fairing.stl",
@@ -20170,7 +20170,7 @@
     {
       "path": "cad/collision/source/rr_shin__rr_switch.step",
       "bytes": 17268,
-      "sha256": "824442b57898fdc32deb10c04a398b2cccb06b283945aa174ca97142ec0a05bd"
+      "sha256": "98c53dd4225e0d08864d970aeb724255de91ac7f3b5a313a52248a0c92e23577"
     },
     {
       "path": "cad/collision/source/rr_shin__rr_switch.stl",
@@ -20180,7 +20180,7 @@
     {
       "path": "cad/collision/source/rr_shin__rr_switch_PCB.step",
       "bytes": 17289,
-      "sha256": "7dbf6ab6c798fcb7f0b701c4acee4a601a4f0718d3275fb01d7960dc1cfcb8a9"
+      "sha256": "dedf65f37dda88b0041ca6b00fd515db5dbd3cae8d604eedcd30b8352f0d0522"
     },
     {
       "path": "cad/collision/source/rr_shin__rr_switch_PCB.stl",
@@ -20200,7 +20200,7 @@
     {
       "path": "cad/collision/source/rr_thigh__rr_hip_M3_heads_-68.0.step",
       "bytes": 55038,
-      "sha256": "3c371b80e60bddc743f9424ced72bea45e22a22e91361fed3fc007049eb6d1e4"
+      "sha256": "cfbe54fc45b8e186305ab0fb1375de57ef3feb3d459a71af5039785e141046f0"
     },
     {
       "path": "cad/collision/source/rr_thigh__rr_hip_M3_heads_-68.0.stl",
@@ -20215,7 +20215,7 @@
     {
       "path": "cad/collision/source/rr_thigh__rr_hip_M3_heads_8.0.step",
       "bytes": 55096,
-      "sha256": "02c918b1010b050b34a046deff3a039b72fee9f80aada704b013ad928256d121"
+      "sha256": "cf538bc5a5b4d44e0ce11a483988bca97e7b44bce478193b2013e48b89295fbf"
     },
     {
       "path": "cad/collision/source/rr_thigh__rr_hip_M3_heads_8.0.stl",
@@ -20230,7 +20230,7 @@
     {
       "path": "cad/collision/source/rr_thigh__rr_hip_front_rotor_spacer.step",
       "bytes": 43391,
-      "sha256": "88712548d51f23ef5cdbbb1cced7cd7b98bc569a68f95daf7431f1c4d058adb0"
+      "sha256": "3f1b01ec8bba7e141f30cc8f6fe9082e49e06d0db2e9a32411d34a95a4938cf3"
     },
     {
       "path": "cad/collision/source/rr_thigh__rr_hip_front_rotor_spacer.stl",
@@ -20245,7 +20245,7 @@
     {
       "path": "cad/collision/source/rr_thigh__rr_hip_rear_rotor_hub.step",
       "bytes": 43432,
-      "sha256": "af75f0e3eb08ffe651510fc938d52ba95dfb487c9b686322b29ce9889a2b6119"
+      "sha256": "05a6f22938ffdb8abceb91991faaa0acaa6226c461b6b8b1031cee2f2aca93d3"
     },
     {
       "path": "cad/collision/source/rr_thigh__rr_hip_rear_rotor_hub.stl",
@@ -20260,7 +20260,7 @@
     {
       "path": "cad/collision/source/rr_thigh__rr_knee_bearing_retainer.step",
       "bytes": 35395,
-      "sha256": "16265cd61e2a3d78c329673b7751e79cc766110ff419252ac4e18c685a202a49"
+      "sha256": "ecc7f2b00d680c6e36c3f620a63cf577be8939646ab16b3b4df600134fbe56c3"
     },
     {
       "path": "cad/collision/source/rr_thigh__rr_knee_bearing_retainer.stl",
@@ -20275,7 +20275,7 @@
     {
       "path": "cad/collision/source/rr_thigh__rr_knee_clamp_shims.step",
       "bytes": 76209,
-      "sha256": "4736bd53faee39c793657517c269b2a2b9ad68a6179e945365718f8a2b24ee72"
+      "sha256": "0af5e5e259098b891027f97d3eed94e2792699c0fcba407fa7b15aa80ee62d9a"
     },
     {
       "path": "cad/collision/source/rr_thigh__rr_knee_clamp_shims.stl",
@@ -20290,7 +20290,7 @@
     {
       "path": "cad/collision/source/rr_thigh__rr_knee_cradle.step",
       "bytes": 352680,
-      "sha256": "453e054848768508a51839180d36fad1d7e6d818a4eb6e3a25423f17ea1a8062"
+      "sha256": "f5c4dd42fd107c0012b9109bba51c21b0e9304988ac7771187b918573501c9b6"
     },
     {
       "path": "cad/collision/source/rr_thigh__rr_knee_cradle.stl",
@@ -20305,7 +20305,7 @@
     {
       "path": "cad/collision/source/rr_thigh__rr_knee_mount_spacer_-10_-52.025.step",
       "bytes": 11305,
-      "sha256": "e5c224913366f17852bd870ad9bd0c5805d5ed289f4a8a258f588d377392242a"
+      "sha256": "7c918fdbb6aa33e8b20bbfab2929dc9e63913fea07c1ddb411d37b3e84f0ae28"
     },
     {
       "path": "cad/collision/source/rr_thigh__rr_knee_mount_spacer_-10_-52.025.stl",
@@ -20320,7 +20320,7 @@
     {
       "path": "cad/collision/source/rr_thigh__rr_knee_mount_spacer_-10_1.725.step",
       "bytes": 11295,
-      "sha256": "299f8c0a507d3a6f3ead625a0891c1dc6e8640b48babed5cc2daf04fcb62094b"
+      "sha256": "3a2e9f4e2f3ad529d11ab502540c592b2ba335c7a734f613f1256d5e37608b26"
     },
     {
       "path": "cad/collision/source/rr_thigh__rr_knee_mount_spacer_-10_1.725.stl",
@@ -20335,7 +20335,7 @@
     {
       "path": "cad/collision/source/rr_thigh__rr_knee_mount_spacer_10_-52.025.step",
       "bytes": 11300,
-      "sha256": "163a07667a349887ab00a0002bfb4af74d4050aaa9fa9f3c3af00662e7171f46"
+      "sha256": "324ba0898902f1bb28de7181b4f730f887b3a39bc3c022d57bd54965cbd5679a"
     },
     {
       "path": "cad/collision/source/rr_thigh__rr_knee_mount_spacer_10_-52.025.stl",
@@ -20350,7 +20350,7 @@
     {
       "path": "cad/collision/source/rr_thigh__rr_knee_mount_spacer_10_1.725.step",
       "bytes": 11290,
-      "sha256": "df4cfc873ed8c3127b4768971c4d5b007fb1655ad9add185c12e051204fb392a"
+      "sha256": "886f71b31b0466e813b0b09d2aaf38e3454f2d79c650f0ad64224a3bf174808d"
     },
     {
       "path": "cad/collision/source/rr_thigh__rr_knee_mount_spacer_10_1.725.stl",
@@ -20365,7 +20365,7 @@
     {
       "path": "cad/collision/source/rr_thigh__rr_knee_passive_bearing.step",
       "bytes": 12438,
-      "sha256": "5e877cef1ecabfb92db762f2e66fb50e2326404f17895ca6638fa1fbe2988e97"
+      "sha256": "bead6e4c753d6a998804d89258f3be14d350bbf365b8ab9a11d0de36f992bb17"
     },
     {
       "path": "cad/collision/source/rr_thigh__rr_knee_passive_bearing.stl",
@@ -20380,7 +20380,7 @@
     {
       "path": "cad/collision/source/rr_thigh__rr_knee_servo.step",
       "bytes": 93512,
-      "sha256": "f3014e967b3bf86e8e72d6cbc31a8bed57b191a290b6214cbeee318c96547d5c"
+      "sha256": "44f1ca9a8b7a17ce37fae04cf2ac37a924c19e311920e31f950d1dc7b548a153"
     },
     {
       "path": "cad/collision/source/rr_thigh__rr_knee_servo.stl",
@@ -20395,7 +20395,7 @@
     {
       "path": "cad/collision/source/rr_thigh__rr_knee_strap_-41.55.step",
       "bytes": 72031,
-      "sha256": "f5fead96cc911408a96b6373eae263c3a261449d5806a704b10d51556a2fc323"
+      "sha256": "86370b7b6d255f8aeca42ef4c32fda8a56a8c0ab05a771316f6aa5f8750607a7"
     },
     {
       "path": "cad/collision/source/rr_thigh__rr_knee_strap_-41.55.stl",
@@ -20410,7 +20410,7 @@
     {
       "path": "cad/collision/source/rr_thigh__rr_knee_strap_-7.55.step",
       "bytes": 71943,
-      "sha256": "e4ae922e1c302fa03d50d9da021a4927193b69294c8c236c0d0345b79e42b6bf"
+      "sha256": "38c46521ecb9b68ce5d157affbe2a6a141a114fb239a51ac09e10100048a7b6b"
     },
     {
       "path": "cad/collision/source/rr_thigh__rr_knee_strap_-7.55.stl",
@@ -20425,7 +20425,7 @@
     {
       "path": "cad/collision/source/rr_thigh__rr_thigh_cheek_front.step",
       "bytes": 299325,
-      "sha256": "580a0d6ac2635846579389314d5ef3e5a8803d42b7bcef2d02daf607cd8a0f24"
+      "sha256": "4678482fc2845f2ae941523e9cfefa52bc0a3d5cba9fc45fc767a9440bf1a33a"
     },
     {
       "path": "cad/collision/source/rr_thigh__rr_thigh_cheek_front.stl",
@@ -20440,7 +20440,7 @@
     {
       "path": "cad/collision/source/rr_thigh__rr_thigh_cheek_rear.step",
       "bytes": 292949,
-      "sha256": "bb71e71abca5111a43f491c845cc6cdf619de91af2be93cd37f15b9c55cfdf53"
+      "sha256": "f3514ffc9258b12e78cb97e384cf11e60fdf431b21d10472d1004fb9220b57f2"
     },
     {
       "path": "cad/collision/source/rr_thigh__rr_thigh_cheek_rear.stl",
@@ -20455,7 +20455,7 @@
     {
       "path": "cad/collision/source/rr_thigh__rr_thigh_fairing.step",
       "bytes": 113672,
-      "sha256": "55d105dc8967ae6dbff8224c5b9d4dbfed7a5eb08f6c2121588c8e044e647daa"
+      "sha256": "3cd2092d77a24abf7063390b02ea292b84735c5a814d2e07f8c7e2252a7906e3"
     },
     {
       "path": "cad/collision/source/rr_thigh__rr_thigh_fairing.stl",
@@ -20470,7 +20470,7 @@
     {
       "path": "cad/collision/source/rr_thigh__rr_thigh_spacer_-27.step",
       "bytes": 12476,
-      "sha256": "4de077633c3b802123672be80a630cac816f430007e189077b385b77a16d7e67"
+      "sha256": "ca71840b894bef8c8ba79a70050910ba9352d94907c42da2ca54737f719ff1fc"
     },
     {
       "path": "cad/collision/source/rr_thigh__rr_thigh_spacer_-27.stl",
@@ -20485,7 +20485,7 @@
     {
       "path": "cad/collision/source/rr_thigh__rr_thigh_spacer_27.step",
       "bytes": 12471,
-      "sha256": "45a8f87ac8be180bb531554b85c7828b677faebe500f426c6ead9941551973ef"
+      "sha256": "c39ba6fe79020db203603309adc0ff902424b63f529e1601b302875e978e993c"
     },
     {
       "path": "cad/collision/source/rr_thigh__rr_thigh_spacer_27.stl",
@@ -20500,7 +20500,7 @@
     {
       "path": "cad/collision/source/torso__adapter_envelope.step",
       "bytes": 17788,
-      "sha256": "3018cd296d82214a716ff13333a9172df73bd23c7025a7895809c29c540fbffb"
+      "sha256": "8379ee1d37184596a81456290859909c9fb4b067c82f236a35da72ad142e0877"
     },
     {
       "path": "cad/collision/source/torso__adapter_envelope.stl",
@@ -20515,7 +20515,7 @@
     {
       "path": "cad/collision/source/torso__battery_envelope.step",
       "bytes": 17784,
-      "sha256": "7b74e3415e5dc55195673166bf10b91b2605afaf81c8e85401a5a2d68ccfad16"
+      "sha256": "4ddcac6fcf0ffbc4302c0abce5ba363eb0e3e8c4de38288b4689720a989a0eca"
     },
     {
       "path": "cad/collision/source/torso__battery_envelope.stl",
@@ -20530,7 +20530,7 @@
     {
       "path": "cad/collision/source/torso__body_cowl.step",
       "bytes": 1985659,
-      "sha256": "c1c66248e676fed5b941a1fd344853dee15176e06e62c0352abb87f87a679be0"
+      "sha256": "888fb57aeb9fb6f461ca45f376a346ab4d56cbb6f836c956b6a67ed749bb9de6"
     },
     {
       "path": "cad/collision/source/torso__body_cowl.stl",
@@ -20545,7 +20545,7 @@
     {
       "path": "cad/collision/source/torso__chassis_deck.step",
       "bytes": 562238,
-      "sha256": "8632c3ee0cd06bbaa634cd9a5527bd5ea405bf7a41ad9f3d5a38c69a2dd7f522"
+      "sha256": "226638dd5f11969e1a7fa8f7a344c0c3d1435fa2faec73a508cf973b72e294b2"
     },
     {
       "path": "cad/collision/source/torso__chassis_deck.stl",
@@ -20560,7 +20560,7 @@
     {
       "path": "cad/collision/source/torso__chest_tof_pod.step",
       "bytes": 229963,
-      "sha256": "533e59b9559699bbf803b49242b8e4c8b0223b7f2dc1e4e76ec8f64beebb1def"
+      "sha256": "dd2008f796674e9b44b7642e4acdf8a2deae83e5bbbbc1619a1766bec279ecee"
     },
     {
       "path": "cad/collision/source/torso__chest_tof_pod.stl",
@@ -20575,7 +20575,7 @@
     {
       "path": "cad/collision/source/torso__collector.step",
       "bytes": 17764,
-      "sha256": "b82302a7f0abeebf8171415d8363fd0a9eafb3189a745608c19e25c0ea833679"
+      "sha256": "97642c99db0b08bf06c8ed3f65fa7ad294fe982c244f21a13905de8b413de194"
     },
     {
       "path": "cad/collision/source/torso__collector.stl",
@@ -20590,7 +20590,7 @@
     {
       "path": "cad/collision/source/torso__compute_envelope.step",
       "bytes": 17807,
-      "sha256": "9f4d59125acea6d7e44b083f1d3b9ab3e09426056769445f8660515f3e973e30"
+      "sha256": "c006110d7b35c61a20d4fc6f268bc749381f95aaec8fe50ad970fb53817d6707"
     },
     {
       "path": "cad/collision/source/torso__compute_envelope.stl",
@@ -20605,7 +20605,7 @@
     {
       "path": "cad/collision/source/torso__depth_3V3_buck.step",
       "bytes": 17745,
-      "sha256": "bc2ec4ad87bc9c332d8c21b19a540df56c70ebf46d2d08827202b56fb5a22376"
+      "sha256": "d04f0ae3fb9cf2bc6cf137ffd1f79ed14386da8b3c6c0380a571a480df2757e2"
     },
     {
       "path": "cad/collision/source/torso__depth_3V3_buck.stl",
@@ -20620,7 +20620,7 @@
     {
       "path": "cad/collision/source/torso__depth_board.step",
       "bytes": 17862,
-      "sha256": "fa36f2078d8a795407ee62e68b6eb95795a88d823db9df9c4ce2f12322ef8c73"
+      "sha256": "e6849f8048f613198855647e30c76c640f51cb42572cb79092ae30fe99ec61d8"
     },
     {
       "path": "cad/collision/source/torso__depth_board.stl",
@@ -20635,7 +20635,7 @@
     {
       "path": "cad/collision/source/torso__depth_optic.step",
       "bytes": 17780,
-      "sha256": "5f688e156661940e7b44971069bfa84a9b6dcbf0b6cb7739eeca983f3c768f01"
+      "sha256": "5b45d33f2e9dda7515589e7859a608f73297216d52f4be8d7a884f15a718ca6e"
     },
     {
       "path": "cad/collision/source/torso__depth_optic.stl",
@@ -20650,7 +20650,7 @@
     {
       "path": "cad/collision/source/torso__ear_6V_buck.step",
       "bytes": 17809,
-      "sha256": "b74f168aea299258ff52cd973194aafd56c883a93abff2d1ad472a9fd4f53e6f"
+      "sha256": "e63bf70e79fccf2445de401875509629070e0a1e843a9dbb153e0e3720547a5f"
     },
     {
       "path": "cad/collision/source/torso__ear_6V_buck.stl",
@@ -20665,7 +20665,7 @@
     {
       "path": "cad/collision/source/torso__fl_roll_clamp_shims.step",
       "bytes": 86869,
-      "sha256": "9f03a75050640a5875666e6b4f3da6627a44876109026a5f109fa141ca895987"
+      "sha256": "c1d419ef2c2a5704de874ec33455fb2d823989f1cbf5645cf02386c507ecce61"
     },
     {
       "path": "cad/collision/source/torso__fl_roll_clamp_shims.stl",
@@ -20680,7 +20680,7 @@
     {
       "path": "cad/collision/source/torso__fl_roll_cradle.step",
       "bytes": 357994,
-      "sha256": "66504aa71e0a8772d5848836806ee672a2d32c889ca9caada07deeb96b2e7960"
+      "sha256": "8bdf417e8d451341b2c8f2907874acb8d509328c832aab076485352b3c97debe"
     },
     {
       "path": "cad/collision/source/torso__fl_roll_cradle.stl",
@@ -20695,7 +20695,7 @@
     {
       "path": "cad/collision/source/torso__fl_roll_servo.step",
       "bytes": 98638,
-      "sha256": "8698bd01f2e4829b4ea8893125a036a856ac6ca7cdbdfe3bc9330579d10446cd"
+      "sha256": "160454bcd527e4e08b8b2903039bffed40c886ed328cd7fc1c90c93f90c56390"
     },
     {
       "path": "cad/collision/source/torso__fl_roll_servo.stl",
@@ -20710,7 +20710,7 @@
     {
       "path": "cad/collision/source/torso__fl_roll_strap_-41.55.step",
       "bytes": 74517,
-      "sha256": "9b6247d125e4d4cf8da0548497265deeea0cddc0d96e39c46090a91b6b8cc3d3"
+      "sha256": "c55dbd35dcb9fba7c40a2921ddfdd463c34cd19ece45216684ca7a21a50d2eaa"
     },
     {
       "path": "cad/collision/source/torso__fl_roll_strap_-41.55.stl",
@@ -20725,7 +20725,7 @@
     {
       "path": "cad/collision/source/torso__fl_roll_strap_-7.55.step",
       "bytes": 74511,
-      "sha256": "8ddd83813b5c04da00566615b8052ecd17d9445718e9a1b9f179c1466e0edbfe"
+      "sha256": "fe06d5e1509612eba74b54db7a6f49658b336261ff966b24f1e8ce274c05ac00"
     },
     {
       "path": "cad/collision/source/torso__fl_roll_strap_-7.55.stl",
@@ -20740,7 +20740,7 @@
     {
       "path": "cad/collision/source/torso__fr_roll_clamp_shims.step",
       "bytes": 86869,
-      "sha256": "53fdb38af41111d9542af2d04fe46049a32a88378a63b6aa0f0235b6491ae0cf"
+      "sha256": "213771fa2f2084ab98f3a74a8491db1c817f9086f7c88dd433c492752ffa0f72"
     },
     {
       "path": "cad/collision/source/torso__fr_roll_clamp_shims.stl",
@@ -20755,7 +20755,7 @@
     {
       "path": "cad/collision/source/torso__fr_roll_cradle.step",
       "bytes": 357994,
-      "sha256": "667e74278997038406f4fdb0e5a3cb9d84cfffde3197d5bed66cb8ab5bceed15"
+      "sha256": "a9e831c07fa8ad8a1b2c9890c2dd5be6f040467735b70f36a0cb96d98aee2058"
     },
     {
       "path": "cad/collision/source/torso__fr_roll_cradle.stl",
@@ -20770,7 +20770,7 @@
     {
       "path": "cad/collision/source/torso__fr_roll_servo.step",
       "bytes": 98638,
-      "sha256": "9634db20826a3345af5263d07c65c01e4161384f3b085847629616ed97841937"
+      "sha256": "cfec3b5bbf891c9cc4d50ed5f7a57f8954f8307626fa8a8f0f1e34d437f5a5c4"
     },
     {
       "path": "cad/collision/source/torso__fr_roll_servo.stl",
@@ -20785,7 +20785,7 @@
     {
       "path": "cad/collision/source/torso__fr_roll_strap_-41.55.step",
       "bytes": 74518,
-      "sha256": "3df9acd62723f5e520c60c1724eb86959586694e9c7f48d42348f4eaca4aac84"
+      "sha256": "d7e43881afc756f25d1ce62074fe88ec75c19960ed0804ed7509932b3ee4f1f6"
     },
     {
       "path": "cad/collision/source/torso__fr_roll_strap_-41.55.stl",
@@ -20800,7 +20800,7 @@
     {
       "path": "cad/collision/source/torso__fr_roll_strap_-7.55.step",
       "bytes": 74512,
-      "sha256": "2801322ae4f47b5fb57cef96a0fb4b5ffe2ae53116f0efe5e74507959d164373"
+      "sha256": "92da88ef52c3d88ea625fbb70923a08bad598d71f8afb76b37c43baed0f6ae0d"
     },
     {
       "path": "cad/collision/source/torso__fr_roll_strap_-7.55.stl",
@@ -20815,7 +20815,7 @@
     {
       "path": "cad/collision/source/torso__head_yaw_clamp_shims.step",
       "bytes": 87288,
-      "sha256": "bf8280bdc1e768701624a661e345675663b7a8660c9233cea0339427b75c8fc3"
+      "sha256": "391ced49e59345ed6e074362a990cfebbbc5a28fbf730c2c95674614ead7867f"
     },
     {
       "path": "cad/collision/source/torso__head_yaw_clamp_shims.stl",
@@ -20830,7 +20830,7 @@
     {
       "path": "cad/collision/source/torso__head_yaw_cradle.step",
       "bytes": 47381,
-      "sha256": "d8e30567904a83edd12b10274cc533336734d67b975e7419a0f00c447b19d6b2"
+      "sha256": "69839807624dcf13c161a7ed19872b78e065579e1666139575f4b68785c7d190"
     },
     {
       "path": "cad/collision/source/torso__head_yaw_cradle.stl",
@@ -20845,7 +20845,7 @@
     {
       "path": "cad/collision/source/torso__head_yaw_cradle_strap_-33.step",
       "bytes": 25816,
-      "sha256": "2b295555c07b56d60eef635df3a211b203c174220131bad626ebbc897bf76fc3"
+      "sha256": "98afcdf0e307b4dc85f0d75c3c97f97fddc3efc2ef0a7bbbf1f286a5057f01d6"
     },
     {
       "path": "cad/collision/source/torso__head_yaw_cradle_strap_-33.stl",
@@ -20860,7 +20860,7 @@
     {
       "path": "cad/collision/source/torso__head_yaw_cradle_strap_-7.step",
       "bytes": 25814,
-      "sha256": "342bb7c57a9e47e5509c4a9909ecf63bfd0f4e0546fee2e5a37d3408125e881f"
+      "sha256": "2bfb75e75b8533ce5ab1c430bd2ae879baf20df3696b1a4c067d850ddc26ffb5"
     },
     {
       "path": "cad/collision/source/torso__head_yaw_cradle_strap_-7.stl",
@@ -20875,7 +20875,7 @@
     {
       "path": "cad/collision/source/torso__head_yaw_servo.step",
       "bytes": 18126,
-      "sha256": "f85dbc840b90f6a97b32c3836f0edeea6fc481178c8acc7968d40ea489c403ea"
+      "sha256": "5c832a9023e81e21e65632abcf424d3d809f0bcb3075745401501067c8d6f756"
     },
     {
       "path": "cad/collision/source/torso__head_yaw_servo.stl",
@@ -20890,7 +20890,7 @@
     {
       "path": "cad/collision/source/torso__imu_board.step",
       "bytes": 17796,
-      "sha256": "a00ac548c2fa59d60801daf414a141a6f8f6b35652e76b2a20ba73badac92b96"
+      "sha256": "d2438d0894895339ad09661d96beca0df05afc48ac22459075e130c462745bdd"
     },
     {
       "path": "cad/collision/source/torso__imu_board.stl",
@@ -20905,7 +20905,7 @@
     {
       "path": "cad/collision/source/torso__passive_tail.step",
       "bytes": 1039957,
-      "sha256": "7ca3e88fd8b5625f5e0a460ae455b3c8f6ad3564d13f0ce979ace50d93b9249a"
+      "sha256": "eaa00519735ec8420c968f52da01a719ac03b569b4e08e1af4570c63247f0318"
     },
     {
       "path": "cad/collision/source/torso__passive_tail.stl",
@@ -20920,7 +20920,7 @@
     {
       "path": "cad/collision/source/torso__rail_-1.step",
       "bytes": 72317,
-      "sha256": "57b1940302e3049c72f1570a0dde2cb3b06468e973a3066f9b68bbc2c65c4d82"
+      "sha256": "9d1b782d74172a6192c61540aa7819152259a739cc0d4998c4a241ed564dd0e3"
     },
     {
       "path": "cad/collision/source/torso__rail_-1.stl",
@@ -20935,7 +20935,7 @@
     {
       "path": "cad/collision/source/torso__rail_1.step",
       "bytes": 76071,
-      "sha256": "c7973041cc2526d89c79bbc69504ff4d97de5d64ae5b95c1c813c05bf4915243"
+      "sha256": "d99ca0ce09ffc50b21714ee5a1fc1ccba3ec0833d0e75b0d439d61b05a9ad9dd"
     },
     {
       "path": "cad/collision/source/torso__rail_1.stl",
@@ -20950,7 +20950,7 @@
     {
       "path": "cad/collision/source/torso__regulator_envelope.step",
       "bytes": 17795,
-      "sha256": "39f358b9bf2889f4922e8bef7852ccd91c9840819a018296d5837b784ec4c7b2"
+      "sha256": "de0d6554b4c5b9ef1c33f8c19fe620f5fd00cc33b0e73241b44162e32717a09d"
     },
     {
       "path": "cad/collision/source/torso__regulator_envelope.stl",
@@ -20965,7 +20965,7 @@
     {
       "path": "cad/collision/source/torso__rl_roll_clamp_shims.step",
       "bytes": 86870,
-      "sha256": "598f174054f2fe53de3ccb4d5d7bc7058728dc7116a97b904027ab39504174a9"
+      "sha256": "bccba5bcfc915a975233996bb901ba55b4cd029895ff38b4e03ad1fd78fe51bf"
     },
     {
       "path": "cad/collision/source/torso__rl_roll_clamp_shims.stl",
@@ -20980,7 +20980,7 @@
     {
       "path": "cad/collision/source/torso__rl_roll_cradle.step",
       "bytes": 357995,
-      "sha256": "fa27d6622d528d1e020f80122db90014432288a2f531fba2e47ef160f8e63111"
+      "sha256": "8257730996898c30e6ad1cdff63e702bfbcab444cd5008ecd8acef84641dc283"
     },
     {
       "path": "cad/collision/source/torso__rl_roll_cradle.stl",
@@ -20995,7 +20995,7 @@
     {
       "path": "cad/collision/source/torso__rl_roll_servo.step",
       "bytes": 98639,
-      "sha256": "dbb44a135149b2b2b7ad03d850c7688e7f89e052cd6a9acdaa2ada94d2428c55"
+      "sha256": "6aa3d3481a659788c94e42258832515c3dc8d464433720d3aa4d25e156ee926f"
     },
     {
       "path": "cad/collision/source/torso__rl_roll_servo.stl",
@@ -21010,7 +21010,7 @@
     {
       "path": "cad/collision/source/torso__rl_roll_strap_-41.55.step",
       "bytes": 74519,
-      "sha256": "e602980b605af1fec4418f4202f3444c14e576624fde12440c2f07f144bf9ff9"
+      "sha256": "c79f1fcbb90384d0fec0ea3fc84adad8a21874fafe5e716a37ace1c40b0f5c27"
     },
     {
       "path": "cad/collision/source/torso__rl_roll_strap_-41.55.stl",
@@ -21025,7 +21025,7 @@
     {
       "path": "cad/collision/source/torso__rl_roll_strap_-7.55.step",
       "bytes": 74513,
-      "sha256": "e9de9b159615f4f1e622bf29261dc65e232643fdaac3ec5a01a382a4e2410730"
+      "sha256": "dcb7aeb7fbc71407e5e825b7e1954140cc494d7d94b1bc6092aebe29260f3021"
     },
     {
       "path": "cad/collision/source/torso__rl_roll_strap_-7.55.stl",
@@ -21040,7 +21040,7 @@
     {
       "path": "cad/collision/source/torso__rr_roll_clamp_shims.step",
       "bytes": 86870,
-      "sha256": "750324a43a7e2ea5857b1fdaea760e1c7d6ec7dd58d6f71ba71a5392471d2f38"
+      "sha256": "69230f06b59fe1c10296c4868339386e7056025464cde45f4df59de4237501a3"
     },
     {
       "path": "cad/collision/source/torso__rr_roll_clamp_shims.stl",
@@ -21055,7 +21055,7 @@
     {
       "path": "cad/collision/source/torso__rr_roll_cradle.step",
       "bytes": 357995,
-      "sha256": "63cb7e2632e47695dcb3059e9bb2d4acee009d6f84c1da82251b3f3220162606"
+      "sha256": "c6e9f463540cb73e9545bdc301860d0313b6d738f7bd89e3501b808c30b178c3"
     },
     {
       "path": "cad/collision/source/torso__rr_roll_cradle.stl",
@@ -21070,7 +21070,7 @@
     {
       "path": "cad/collision/source/torso__rr_roll_servo.step",
       "bytes": 98639,
-      "sha256": "7b051e3c520889f62f769d0b4bd3e6b2c24f32aeaa4e4b87525f92466e65d6fe"
+      "sha256": "bf0a95e13d6104da55f6dd7c6bb5f3b51f9963d7c6763a187097128286440932"
     },
     {
       "path": "cad/collision/source/torso__rr_roll_servo.stl",
@@ -21085,7 +21085,7 @@
     {
       "path": "cad/collision/source/torso__rr_roll_strap_-41.55.step",
       "bytes": 74518,
-      "sha256": "4fbcaf84d8aa7670d44234f1957d737df76e5763456b9fe28388e6b4b8896a4f"
+      "sha256": "5864d67a78bba65a0df38de086be1ece3092abf0f686436fca5a4c0e21c32ba2"
     },
     {
       "path": "cad/collision/source/torso__rr_roll_strap_-41.55.stl",
@@ -21100,7 +21100,7 @@
     {
       "path": "cad/collision/source/torso__rr_roll_strap_-7.55.step",
       "bytes": 74512,
-      "sha256": "3fe0f3b152ed34bb3544cd4b05836bb2721a93a5f65bb8a5bb1fadc110fa8567"
+      "sha256": "39fe780cbcc25d4b3b62edf9000ff5691db9aec21fcb7d0db6c26a7ae77d909a"
     },
     {
       "path": "cad/collision/source/torso__rr_roll_strap_-7.55.stl",
@@ -21115,7 +21115,7 @@
     {
       "path": "cad/collision/source/torso__rs485_adapter.step",
       "bytes": 17741,
-      "sha256": "bb6c838e5f221d7e46ad15cc0176495314682be65eb7896e2eaf6553ebafaefe"
+      "sha256": "490b869d11fd34cd79011141dae702c544807884b01b970d3f1189cfaf540480"
     },
     {
       "path": "cad/collision/source/torso__rs485_adapter.stl",
@@ -21130,7 +21130,7 @@
     {
       "path": "cad/collision/source/torso__sensor_tray.step",
       "bytes": 139428,
-      "sha256": "0919e6c14ee94dd8571dc7a9a6f966119fa1834da74441d150a6b7ba3916239e"
+      "sha256": "2d2c62e7b53679838eef48621ed3ab183dd7afbfbc7b74e00323a2f1e1e6eee8"
     },
     {
       "path": "cad/collision/source/torso__sensor_tray.stl",
@@ -21145,7 +21145,7 @@
     {
       "path": "cad/collision/source/torso__usb_hub.step",
       "bytes": 17778,
-      "sha256": "e20ff10c022ae55b628c616920e8238de4b98914364b9ff3ca8cb152102868fd"
+      "sha256": "86a1693eca226719c803d290bf37e4784f585f0ec96c01de107be6ef05bd0738"
     },
     {
       "path": "cad/collision/source/torso__usb_hub.stl",
@@ -21165,7 +21165,7 @@
     {
       "path": "cad/manufacturing/ear_left__ear_shell_1.step",
       "bytes": 373998,
-      "sha256": "a1579b946cb789a9b631bfab890c43ffb4b1a5d8ef2d930f0218242f8398086b"
+      "sha256": "a9a76ccac5f698132563f0f61061b6c57c252819163f2ab0b7d591efe14722d0"
     },
     {
       "path": "cad/manufacturing/ear_left__ear_shell_1.stl",
@@ -21175,7 +21175,7 @@
     {
       "path": "cad/manufacturing/ear_right__ear_shell_-1.step",
       "bytes": 376910,
-      "sha256": "86f1f4b6e9fad81d46eef23f627c0be6e29729a88c9dc36decc7b175e7cf504e"
+      "sha256": "aea72d405eab233a8c976eff45d55260e5d6d6643de6e9c9a1ffa240ad8b0424"
     },
     {
       "path": "cad/manufacturing/ear_right__ear_shell_-1.stl",
@@ -21185,7 +21185,7 @@
     {
       "path": "cad/manufacturing/fl_roll__fl_hip_bearing_retainer.step",
       "bytes": 35353,
-      "sha256": "7cd3cf483667f4c256481e34007863e70c92ffd30cb1293a88cdf338c9de42dd"
+      "sha256": "24853af2de89668475dd9632044ac2924b66cad9dd19c880e54e39d9e0be446a"
     },
     {
       "path": "cad/manufacturing/fl_roll__fl_hip_bearing_retainer.stl",
@@ -21195,7 +21195,7 @@
     {
       "path": "cad/manufacturing/fl_roll__fl_pitch_clamp_shims.step",
       "bytes": 86876,
-      "sha256": "23ec3b5e9c3ba1b41e55b538e920f72df7cb6f13c74c81eaf987d52f96542a94"
+      "sha256": "25b649f2432043551e4498b546ca63da01f38afc7eceaf5bc16e71223a6621aa"
     },
     {
       "path": "cad/manufacturing/fl_roll__fl_pitch_clamp_shims.stl",
@@ -21205,7 +21205,7 @@
     {
       "path": "cad/manufacturing/fl_roll__fl_pitch_cradle.step",
       "bytes": 358001,
-      "sha256": "37424df88d80f3a01bb44576c330e048cf3b3899a3b0bac0ea4f8ceb7c440c9d"
+      "sha256": "57817dfd489c23380a52357d2c71a1a726a30f43b2ca06d92c0b22fbfa24b133"
     },
     {
       "path": "cad/manufacturing/fl_roll__fl_pitch_cradle.stl",
@@ -21215,7 +21215,7 @@
     {
       "path": "cad/manufacturing/fl_roll__fl_pitch_mount_spacer_-10.step",
       "bytes": 11255,
-      "sha256": "76f4d02fccae444533dfa2161b0821b45c2371bf6180f0df30838e4204c71f97"
+      "sha256": "14dada34b68361ad842fbfb09d06407cacc3371e73a8340d06fb9f4e0257ee7c"
     },
     {
       "path": "cad/manufacturing/fl_roll__fl_pitch_mount_spacer_-10.stl",
@@ -21225,7 +21225,7 @@
     {
       "path": "cad/manufacturing/fl_roll__fl_pitch_mount_spacer_10.step",
       "bytes": 11252,
-      "sha256": "0e8a6d7087d12ccbe256d0a7073d3d3df20979b52056c230442afe9f5a76275f"
+      "sha256": "89301f39a83bb87248fcc9629d68d3c178abd96a32b4e643f6deece12c03574b"
     },
     {
       "path": "cad/manufacturing/fl_roll__fl_pitch_mount_spacer_10.stl",
@@ -21235,7 +21235,7 @@
     {
       "path": "cad/manufacturing/fl_roll__fl_pitch_strap_-41.55.step",
       "bytes": 74525,
-      "sha256": "c3b65c69c6d0d8cc98041a6e562cfa2b030fc1149fd9a043727eb7dccfeffc68"
+      "sha256": "84cbe5473d41b8b9d0d40511c7fefec09bba27de7b48bfe2362a5e0e2b9e1641"
     },
     {
       "path": "cad/manufacturing/fl_roll__fl_pitch_strap_-41.55.stl",
@@ -21245,7 +21245,7 @@
     {
       "path": "cad/manufacturing/fl_roll__fl_pitch_strap_-7.55.step",
       "bytes": 74518,
-      "sha256": "2ab367fb3bdd55b0dc817970c811707e723c2beb5830c2e4c306e1f9e78fd1a7"
+      "sha256": "820cf04d4d1feb0d150b742b8f19bde5093765de85c71d757d10703c8d87b3a5"
     },
     {
       "path": "cad/manufacturing/fl_roll__fl_pitch_strap_-7.55.stl",
@@ -21255,7 +21255,7 @@
     {
       "path": "cad/manufacturing/fl_roll__fl_roll_axle.step",
       "bytes": 43316,
-      "sha256": "5bf78efab5be85bda3e6ec68b1a317ea2bbd99cb951e37a81f46e98d116e69c5"
+      "sha256": "a4380d50b41f30257f474f5d076ce8e92378a269593d82f8d4dc04fc81ce839a"
     },
     {
       "path": "cad/manufacturing/fl_roll__fl_roll_axle.stl",
@@ -21265,7 +21265,7 @@
     {
       "path": "cad/manufacturing/fl_roll__fl_roll_yoke.step",
       "bytes": 192141,
-      "sha256": "ca6691e358699c820f50173308334ad0715007e8c775389cdcd605aaeaa09c94"
+      "sha256": "83196add40eb949d24c4b1286ab1d4c04c2c670e85d7fa257c473327a2948ac8"
     },
     {
       "path": "cad/manufacturing/fl_roll__fl_roll_yoke.stl",
@@ -21275,7 +21275,7 @@
     {
       "path": "cad/manufacturing/fl_shin__fl_TPU_actuator.step",
       "bytes": 12266,
-      "sha256": "854fc5f4aa9e622ac4527d4867dfe281bf80e00ba63b0f71b5b98a811b1ea814"
+      "sha256": "6f7c58050b0fd2c4d53d77db64d7a1fb93ddd9ab5da0174b4d0e645a7690917d"
     },
     {
       "path": "cad/manufacturing/fl_shin__fl_TPU_actuator.stl",
@@ -21285,7 +21285,7 @@
     {
       "path": "cad/manufacturing/fl_shin__fl_TPU_pad.step",
       "bytes": 277982,
-      "sha256": "b21e228c227d837c0318ceb35a677e41c0dbd3a93dab192037a0493a9b2dd253"
+      "sha256": "4d53b783055ec160dfa4593182059b8afb8eb4e9df8367715426655a02d77ee0"
     },
     {
       "path": "cad/manufacturing/fl_shin__fl_TPU_pad.stl",
@@ -21295,7 +21295,7 @@
     {
       "path": "cad/manufacturing/fl_shin__fl_floating_sole.step",
       "bytes": 86080,
-      "sha256": "9326325bbd8a02649f287654f5bf4dc0d2b8f9dc0b8e1b9863da5b2ef71d876d"
+      "sha256": "883ceb9f4935d3174ae4c0f91c6ed31f1fb2f65dba2b5a9b44ccef8fe08680cd"
     },
     {
       "path": "cad/manufacturing/fl_shin__fl_floating_sole.stl",
@@ -21305,7 +21305,7 @@
     {
       "path": "cad/manufacturing/fl_shin__fl_hoof.step",
       "bytes": 495488,
-      "sha256": "ccf2ba0a12d5cb9ef2ff0d490207eef6626d9dcde978f7e0d2c8fd148e49f61f"
+      "sha256": "4308dd750e015b1e81c8a90c5e329dcbce4faabea44e6b4dfb337dc6367211de"
     },
     {
       "path": "cad/manufacturing/fl_shin__fl_hoof.stl",
@@ -21315,7 +21315,7 @@
     {
       "path": "cad/manufacturing/fl_shin__fl_knee_cross_spacer.step",
       "bytes": 37450,
-      "sha256": "43962806dd06eeb5978fbe21b8cfbf489fe5450a724468afa84b5bcd05c59c1d"
+      "sha256": "6487a511c7efc108f83a1d31efcaffb0bcc7b301f117a1052e395cd1cde1621d"
     },
     {
       "path": "cad/manufacturing/fl_shin__fl_knee_cross_spacer.stl",
@@ -21325,7 +21325,7 @@
     {
       "path": "cad/manufacturing/fl_shin__fl_knee_front_rotor_hub.step",
       "bytes": 43352,
-      "sha256": "4915e6213cefaf857cba050eb19c3c133af364f3759eb901c09641aa8c51c255"
+      "sha256": "20211cf3e2a1b5d851ea32a9923e882ffb120b93d9433e8d8ec7c3c5aaf653c7"
     },
     {
       "path": "cad/manufacturing/fl_shin__fl_knee_front_rotor_hub.stl",
@@ -21335,7 +21335,7 @@
     {
       "path": "cad/manufacturing/fl_shin__fl_knee_rear_rotor_hub.step",
       "bytes": 43377,
-      "sha256": "c0437cfb2ab42c1cb1bbfb788b42a037fa36a6e9484c16cdaca2d980a7debccc"
+      "sha256": "bf386c2494f797127fd2340458005f57bb526dfb82076312074ee20f226630ba"
     },
     {
       "path": "cad/manufacturing/fl_shin__fl_knee_rear_rotor_hub.stl",
@@ -21345,7 +21345,7 @@
     {
       "path": "cad/manufacturing/fl_shin__fl_shin_cheek_front.step",
       "bytes": 91828,
-      "sha256": "c7629f10d0aa807e2f1a065b81eb210ab57f61137d4b548bb249e12274023e49"
+      "sha256": "169fe6396d1b69cfffe40ba2668dd68fd0b56b5cddbbf9a9e8a887f0953b309a"
     },
     {
       "path": "cad/manufacturing/fl_shin__fl_shin_cheek_front.stl",
@@ -21355,7 +21355,7 @@
     {
       "path": "cad/manufacturing/fl_shin__fl_shin_cheek_rear.step",
       "bytes": 231166,
-      "sha256": "9f60066adc13c90198c530ab19759e92268b9fb2c9e9e4d287ffeb68c3c84dd8"
+      "sha256": "9486e067079d609026408f4ee3e5ecf854b9a0fb8c9b3a2fb9d33b517793817c"
     },
     {
       "path": "cad/manufacturing/fl_shin__fl_shin_cheek_rear.stl",
@@ -21365,7 +21365,7 @@
     {
       "path": "cad/manufacturing/fl_shin__fl_shin_fairing.step",
       "bytes": 113632,
-      "sha256": "dd5d90578c2c0cbfe6d7465c947b96f9e789898997abb861e3aa3e7d33487cdd"
+      "sha256": "2613dd537c2fd5ed870a3bc51df247ea5bfef57581907caa0a876691f584abf0"
     },
     {
       "path": "cad/manufacturing/fl_shin__fl_shin_fairing.stl",
@@ -21375,7 +21375,7 @@
     {
       "path": "cad/manufacturing/fl_thigh__fl_hip_front_rotor_spacer.step",
       "bytes": 43356,
-      "sha256": "88a752b13ed85c919f56aeea6d0e471e48af3699ec9efe741036417711af8f55"
+      "sha256": "d8d544476979e5f8121c7db6640a136f82152b5bcecfa9d106acd9c06897257e"
     },
     {
       "path": "cad/manufacturing/fl_thigh__fl_hip_front_rotor_spacer.stl",
@@ -21385,7 +21385,7 @@
     {
       "path": "cad/manufacturing/fl_thigh__fl_hip_rear_rotor_hub.step",
       "bytes": 43400,
-      "sha256": "8110f07f9e2bdb41190e5cd1b12f11bc41cae809745b7ed9044c205cd9e0eed7"
+      "sha256": "d56a945c085bd44761475d9fdf8064a48958cfc7b26802e5fbbf7f855589e8ec"
     },
     {
       "path": "cad/manufacturing/fl_thigh__fl_hip_rear_rotor_hub.stl",
@@ -21395,7 +21395,7 @@
     {
       "path": "cad/manufacturing/fl_thigh__fl_knee_bearing_retainer.step",
       "bytes": 35363,
-      "sha256": "0c4b70c9806fff1540b9e31c1172b9d36f30bddb63d7309092399405ff7c9438"
+      "sha256": "08d624c63f54720717331d5e4bde7a4654b49d52f9b9062a873e5ec2a889acbd"
     },
     {
       "path": "cad/manufacturing/fl_thigh__fl_knee_bearing_retainer.stl",
@@ -21405,7 +21405,7 @@
     {
       "path": "cad/manufacturing/fl_thigh__fl_knee_clamp_shims.step",
       "bytes": 86871,
-      "sha256": "6dc0cf40d6b41abbbc2950e5990cc6320d0d262e592765366d1f276ff97cdbe5"
+      "sha256": "db0036ad2f5afd2b604ce0e696cda7e2d6080b661cbed0f81368ee37de409553"
     },
     {
       "path": "cad/manufacturing/fl_thigh__fl_knee_clamp_shims.stl",
@@ -21415,7 +21415,7 @@
     {
       "path": "cad/manufacturing/fl_thigh__fl_knee_cradle.step",
       "bytes": 357994,
-      "sha256": "92bcd40eee65378af282d7998601221c9c09c22ad3bba31cb6af5dff9a123d77"
+      "sha256": "db4be61869947eb0eccc89dbe4dd76f12e57922062a4cfb6a286159b0c521afb"
     },
     {
       "path": "cad/manufacturing/fl_thigh__fl_knee_cradle.stl",
@@ -21425,7 +21425,7 @@
     {
       "path": "cad/manufacturing/fl_thigh__fl_knee_mount_spacer_-10_-52.025.step",
       "bytes": 11290,
-      "sha256": "504c57568274a1a5ef6fdc39c6780aa2f2960f2448765502c281e1da8cd32ed2"
+      "sha256": "895e74626ecb2f875ee85e5c2500aeea6c5fb870af3e42ddef64772a77cc788f"
     },
     {
       "path": "cad/manufacturing/fl_thigh__fl_knee_mount_spacer_-10_-52.025.stl",
@@ -21435,7 +21435,7 @@
     {
       "path": "cad/manufacturing/fl_thigh__fl_knee_mount_spacer_-10_1.725.step",
       "bytes": 11278,
-      "sha256": "6a28c7104d31cc757aaff1d56e62e92f82b172ad2ecdbde996ffc7f77ac8f936"
+      "sha256": "5f50d3560c77f8aa5d8912518536b6058a83687d817188f2b3fa48cdeedb023b"
     },
     {
       "path": "cad/manufacturing/fl_thigh__fl_knee_mount_spacer_-10_1.725.stl",
@@ -21445,7 +21445,7 @@
     {
       "path": "cad/manufacturing/fl_thigh__fl_knee_mount_spacer_10_-52.025.step",
       "bytes": 11283,
-      "sha256": "39eaadc1321deaac2424b2ad9907a0e50cd1d8d78a0217d973fb71f261d107e0"
+      "sha256": "b1deb8282af07f094479e801ade75d5d9edb9b4fbe50bcc7bb9d1b02892c74e8"
     },
     {
       "path": "cad/manufacturing/fl_thigh__fl_knee_mount_spacer_10_-52.025.stl",
@@ -21455,7 +21455,7 @@
     {
       "path": "cad/manufacturing/fl_thigh__fl_knee_mount_spacer_10_1.725.step",
       "bytes": 11271,
-      "sha256": "796404ae312c0faca056f7291dc657588ca88ac475ebee23c4345733c6cc7fca"
+      "sha256": "dc134e3a67b30b3e4abc3f93a587962b256fe34f093eef404cc12a872ff33adc"
     },
     {
       "path": "cad/manufacturing/fl_thigh__fl_knee_mount_spacer_10_1.725.stl",
@@ -21465,7 +21465,7 @@
     {
       "path": "cad/manufacturing/fl_thigh__fl_knee_strap_-41.55.step",
       "bytes": 74521,
-      "sha256": "958b3f33621f56680f87715e285c327bda2904c7b0df48b9cec8ac2b539d83f6"
+      "sha256": "a4230d749823ea8a65bf488949ec7754df6f3f7f857b75c50581200bdc99fcfe"
     },
     {
       "path": "cad/manufacturing/fl_thigh__fl_knee_strap_-41.55.stl",
@@ -21475,7 +21475,7 @@
     {
       "path": "cad/manufacturing/fl_thigh__fl_knee_strap_-7.55.step",
       "bytes": 74514,
-      "sha256": "58bcb666869fef06d0e24ef0e044ab6623be3497b8eef33e21e249260532ea51"
+      "sha256": "50802620b035518c7cf8b18d6ece1b563b03636090e4a8e02cc0c5032faf5951"
     },
     {
       "path": "cad/manufacturing/fl_thigh__fl_knee_strap_-7.55.stl",
@@ -21485,7 +21485,7 @@
     {
       "path": "cad/manufacturing/fl_thigh__fl_thigh_cheek_front.step",
       "bytes": 299290,
-      "sha256": "b352bba05f95be8e9f5c74a11c08fff6963b09b6e8e46de8cdf099051cf921fb"
+      "sha256": "d0eb916bd44c053c66472a06f366b3c6a6189cc3a38afdbae5fd630bce646bc9"
     },
     {
       "path": "cad/manufacturing/fl_thigh__fl_thigh_cheek_front.stl",
@@ -21495,7 +21495,7 @@
     {
       "path": "cad/manufacturing/fl_thigh__fl_thigh_cheek_rear.step",
       "bytes": 292932,
-      "sha256": "7b4d42d0dddffeebbd40fbe59fd6f14308c9653fc00c8b0aa63cda4a5c8b053c"
+      "sha256": "adcf9aa86992470be0eaaa8931be1d251b86033fc865db796d6bc4c1fa64ca9e"
     },
     {
       "path": "cad/manufacturing/fl_thigh__fl_thigh_cheek_rear.stl",
@@ -21505,7 +21505,7 @@
     {
       "path": "cad/manufacturing/fl_thigh__fl_thigh_fairing.step",
       "bytes": 113637,
-      "sha256": "06cf919d81efaac180ed67c553abe84b82d05f221add8a9dd6503833c6333f91"
+      "sha256": "0045f5bd5d57af9866b9192ad1260c5fcd07015184d7323d8a3e3d045cc13774"
     },
     {
       "path": "cad/manufacturing/fl_thigh__fl_thigh_fairing.stl",
@@ -21515,7 +21515,7 @@
     {
       "path": "cad/manufacturing/fl_thigh__fl_thigh_spacer_-27.step",
       "bytes": 12461,
-      "sha256": "ac386aa000ff487371a80d589198ce791a5f25ad3fe76e3d0eae7bca4fe0d772"
+      "sha256": "49baaabb2c90b2b81f378db496a4d5a7c1a4afc28ee6005d3748287aac990f12"
     },
     {
       "path": "cad/manufacturing/fl_thigh__fl_thigh_spacer_-27.stl",
@@ -21525,7 +21525,7 @@
     {
       "path": "cad/manufacturing/fl_thigh__fl_thigh_spacer_27.step",
       "bytes": 12454,
-      "sha256": "2a9431a589d63872cd04b647db31f0e396946d4f48a9da3909880f63b718d057"
+      "sha256": "d23327278e214e5911b2efd9aac4167aa0fa4776cb747e4ea1fe369dcf98b419"
     },
     {
       "path": "cad/manufacturing/fl_thigh__fl_thigh_spacer_27.stl",
@@ -21535,7 +21535,7 @@
     {
       "path": "cad/manufacturing/fr_roll__fr_hip_bearing_retainer.step",
       "bytes": 35353,
-      "sha256": "2a2c827fadcf9a58222313b8220e63fbae28d41ba9a1ee299693829cac4b1a8f"
+      "sha256": "685b3a72a70f522686acbe5572246b7f0b9e860f9112f112312889e025224f7a"
     },
     {
       "path": "cad/manufacturing/fr_roll__fr_hip_bearing_retainer.stl",
@@ -21545,7 +21545,7 @@
     {
       "path": "cad/manufacturing/fr_roll__fr_pitch_clamp_shims.step",
       "bytes": 86886,
-      "sha256": "2c0601e8afcaba53b7cc13d96328af47b59d1e604a6250571758e59a7965f91d"
+      "sha256": "94a74394ef71bf298b133db93514c8d469f5472701d4936b1ec30a4649f71bab"
     },
     {
       "path": "cad/manufacturing/fr_roll__fr_pitch_clamp_shims.stl",
@@ -21555,7 +21555,7 @@
     {
       "path": "cad/manufacturing/fr_roll__fr_pitch_cradle.step",
       "bytes": 358003,
-      "sha256": "6f5572f154a7b997e025906a5a621754d7555c65b10d58d4d30ba673087bc6f6"
+      "sha256": "e3d66f682a2d30e813fc89c7c20f4a84dc452d4421c8c3a7ef424fbae5d21917"
     },
     {
       "path": "cad/manufacturing/fr_roll__fr_pitch_cradle.stl",
@@ -21565,7 +21565,7 @@
     {
       "path": "cad/manufacturing/fr_roll__fr_pitch_mount_spacer_-10.step",
       "bytes": 11255,
-      "sha256": "903a9d61f95116dc7190f44bb25b2bece222c542a9189457279155d359018c67"
+      "sha256": "e6b1128141548682e8b5d543b15d6f523ebfafea9f58d7fa2463efceef663434"
     },
     {
       "path": "cad/manufacturing/fr_roll__fr_pitch_mount_spacer_-10.stl",
@@ -21575,7 +21575,7 @@
     {
       "path": "cad/manufacturing/fr_roll__fr_pitch_mount_spacer_10.step",
       "bytes": 11252,
-      "sha256": "8e5b87907a9750ec7f1ec6ad2850532433ae36e52e5ecd642e69ba88890d3054"
+      "sha256": "545850fd5cd132c9e8ec4479cda928b97821187b19b74d514bb769fdc7a8bff4"
     },
     {
       "path": "cad/manufacturing/fr_roll__fr_pitch_mount_spacer_10.stl",
@@ -21585,7 +21585,7 @@
     {
       "path": "cad/manufacturing/fr_roll__fr_pitch_strap_-41.55.step",
       "bytes": 74526,
-      "sha256": "3639feee7da3d9a4b7695216de734a7446e17ed9a77c37d1172ec87fb8c62269"
+      "sha256": "c1e55c781d337a0397d3f974f38c5042f15321022f99d64a4cf71a302930d431"
     },
     {
       "path": "cad/manufacturing/fr_roll__fr_pitch_strap_-41.55.stl",
@@ -21595,7 +21595,7 @@
     {
       "path": "cad/manufacturing/fr_roll__fr_pitch_strap_-7.55.step",
       "bytes": 74521,
-      "sha256": "232b66617945cca4cb289a085fa502a1e8294934b8ebd3dff442d15837fce1f2"
+      "sha256": "66ffe9fa9e68102af016746da14156078db3322f11b73c22d318ab47a5060d44"
     },
     {
       "path": "cad/manufacturing/fr_roll__fr_pitch_strap_-7.55.stl",
@@ -21605,7 +21605,7 @@
     {
       "path": "cad/manufacturing/fr_roll__fr_roll_axle.step",
       "bytes": 43317,
-      "sha256": "65048b3df5a68e6f3827e0b377ff09822efdec0dabbe117e532dabe1ad1b9f67"
+      "sha256": "ca329b7f7e2262ea9f24cc116552f7ba17d538add66018614b94e8d9f8c60b9c"
     },
     {
       "path": "cad/manufacturing/fr_roll__fr_roll_axle.stl",
@@ -21615,7 +21615,7 @@
     {
       "path": "cad/manufacturing/fr_roll__fr_roll_yoke.step",
       "bytes": 224411,
-      "sha256": "399a3a2abefbbb36ab48aaa5b09336b4fcaedafa9d0c42faba7a7a44f2f5e686"
+      "sha256": "3c753eb050476d7b1fed245f1a4273b359e2aca03b02f2b20ccdf8b716f69a84"
     },
     {
       "path": "cad/manufacturing/fr_roll__fr_roll_yoke.stl",
@@ -21625,7 +21625,7 @@
     {
       "path": "cad/manufacturing/fr_shin__fr_TPU_actuator.step",
       "bytes": 12266,
-      "sha256": "74af9daa1291a57b8b76bdb1b4710c2779ecc9bfe0e1ebefe265a59051d34c36"
+      "sha256": "6f4959da637c2675a5e364d89aa5048cbf36610bb42323c9445685bf5bd02b8d"
     },
     {
       "path": "cad/manufacturing/fr_shin__fr_TPU_actuator.stl",
@@ -21635,7 +21635,7 @@
     {
       "path": "cad/manufacturing/fr_shin__fr_TPU_pad.step",
       "bytes": 277982,
-      "sha256": "05618b1b2203c601fbd81aa4d4c784914a2bdc179f1fa65f191464e2e8a8ce14"
+      "sha256": "54c794b07e2c2d96900096fb569da7d68acc2835c7fcba4eab6bbb7ca8377b0b"
     },
     {
       "path": "cad/manufacturing/fr_shin__fr_TPU_pad.stl",
@@ -21645,7 +21645,7 @@
     {
       "path": "cad/manufacturing/fr_shin__fr_floating_sole.step",
       "bytes": 86080,
-      "sha256": "0512d174ebe9e349baeb0540d8cc55294fc9f85915ab30dc1a4efd4fd09d2665"
+      "sha256": "45c03a10e9c6c09e867d72cedd31ad5f2cf6baca8eb005c369abc7797c42d8c8"
     },
     {
       "path": "cad/manufacturing/fr_shin__fr_floating_sole.stl",
@@ -21655,7 +21655,7 @@
     {
       "path": "cad/manufacturing/fr_shin__fr_hoof.step",
       "bytes": 495488,
-      "sha256": "d6e1c3794a823d166e227494a90feb0014d3b3221d16d1e3041056d351fce0c7"
+      "sha256": "3bab092f5639cd33a6b7ad1781833cc4b0d8f6ca2792f36951a06924138877f0"
     },
     {
       "path": "cad/manufacturing/fr_shin__fr_hoof.stl",
@@ -21665,7 +21665,7 @@
     {
       "path": "cad/manufacturing/fr_shin__fr_knee_cross_spacer.step",
       "bytes": 34205,
-      "sha256": "3ed6bb0cc6f2c9fcb609ecfbcaed80f35d3e35191a77af1fe77e32e613e03e5b"
+      "sha256": "ce03abf6dd17dce486b2e9120bd0e8e5bac9a2ee2c520a708cf62847664e9bc2"
     },
     {
       "path": "cad/manufacturing/fr_shin__fr_knee_cross_spacer.stl",
@@ -21675,7 +21675,7 @@
     {
       "path": "cad/manufacturing/fr_shin__fr_knee_front_rotor_hub.step",
       "bytes": 54157,
-      "sha256": "e4f7b9a0f3a21f53602e5dd8a940b23c0568285cd7344ba03a70706dc0addf86"
+      "sha256": "e986e8c915aac554e792f5b1b02c114020c8958acd36348f2157e26c428c8821"
     },
     {
       "path": "cad/manufacturing/fr_shin__fr_knee_front_rotor_hub.stl",
@@ -21685,7 +21685,7 @@
     {
       "path": "cad/manufacturing/fr_shin__fr_knee_rear_rotor_hub.step",
       "bytes": 54176,
-      "sha256": "8bf819123ae90d050be4535a426c7dcff29e366b68d3e3c1b680de9aa81191b6"
+      "sha256": "c578590f4d7ab895e07484d6c3d1b4dbaadccb92984ae8b062463e4e5eab34ac"
     },
     {
       "path": "cad/manufacturing/fr_shin__fr_knee_rear_rotor_hub.stl",
@@ -21695,7 +21695,7 @@
     {
       "path": "cad/manufacturing/fr_shin__fr_shin_cheek_front.step",
       "bytes": 91829,
-      "sha256": "a8556eb826ec52d5fb59bdba0b36c4e781af7c5fd5aa5afbac56e5317abd916d"
+      "sha256": "337360cfbbe3f6ab84a9e233d7d3e92dd2fad4b2a76579bac2cdf93d030013e9"
     },
     {
       "path": "cad/manufacturing/fr_shin__fr_shin_cheek_front.stl",
@@ -21705,7 +21705,7 @@
     {
       "path": "cad/manufacturing/fr_shin__fr_shin_cheek_rear.step",
       "bytes": 230256,
-      "sha256": "a2c4457b40354a4b8b7e6cb2c80d4ec3c37b99f7bdfd8e0c38136df6f0e288b6"
+      "sha256": "7ca39fa2dad0fdc6abb893947d4d54f9a757ff6e0d6fda0a96e5281a8d8ca9c8"
     },
     {
       "path": "cad/manufacturing/fr_shin__fr_shin_cheek_rear.stl",
@@ -21715,7 +21715,7 @@
     {
       "path": "cad/manufacturing/fr_shin__fr_shin_fairing.step",
       "bytes": 109999,
-      "sha256": "e62f2a8ee980488b0afbae84183c4ff536e822ea692372d07be3562ba7af21ba"
+      "sha256": "d84d0d01d44665bfb5cc4d262bf1d7e25ec7bf112036fc3b2204f75a7f7804f1"
     },
     {
       "path": "cad/manufacturing/fr_shin__fr_shin_fairing.stl",
@@ -21725,7 +21725,7 @@
     {
       "path": "cad/manufacturing/fr_thigh__fr_hip_front_rotor_spacer.step",
       "bytes": 54161,
-      "sha256": "7e26fca0daa514b263eba30f235e69445de797cd37f6a7e40c142b4002bbd0f5"
+      "sha256": "78cbf5e2d84d55a226f413a020c23b91ac02a2410f3d04e9f9b28d56a0dfa897"
     },
     {
       "path": "cad/manufacturing/fr_thigh__fr_hip_front_rotor_spacer.stl",
@@ -21735,7 +21735,7 @@
     {
       "path": "cad/manufacturing/fr_thigh__fr_hip_rear_rotor_hub.step",
       "bytes": 54171,
-      "sha256": "7fa6daf9e1391432229a2aaa8ca8542552164e308cbd313ed0c8d16b55e4ff66"
+      "sha256": "63de3a26e1a1a358a01c41561a572a68039e07b70c6fe6737ab5dd323d681496"
     },
     {
       "path": "cad/manufacturing/fr_thigh__fr_hip_rear_rotor_hub.stl",
@@ -21745,7 +21745,7 @@
     {
       "path": "cad/manufacturing/fr_thigh__fr_knee_bearing_retainer.step",
       "bytes": 35362,
-      "sha256": "a363aa71c01225676e428e4e13ade37acb86d26215240fe37f74cf6b7b0512b6"
+      "sha256": "5aab783c80bda4d5f27f45afb2bfcd5a84efeb6ef4e4b1a4230786b08adfb868"
     },
     {
       "path": "cad/manufacturing/fr_thigh__fr_knee_bearing_retainer.stl",
@@ -21755,7 +21755,7 @@
     {
       "path": "cad/manufacturing/fr_thigh__fr_knee_clamp_shims.step",
       "bytes": 86878,
-      "sha256": "d51d73d81342c2327a985a703a4a5ba99f4100936802084acfe0a9b8ae6be70d"
+      "sha256": "b4e3d7925c4904e919c4846d62a3b7ff95dc6f03f700b595781b407e8d002bdd"
     },
     {
       "path": "cad/manufacturing/fr_thigh__fr_knee_clamp_shims.stl",
@@ -21765,7 +21765,7 @@
     {
       "path": "cad/manufacturing/fr_thigh__fr_knee_cradle.step",
       "bytes": 357995,
-      "sha256": "7b29ea76c03195085987d730cebba2e6699e5b3f16f9f4602b058b04e65dd6bd"
+      "sha256": "167089e909640937d30694d0e83c7e0d7b60f9eca1e8b3345d9590006f931827"
     },
     {
       "path": "cad/manufacturing/fr_thigh__fr_knee_cradle.stl",
@@ -21775,7 +21775,7 @@
     {
       "path": "cad/manufacturing/fr_thigh__fr_knee_mount_spacer_-10_-52.025.step",
       "bytes": 11289,
-      "sha256": "467c53ac6ae5b93cb656cbc09cd35a6dc3eeca6026013ba7a4579f7e33ea0e60"
+      "sha256": "eaf387db964fe3ce2bf97f5fbf9c31388a29d4fc6cb9a4ad0f178149029bf016"
     },
     {
       "path": "cad/manufacturing/fr_thigh__fr_knee_mount_spacer_-10_-52.025.stl",
@@ -21785,7 +21785,7 @@
     {
       "path": "cad/manufacturing/fr_thigh__fr_knee_mount_spacer_-10_1.725.step",
       "bytes": 11279,
-      "sha256": "b3f46ae060b292c0a9de792b3fd8337887a6abf9bfc9b2f61a4538652a80a450"
+      "sha256": "30fac32c9d5c99c44aa857edb785e25d3c0f19e89607f3582bb6a8cd7e97fed8"
     },
     {
       "path": "cad/manufacturing/fr_thigh__fr_knee_mount_spacer_-10_1.725.stl",
@@ -21795,7 +21795,7 @@
     {
       "path": "cad/manufacturing/fr_thigh__fr_knee_mount_spacer_10_-52.025.step",
       "bytes": 11282,
-      "sha256": "03582e005885f312b9f82053c0f6ddc609de57a42f6089b3cba3d1505518714c"
+      "sha256": "9a4af356cfebbdcc009f72ec24ecc08bdc479df266caabf88b3b9a13f671910d"
     },
     {
       "path": "cad/manufacturing/fr_thigh__fr_knee_mount_spacer_10_-52.025.stl",
@@ -21805,7 +21805,7 @@
     {
       "path": "cad/manufacturing/fr_thigh__fr_knee_mount_spacer_10_1.725.step",
       "bytes": 11272,
-      "sha256": "f28fa316294e5c7395eaaaf46e71065cdc5ab2d73a93b753ea3e6ff85a53bc13"
+      "sha256": "da804b6cffd66e6a951f607684edf3b089b5f0ba0ed894df3f5debd97500c3ed"
     },
     {
       "path": "cad/manufacturing/fr_thigh__fr_knee_mount_spacer_10_1.725.stl",
@@ -21815,7 +21815,7 @@
     {
       "path": "cad/manufacturing/fr_thigh__fr_knee_strap_-41.55.step",
       "bytes": 74519,
-      "sha256": "8c78cdf4fe49f74f421eeb6336ea800816680527cceb26dfd9e4f8a57d532565"
+      "sha256": "9c794b6166a5fea5c68387c1f060d6ec4d38b3a475e82f014677c6709297f02c"
     },
     {
       "path": "cad/manufacturing/fr_thigh__fr_knee_strap_-41.55.stl",
@@ -21825,7 +21825,7 @@
     {
       "path": "cad/manufacturing/fr_thigh__fr_knee_strap_-7.55.step",
       "bytes": 74512,
-      "sha256": "f70a608c5c4f15b8dc919627b9fea5036b4fdbd5b0c51df9ac059f9f7e5c66d5"
+      "sha256": "333b2473ddb55a20fea5465b19f84e50bd19a3f43a0eda8a0cd9fbe2cc97820c"
     },
     {
       "path": "cad/manufacturing/fr_thigh__fr_knee_strap_-7.55.stl",
@@ -21835,7 +21835,7 @@
     {
       "path": "cad/manufacturing/fr_thigh__fr_thigh_cheek_front.step",
       "bytes": 299291,
-      "sha256": "e38813f0c755d5acf343ada2444074863f426bf6eacdfd034c09469ebe5a029a"
+      "sha256": "f453c335e507dd7f4f8b6859438dd6c41ff0bb02c98e40808cac0395e4efd357"
     },
     {
       "path": "cad/manufacturing/fr_thigh__fr_thigh_cheek_front.stl",
@@ -21845,7 +21845,7 @@
     {
       "path": "cad/manufacturing/fr_thigh__fr_thigh_cheek_rear.step",
       "bytes": 297355,
-      "sha256": "31274080401f51ead0bf59037a8bf342e60e286f435415a4b22c93dccdef1583"
+      "sha256": "c8b1dac473aa0c0dfedf95cc1bff34787897e168e890adf73427cbe7dd7c3fff"
     },
     {
       "path": "cad/manufacturing/fr_thigh__fr_thigh_cheek_rear.stl",
@@ -21855,7 +21855,7 @@
     {
       "path": "cad/manufacturing/fr_thigh__fr_thigh_fairing.step",
       "bytes": 110004,
-      "sha256": "0db2b6bcb89aba0d05ea5fdc41ad844f4eef28db0dae38b4f6298b1586de9c8c"
+      "sha256": "5d807b37a10fa66aa21f43cff1c97f689186356d4813cc5758d639751af95c14"
     },
     {
       "path": "cad/manufacturing/fr_thigh__fr_thigh_fairing.stl",
@@ -21865,7 +21865,7 @@
     {
       "path": "cad/manufacturing/fr_thigh__fr_thigh_spacer_-27.step",
       "bytes": 12460,
-      "sha256": "b6b06af752baf07a555d6f799e1ed8b8a6cf26404d8b96254410b4019d7a64eb"
+      "sha256": "af16786eb5306158e5b3e13cb75005b29de7c7d1d5babe0c0babb5fc0868e653"
     },
     {
       "path": "cad/manufacturing/fr_thigh__fr_thigh_spacer_-27.stl",
@@ -21875,7 +21875,7 @@
     {
       "path": "cad/manufacturing/fr_thigh__fr_thigh_spacer_27.step",
       "bytes": 12453,
-      "sha256": "d749d68d5c9afa30704852ce6ebfb7a390c1f805a86577f46175c3967d0d5d3d"
+      "sha256": "bb4ce68ace8e855c0769a5753d8c6525bb7d86ef65141a32d626cc179e267935"
     },
     {
       "path": "cad/manufacturing/fr_thigh__fr_thigh_spacer_27.stl",
@@ -21885,7 +21885,7 @@
     {
       "path": "cad/manufacturing/head__camera_carrier.step",
       "bytes": 191921,
-      "sha256": "cce8f0288ba918dcd52f8221f842506fa575820616d1a413693ea08000990a59"
+      "sha256": "58e38532d7e144d997fc8e6c525b6451592b08f130d9373a26c8fc7b4835c44b"
     },
     {
       "path": "cad/manufacturing/head__camera_carrier.stl",
@@ -21895,7 +21895,7 @@
     {
       "path": "cad/manufacturing/head__eye_bezel_-1.step",
       "bytes": 12347,
-      "sha256": "a34b326398ecbdd712bfced5450f1c88b2900aec1588385dd751b57218f99b94"
+      "sha256": "c3d5871e02a14f6278aaac366dc207dd759cddf725c0ba287ab433df5415a3fd"
     },
     {
       "path": "cad/manufacturing/head__eye_bezel_-1.stl",
@@ -21905,7 +21905,7 @@
     {
       "path": "cad/manufacturing/head__eye_bezel_1.step",
       "bytes": 12337,
-      "sha256": "6a4ca92e46cf4019744db11c2c54b26e83d76a473bede31865635412c9b9bbbf"
+      "sha256": "f146c843499f56af2cb8c95f16dc2413f3f2f27ddeb345daeedf481898345cab"
     },
     {
       "path": "cad/manufacturing/head__eye_bezel_1.stl",
@@ -21915,7 +21915,7 @@
     {
       "path": "cad/manufacturing/head__head_service_hatch.step",
       "bytes": 172041,
-      "sha256": "9c8d21403f1f54486f6704d4f2eae4cc636d022e75ed6eb5c20bd296271f94c9"
+      "sha256": "8a53933ff9136b769881f179eb260f53dd4db09855925dca0c2e9dd3a1a7d520"
     },
     {
       "path": "cad/manufacturing/head__head_service_hatch.stl",
@@ -21925,7 +21925,7 @@
     {
       "path": "cad/manufacturing/head__head_support_yoke.step",
       "bytes": 63651,
-      "sha256": "fbe858be1b1a6c9f956ff1ea42d141b1e3c0ef0b548b22fa084e387436dbb3d0"
+      "sha256": "a76da8f9750e0b62273fb18e766cb73f330119c3c7531ee9303b85c1912e0dab"
     },
     {
       "path": "cad/manufacturing/head__head_support_yoke.stl",
@@ -21935,7 +21935,7 @@
     {
       "path": "cad/manufacturing/head__mane_crest.step",
       "bytes": 1036448,
-      "sha256": "357391d7d24ea80da254ec162a8e1f6347a039d3273f973429089b9c987fe869"
+      "sha256": "f629ba2001eb3b7024b6ab720007688aed424c0e8e4b3a2e86bcf228331a6869"
     },
     {
       "path": "cad/manufacturing/head__mane_crest.stl",
@@ -21945,7 +21945,7 @@
     {
       "path": "cad/manufacturing/head__pink_mane_stripe.step",
       "bytes": 49332,
-      "sha256": "5923a8f7e41f7524ce066287479867dcb1c5d3f5ee0eeed95713657101947723"
+      "sha256": "9183bfec11db6f73c651931f11e8159539996c201f697f313be42c541dff101a"
     },
     {
       "path": "cad/manufacturing/head__pink_mane_stripe.stl",
@@ -21955,7 +21955,7 @@
     {
       "path": "cad/manufacturing/head__pony_head_shell.step",
       "bytes": 5180004,
-      "sha256": "40eb6e22cfff05cca7cfd046a72f586a096a9a1807f03046f17ac3f5d84df43c"
+      "sha256": "3af13f63f131e32cae1e5726c37beab8eae09f5a4046e8bcefcff680b49296a2"
     },
     {
       "path": "cad/manufacturing/head__pony_head_shell.stl",
@@ -21965,7 +21965,7 @@
     {
       "path": "cad/manufacturing/head__unicorn_horn.step",
       "bytes": 98938,
-      "sha256": "7bebbdf9e9177a2da25b3c842f3c3799afc9cccfd8210d54b29bb1498146cc80"
+      "sha256": "46b6bb6647b93568fdaa7a7336e0b849fad1f39d170fb80646c25c7fd1a2336a"
     },
     {
       "path": "cad/manufacturing/head__unicorn_horn.stl",
@@ -21975,7 +21975,7 @@
     {
       "path": "cad/manufacturing/neck_yaw__head_pitch_clamp_shims.step",
       "bytes": 87313,
-      "sha256": "4e0f1ab2f0b0d41074eec5dcb34e7d05e3dc38496d040e1d8db31b2d45403312"
+      "sha256": "a1212bc639d744da4ca53ecd75686cfdfb22682ffd3384216b22e0191bb59824"
     },
     {
       "path": "cad/manufacturing/neck_yaw__head_pitch_clamp_shims.stl",
@@ -21985,7 +21985,7 @@
     {
       "path": "cad/manufacturing/neck_yaw__head_pitch_cradle.step",
       "bytes": 47396,
-      "sha256": "89681ca062ce50212e83b27e29d37974999954c5619e9363f25fe89079f32810"
+      "sha256": "b7763ad613b87e8c2a92c8c112ad89d96e98b26881fa5baabbb89763edf794a3"
     },
     {
       "path": "cad/manufacturing/neck_yaw__head_pitch_cradle.stl",
@@ -21995,7 +21995,7 @@
     {
       "path": "cad/manufacturing/neck_yaw__head_pitch_cradle_strap_-33.step",
       "bytes": 25829,
-      "sha256": "4fea029c873128630b9b3861ee42383692328b0905635477667c46c3af135549"
+      "sha256": "990c70253bdae81f8c936694a6e0f39a9a8a891962e64c79ec0d06943c18eb1f"
     },
     {
       "path": "cad/manufacturing/neck_yaw__head_pitch_cradle_strap_-33.stl",
@@ -22005,7 +22005,7 @@
     {
       "path": "cad/manufacturing/neck_yaw__head_pitch_cradle_strap_-7.step",
       "bytes": 25822,
-      "sha256": "65491cedd39c9f0fff34d822d9d658e873380c6a06293b311865b124a0cc1b3c"
+      "sha256": "77ef78d1a111a850da233afecb158c4a1a283a95fd6162dc1e0df975c4fdb52e"
     },
     {
       "path": "cad/manufacturing/neck_yaw__head_pitch_cradle_strap_-7.stl",
@@ -22015,7 +22015,7 @@
     {
       "path": "cad/manufacturing/neck_yaw__white_neck_collar.step",
       "bytes": 17248,
-      "sha256": "092d9c50531c45aa310e7ec6e004879bafe6f6b5d620e15d39adbb459f5967ca"
+      "sha256": "82d2bb4ba8507e823b0f3e40b31524950396a5613f7609d1510fa1f9c84d31af"
     },
     {
       "path": "cad/manufacturing/neck_yaw__white_neck_collar.stl",
@@ -22025,7 +22025,7 @@
     {
       "path": "cad/manufacturing/rl_roll__rl_hip_bearing_retainer.step",
       "bytes": 42662,
-      "sha256": "ca9c2e347e22707b345273a7f3dd1af310ff520604eccaa0d543880e418bd65d"
+      "sha256": "08b70e972ffe12e55ec4387fc1d571e6441801b08124f75b5871ce335b643010"
     },
     {
       "path": "cad/manufacturing/rl_roll__rl_hip_bearing_retainer.stl",
@@ -22035,7 +22035,7 @@
     {
       "path": "cad/manufacturing/rl_roll__rl_pitch_clamp_shims.step",
       "bytes": 76322,
-      "sha256": "1f8c958b433b31cb7cb3f14bdc99119a654aa1caeb0c4935bce4c0340efb8245"
+      "sha256": "d4b98cf9253bb017c8fc1206f9168e634030fac07b5c025f14fb0ca17bd14557"
     },
     {
       "path": "cad/manufacturing/rl_roll__rl_pitch_clamp_shims.stl",
@@ -22045,7 +22045,7 @@
     {
       "path": "cad/manufacturing/rl_roll__rl_pitch_cradle.step",
       "bytes": 353129,
-      "sha256": "63f35eedc12922ee62755415002b0e9267363c8c81c6bc3db38e5e9ab1bdabaa"
+      "sha256": "a0deed702090299a1d9ffbc42e29231f043f9545f4bee34174dd9813b4a24740"
     },
     {
       "path": "cad/manufacturing/rl_roll__rl_pitch_cradle.stl",
@@ -22055,7 +22055,7 @@
     {
       "path": "cad/manufacturing/rl_roll__rl_pitch_mount_spacer_-10.step",
       "bytes": 11723,
-      "sha256": "a94941b55b6570d5220fc97b8680f156dffaa1e86bf03170ea09ab05a0cdcf21"
+      "sha256": "12725b99af7f1d388c1990d3465190cd5f59f4125452de0ee6a57dfd43a16b5c"
     },
     {
       "path": "cad/manufacturing/rl_roll__rl_pitch_mount_spacer_-10.stl",
@@ -22065,7 +22065,7 @@
     {
       "path": "cad/manufacturing/rl_roll__rl_pitch_mount_spacer_10.step",
       "bytes": 11742,
-      "sha256": "84e0e3e842794cb172ba1c34e2ebd2f06e56a6ccf434cb28919fdaba86376dce"
+      "sha256": "90cfa328f3aa9a32f1ee882d4da4cbb8b08527b0e78ff3d61977ad60e12e548c"
     },
     {
       "path": "cad/manufacturing/rl_roll__rl_pitch_mount_spacer_10.stl",
@@ -22075,7 +22075,7 @@
     {
       "path": "cad/manufacturing/rl_roll__rl_pitch_strap_-41.55.step",
       "bytes": 72120,
-      "sha256": "9564b77f88c162012bae969dec534d0354db65631356a26b183150ba6a34dc4e"
+      "sha256": "318302f70f1fd1fce944ddcaf882a45e0a537a480dd52cdddf7133d30799cbe5"
     },
     {
       "path": "cad/manufacturing/rl_roll__rl_pitch_strap_-41.55.stl",
@@ -22085,7 +22085,7 @@
     {
       "path": "cad/manufacturing/rl_roll__rl_pitch_strap_-7.55.step",
       "bytes": 72048,
-      "sha256": "30f821288d595ff071c2544770e41bda44b8512db732d7764b5d0a448257d0c7"
+      "sha256": "f597c24cbf7890ace34527546ccc8808cada440d6cd050b4f3664d6229904aee"
     },
     {
       "path": "cad/manufacturing/rl_roll__rl_pitch_strap_-7.55.stl",
@@ -22095,7 +22095,7 @@
     {
       "path": "cad/manufacturing/rl_roll__rl_roll_axle.step",
       "bytes": 54487,
-      "sha256": "9a7fda428e8bacf2bbaee9d8392e77206964828b40bc38bdebc07d585a6a3d16"
+      "sha256": "307b6e6c12d30d8f3ce59174bed18c8a9ed87366f4a2e51e146cd5661f5e875a"
     },
     {
       "path": "cad/manufacturing/rl_roll__rl_roll_axle.stl",
@@ -22105,7 +22105,7 @@
     {
       "path": "cad/manufacturing/rl_roll__rl_roll_yoke.step",
       "bytes": 223778,
-      "sha256": "b408aac726ea55e8f112fc07b4e691d1f39b15cf7451a6b7378527bc39704eb2"
+      "sha256": "3553d4d0f69655a255cf5cf6d56359a24793a7ad67aadfd2ed5dc0aa99591f97"
     },
     {
       "path": "cad/manufacturing/rl_roll__rl_roll_yoke.stl",
@@ -22115,7 +22115,7 @@
     {
       "path": "cad/manufacturing/rl_shin__rl_TPU_actuator.step",
       "bytes": 13072,
-      "sha256": "d6d1af1b8ab58436ac7152e0d1beec4c41b85da36587e535c0b49735396aa31a"
+      "sha256": "8f90d6aec438ad559407ad55d3c5fbb69d65d3145cebda8d5aa7aa90eb926dbd"
     },
     {
       "path": "cad/manufacturing/rl_shin__rl_TPU_actuator.stl",
@@ -22125,7 +22125,7 @@
     {
       "path": "cad/manufacturing/rl_shin__rl_TPU_pad.step",
       "bytes": 287128,
-      "sha256": "cd3210f1ff7d8d9e5147487d5bf068d10a3dd4319f53fc7969eef7ba2301f4c9"
+      "sha256": "2d7a2f199d97698be967fb0734dfea74b7a7065d368bc211462f56e09db69a58"
     },
     {
       "path": "cad/manufacturing/rl_shin__rl_TPU_pad.stl",
@@ -22135,7 +22135,7 @@
     {
       "path": "cad/manufacturing/rl_shin__rl_floating_sole.step",
       "bytes": 92332,
-      "sha256": "86139650d36fa8021478373371dcfc224fe142b427534a6e233285f6f2460580"
+      "sha256": "174bbd3abdb408258630c3863cf9eb59f12fde310112927df009c705b719c70a"
     },
     {
       "path": "cad/manufacturing/rl_shin__rl_floating_sole.stl",
@@ -22145,7 +22145,7 @@
     {
       "path": "cad/manufacturing/rl_shin__rl_hoof.step",
       "bytes": 504912,
-      "sha256": "bb53cbc483bb01a7042a161ca1ae7449a331ba48f9748c33d234bd845c25a861"
+      "sha256": "2a88b392f07dfadba632b869f6fee0ae836b43e8b6350fe0b3fe5989c46b9de3"
     },
     {
       "path": "cad/manufacturing/rl_shin__rl_hoof.stl",
@@ -22155,7 +22155,7 @@
     {
       "path": "cad/manufacturing/rl_shin__rl_knee_cross_spacer.step",
       "bytes": 33155,
-      "sha256": "e3f2cc4170a7d55939bb6f0766a13dfd22a3e04999b9cf482a0944f6ab7088e2"
+      "sha256": "2c73fc13de826f30a7387fc1043fea6e4f8cacf10de43dd77b71545e7628af95"
     },
     {
       "path": "cad/manufacturing/rl_shin__rl_knee_cross_spacer.stl",
@@ -22165,7 +22165,7 @@
     {
       "path": "cad/manufacturing/rl_shin__rl_knee_front_rotor_hub.step",
       "bytes": 52917,
-      "sha256": "11ea03afa26a649ca3f9f01e566823eeb9aad700a67e8619e405ab5947986d17"
+      "sha256": "23340903f688196847e9afeef5ee88eaf840ae766683db3928f1df52cd58e2d1"
     },
     {
       "path": "cad/manufacturing/rl_shin__rl_knee_front_rotor_hub.stl",
@@ -22175,7 +22175,7 @@
     {
       "path": "cad/manufacturing/rl_shin__rl_knee_rear_rotor_hub.step",
       "bytes": 52931,
-      "sha256": "77a3a2500ed2f900412ce360ece7861b8dca25620a92498e2ed5ad38383783c6"
+      "sha256": "df2ed3353c3d6d92626706d1f95838749e715f0d61dab1b066a4f89e9e15a9d8"
     },
     {
       "path": "cad/manufacturing/rl_shin__rl_knee_rear_rotor_hub.stl",
@@ -22185,7 +22185,7 @@
     {
       "path": "cad/manufacturing/rl_shin__rl_shin_cheek_front.step",
       "bytes": 74275,
-      "sha256": "778f2e94a13e1ae7b797fd4b502922ef6d808dd68667f069e1e77c47b010f656"
+      "sha256": "822c2a003050bf26e77c07c403ede6de97a5b96062db36840fbc57a706e55680"
     },
     {
       "path": "cad/manufacturing/rl_shin__rl_shin_cheek_front.stl",
@@ -22195,7 +22195,7 @@
     {
       "path": "cad/manufacturing/rl_shin__rl_shin_cheek_rear.step",
       "bytes": 229796,
-      "sha256": "49272054a4aa4e973c2e0ab4462016e8fd6441b55a441472dd92e2c574d9ee66"
+      "sha256": "666df75afcd5c415ad685722e5498b11089e63e64fd2d1a70812ec81355376ee"
     },
     {
       "path": "cad/manufacturing/rl_shin__rl_shin_cheek_rear.stl",
@@ -22205,7 +22205,7 @@
     {
       "path": "cad/manufacturing/rl_shin__rl_shin_fairing.step",
       "bytes": 108816,
-      "sha256": "d4db3e5d7fcbc6d8ee2ff8fb244b38fd936185b55a586929a84dfbad44b8c020"
+      "sha256": "9d5994f88dec5d0a1de1c223a89e43b6ed7c96049942f2bd286fb4e92b39c34b"
     },
     {
       "path": "cad/manufacturing/rl_shin__rl_shin_fairing.stl",
@@ -22215,7 +22215,7 @@
     {
       "path": "cad/manufacturing/rl_thigh__rl_hip_front_rotor_spacer.step",
       "bytes": 52993,
-      "sha256": "1436bfd28ae4f9d790919d172ad00383838d4e66282fc24004792c4bbc169f93"
+      "sha256": "6c4500bd7809a852cf680d465db9282dbc8133568e1eeb7ecb61801dae261e2e"
     },
     {
       "path": "cad/manufacturing/rl_thigh__rl_hip_front_rotor_spacer.stl",
@@ -22225,7 +22225,7 @@
     {
       "path": "cad/manufacturing/rl_thigh__rl_hip_rear_rotor_hub.step",
       "bytes": 52992,
-      "sha256": "dea9c6586895aa4a33e320ae1ce183c439bf23f330c6074f6e1331c78ba7348b"
+      "sha256": "270a52649b8c9996e806cde8c7355d3da03c0571679c493a6d19ed59675cefb0"
     },
     {
       "path": "cad/manufacturing/rl_thigh__rl_hip_rear_rotor_hub.stl",
@@ -22235,7 +22235,7 @@
     {
       "path": "cad/manufacturing/rl_thigh__rl_knee_bearing_retainer.step",
       "bytes": 42681,
-      "sha256": "4cb345d58fad5295e1c1c29db6e3cd031bf3bae7c71d4abe9d5c3ec32f043c6d"
+      "sha256": "b4bf5965330bf19cc198a66494966841b1d4729895880d4ff0ff3a7f5254475f"
     },
     {
       "path": "cad/manufacturing/rl_thigh__rl_knee_bearing_retainer.stl",
@@ -22245,7 +22245,7 @@
     {
       "path": "cad/manufacturing/rl_thigh__rl_knee_clamp_shims.step",
       "bytes": 76329,
-      "sha256": "a80b4be204083576bd8bd74e824dcfd943dcae9f3fe7ccaaac5cb95a4d1241ee"
+      "sha256": "dfbcba8ac4f3ffe7f12bd69d51a85c4651012c92d6701e394c5c784d70b9f002"
     },
     {
       "path": "cad/manufacturing/rl_thigh__rl_knee_clamp_shims.stl",
@@ -22255,7 +22255,7 @@
     {
       "path": "cad/manufacturing/rl_thigh__rl_knee_cradle.step",
       "bytes": 353394,
-      "sha256": "2f3d3ce3c42b44e74ebfe6d1645c5c27be7c492fe389ba2844ef055257f96d28"
+      "sha256": "0623388822720945f52e938578180618e0a9f892133af6f3ef42515eeb32a296"
     },
     {
       "path": "cad/manufacturing/rl_thigh__rl_knee_cradle.stl",
@@ -22265,7 +22265,7 @@
     {
       "path": "cad/manufacturing/rl_thigh__rl_knee_mount_spacer_-10_-52.025.step",
       "bytes": 11738,
-      "sha256": "ff6a5f85fa30193f1b682c00415d590aaa7272aa1c97df348f7419f2a0b35e6e"
+      "sha256": "936bb89f9b258a4a158dc42848971fb216b49f3251c15e4ba2833f1e77452187"
     },
     {
       "path": "cad/manufacturing/rl_thigh__rl_knee_mount_spacer_-10_-52.025.stl",
@@ -22275,7 +22275,7 @@
     {
       "path": "cad/manufacturing/rl_thigh__rl_knee_mount_spacer_-10_1.725.step",
       "bytes": 11720,
-      "sha256": "c6a2f69425c22cbbb69fc3d268082c32208266e7639c026261a6882deeac120a"
+      "sha256": "54da5de4c2a6b38861c808a1063eb55db42d0f8c07015b5d1226ed5b5f618f31"
     },
     {
       "path": "cad/manufacturing/rl_thigh__rl_knee_mount_spacer_-10_1.725.stl",
@@ -22285,7 +22285,7 @@
     {
       "path": "cad/manufacturing/rl_thigh__rl_knee_mount_spacer_10_-52.025.step",
       "bytes": 11755,
-      "sha256": "9b7cfd5aa92f297b8347bd86b1e929a70322c53599556293abc5f72ea8187425"
+      "sha256": "05dd207d92bbedf7ddb218d9155bfef236236cab96bf91c4943bef6fea98c621"
     },
     {
       "path": "cad/manufacturing/rl_thigh__rl_knee_mount_spacer_10_-52.025.stl",
@@ -22295,7 +22295,7 @@
     {
       "path": "cad/manufacturing/rl_thigh__rl_knee_mount_spacer_10_1.725.step",
       "bytes": 11737,
-      "sha256": "3bedab511cfa52fe60fbd6b33ddbc2b51799799d25da30c60a105d0ea72b8185"
+      "sha256": "0eec4c43ffaf5f742ddb67d32b6e6e7d8cdf720904aeec3595903b77cdca9abf"
     },
     {
       "path": "cad/manufacturing/rl_thigh__rl_knee_mount_spacer_10_1.725.stl",
@@ -22305,7 +22305,7 @@
     {
       "path": "cad/manufacturing/rl_thigh__rl_knee_strap_-41.55.step",
       "bytes": 72040,
-      "sha256": "a1a5830b9c356a1157642bfbed7ef9faefb50ef96d4bd18a49aa3427ec38ca59"
+      "sha256": "2ff6447e506802b3ddd72097b5452b74ab1d8b8cbcc2d0ba0064f2625c5b2465"
     },
     {
       "path": "cad/manufacturing/rl_thigh__rl_knee_strap_-41.55.stl",
@@ -22315,7 +22315,7 @@
     {
       "path": "cad/manufacturing/rl_thigh__rl_knee_strap_-7.55.step",
       "bytes": 71952,
-      "sha256": "8d955d00a8a90809e744def0aa8ce84cb1f42754cf45d0e98647da861d9e7fd2"
+      "sha256": "d0e54cf73c71340f03760500b96f77f59c50c05419766b246ddbfd699b3b6189"
     },
     {
       "path": "cad/manufacturing/rl_thigh__rl_knee_strap_-7.55.stl",
@@ -22325,7 +22325,7 @@
     {
       "path": "cad/manufacturing/rl_thigh__rl_thigh_cheek_front.step",
       "bytes": 273312,
-      "sha256": "a3914a9128d2ce8ea6990ec9ed564eefd8ef8bc7751519061368589435b3b71a"
+      "sha256": "31c3815ed11a144d2ff5b938c087dbf7bb7d57a5d1e1919cdd05f18f4540b0fe"
     },
     {
       "path": "cad/manufacturing/rl_thigh__rl_thigh_cheek_front.stl",
@@ -22335,7 +22335,7 @@
     {
       "path": "cad/manufacturing/rl_thigh__rl_thigh_cheek_rear.step",
       "bytes": 296522,
-      "sha256": "b35b58cbe7c955cbaa7e1457bc7226ea83a1467e78d9f0ce67a296dead394e27"
+      "sha256": "0789154b0b723b66f3e7b4d776576a9f6076c3185ae0325187d76c0c3f343146"
     },
     {
       "path": "cad/manufacturing/rl_thigh__rl_thigh_cheek_rear.stl",
@@ -22345,7 +22345,7 @@
     {
       "path": "cad/manufacturing/rl_thigh__rl_thigh_fairing.step",
       "bytes": 108762,
-      "sha256": "e8441575a4c997ec8ae544d827f428a17b03f860fe650320a8aea5ceb7bdce1b"
+      "sha256": "d0fb6268452b49cf5e722679089d333c1aa7a1ac8ab4393dc036be6e75172630"
     },
     {
       "path": "cad/manufacturing/rl_thigh__rl_thigh_fairing.stl",
@@ -22355,7 +22355,7 @@
     {
       "path": "cad/manufacturing/rl_thigh__rl_thigh_spacer_-27.step",
       "bytes": 12274,
-      "sha256": "c61d0fc5145003a47e1723115caf850b732dbf25f7233e9fcb456b9a12ecb0c9"
+      "sha256": "6519c39af07b4aaedb6d5ce0a325edd1c810f871e26f1d61c38297f2c9dbf6f3"
     },
     {
       "path": "cad/manufacturing/rl_thigh__rl_thigh_spacer_-27.stl",
@@ -22365,7 +22365,7 @@
     {
       "path": "cad/manufacturing/rl_thigh__rl_thigh_spacer_27.step",
       "bytes": 12285,
-      "sha256": "f78a15c02fe329f9367aa1f0a9198a320f443feb8f777d0611acbe5b15269211"
+      "sha256": "82a15ce0b4aa097cf18bcc945fcd9b3fa6004896278977c29649e4f5eff6a6b8"
     },
     {
       "path": "cad/manufacturing/rl_thigh__rl_thigh_spacer_27.stl",
@@ -22375,7 +22375,7 @@
     {
       "path": "cad/manufacturing/rr_roll__rr_hip_bearing_retainer.step",
       "bytes": 35386,
-      "sha256": "50e92bffd4d357cf30d629c77de13ef80865bf1c82fe14a54da86cc04cd445f1"
+      "sha256": "039dca0461f7563549568bc143121e1b29c5e23e584c25852a7668d272878b13"
     },
     {
       "path": "cad/manufacturing/rr_roll__rr_hip_bearing_retainer.stl",
@@ -22385,7 +22385,7 @@
     {
       "path": "cad/manufacturing/rr_roll__rr_pitch_clamp_shims.step",
       "bytes": 76268,
-      "sha256": "de8bbe2f5c58b5977931ae681964900ff1f7cc1f6e9d5f4133b34dc22ebb7ca4"
+      "sha256": "7d216a1bb8f7c453145b19d819f6ee55335a4f6f48a5344600a2e7c9af7b441d"
     },
     {
       "path": "cad/manufacturing/rr_roll__rr_pitch_clamp_shims.stl",
@@ -22395,7 +22395,7 @@
     {
       "path": "cad/manufacturing/rr_roll__rr_pitch_cradle.step",
       "bytes": 353214,
-      "sha256": "2d2557f70e636aec6b5a67007912d4b2deaefd9a9aa0d6b792107543de8e62d0"
+      "sha256": "967e7132a53e288f435cbf13f13922a1ea6d98db768e21241e77149f98123cab"
     },
     {
       "path": "cad/manufacturing/rr_roll__rr_pitch_cradle.stl",
@@ -22405,7 +22405,7 @@
     {
       "path": "cad/manufacturing/rr_roll__rr_pitch_mount_spacer_-10.step",
       "bytes": 11271,
-      "sha256": "a735775f516350a78e6f946fae99bf288dc8613b8939bf0e15c8d7cf21d4a8a4"
+      "sha256": "63169aa79b63fc526a93b3113a1801338583747816389200628f198cb492dada"
     },
     {
       "path": "cad/manufacturing/rr_roll__rr_pitch_mount_spacer_-10.stl",
@@ -22415,7 +22415,7 @@
     {
       "path": "cad/manufacturing/rr_roll__rr_pitch_mount_spacer_10.step",
       "bytes": 11270,
-      "sha256": "17a57ce2afb0b6d872c663f8b9d656a7a3e9495a8d55c2f79201f91f61b93523"
+      "sha256": "3bd0a07b82218235eb407d49ec9c661244abce5e9c8c299700edf94913fcf319"
     },
     {
       "path": "cad/manufacturing/rr_roll__rr_pitch_mount_spacer_10.stl",
@@ -22425,7 +22425,7 @@
     {
       "path": "cad/manufacturing/rr_roll__rr_pitch_strap_-41.55.step",
       "bytes": 71879,
-      "sha256": "28fea2089f93d6684ba649ca5847e08f18e704ad90b7ed241ece1548e8c3e38e"
+      "sha256": "5bbc57aa79fcb2af314c9212302bcb89860061ca44e3f63ea83e64a254d27e5f"
     },
     {
       "path": "cad/manufacturing/rr_roll__rr_pitch_strap_-41.55.stl",
@@ -22435,7 +22435,7 @@
     {
       "path": "cad/manufacturing/rr_roll__rr_pitch_strap_-7.55.step",
       "bytes": 72027,
-      "sha256": "41387a4c6f917ac783fbae236de0cc49e641ae1f96b7ae8e10585f8231f065b0"
+      "sha256": "57585acba8b9efc9b9e74ee43b3dc61fe1fbb54def8c26e75b4ab499a8712d01"
     },
     {
       "path": "cad/manufacturing/rr_roll__rr_pitch_strap_-7.55.stl",
@@ -22445,7 +22445,7 @@
     {
       "path": "cad/manufacturing/rr_roll__rr_roll_axle.step",
       "bytes": 43318,
-      "sha256": "791cfb0a3f3714a015257e1935f57537a12b7724ad6a1a682bdba68ea6355f62"
+      "sha256": "e8bc668707fcf9162efccd92117bba83f61fd95f47707564b1efb14064a638f7"
     },
     {
       "path": "cad/manufacturing/rr_roll__rr_roll_axle.stl",
@@ -22455,7 +22455,7 @@
     {
       "path": "cad/manufacturing/rr_roll__rr_roll_yoke.step",
       "bytes": 192162,
-      "sha256": "2ebad3a6007adb99d7ca1f247f2afedc42d69bc8894af5e375bbacc01d4942b5"
+      "sha256": "e9f16448524558f7094d8944f10c0f7c670a16904b57f9f7731140744e654be7"
     },
     {
       "path": "cad/manufacturing/rr_roll__rr_roll_yoke.stl",
@@ -22465,7 +22465,7 @@
     {
       "path": "cad/manufacturing/rr_shin__rr_TPU_actuator.step",
       "bytes": 13072,
-      "sha256": "bb967a88622d8389d748e048c284a29b1ea0619586dac2195090274f5e4d89c0"
+      "sha256": "fdeca61a023ba2df7725414f295df4b5a08fa5b70b0700151a80015a744902d4"
     },
     {
       "path": "cad/manufacturing/rr_shin__rr_TPU_actuator.stl",
@@ -22475,7 +22475,7 @@
     {
       "path": "cad/manufacturing/rr_shin__rr_TPU_pad.step",
       "bytes": 287128,
-      "sha256": "7adacf74196d7725d5c306c925f2bd34602683304fb7b12f415dc5f5786c11c7"
+      "sha256": "376cc445352d43d16d4dd883577590e34e934ec07db7f361e4c30233107510f6"
     },
     {
       "path": "cad/manufacturing/rr_shin__rr_TPU_pad.stl",
@@ -22485,7 +22485,7 @@
     {
       "path": "cad/manufacturing/rr_shin__rr_floating_sole.step",
       "bytes": 92332,
-      "sha256": "dbbd637ffb5debbd09182f084a367f38013e60255c3536dbc2712916984ccd24"
+      "sha256": "06e8683dbc516a7fe0dc2f50c1858520129dea02baa8422b30dcece6da0363ce"
     },
     {
       "path": "cad/manufacturing/rr_shin__rr_floating_sole.stl",
@@ -22495,7 +22495,7 @@
     {
       "path": "cad/manufacturing/rr_shin__rr_hoof.step",
       "bytes": 504912,
-      "sha256": "6b6efa3061dc4465b6d0aaad639b8632510d8a3e8e07b345487b83c0d521f8dc"
+      "sha256": "b8c7e5a52e0a6c84cda5a502019fe196a392f047385bc3ab0c66998bb7fbd83c"
     },
     {
       "path": "cad/manufacturing/rr_shin__rr_hoof.stl",
@@ -22505,7 +22505,7 @@
     {
       "path": "cad/manufacturing/rr_shin__rr_knee_cross_spacer.step",
       "bytes": 37467,
-      "sha256": "5fab11587df9e1d073083e830a53f912b35b8124b52125a028d5383a38116599"
+      "sha256": "5e6ff34d9a77fafdb0e6d7bd1e8351f8b2ec4137178359a4ce4a8df6a359b62f"
     },
     {
       "path": "cad/manufacturing/rr_shin__rr_knee_cross_spacer.stl",
@@ -22515,7 +22515,7 @@
     {
       "path": "cad/manufacturing/rr_shin__rr_knee_front_rotor_hub.step",
       "bytes": 43386,
-      "sha256": "a0254f31b132639ff1b2037cf88307107f253ebd2f046e669779803a9b50625a"
+      "sha256": "46f679b29787f3262d08a5b7e27e47a1bc1c090438bce9c6f7146bb8cd183f17"
     },
     {
       "path": "cad/manufacturing/rr_shin__rr_knee_front_rotor_hub.stl",
@@ -22525,7 +22525,7 @@
     {
       "path": "cad/manufacturing/rr_shin__rr_knee_rear_rotor_hub.step",
       "bytes": 43409,
-      "sha256": "07a3a6f850b5801f9d1d92b7c3577433e0f0e06a64c3d3dbfa7391ba7c7d16f3"
+      "sha256": "d80d0e738441235e40250aaa2aee3aa2a53bee48c9a92b813f8dc409aa37e877"
     },
     {
       "path": "cad/manufacturing/rr_shin__rr_knee_rear_rotor_hub.stl",
@@ -22535,7 +22535,7 @@
     {
       "path": "cad/manufacturing/rr_shin__rr_shin_cheek_front.step",
       "bytes": 91863,
-      "sha256": "e439b73de147d679e72dafff02fd986a8662587db41e8dbd24549c5a34951a78"
+      "sha256": "1ccaa694e1dd9df0237edc2d8a0f2d063a177fd2c1d7da574bd5fa08717b910e"
     },
     {
       "path": "cad/manufacturing/rr_shin__rr_shin_cheek_front.stl",
@@ -22545,7 +22545,7 @@
     {
       "path": "cad/manufacturing/rr_shin__rr_shin_cheek_rear.step",
       "bytes": 231183,
-      "sha256": "de01699532b46e368e552b31d7d4323196ca14fbc5a4991da28023af034f84c9"
+      "sha256": "93ddb54c43360e304a915fe4c6cd584da030367613f73f761dbee9a7e287a846"
     },
     {
       "path": "cad/manufacturing/rr_shin__rr_shin_cheek_rear.stl",
@@ -22555,7 +22555,7 @@
     {
       "path": "cad/manufacturing/rr_shin__rr_shin_fairing.step",
       "bytes": 113667,
-      "sha256": "e93fe00c88e4a46895315cd46b07bf15b1dbbdf73c6777e174f0596ac1024618"
+      "sha256": "249bb70df13888b3f01427560c9bdabb3439f5ee7d6f0e59cc25976e30e62f7b"
     },
     {
       "path": "cad/manufacturing/rr_shin__rr_shin_fairing.stl",
@@ -22565,7 +22565,7 @@
     {
       "path": "cad/manufacturing/rr_thigh__rr_hip_front_rotor_spacer.step",
       "bytes": 43391,
-      "sha256": "88712548d51f23ef5cdbbb1cced7cd7b98bc569a68f95daf7431f1c4d058adb0"
+      "sha256": "3f1b01ec8bba7e141f30cc8f6fe9082e49e06d0db2e9a32411d34a95a4938cf3"
     },
     {
       "path": "cad/manufacturing/rr_thigh__rr_hip_front_rotor_spacer.stl",
@@ -22575,7 +22575,7 @@
     {
       "path": "cad/manufacturing/rr_thigh__rr_hip_rear_rotor_hub.step",
       "bytes": 43432,
-      "sha256": "af75f0e3eb08ffe651510fc938d52ba95dfb487c9b686322b29ce9889a2b6119"
+      "sha256": "05a6f22938ffdb8abceb91991faaa0acaa6226c461b6b8b1031cee2f2aca93d3"
     },
     {
       "path": "cad/manufacturing/rr_thigh__rr_hip_rear_rotor_hub.stl",
@@ -22585,7 +22585,7 @@
     {
       "path": "cad/manufacturing/rr_thigh__rr_knee_bearing_retainer.step",
       "bytes": 35395,
-      "sha256": "16265cd61e2a3d78c329673b7751e79cc766110ff419252ac4e18c685a202a49"
+      "sha256": "ecc7f2b00d680c6e36c3f620a63cf577be8939646ab16b3b4df600134fbe56c3"
     },
     {
       "path": "cad/manufacturing/rr_thigh__rr_knee_bearing_retainer.stl",
@@ -22595,7 +22595,7 @@
     {
       "path": "cad/manufacturing/rr_thigh__rr_knee_clamp_shims.step",
       "bytes": 76209,
-      "sha256": "4736bd53faee39c793657517c269b2a2b9ad68a6179e945365718f8a2b24ee72"
+      "sha256": "0af5e5e259098b891027f97d3eed94e2792699c0fcba407fa7b15aa80ee62d9a"
     },
     {
       "path": "cad/manufacturing/rr_thigh__rr_knee_clamp_shims.stl",
@@ -22605,7 +22605,7 @@
     {
       "path": "cad/manufacturing/rr_thigh__rr_knee_cradle.step",
       "bytes": 352680,
-      "sha256": "453e054848768508a51839180d36fad1d7e6d818a4eb6e3a25423f17ea1a8062"
+      "sha256": "f5c4dd42fd107c0012b9109bba51c21b0e9304988ac7771187b918573501c9b6"
     },
     {
       "path": "cad/manufacturing/rr_thigh__rr_knee_cradle.stl",
@@ -22615,7 +22615,7 @@
     {
       "path": "cad/manufacturing/rr_thigh__rr_knee_mount_spacer_-10_-52.025.step",
       "bytes": 11305,
-      "sha256": "e5c224913366f17852bd870ad9bd0c5805d5ed289f4a8a258f588d377392242a"
+      "sha256": "7c918fdbb6aa33e8b20bbfab2929dc9e63913fea07c1ddb411d37b3e84f0ae28"
     },
     {
       "path": "cad/manufacturing/rr_thigh__rr_knee_mount_spacer_-10_-52.025.stl",
@@ -22625,7 +22625,7 @@
     {
       "path": "cad/manufacturing/rr_thigh__rr_knee_mount_spacer_-10_1.725.step",
       "bytes": 11295,
-      "sha256": "299f8c0a507d3a6f3ead625a0891c1dc6e8640b48babed5cc2daf04fcb62094b"
+      "sha256": "3a2e9f4e2f3ad529d11ab502540c592b2ba335c7a734f613f1256d5e37608b26"
     },
     {
       "path": "cad/manufacturing/rr_thigh__rr_knee_mount_spacer_-10_1.725.stl",
@@ -22635,7 +22635,7 @@
     {
       "path": "cad/manufacturing/rr_thigh__rr_knee_mount_spacer_10_-52.025.step",
       "bytes": 11300,
-      "sha256": "163a07667a349887ab00a0002bfb4af74d4050aaa9fa9f3c3af00662e7171f46"
+      "sha256": "324ba0898902f1bb28de7181b4f730f887b3a39bc3c022d57bd54965cbd5679a"
     },
     {
       "path": "cad/manufacturing/rr_thigh__rr_knee_mount_spacer_10_-52.025.stl",
@@ -22645,7 +22645,7 @@
     {
       "path": "cad/manufacturing/rr_thigh__rr_knee_mount_spacer_10_1.725.step",
       "bytes": 11290,
-      "sha256": "df4cfc873ed8c3127b4768971c4d5b007fb1655ad9add185c12e051204fb392a"
+      "sha256": "886f71b31b0466e813b0b09d2aaf38e3454f2d79c650f0ad64224a3bf174808d"
     },
     {
       "path": "cad/manufacturing/rr_thigh__rr_knee_mount_spacer_10_1.725.stl",
@@ -22655,7 +22655,7 @@
     {
       "path": "cad/manufacturing/rr_thigh__rr_knee_strap_-41.55.step",
       "bytes": 72031,
-      "sha256": "f5fead96cc911408a96b6373eae263c3a261449d5806a704b10d51556a2fc323"
+      "sha256": "86370b7b6d255f8aeca42ef4c32fda8a56a8c0ab05a771316f6aa5f8750607a7"
     },
     {
       "path": "cad/manufacturing/rr_thigh__rr_knee_strap_-41.55.stl",
@@ -22665,7 +22665,7 @@
     {
       "path": "cad/manufacturing/rr_thigh__rr_knee_strap_-7.55.step",
       "bytes": 71943,
-      "sha256": "e4ae922e1c302fa03d50d9da021a4927193b69294c8c236c0d0345b79e42b6bf"
+      "sha256": "38c46521ecb9b68ce5d157affbe2a6a141a114fb239a51ac09e10100048a7b6b"
     },
     {
       "path": "cad/manufacturing/rr_thigh__rr_knee_strap_-7.55.stl",
@@ -22675,7 +22675,7 @@
     {
       "path": "cad/manufacturing/rr_thigh__rr_thigh_cheek_front.step",
       "bytes": 299325,
-      "sha256": "580a0d6ac2635846579389314d5ef3e5a8803d42b7bcef2d02daf607cd8a0f24"
+      "sha256": "4678482fc2845f2ae941523e9cfefa52bc0a3d5cba9fc45fc767a9440bf1a33a"
     },
     {
       "path": "cad/manufacturing/rr_thigh__rr_thigh_cheek_front.stl",
@@ -22685,7 +22685,7 @@
     {
       "path": "cad/manufacturing/rr_thigh__rr_thigh_cheek_rear.step",
       "bytes": 292949,
-      "sha256": "bb71e71abca5111a43f491c845cc6cdf619de91af2be93cd37f15b9c55cfdf53"
+      "sha256": "f3514ffc9258b12e78cb97e384cf11e60fdf431b21d10472d1004fb9220b57f2"
     },
     {
       "path": "cad/manufacturing/rr_thigh__rr_thigh_cheek_rear.stl",
@@ -22695,7 +22695,7 @@
     {
       "path": "cad/manufacturing/rr_thigh__rr_thigh_fairing.step",
       "bytes": 113672,
-      "sha256": "55d105dc8967ae6dbff8224c5b9d4dbfed7a5eb08f6c2121588c8e044e647daa"
+      "sha256": "3cd2092d77a24abf7063390b02ea292b84735c5a814d2e07f8c7e2252a7906e3"
     },
     {
       "path": "cad/manufacturing/rr_thigh__rr_thigh_fairing.stl",
@@ -22705,7 +22705,7 @@
     {
       "path": "cad/manufacturing/rr_thigh__rr_thigh_spacer_-27.step",
       "bytes": 12476,
-      "sha256": "4de077633c3b802123672be80a630cac816f430007e189077b385b77a16d7e67"
+      "sha256": "ca71840b894bef8c8ba79a70050910ba9352d94907c42da2ca54737f719ff1fc"
     },
     {
       "path": "cad/manufacturing/rr_thigh__rr_thigh_spacer_-27.stl",
@@ -22715,7 +22715,7 @@
     {
       "path": "cad/manufacturing/rr_thigh__rr_thigh_spacer_27.step",
       "bytes": 12471,
-      "sha256": "45a8f87ac8be180bb531554b85c7828b677faebe500f426c6ead9941551973ef"
+      "sha256": "c39ba6fe79020db203603309adc0ff902424b63f529e1601b302875e978e993c"
     },
     {
       "path": "cad/manufacturing/rr_thigh__rr_thigh_spacer_27.stl",
@@ -22725,7 +22725,7 @@
     {
       "path": "cad/manufacturing/torso__body_cowl.step",
       "bytes": 1985659,
-      "sha256": "c1c66248e676fed5b941a1fd344853dee15176e06e62c0352abb87f87a679be0"
+      "sha256": "888fb57aeb9fb6f461ca45f376a346ab4d56cbb6f836c956b6a67ed749bb9de6"
     },
     {
       "path": "cad/manufacturing/torso__body_cowl.stl",
@@ -22735,7 +22735,7 @@
     {
       "path": "cad/manufacturing/torso__chassis_deck.step",
       "bytes": 562238,
-      "sha256": "8632c3ee0cd06bbaa634cd9a5527bd5ea405bf7a41ad9f3d5a38c69a2dd7f522"
+      "sha256": "226638dd5f11969e1a7fa8f7a344c0c3d1435fa2faec73a508cf973b72e294b2"
     },
     {
       "path": "cad/manufacturing/torso__chassis_deck.stl",
@@ -22745,7 +22745,7 @@
     {
       "path": "cad/manufacturing/torso__chest_tof_pod.step",
       "bytes": 229963,
-      "sha256": "533e59b9559699bbf803b49242b8e4c8b0223b7f2dc1e4e76ec8f64beebb1def"
+      "sha256": "dd2008f796674e9b44b7642e4acdf8a2deae83e5bbbbc1619a1766bec279ecee"
     },
     {
       "path": "cad/manufacturing/torso__chest_tof_pod.stl",
@@ -22755,7 +22755,7 @@
     {
       "path": "cad/manufacturing/torso__fl_roll_clamp_shims.step",
       "bytes": 86869,
-      "sha256": "9f03a75050640a5875666e6b4f3da6627a44876109026a5f109fa141ca895987"
+      "sha256": "c1d419ef2c2a5704de874ec33455fb2d823989f1cbf5645cf02386c507ecce61"
     },
     {
       "path": "cad/manufacturing/torso__fl_roll_clamp_shims.stl",
@@ -22765,7 +22765,7 @@
     {
       "path": "cad/manufacturing/torso__fl_roll_cradle.step",
       "bytes": 357994,
-      "sha256": "66504aa71e0a8772d5848836806ee672a2d32c889ca9caada07deeb96b2e7960"
+      "sha256": "8bdf417e8d451341b2c8f2907874acb8d509328c832aab076485352b3c97debe"
     },
     {
       "path": "cad/manufacturing/torso__fl_roll_cradle.stl",
@@ -22775,7 +22775,7 @@
     {
       "path": "cad/manufacturing/torso__fl_roll_strap_-41.55.step",
       "bytes": 74517,
-      "sha256": "9b6247d125e4d4cf8da0548497265deeea0cddc0d96e39c46090a91b6b8cc3d3"
+      "sha256": "c55dbd35dcb9fba7c40a2921ddfdd463c34cd19ece45216684ca7a21a50d2eaa"
     },
     {
       "path": "cad/manufacturing/torso__fl_roll_strap_-41.55.stl",
@@ -22785,7 +22785,7 @@
     {
       "path": "cad/manufacturing/torso__fl_roll_strap_-7.55.step",
       "bytes": 74511,
-      "sha256": "8ddd83813b5c04da00566615b8052ecd17d9445718e9a1b9f179c1466e0edbfe"
+      "sha256": "fe06d5e1509612eba74b54db7a6f49658b336261ff966b24f1e8ce274c05ac00"
     },
     {
       "path": "cad/manufacturing/torso__fl_roll_strap_-7.55.stl",
@@ -22795,7 +22795,7 @@
     {
       "path": "cad/manufacturing/torso__fr_roll_clamp_shims.step",
       "bytes": 86869,
-      "sha256": "53fdb38af41111d9542af2d04fe46049a32a88378a63b6aa0f0235b6491ae0cf"
+      "sha256": "213771fa2f2084ab98f3a74a8491db1c817f9086f7c88dd433c492752ffa0f72"
     },
     {
       "path": "cad/manufacturing/torso__fr_roll_clamp_shims.stl",
@@ -22805,7 +22805,7 @@
     {
       "path": "cad/manufacturing/torso__fr_roll_cradle.step",
       "bytes": 357994,
-      "sha256": "667e74278997038406f4fdb0e5a3cb9d84cfffde3197d5bed66cb8ab5bceed15"
+      "sha256": "a9e831c07fa8ad8a1b2c9890c2dd5be6f040467735b70f36a0cb96d98aee2058"
     },
     {
       "path": "cad/manufacturing/torso__fr_roll_cradle.stl",
@@ -22815,7 +22815,7 @@
     {
       "path": "cad/manufacturing/torso__fr_roll_strap_-41.55.step",
       "bytes": 74518,
-      "sha256": "3df9acd62723f5e520c60c1724eb86959586694e9c7f48d42348f4eaca4aac84"
+      "sha256": "d7e43881afc756f25d1ce62074fe88ec75c19960ed0804ed7509932b3ee4f1f6"
     },
     {
       "path": "cad/manufacturing/torso__fr_roll_strap_-41.55.stl",
@@ -22825,7 +22825,7 @@
     {
       "path": "cad/manufacturing/torso__fr_roll_strap_-7.55.step",
       "bytes": 74512,
-      "sha256": "2801322ae4f47b5fb57cef96a0fb4b5ffe2ae53116f0efe5e74507959d164373"
+      "sha256": "92da88ef52c3d88ea625fbb70923a08bad598d71f8afb76b37c43baed0f6ae0d"
     },
     {
       "path": "cad/manufacturing/torso__fr_roll_strap_-7.55.stl",
@@ -22835,7 +22835,7 @@
     {
       "path": "cad/manufacturing/torso__head_yaw_clamp_shims.step",
       "bytes": 87288,
-      "sha256": "bf8280bdc1e768701624a661e345675663b7a8660c9233cea0339427b75c8fc3"
+      "sha256": "391ced49e59345ed6e074362a990cfebbbc5a28fbf730c2c95674614ead7867f"
     },
     {
       "path": "cad/manufacturing/torso__head_yaw_clamp_shims.stl",
@@ -22845,7 +22845,7 @@
     {
       "path": "cad/manufacturing/torso__head_yaw_cradle.step",
       "bytes": 47381,
-      "sha256": "d8e30567904a83edd12b10274cc533336734d67b975e7419a0f00c447b19d6b2"
+      "sha256": "69839807624dcf13c161a7ed19872b78e065579e1666139575f4b68785c7d190"
     },
     {
       "path": "cad/manufacturing/torso__head_yaw_cradle.stl",
@@ -22855,7 +22855,7 @@
     {
       "path": "cad/manufacturing/torso__head_yaw_cradle_strap_-33.step",
       "bytes": 25816,
-      "sha256": "2b295555c07b56d60eef635df3a211b203c174220131bad626ebbc897bf76fc3"
+      "sha256": "98afcdf0e307b4dc85f0d75c3c97f97fddc3efc2ef0a7bbbf1f286a5057f01d6"
     },
     {
       "path": "cad/manufacturing/torso__head_yaw_cradle_strap_-33.stl",
@@ -22865,7 +22865,7 @@
     {
       "path": "cad/manufacturing/torso__head_yaw_cradle_strap_-7.step",
       "bytes": 25814,
-      "sha256": "342bb7c57a9e47e5509c4a9909ecf63bfd0f4e0546fee2e5a37d3408125e881f"
+      "sha256": "2bfb75e75b8533ce5ab1c430bd2ae879baf20df3696b1a4c067d850ddc26ffb5"
     },
     {
       "path": "cad/manufacturing/torso__head_yaw_cradle_strap_-7.stl",
@@ -22875,7 +22875,7 @@
     {
       "path": "cad/manufacturing/torso__passive_tail.step",
       "bytes": 1039957,
-      "sha256": "7ca3e88fd8b5625f5e0a460ae455b3c8f6ad3564d13f0ce979ace50d93b9249a"
+      "sha256": "eaa00519735ec8420c968f52da01a719ac03b569b4e08e1af4570c63247f0318"
     },
     {
       "path": "cad/manufacturing/torso__passive_tail.stl",
@@ -22885,7 +22885,7 @@
     {
       "path": "cad/manufacturing/torso__rail_-1.step",
       "bytes": 72317,
-      "sha256": "57b1940302e3049c72f1570a0dde2cb3b06468e973a3066f9b68bbc2c65c4d82"
+      "sha256": "9d1b782d74172a6192c61540aa7819152259a739cc0d4998c4a241ed564dd0e3"
     },
     {
       "path": "cad/manufacturing/torso__rail_-1.stl",
@@ -22895,7 +22895,7 @@
     {
       "path": "cad/manufacturing/torso__rail_1.step",
       "bytes": 76071,
-      "sha256": "c7973041cc2526d89c79bbc69504ff4d97de5d64ae5b95c1c813c05bf4915243"
+      "sha256": "d99ca0ce09ffc50b21714ee5a1fc1ccba3ec0833d0e75b0d439d61b05a9ad9dd"
     },
     {
       "path": "cad/manufacturing/torso__rail_1.stl",
@@ -22905,7 +22905,7 @@
     {
       "path": "cad/manufacturing/torso__rl_roll_clamp_shims.step",
       "bytes": 86870,
-      "sha256": "598f174054f2fe53de3ccb4d5d7bc7058728dc7116a97b904027ab39504174a9"
+      "sha256": "bccba5bcfc915a975233996bb901ba55b4cd029895ff38b4e03ad1fd78fe51bf"
     },
     {
       "path": "cad/manufacturing/torso__rl_roll_clamp_shims.stl",
@@ -22915,7 +22915,7 @@
     {
       "path": "cad/manufacturing/torso__rl_roll_cradle.step",
       "bytes": 357995,
-      "sha256": "fa27d6622d528d1e020f80122db90014432288a2f531fba2e47ef160f8e63111"
+      "sha256": "8257730996898c30e6ad1cdff63e702bfbcab444cd5008ecd8acef84641dc283"
     },
     {
       "path": "cad/manufacturing/torso__rl_roll_cradle.stl",
@@ -22925,7 +22925,7 @@
     {
       "path": "cad/manufacturing/torso__rl_roll_strap_-41.55.step",
       "bytes": 74519,
-      "sha256": "e602980b605af1fec4418f4202f3444c14e576624fde12440c2f07f144bf9ff9"
+      "sha256": "c79f1fcbb90384d0fec0ea3fc84adad8a21874fafe5e716a37ace1c40b0f5c27"
     },
     {
       "path": "cad/manufacturing/torso__rl_roll_strap_-41.55.stl",
@@ -22935,7 +22935,7 @@
     {
       "path": "cad/manufacturing/torso__rl_roll_strap_-7.55.step",
       "bytes": 74513,
-      "sha256": "e9de9b159615f4f1e622bf29261dc65e232643fdaac3ec5a01a382a4e2410730"
+      "sha256": "dcb7aeb7fbc71407e5e825b7e1954140cc494d7d94b1bc6092aebe29260f3021"
     },
     {
       "path": "cad/manufacturing/torso__rl_roll_strap_-7.55.stl",
@@ -22945,7 +22945,7 @@
     {
       "path": "cad/manufacturing/torso__rr_roll_clamp_shims.step",
       "bytes": 86870,
-      "sha256": "750324a43a7e2ea5857b1fdaea760e1c7d6ec7dd58d6f71ba71a5392471d2f38"
+      "sha256": "69230f06b59fe1c10296c4868339386e7056025464cde45f4df59de4237501a3"
     },
     {
       "path": "cad/manufacturing/torso__rr_roll_clamp_shims.stl",
@@ -22955,7 +22955,7 @@
     {
       "path": "cad/manufacturing/torso__rr_roll_cradle.step",
       "bytes": 357995,
-      "sha256": "63cb7e2632e47695dcb3059e9bb2d4acee009d6f84c1da82251b3f3220162606"
+      "sha256": "c6e9f463540cb73e9545bdc301860d0313b6d738f7bd89e3501b808c30b178c3"
     },
     {
       "path": "cad/manufacturing/torso__rr_roll_cradle.stl",
@@ -22965,7 +22965,7 @@
     {
       "path": "cad/manufacturing/torso__rr_roll_strap_-41.55.step",
       "bytes": 74518,
-      "sha256": "4fbcaf84d8aa7670d44234f1957d737df76e5763456b9fe28388e6b4b8896a4f"
+      "sha256": "5864d67a78bba65a0df38de086be1ece3092abf0f686436fca5a4c0e21c32ba2"
     },
     {
       "path": "cad/manufacturing/torso__rr_roll_strap_-41.55.stl",
@@ -22975,7 +22975,7 @@
     {
       "path": "cad/manufacturing/torso__rr_roll_strap_-7.55.step",
       "bytes": 74512,
-      "sha256": "3fe0f3b152ed34bb3544cd4b05836bb2721a93a5f65bb8a5bb1fadc110fa8567"
+      "sha256": "39fe780cbcc25d4b3b62edf9000ff5691db9aec21fcb7d0db6c26a7ae77d909a"
     },
     {
       "path": "cad/manufacturing/torso__rr_roll_strap_-7.55.stl",
@@ -22985,7 +22985,7 @@
     {
       "path": "cad/manufacturing/torso__sensor_tray.step",
       "bytes": 139428,
-      "sha256": "0919e6c14ee94dd8571dc7a9a6f966119fa1834da74441d150a6b7ba3916239e"
+      "sha256": "2d2c62e7b53679838eef48621ed3ab183dd7afbfbc7b74e00323a2f1e1e6eee8"
     },
     {
       "path": "cad/manufacturing/torso__sensor_tray.stl",
@@ -23239,8 +23239,8 @@
     },
     {
       "path": "config/robot.yaml",
-      "bytes": 19137,
-      "sha256": "7918107f94a430abcd70efedb5671ee4edd806befe7343eeaa28fdb5b398ab08"
+      "bytes": 19273,
+      "sha256": "b207c4f7ec2d1eef5a61ac94898162c34d67b2b1c55e112d5dc6e279d61426da"
     },
     {
       "path": "docs/assembly.md",
@@ -23273,6 +23273,11 @@
       "sha256": "9915a7dd91168a755a7dc708d2b317ef4f6a238354c8c7852c06d34ffbcf3e42"
     },
     {
+      "path": "docs/compact-policy.md",
+      "bytes": 10470,
+      "sha256": "09305d7f8cb8c4785a72b4c2570647e3134faf2641c71449de93b5290b567531"
+    },
+    {
       "path": "docs/control-interface.md",
       "bytes": 3972,
       "sha256": "71e0aecbb900022a4b9e126bbe777ad2381b12d09d1e30bc9a7211c3fdeaca17"
@@ -23288,14 +23293,29 @@
       "sha256": "999f166a2624b4e96fd6f4470d341eee1d6b17875a33b713ba381b39591fb01e"
     },
     {
+      "path": "docs/joint-limits.md",
+      "bytes": 3294,
+      "sha256": "df3625051f7a4404cfcf22b24c7620dea4c7ea33314ec18df6853d1a29df0792"
+    },
+    {
       "path": "docs/mechanical_review.md",
       "bytes": 2420,
       "sha256": "c90ac737af6e4ffb33a9f5c417278cd9c091990e982692493fc72d62ca9ccfc3"
     },
     {
+      "path": "docs/microduck-training.md",
+      "bytes": 7987,
+      "sha256": "71b29374423b55e1fca26208f4199fc3f6342935cb31ed76795f22efc91d1adc"
+    },
+    {
       "path": "docs/provenance.md",
       "bytes": 2721,
       "sha256": "e4b06e00a4069fa92c8129ef5630ea01644007bb5469b5e0a79398f37b5046ba"
+    },
+    {
+      "path": "docs/recovery-waypoints.md",
+      "bytes": 3332,
+      "sha256": "db43d72461844025cf1d14597ba11de182206fce24c4c15e314df321cebafd68"
     },
     {
       "path": "docs/redesign-v2.md",
@@ -23309,8 +23329,8 @@
     },
     {
       "path": "docs/rl-training.md",
-      "bytes": 4581,
-      "sha256": "604a514b457ba6a2b5f4e3d181b520688cdcbab19ac405275921807a706f5a4e"
+      "bytes": 6505,
+      "sha256": "04cc458c9c4b2ebeb8a6eea66798e9d90de037ccc1fe7215ea58b4128dc615a1"
     },
     {
       "path": "docs/sensors.md",
@@ -23321,6 +23341,11 @@
       "path": "docs/servo-selection.md",
       "bytes": 2147,
       "sha256": "3cb2f38e75d0a02aa38172fe356e54da8b582ef33785ee307db7f3389bcb23e8"
+    },
+    {
+      "path": "docs/speed-targets.md",
+      "bytes": 2171,
+      "sha256": "6c4eb74b2d9b2ebb85ae4eea83852dc4c87e0a21e8b53117c4d33e809b4360ba"
     },
     {
       "path": "docs/studio-renders.md",
@@ -23334,8 +23359,8 @@
     },
     {
       "path": "docs/v05.md",
-      "bytes": 8812,
-      "sha256": "0e470b64b4cff6675c995a349f25bfabb161448c2f0ff1f8d05325e3f758f61e"
+      "bytes": 9395,
+      "sha256": "1f53d033c4e4e6275cd865ac70052fe2226db239869b1df7a639529bc80823f2"
     },
     {
       "path": "docs/validation-v03.md",
@@ -23368,19 +23393,24 @@
       "sha256": "c01f49cf032c46c58eb25084a437cc10c6eb7ade37a68a2470422df0f59c03fb"
     },
     {
+      "path": "hardware/policy_observation.py",
+      "bytes": 1594,
+      "sha256": "e3415b48a67649e0ce38c3ded3d096a340fc43aee37ffa5cf53db6d9cd549d28"
+    },
+    {
       "path": "hardware/telemetry.py",
       "bytes": 1978,
       "sha256": "eddd363cf0c3bcf11342b5954aabea00050376545b787016b1f24772acaeba9a"
     },
     {
       "path": "learning/PLAN.md",
-      "bytes": 6865,
-      "sha256": "db6bd88061bddb6ac2d6f4797c1ad0ce113985d1ec57eb995e516c4148ddfbcd"
+      "bytes": 7020,
+      "sha256": "1247b989b474cd6d0364dc192f1d497c6d6125395c28591840b41c699cde0967"
     },
     {
       "path": "learning/README.md",
-      "bytes": 8914,
-      "sha256": "e9b48a6bced9f399cbe86f0ee8e8430ca016581825d281612f2ec70bb7b4753c"
+      "bytes": 8926,
+      "sha256": "9168a7086d09fb0020442749c593ab7e0eea7655400230a5bd22cc016e13defd"
     },
     {
       "path": "learning/__init__.py",
@@ -23393,19 +23423,34 @@
       "sha256": "9e6b77c01805773f56975f314c491252ac1d3ede3a472407ecd0e660d5fe18b5"
     },
     {
+      "path": "learning/curriculum.py",
+      "bytes": 2307,
+      "sha256": "032f05181d8720638245821d91897d845108ad55206f1e847474297c0769a507"
+    },
+    {
+      "path": "learning/distill.py",
+      "bytes": 6619,
+      "sha256": "21128869684be96de1f56621f1d0348564508325e96f959110314959f600b82d"
+    },
+    {
       "path": "learning/driver.py",
-      "bytes": 30176,
-      "sha256": "f4b73e8d2b191f4daf841e82a6329f4c825fdbd2f9857afd2688efe81afca1b1"
+      "bytes": 38179,
+      "sha256": "0674e8b798a22194ae77932bfacba0a8d502f2174b19ccb0d68f5bb8c081e594"
     },
     {
       "path": "learning/env.py",
-      "bytes": 25062,
-      "sha256": "be1ad99cb546d60b4663f31598dfd2097abdaa63c877c206822891e399e5ce4c"
+      "bytes": 31472,
+      "sha256": "fff75eed54ace0c3df779b74b4f16cd6ccc684e0c48092e90e5495cc9af0b44a"
     },
     {
       "path": "learning/evaluate.py",
-      "bytes": 22153,
-      "sha256": "387cf2a6c6621d190b4bc60d27a9e8670de0cdc0c500f3bf9f296f1f8a19251e"
+      "bytes": 23685,
+      "sha256": "b952f127e5c00ac8b6392e2c8cc89e38946d2de6dd7901c2aa3846a887b4b7fb"
+    },
+    {
+      "path": "learning/joint_limit_transfer.py",
+      "bytes": 3847,
+      "sha256": "5285323ed57dc79ff3f5b77e0255e1196fc5f588cd6f385a11721b447246b517"
     },
     {
       "path": "learning/motion.py",
@@ -23419,18 +23464,23 @@
     },
     {
       "path": "learning/play.py",
-      "bytes": 21407,
-      "sha256": "0745453e47ed81f1e145b242633ace58179351bc40e9e01de7c190ebd2436f21"
+      "bytes": 22275,
+      "sha256": "cbc0cb33495f22eabb307bc1321f93668ad18ef8074f74763d8c8eb1bc8a78ae"
     },
     {
       "path": "learning/ppo.py",
-      "bytes": 26102,
-      "sha256": "0ae277ded55e06cf3220b9e72b978568e8942b5108582148c64a0e12446f5d5b"
+      "bytes": 37105,
+      "sha256": "ac8f923bb52549cae332fa9210bf1d331b6dd63dd847433471fcac66bb6c5a64"
     },
     {
       "path": "learning/readiness.py",
-      "bytes": 1205,
-      "sha256": "734b85b4f1ddf8450f91924ccaaff6a8ef4ed5224f7fd929da0302a0b773ac7b"
+      "bytes": 1730,
+      "sha256": "990eacf20a36a71f2b588528c1c506c0e8c2e4a6d89dd0bd028a69540bb69b48"
+    },
+    {
+      "path": "learning/recipe_bootstrap.py",
+      "bytes": 3010,
+      "sha256": "e74e7b85e6ffd1b36500dfd68aa0eccea1b850fe62da0fc12a3fc93cb1c941e4"
     },
     {
       "path": "learning/requirements.txt",
@@ -23439,13 +23489,23 @@
     },
     {
       "path": "learning/rewards.py",
-      "bytes": 2831,
-      "sha256": "ed472edbeed333de60485706c7c31b1ccc09cd5f5780682324111605ee5ba722"
+      "bytes": 13330,
+      "sha256": "aa76abe35729f699d9e3c45d1c50f96cea3dcf9d99b35b188d8c3ed1be0ff8df"
     },
     {
       "path": "learning/sensors.py",
       "bytes": 5797,
       "sha256": "8ec90005f6070beaeceec24b55fb6b05dc646a7621ff2000b7f01538050f12cf"
+    },
+    {
+      "path": "learning/speed_profile.py",
+      "bytes": 3364,
+      "sha256": "2b02c99a9890bcd0c5b2f53edec8aa0a9e1600cf2ac96e00cef98e3795e1bc67"
+    },
+    {
+      "path": "learning/transfer.py",
+      "bytes": 5088,
+      "sha256": "2edcff41acc28210dddaacecc9ec6e9ee97b20096a418b520b356cf0b750c4dd"
     },
     {
       "path": "learning/watch.py",
@@ -23641,6 +23701,11 @@
       "path": "references/xl330_product.html",
       "bytes": 579533,
       "sha256": "2555182cd8e5303ea86969f7e8a2be8b0a691dec842cfa968b1694ee44ff2189"
+    },
+    {
+      "path": "renders/.DS_Store",
+      "bytes": 8196,
+      "sha256": "45b7ee0eed53448052d033d2eb80377b3e3f0ca472cb4ee1eec79d9573919922"
     },
     {
       "path": "renders/assembly.png",
@@ -23935,7 +24000,7 @@
     {
       "path": "reports/assembly_exports.json",
       "bytes": 1573,
-      "sha256": "6d5b6351da6b3bcf03a50f59f06b2f821229d1014442d95852026c38ec6787e8"
+      "sha256": "74201ed766a64ec6a177a5a0498fbf76c1f9f061e562ab9ac7958d973aef896d"
     },
     {
       "path": "reports/bom.json",
@@ -23950,7 +24015,7 @@
     {
       "path": "reports/cad_snapshot.json",
       "bytes": 102244,
-      "sha256": "235d10cda8cfea7b83b9c0c4a62265520d93e8727b6100f79b0c3848920bc627"
+      "sha256": "cd7193a2373e0d239259995d3f920a115382d936c230edddf552e2e7b496ed2f"
     },
     {
       "path": "reports/clearance_screen.json",
@@ -23960,7 +24025,7 @@
     {
       "path": "reports/collision_coverage.json",
       "bytes": 162847,
-      "sha256": "3e4fba9e6be98bd8cf27749920138ece9ca1fcb21520f839685822d596c50c86"
+      "sha256": "5939f07a14d96c15e154b99104ae373be7426b777c23b77bd6fe524a2056acf6"
     },
     {
       "path": "reports/collision_meshes.json",
@@ -23975,12 +24040,22 @@
     {
       "path": "reports/collision_source_inputs.json",
       "bytes": 632,
-      "sha256": "1ae25cfc6913877705a2c882a96ef7b8092ab5f29e7961d2f1f5e4d40ad1532f"
+      "sha256": "415517a1026f5ccdc6384b38a4c33c928c94f8cdc4aef98d786f3f33833e04f2"
+    },
+    {
+      "path": "reports/compact_200h_launch.json",
+      "bytes": 1428,
+      "sha256": "52dafcf0df7e9984c49c9da12eaf72103ba458e9828f9a923287618bd8034a4c"
+    },
+    {
+      "path": "reports/compact_policy_v3_smoke.json",
+      "bytes": 4148,
+      "sha256": "8cbe000b9fbbd9e6d39416cf61635d14db92a32ef3168516a899f91552617ef1"
     },
     {
       "path": "reports/fcl_motion_candidates.json",
-      "bytes": 694024,
-      "sha256": "11e882dbe4c36ee42f6a983016bcadd4e6947265f12cf367a4978963d3858fbb"
+      "bytes": 807872,
+      "sha256": "25cacdf018201debcdeeaf195c3b22e6a316a5bcc69d6cc6dc1ae6c70de92bf2"
     },
     {
       "path": "reports/feasibility.json",
@@ -23989,8 +24064,33 @@
     },
     {
       "path": "reports/full_motion_audit.json",
-      "bytes": 92313,
-      "sha256": "968f0364d4fd3660d25940a908a8737b7e6119f159ee6582fe83dbaf61bab3e9"
+      "bytes": 120474,
+      "sha256": "c73dac320c6e25c581f1519cc780797a03549eb1633bca41e3a00d56fcb1e73a"
+    },
+    {
+      "path": "reports/hip-range-eva01-preflight.json",
+      "bytes": 1739,
+      "sha256": "1cac7e7aded9a4cb6b96139fb935386ca5003f5330bb84cbe2a4eaeae055e627"
+    },
+    {
+      "path": "reports/hip-range-handoff.json",
+      "bytes": 716,
+      "sha256": "659ca9696980b56836e57e04958e6298db4f8fca68dfb7db40656bcc608f7d1f"
+    },
+    {
+      "path": "reports/hip-range-launch-verified.json",
+      "bytes": 3973,
+      "sha256": "8c010c129f297548fc1b184caa9bde3aa71120f47d237136408c65ceb9424501"
+    },
+    {
+      "path": "reports/hip-range-validation.json",
+      "bytes": 564,
+      "sha256": "7a27fcbca3b81f5f297e415318f2fa7bfb7a5cdfc87ce5fd306a5cf8663a90e6"
+    },
+    {
+      "path": "reports/hip_roll_load_screen.json",
+      "bytes": 4238,
+      "sha256": "3fe8e6e3a69a7ea9a5362ff62ede9718ab59b47b7fcf99c9fa09964ca6fd436c"
     },
     {
       "path": "reports/legacy-v02/README.md",
@@ -24125,7 +24225,7 @@
     {
       "path": "reports/manufacturing_parts.json",
       "bytes": 48014,
-      "sha256": "a70605c2ccf5bb73864d8457a22c351cd79ad9b9e289054857f81a559d6b42be"
+      "sha256": "b03e002e2c680735a6271b1260fe31a4b79caba328fb17df458c70d371ddd4a5"
     },
     {
       "path": "reports/mass_budget.json",
@@ -24134,8 +24234,23 @@
     },
     {
       "path": "reports/mechanical_gate.json",
-      "bytes": 2057,
-      "sha256": "aaa1ac980c1aa1b853f74986fc1fb4a9829a5e944a596ae9487d06fac6ab580c"
+      "bytes": 2276,
+      "sha256": "5e683b3a6483df7679a3d73e4be06fe5e11e2469fc53f28716de6524d12b89d5"
+    },
+    {
+      "path": "reports/microduck_recipe_smoke.json",
+      "bytes": 3995,
+      "sha256": "208fa95607fb3939d10a143314b33ccc54925334d13ff036b1739e7e0fa29e96"
+    },
+    {
+      "path": "reports/microduck_rewards_v2_audit.json",
+      "bytes": 7665,
+      "sha256": "9be8e06a5e433edd94dc0ec70de1ee3a670dc1f10d8b00d0132bd5813365cf8d"
+    },
+    {
+      "path": "reports/microduck_rewards_v2_smoke.json",
+      "bytes": 6884,
+      "sha256": "fce9043ebeef2b6a584a48ec74e55d5fd0a8337b0906c52d820860b069807627"
     },
     {
       "path": "reports/model.json",
@@ -24153,9 +24268,19 @@
       "sha256": "c24055ec75664196050b35aaf5874bacdbc3d6ab0c5d696eb7715cde35c82832"
     },
     {
+      "path": "reports/recovery_waypoints_launch.json",
+      "bytes": 1087,
+      "sha256": "edafff28ab10c34019e380d4c54630455b8c4f71b5178c640ff8b1c92ec20073"
+    },
+    {
+      "path": "reports/recovery_waypoints_validation.json",
+      "bytes": 914,
+      "sha256": "34d348e79b9d2730af2a8e5c8abca62344ce7dad9546bf2c64f236079c36086b"
+    },
+    {
       "path": "reports/rl_readiness.json",
       "bytes": 279,
-      "sha256": "b27ce1592ca0302c286d1278c82f28ef5a5b26ad0db551a1bad348ec225a3b03"
+      "sha256": "80e11e2d19445767fd3c43a53ee9fc68ba6ab4ebc52cad3515186470b4fd175c"
     },
     {
       "path": "reports/sensor_contract.json",
@@ -24163,9 +24288,19 @@
       "sha256": "61efdc89ff2ee45e149793002b2e69da8f0e7b473de8c8f4afa51b615ccdc84f"
     },
     {
+      "path": "reports/speed_profile_launch.json",
+      "bytes": 1049,
+      "sha256": "35931778492ff21a377dca5b4ee9fd1cb2233251b663360393f0170e6f1b630e"
+    },
+    {
+      "path": "reports/speed_profile_validation.json",
+      "bytes": 784,
+      "sha256": "99b5cae2a73627cd362b1af7c931a31fd7d1c0899b0dd1f5b75f7483fdfabe14"
+    },
+    {
       "path": "reports/static_fit.json",
       "bytes": 705,
-      "sha256": "46d88e0298e8e6c742fb029f9c95354cc7e683a9b7e446dcc264de1dffd98b08"
+      "sha256": "b75c8bb6066207a611b70d903b3ed607fdc0bdfaa41d82a388edf07cc79f2943"
     },
     {
       "path": "reports/urdf-v04.json",
@@ -24204,18 +24339,18 @@
     },
     {
       "path": "reports/v05_validation.json",
-      "bytes": 10479,
-      "sha256": "82f4dc8776276276c87fb9fc904a0e3e77078fa6ec6474918cfe5fd2b5596912"
+      "bytes": 10961,
+      "sha256": "242b05c275296a4ecc7f7156dd4adf8538db5327a0ccab4f9682bf1ca818d195"
     },
     {
       "path": "reports/verification.json",
-      "bytes": 1825,
-      "sha256": "50a1a82b6f95bbd5f72e97dd68080dac79cb4e3ebbc99f177693d1395b2a9931"
+      "bytes": 2332,
+      "sha256": "48468528a9fc2466f434084aa70bf710bf5064a15122323e5ad1e94796ad2cec"
     },
     {
       "path": "scripts/accept_mechanics.py",
-      "bytes": 2002,
-      "sha256": "13395b912359cdad342d44388a7c4759d5f87d481c255b317f15d173b140a085"
+      "bytes": 2075,
+      "sha256": "893c24d201c8ba991dc9840400f48a91f6e483f154175978ce2c05ac72380fae"
     },
     {
       "path": "scripts/audit_inputs.py",
@@ -24234,8 +24369,8 @@
     },
     {
       "path": "scripts/cad_snapshot.py",
-      "bytes": 1564,
-      "sha256": "ea11a6a382b6ebff2293e8963cc2ee9c9cf0e5295ee135dd96e6e48ea6ba0d81"
+      "bytes": 1729,
+      "sha256": "0b33f238dbe4202d9ac73f922fe8295b50cace2daf49bd1b8eb961f78dfb477d"
     },
     {
       "path": "scripts/check_actuation_clearances.py",
@@ -24329,8 +24464,8 @@
     },
     {
       "path": "scripts/find_motion_candidates.py",
-      "bytes": 2209,
-      "sha256": "7d08042e3c3d944ac536f5123a9b1abf91b1cd71aecfb148649aa7f06df6f0e4"
+      "bytes": 2877,
+      "sha256": "d88b21c72faf2b0a545726d0b0abb86eb758242a9d95b42509bb3611003b26dd"
     },
     {
       "path": "scripts/generate_descriptions.py",
@@ -24358,6 +24493,11 @@
       "sha256": "3e693b41925f4162d6844320b3f9d0747257abfaef499d79c0542e10f65cbb50"
     },
     {
+      "path": "scripts/render_policy_previews.py",
+      "bytes": 8120,
+      "sha256": "012870cac7b02975630d20becab590424db333026ff3c0903fca886a1751d03e"
+    },
+    {
       "path": "scripts/render_studio.py",
       "bytes": 10444,
       "sha256": "21f47af697f38ad714ae4e8bc7fbeb4ea6fef72b3b1fccc27c7b00471c4b2bc8"
@@ -24379,8 +24519,8 @@
     },
     {
       "path": "scripts/validate_v05.py",
-      "bytes": 4836,
-      "sha256": "0a7c950f746d29aad9fc4863634424202d3e6583cca3e8cc5e6cd509b4fb7398"
+      "bytes": 5569,
+      "sha256": "9f3fd28643c079ef3a4f780ce47f48a77fef9ef05612dfd288979c1d5867af20"
     },
     {
       "path": "scripts/verify_release.py",
@@ -24404,18 +24544,18 @@
     },
     {
       "path": "simulation/generated/sweetie_mini.urdf",
-      "bytes": 719341,
-      "sha256": "4d4fb19b9c1956c37043a4c4c247703351a19f57808e4d471eedd2538cd7d80b"
+      "bytes": 719457,
+      "sha256": "7c32fd4a5b2dfcc2900427b9595246b2fd89956548c31462c8e1d4261491a179"
     },
     {
       "path": "simulation/generated/sweetie_mini.xml",
-      "bytes": 957504,
-      "sha256": "40049f9a30ba53b653661eb87fa02c9908ba75b885c18beb5d4eb8b245f6840a"
+      "bytes": 957568,
+      "sha256": "33bfe5c14a5f6c9e357b081b74a519ca4060803bb55d46d5845575c12474cc5c"
     },
     {
       "path": "simulation/model.py",
-      "bytes": 7032,
-      "sha256": "542b6e6aca85ee183c502be3ccfef4d2167bf70cc23cd9c044e40c4ebb947b66"
+      "bytes": 7204,
+      "sha256": "64d5ed3f7688ecdb8711517069ca1a361bf8b0791dfbfe798c9ff71b29d3975b"
     },
     {
       "path": "simulation/run.py",
@@ -24423,9 +24563,19 @@
       "sha256": "97ec7ecafd083d90be72e7398192e43e0bc852fb075a10d05c9b1036e6066523"
     },
     {
+      "path": "tests/test_compact_policy.py",
+      "bytes": 8519,
+      "sha256": "3751af21bf139aaa460eff245944a6b6daaa60c219d4578dc6663bb0f366a72f"
+    },
+    {
+      "path": "tests/test_hip_roll_range.py",
+      "bytes": 3797,
+      "sha256": "ae86a71c17a9942b13c400b41bb8f6720b9e30afc4751bb93cebb74099c28e5c"
+    },
+    {
       "path": "tests/test_learning_driver.py",
-      "bytes": 5936,
-      "sha256": "472240696cf55f10356bd398bf9fc5e359bdbc146d51b42b2b98aef65bb2fadb"
+      "bytes": 6837,
+      "sha256": "331faf8d89fe2eaf61395647bea087e758079d3d3d9a301aa62c47738dbae108"
     },
     {
       "path": "tests/test_learning_env.py",
@@ -24443,6 +24593,16 @@
       "sha256": "86ac716fb02ca511c116949bba3e1cf75a5270b0c69c9057eab300507d266b61"
     },
     {
+      "path": "tests/test_microduck_recipe.py",
+      "bytes": 7879,
+      "sha256": "54feb0d6d6322fdc06ac1ede1da35a5685e419bd96850ea5490f6cd7a1a9b6be"
+    },
+    {
+      "path": "tests/test_microduck_rewards_v2.py",
+      "bytes": 7552,
+      "sha256": "1c1588595b9529077522308a837f44fa79329e12bb4a20d2ee68ed772e86473d"
+    },
+    {
       "path": "tests/test_model.py",
       "bytes": 5883,
       "sha256": "47a0f997b77e78ec6b42229808f473c3284626da6b402c2905a51cae2e0de288"
@@ -24451,6 +24611,11 @@
       "path": "tests/test_ppo_learning.py",
       "bytes": 3188,
       "sha256": "3af34ca479d41fad3f103be59b9da9c3b5ba0d3a541f4da870610edab3b297ca"
+    },
+    {
+      "path": "tests/test_recovery_waypoints.py",
+      "bytes": 5379,
+      "sha256": "0c094a18e0b11e73d863cb97497dee9d4c6e975bb6572f1b90cb64f2e2e4b8d0"
     },
     {
       "path": "tests/test_rl_readiness.py",
@@ -24476,6 +24641,11 @@
       "path": "tests/test_running_training.py",
       "bytes": 6678,
       "sha256": "8633f5e66c6ba4f2744f6854732a3ba640cef2e8673bc9573bfe7f04f216fe26"
+    },
+    {
+      "path": "tests/test_speed_profile.py",
+      "bytes": 3477,
+      "sha256": "e39fb66a39d3ba827e4112bbb5bf2f6e103ac2e43cf50e7ede2683508084a063"
     },
     {
       "path": "tests/test_v04_sensors_rewards.py",

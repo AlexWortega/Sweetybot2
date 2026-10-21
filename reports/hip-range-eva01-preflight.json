@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "epoch": 1792598066.5511413,
+  "source": "/home/alexw/sweetybot2-v05-20261018/source-7cee7ea",
+  "source_commit": "7cee7eaba9a78d4e7a3652ff3ea2f1eebf7f37a9",
+  "tests": "............s.........                                                   [100%]\n21 passed, 2 skipped in 51.76s\n",
+  "exit_code": 0,
+  "physical_signature": "20166e449409e09fa7c729d0e0d07cd5087fd039add2b9ec82b3fbb5f0f60883",
+  "dynamics_signature": "bd983c4559ec2910aaad2d0d58d62631216e741fe1b87c6cb39bd61a7bbc7c39",
+  "parent_physical_parity": {
+    "source-e851b4e": {
+      "mode": "explicit_audited_hip_roll_limit_transfer",
+      "previous_canonical_limits": [
+        -0.15,
+        0.15
+      ],
+      "next_canonical_limits": [
+        -0.10471975511965978,
+        0.7853981633974483
+      ],
+      "mechanical_gate_sha256": "5e683b3a6483df7679a3d73e4be06fe5e11e2469fc53f28716de6524d12b89d5",
+      "other_physics_identical": true
+    },
+    "source-413ed0c": {
+      "mode": "explicit_audited_hip_roll_limit_transfer",
+      "previous_canonical_limits": [
+        -0.15,
+        0.15
+      ],
+      "next_canonical_limits": [
+        -0.10471975511965978,
+        0.7853981633974483
+      ],
+      "mechanical_gate_sha256": "5e683b3a6483df7679a3d73e4be06fe5e11e2469fc53f28716de6524d12b89d5",
+      "other_physics_identical": true
+    }
+  },
+  "archive_sha256": "41f9ff5cb0474e3dee9fe15605ab616514614e9bf352e7eaf0549cfa2dfde61b",
+  "native_supplement_after_first_build": {
+    "passed": true,
+    "tests": ".....                                                                    [100%]\n5 passed in 11.32s\n",
+    "reason": "Native extension was compiled during initial checks; reran collection-skipped native checks after build"
+  }
+}

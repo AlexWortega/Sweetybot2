@@ -1,0 +1,22 @@
+{
+  "epoch": 1792598168.411896,
+  "source": "/home/alexw/sweetybot2-v05-20261018/source-7cee7ea",
+  "source_commit": "7cee7eaba9a78d4e7a3652ff3ea2f1eebf7f37a9",
+  "output": "/home/alexw/storage/sweetybot2-v05-20261018/training-compact-200h-wide-hips",
+  "continuation_of": "/home/alexw/storage/sweetybot2-v05-20261018/training-compact-200h-waypoints",
+  "service": "sweetybot2-compact-200h.service",
+  "started_epoch": 1792496415.0,
+  "deadline_epoch": 1793216415.0,
+  "budget_hours": 200,
+  "single_training_gpu": true,
+  "canonical_roll_degrees": [
+    -6,
+    45
+  ],
+  "right_leg_roll_degrees": [
+    -45,
+    6
+  ],
+  "old_champion_scores_reused": false,
+  "policy_quality_after_change": "pending evaluation"
+}

@@ -46,3 +46,9 @@ archived and must be measured again under the new limits.
 The continuation retains the original 200-hour campaign start and absolute
 deadline, using one training GPU. Expanded movement is not a claim of learned
 back recovery; that requires separate held-out back and side evaluations.
+
+
+Launch verification: all 12 initial baseline cases completed, then recovery
+PPO saved 4 updates / 32,768 transitions on physical GPU 3. The service and
+independent absolute stop timer were active. This is a timestamped liveness
+check, not a recovery-quality result: [receipt](../reports/hip-range-launch-verified.json).
