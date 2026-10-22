@@ -4,14 +4,14 @@
     {
       "name": "pytest",
       "exit_code": 0,
-      "stdout": "........................................................................ [ 42%]\n........................................................................ [ 85%]\n.........................                                                [100%]\n169 passed in 120.56s (0:02:00)\n",
+      "stdout": "........................................................................ [ 40%]\n........................................................................ [ 81%]\n.................................                                        [100%]\n177 passed in 124.02s (0:02:04)\n",
       "stderr": "",
       "execution": "Completed current validation process; no repeated test run"
     },
     {
       "name": "digital-sensor-physics",
       "exit_code": 0,
-      "stdout": "{\n  \"passed\": true,\n  \"dynamics_signature\": \"bd983c4559ec2910aaad2d0d58d62631216e741fe1b87c6cb39bd61a7bbc7c39\",\n  \"reason\": \"Digital collision/sensor checks passed; new task policies still require training and independent evaluation\",\n  \"report\": \"reports/v05_validation.json\"\n}\n",
+      "stdout": "{\n  \"passed\": true,\n  \"dynamics_signature\": \"2960a18a791391a824831a28559fd74a12f200b59d68f89c42ca5e00856c187c\",\n  \"reason\": \"Digital collision/sensor checks passed; new task policies still require training and independent evaluation\",\n  \"report\": \"reports/v05_validation.json\"\n}\n",
       "stderr": "",
       "execution": "Completed current validation process; no repeated test run"
     },
@@ -31,6 +31,6 @@
     "physical_validation": "not run",
     "trained_v05_policy": "not evaluated"
   },
-  "dynamics_signature": "bd983c4559ec2910aaad2d0d58d62631216e741fe1b87c6cb39bd61a7bbc7c39",
-  "epoch": 1792597925.879147
+  "dynamics_signature": "2960a18a791391a824831a28559fd74a12f200b59d68f89c42ca5e00856c187c",
+  "epoch": 1792688740.040488
 }

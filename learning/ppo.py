@@ -596,7 +596,7 @@ def main() -> None:
     parser.add_argument("--max-steps", type=int)
     parser.add_argument("--seed", type=int, default=1)
     parser.add_argument("--device", default="cuda:0")
-    parser.add_argument("--terrain", choices=("flat", "mixed", "rough", "slope", "steps"), default="flat")
+    parser.add_argument("--terrain", choices=("flat", "mixed", "rough", "slope", "steps", "stairs"), default="flat")
     parser.add_argument("--difficulty", type=float, default=0.0)
     parser.add_argument("--no-randomize", action="store_false", dest="randomize")
     source = parser.add_mutually_exclusive_group()
@@ -618,16 +618,16 @@ def main() -> None:
     parser.add_argument('--teacher-source')
     parser.add_argument('--observation-mode',choices=('compact','legacy'),default='compact')
     parser.add_argument('--desired-kl',type=float,default=.01)
-    parser.add_argument('--speed-profile',choices=('baseline','higher-v1'),default='baseline')
+    parser.add_argument('--speed-profile',choices=('baseline','higher-v1','navigation-v1'),default='baseline')
     parser.add_argument('--speed-stage',type=int,choices=range(3),default=0)
     config = TrainConfig(**vars(parser.parse_args()))
     from learning.readiness import require_training_ready
     require_training_ready()
     # Import lazily: CPU inference tools need only this module and torch/numpy.
     from learning.env import SweetieVecEnv
-    if config.speed_profile=='higher-v1' and config.task!='recovery':
+    if config.speed_profile in ('higher-v1','navigation-v1') and config.task!='recovery':
         from learning.speed_profile import SpeedTargetEnv
-        env_class=lambda **kwargs:SpeedTargetEnv(speed_stage=config.speed_stage,**kwargs)
+        env_class=lambda **kwargs:SpeedTargetEnv(speed_stage=config.speed_stage,navigation=config.speed_profile=='navigation-v1',**kwargs)
     else:env_class=SweetieVecEnv
     env = env_class(task=config.task, nenvs=config.nenvs, threads=config.threads,
                         seed=config.seed, terrain=config.terrain,

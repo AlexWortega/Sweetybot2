@@ -16,10 +16,13 @@ from learning.ppo import TrainConfig, _checkpoint, policy_for_env
 from learning.transfer import validate_initializer
 
 
-def export(donor, source, output, task, *, joint_limit_transfer=False):
+def export(donor, source, output, task, *, joint_limit_transfer=False,running_to_walk=False):
     raw=Path(donor).read_bytes()
     saved=torch.load(io.BytesIO(raw),map_location='cpu',weights_only=False)
-    if saved.get('config',{}).get('task')!=task:
+    donor_task=saved.get('config',{}).get('task')
+    if running_to_walk and (donor_task,task)!=('running','locomotion'):
+        raise ValueError('Running-to-walk transfer requires running donor and locomotion target')
+    if donor_task!=task and not running_to_walk:
         raise ValueError('Recipe handoff requires the same task')
     if saved.get('environment_metadata',{}).get('observation_mode')!='compact':
         raise ValueError('Recipe handoff expects the compact actor')
@@ -40,7 +43,8 @@ def export(donor, source, output, task, *, joint_limit_transfer=False):
     initialization=dict(mode='actor_and_normalizer_only_fresh_critic_optimizer',
         donor_path=str(Path(donor).resolve()),donor_sha256=hashlib.sha256(raw).hexdigest(),
         donor_steps=saved.get('steps'),donor_updates=saved.get('updates'),
-        recipe_transfer=provenance,ppo_transitions=0)
+        recipe_transfer=provenance,ppo_transitions=0,
+        cross_task='running_to_locomotion_same_home_relative_actions' if running_to_walk else None)
     _checkpoint(output/'latest.pt',model,optimizer,config,0,0,0.,env,initialization,
                 curriculum_env_steps=saved.get('curriculum_env_steps',0.))
     env.close()
@@ -52,7 +56,8 @@ def main():
     p.add_argument('--donor',required=True);p.add_argument('--source',required=True)
     p.add_argument('--out',required=True);p.add_argument('--task',choices=('locomotion','recovery','running'),required=True)
     p.add_argument('--joint-limit-transfer',action='store_true',help='Explicit actor-only transfer after joint-limit-only mechanical revalidation')
-    a=p.parse_args();print(export(a.donor,a.source,a.out,a.task,joint_limit_transfer=a.joint_limit_transfer),flush=True)
+    p.add_argument('--running-to-walk',action='store_true',help='Explicit compact actor transfer; both tasks use the same home-relative joint targets')
+    a=p.parse_args();print(export(a.donor,a.source,a.out,a.task,joint_limit_transfer=a.joint_limit_transfer,running_to_walk=a.running_to_walk),flush=True)
 
 
 if __name__=='__main__':main()

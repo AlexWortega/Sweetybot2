@@ -392,6 +392,108 @@
       "motor_heat_max": 0.041427391299835116
     },
     {
+      "scenario": "zero-action home target stand",
+      "terrain": "stairs",
+      "episodes": 4,
+      "seconds": 20,
+      "pass": true,
+      "heights_m": [
+        0.2945980601482023,
+        0.2945980601482023,
+        0.2945980601482023,
+        0.2945980601482023
+      ],
+      "up_z": [
+        0.9999995229966191,
+        0.9999995229966191,
+        0.9999995229966191,
+        0.9999995229966191
+      ],
+      "rms_torque_nm": [
+        0.11270128677818074,
+        0.1098955352992213,
+        0.4213598182701533,
+        0.11230061173079511,
+        0.11793529812947424,
+        0.4235287742265524,
+        0.08508537793590959,
+        0.07672509570278374,
+        0.3479945218699558,
+        0.08473684337724587,
+        0.08442086544681256,
+        0.3500609494007754,
+        3.9612239128747813e-07,
+        0.08015254933095241,
+        0.0016170732800471922,
+        0.0016174151488548858
+      ],
+      "peak_torque_nm": [
+        0.21672534307009497,
+        0.16774143845461864,
+        0.43403756481963857,
+        0.2162551379387643,
+        0.16871510375335128,
+        0.4342836671948743,
+        0.1690414421438403,
+        0.129203670574252,
+        0.3620466883798707,
+        0.16856884805535902,
+        0.13027139977662325,
+        0.36676316071469395,
+        6.463864607799451e-06,
+        0.08525605112728162,
+        0.0016491663180478427,
+        0.0016495417959819004
+      ],
+      "self_contact_ticks": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "contact_valid": [
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ],
+      "depth_valid_pixels": [
+        56.0,
+        56.0,
+        56.0,
+        56.0
+      ],
+      "motor_heat_max": 0.009670175771589047
+    },
+    {
+      "scenario": "stair metadata matches actual collider ray heights",
+      "pass": true,
+      "samples": 66,
+      "max_error_m": 5.551115123125783e-17,
+      "riser_m": 0.04,
+      "risers_per_flight": 5
+    },
+    {
       "scenario": "all five recovery reset kinds start clear",
       "pass": true,
       "resets": [
@@ -443,12 +545,12 @@
     "learning/native.cpp": "8be5e2f5e8ab33050dbd281a331a992f699e6129d9e148bcd8bc237cad0ee094",
     "learning/sensors.py": "8ec90005f6070beaeceec24b55fb6b05dc646a7621ff2000b7f01538050f12cf",
     "hardware/observation.py": "c01f49cf032c46c58eb25084a437cc10c6eb7ade37a68a2470422df0f59c03fb",
-    "learning/env.py": "fff75eed54ace0c3df779b74b4f16cd6ccc684e0c48092e90e5495cc9af0b44a",
-    "learning/rewards.py": "aa76abe35729f699d9e3c45d1c50f96cea3dcf9d99b35b188d8c3ed1be0ff8df",
+    "learning/env.py": "3e259d3500a98225d65667539245379e7b91f8e7f425f4f0133070f0d490cd49",
+    "learning/rewards.py": "2eca61224d16cbcf2e2fd8a3fc5a2435c5873b6a5ebcf6800e8ea9ea672b37d3",
     "learning/curriculum.py": "032f05181d8720638245821d91897d845108ad55206f1e847474297c0769a507",
     "hardware/policy_observation.py": "e3415b48a67649e0ce38c3ded3d096a340fc43aee37ffa5cf53db6d9cd549d28"
   },
-  "dynamics_signature": "bd983c4559ec2910aaad2d0d58d62631216e741fe1b87c6cb39bd61a7bbc7c39",
+  "dynamics_signature": "2960a18a791391a824831a28559fd74a12f200b59d68f89c42ca5e00856c187c",
   "policy_quality": "No trained compact policy evaluated; neutral targets and physics checks only",
   "physical_validation": "not run",
   "root_support_forces": false,

@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "epoch": 1792688740.04069,
+  "tests_passed": 177,
+  "physical_signature": "20166e449409e09fa7c729d0e0d07cd5087fd039add2b9ec82b3fbb5f0f60883",
+  "dynamics_signature": "2960a18a791391a824831a28559fd74a12f200b59d68f89c42ca5e00856c187c",
+  "actor_dimension": 63,
+  "critic_dimension": 81,
+  "stairs": {
+    "risers": 5,
+    "tread_m": 0.2,
+    "riser_m": [
+      0.01,
+      0.04
+    ],
+    "landing_m": 0.8
+  },
+  "cases": [
+    "left_180",
+    "right_180",
+    "left_360",
+    "right_360",
+    "arc_left",
+    "arc_right",
+    "stairs_up",
+    "stairs_down"
+  ],
+  "zero_action_short_evaluator_smoke_passed": true,
+  "learned_navigation": "not established"
+}

@@ -22,6 +22,14 @@ import time
 from typing import Any
 
 TASKS=("locomotion","recovery","running")
+
+def training_surface(task,task_round,profile='baseline',champion=None):
+    if task=='recovery':
+        from learning.curriculum import recovery_terrain
+        return recovery_terrain(task_round,champion)
+    cycle=('stairs','flat','mixed','stairs','mixed','slope','steps','mixed') if profile=='navigation-v1' and task=='locomotion' else ('flat','mixed','slope','mixed','steps','mixed')
+    terrain=cycle[task_round%len(cycle)]
+    return terrain,min(1.,.12+.04*max(0,task_round-1)) if terrain!='flat' else 0.
 POLICY_FILES={"locomotion":"walk.pt","recovery":"recover.pt","running":"run.pt"}
 MAX_CAMPAIGN_HOURS=200.
 
@@ -352,7 +360,8 @@ def main():
     parser.add_argument('--teacher-source',help='Verified source for a frozen legacy walking teacher')
     parser.add_argument('--bootstrap-episodes',type=int,default=8,
                         help='Replicates per fixed condition for the initial baseline only; training development/final remain 8')
-    parser.add_argument('--speed-profile',choices=('baseline','higher-v1'),default='baseline')
+    parser.add_argument('--speed-profile',choices=('baseline','higher-v1','navigation-v1'),default='baseline')
+    parser.add_argument('--initial-speed-stage',type=int,choices=(0,1,2),default=0,help='Carry an already unlocked ceiling across an explicit recipe handoff')
     args = parser.parse_args()
     if not 1<=args.bootstrap_episodes<=8:raise ValueError('Bootstrap replicates must be between 1 and 8')
     from learning.readiness import require_training_ready,dynamics_signature
@@ -418,7 +427,7 @@ def main():
     if state.get('speed_profile','baseline')!=args.speed_profile:
         state.setdefault('migration_log',[]).append({'epoch':time.time(),'reason':'user_requested_higher_target_speed','profile':args.speed_profile})
     state['speed_profile']=args.speed_profile
-    state.setdefault('speed_stage',0)
+    state.setdefault('speed_stage',args.initial_speed_stage)
     state.pop('stop_reason',None)
     deadline = state["deadline_epoch"]
     environment = dict(os.environ)
@@ -460,6 +469,18 @@ def main():
             raise RuntimeError(f"{task}/{terrain} evaluation {result['status']}")
         return json.loads(output.read_text())
 
+    def evaluate_navigation(checkpoint,directory,seed,final=False,episodes=2):
+        directory.mkdir(parents=True,exist_ok=True)
+        output=directory/'result.json'
+        command=[sys.executable,'-m','learning.evaluate_navigation','--checkpoint',str(checkpoint),
+                 '--out',str(output),'--episodes',str(episodes),'--seconds','12',
+                 '--difficulty','1.' if final else '.2','--seed',str(seed)]
+        result=run_child(command,directory/'process.log',deadline,args.eval_timeout,environment)
+        state['children'].append({'kind':'navigation_final' if final else 'navigation_development',**result})
+        persist('navigation_evaluation')
+        if result['status']!='completed' or not output.exists():raise RuntimeError('Navigation evaluation '+result['status'])
+        return json.loads(output.read_text())
+
     def run_final_once():
         if state.get("final_started"):
             # Never repeatedly query the independent held-out set on restart.
@@ -480,6 +501,11 @@ def main():
                 except Exception as error:
                     finals[task][terrain] = {"status": "failed", "error": str(error)}
                 atomic_json(out / "final_results.json", finals)
+        if args.speed_profile=='navigation-v1' and state['latest_training'].get('locomotion'):
+            checkpoint=state.get('navigation_champion',{}).get('checkpoint',state['latest_training']['locomotion'])
+            try:finals['navigation']=evaluate_navigation(checkpoint,out/'final/navigation',5_500_000,final=True,episodes=8)
+            except Exception as error:finals['navigation']={'status':'failed','error':str(error)}
+            atomic_json(out/'final_results.json',finals)
         state["final_results"] = str(out / "final_results.json")
 
     persist("starting")
@@ -499,12 +525,14 @@ def main():
                 atomic_json(directory/'selection.json',selection)
                 promote(Path(checkpoint),out/POLICY_FILES[task])
                 persist('bootstrap_evaluation')
+            if args.speed_profile=='navigation-v1' and state['latest_training'].get('locomotion'):
+                state['navigation_baseline']=evaluate_navigation(state['latest_training']['locomotion'],out/'baseline/navigation',1_700_000,episodes=args.bootstrap_episodes)
             state['bootstrap_evaluated']=True
             persist('between_chunks')
         while True:
             # Reserve independent final evaluation plus all development surfaces.
             remaining = deadline-time.time()
-            spare = remaining-args.final_reserve_seconds-4*args.eval_timeout-30
+            spare = remaining-args.final_reserve_seconds-(5 if args.speed_profile=='navigation-v1' else 4)*args.eval_timeout-30
             if spare < 30:
                 state["stop_reason"] = "reserved_final_evaluation_budget"
                 break
@@ -523,12 +551,7 @@ def main():
             # Both specialists bootstrap on flat, then visit every procedural
             # surface with flat consolidation between successive terrain cycles.
             task_round = state['completed_chunks_by_task'][task]
-            terrain_cycle = ("flat", "mixed", "slope", "mixed", "steps", "mixed")
-            terrain = terrain_cycle[task_round % len(terrain_cycle)]
-            difficulty = min(1., .12+.04*max(0, task_round-1)) if terrain != "flat" else 0.
-            if task=='recovery':
-                from learning.curriculum import recovery_terrain
-                terrain,difficulty=recovery_terrain(task_round,state['champions'].get(task))
+            terrain,difficulty=training_surface(task,task_round,args.speed_profile,state['champions'].get(task))
             seed = (args.seed+round_index*7919) % 1_000_000
             directory = out / "runs" / f"{round_index:04d}_{task}_{terrain}"
             if directory.exists():
@@ -583,7 +606,7 @@ def main():
                                          surface, 1_000_000+offset)
                                for offset, surface in enumerate(("flat", "rough", "slope", "steps"))]
                 score, qualified, metrics = score_development(task, evaluations)
-                if task=='running' and args.speed_profile=='higher-v1':
+                if task=='running' and args.speed_profile in ('higher-v1','navigation-v1'):
                     from learning.speed_profile import run_ceiling,speed_stage_ready
                     ceiling=run_ceiling(state['speed_stage'])
                     probe=evaluate(task,checkpoint,directory/'speed_challenge','flat',1_500_000+round_index,speed_challenge=ceiling)
@@ -593,6 +616,13 @@ def main():
                 selection = {"score": score, "quality_gate_passed": qualified,
                              "metrics": metrics, "checkpoint": str(checkpoint),
                              "checkpoint_sha256": sha256(checkpoint), "round": round_index}
+                if task=='locomotion' and args.speed_profile=='navigation-v1':
+                    navigation=evaluate_navigation(checkpoint,directory/'navigation',1_700_000+round_index*16)
+                    selection['navigation_quality_gate_passed']=navigation['all_passed']
+                    entry=dict(checkpoint=str(checkpoint),round=round_index,all_passed=navigation['all_passed'],
+                               success_rate=sum(r['success_rate'] for r in navigation['cases'])/len(navigation['cases']))
+                    state['navigation_latest']=entry
+                    if entry['success_rate']>state.get('navigation_champion',{}).get('success_rate',-1):state['navigation_champion']=entry
                 atomic_json(directory / "selection.json", selection)
                 if apply_selection(state,task,selection):
                     promote(checkpoint, out / POLICY_FILES[task])

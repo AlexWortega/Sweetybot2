@@ -35,11 +35,31 @@ def running_flight_bonus(velocity, commands, up, height, contacts, bad_contacts)
     return .2*tracking*valid
 
 
+def stair_profile(difficulty,extent=10.):
+    """Five-riser flights and landings, mirrored around a flat spawn pad."""
+    if not np.isfinite(difficulty) or not 0<=difficulty<=1:raise ValueError('Invalid stair difficulty')
+    rise=.01+.03*difficulty;tread=.20;landing=.80;n=5
+    positive=[(0.,landing,0.)];x=landing
+    while x<extent:
+        for height,width in ([(rise*(i+1),tread) for i in range(n)]+[(rise*n,landing)]+
+                             [(rise*(n-1-i),tread) for i in range(n)]+[(0.,landing)]):
+            if x>=extent:break
+            end=min(extent,x+width);positive.append((x,end,height));x=end
+    segments=[(-b,-a,h) for a,b,h in reversed(positive)]+positive
+    return dict(riser_m=rise,tread_m=tread,risers_per_flight=n,landing_m=landing,
+                segments_m=[list(row) for row in segments])
+
+
+def stair_height(x,profile):
+    rows=np.asarray(profile['segments_m']);indices=np.searchsorted(rows[:,0],x,side='right')-1
+    return rows[np.clip(indices,0,len(rows)-1),2]
+
+
 def make_model(terrain='flat', difficulty=0., seed=1):
     """Current CAD mass properties, convex assembly collisions and physical sensors."""
     difficulty=float(np.clip(difficulty,0,1))
     if terrain=='mixed': terrain='rough'
-    if terrain not in ('flat','rough','slope','steps'): raise ValueError(terrain)
+    if terrain not in ('flat','rough','slope','steps','stairs'): raise ValueError(terrain)
     source=ROOT/'simulation/generated/sweetie_mini.xml'
     extent=10.;n_samples=321
     fingerprint=hashlib.sha256(source.read_bytes()+f'{terrain}/{difficulty}/{seed}/rl-v05-mechanics-1'.encode()).hexdigest()[:16]
@@ -78,6 +98,13 @@ def make_model(terrain='flat', difficulty=0., seed=1):
         ET.SubElement(world,'geom',name='terrain',type='hfield',hfield='terrain',rgba='.53 .62 .46 1',friction='.9 .015 .001',contype='1',conaffinity='7')
         floor.set('pos','0 0 -.101')
         metadata.update(height_range_m=amplitude,height_samples=h.tolist())
+    elif terrain=='stairs':
+        metadata.update(stair_profile(difficulty,extent))
+        metadata['height_range_m']=metadata['riser_m']*metadata['risers_per_flight']
+        for i,(a,b,top) in enumerate(metadata['segments_m']):
+            ET.SubElement(world,'geom',name=f'stair_{i}',type='box',size=f'{(b-a)/2} {extent} {(.1+top)/2}',
+                          pos=f'{(a+b)/2} 0 {(top-.1)/2}',rgba='.62 .65 .67 1',contype='1',conaffinity='7')
+        floor.set('pos','0 0 -.101')
     elif terrain=='steps':
         height=.025*difficulty; metadata['height_range_m']=height
         metadata['n_steps']=int(2*extent/.1)
@@ -155,6 +182,7 @@ class SweetieVecEnv:
         x,y=np.broadcast_arrays(x,y); kind=self.terrain['terrain']
         if kind=='slope':return np.tan(self.terrain['slope_radians'])*x
         extent=self.terrain['extent_m']
+        if kind=='stairs':return stair_height(x,self.terrain)
         if kind=='steps':
             index=np.clip(np.floor((x+extent)/.1).astype(int),0,self.terrain['n_steps']-1)
             return self.terrain['height_range_m']*(index%6)/5
@@ -254,6 +282,9 @@ class SweetieVecEnv:
         r=self.rng;q=np.zeros((k,23));v=np.zeros((k,22));q[:,3]=1;q[:,7:]=self.home
         q[:,:2]=r.uniform(-1.2,1.2,(k,2)) if self.auto_reset else 0
         yaw=r.uniform(-np.pi,np.pi,k) if self.auto_reset else np.zeros(k)
+        if self.terrain['terrain']=='stairs' and self.auto_reset:
+            q[:,:2]=np.column_stack((r.uniform(-6,6,k),r.uniform(-.6,.6,k)))
+            yaw=r.choice([0.,np.pi],k)+r.uniform(-.2,.2,k)
         q[:,3]=np.cos(yaw/2);q[:,6]=np.sin(yaw/2)
         kinds=np.zeros(k,int)
         if self.task=='recovery':
@@ -445,7 +476,8 @@ class SweetieVecEnv:
                 self.state['torque_rms'],self.state['motor_continuous'],actions,self.last_action,
                 self.state['qpos'][:,7:19],self.home[:12],self.state['contacts'],self.foot_velocity,
                 self.state['bad_contacts'],self.task,self.flight_seconds,previous_flight,progress=self.progress,
-                gait=gait,previous_torque=previous_torque,joint_limits=(self.low[:12],self.high[:12]),self_contacts=self.state['self_contacts'])
+                gait=gait,previous_torque=previous_torque,joint_limits=(self.low[:12],self.high[:12]),self_contacts=self.state['self_contacts'],
+                navigation=getattr(self,'navigation',False),foot_clearance_target=.025+self.terrain.get('riser_m',0.))
             failure=(up<.45)|(self.height<.43*self.nominal_height)
         else:
             waypoint_terms=self.recovery_waypoints.update(up,self.height,self.nominal_height,

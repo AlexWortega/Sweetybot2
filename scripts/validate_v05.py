@@ -22,7 +22,7 @@ def main():
  rows.append({'scenario':'CAD-derived MuJoCo self-collision proxies','poses':sum(not x['pose'].startswith('random') for x in candidates['poses']),'pass':not failures,'failures':failures})
  if failures:
   (ROOT/'reports/v05_validation.json').write_text(json.dumps({'all_passed':False,'cases':rows},indent=2)+'\n');raise ValueError('Collision proxies invent operational interferences; refine them before training')
- for terrain in ['flat','rough','slope','steps']:
+ for terrain in ['flat','rough','slope','steps','stairs']:
   e=SweetieVecEnv(num_envs=4,threads=1,randomize=False,auto_reset=False,terrain=terrain,difficulty=1.,seed=1_000_091)
   e.set_command(0,0,0);peak=np.zeros(16);rms2=np.zeros((4,16));failed=np.zeros(4,bool);self_count=np.zeros(4,int)
   for _ in range(1000):
@@ -30,6 +30,15 @@ def main():
    assert np.isfinite(o).all() and np.isfinite(r).all()
   rms=np.sqrt(rms2/1000).max(0);valid=e.sensors.frame();passed=bool((e.rot[:,2,2]>.9).all() and (e.height>.8*e.nominal_height).all() and not failed.any() and not e.state['bad_contacts'].any() and not self_count.any() and (rms<=continuous_limits(load())).all())
   rows.append({'scenario':'zero-action home target stand','terrain':terrain,'episodes':4,'seconds':20,'pass':passed,'heights_m':e.height.tolist(),'up_z':e.rot[:,2,2].tolist(),'rms_torque_nm':rms.tolist(),'peak_torque_nm':peak.tolist(),'self_contact_ticks':self_count.tolist(),'contact_valid':valid[4].tolist(),'depth_valid_pixels':valid[8].sum(1).tolist(),'motor_heat_max':float(e.state['motor_heat'].max())})
+ stair_path,_=make_model('stairs',1.,1_000_091);stair_model=mujoco.MjModel.from_xml_path(str(stair_path));stair_data=mujoco.MjData(stair_model)
+ mujoco.mj_resetDataKeyframe(stair_model,stair_data,0);stair_data.qpos[2]=3;mujoco.mj_forward(stair_model,stair_data)
+ from learning.env import stair_height,stair_profile
+ profile=stair_profile(1.);ray_errors=[]
+ for a,b,h in profile['segments_m']:
+  x=(a+b)/2;geom=np.zeros(1,np.int32)
+  distance=mujoco.mj_ray(stair_model,stair_data,np.array([x,.5,1.]),np.array([0.,0.,-1.]),None,1,-1,geom)
+  ray_errors.append(abs(1.-distance-float(stair_height(x,profile))))
+ rows.append({'scenario':'stair metadata matches actual collider ray heights','pass':max(ray_errors)<1e-6,'samples':len(ray_errors),'max_error_m':max(ray_errors),'riser_m':.04,'risers_per_flight':5})
  e=SweetieVecEnv(task='recovery',num_envs=1,threads=1,randomize=False,auto_reset=False)
  resets=[]
  for pose in e.reset_kind_names:

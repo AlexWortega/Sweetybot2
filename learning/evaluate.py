@@ -375,7 +375,7 @@ def main(argv=None):
     parser.add_argument("--checkpoint", type=Path)
     parser.add_argument("--out", required=True, type=Path, help="JSON filename or directory receiving result.json")
     parser.add_argument("--task", choices=("locomotion", "running", "recovery"), default="locomotion")
-    parser.add_argument("--terrain", choices=("flat", "rough", "slope", "steps"), default="flat")
+    parser.add_argument("--terrain", choices=("flat", "rough", "slope", "steps", "stairs"), default="flat")
     parser.add_argument("--difficulty", type=float, default=.25)
     parser.add_argument("--episodes", type=int, default=16, help="Replicates per command/orientation condition")
     parser.add_argument("--seed", type=int, default=1_000_000)

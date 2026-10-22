@@ -261,7 +261,7 @@ def main(argv=None):
     parser.add_argument("--run", type=Path, help="Optional trained running specialist checkpoint")
     parser.add_argument("--mode", choices=("walk", "run"), default="walk")
     parser.add_argument("--joystick", action="store_true")
-    parser.add_argument("--terrain", choices=("flat", "slope", "rough", "steps"), default="flat")
+    parser.add_argument("--terrain", choices=("flat", "slope", "rough", "steps", "stairs"), default="flat")
     parser.add_argument("--difficulty", type=float, default=0.25)
     parser.add_argument("--seconds", type=float, default=120)
     parser.add_argument("--seed", type=int, default=1_000_090)
@@ -295,14 +295,14 @@ def main(argv=None):
 
     torch.set_num_threads(1)
     walk, walk_meta = load_policy(args.walk, device="cpu")
-    if args.max_vx is None:args.max_vx=.40 if walk_meta.get('config',{}).get('speed_profile')=='higher-v1' else .25
+    if args.max_vx is None:args.max_vx=.40 if walk_meta.get('config',{}).get('speed_profile') in ('higher-v1','navigation-v1') else .25
     recovery, recovery_meta = load_policy(args.recover, device="cpu") if args.recover else (None, {})
     running, run_meta = load_policy(args.run, device="cpu") if args.run else (None, {})
     env_class=SweetieVecEnv
-    if run_meta.get('config',{}).get('speed_profile')=='higher-v1':
+    if run_meta.get('config',{}).get('speed_profile') in ('higher-v1','navigation-v1'):
         from learning.speed_profile import SpeedTargetEnv,run_ceiling
         stage=run_meta['config'].get('speed_stage',0)
-        env_class=lambda **kwargs:SpeedTargetEnv(speed_stage=stage,**kwargs)
+        env_class=lambda **kwargs:SpeedTargetEnv(speed_stage=stage,navigation=run_meta.get('config',{}).get('speed_profile')=='navigation-v1',**kwargs)
         if args.run_max_vx is None:args.run_max_vx=run_ceiling(stage)
     if args.run_max_vx is None:args.run_max_vx=.60
     policies = {"walk": walk, "recover": recovery, "run": running, "walk-fast-fallback": walk}

@@ -108,7 +108,7 @@ def torque_change_cost(torque,previous,continuous,polish):
  return -.002*polish*np.square((torque-previous)/np.maximum(.05,continuous)).mean(1)
 
 
-def locomotion_terms(command,velocity,omega,up,height,nominal_height,torque,continuous,actions,previous_actions,joints,home,contacts,foot_velocity,bad_contacts,task,flight_seconds,previous_flight,progress=1.,gait=None,previous_torque=None,joint_limits=None,self_contacts=None):
+def locomotion_terms(command,velocity,omega,up,height,nominal_height,torque,continuous,actions,previous_actions,joints,home,contacts,foot_velocity,bad_contacts,task,flight_seconds,previous_flight,progress=1.,gait=None,previous_torque=None,joint_limits=None,self_contacts=None,navigation=False,foot_clearance_target=.025):
  from learning.curriculum import polish_weight
  polish=polish_weight(progress) if task=='running' else 1.
  error=np.square(velocity[:,:2]-command[:,:2]).sum(1);yaw_error=np.square(omega[:,2]-command[:,2])
@@ -138,6 +138,9 @@ def locomotion_terms(command,velocity,omega,up,height,nominal_height,torque,cont
  yaw_along=omega[:,2]*np.sign(command[:,2])/np.maximum(.1,np.abs(command[:,2]))
  terms['yaw_progress']=.5*np.clip(yaw_along,0,1)*turning*upright_clear
  terms['under_turn']=-.5*np.square(np.clip(1-yaw_along,0,2))*turning
+ if navigation:
+  terms['over_turn']=-.35*np.square(np.clip(yaw_along-1,0,3))*turning
+  terms['pivot_drift']=-.4*np.square(velocity[:,:2]/.2).sum(1)*turning*~moving
  terms['command_pose']=.35*np.exp(-pose_error/np.where(active,.6,.15)**2)*upright_clear
  terms['joint_limit']=joint_limit_cost(joints,joint_limits)
  terms['torque_change']=torque_change_cost(torque,previous_torque,continuous,polish)
@@ -153,10 +156,11 @@ def locomotion_terms(command,velocity,omega,up,height,nominal_height,torque,cont
   terms['foot_air_time']=.08/max(1e-6,gait['dt'])*timing.sum(1)*gate
   horizontal=np.linalg.norm(foot_velocity[:,:,:2],axis=2)
   swing=(~contacts)*np.clip(horizontal/.10,0,1)
-  terms['foot_clearance']=.6*(np.exp(-np.square((clearance-.025)/.015))*swing).mean(1)*gate
-  terms['foot_swing_height']=.04/max(1e-6,gait['dt'])*(np.exp(-np.square((peak-.025)/.02))*landing).sum(1)*gate
+  terms['foot_clearance']=.6*(np.exp(-np.square((clearance-foot_clearance_target)/.015))*swing).mean(1)*gate
+  terms['foot_swing_height']=.04/max(1e-6,gait['dt'])*(np.exp(-np.square((peak-foot_clearance_target)/.02))*landing).sum(1)*gate
   terms['foot_drag']=-.2*(np.maximum(0,.015-clearance)/.015*swing).mean(1)*active*upright_clear
-  terms['excess_foot_lift']=-.2*np.square(np.maximum(0,clearance-.07)/.07).mean(1)*active
+  lift_limit=max(.07,foot_clearance_target+.04)
+  terms['excess_foot_lift']=-.2*np.square(np.maximum(0,clearance-lift_limit)/lift_limit).mean(1)*active
  if task=='running':
   clean=(up>.8)&(height>.75*nominal_height)&(height<1.4*nominal_height)&(bad_contacts==0)&(velocity[:,0]>=.35)&(command[:,0]>=.35)&(error<.04)&(np.abs(velocity[:,2])<.6)
   # One event per clean >=40ms forward flight, not a per-tick reward for hanging.

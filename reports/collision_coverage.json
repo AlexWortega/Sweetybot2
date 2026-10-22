@@ -1,5 +1,5 @@
 {
-  "dynamics_signature": "bd983c4559ec2910aaad2d0d58d62631216e741fe1b87c6cb39bd61a7bbc7c39",
+  "dynamics_signature": "2960a18a791391a824831a28559fd74a12f200b59d68f89c42ca5e00856c187c",
   "mesh_manifest_sha256": "2b05d36a64eb5205de175d2223c5dde36722deaaf36d6b6b42898cc77fd91d3b",
   "method": "up to 1024 deterministic surface vertices per part; point in union of convex hull half-spaces, 1mm proxy tolerance (0.3mm coverage also reported); sampled coverage, not a certified Hausdorff bound",
   "passed": true,

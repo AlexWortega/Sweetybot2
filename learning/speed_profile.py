@@ -3,6 +3,7 @@ import numpy as np
 from learning.env import SweetieVecEnv
 
 PROFILE='higher-v1'
+NAVIGATION='navigation-v1'
 RUN_CEILINGS=(.65,.80,1.00)
 WALK_CEILING=.40
 
@@ -13,16 +14,17 @@ def run_ceiling(stage):
 
 
 def forward_ceiling(task,profile='baseline',stage=0):
-    if profile not in ('baseline',PROFILE):raise ValueError('Unknown speed profile')
+    if profile not in ('baseline',PROFILE,NAVIGATION):raise ValueError('Unknown speed profile')
     run_ceiling(stage)
     if task=='recovery':return 0.
-    if task=='running':return run_ceiling(stage) if profile==PROFILE else .55
-    return WALK_CEILING if profile==PROFILE else .30
+    if task=='running':return run_ceiling(stage) if profile in (PROFILE,NAVIGATION) else .55
+    return WALK_CEILING if profile in (PROFILE,NAVIGATION) else .30
 
 
 class SpeedTargetEnv(SweetieVecEnv):
-    def __init__(self,*args,speed_stage=0,**kwargs):
+    def __init__(self,*args,speed_stage=0,navigation=False,**kwargs):
         self.speed_stage=int(speed_stage);run_ceiling(self.speed_stage)
+        self.navigation=bool(navigation)
         super().__init__(*args,**kwargs)
 
     def _sample_commands(self,ids):
@@ -34,6 +36,13 @@ class SpeedTargetEnv(SweetieVecEnv):
         fast=(target[:,0]>.05)&(self.rng.random(len(ids))<.5)
         low,high=(.55,run_ceiling(self.speed_stage)) if self.task=='running' else (.30,WALK_CEILING)
         target[fast,0]=self.rng.uniform(low,high,fast.sum())
+        if getattr(self,'navigation',False):
+            mode=self.rng.random(len(ids));sign=self.rng.choice([-1.,1.],len(ids))
+            pivot=mode<(.12 if self.task=='running' else .24)
+            arc=(mode>=.24)&(mode<.48)
+            target[pivot,:2]=0.;target[pivot,2]=sign[pivot]*self.rng.uniform(.35,1.2,pivot.sum())
+            target[arc,0]=self.rng.uniform(.35,run_ceiling(self.speed_stage),arc.sum()) if self.task=='running' else self.rng.uniform(.10,.35,arc.sum())
+            target[arc,1]=0.;target[arc,2]=sign[arc]*self.rng.uniform(.35,1.,arc.sum())
         self.command_targets[ids]=target
         reset=self.steps[ids]==0
         self.commands[ids[reset]]=target[reset]
@@ -42,7 +51,8 @@ class SpeedTargetEnv(SweetieVecEnv):
         if self.task!='running':return super().set_command(vx,vy,yaw)
         if not np.isfinite([vx,vy,yaw]).all():raise ValueError('Finite command required')
         self.manual_command=True
-        self.commands[:]=np.clip([vx,vy,yaw],[0.,-.08,-.6],[run_ceiling(self.speed_stage),.08,.6])
+        yaw_max=1.2 if self.navigation else .6
+        self.commands[:]=np.clip([vx,vy,yaw],[0.,-.08,-yaw_max],[run_ceiling(self.speed_stage),.08,yaw_max])
         self.command_targets[:]=self.commands
         self.history[:,-1]=self._frame()
 
