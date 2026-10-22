@@ -1,0 +1,8 @@
+{
+  "epoch": 1792689279.7490335,
+  "source": "/home/alexw/sweetybot2-v05-20261018/source-b57551a",
+  "source_commit": "b57551a8e973e19506a0d82bb468117ef0292b99",
+  "physics_unchanged": true,
+  "deadline_epoch": 1793216415.0,
+  "evaluation_protocol": "navigation-stairs-heading-v2"
+}

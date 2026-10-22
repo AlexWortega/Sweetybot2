@@ -1,0 +1,34 @@
+{
+  "epoch": 1792690825.999219,
+  "source": "/home/alexw/sweetybot2-v05-20261018/source-bbc5a40",
+  "source_commit": "bbc5a4076de738bf75da0f5e087d0c5d304e9ce4",
+  "task": "locomotion",
+  "terrain": "stairs",
+  "difficulty": 0.12,
+  "profile": "navigation-v1",
+  "steps": 57344,
+  "updates": 7,
+  "checkpoint": "/mnt/elements/alexw/sweetybot2-v05-20261018/training-compact-200h-navigation-v2/runs/0000_locomotion_stairs/latest.pt",
+  "checkpoint_sha256": "10d2efccd29219658b30f9dc4a9d2be65fa8d38811efa653616e92815ee9b172",
+  "physical_gpu": 3,
+  "gpu_worker_rows": [
+    "4044384, 466, GPU-c154b001-1a23-8a93-2c39-d5761d6898c4"
+  ],
+  "baseline_cases": 12,
+  "navigation_baseline": {
+    "left_180": 0.0,
+    "right_180": 0.0,
+    "left_360": 0.0,
+    "right_360": 0.0,
+    "arc_left": 1.0,
+    "arc_right": 1.0,
+    "stairs_up": 0.0,
+    "stairs_down": 0.0
+  },
+  "dynamics_signature": "7a87351b1a4a9479dc99ba4c9422f217db06ed3c9c59cb50393a170eb3edb5a6",
+  "started_epoch": 1792496415.0,
+  "deadline_epoch": 1793216415.0,
+  "service_active": true,
+  "stop_timer_active": true,
+  "learned_navigation": "Not established: this verifies training and saved updates only"
+}

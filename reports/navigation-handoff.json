@@ -1,0 +1,18 @@
+{
+  "epoch": 1792690192.701725,
+  "source": "/home/alexw/sweetybot2-v05-20261018/source-bbc5a40",
+  "source_commit": "bbc5a4076de738bf75da0f5e087d0c5d304e9ce4",
+  "output": "/home/alexw/storage/sweetybot2-v05-20261018/training-compact-200h-navigation-v2",
+  "continuation_of": "/home/alexw/storage/sweetybot2-v05-20261018/training-compact-200h-navigation",
+  "started_epoch": 1792496415.0,
+  "deadline_epoch": 1793216415.0,
+  "budget_hours": 200,
+  "single_training_gpu": true,
+  "speed_stage": 1,
+  "profile": "navigation-v1",
+  "first_task": "locomotion",
+  "first_terrain": "stairs",
+  "arena_exit_is_failure": true,
+  "evaluation_protocol": "navigation-stairs-heading-v2",
+  "learned_navigation": "not established"
+}

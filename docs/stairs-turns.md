@@ -59,3 +59,8 @@ python -m learning.evaluate_navigation --checkpoint learning/runs/walk/latest.pt
 Joystick playback supports `--terrain stairs`; use the normal walking policy
 for stair traversal and pivots. Adding environments and passing software
 checks does not establish learned climbing, turning or hardware readiness.
+
+Launch verified on physical GPU 3: the first walking-on-stairs block saved
+7 PPO updates / 57,344 transitions at difficulty 0.12 (1.36 cm risers).
+[Timestamped receipt](../reports/navigation-launch-verified.json). This is
+training liveness, not demonstrated stair or pivot competence.

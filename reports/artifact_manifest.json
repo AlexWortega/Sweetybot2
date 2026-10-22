@@ -19,8 +19,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 7411,
-      "sha256": "0ff0ec36e50ffda6d7695799e78eb04bd2eed8375e58bc26588446d1d3b7eba4"
+      "bytes": 7935,
+      "sha256": "dc32417b669ea5afd7f76d6053ba1ebf32dc552130fe94804155a4aaa92bbc3a"
     },
     {
       "path": "cad/GLB/assembly.glb",
@@ -23274,8 +23274,8 @@
     },
     {
       "path": "docs/compact-policy.md",
-      "bytes": 10470,
-      "sha256": "09305d7f8cb8c4785a72b4c2570647e3134faf2641c71449de93b5290b567531"
+      "bytes": 11817,
+      "sha256": "19030c510e0b0cca492b41c5ec0aaa9cb78a6b3ae6d1798694d01fdd43af6cbc"
     },
     {
       "path": "docs/control-interface.md",
@@ -23346,6 +23346,11 @@
       "path": "docs/speed-targets.md",
       "bytes": 2171,
       "sha256": "6c4eb74b2d9b2ebb85ae4eea83852dc4c87e0a21e8b53117c4d33e809b4360ba"
+    },
+    {
+      "path": "docs/stairs-turns.md",
+      "bytes": 4046,
+      "sha256": "e2b3e18123021b5188fb5ad9ff5688088dfa10f573070506eb12465276c2ec72"
     },
     {
       "path": "docs/studio-renders.md",
@@ -23434,18 +23439,23 @@
     },
     {
       "path": "learning/driver.py",
-      "bytes": 38179,
-      "sha256": "0674e8b798a22194ae77932bfacba0a8d502f2174b19ccb0d68f5bb8c081e594"
+      "bytes": 40955,
+      "sha256": "623d6efb9b839b34d49d0d60ca8c4f2def1d674f50454f2d662def98040acbfe"
     },
     {
       "path": "learning/env.py",
-      "bytes": 31472,
-      "sha256": "fff75eed54ace0c3df779b74b4f16cd6ccc684e0c48092e90e5495cc9af0b44a"
+      "bytes": 33574,
+      "sha256": "411bba64ffb3113389b18ef33d538ae77ec852f1442a1d897496f743081cce17"
     },
     {
       "path": "learning/evaluate.py",
-      "bytes": 23685,
-      "sha256": "b952f127e5c00ac8b6392e2c8cc89e38946d2de6dd7901c2aa3846a887b4b7fb"
+      "bytes": 23695,
+      "sha256": "6da3509f5be1b89dff814a5a82dafee35f196d26f5d4c4562e5c5ccbf1f8edd6"
+    },
+    {
+      "path": "learning/evaluate_navigation.py",
+      "bytes": 8371,
+      "sha256": "0d57a9e39fa2db6ff389b2752a0b577b1f9d0ea2c020ca048c1a68b9831fa3ef"
     },
     {
       "path": "learning/joint_limit_transfer.py",
@@ -23464,13 +23474,13 @@
     },
     {
       "path": "learning/play.py",
-      "bytes": 22275,
-      "sha256": "cbc0cb33495f22eabb307bc1321f93668ad18ef8074f74763d8c8eb1bc8a78ae"
+      "bytes": 22400,
+      "sha256": "f18c3f7f6c757f44b0de3b063e91f7a05224dcc376d801a6d2b05677024718f1"
     },
     {
       "path": "learning/ppo.py",
-      "bytes": 37105,
-      "sha256": "ac8f923bb52549cae332fa9210bf1d331b6dd63dd847433471fcac66bb6c5a64"
+      "bytes": 37200,
+      "sha256": "864a5aa0c152517c6fea0ea6f801e0607d1f28f9f948922228254d9a7f9e9982"
     },
     {
       "path": "learning/readiness.py",
@@ -23479,8 +23489,8 @@
     },
     {
       "path": "learning/recipe_bootstrap.py",
-      "bytes": 3010,
-      "sha256": "e74e7b85e6ffd1b36500dfd68aa0eccea1b850fe62da0fc12a3fc93cb1c941e4"
+      "bytes": 3538,
+      "sha256": "98504a1564a3218ac757a20d8b71a71fc4008e5953aa2801ac87c1f12e8fa87a"
     },
     {
       "path": "learning/requirements.txt",
@@ -23489,8 +23499,8 @@
     },
     {
       "path": "learning/rewards.py",
-      "bytes": 13330,
-      "sha256": "aa76abe35729f699d9e3c45d1c50f96cea3dcf9d99b35b188d8c3ed1be0ff8df"
+      "bytes": 13635,
+      "sha256": "2eca61224d16cbcf2e2fd8a3fc5a2435c5873b6a5ebcf6800e8ea9ea672b37d3"
     },
     {
       "path": "learning/sensors.py",
@@ -23499,8 +23509,8 @@
     },
     {
       "path": "learning/speed_profile.py",
-      "bytes": 3364,
-      "sha256": "2b02c99a9890bcd0c5b2f53edec8aa0a9e1600cf2ac96e00cef98e3795e1bc67"
+      "bytes": 4115,
+      "sha256": "c9fb6bd460c41b4a49420c95cf4d1b1ee7ebc16efafa5769cc3f54ddc71d47d2"
     },
     {
       "path": "learning/transfer.py",
@@ -24025,7 +24035,7 @@
     {
       "path": "reports/collision_coverage.json",
       "bytes": 162847,
-      "sha256": "5939f07a14d96c15e154b99104ae373be7426b777c23b77bd6fe524a2056acf6"
+      "sha256": "ce8ca7d9b71853af084c71206859a23b1881ba0142665f42b4d1cc34ecb86c84"
     },
     {
       "path": "reports/collision_meshes.json",
@@ -24258,6 +24268,31 @@
       "sha256": "235aedc3877e36d6cd41ca6df29e7ad112859a4af7999c1f23ec4da2a961e8dd"
     },
     {
+      "path": "reports/navigation-eva01-preflight.json",
+      "bytes": 778,
+      "sha256": "784b5773073944d0f3b38e342f0204e5a0b558952fe423be54c8ae7c4c3f0a70"
+    },
+    {
+      "path": "reports/navigation-handoff.json",
+      "bytes": 721,
+      "sha256": "80fc3a3beb637a1050c57bf09e58e9207f406140e1a41c19eb1a61367b5aefa7"
+    },
+    {
+      "path": "reports/navigation-interim-completion-refinement.json",
+      "bytes": 283,
+      "sha256": "b6f98a20f90f6bf4f0dc2539e2286fedeae7120b42b41d9b03265fde2abf2932"
+    },
+    {
+      "path": "reports/navigation-launch-verified.json",
+      "bytes": 1167,
+      "sha256": "db06ef0b7889125ffc4cd2e71217bc536fe9994a95cf9591a1ca49d78ef03d4e"
+    },
+    {
+      "path": "reports/navigation-validation.json",
+      "bytes": 634,
+      "sha256": "c73a9529d7eab2bed35535ab08e816ef6f6bd692d41df6ab346d03dabdfc5a9a"
+    },
+    {
       "path": "reports/new_clearances.json",
       "bytes": 2754,
       "sha256": "d2257e396a2bde1342b0194dfe7c30848dc3c816dc665ac4dd6f083f8a315283"
@@ -24280,7 +24315,7 @@
     {
       "path": "reports/rl_readiness.json",
       "bytes": 279,
-      "sha256": "80e11e2d19445767fd3c43a53ee9fc68ba6ab4ebc52cad3515186470b4fd175c"
+      "sha256": "3a1474d8bfc67d40eaa957bff02bdbde4e9fc19da7b191b5205f80b1232c6a4a"
     },
     {
       "path": "reports/sensor_contract.json",
@@ -24339,13 +24374,13 @@
     },
     {
       "path": "reports/v05_validation.json",
-      "bytes": 10961,
-      "sha256": "242b05c275296a4ecc7f7156dd4adf8538db5327a0ccab4f9682bf1ca818d195"
+      "bytes": 13184,
+      "sha256": "b82fdc2288dd1aa2d978ec2afd9e6de22ba68b66c8b1f5016ba435797c385f18"
     },
     {
       "path": "reports/verification.json",
-      "bytes": 2332,
-      "sha256": "48468528a9fc2466f434084aa70bf710bf5064a15122323e5ad1e94796ad2cec"
+      "bytes": 2463,
+      "sha256": "0dd37bf5b3933325bcf6f78a4e6e513adbfaa15d7a9f2b38d5a5939231a21d5d"
     },
     {
       "path": "scripts/accept_mechanics.py",
@@ -24519,8 +24554,8 @@
     },
     {
       "path": "scripts/validate_v05.py",
-      "bytes": 5569,
-      "sha256": "9f3fd28643c079ef3a4f780ce47f48a77fef9ef05612dfd288979c1d5867af20"
+      "bytes": 6384,
+      "sha256": "d126a16a79a653f8a7d8c60933568536491fcdd9f11d299e2bcb2a93b821728e"
     },
     {
       "path": "scripts/verify_release.py",
@@ -24606,6 +24641,11 @@
       "path": "tests/test_model.py",
       "bytes": 5883,
       "sha256": "47a0f997b77e78ec6b42229808f473c3284626da6b402c2905a51cae2e0de288"
+    },
+    {
+      "path": "tests/test_navigation.py",
+      "bytes": 7513,
+      "sha256": "5639174036fa25217479241e5a20a4c0424c353ef635be9d888de01c749e9108"
     },
     {
       "path": "tests/test_ppo_learning.py",

@@ -105,3 +105,25 @@ and later checkpoints must be inspected before claiming skill improvement.
 Launch verified after the 12 baseline cases: recovery PPO, physical GPU 3,
 4 updates / 32,768 transitions saved. [Timestamped receipt](../reports/hip-range-launch-verified.json).
 This confirms training and persistence, not improved recovery.
+
+
+### Stairs and heading-goal continuation (2026-10-22)
+
+Current executor `bbc5a4076de738bf75da0f5e087d0c5d304e9ce4`,
+`/home/alexw/sweetybot2-v05-20261018/source-bbc5a40`. Current output:
+`/home/alexw/storage/sweetybot2-v05-20261018/training-compact-200h-navigation-v2`.
+The same original 200-hour start/deadline, single-GPU service and independent
+stop timer continue. The archived `training-compact-200h-wide-hips` output
+points to this continuation. `navigation-v1` starts walking on the scaled
+stair course, retains recovery/fast-motion schedules and the unlocked speed
+stage 1, and adds bidirectional pivots/arcs plus separate navigation tests.
+[Scope and evaluation](stairs-turns.md). Local full validation reached 179 tests, followed by 10 focused tests
+after tightening bounded stair spawns. The final physics acceptance includes
+all five surfaces and matching stair ray heights. Remote preflight also
+checks the native controller and a short CPU PPO run. Robot physical
+inputs and actor/critic dimensions are unchanged; task success remains to
+be measured. Initial baseline checks precede GPU training.
+
+GPU launch verified after baseline evaluations: walking/stairs, physical GPU 3,
+7 updates / 57,344 transitions saved. [Receipt](../reports/navigation-launch-verified.json).
+Both service and independent deadline timer remained active.

@@ -34,6 +34,8 @@ The same campaign also enables the [higher command-speed profile](docs/speed-tar
 
 **Hip-roll update, 2026-10-21:** [mirrored abduction limits](docs/joint-limits.md) now allow **45° outward / 6° inward**, replacing ±8.59°. The 185-pose digital audit and 169 software tests passed. The campaign continues from verified actor weights under the original deadline, with fresh critics/optimizers and new baseline evaluations. Wide-angle load-bearing and learned back recovery remain unverified.
 
+**Stairs and turns, 2026-10-22:** [navigation curriculum](docs/stairs-turns.md) adds five-riser ascent/descent flights (1–4 cm risers), bidirectional 180°/360° pivots and forward arcs. Actor weights are explicitly transferred into the same authorized campaign; the moving fast-mode actor initializes walking, with a separate standing recovery anchor. New per-case evaluations measure heading, stair progress, final hoof support, contacts and loads. Added tasks are training objectives, not demonstrated learned skills.
+
 ## Historical v02 policy preview
 
 ![Historical v02 walking and running/recovery attempts](renders/sweetybot2-training.gif)
