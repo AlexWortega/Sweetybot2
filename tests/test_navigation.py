@@ -6,7 +6,7 @@ import numpy as np
 import pytest
 
 from learning.env import make_model,stair_profile,stair_height,SweetieVecEnv
-from learning.evaluate_navigation import heading_delta,heading_command,heading_success
+from learning.evaluate_navigation import heading_delta,heading_command,heading_success,stair_success
 from learning.speed_profile import SpeedTargetEnv,forward_ceiling
 
 
@@ -48,6 +48,16 @@ def test_navigation_sampler_retains_idle_and_trains_both_pivots_and_arcs():
     assert (v==0).all(1).mean()>.08 and (v[:,0]<0).any()
     assert np.abs(v[:,2]).max()<=1.2
     assert forward_ceiling('running','navigation-v1',1)==.8
+
+
+def test_stair_success_rejects_airborne_stationary_wrong_height_or_fast_flybys():
+    args=dict(progress=np.array([1.5]),ground_change=np.array([.2]),riser=.04,descending=False,
+              alive=np.array([True]),clean=np.array([True]),up=np.array([1.]),height_ratio=np.array([1.]),contacts=np.array([3]),vx=np.array([.15]))
+    assert stair_success(**args)[0]
+    for key,value in [('progress',[0.]),('ground_change',[0.]),('ground_change',[-.2]),('contacts',[0]),
+                      ('height_ratio',[2.]),('vx',[.8]),('alive',[False]),('clean',[False])]:
+        assert not stair_success(**{**args,key:np.array(value)})[0]
+    assert stair_success(**{**args,'descending':True,'ground_change':np.array([-.2])})[0]
 
 
 def test_stair_resets_keep_compact_sensors_finite_without_assistance():

@@ -28,7 +28,8 @@ The separate `learning.evaluate_navigation` suite measures left/right 180 and
 unwraps actual heading, requires settling near the requested angle, limits
 pivot drift, and keeps falls permanent. Arcs require actual path length;
 stairs require forward progress and a ground-height change spanning most of
-a flight. Torque, self-contact and body-contact gates apply. External test
+a flight, ending on at least two hooves at a valid body height below 0.35 m/s.
+Airborne flybys cannot count as success. Torque, self-contact and body-contact gates apply. External test
 logic converts the heading goal into joystick velocity commands, then commands
 stopping; it never rotates the robot or injects forces. Goals are not actor
 inputs. Initial poses are fixed with small lateral offsets, so these scores

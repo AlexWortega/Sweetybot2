@@ -38,6 +38,14 @@ def heading_success(turned,goal,stable_ticks,alive,drift,path_length,arc=False):
     return good & (np.asarray(path_length)>=.20 if arc else np.asarray(drift)<.30)
 
 
+def stair_success(progress,ground_change,riser,descending,alive,clean,up,height_ratio,contacts,vx):
+    sign=-1 if descending else 1
+    return (np.asarray(alive)&np.asarray(clean)&(np.asarray(progress)>=1.2)&
+            (sign*np.asarray(ground_change)>=3.5*riser)&(np.asarray(up)>.85)&
+            (np.asarray(height_ratio)>.65)&(np.asarray(height_ratio)<1.4)&
+            (np.asarray(contacts)>=2)&(np.abs(vx)<.35))
+
+
 def place_initial(env,x):
     """Episode initialization only. Resolve actual collider penetration once."""
     ids=np.arange(env.num_envs);q=env.state['qpos'].copy();q[:,0]=x
@@ -87,8 +95,8 @@ def evaluate_case(checkpoint,case,episodes=2,seconds=12.,difficulty=.2,seed=1_70
         ground_change=env.ground_height(env.state['qpos'][:,0],env.state['qpos'][:,1])-ground_start
         progress=env.state['qpos'][:,0]-start[:,0]
         if stairs:
-            sign=-1 if case=='stairs_down' else 1
-            success=alive&clean&(progress>=1.2)&(sign*ground_change>=3.5*env.terrain['riser_m'])&(env.rot[:,2,2]>.85)
+            success=stair_success(progress,ground_change,env.terrain['riser_m'],case=='stairs_down',alive,clean,
+                                  env.rot[:,2,2],env.height/env.nominal_height,env.state['contacts'].sum(1),env.local_velocity[:,0])
         else:success=heading_success(turned,goal,stable,alive,drift,path,arc)&clean
         return dict(case=case,episodes=episodes,successes=int(success.sum()),success_rate=float(success.mean()),
                     survival_fraction=float(alive.mean()),heading_goal_rad=None if stairs else goal,
@@ -105,7 +113,7 @@ def evaluate(checkpoint=None,episodes=2,seconds=12.,difficulty=.2,seed=1_700_000
     torch.set_num_threads(1)
     cases=[evaluate_case(checkpoint,case,episodes,seconds,difficulty,seed+i) for i,case in enumerate(CASES)]
     from learning.readiness import ROOT,dynamics_signature
-    return dict(protocol='navigation-stairs-heading-v1',dynamics_signature=dynamics_signature(),
+    return dict(protocol='navigation-stairs-heading-v2',dynamics_signature=dynamics_signature(),
                 source_sha256={name:hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in ('learning/evaluate_navigation.py','learning/env.py','learning/speed_profile.py')},checkpoint=str(checkpoint) if checkpoint else None,
                 checkpoint_sha256=hashlib.sha256(Path(checkpoint).read_bytes()).hexdigest() if checkpoint else None,
                 cases=cases,all_passed=all(row['success_rate']>=.9 for row in cases),
