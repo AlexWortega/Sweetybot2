@@ -283,7 +283,9 @@ class SweetieVecEnv:
         q[:,:2]=r.uniform(-1.2,1.2,(k,2)) if self.auto_reset else 0
         yaw=r.uniform(-np.pi,np.pi,k) if self.auto_reset else np.zeros(k)
         if self.terrain['terrain']=='stairs' and self.auto_reset:
-            q[:,:2]=np.column_stack((r.uniform(-6,6,k),r.uniform(-.6,.6,k)))
+            # A valid 0.4 m/s walking command for the whole 12s episode must
+            # fit inside the 9.5m arena margin from every random spawn.
+            q[:,:2]=np.column_stack((r.uniform(-3,3,k),r.uniform(-.6,.6,k)))
             yaw=r.choice([0.,np.pi],k)+r.uniform(-.2,.2,k)
         q[:,3]=np.cos(yaw/2);q[:,6]=np.sin(yaw/2)
         kinds=np.zeros(k,int)

@@ -9,21 +9,26 @@
       "execution": "Completed current validation process"
     },
     {
-      "name": "digital-sensor-physics",
-      "exit_code": 0,
-      "stdout": "{\n  \"passed\": true,\n  \"dynamics_signature\": \"e8fe592ee9ad35300934fb50b90f5029677a26893e02ea5f1cef57aaa0d85234\",\n  \"reason\": \"Digital collision/sensor checks passed; new task policies still require training and independent evaluation\",\n  \"report\": \"reports/v05_validation.json\"\n}\n",
-      "stderr": "",
-      "execution": "Completed current validation process"
-    },
-    {
       "name": "electrical-contract",
       "exit_code": 0,
       "stdout": "{\n  \"status\": \"offline electrical model and reference decoder only; no hardware drivers or firmware verified\",\n  \"checks\": [\n    {\n      \"check\": \"pi_gpio_bcm unique ownership\",\n      \"pass\": true\n    },\n    {\n      \"check\": \"xiao_gpio unique ownership\",\n      \"pass\": true\n    },\n    {\n      \"check\": \"1% resistor corners plus 1% Vref ADC error\",\n      \"pass\": true,\n      \"voltage_ratio_ranges\": {\n        \"air\": [\n          0.485,\n          0.515\n        ],\n        \"contact\": [\n          0.07181818181818182,\n          0.09487394957983192\n        ]\n      }\n    },\n    {\n      \"check\": \"fault immediate; 10ms debounce; >20ms stale invalid\",\n      \"pass\": true\n    }\n  ]\n}\n",
       "stderr": "",
       "execution": "Completed current validation process"
+    },
+    {
+      "name": "digital-sensor-physics",
+      "exit_code": 0,
+      "stdout": "{\n  \"passed\": true,\n  \"dynamics_signature\": \"7a87351b1a4a9479dc99ba4c9422f217db06ed3c9c59cb50393a170eb3edb5a6\",\n  \"reason\": \"Digital collision/sensor checks passed; new task policies still require training and independent evaluation\",\n  \"report\": \"reports/v05_validation.json\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "bounded-stair-spawns",
+      "exit_code": 0,
+      "stdout": "..........                                                               [100%]\n10 passed in 13.00s\n",
+      "stderr": ""
     }
   ],
-  "dynamics_signature": "e8fe592ee9ad35300934fb50b90f5029677a26893e02ea5f1cef57aaa0d85234",
+  "dynamics_signature": "7a87351b1a4a9479dc99ba4c9422f217db06ed3c9c59cb50393a170eb3edb5a6",
   "checks_reused_from_current_validation_processes": true,
   "assertions": {
     "print_types": 39,
@@ -31,5 +36,6 @@
     "mechanical_audit": "reports/mechanical_gate.json",
     "physical_validation": "not run",
     "trained_v05_policy": "not evaluated"
-  }
+  },
+  "base_full_suite_commit": "a1a7990f490dd2bdfaf8af68c84f43ed5ff2fa26"
 }

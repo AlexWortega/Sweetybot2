@@ -64,6 +64,7 @@ def test_stair_resets_keep_compact_sensors_finite_without_assistance():
     env=SweetieVecEnv(terrain='stairs',difficulty=.5,num_envs=4,threads=1,randomize=True,auto_reset=True,observation_mode='compact')
     try:
         assert env.observe().shape==(4,63) and env.observe_critic().shape==(4,81)
+        assert (np.abs(env.state['qpos'][:,0])<=3).all()
         assert not env.state['self_contacts'].any()
         for _ in range(10):
             obs,reward,_,_=env.step(np.zeros((4,12)))

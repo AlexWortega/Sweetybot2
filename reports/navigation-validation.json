@@ -1,9 +1,9 @@
 {
   "passed": true,
-  "epoch": 1792689682.121155,
+  "epoch": 1792689973.286289,
   "tests_passed": 179,
   "physical_signature": "20166e449409e09fa7c729d0e0d07cd5087fd039add2b9ec82b3fbb5f0f60883",
-  "dynamics_signature": "e8fe592ee9ad35300934fb50b90f5029677a26893e02ea5f1cef57aaa0d85234",
+  "dynamics_signature": "7a87351b1a4a9479dc99ba4c9422f217db06ed3c9c59cb50393a170eb3edb5a6",
   "evaluation_protocol": "navigation-stairs-heading-v2",
   "arena_exit_is_failure": true,
   "actor_dimension": 63,
@@ -17,5 +17,7 @@
     ],
     "landing_m": 0.8
   },
-  "learned_navigation": "not established"
+  "learned_navigation": "not established",
+  "targeted_spawn_tests": 10,
+  "maximum_stair_spawn_abs_x_m": 3.0
 }
