@@ -478,7 +478,7 @@ class SweetieVecEnv:
                 self.state['bad_contacts'],self.task,self.flight_seconds,previous_flight,progress=self.progress,
                 gait=gait,previous_torque=previous_torque,joint_limits=(self.low[:12],self.high[:12]),self_contacts=self.state['self_contacts'],
                 navigation=getattr(self,'navigation',False),foot_clearance_target=.025+self.terrain.get('riser_m',0.))
-            failure=(up<.45)|(self.height<.43*self.nominal_height)
+            failure=(up<.45)|(self.height<.43*self.nominal_height)|(np.abs(self.state['qpos'][:,:2])>self.terrain['extent_m']-.5).any(1)
         else:
             waypoint_terms=self.recovery_waypoints.update(up,self.height,self.nominal_height,
                 self.state['contacts'],self.state['bad_contacts'],self.state['self_contacts'],omega,self.stable)

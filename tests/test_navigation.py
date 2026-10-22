@@ -71,6 +71,16 @@ def test_stair_resets_keep_compact_sensors_finite_without_assistance():
     finally:env.close()
 
 
+def test_training_cannot_escape_stairs_and_collect_flat_floor_rewards():
+    env=SweetieVecEnv(terrain='stairs',difficulty=.2,num_envs=1,threads=1,randomize=False,auto_reset=False,observation_mode='compact')
+    try:
+        q=env.state['qpos'].copy();q[0,0]=9.8;q[0,2]=env.nominal_height+env.ground_height(9.8,0)
+        env._clear_reset_penetration(q);env.native.reset(np.array([0]),q,np.zeros((1,22)),env.params);env._read_state()
+        _,_,done,info=env.step(np.zeros((1,12)))
+        assert done[0] and not info['truncated'][0]
+    finally:env.close()
+
+
 def test_navigation_schedule_includes_stairs_without_forcing_running_or_recovery_onto_them():
     from learning.driver import training_surface
     assert training_surface('locomotion',0,'navigation-v1')==('stairs',.12)

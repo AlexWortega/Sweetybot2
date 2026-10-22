@@ -14,7 +14,9 @@ This is scaled robot terrain, not a claim about ordinary human staircases.
 The central spawn landing is flat. Training also starts across the course
 facing both directions. Ground-height queries use the exact same segments as
 the MuJoCo boxes; vertical rays validate their agreement. Only initial poses
-are cleared of penetrations; no mid-episode lifting or base support is used.
+are cleared of penetrations; no mid-episode lifting or base support is used. Leaving the terrain arena
+terminates locomotion/running episodes as failures, preventing escape onto
+the surrounding flat floor from bypassing stair practice.
 
 Walking training visits stairs, flat, rough, slopes and the old small steps.
 Fast-motion and recovery specialists retain their existing terrain schedules.
